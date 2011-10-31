@@ -1,5 +1,9 @@
 body {
   background-color: #FFF;
-  color: #000;
+  color: #222;
   padding-top: 50px;
+}
+
+.hero-unit p {
+    padding-top: 20px;
 }
