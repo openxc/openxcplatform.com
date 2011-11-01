@@ -1,0 +1,13 @@
+---
+layout: default
+permalink: /about.html
+---
+
+## Press
+
+* CNET, [Ford unveils OpenXC, invites open-source applications](http://news.cnet.com/8301-13772_3-20104962-52/ford-unveils-openxc-invites-open-source-applications/)
+* VentureBeat, [Hack your car with OpenXC, a platform for modding Ford car computers](http://venturebeat.com/2011/09/12/hack-your-car-with-openxc-platform-for-modding-ford-car-computers/")
+* Engadget, [Ford / Bug Labs partnership makes SYNC look like old news](http://www.engadget.com/2011/09/12/ford-bug-labs-partnership-makes-sync-look-like-old-news/)
+* Wired, [Ford Aims to Make Your Ride Plug-and-Play](http://www.wired.com/autopia/2011/09/ford-research-car-apps/)
+* PSFK, [Ford Working On OpenXC Platform That Will Let Your Hack Your Car](http://www.psfk.com/2011/09/ford-working-on-openxc-platform-that-will-let-your-hack-your-car.html#ixzz1cUD4byg0)
+* TechCrunch, [Ford Partners With Bug Labs To Develop Open Source Platform For In-Car Innovatin’](http://techcrunch.com/2011/09/12/ford-partners-with-bug-labs-to-develop-open-source-platform-for-in-car-innovatin/)
