@@ -1,0 +1,6 @@
+---
+layout: default
+permalink: /getting-started/overview.html
+---
+
+![OpenXC Architecture Diagram](/images/openxc-architecture.jpeg)
