@@ -3,4 +3,26 @@ layout: default
 permalink: /getting-started/overview.html
 ---
 
+The OpenXC architecture is divided into two halves - a CAN translation module
+and a host device.
+
 ![OpenXC Architecture Diagram](/images/openxc-architecture.jpeg)
+
+## CAN Translation Module
+
+The CAN translation module is a device that reads both standard OBD-II and
+proprietary CAN signals from the OBD-II port in the vehicle, converts from
+engineering units to a more human scale, and outputs a subset of the signals to
+another interface in an abstract format according to a standard API. There may
+not be a 1:1 relationship between input and output signals - i.e. raw engine
+timing CAN signals may be summarized in an "engine performance" metric on the
+abstract side of the interface.
+
+## Host Device
+
+The host device is where all user code runs - it reads vehicle data over USB
+from the CAN translation module and makes it available to developers in a
+programmatic way.
+
+The reference host device is a standard Android device that supports the Andorid
+API version 3.1 or greater.
