@@ -3,10 +3,10 @@ layout: default
 permalink: /getting-started/overview.html
 ---
 
+![OpenXC Architecture Diagram](/images/openxc-architecture.jpeg)
+
 The OpenXC architecture is divided into two halves - a CAN translation module
 and a host device.
-
-![OpenXC Architecture Diagram](/images/openxc-architecture.jpeg)
 
 ## CAN Translation Module
 
