@@ -3,6 +3,22 @@ layout: default
 permalink: /about.html
 ---
 
+## Participating Members
+
+### Ford Motor Company
+
+![Ford Logo](/images/ford-oval.png)
+
+Ford is one of the founding members of OpenXC.
+
+[Press Release](http://corporate.ford.com/news-center/press-releases-detail/pr-ford-and-bug-labs-develop-35245)
+
+### Bug Labs
+
+![Bug Labs Logo](/images/buglabs.jpg)
+
+[Press Release](http://www.buglabs.net/ford-buglabs)
+
 ## Press
 
 * CNET, [Ford unveils OpenXC, invites open-source applications](http://news.cnet.com/8301-13772_3-20104962-52/ford-unveils-openxc-invites-open-source-applications/)
