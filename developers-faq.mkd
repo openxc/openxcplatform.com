@@ -1,0 +1,24 @@
+---
+layout: default
+permalink: /developers/faq.html
+---
+
+Developer FAQ
+=============
+
+<dl>
+
+<dt>How do I connect my host device to the web when I'm driving around town?</dt>
+<dd>
+The device we recommend, the Toshiba Thrive, doesn't have 3G built-in. On the
+positive side, this means that the tablet is quite inexpensive even without a
+contract with a wireless provider. On the downside, it only connects to Wi-Fi
+for Internet and 3G dongles aren't well supported in Android as of 3.1. You're
+not out of luck, though - we recommend buying a 3G Wi-Fi hotspot from your
+preferred wireless provider like the MiFi and connecting your host device to
+this over Wi-Fi. Simple and flexible.
+
+If you'd like to use an Android tablet with 3G built-in (like the Samsung Galaxy
+Tab from Verizon), that should work, too.
+</dd>
+</dl>
