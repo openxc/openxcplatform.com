@@ -1,0 +1,93 @@
+---
+layout: default
+permalink: /developers/vehicle-interface/translation-specs.html
+---
+
+Signal Translation Specification
+=============
+
+The microcontroller has a second USB controller operating in USB device mode. It
+sends the generic vehicle data over via bulk USB transfer as packed JSON.
+
+There are two valid message types - single valued and event.
+
+### Single Valued
+
+The expected format of a single valued message is:
+
+    {"name": "SteeringWheelAngle", "value": 45}
+
+### Event
+
+The expected format of an event message is:
+
+    {"name": "SteeringWheelAngle", "value": "up", "event": "pressed"}
+
+This format is good for something like a button even, where there are two
+discrete pieces of information in the measurement.
+
+## Viewer
+
+The `reader.py` Python program in this repository can be used to view the output
+of the CAN translator over micro-USB. Just plug it in and run the script with
+the `--verbose` flag to have all messages parsed and printed to stdout.
+
+    $ python reader.py -v
+
+## Signal List
+
+This is the list of signals officially supported by the Android library.
+
+<dl>
+    <dt>steering_wheel_angle</dt>
+    <dd>-400 to +400 degrees</dd>
+
+    <dt>powertrain_torque</dt>
+    <dd>-500 to 1500 Nm</dd>
+
+    <dt>engine_speed<dt>
+    <dd>0 to 16382 RPM</dd>
+
+    <dt>vehicle_speed</dt>
+    <dd>0 to 655 Km/h</dd>
+
+    <dt>accelerator_pedal_position</dt>
+    <dd>0 to 100%</dd>
+
+    <dt>parking_brake_status</dt>
+    <dd>Boolean (true == brake engaged)</dd>
+
+    <dt>brake_pedal_status</dt>
+    <dd>Boolean (True == pedal pressed)</dd>
+
+    <dt>transmission_gear_position</dt>
+    <dd>States: 1, 2, 3, 4, 5, 6, 7, 8, R, N</dd>
+
+    <dt>odometer</dt>
+    <dd>0 to 16777214 Km</dd>
+
+    <dt>ignition_status</dt>
+    <dd>States: off, accessory, run, start</dd>
+
+    <dt>fuel_level</dt>
+    <dd>0 - 204.6 L</dd>
+
+    <dt>door_status</dt>
+    <dd>Events: one event type per door, value is boolean (true == ajar)</dd>
+
+    <dt>headlamp_status</dt>
+    <dd>States: off, dipped, main</dd>
+
+    <dt>windshield_wiper_speed</dt>
+    <dd>0 to 31</dd>
+
+    <dt>latitude</dt>
+    <dd>-89.0 to 89.0 degrees</dd>
+
+    <dt>longitude</dt>
+    <dd>-179.0 to 179.0 degrees</dd>
+
+    <dt>button_event</dt>
+    <dd>Value is State: left, right, up, down, ok.
+        Event is State: idle, pressed, released, held_short, held_long, stuck</dd>
+</dl>

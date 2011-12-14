@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /developers/android-library-usage.html
+permalink: /developers/android/library-usage.html
 ---
 
 Android Library Usage

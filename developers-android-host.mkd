@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /developers/android-host.html
+permalink: /developers/android/host.html
 ---
 
 Android Host

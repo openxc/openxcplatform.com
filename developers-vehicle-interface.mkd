@@ -1,24 +1,63 @@
 ---
 layout: default
-permalink: /developers/can-translator.html
+permalink: /developers/vehicle-interface/hardware.html
 ---
 
 CAN Translator Module
 =============
 
-On GitHub, we're hosting the CAN translator source code and the Android library
-for reading JSON messages over USB and presenting them as a Java API. You will
-need to add the SSH key you generated to your GitHub account before you can
-clone the repositories (https://github.com/account/ssh).
+The CAN translation module is a microcontroller with two connections - one to
+the CAN bus via the OBD-II port, and one to the [host device][] via USB. It
+listens for a subset of CAN messages, performs required unit conversion or
+factoring and outputs a [generic version][translation-specs] to the USB
+interface.
 
-The "cantranslator" repository contains the C source code that runs on the
-Arduino-compatible chipKIT device. The recommended build tool is the "MPIDE"
-provided by Digilent, the manufacturer of the chipKIT. It's an open source clone
-of the Arduino IDE, so it will be familiar if you've used that before. See the
-README in this repo for more instructions on installing the dependencies.
+## Hardware
 
-Once you've compiled and uploaded this source combined with at least one CAN
-message or signal definition (see the README for instructions on how to add
-one), the device will read messages over the OBD-II cable and output them in a
-standard JSON-formatted message over USB (separated by "\r\n").
+The current implementation uses the [Digilent chipKIT Max32][chipkit], an
+[Arduino-compatible][arduino] microcontroller based on PIC32 instead of ATmega. The network
+shield add-on gives the chipKIT two CAN transceivers, which is enough to enable
+most OpenXC applications.
 
+The translator is currently powered via its micro-USB board, which is connected
+to the host device. CAN messages are received via the OBD-II port in the
+driver's footwell.
+
+## Software
+
+The [cantranslator][] repository contains the C source code that runs on the
+Arduino-compatible chipKIT device. Most OpenXC users won't need to touch this
+component - they will most likely be using a pre-built binary on the vehicle
+interface that knows about proprietary vehicle signals.
+
+### Updating from a .hex file
+
+Updates to the translator source may be distributed as pre-compiled binaries,
+e.g. if they are distributed by an OEM who does not wish to make the CAN signals
+public.
+
+In that case, you will have a .hex file and can use the `upload_hex.sh` script
+in the [cantranslator][] repository to update your device.
+
+    $ ./upload_hex new-version.hex
+
+This script requires that [MPIDE][] is installed, and the environment variable
+`ARDUINO_DIR` points to the MPIDE directory.
+
+You also need the chipKIT network shield libraries (provided by Microchip).
+Download these from the bottom of the [Max32 page][] and extract them to your
+MPIDE sketchbook directory in a subdirectory named `libraries`. It should look
+like this:
+
+    - /Users/me/sketchbook/
+    ---- libraries/
+    -------- chipKITUSBDevice/
+            ... other libraries
+
+[MPIDE]: https://github.com/chipKIT32/chipKIT32-MAX/downloads
+[Max32 page]: http://digilentinc.com/Products/Detail.cfm?NavPath=2,719,895&Prod=CHIPKIT-MAX32.
+[cantranslator]: https://github.com/openxc/cantranslator
+[translation-specs]: /developers/vehicle-interface/translation-specs.html
+[host device]: /developers/android/host.html
+[chipkit]: http://www.digilentinc.com/Products/Catalog.cfm?NavPath=2,892&Cat=18
+[arduino]: http://arduino.cc
