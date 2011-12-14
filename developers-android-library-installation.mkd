@@ -1,35 +1,10 @@
 ---
 layout: default
-permalink: /developers/android.html
+permalink: /developers/android-library-installation.html
 ---
 
-Android Host & Library
+Android Library Installation
 =============
-
-OpenXC applications are standard Android applications that use the OpenXC
-library in conjunction with a vehicle interface module connected to a USB port.
-
-## Android Hardware
-
-There are only a few requirements for the Android hardware, or what we call the
-host device:
-
-* It must support **Android 3.1** or greater (i.e. API level 12 or greater)
-* It must have support **USB host mode** and provide a way to plug in a USB
-  device - this does *not* mean the standard micro-USB port you use for
-  debugging or copying files to the SD card. Some tablets offer a full-size
-  USB port and others offer a dongle that exposes one.
-
-An Android device that is known to work well with OpenXC is the [Toshiba
-Thrive][thrive] - it's a relatively inexpensive Android tablet running 3.2
-Honeycomb and includes a full-size USB port. A device with 3G connectivity can
-make building web-enabled applications easier, but a 3G -> WiFi microcell can
-get aroudn this limitation quite easily (see the [FAQ](/developers/faq.html) for
-more details).
-
-[thrive]: http://us.toshiba.com/tablets/thrive/10-inch/
-
-## OpenXC Library
 
 The OpenXC functionality is exposed via a Java library that includes some
 Android services your application can use, and it is compiled and package with
@@ -132,3 +107,20 @@ and in the `AndroidManifest.xml`:
             <meta-data android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"
                     android:resource="@xml/device_filter" />
       </activity>
+
+## Android SDK and Maven
+
+The most recent version of the Android SDK currently available in the central
+Maven repository is 2.3. You'll need to install a more recent version in your
+own local repository.
+
+The recommended method is using the
+[maven-android-sdk-deployer](https://github.com/mosabua/maven-android-sdk-deployer).
+All you should need is to set the `ANDROID_HOME` environment variable (see the
+project's README for more details) and run:
+
+    $ mvn install -P 3.1
+
+If you have a remote Maven repository you share with others, I'm sure they would
+thank you if you uploaded the resulting files - that way, nobody needs to do
+this part.

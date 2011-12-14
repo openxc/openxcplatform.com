@@ -1,0 +1,24 @@
+---
+layout: default
+permalink: /developers/can-translator.html
+---
+
+CAN Translator Module
+=============
+
+On GitHub, we're hosting the CAN translator source code and the Android library
+for reading JSON messages over USB and presenting them as a Java API. You will
+need to add the SSH key you generated to your GitHub account before you can
+clone the repositories (https://github.com/account/ssh).
+
+The "cantranslator" repository contains the C source code that runs on the
+Arduino-compatible chipKIT device. The recommended build tool is the "MPIDE"
+provided by Digilent, the manufacturer of the chipKIT. It's an open source clone
+of the Arduino IDE, so it will be familiar if you've used that before. See the
+README in this repo for more instructions on installing the dependencies.
+
+Once you've compiled and uploaded this source combined with at least one CAN
+message or signal definition (see the README for instructions on how to add
+one), the device will read messages over the OBD-II cable and output them in a
+standard JSON-formatted message over USB (separated by "\r\n").
+

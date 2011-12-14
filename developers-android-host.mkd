@@ -1,0 +1,28 @@
+---
+layout: default
+permalink: /developers/android-host.html
+---
+
+Android Host
+=============
+
+OpenXC applications are standard Android applications that use the OpenXC
+library in conjunction with a vehicle interface module connected to a USB port.
+
+There are only a few requirements for the Android hardware, or what we call the
+host device:
+
+* It must support **Android 3.1** or greater (i.e. API level 12 or greater)
+* It must have support **USB host mode** and provide a way to plug in a USB
+  device - this does *not* mean the standard micro-USB port you use for
+  debugging or copying files to the SD card. Some tablets offer a full-size
+  USB port and others offer a dongle that exposes one.
+
+An Android device that is known to work well with OpenXC is the [Toshiba
+Thrive][thrive] - it's a relatively inexpensive Android tablet running 3.2
+Honeycomb and includes a full-size USB port. A device with 3G connectivity can
+make building web-enabled applications easier, but a 3G -> WiFi microcell can
+get aroudn this limitation quite easily (see the [FAQ](/developers/faq.html) for
+more details).
+
+[thrive]: http://us.toshiba.com/tablets/thrive/10-inch/
