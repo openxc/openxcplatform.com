@@ -3,7 +3,7 @@ layout: default
 permalink: /getting-started/overview.html
 ---
 
-![OpenXC Architecture Diagram](/images/openxc-architecture.jpeg)
+# Technical Overview
 
 The OpenXC architecture is divided into two halves - a CAN translation module
 and a host device.
@@ -26,3 +26,5 @@ programmatic way.
 
 The reference host device is a standard Android device that supports the Android
 Platform version 3.1 or higher.
+
+![OpenXC Architecture Diagram](/images/openxc-architecture.jpeg)
