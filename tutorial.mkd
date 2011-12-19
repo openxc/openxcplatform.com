@@ -30,8 +30,15 @@ functional [vehicle interface][]. Ford is currently providing a limited number
 of kits with OpenXC signals defined for the 2012 Ford Focus. Join the project's
 [Google Group][gg] to find out how to get one of these.
 
+## Example Application
+
+For an example of a complete OpenXC application, check out the
+[Vehicle Dashboard][] app in the [openxc-android][] repository.
+
 [gg]: http://groups.google.com/group/openxc
 [sdk]: http://developer.android.com/sdk/installing.html
 [vehicle interface]: http://openxcplatform.com/developers/vehicle-interface/hardware.html
 [library project]: http://openxcplatform.com/developers/android/library-installation.html
 [usage details]: http://openxcplatform.com/developers/android/library-usage.html
+[openxc-android]: https://github.com/openxc/openxc-android
+[Vehicle Dashboard]: https://github.com/openxc/openxc-android/tree/master/examples
