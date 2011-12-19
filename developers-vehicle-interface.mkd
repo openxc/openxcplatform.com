@@ -54,6 +54,12 @@ like this:
     -------- chipKITUSBDevice/
             ... other libraries
 
+### Custom CAN Signal Definition
+
+Developers that know the details of the CAN bus they will be using can choose to
+implement their own signal definitions for the translator. The documentation for
+this process is available at the [cantranslator][] repository.
+
 [MPIDE]: https://github.com/chipKIT32/chipKIT32-MAX/downloads
 [Max32 page]: http://digilentinc.com/Products/Detail.cfm?NavPath=2,719,895&Prod=CHIPKIT-MAX32.
 [cantranslator]: https://github.com/openxc/cantranslator
