@@ -23,8 +23,7 @@ project via Eclipse, via the command line, or both ways simultaneously.
 
 * Install [Eclipse](http://www.eclipse.org/downloads/) Indigo or later for Java
   Developers. Other versions do not install Maven, which is required.
-* Install the [Android SDK](http://developer.android.com/sdk/index.html) and
-  then the [ADT plugin](http://developer.android.com/sdk/eclipse-adt.html)
+* Install the [Android SDK and ADT plugin for Eclipse](http://developer.android.com/sdk/installing.html)
   from Google.
 * Clone the [openxc-android][] repo (this repo).
 * Open Eclipse and go to `File -> Import -> Maven -> Existing Maven Projects`.
