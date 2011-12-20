@@ -63,7 +63,8 @@ plans to be able to check for the existence of a signal before using it.
     <dd>Boolean (True == pedal pressed)</dd>
 
     <dt>transmission_gear_position</dt>
-    <dd>States: 1, 2, 3, 4, 5, 6, 7, 8, R, N</dd>
+    <dd>States: first, second, third, fourth, fifth, sixth, seventh, eighth,
+            reverse, neutral</dd>
 
     <dt>odometer</dt>
     <dd>0 to 16777214 km</dd>
