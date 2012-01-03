@@ -36,7 +36,9 @@ the `--verbose` flag to have all messages parsed and printed to stdout.
 
 ## Signal List
 
-This is the list of signals officially supported by the Android library.
+This is the list of signals officially supported by the Android library. Be
+aware that vehicles do not neccessarily support all of these signals - there are
+plans to be able to check for the existence of a signal before using it.
 
 <dl>
     <dt>steering_wheel_angle</dt>
@@ -49,7 +51,7 @@ This is the list of signals officially supported by the Android library.
     <dd>0 to 16382 RPM</dd>
 
     <dt>vehicle_speed</dt>
-    <dd>0 to 655 Km/h</dd>
+    <dd>0 to 655 km/h</dd>
 
     <dt>accelerator_pedal_position</dt>
     <dd>0 to 100%</dd>
@@ -64,7 +66,10 @@ This is the list of signals officially supported by the Android library.
     <dd>States: 1, 2, 3, 4, 5, 6, 7, 8, R, N</dd>
 
     <dt>odometer</dt>
-    <dd>0 to 16777214 Km</dd>
+    <dd>0 to 16777214 km</dd>
+
+    <dt>fine_odometer_since_restart</dt>
+    <dd>0 to 4294967295.0 m (notice this has a much higher resolution than the odometer)</dd>
 
     <dt>ignition_status</dt>
     <dd>States: off, accessory, run, start</dd>
