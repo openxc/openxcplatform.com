@@ -69,7 +69,9 @@ plans to be able to check for the existence of a signal before using it.
     <dd>0 to 16777214 km</dd>
 
     <dt>fine_odometer_since_restart</dt>
-    <dd>0 to 4294967295.0 m (notice this has a much higher resolution than the odometer)</dd>
+    <dd>0 to 4294967295.0 m (notice this has a much higher resolution than the
+        odometer, but it restarts back to zero every time the vehicle starts,
+        but it restarts back to zero every time the vehicle starts)</dd>
 
     <dt>ignition_status</dt>
     <dd>States: off, accessory, run, start</dd>
