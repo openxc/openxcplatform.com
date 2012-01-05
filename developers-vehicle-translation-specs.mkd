@@ -90,8 +90,8 @@ plans to be able to check for the existence of a signal before using it.
     <dt>high_beam_status</dt>
     <dd>Boolean, true is on</dd>
 
-    <dt>windshield_wiper_speed</dt>
-    <dd>0 to 31</dd>
+    <dt>windshield_wiper_status</dt>
+    <dd>Boolean, true is on</dd>
 
     <dt>latitude</dt>
     <dd>-89.0 to 89.0 degrees</dd>
