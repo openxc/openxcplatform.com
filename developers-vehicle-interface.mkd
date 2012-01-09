@@ -42,7 +42,8 @@ OpenXC apps while moving is absolutely a two person job.
 
 ## Software
 
-The [cantranslator][] repository contains the C source code that runs on the
+The [cantranslator][] repository (only accessible if logged in to GitHub and
+with access to the early release) contains the C source code that runs on the
 Arduino-compatible chipKIT device. Most OpenXC users won't need to touch this
 component - they will most likely be using a pre-built binary on the vehicle
 interface that knows about proprietary vehicle signals.
@@ -54,7 +55,8 @@ e.g. if they are distributed by an OEM who does not wish to make the CAN signals
 public.
 
 In that case, you will have a .hex file and can use the `upload_hex.sh` script
-in the [cantranslator][] repository to update your device.
+in the [cantranslator][] repository (only accessible if logged in to GitHub and
+with access to the early release) to update your device.
 
     $ ./upload_hex new-version.hex
 

@@ -34,4 +34,51 @@ have patience while we make sure the system is as ready as possible for a wider
 launch.
 </dd>
 
+<dt>Why not just use one of the many commercial OBD-II scanners instead of
+OpenXC?</dt>
+
+<dd>
+
+<p> Certainly, OBD-II has the advantage of being a standard across all vehicles
+sold in North America since 1996, but the standard message set primarily
+concerns the emissions powertrain. The rest of the diagnostic messages are
+non-standard and not available to the public (and certainly not an open source
+project). <a href="http://www.autoenginuity.com/products-software.html#EI01">
+AutoEnginuity</a>, an OBD-II scanner manufacturer explains it well:
+</p>
+
+<blockquote>
+Although Ford does implement the largest subset of the OBD-II standard, the
+typical vehicle only supports 20 - 40 sensors and is limited to emissions
+powertrain.
+</blockquote>
+
+<p>
+This situation is not unique to Ford - the majority of OBD-II PIDs are
+non-standard.
+</p>
+
+<p>
+OpenXC connects the OBD-II port, but it does not currently get data from
+OBD-II diagnostic messages. The OpenXC CAN translator listens passively to the
+many CAN messages already flying across the buses that include data not covered
+by standard OBD-II messages. This includes nearly every sensor on vehicle, but
+they are unfortunately non-standard as well. It's up to each auto company to
+decide how much access they grant by either providing the CAN message
+definitions or a pre-compiled OpenXC translator binary.
+</p>
+
+<p>
+The most important difference between OpenXC and existing tools is the standard
+programming language and OS agnostic
+<a href="/vehicle-interface/translation-specs.html">output</a> sent via USB.
+The reference host device is <a href="android/host.html">Android</a>, but
+there's no reason you couldn't use a Windows or Linux laptop with a USB port
+(i.e. any of them). A port of the
+<a href="android/library-usage.html">openxc-android</a> library to Python or
+plain old (non-Android) Java would be a great addition to the project.
+</p>
+
+<a href="http://en.wikipedia.org/wiki/OBD-II_PIDs#Non-standard_PIDs">Source</a>
+
 </dl>
