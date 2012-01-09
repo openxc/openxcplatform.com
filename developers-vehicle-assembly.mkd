@@ -1,0 +1,136 @@
+---
+layout: default
+permalink: /developers/vehicle-interface/assembly.html
+---
+
+CAN Translator Assembly
+========================
+
+Photos for the assembly process are forthcoming!
+
+## Reference Hardware
+
+This is a list of the hardware used in the reference OpenXC kit - you're
+guaranteed to have a 100% compatible OpenXC device if you use these parts
+exactly. There are many equally compatible variations on this list from hundreds
+of different vendors, so feel free to use other parts you may have on hand (like
+the crimp connectors, for example).
+
+### Minimum
+
+* Digilent chipKIT Max32 Microcontroller from [Digilent][max32] ($50)
+* Digilent chipKIT Network Shield from [Digilent][networkshield] ($55)
+* OBD-II Male to Breakout Cable from [OBD2Cables][obd2] ($13)
+* (3x) 2x6 Crimp Connector Housings from [Pololu][crimpconnectors] (< $1)
+* (4x) Female crimp pins from [Pololu][crimppins] (< $1)
+* Shrink tubing
+
+### Recommended
+
+Exact part numbers for these are forthcoming.
+
+* Enclosure
+  * At least 5" x 2.5" x 2.5"
+* Mounting spacers
+
+## OBD-II Cable
+
+* Print out labels for HS, MS, INFO, and three "  -+"
+* Put labels on three 2x6 crimp pin housings, designating a high speed, mid
+  speed, and infotainment connector.
+* Label each connector indicating a pin on one end as '+', and the pin next to
+  it as '-'
+* Slide the round grommet onto the cable.
+* Cut a section of 3/8" shrink tubing about 1" long.
+* Slide the shrink tubing onto the cable.
+* Verify the color is connected to the proper pin.  Crimp a female pin on the
+  wire, and insert the pin into the correct housing.
+
+
+> White and black pin 6   HS +
+>
+> Green and black pin 14  HS –
+>
+> Light Blue  pin 1   INFO +
+>
+> Green       pin 8   INFO –
+>
+> Orange      pin 3   MS +
+>
+> Purple      pin 11  MS –
+
+* Verify the following wires and trim off the exposed wire down to the
+  individual wire's insulator. These should be saved for future use, although
+  they are not currently used.
+
+> Red     pin 16  Battery voltage
+>
+> Brown       pin 5   Signal ground.
+
+* Trim all other wires (not any connected to the housings, not any of the three
+  to set aside) down to the main cable insulation.
+* Slide the shrink tubing and center it on the end of the insulation.  Bend the
+  extra wires and tuck them between the shrink tubing and main cable insulation.
+  Leave the loop accessible to allow us to pull them free in the future.  With a
+  heat gun, shrink the tubing.
+
+## Lower Enclosure
+
+* Remove the four existing screw sockets from the inside bottom of enclosure.
+* Using the template, drill four new screw holes in the bottom of the enclosure.
+* Put screws into the 4 holes.  Slide enclosure bottom onto table so that the
+  screws are kept in place.
+* Mount the Network Shield on the Max32.
+* Fit the Max32 onto the 4 screws.  Screw holes are not symmetric, so it
+  shouldn't fit if facing the wrong way.
+* Screw round stand-offs onto the screws.  Tighten by holding stand-offs with
+  needlenose pliers while screwdriver tightening the screws.  Be careful on the
+  two screws nearest the ports.  These don't have much support, and the Network
+  Shield will be damaged by over tightening.
+
+## Front Plate
+
+* Using the template, drill the hole for the OBD cable.
+* Trim the OBD cable hole and shape it with a round file.
+* Using the template, drill out and shape the hole for the USB cable using a
+  straight file.
+
+## Power Jumper
+
+* Cut a length of wire, 2" to 3" long.
+* Strip about an 1/8" on both ends.
+* Crimp a female pin to one end.  Crimp a male pin to the other.
+* Put a 1x1 housing on the female end.
+* Put shrink tubing on the male end, enough to cover a bit of the insulation and
+  most of the crimp pin that will not actually get pushed into the socket.  Put
+  a bend in the crimp pin about halfway between the pin and the wire.
+  (Otherwise it won't fit in the enclosure.)  Rather than a single 90 degree
+  bend, put in two bends of 45 degrees.  Don't make either of those bends on the
+  skinny pin, put them both on the thicker body of the crimp pin.
+
+## Final Assembly
+
+* Connect the OBD cable to the Network Shield, HS to CAN#1, INFO to CAN#2.  Be
+  sure to put the + wire at the correct end of the connector.  The HS plug
+  should connect to CAN transceiver #1, and the MS or INFO plug should connect
+  to CAN transceiver #2.
+* Optionally, label the socket and connector indicated the proper plug and plug
+  orientation.
+* Slide the grommet to about where the front plate will be.  Put the front plate
+  on the grommet.  Lay the cable flat on the outside of the Ethernet jack.  Bend
+  the cable between the standoff and the power connector, being careful to put
+  as little strain as possible on the small wires of the 2x6 connectors.  Push
+  the front plate into place.
+* Attach the Power Jumper.  Connect the female end to pin 1 of JP4.  Connect the
+  male end to 5vo on the POWER connector.
+* Put the back plate into place.
+* Put on the enclosure top.
+* Secure the enclosure with the two screws.
+* Attach the hook-side Velcro to the underside, leaving the enclosure screws
+  accessible.
+
+[max32]: http://digilentinc.com/Products/Detail.cfm?NavPath=2,892,894&Prod=CHIPKIT-MAX32
+[networkshield]: http://digilentinc.com/Products/Detail.cfm?NavPath=2,892,942&Prod=CHIPKIT-NETWORK-SHIELD
+[obd2]: http://www.obd2cables.com/products/obd-cables/j1962m-ra-to/cable-j1962m-ra-type-b-to-open-end-6ft.html
+[crimpconnectors]: http://www.pololu.com/catalog/product/1914
+[crimppins]: http://www.pololu.com/catalog/product/1930
