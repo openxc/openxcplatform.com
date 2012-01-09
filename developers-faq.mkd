@@ -8,20 +8,6 @@ Developer FAQ
 
 <dl>
 
-<dt>How do I connect my host device to the web when I'm driving around town?</dt>
-<dd>
-The device we recommend, the Toshiba Thrive, doesn't have 3G built-in. On the
-positive side, this means that the tablet is quite inexpensive even without a
-contract with a wireless provider. On the downside, it only connects to Wi-Fi
-for Internet and 3G dongles aren't well supported in Android as of 3.1. You're
-not out of luck, though - we recommend buying a 3G Wi-Fi hotspot from your
-preferred wireless provider like the MiFi and connecting your host device to
-this over Wi-Fi. Simple and flexible.
-
-If you'd like to use an Android tablet with 3G built-in (like the Samsung Galaxy
-Tab from Verizon), that should work, too.
-</dd>
-
 <dt>If it's an open source project, why can't I access the source code on
 GitHub?</dt>
 <dd>OpenXC is in a limited early release as of January 2012, and the source code
@@ -80,5 +66,31 @@ plain old (non-Android) Java would be a great addition to the project.
 </p>
 
 <a href="http://en.wikipedia.org/wiki/OBD-II_PIDs#Non-standard_PIDs">Source</a>
+
+<dt>Why does use a separate device to connect to the vehicle instead of
+integrating it into the host device (Android or PC)?</dt>
+
+<dd>Very few if any vehicle manufacturers release their CAN message definitions. If
+the translation from proprietary vehicle messages to the standard OpenXC
+equivalents was performed in the same environment as third-party applications,
+it could be more vulnerable to reverse engineering. The strict physical
+separation of translation from user code provides stronger assurance that the
+message definitions will remain private, and the CAN bus will be protected from
+malicious writes from bad applications.</dd>
+
+<dt>How do I connect my host device to the web when I'm driving around town?</dt>
+<dd>
+The device we recommend, the Toshiba Thrive, doesn't have 3G built-in. On the
+positive side, this means that the tablet is quite inexpensive even without a
+contract with a wireless provider. On the downside, it only connects to Wi-Fi
+for Internet and 3G dongles aren't well supported in Android as of 3.1. You're
+not out of luck, though - we recommend buying a 3G Wi-Fi hotspot from your
+preferred wireless provider like the MiFi and connecting your host device to
+this over Wi-Fi. Simple and flexible.
+
+If you'd like to use an Android tablet with 3G built-in (like the Samsung Galaxy
+Tab from Verizon), that should work, too.
+</dd>
+
 
 </dl>
