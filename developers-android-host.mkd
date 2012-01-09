@@ -33,7 +33,7 @@ Ideally, the platform should be accessible to a wide range of programmers from
 novice to expert, and it should use a popular programming language. The barriers
 to understanding and developing for vehicles are high enough (e.g. learning
 about CAN and about UI appropriate at 70mph) that learning a new niche
-programming langauge should be avoided.
+programming language should be avoided.
 
 Android is a massively popular application development environment. Since the
 vehicle interface is only a small part of any OpenXC application, this means
@@ -43,7 +43,7 @@ developers.
 The open hardware part of OpenXC is also supported by Android. All Android
 devices running version 3.1 or later have support for [USB devices][], and many
 tablets include a full-size USB port. Combined with the affordability and
-increasing popularity of Android-based tablets, the liklihood that an interested
+increasing popularity of Android-based tablets, the likelihood that an interested
 developer already has or can acquire one is high.
 
 Android, an open source project, lends itself well to custom hardware that would
