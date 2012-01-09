@@ -7,3 +7,7 @@ body {
 .hero-unit p {
     padding-top: 20px;
 }
+
+li {
+    color: black;
+}
