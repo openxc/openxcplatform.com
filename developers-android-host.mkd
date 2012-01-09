@@ -25,4 +25,31 @@ make building web-enabled applications easier, but a 3G -> WiFi microcell can
 get aroudn this limitation quite easily (see the [FAQ](/developers/faq.html) for
 more details).
 
+## Motivation
+
+The requires for the host device are quite flexible, but it's important that
+OpenXC rally around a single platform to maximize compatibility and momentum.
+Ideally, the platform should be accessible to a wide range of programmers from
+novice to expert, and it should use a popular programming language. The barriers
+to understanding and developing for vehicles are high enough (e.g. learning
+about CAN and about UI appropriate at 70mph) that learning a new niche
+programming langauge should be avoided.
+
+Android is a massively popular application development environment. Since the
+vehicle interface is only a small part of any OpenXC application, this means
+that more general questions can be directed to the existing community of Android
+developers.
+
+The open hardware part of OpenXC is also supported by Android. All Android
+devices running version 3.1 or later have support for [USB devices][], and many
+tablets include a full-size USB port. Combined with the affordability and
+increasing popularity of Android-based tablets, the liklihood that an interested
+developer already has or can acquire one is high.
+
+Android, an open source project, lends itself well to custom hardware that would
+likely be used if OpenXC hosts are mass produced. Some of the most expensive
+components of a tablet (battery, LCD screen, GPS receiver, etc.) can be left out
+to hit an ever lower price point.
+
 [thrive]: http://us.toshiba.com/tablets/thrive/10-inch/
+[USB devices]: http://developer.android.com/guide/topics/usb/index.html
