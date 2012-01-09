@@ -12,6 +12,11 @@ listens for a subset of CAN messages, performs required unit conversion or
 factoring and outputs a [generic version][translation-specs] to the USB
 interface.
 
+Unless you are implementing custom CAN messages, you will most likely need a
+pre-built OpenXC binary from the manufacturer of your vehicle. Each OEM can
+decide whether or not to participate in OpenXC and if so, how many of the
+signals they wish to expose.
+
 ## Hardware
 
 The current implementation uses the [Digilent chipKIT Max32][chipkit], an
