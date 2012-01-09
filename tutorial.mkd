@@ -33,7 +33,8 @@ of kits with OpenXC signals defined for the 2012 Ford Focus. Join the project's
 ## Example Application
 
 For an example of a complete OpenXC application, check out the
-[Vehicle Dashboard][] app in the [openxc-android][] repository.
+[Vehicle Dashboard][] app in the [openxc-android][] repository (only available
+if logged into GitHub and with access to the early release).
 
 [gg]: http://groups.google.com/group/openxc
 [sdk]: http://developer.android.com/sdk/installing.html

@@ -6,7 +6,8 @@ layout: default
 
 <p>
     Find all the source code for OpenXC at
-    <a href="https://github.com/openxc">GitHub</a>.
+    <a href="https://github.com/openxc">GitHub</a>. The source code is currently
+    only available to developers signed up for the early release.
 </p>
 
 <h2>Report Bugs</h2>

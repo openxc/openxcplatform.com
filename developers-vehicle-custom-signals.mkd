@@ -3,5 +3,12 @@ layout: default
 permalink: /developers/vehicle-interface/custom-signals.html
 ---
 
+Custom CAN Signal Definition
+=============
+
+Developers that know the details of the CAN bus they will be using can choose to
+implement their own signal definitions for the translator. The documentation for
+this process is available at the [cantranslator][] repository (only accessible
+if logged in to GitHub and with access to the early release).
 
 [cantranslator]: https://github.com/openxc/cantranslator
