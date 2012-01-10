@@ -87,6 +87,7 @@ Ford is one of the founding members of OpenXC.
 * Wired, [Ford Aims to Make Your Ride Plug-and-Play](http://www.wired.com/autopia/2011/09/ford-research-car-apps/)
 * PSFK, [Ford Working On OpenXC Platform That Will Let Your Hack Your Car](http://www.psfk.com/2011/09/ford-working-on-openxc-platform-that-will-let-your-hack-your-car.html#ixzz1cUD4byg0)
 * TechCrunch, [Ford Partners With Bug Labs To Develop Open Source Platform For In-Car Innovatin’](http://techcrunch.com/2011/09/12/ford-partners-with-bug-labs-to-develop-open-source-platform-for-in-car-innovatin/)
+* Technology Review, [Ford Bets on the Digital Car](http://www.technologyreview.com/business/39413/page4/)
 
 ## Other Projects
 
