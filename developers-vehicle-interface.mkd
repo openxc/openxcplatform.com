@@ -28,6 +28,12 @@ The translator is currently powered via its micro-USB board, which is connected
 to the host device. CAN messages are received via the OBD-II port in the
 driver's footwell.
 
+**An Important Note:** In order to power the board via micro-USB, we have to connect
+the 5v buses of the chipKIT and network shield. This means that you absolutely
+must not plug the mini-USB and micro-USB ports in to different devices at the
+same time! This would short 2 different 5v sources together and likely destroy
+the chipKIT and network shield.
+
 The OBD-II cable can be plugged in at any time, with the vehicle running or off.
 The cable only fits one way, like a USB cable.
 
@@ -44,6 +50,8 @@ back of the seat and up between the seats.
 
 Most importantly, *do not* try to test your application while in motion! Testing
 OpenXC apps while moving is absolutely a two person job.
+
+![Completed CAN translator](/images/assembly/openxc-assembly-19.jpg)
 
 ## Software
 
