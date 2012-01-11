@@ -81,7 +81,7 @@ selected a small set of the most interesting signals to get started.
     <dd>States: off, accessory, run, start</dd>
 
     <dt>fuel_level</dt>
-    <dd>0 - 204.6 L</dd>
+    <dd>0 - 100%</dd>
 
     <dt>door_status</dt>
     <dd>Value is State: front_left, front_right, rear_left, rear_right, boot.
