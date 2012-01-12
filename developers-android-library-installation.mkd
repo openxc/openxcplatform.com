@@ -19,6 +19,25 @@ The library is available on GitHub in the [openxc-android][] repository.
 This project declares dependencies with Maven - you can choose to use the
 project via Eclipse, via the command line, or both ways simultaneously.
 
+### Android SDK and Maven
+
+The most recent version of the Android SDK currently available in the central
+Maven repository is unfortunately 2.3. You'll need to install a more recent
+version in your own local Maven repository.
+
+The recommended method is to use the
+[maven-android-sdk-deployer](https://github.com/mosabua/maven-android-sdk-deployer).
+You will need to set the the `ANDROID_HOME` environment variable (see the
+project's
+[README](https://github.com/mosabua/maven-android-sdk-deployer/blob/master/README.markdown)
+for more details) and run:
+
+    $ mvn install -P 3.1
+
+If you have a remote Maven repository you share with others, I'm sure they would
+thank you if you uploaded the resulting files - that way, nobody needs to do
+this part.
+
 ### Using Eclipse
 
 * Install [Eclipse](http://www.eclipse.org/downloads/) Indigo or later for Java
@@ -116,20 +135,3 @@ and in the `AndroidManifest.xml`:
             <meta-data android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"
                     android:resource="@xml/device_filter" />
       </activity>
-
-## Android SDK and Maven
-
-The most recent version of the Android SDK currently available in the central
-Maven repository is 2.3. You'll need to install a more recent version in your
-own local repository.
-
-The recommended method is using the
-[maven-android-sdk-deployer](https://github.com/mosabua/maven-android-sdk-deployer).
-All you should need is to set the `ANDROID_HOME` environment variable (see the
-project's README for more details) and run:
-
-    $ mvn install -P 3.1
-
-If you have a remote Maven repository you share with others, I'm sure they would
-thank you if you uploaded the resulting files - that way, nobody needs to do
-this part.
