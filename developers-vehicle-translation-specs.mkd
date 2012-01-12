@@ -87,7 +87,7 @@ selected a small set of the most interesting signals to get started.
     <dd>0 - 4294967295.0 L (this goes to 0 every time the vehicle restarts)</dd>
 
     <dt>door_status</dt>
-    <dd>Value is State: front_left, front_right, rear_left, rear_right, boot.
+    <dd>Value is State: driver, passenger, rear_left, rear_right.
         Event is Boolean: true == ajar</dd>
 
     <dt>headlamp_status</dt>
