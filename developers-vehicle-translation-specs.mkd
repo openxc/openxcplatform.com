@@ -83,6 +83,9 @@ selected a small set of the most interesting signals to get started.
     <dt>fuel_level</dt>
     <dd>0 - 100%</dd>
 
+    <dt>fuel_consumed_since_restart</dt>
+    <dd>0 - 4294967295.0 L (this goes to 0 every time the vehicle restarts)</dd>
+
     <dt>door_status</dt>
     <dd>Value is State: front_left, front_right, rear_left, rear_right, boot.
         Event is Boolean: true == ajar</dd>
