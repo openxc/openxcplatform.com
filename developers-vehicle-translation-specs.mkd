@@ -73,7 +73,7 @@ selected a small set of the most interesting signals to get started.
     <dd>0 to 16777214 km</dd>
 
     <dt>fine_odometer_since_restart</dt>
-    <dd>0 to 4294967295.0 m (notice this has a much higher resolution than the
+    <dd>0 to 4294967295.0 km (this has a much higher resolution than the
         odometer, but it restarts back to zero every time the vehicle starts,
         but it restarts back to zero every time the vehicle starts)</dd>
 
