@@ -17,6 +17,16 @@ pre-built OpenXC binary from the manufacturer of your vehicle. Each OEM can
 decide whether or not to participate in OpenXC and if so, how many of the
 signals they wish to expose.
 
+As of January 2012, OpenXC is supported on:
+
+### Supported Vehicles
+
+* Ford Vehicles
+    * 2011 - 2012 Focus
+    * 2012 Mustang
+    * 2012 Fiesta
+    * 2011 Figo
+
 ## Hardware
 
 The current implementation uses the [Digilent chipKIT Max32][chipkit], an
