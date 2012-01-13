@@ -105,6 +105,14 @@ can accept either VehicleButtonEvents or regular Android key events as input.
 You may want a flag to disable the Android key events when running in
 production.
 
+For example, the OpenXC specification includes a signal for a D-pad style
+controller. The 2012 Ford Focus has such a controller on the steering wheel.
+The Android emulator will send `KEYCODE_DPAD_*`
+[KeyEvents](http://developer.android.com/reference/android/view/KeyEvent.html)
+when you press the arrows on your computer's num pad. These are a good parallel
+and it should be simple to have your event handlers watch for *either* the
+vehicle D-pad event or the Android event.
+
 ### Emulated Vehicle Measurements
 
 The library ships with a method for playing back previously recorded vehicle
