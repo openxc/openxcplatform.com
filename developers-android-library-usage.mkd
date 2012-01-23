@@ -113,6 +113,48 @@ when you press the arrows on your computer's num pad. These are a good parallel
 and it should be simple to have your event handlers watch for *either* the
 vehicle D-pad event or the Android event.
 
+Here's an example - if you want your application to send a text message when the
+user presses the down button on the steering wheel, write a function that
+performs the action:
+
+    public void sendTextMessage() {
+        // send a text message
+        ...
+    }
+
+To hook this up to Android `KeyEvent`, define an `onKey` method in your
+activity:
+
+    @Override
+    public boolean onKeyDown(int i, KeyEvent event) {
+        if (i == KeyEvent.KEYCODE_DPAD_DOWN) {
+            sendTextMessage();
+            return true;
+        }
+        super.onKeyDown(i, event);
+        return true;
+    }
+
+This connects your functionality to the virtual button in the Android emulator.
+To have this actually work in the car, you need to register a handler for the
+VehicleButtonEvent.
+
+    VehicleButtonEvent.Listener listener = new VehicleButtonEvent.Listener() {
+        public void receive(VehicleMeasurement measurement) {
+            final VehicleButtonEvent event (VehicleButtonEvent) measurement;
+            if(!event.isNone()) {
+                try {
+                    if(event.getAction() ==
+                                VehicleButtonEvent.ButtonAction.PRESSED,
+                            && event.getValue() ==
+                                VehicleButtonEvent.ButtonId.DOWN) {
+                        sendTextMessage();
+                    }
+                } catch(NoValueException e) {}
+            }
+        }
+    }
+
 ### Emulated Vehicle Measurements
 
 The library ships with a method for playing back previously recorded vehicle
