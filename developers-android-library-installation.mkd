@@ -16,8 +16,15 @@ The library is available on GitHub in the [openxc-android][] repository.
 
 ## Installation
 
-This project declares dependencies with Maven - you can choose to use the
-project via Eclipse, via the command line, or both ways simultaneously.
+This project declares dependencies with Maven - you can theoritcally choose to use the
+project via Eclipse, via the command line, or both ways simultaneously. At the
+moment, you'll need to install the command-line version of Maven (and not just
+use the maven built-in to Eclipse) because of the Android SDK requirement
+described in the next section.
+
+Make sure you install Maven 3.0.4 or later - it's just a Java program, so as
+long as you have a working JRE, "installing" Maven just means extracting the
+.zip file somewhere in your shell's `PATH` and running the `mvn` executable.
 
 ### Android SDK and Maven
 
