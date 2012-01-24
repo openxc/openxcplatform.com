@@ -190,11 +190,14 @@ block until the service is ready to start playing back the trace - but can be
 useful for testing when you need to make sure you will get a measurement back
 from the system.
 
-We have two short trace files available for testing: [idling while parked][] and a
-[short drive][].
+We have two short trace files available for testing: [idling while parked][] and
+a [short drive][]. Be aware that Android's raw resources don't work well with
+file extensions. It's easier to just name your trace files without one and refer
+to the complete filename in the Java code, e.g. the `driving` trace file located
+at `res/raw/driving` is be refernced by `R.raw.driving`.
 
-[idling while parked]: http://dl.dropbox.com/u/980077/openxc/c346_parked.json
-[short drive]: http://dl.dropbox.com/u/980077/openxc/c346_driving.json
+[idling while parked]: http://dl.dropbox.com/u/980077/openxc/parked
+[short drive]: http://dl.dropbox.com/u/980077/openxc/driving
 
 [apache]: http://www.apache.org/licenses/LICENSE-2.0.html
 [binding]: http://developer.android.com/guide/topics/fundamentals/bound-services.html#Binding)
