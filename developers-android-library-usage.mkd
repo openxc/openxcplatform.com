@@ -194,7 +194,15 @@ We have two short trace files available for testing: [idling while parked][] and
 a [short drive][]. Be aware that Android's raw resources don't work well with
 file extensions. It's easier to just name your trace files without one and refer
 to the complete filename in the Java code, e.g. the `driving` trace file located
-at `res/raw/driving` is be refernced by `R.raw.driving`.
+at `res/raw/driving` is be referenced by `R.raw.driving`.
+
+One final note about trace files - if you have multiple applications installed
+that try to set different trace files, you may encounter "Resource not found"
+errors when one app tries to open another's resource. This is a known issue and
+is in the bug queue - for now, just make sure you are only testing one app at a
+time on a device. This includes the `com.openxc` integration testing package
+which may have been installed if you ran `mvn install` in the `openxc-android`
+project. To remove it from the device just run `adb uninstall com.openxc`.
 
 [idling while parked]: http://dl.dropbox.com/u/980077/openxc/parked
 [short drive]: http://dl.dropbox.com/u/980077/openxc/driving
