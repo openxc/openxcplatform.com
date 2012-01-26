@@ -23,7 +23,7 @@ Request to bind with the service in the normal fashion:
 Then, in your `onServiceConnected()` grab the service handle and cast it to the
 correct type:
 
-    VehcileService vehicleService;
+    VehicleService vehicleService;
     private ServiceConnection mConnection = new ServiceConnection() {
         // Called when the connection with the service is established
         public void onServiceConnected(ComponentName className, IBinder service) {
@@ -93,6 +93,38 @@ position:
 
     range = measurement.getRange();
     int percentage = measurement.getValue() / range;
+
+### Location
+
+The Android framework includes built-in support for location information - most
+devices support determining position based on CellID, GPS and Wi-fi. OpenXC's
+latitude, longitude and vehicle speed are exposed through this interface using a
+mocked location provider. This functionality is provided by Android primarily
+for testing, but it's also a useful way to inject location data from sources
+other than the built-in sensors. It works well with Bluetooth GPS receivers,
+too.
+
+If your app already uses the Android location framework, with a very small
+change you can increase the accuracy by taking advantage of the GPS receiver
+built into many vehicles (including the 2012 Ford Focus, even those without a
+navigation system).
+
+Add the `ACCESS_FINE_LOCATION` and `ACCESS_MOCK_LOCATION` permission to your
+   app's `AndroidManifest.xml`:
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+
+Open a connection to the `VehicleService` as described earlier in "Service
+Binding." Then access [user location][] in the traditional Android fashion -
+data from the `LocationManager.GPS_PROVIDER` and
+`VehicleService.VEHICLE_LOCATION_PROVIDER` providers will be coming from OpenXC.
+You may want to continue to use the `GPS_PROVIDER` so your app can support
+switching from built-in GPS to the vehicle's receiver.
+
+    locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
+
+[user location]: http://developer.android.com/guide/topics/location/obtaining-user-location.html
 
 ## Testing
 
