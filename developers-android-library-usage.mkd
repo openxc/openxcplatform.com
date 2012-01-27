@@ -10,6 +10,8 @@ Vehicle measurements are accessed through an [Android service][services]. Your
 application connects to an in-process [VehicleService][] which handles reading
 fresh data from the vehicle.
 
+This document describes the interface for the OpenXC library **version 1.1**.
+
 ### Service Binding
 
 You must first [bind][binding] with the [VehicleService][] before you can receive
@@ -42,7 +44,11 @@ correct type:
 Once the service is bound and you have a connection to it in your activity, you
 can receive measurements on demand (i.e. synchronously).
 
-    VehicleSpeed measurement = vehicleService.get(VehicleSpeed.class);
+    try {
+        VehicleSpeed measurement = vehicleService.get(VehicleSpeed.class);
+    } catch(NoValueException e) {
+        Log.w(TAG, "The vehicle may not have made the measurement yet");
+    }
 
 ### Asynchronous
 
@@ -52,9 +58,7 @@ register with the service to be notified of updates.
     VehicleSpeed.Listener listener = new VehicleSpeed.Listener() {
         public void receive(VehicleMeasurement measurement) {
             final VehicleSpeed speed = (VehicleSpeed) measurement;
-            if(!speed.isNone()) {
-                // do stuff with the measurement
-            }
+            // do stuff with the measurement
         }
     };
     vehicleService.addListener(VehicleSpeed.class, listener);
@@ -74,15 +78,16 @@ Occasionally a measurement will not have been received from the CAN translator
 yet - it could be a malfunction, or you're just checking too early for an
 infrequently updated measurement:
 
-    VehicleSpeed measurement = vehicleService.get(VehicleSpeed.class);
-    if(measurement.isNone()) {
+    try {
+        VehicleSpeed measurement = vehicleService.get(VehicleSpeed.class);
         // do stuff with it
+    } catch(NoValueException e) {
+        Log.w(TAG, "The vehicle may not have made the measurement yet");
     }
 
 You can check the age of a measurement to determine how long ago the state was
 actually reflected in the physical vehicle:
 
-    VehicleSpeed measurement = vehicleService.get(VehicleSpeed.class);
     if(measurement.getAge() < 10) {
         // only if age is less than 10 seconds
     }
@@ -174,15 +179,11 @@ VehicleButtonEvent.
     VehicleButtonEvent.Listener listener = new VehicleButtonEvent.Listener() {
         public void receive(VehicleMeasurement measurement) {
             final VehicleButtonEvent event (VehicleButtonEvent) measurement;
-            if(!event.isNone()) {
-                try {
-                    if(event.getAction() ==
-                                VehicleButtonEvent.ButtonAction.PRESSED,
-                            && event.getValue() ==
-                                VehicleButtonEvent.ButtonId.DOWN) {
-                        sendTextMessage();
-                    }
-                } catch(NoValueException e) {}
+            if(event.getAction() ==
+                        VehicleButtonEvent.ButtonAction.PRESSED,
+                    && event.getValue() ==
+                        VehicleButtonEvent.ButtonId.DOWN) {
+                sendTextMessage();
             }
         }
     }
