@@ -1,0 +1,140 @@
+---
+layout: slim
+title: OpenXC
+---
+
+# The OpenXC Platform
+
+OpenXC is combination of open source hardware and software that lets consumers
+extend your vehicle with custom applications and pluggable modules. It uses
+standard, well-known tools to open up a wealth of data from the vehicle to
+developers.
+
+### Participating Members
+
+**Ford** is one of the founding members of the OpenXC open source project. **Bug
+Labs** is also a founding member, and contributed to a demo of a prototype
+OpenXC system at the TechCrunch Disrupt conference in San Francisco in September
+2011.
+
+## Technical Overview
+
+The OpenXC architecture is divided into two halves - a CAN translation module
+and a host device.
+
+### CAN Translator Module
+
+The CAN translation module is a device that reads proprietary CAN signals from
+the OBD-II port in the vehicle, converts from engineering units to a more human
+scale, and outputs a subset of the signals to another interface in a standard
+cross-vehicle format
+
+The module is a microcontroller with two connections - one to the CAN bus via
+the OBD-II port, and one to the [host device][] via USB. It listens for a subset
+of CAN messages, performs required unit conversion or factoring and outputs a
+[generic version][translation-specs] to the USB interface.
+
+![Completed CAN translator](/images/assembly/openxc-assembly-19-smaller.jpg)
+![Completed CAN translator](/images/assembly/openxc-assembly-17-smaller.jpg)
+
+### Host Device
+
+The host device is where all user code runs - it reads vehicle data over USB
+from the CAN translation module and makes it available to developers in a
+programmatic way.
+
+The reference host device is a standard Android device that supports the Android
+Platform version 3.1 or higher.
+
+![OpenXC Architecture Diagram](/images/openxc-architecture-smaller.jpeg)
+
+### Supported Vehicles
+
+As of January 2012, OpenXC is supported on:
+
+* Ford Vehicles
+    * 2011 - 2012 Focus
+    * 2012 Mustang
+    * 2012 Fiesta
+    * 2011 Figo
+
+### Signal List
+
+This is the list of signals officially supported by the Android library. Be
+aware that vehicles do not neccessarily support all of these signals - there are
+plans to be able to check for the existence of a signal before using it.
+
+There are potentailly many more signals available on the CAN bus, but we've
+selected a small set of the most interesting signals to get started.
+
+<dl>
+    <dt>steering_wheel_angle</dt>
+    <dd>-400 to +400 degrees</dd>
+
+    <dt>powertrain_torque</dt>
+    <dd>-500 to 1500 Nm</dd>
+
+    <dt>engine_speed<dt>
+    <dd>0 to 16382 RPM</dd>
+
+    <dt>vehicle_speed</dt>
+    <dd>0 to 655 km/h</dd>
+
+    <dt>accelerator_pedal_position</dt>
+    <dd>0 to 100%</dd>
+
+    <dt>parking_brake_status</dt>
+    <dd>Boolean (true == brake engaged)</dd>
+
+    <dt>brake_pedal_status</dt>
+    <dd>Boolean (True == pedal pressed)</dd>
+
+    <dt>transmission_gear_position</dt>
+    <dd>States: first, second, third, fourth, fifth, sixth, seventh, eighth,
+            reverse, neutral</dd>
+
+    <dt>odometer</dt>
+    <dd>0 to 16777214 km</dd>
+
+    <dt>fine_odometer_since_restart</dt>
+    <dd>0 to 4294967295.0 km (this has a much higher resolution than the
+        odometer, but it restarts back to zero every time the vehicle starts,
+        but it restarts back to zero every time the vehicle starts)</dd>
+
+    <dt>ignition_status</dt>
+    <dd>States: off, accessory, run, start</dd>
+
+    <dt>fuel_level</dt>
+    <dd>0 - 100%</dd>
+
+    <dt>fuel_consumed_since_restart</dt>
+    <dd>0 - 4294967295.0 L (this goes to 0 every time the vehicle restarts)</dd>
+
+    <dt>door_status</dt>
+    <dd>Value is State: driver, passenger, rear_left, rear_right.
+        Event is Boolean: true == ajar</dd>
+
+    <dt>headlamp_status</dt>
+    <dd>Boolean, true is on</dd>
+
+    <dt>high_beam_status</dt>
+    <dd>Boolean, true is on</dd>
+
+    <dt>windshield_wiper_status</dt>
+    <dd>Boolean, true is on</dd>
+
+    <dt>latitude</dt>
+    <dd>-89.0 to 89.0 degrees</dd>
+
+    <dt>longitude</dt>
+    <dd>-179.0 to 179.0 degrees</dd>
+
+    <dt>button_event</dt>
+    <dd>Value is State: left, right, up, down, ok.
+        Event is State: idle, pressed, released, held_short, held_long, stuck</dd>
+</dl>
+
+## Contact
+
+For more information on OpenXC, visit the project's web page at
+http://openxcplatform.com or contact Chris Peplin at cpeplin@ford.com.
