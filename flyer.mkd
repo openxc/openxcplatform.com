@@ -30,9 +30,9 @@ scale, and outputs a subset of the signals to another interface in a standard
 cross-vehicle format
 
 The module is a microcontroller with two connections - one to the CAN bus via
-the OBD-II port, and one to the [host device][] via USB. It listens for a subset
+the OBD-II port, and one to the host device via USB. It listens for a subset
 of CAN messages, performs required unit conversion or factoring and outputs a
-[generic version][translation-specs] to the USB interface.
+generic version to the USB interface.
 
 ![Completed CAN translator](/images/assembly/openxc-assembly-19-smaller.jpg)
 ![Completed CAN translator](/images/assembly/openxc-assembly-17-smaller.jpg)
