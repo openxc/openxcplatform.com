@@ -65,10 +65,11 @@ this part.
   Configuration. Select the `openxc` project in the dialog and click OK.
 
 ![Changing the Build Path](/images/screenshots/eclipse-build-path.png)
+![Changing the Project Dependencies](/images/screenshots/eclipse-project-dependency.png)
 
 * Start a new Android project for your application if you haven't already.
-* Right click on your project and go to `Build Path -> Configure Build Path`.
-    Click the `Projects` tab and add a reference to the `openxc` project.
+* Right click on your project and go to `Properties -> Andoird`.
+    In the "Library" section add a reference to the `openxc` project.
 
 ![Updating the Maven project config](/images/screenshots/eclipse-update-maven.png)
 
