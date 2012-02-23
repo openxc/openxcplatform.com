@@ -127,6 +127,9 @@ starts the vehicle service at boot and makes sure it stays alive - this way,
 your app doesn't have to worry about USB permissions or reacting to device
 detachment/reattachment.
 
+After you install the app, it's important that you launch it once manually from
+the app drawer, otherwise the service will not automatically start at boot.
+
 If you don't want to use the enabler app, it's certainly possible to start the
 service from your application directly. Look at the [source for the
 enabler][enabler] to see exactly how to accomplish that.
