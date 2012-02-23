@@ -100,7 +100,7 @@ without Eclipse.
         <dependency>
             <groupId>com.openxc</groupId>
             <artifactId>openxc</artifactId>
-            <version>1.0.0</version>
+            <version>1.1</version>
             <type>apklib</type>
         </dependency>
     </dependencies>
@@ -110,39 +110,26 @@ without Eclipse.
 ### Android Manifest
 
 The OpenXC services must be defined in your application's `AndroidManifest.xml`
-before using them. Add this inside the `<application>` tag:
+before using them. Add this `<service>` tag to your app:
 
-      <service android:name="com.openxc.VehicleService"/>
-      <service android:name="com.openxc.remote.RemoteVehicleService" android:process=":remote">
-          <intent-filter>
-              <action android:name="com.openxc.remote.RemoteVehicleServiceInterface" />
-          </intent-filter>
-      </service>
+    <application>
+        ...
+        <service android:name="com.openxc.VehicleService"/>
+        ...
+    </application>
 
-You must also specify that your application uses the USB host feature (inside
-the `<application>` tag):
+### Enabler
 
-      <uses-feature android:name="android.hardware.usb.host"
-              android:required="true" />
+The best way to make the USB vehicle interface available to your app is to
+install the **OpenXC Enabler** app - this is in the `openxc-android` source, but
+we've also made it available as an APK in the [downloads][] section. This app
+starts the vehicle service at boot and makes sure it stays alive - this way,
+your app doesn't have to worry about USB permissions or reacting to device
+detachment/reattachment.
 
-### USB Device Filter
+If you don't want to use the enabler app, it's certainly possible to start the
+service from your application directly. Look at the [source for the
+enabler][enabler] to see exactly how to accomplish that.
 
-If you want your application to refresh the vehicle interface when the USB
-vehicle interface is plugged in, you must include an XML file defining a USB
-device filter. Save this XML to `res/xml/device_filter.xml`:
-
-    <?xml version="1.0" encoding="utf-8"?>
-    <resources>
-        <usb-device vendor-id="1240" />
-    </resources>
-
-and in the `AndroidManifest.xml`:
-
-      <activity android:name="com.openxc.remote.sources.usb.UsbDeviceAttachmentActivity">
-            <intent-filter>
-                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
-            </intent-filter>
-
-            <meta-data android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"
-                    android:resource="@xml/device_filter" />
-      </activity>
+[downloads]: https://github.com/openxc/openxc-android/downloads
+[enabler]: https://github.com/openxc/openxc-android/tree/master/enabler
