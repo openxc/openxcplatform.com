@@ -18,37 +18,14 @@ logged into GitHub.
 
 ## Installation
 
-This project declares dependencies with Maven - you can theoritcally choose to use the
-project via Eclipse, via the command line, or both ways simultaneously. At the
-moment, you'll need to install the command-line version of Maven (and not just
-use the maven built-in to Eclipse) because of the Android SDK requirement
-described in the next section.
+This project declares dependencies with Maven - you can choose to develop with
+OpenXC via Eclipse, the command line, or both ways simultaneously.
 
-Make sure you install Maven 3.0.4 or later - it's just a Java program, so as
-long as you have a working JRE, "installing" Maven just means extracting the
-.zip file somewhere in your shell's `PATH` and running the `mvn` executable.
-
-### Android SDK and Maven
-
-The most recent version of the Android SDK currently available in the central
-Maven repository is unfortunately 2.3. You'll need to install a more recent
-version in your own local Maven repository.
-
-The recommended method is to use the
-[maven-android-sdk-deployer](https://github.com/mosabua/maven-android-sdk-deployer).
-You will need to set the the `ANDROID_HOME` environment variable (see the
-project's
-[README](https://github.com/mosabua/maven-android-sdk-deployer/blob/master/README.markdown)
-for more details) and run Maven:
-
-
-    $ export ANDROID_HOME=/path/to/the/android/sdk
-    $ cd /path/to/cloned/sdk/deployer/repo
-    $ mvn install -P 3.1
-
-If you have a remote Maven repository you share with others, I'm sure they would
-thank you if you uploaded the resulting files - that way, nobody needs to do
-this part.
+You'll need to install the command-line version of Maven (and not just use the
+maven built-in to Eclipse) if you plan to do command-line development. Make sure
+you install Maven 3.0.4 or later - it's just a Java program, so as long as you
+have a working JRE, "installing" Maven just means extracting the .zip file
+somewhere in your shell's `PATH` and running the `mvn` executable.
 
 ### Using Eclipse
 
