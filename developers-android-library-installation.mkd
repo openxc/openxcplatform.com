@@ -43,6 +43,7 @@ for more details) and run Maven:
 
 
     $ export ANDROID_HOME=/path/to/the/android/sdk
+    $ cd /path/to/cloned/sdk/deployer/repo
     $ mvn install -P 3.1
 
 If you have a remote Maven repository you share with others, I'm sure they would
