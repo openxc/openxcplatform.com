@@ -26,6 +26,8 @@ As of January 2012, OpenXC is supported on:
     * 2012 Mustang
     * 2012 Fiesta
     * 2011 Figo
+    * 2011 Fusion
+    * 2009 F-150
 
 ## Hardware
 
