@@ -45,7 +45,7 @@ selected a small set of the most interesting signals to get started.
 
 <dl>
     <dt>steering_wheel_angle</dt>
-    <dd>-400 to +400 degrees</dd>
+    <dd>-600 to +600 degrees</dd>
 
     <dt>powertrain_torque</dt>
     <dd>-500 to 1500 Nm</dd>
