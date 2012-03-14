@@ -88,16 +88,6 @@ with access to the early release) to update your device.
 This script requires that [MPIDE][] is installed, and the environment variable
 `ARDUINO_DIR` points to the MPIDE directory.
 
-You also need the chipKIT network shield libraries (provided by Microchip).
-Download these from the bottom of the [Max32 page][] and extract them to your
-MPIDE sketchbook directory in a subdirectory named `libraries`. It should look
-like this:
-
-    - /Users/me/sketchbook/
-    ---- libraries/
-    -------- chipKITUSBDevice/
-            ... other libraries
-
 ### Custom CAN Signal Definition
 
 Developers that know the details of the CAN bus they will be using can choose to
