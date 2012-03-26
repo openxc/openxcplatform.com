@@ -33,7 +33,8 @@ somewhere in your shell's `PATH` and running the `mvn` executable.
   Developers. Other versions do not install Maven, which is required.
 * Install the [Android SDK and ADT plugin for Eclipse](http://developer.android.com/sdk/installing.html)
   from Google.
-* Clone the [openxc-android][] repo (this repo).
+* Clone the [openxc-android][] repo (this repo). Right now, the code is only
+  available to developers in the early preview.
 * Open Eclipse and go to `File -> Import -> Maven -> Existing Maven Projects`.
   Browse to where you cloned the repository and import the `openxc` project.
 
@@ -67,7 +68,8 @@ without Eclipse.
   `mvn` executable is somewhere on your shell's `PATH`.
 * Follow the instructions in the "Android SDK and Maven" section of this
   document to install the latest version of the Android SDK for Maven
-* Clone the [openxc-android][] repo (this repo).
+* Clone the [openxc-android][] repo (this repo). Right now, the code is only
+  available to developers in the early preview.
 * Run `mvn install -p openxc` from the `openxc` directory to package and install
   the `openxc` library to your local Maven repository.
 * Start a new Android project if you haven't already (check out the
