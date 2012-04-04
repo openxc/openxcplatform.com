@@ -89,8 +89,8 @@ without Eclipse.
 
 ### Android Manifest
 
-The OpenXC services must be defined in your application's `AndroidManifest.xml`
-before using them. Add this `<service>` tag to your app:
+The OpenXC service must be defined in your application's `AndroidManifest.xml`
+before using it. Add this `<service>` tag to your app:
 
     <application>
         ...
