@@ -20,6 +20,14 @@ have patience while we make sure the system is as ready as possible for a wider
 launch.
 </dd>
 
+<dt>Who can I contact at Ford about OpenXC?</dt>
+<dd>The Ford team is always reading the
+<a href="http://groups.google.com/group/openxc">Google Group</a>, and that's the
+best place to get an answer to your question. Once the code is released on
+GitHub, you won't need any special permission or agreements from us to get
+started!
+</dd>
+
 <dt>Why not just use one of the many commercial OBD-II scanners instead of
 OpenXC?</dt>
 
