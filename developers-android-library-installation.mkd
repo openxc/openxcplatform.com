@@ -21,12 +21,6 @@ logged into GitHub.
 This project declares dependencies with Maven - you can choose to develop with
 OpenXC via Eclipse, the command line, or both ways simultaneously.
 
-You'll need to install the command-line version of Maven (and not just use the
-maven built-in to Eclipse) if you plan to do command-line development. Make sure
-you install Maven 3.0.4 or later - it's just a Java program, so as long as you
-have a working JRE, "installing" Maven just means extracting the .zip file
-somewhere in your shell's `PATH` and running the `mvn` executable.
-
 ### Using Eclipse
 
 * Install [Eclipse](http://www.eclipse.org/downloads/) Indigo or later for Java
@@ -62,6 +56,12 @@ somewhere in your shell's `PATH` and running the `mvn` executable.
 
 If you prefer to compile and deploy from the command line, you can use Maven
 without Eclipse.
+
+You'll need to install the command-line version of Maven (and not just use the
+Maven built-in to Eclipse). Make sure you install Maven 3.0.4 or later - it's
+just a Java program, so as long as you have a working JRE, "installing" Maven
+just means extracting the .zip file somewhere in your shell's `PATH` and running
+the `mvn` executable.
 
 * Install [Maven](http://maven.apache.org/) - it's just a Java application, so
   "installation" can be as simple as extracting the download and making sure the
