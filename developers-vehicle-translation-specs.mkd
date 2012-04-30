@@ -15,15 +15,15 @@ There are two valid message types - single valued and event.
 
 The expected format of a single valued message is:
 
-    {"name": "SteeringWheelAngle", "value": 45}
+    {"name": "steering_wheel_angle", "value": 45}
 
 ### Event
 
 The expected format of an event message is:
 
-    {"name": "SteeringWheelAngle", "value": "up", "event": "pressed"}
+    {"name": "button_event", "value": "up", "event": "pressed"}
 
-This format is good for something like a button even, where there are two
+This format is good for something like a button event, where there are two
 discrete pieces of information in the measurement.
 
 ## Viewer
