@@ -210,10 +210,10 @@ recommend storing these on the SD card):
 
         Intent startIntent = new Intent();
         startIntent.setClass(getContext(), VehicleManager.class);
-        service = ((VehicleManager.VehicleManagerBinder)
+        service = ((VehicleManager.VehicleBinder)
                 bindService(startIntent)).getService();
         service.waitUntilBound();
-        service.setDataSource(TraceVehicleDataSource.class.getName(),
+        service.addSource(new TraceVehicleDataSource(
                 "file:///sdcard/com.openxc/trace.json");
 
 The final `service.waitUntilBound()` line is optional - it causes the thread to
