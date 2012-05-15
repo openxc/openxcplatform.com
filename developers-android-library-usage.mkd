@@ -7,35 +7,35 @@ Android Library Usage
 =============
 
 Vehicle measurements are accessed through an [Android service][services]. Your
-application connects to an in-process [VehicleService][] which handles reading
+application connects to an in-process [VehicleManager][] which handles reading
 fresh data from the vehicle.
 
 This document describes the interface for the OpenXC library **version 1.1**.
 
 ### Service Binding
 
-You must first [bind][binding] with the [VehicleService][] before you can receive
+You must first [bind][binding] with the [VehicleManager][] before you can receive
 any vehicle data.
 
 Request to bind with the service in the normal fashion:
 
-    Intent intent = new Intent(this, VehicleService.class);
+    Intent intent = new Intent(this, VehicleManager.class);
     bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
 
 Then, in your `onServiceConnected()` grab the service handle and cast it to the
 correct type:
 
-    VehicleService vehicleService;
+    VehicleManager vehicle;
     private ServiceConnection mConnection = new ServiceConnection() {
         // Called when the connection with the service is established
         public void onServiceConnected(ComponentName className, IBinder service) {
-            vehicleService = ((VehicleService.VehicleServiceBinder)
+            vehicle = ((VehicleManager.VehicleManagerBinder)
                     service).getService();
         }
 
         // Called when the connection with the service disconnects unexpectedly
         public void onServiceDisconnected(ComponentName className) {
-            vehicleService = null;
+            vehicle = null;
         }
     };
 
@@ -45,7 +45,7 @@ Once the service is bound and you have a connection to it in your activity, you
 can receive measurements on demand (i.e. synchronously).
 
     try {
-        VehicleSpeed measurement = vehicleService.get(VehicleSpeed.class);
+        VehicleSpeed measurement = vehicle.get(VehicleSpeed.class);
     } catch(NoValueException e) {
         Log.w(TAG, "The vehicle may not have made the measurement yet");
     }
@@ -61,7 +61,7 @@ register with the service to be notified of updates.
             // do stuff with the measurement
         }
     };
-    vehicleService.addListener(VehicleSpeed.class, listener);
+    vehicle.addListener(VehicleSpeed.class, listener);
 
 ### Measurements
 
@@ -72,14 +72,14 @@ types supported by OpenXC are provided as children of the [Measurement][] class.
 The parent class provides a standard interface for all measurements, starting
 with a way to retrieve its value:
 
-    vehicleService.get(VehicleSpeed.class);
+    vehicle.get(VehicleSpeed.class);
 
 Occasionally a measurement will not have been received from the CAN translator
 yet - it could be a malfunction, or you're just checking too early for an
 infrequently updated measurement:
 
     try {
-        VehicleSpeed measurement = vehicleService.get(VehicleSpeed.class);
+        VehicleSpeed measurement = vehicle.get(VehicleSpeed.class);
         // do stuff with it
     } catch(NoValueException e) {
         Log.w(TAG, "The vehicle may not have made the measurement yet");
@@ -120,10 +120,10 @@ Add the `ACCESS_FINE_LOCATION` and `ACCESS_MOCK_LOCATION` permission to your
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
 
-Open a connection to the `VehicleService` as described earlier in "Service
+Open a connection to the `VehicleManager` as described earlier in "Service
 Binding." Then access [user location][] in the traditional Android fashion -
 data from the `LocationManager.GPS_PROVIDER` and
-`VehicleService.VEHICLE_LOCATION_PROVIDER` providers will be coming from OpenXC.
+`VehicleManager.VEHICLE_LOCATION_PROVIDER` providers will be coming from OpenXC.
 You may want to continue to use the `GPS_PROVIDER` so your app can support
 switching from built-in GPS to the vehicle's receiver.
 
@@ -205,12 +205,12 @@ In fact, this is the same method used by some of the instrumentation tests. Once
 you've created a file either by recording the output of the CAN translator
 module or building one by hand, add it to your testing application's raw
 resources (`yourapp/res/raw/yourtrace`). After binding with the
-[VehicleService][], specify the type of data source and your trace file (we
+[VehicleManager][], specify the type of data source and your trace file (we
 recommend storing these on the SD card):
 
         Intent startIntent = new Intent();
-        startIntent.setClass(getContext(), VehicleService.class);
-        service = ((VehicleService.VehicleServiceBinder)
+        startIntent.setClass(getContext(), VehicleManager.class);
+        service = ((VehicleManager.VehicleManagerBinder)
                 bindService(startIntent)).getService();
         service.waitUntilBound();
         service.setDataSource(TraceVehicleDataSource.class.getName(),
@@ -244,7 +244,7 @@ project. To remove it from the device just run `adb uninstall com.openxc`.
 [AIDL]: http://developer.android.com/guide/developing/tools/aidl.html
 [OpenXC]: http://openxcplatform.com
 
-[VehicleService]: /openxc-android/com/openxc/VehicleService.html
+[VehicleManager]: /openxc-android/com/openxc/VehicleManager.html
 [VehicleMeasurement]: /openxc-android/com/openxc/measurements/VehicleMeasurement.html
 [VehicleSpeed]: /openxc-android/com/openxc/measurements/VehicleSpeed.html
 [Measurement]: /openxc-android/com/openxc/measurements/Measurement.html

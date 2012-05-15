@@ -94,7 +94,7 @@ before using it. Add this `<service>` tag to your app:
 
     <application>
         ...
-        <service android:name="com.openxc.VehicleService"/>
+        <service android:name="com.openxc.VehicleManager"/>
         ...
     </application>
 
