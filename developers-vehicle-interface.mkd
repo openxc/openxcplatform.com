@@ -41,6 +41,18 @@ The translator is currently powered via its micro-USB board, which is connected
 to the host device. CAN messages are received via the OBD-II port in the
 driver's footwell.
 
+### Cables & Ports
+
+There are 3 USB ports on the combined Max32 and Network Shield, so things can
+get a bit confusing. They should be used as follows:
+
+* USB-A (square) - not used.
+* Mini-USB - connect to the serial console for debugging and to upload new
+  firmware.
+*  Micro-USB - the OpenXC data is sent through this port - connect it to your
+   computer for testing with the Python script, or to an Android tablet to run
+   an OpenXC application.
+
 **An Important Note:** In order to power the board via micro-USB, we have to connect
 the 5v buses of the chipKIT and network shield. This means that you absolutely
 must not plug the mini-USB and micro-USB ports in to different devices at the
@@ -49,6 +61,8 @@ the chipKIT and network shield.
 
 The OBD-II cable can be plugged in at any time, with the vehicle running or off.
 The cable only fits one way, like a USB cable.
+
+## Testing
 
 Make sure that the tablet and CAN translator module are out of the way of the
 driver. They should be securely held down or preferably with another person in
