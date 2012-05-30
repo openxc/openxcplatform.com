@@ -39,18 +39,24 @@ OpenXC via Eclipse, the command line, or both ways simultaneously.
 * You will be prompted to install the m2e-android connector - do that, then
   restart Eclipse.
 * Right click on the `openxc` project, go to Maven -> Update Project
-  Configuration. Select the `openxc` project in the dialog and click OK.
+  Configuration. Select the `openxc` project in the dialog and click OK. Let
+  Eclipse try to build the project (look in the bottom right for a status bar).
+  There may still be errors in the build at this point.
 
 ![Changing the Project Dependencies](/images/screenshots/eclipse-project-dependency.png)
 
-* Start a new Android project for your application if you haven't already.
-* Right click on your project and go to `Properties -> Andoird`.
+* Right click on your project and go to `Properties -> Android`.
     In the "Library" section add a reference to the `openxc` project.
 
 ![Updating the Maven project config](/images/screenshots/eclipse-update-maven.png)
 
-* There should be no changes in the repository at this point (`git status`
-  should report nothing) and there should be no errors in Eclipse.
+* If there are still errors in the build, Maven might have had trouble
+  downloading the dependencies. If you use an Internet proxy, you will need to
+  configure the [proxy settings](http://maven.apache.org/guides/mini/guide-proxies.html). Otherwise,
+  try asking in the [Google Group](/discuss.html) for some help.
+* There should be no changes in the `openxc-android` repository at this point
+  (`git status` should report nothing) and there should be no errors in Eclipse.
+* Start a new Android project for your application if you haven't already.
 
 ![Clean working directory](/images/screenshots/git-status.png)
 
