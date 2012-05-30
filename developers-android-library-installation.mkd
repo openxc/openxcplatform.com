@@ -28,7 +28,7 @@ OpenXC via Eclipse, the command line, or both ways simultaneously.
   recommend using the version of Eclipse in the Ubuntu repositories - download
   it manually.
 * Install the [Android SDK and ADT plugin for Eclipse](http://developer.android.com/sdk/installing.html)
-  from Google.
+  from Google. You'll need to install API version 12.
 * Clone the [openxc-android][] repo (this repo). Right now, the code is only
   available to developers in the early preview.
 * Open Eclipse and go to `File -> Import -> Maven -> Existing Maven Projects`.
