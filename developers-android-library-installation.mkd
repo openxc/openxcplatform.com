@@ -38,7 +38,7 @@ OpenXC via Eclipse, the command line, or both ways simultaneously.
 ![Importing a Maven Project in Eclipse](/images/screenshots/eclipse-import-maven.png)
 
 * You will be prompted to install the m2e-android connector - do that, then
-  restart Eclipse.
+  restart Eclipse. If you are not prompted to install the connector you may need to wait until after the project builds. Find the pom.xml related error, right click on it and choose "quick fix" to install the connector.
 * Right click on the `openxc` project, go to Maven -> Update Project
   Configuration. Select the `openxc` project in the dialog and click OK. Let
   Eclipse try to build the project (look in the bottom right for a status bar).
