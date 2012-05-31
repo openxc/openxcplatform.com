@@ -29,6 +29,7 @@ OpenXC via Eclipse, the command line, or both ways simultaneously.
   it manually.
 * Install the [Android SDK and ADT plugin for Eclipse](http://developer.android.com/sdk/installing.html)
   from Google. You'll need to install API version 12.
+* If you are running the 64 bit version of the SDK you will need to open a terminal and run "sudo apt-get install ia32-libs" 
 * Clone the [openxc-android][] repo (this repo). Right now, the code is only
   available to developers in the early preview.
 * Open Eclipse and go to `File -> Import -> Maven -> Existing Maven Projects`.
