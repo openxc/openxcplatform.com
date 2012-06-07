@@ -68,7 +68,7 @@ There are potentailly many more signals available on the CAN bus, but we've
 selected a small set of the most interesting signals to get started.
 
 <dl>
-    <dt>powertrain_torque</dt>
+    <dt>torque_at_transmission</dt>
     <dd>-500 to 1500 Nm</dd>
 
     <dt>engine_speed<dt>
