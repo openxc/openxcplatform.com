@@ -48,6 +48,8 @@ can receive measurements on demand (i.e. synchronously).
         VehicleSpeed measurement = (VehicleSpeed) vehicle.get(VehicleSpeed.class);
     } catch(NoValueException e) {
         Log.w(TAG, "The vehicle may not have made the measurement yet");
+    } catch(UnrecognizedMeasurementTypeException e) {
+        Log.w(TAG, "The measurement type was not recognized");
     }
 
 ### Asynchronous
