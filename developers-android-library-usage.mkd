@@ -45,7 +45,7 @@ Once the service is bound and you have a connection to it in your activity, you
 can receive measurements on demand (i.e. synchronously).
 
     try {
-        VehicleSpeed measurement = vehicle.get(VehicleSpeed.class);
+        VehicleSpeed measurement = (VehicleSpeed) vehicle.get(VehicleSpeed.class);
     } catch(NoValueException e) {
         Log.w(TAG, "The vehicle may not have made the measurement yet");
     }
