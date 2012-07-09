@@ -88,6 +88,9 @@ Arduino-compatible chipKIT device. Most OpenXC users won't need to touch this
 component - they will most likely be using a pre-built binary on the vehicle
 interface that knows about proprietary vehicle signals.
 
+The firmware for all supported Ford vehicles is currently available to anyone
+who signs this [developer agreement](/agreement.html).
+
 ### Updating from a .hex file
 
 Updates to the translator source may be distributed as pre-compiled binaries,
