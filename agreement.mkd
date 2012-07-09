@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+OpenXC Developer Agreemeement
+========
+
+Before you can receive the firmware for the CAN translator for Ford vehicles,
+you must read and sign this developer agreement. You will receive an e-mail with
+a link to download the firmware for all of the supported vehicles within 24
+hours after signing the form.
+
+<script type='text/javascript' language='JavaScript'
+src='https://secure.echosign.com/public/widget?f=3WFQLL2M684N4E'></script>
+
