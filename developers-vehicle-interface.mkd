@@ -25,10 +25,17 @@ As of January 2012, OpenXC is supported on:
     * 2011 - 2013 Focus
     * 2013 Focus Electric
     * 2012 Mustang
-    * 2012 Fiesta
+    * 2011 - 2012 Fiesta
     * 2011 Figo
     * 2011 Fusion
     * 2009 F-150
+    * 2011 - 2012 E350
+    * 2008 S-MAX
+* Experimental Ford Vehicles
+    * 2011 - 2012 Explorer
+    * 2010 F-150
+    * 2009 Flex
+    * 2010 Fusion
 
 ## Hardware
 
