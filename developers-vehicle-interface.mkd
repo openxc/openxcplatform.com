@@ -31,11 +31,9 @@ As of January 2012, OpenXC is supported on:
     * 2011 - 2012 E350
     * 2008 S-MAX
 * Unconfirmed Ford Vehicles
-    * 2006 - 2010 Fusion
-    * 2006 - 2010 Lincoln MKZ
-    * 2013 Fusion
-    * 2011 Mustang
-    * 2013 Mustang
+    * 2006 - 2010, 2013 Fusion
+    * 2006 - 2013 Lincoln MKZ
+    * 2010, 2011, 2013 Mustang
     * 2011 - 2012 Explorer
     * 2010 - 2013 F-150
     * 2009 - 2013 Flex
