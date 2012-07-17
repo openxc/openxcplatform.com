@@ -73,6 +73,18 @@ the chipKIT and network shield.
 The OBD-II cable can be plugged in at any time, with the vehicle running or off.
 The cable only fits one way, like a USB cable.
 
+### Bluetooth
+
+The CAN translator now has experimental support for using regular old serial
+connections, instead of USB. That means that you can use Bluetooth to connect a
+tablet (or even a phone!) to your car wirelessly. The Android library also has
+experimental support for communicating with a Bluetooth vehicle interface.
+
+![Bluetooth adapter](/images/bluetooth-translator.jpg)
+
+We're using the RN-42 bluetooth adpater, and the instructions for wiring this up
+to a chipKIT are in the [cantranslator][] repository on GitHub.
+
 ## Testing
 
 Make sure that the tablet and CAN translator module are out of the way of the
