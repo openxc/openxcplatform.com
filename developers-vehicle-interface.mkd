@@ -105,14 +105,17 @@ Updates to the translator source may be distributed as pre-compiled binaries,
 e.g. if they are distributed by an OEM who does not wish to make the CAN signals
 public.
 
-In that case, you will have a .hex file and can use the `upload_hex.sh` script
-in the [cantranslator][] repository (only accessible if logged in to GitHub and
-with access to the early release) to update your device.
+In this case, you will have a .hex file and can use the `upload_hex.sh` script
+to update your device. This script requires that `avrdude` is installed, or that
+you have the `MPIDE_DIR` environment variable pointing to a valid MPIDE
+installation (see the "Command Line Building" section above for details). Once
+that's setup, run it like so:
 
-    $ ./upload_hex new-version.hex
+    $ ./upload_hex.sh new-version.hex
 
-This script requires that [MPIDE][] is installed, and the environment variable
-`ARDUINO_DIR` points to the MPIDE directory.
+Note that if you are using Windows, you also need to install the
+[FTDI driver](http://www.ftdichip.com/Drivers/VCP.htm) - get the setup
+executable version from that page.
 
 ### Custom CAN Signal Definition
 
