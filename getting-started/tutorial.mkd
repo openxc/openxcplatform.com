@@ -1,6 +1,5 @@
 ---
 layout: default
-permalink: /getting-started/tutorial.html
 ---
 
 Tutorial
@@ -38,8 +37,8 @@ if logged into GitHub and with access to the early release).
 
 [gg]: http://groups.google.com/group/openxc
 [sdk]: http://developer.android.com/sdk/installing.html
-[vehicle interface]: http://openxcplatform.com/developers/vehicle-interface/hardware.html
-[library project]: http://openxcplatform.com/developers/android/library-installation.html
-[usage details]: http://openxcplatform.com/developers/android/library-usage.html
+[vehicle interface]: http://openxcplatform.com/vehicle-interface/hardware
+[library project]: http://openxcplatform.com/android/library-installation
+[usage details]: http://openxcplatform.com/android/library-usage
 [openxc-android]: https://github.com/openxc/openxc-android
 [Vehicle Dashboard]: https://github.com/openxc/openxc-android/tree/master/examples

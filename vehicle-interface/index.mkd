@@ -1,6 +1,5 @@
 ---
 layout: default
-permalink: /vehicle-interface/hardware.html
 ---
 
 CAN Translator Module
@@ -9,7 +8,7 @@ CAN Translator Module
 The CAN translation module is a microcontroller with two connections - one to
 the CAN bus via the OBD-II port, and one to the [host device][] via USB. It
 listens for a subset of CAN messages, performs required unit conversion or
-factoring and outputs a [generic version][translation-specs] to the USB
+factoring and outputs a [generic version][output-format] to the USB
 interface.
 
 Unless you are implementing custom CAN messages, you will most likely need a
@@ -139,7 +138,7 @@ if logged in to GitHub and with access to the early release).
 [MPIDE]: https://github.com/chipKIT32/chipKIT32-MAX/downloads
 [Max32 page]: http://digilentinc.com/Products/Detail.cfm?NavPath=2,719,895&Prod=CHIPKIT-MAX32.
 [cantranslator]: https://github.com/openxc/cantranslator
-[translation-specs]: /vehicle-interface/translation-specs.html
+[output-format]: /vehicle-interface/output-format.html
 [host device]: /android/host.html
 [chipkit]: http://www.digilentinc.com/Products/Catalog.cfm?NavPath=2,892&Cat=18
 [arduino]: http://arduino.cc

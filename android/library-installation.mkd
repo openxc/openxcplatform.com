@@ -1,6 +1,5 @@
 ---
 layout: default
-permalink: /android/library-installation.html
 ---
 
 Android Library Installation

@@ -1,6 +1,5 @@
 ---
 layout: default
-permalink: /android/library-usage.html
 ---
 
 Android Library Usage
@@ -10,7 +9,7 @@ Vehicle measurements are accessed through an [Android service][services]. Your
 application connects to an in-process [VehicleManager][] which handles reading
 fresh data from the vehicle.
 
-This document describes the interface for the OpenXC library **version 1.1**.
+This document describes the interface for the OpenXC library **version 2.0**.
 
 ### Service Binding
 
