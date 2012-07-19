@@ -10,10 +10,12 @@
 
     <link rel="stylesheet" type="text/css" href="/css/vendor/normalize.css">
     <link rel="stylesheet" type="text/css"
-            href="/css/vendor/bootstrap-1.3.min.css">
-
+            href="/css/vendor/bootstrap-2.0.4.min.css">
     <link rel="stylesheet" type="text/css" media="screen"
         href="/css/styles.css"/>
+    <link rel="stylesheet" type="text/css"
+            href="/css/vendor/bootstrap-responsive-2.0.4.min.css">
+
     <link rel="stylesheet" type="text/css" media="screen"
         href="/css/pygments/default.css"/>
 
@@ -24,67 +26,80 @@
 
 <body>
 
-<div class="topbar">
-    <div class="topbar-inner">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
         <div class="container-fluid">
-            <h3><a href="/">OpenXC</a></h3>
-            <ul>
-                <li><a href="/about.html">About</a></li>
-                <li><a href="/getting-started/index.html">Getting Started</a>
-                <li><a href="/vehicle-interface/index.html">Vehicle Interface</a>
-                <li><a href="/android/index.html">App Development</a>
-            </ul>
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <a class ="brand" href="/">OpenXC</a>
+            <div class="nav-collapse">
+                <ul class="nav">
+                    <li class="{% if page.url contains 'overview' %}active{% endif %}"><a href="/overview/index.html">Overview</a></li>
+                    <li class="{% if page.url contains 'getting-started' %}active{% endif %}"><a href="/getting-started/index.html">Getting Started</a></li>
+                    <li class="{% if page.url contains 'vehicle-interface' %}active{% endif %}"><a href="/vehicle-interface/index.html">Vehicle Interface</a></li>
+                    <li class="{% if page.url contains 'android' %}active{% endif %}"><a href="/android/index.html">App Development</a></li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>
 
 <div class="container-fluid">
+    <div class="row">
+        {% if page.url != "/index.html" %}
+        <div class="span3">
+            <div class="well">
+                <ul class="nav nav-list">
+                    <li class="nav-header">OpenXC</li>
+                    <li><a href="/overview/index.html">Overview</a></li>
+                    <li><a href="/overview/faq.html">F.A.Q.</a></li>
+                    <li><a href="/overview/discuss.html">Discuss &amp; Get Help</a></li>
 
-    <div class="sidebar">
-        <div class="well">
-            <ul>
-                <li><h5><a href="/">About</a></h5></li><ul>
-                    <li><a href="/about/faq.html">F.A.Q.</a></li>
-                    <li><a href="/about/background.html">Background</a></li>
-                    <li><a href="/about/discuss.html">Discuss &amp; Get Help</a></li>
-                </ul></li>
-                <li><h5><a href="/getting-started/index.html">Getting Started</a></h5><ul>
-                    <li><a href="/android/library-installation.html">Android Library</a></li>
+                    <li class="nav-header">Getting Started</li>
+                    <li><a href="/getting-started/index.html">Introduction</a></li>
+                    <li><a href="/android/library-installation.html">Android Library Setup</a></li>
                     <li><a href="/getting-started/tutorial.html">Tutorial</a></li>
-                </ul></li>
-                <li><h5><a href="/vehicle-interface/index.html">Vehicle Interface</a></h5><ul>
+
+                    <li class="nav-header">Vehicle Interface</li>
+                    <li><a href="/vehicle-interface/index.html">Hardware</a></li>
                     <li><a href="/vehicle-interface/assembly.html">Assembly</a></li>
                     <li><a href="/vehicle-interface/output-format.html">Output Format</a></li>
-                </ul></li>
-                <li><h5><a href="/android/index.html">App Development</a></h5><ul>
-                    <li><a href="/android/library-installation.html">Library Installation</a></li>
+
+                    <li class="nav-header">App Development</li>
+                    <li><a href="/android/index.html">Android Library</a></li>
                     <li><a href="/android/api-guide.html">Library Usage</a></li>
                     <li><a href="/openxc-android">Documentation</a></li>
-                </ul></li>
-            </ul>
+                    </ul></li>
+                </ul>
+            </div>
         </div>
+        {% endif %}
+
+        <div class="span9">
+            {{ content }}
+
+            <footer>
+                <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">
+                    <img alt="Creative Commons License" src="http://i.creativecommons.org/l/by/3.0/80x15.png" />
+                </a>
+                <p>
+                    Except as otherwise noted, the content of this page is licensed
+                    under the Creative Commons Attribution 3.0 License.
+                </p>
+            </footer>
+        </section>
     </div>
-
-<section id="content" class="content">
-    {{ content }}
-
-    <footer>
-        <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">
-            <img alt="Creative Commons License" src="http://i.creativecommons.org/l/by/3.0/80x15.png" />
-        </a>
-        <p>
-            Except as otherwise noted, the content of this page is licensed
-            under the Creative Commons Attribution 3.0 License.
-        </p>
-    </footer>
-</section>
-
-
 </div>
 
 <script type="text/javascript"
-    src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js">
+    src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js">
 </script>
+<script type="text/javascript" src="/js/vendor/bootstrap-2.0.4.min.js"></script>
+<script type="text/javascript" src="/js/vendor/bootstrap-transition.js"></script>
+<script type="text/javascript" src="/js/vendor/bootstrap-collapse.js"></script>
 <script type="text/javascript" src="/js/app.js"></script>
 
 <script type="text/javascript">

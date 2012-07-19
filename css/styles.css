@@ -1,15 +1,6 @@
 body {
-  background-color: #FFF;
-  color: #222;
-  padding-top: 50px;
-}
-
-.hero-unit p {
-    padding-top: 20px;
-}
-
-li {
-    color: black;
+    padding-top: 60px;
+    padding-bottom: 40px;
 }
 
 legend {
@@ -41,4 +32,8 @@ div.highlight code {
 
 code {
     padding: 0;
+}
+
+.well {
+    padding: 8px 0;
 }
