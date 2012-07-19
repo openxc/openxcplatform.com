@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /developers/vehicle-interface/translation-specs.html
+permalink: /vehicle-interface/translation-specs.html
 ---
 
 Signal Translation Specification

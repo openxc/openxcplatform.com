@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /developers/faq.html
+permalink: /faq.html
 ---
 
 Developer FAQ
@@ -65,11 +65,11 @@ definitions or a pre-compiled OpenXC translator binary.
 <p>
 The most important difference between OpenXC and existing tools is the standard
 programming language and OS agnostic
- <a href="/developers/vehicle-interface/translation-specs.html">output</a> sent via USB.
+ <a href="/vehicle-interface/translation-specs.html">output</a> sent via USB.
 The reference host device is <a href="android/host.html">Android</a>, but
 there's no reason you couldn't use a Windows or Linux laptop with a USB port
 (i.e. any of them). A port of the
- <a href="/developers/android/library-usage.html">openxc-android</a> library to Python or
+ <a href="/android/library-usage.html">openxc-android</a> library to Python or
 plain old (non-Android) Java would be a great addition to the project.
 </p>
 

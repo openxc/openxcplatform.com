@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /developers/vehicle-interface/custom-signals.html
+permalink: /vehicle-interface/custom-signals.html
 ---
 
 Custom CAN Signal Definition

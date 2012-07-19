@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /developers/android/host.html
+permalink: /android/host.html
 ---
 
 Android Host
@@ -22,7 +22,7 @@ An Android device that is known to work well with OpenXC is the [Toshiba
 Thrive][thrive] - it's a relatively inexpensive Android tablet running 3.2
 Honeycomb and includes a full-size USB port. A device with 3G connectivity can
 make building web-enabled applications easier, but a 3G -> WiFi microcell can
-get aroudn this limitation quite easily (see the [FAQ](/developers/faq.html) for
+get aroudn this limitation quite easily (see the [FAQ](/faq.html) for
 more details).
 
 ## Motivation

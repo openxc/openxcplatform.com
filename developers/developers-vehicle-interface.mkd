@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /developers/vehicle-interface/hardware.html
+permalink: /vehicle-interface/hardware.html
 ---
 
 CAN Translator Module
@@ -139,7 +139,7 @@ if logged in to GitHub and with access to the early release).
 [MPIDE]: https://github.com/chipKIT32/chipKIT32-MAX/downloads
 [Max32 page]: http://digilentinc.com/Products/Detail.cfm?NavPath=2,719,895&Prod=CHIPKIT-MAX32.
 [cantranslator]: https://github.com/openxc/cantranslator
-[translation-specs]: /developers/vehicle-interface/translation-specs.html
-[host device]: /developers/android/host.html
+[translation-specs]: /vehicle-interface/translation-specs.html
+[host device]: /android/host.html
 [chipkit]: http://www.digilentinc.com/Products/Catalog.cfm?NavPath=2,892&Cat=18
 [arduino]: http://arduino.cc

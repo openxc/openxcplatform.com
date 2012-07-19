@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /developers/vehicle-interface/assembly.html
+permalink: /vehicle-interface/assembly.html
 ---
 
 CAN Translator Assembly
