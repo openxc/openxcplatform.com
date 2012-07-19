@@ -18,51 +18,59 @@ any vehicle data.
 
 Request to bind with the service in the normal fashion:
 
-    Intent intent = new Intent(this, VehicleManager.class);
-    bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
+{% highlight java %}
+Intent intent = new Intent(this, VehicleManager.class);
+bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
+{% endhighlight %}
 
 Then, in your `onServiceConnected()` grab the service handle and cast it to the
 correct type:
 
-    VehicleManager vehicle;
-    private ServiceConnection mConnection = new ServiceConnection() {
-        // Called when the connection with the service is established
-        public void onServiceConnected(ComponentName className, IBinder service) {
-            vehicle = ((VehicleManager.VehicleManagerBinder)
-                    service).getService();
-        }
+{% highlight java %}
+VehicleManager vehicle;
+private ServiceConnection mConnection = new ServiceConnection() {
+    // Called when the connection with the service is established
+    public void onServiceConnected(ComponentName className, IBinder service) {
+        vehicle = ((VehicleManager.VehicleManagerBinder)
+                service).getService();
+    }
 
-        // Called when the connection with the service disconnects unexpectedly
-        public void onServiceDisconnected(ComponentName className) {
-            vehicle = null;
-        }
-    };
+    // Called when the connection with the service disconnects unexpectedly
+    public void onServiceDisconnected(ComponentName className) {
+        vehicle = null;
+    }
+};
+{% endhighlight %}
 
 ### Synchronous
 
 Once the service is bound and you have a connection to it in your activity, you
 can receive measurements on demand (i.e. synchronously).
 
-    try {
-        VehicleSpeed measurement = (VehicleSpeed) vehicle.get(VehicleSpeed.class);
-    } catch(NoValueException e) {
-        Log.w(TAG, "The vehicle may not have made the measurement yet");
-    } catch(UnrecognizedMeasurementTypeException e) {
-        Log.w(TAG, "The measurement type was not recognized");
-    }
+{% highlight java %}
+try {
+    VehicleSpeed measurement = (VehicleSpeed) vehicle.get(VehicleSpeed.class);
+} catch(NoValueException e) {
+    Log.w(TAG, "The vehicle may not have made the measurement yet");
+} catch(UnrecognizedMeasurementTypeException e) {
+    Log.w(TAG, "The measurement type was not recognized");
+}
+{% endhighlight %}
 
 ### Asynchronous
 
 If you need to be kept up-to-date on any vehicle measurement, you can also
 register with the service to be notified of updates.
 
-    VehicleSpeed.Listener listener = new VehicleSpeed.Listener() {
-        public void receive(VehicleMeasurement measurement) {
-            final VehicleSpeed speed = (VehicleSpeed) measurement;
-            // do stuff with the measurement
-        }
-    };
-    vehicle.addListener(VehicleSpeed.class, listener);
+{% highlight java %}
+VehicleSpeed.Listener listener = new VehicleSpeed.Listener() {
+    public void receive(VehicleMeasurement measurement) {
+        final VehicleSpeed speed = (VehicleSpeed) measurement;
+        // do stuff with the measurement
+    }
+};
+vehicle.addListener(VehicleSpeed.class, listener);
+{% endhighlight %}
 
 ### Measurements
 
@@ -73,32 +81,40 @@ types supported by OpenXC are provided as children of the [Measurement][] class.
 The parent class provides a standard interface for all measurements, starting
 with a way to retrieve its value:
 
-    vehicle.get(VehicleSpeed.class);
+{% highlight java %}
+vehicle.get(VehicleSpeed.class);
+{% endhighlight %}
 
 Occasionally a measurement will not have been received from the CAN translator
 yet - it could be a malfunction, or you're just checking too early for an
 infrequently updated measurement:
 
-    try {
-        VehicleSpeed measurement = vehicle.get(VehicleSpeed.class);
-        // do stuff with it
-    } catch(NoValueException e) {
-        Log.w(TAG, "The vehicle may not have made the measurement yet");
-    }
+{% highlight java %}
+try {
+    VehicleSpeed measurement = vehicle.get(VehicleSpeed.class);
+    // do stuff with it
+} catch(NoValueException e) {
+    Log.w(TAG, "The vehicle may not have made the measurement yet");
+}
+{% endhighlight %}
 
 You can check the age of a measurement to determine how long ago the state was
 actually reflected in the physical vehicle:
 
-    if(measurement.getAge() < 10) {
-        // only if age is less than 10 seconds
-    }
+{% highlight java %}
+if(measurement.getAge() < 10) {
+    // only if age is less than 10 seconds
+}
+{% endhighlight %}
 
 The range of every measurement is defined in the class, and can be queried
 programmatically if you need to figure out your the current value's relative
 position:
 
-    range = measurement.getRange();
-    int percentage = measurement.getValue() / range;
+{% highlight java %}
+range = measurement.getRange();
+int percentage = measurement.getValue() / range;
+{% endhighlight %}
 
 ### Location
 
@@ -118,8 +134,10 @@ navigation system).
 Add the `ACCESS_FINE_LOCATION` and `ACCESS_MOCK_LOCATION` permission to your
    app's `AndroidManifest.xml`:
 
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+{% highlight xml %}
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+<uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+{% endhighlight %}
 
 Open a connection to the `VehicleManager` as described earlier in "Service
 Binding." Then access [user location][] in the traditional Android fashion -
@@ -128,7 +146,9 @@ data from the `LocationManager.GPS_PROVIDER` and
 You may want to continue to use the `GPS_PROVIDER` so your app can support
 switching from built-in GPS to the vehicle's receiver.
 
-    locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
+{% highlight java %}
+locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
+{% endhighlight %}
 
 [user location]: http://developer.android.com/guide/topics/location/obtaining-user-location.html
 
@@ -155,39 +175,45 @@ Here's an example - if you want your application to send a text message when the
 user presses the down button on the steering wheel, write a function that
 performs the action:
 
-    public void sendTextMessage() {
-        // send a text message
-        ...
-    }
+{% highlight java %}
+public void sendTextMessage() {
+    // send a text message
+    ...
+}
+{% endhighlight %}
 
 To hook this up to Android `KeyEvent`, define an `onKey` method in your
 activity:
 
-    @Override
-    public boolean onKeyDown(int i, KeyEvent event) {
-        if (i == KeyEvent.KEYCODE_DPAD_DOWN) {
-            sendTextMessage();
-            return true;
-        }
-        super.onKeyDown(i, event);
+{% highlight java %}
+@Override
+public boolean onKeyDown(int i, KeyEvent event) {
+    if (i == KeyEvent.KEYCODE_DPAD_DOWN) {
+        sendTextMessage();
         return true;
     }
+    super.onKeyDown(i, event);
+    return true;
+}
+{% endhighlight %}
 
 This connects your functionality to the virtual button in the Android emulator.
 To have this actually work in the car, you need to register a handler for the
 VehicleButtonEvent.
 
-    VehicleButtonEvent.Listener listener = new VehicleButtonEvent.Listener() {
-        public void receive(VehicleMeasurement measurement) {
-            final VehicleButtonEvent event (VehicleButtonEvent) measurement;
-            if(event.getAction() ==
-                        VehicleButtonEvent.ButtonAction.PRESSED,
-                    && event.getValue() ==
-                        VehicleButtonEvent.ButtonId.DOWN) {
-                sendTextMessage();
-            }
+{% highlight java %}
+VehicleButtonEvent.Listener listener = new VehicleButtonEvent.Listener() {
+    public void receive(VehicleMeasurement measurement) {
+        final VehicleButtonEvent event (VehicleButtonEvent) measurement;
+        if(event.getAction() ==
+                    VehicleButtonEvent.ButtonAction.PRESSED,
+                && event.getValue() ==
+                    VehicleButtonEvent.ButtonId.DOWN) {
+            sendTextMessage();
         }
     }
+}
+{% endhighlight %}
 
 ### Emulated Vehicle Measurements
 
@@ -209,13 +235,15 @@ resources (`yourapp/res/raw/yourtrace`). After binding with the
 [VehicleManager][], specify the type of data source and your trace file (we
 recommend storing these on the SD card):
 
-        Intent startIntent = new Intent();
-        startIntent.setClass(getContext(), VehicleManager.class);
-        service = ((VehicleManager.VehicleBinder)
-                bindService(startIntent)).getService();
-        service.waitUntilBound();
-        service.addSource(new TraceVehicleDataSource(
-                "file:///sdcard/com.openxc/trace.json");
+{% highlight java %}
+Intent startIntent = new Intent();
+startIntent.setClass(getContext(), VehicleManager.class);
+service = ((VehicleManager.VehicleBinder)
+        bindService(startIntent)).getService();
+service.waitUntilBound();
+service.addSource(new TraceVehicleDataSource(
+        "file:///sdcard/com.openxc/trace.json");
+{% endhighlight %}
 
 The final `service.waitUntilBound()` line is optional - it causes the thread to
 block until the service is ready to start playing back the trace - but can be

@@ -1,4 +1,4 @@
 auto: true
 markdown: rdiscount
-pygments:    true
+pygments: true
 production: true

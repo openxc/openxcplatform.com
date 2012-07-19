@@ -90,14 +90,16 @@ the `mvn` executable.
   `example/pom.xml` if you're unfamiliar with setting up a Maven project) and
   make sure the `openxc` dependency is declared like so:
 
-    <dependencies>
-        <dependency>
-            <groupId>com.openxc</groupId>
-            <artifactId>openxc</artifactId>
-            <version>1.1</version>
-            <type>apklib</type>
-        </dependency>
-    </dependencies>
+{% highlight xml %}
+<dependencies>
+    <dependency>
+        <groupId>com.openxc</groupId>
+        <artifactId>openxc</artifactId>
+        <version>1.1</version>
+        <type>apklib</type>
+    </dependency>
+</dependencies>
+{% endhighlight %}
 
 [openxc-android]: https://github.com/openxc/openxc-android
 
@@ -106,11 +108,13 @@ the `mvn` executable.
 The OpenXC service must be defined in your application's `AndroidManifest.xml`
 before using it. Add this `<service>` tag to your app:
 
+{% highlight xml %}
     <application>
         ...
         <service android:name="com.openxc.VehicleManager"/>
         ...
     </application>
+{% endhighlight %}
 
 ### Enabler
 

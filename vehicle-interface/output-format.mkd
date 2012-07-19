@@ -14,13 +14,17 @@ There are two valid message types - single valued and event.
 
 The expected format of a single valued message is:
 
-    {"name": "steering_wheel_angle", "value": 45}
+{% highlight json %}
+{"name": "steering_wheel_angle", "value": 45}
+{% endhighlight %}
 
 ### Event
 
 The expected format of an event message is:
 
-    {"name": "button_event", "value": "up", "event": "pressed"}
+{% highlight json %}
+{"name": "button_event", "value": "up", "event": "pressed"}
+{% endhighlight %}
 
 This format is good for something like a button event, where there are two
 discrete pieces of information in the measurement.
@@ -31,7 +35,9 @@ The `reader.py` Python program in this repository can be used to view the output
 of the CAN translator over micro-USB. Just plug it in and run the script with
 the `--verbose` flag to have all messages parsed and printed to stdout.
 
-    $ python reader.py -v
+{% highlight sh %}
+$ python reader.py -v
+{% endhighlight %}
 
 ## Signal List
 
