@@ -9,6 +9,12 @@ legend {
     width:100%
 }
 
+footer {
+    margin-top: 40px;
+    padding: 35px 0 36px;
+    border-top: 1px solid #E5E5E5;
+}
+
 .media-grid img {
     display: block;
 }
@@ -32,8 +38,4 @@ div.highlight code {
 
 code {
     padding: 0;
-}
-
-.well {
-    padding: 8px 0;
 }
