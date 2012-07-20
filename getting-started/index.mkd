@@ -1,32 +1,52 @@
 ---
 layout: default
+title: Getting Started - OpenXC
 ---
 
-# Technical Overview
+# Getting Started
 
-The OpenXC architecture is divided into two halves - a
-[CAN translation module](/vehicle-interface/hardware)
-and a [host device][].
+Modern automobiles are laced with a number of microcontrollers and sensors that
+monitor and control everything from the throttle postion to the ambient air
+temperature. These devices communicate with each other over a wired in-vehicle
+network, a [CAN bus][can].
 
-## CAN Translation Module
+TODO diagram of a car with nodes and a CAN network
 
-The CAN translation module is a device that reads proprietary CAN signals from
-the OBD-II port in the vehicle, converts from engineering units to a more human
-scale, and outputs a subset of the signals to another interface in a
-[standard cross-vehicle format](/vehicle-interface/output-format).
-There may not be a 1:1 relationship between input and output signals - i.e. raw
-engine timing CAN signals may be summarized in an "engine performance" metric on
-the abstract side of the interface.
+The CAN bus is one of the primary components of [OBD-II][obd2], a vehicle
+diagnostic standard mandatory for all cars sold in the United States since 1996.
+The OBD-II standard sends and receives messages on the CAN bus. If you've ever
+watched your mechanic plug a tool in somewhere underneath your steering wheel,
+or seen a vehicle monitoring app for your smartphone, that's OBD-II in action.
+You'll always find the port by the driver's knees.
 
-## Host Device
+TODO picture of obd-ii port
 
-The [host device][] is where all user code runs - it reads vehicle data over USB
-from the CAN translation module and makes it available to developers in a
-programmatic way.
+This means that every vehicle in the United States has a very accessible place
+to connect to the same network used by all of the vehicle's subsystems. That's
+where OpenXC comes in - with some knowledge of how to process the messages on
+the network, you can start to get valuable data out of your car.
 
-The reference host device is a standard Android device that supports the Android
-Platform version 3.1 or higher.
+The OpenXC architecture is divided into two halves:
+
+TODO picture of can translator
+
+The <a href="/vehicle-interface/index.html">**CAN translator**</a> is a device
+that plugs into the OBD-II port (and thus to the CAN bus), reads and translates
+CAN messages into a [standard cross-vehicle
+format](/vehicle-interface/output-format.html). The translated messages can be
+sent over USB or Bluetooth, so they can be read by any computer or mobile
+mobile.
+
+TODO picture of andorid running vehicle dashboard
+
+The <a href="/android/index.html">**Android host device**</a> connects to the
+CAN translator and reads the translated vehicle data. OpenXC developers can
+write applications on this device and use any of the data through a Java
+library.
+
+TODO simplified arch diagram
 
 ![OpenXC Architecture Diagram](/images/openxc-architecture.jpeg)
 
-[host device]: /android/host
+[can]: http://en.wikipedia.org/wiki/CAN_bus
+[obd2]: http://en.wikipedia.org/wiki/On-board_diagnostics
