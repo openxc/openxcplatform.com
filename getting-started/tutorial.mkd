@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Hello OpenXC - OpenXC
 ---
 
 Tutorial
@@ -21,6 +22,20 @@ requires an Android service connection and defining a callback for vehicle
 measurement updates. The [usage details][] explain how to listen for vehicle
 speed in your Hello World app - try updating the `TextView`'s value with vehicle
 speed every time you receive an update.
+
+### Android Manifest
+
+The OpenXC service must be defined in your application's `AndroidManifest.xml`
+before using it. Add this `<service>` tag to your app:
+
+{% highlight xml %}
+    <application>
+        ...
+        <service android:name="com.openxc.VehicleManager"/>
+        ...
+    </application>
+{% endhighlight %}
+
 
 ## Testing
 
