@@ -1,32 +1,50 @@
 ---
 layout: default
+title: Android Host Device - OpenXC
 ---
 
-Android Host
-=============
+<div class="page-header">
+    <h1>Android Host Device</h1>
+</div>
 
 OpenXC applications are standard Android applications that use the OpenXC
-library in conjunction with a vehicle interface module connected to a USB port.
+library in conjunction with a vehicle interface module connected to a USB port
+or via Bluetooth.
 
-There are only a few requirements for the Android hardware, or what we call the
-host device:
+The recommended vehicle interface is USB as it is much more robust and
+well-tested. When using USB, the host device must:
 
-* It must support **Android 3.1** or greater (i.e. API level 12 or greater)
-* It must have support **USB host mode** and provide a way to plug in a USB
+* Must support **Android 3.0** or greater (i.e. API level 12) if you plan to
+  use the standard USB vehicle interface.
+* Must have support **USB host mode** and provide a way to plug in a USB
   device - this does *not* mean the standard micro-USB port you use for
   debugging or copying files to the SD card. Some tablets offer a full-size
   USB port and others offer a dongle that exposes one.
 
-An Android device that is known to work well with OpenXC is the [Toshiba
-Thrive][thrive] - it's a relatively inexpensive Android tablet running 3.2
-Honeycomb and includes a full-size USB port. A device with 3G connectivity can
-make building web-enabled applications easier, but a 3G -> WiFi microcell can
-get aroudn this limitation quite easily (see the [FAQ](/faq.html) for
-more details).
+Bluetooth support is currently experimental but has the lowest hardware
+requirements. When using a Bluetooth-equipped CAN translator, the Android host
+device:
 
-## Motivation
+* Must support **Android 2.3** or greater (i.e. API level 10)
 
-The requires for the host device are quite flexible, but it's important that
+**Supported Devices**
+
+* Tablets
+    * [Toshiba Thrive][thrive] 10.1" - the reference device used by the core OpenXC
+      developers. This tablet includes a full-size USB port.
+* Phones
+    * Samsung [Galaxy Nexus][galaxynexus] - compatible with Bluetooth only.
+
+**Known Incompatible Devices**
+
+* Samsung Galaxy Tab - USB host mode is not fully enabled and is not compatible
+  with a USB CAN translator.
+
+<div class="page-header">
+    <h2>Motivation</h2>
+</div>
+
+The requirements for the host device are quite flexible, but it's important that
 OpenXC rally around a single platform to maximize compatibility and momentum.
 Ideally, the platform should be accessible to a wide range of programmers from
 novice to expert, and it should use a popular programming language. The barriers
@@ -54,4 +72,5 @@ components of a tablet (battery, LCD screen, GPS receiver, etc.) can be left out
 to hit an ever lower price point.
 
 [thrive]: http://us.toshiba.com/tablets/thrive/10-inch/
+[galaxynexus]: http://www.google.com/nexus
 [USB devices]: http://developer.android.com/guide/topics/usb/index.html

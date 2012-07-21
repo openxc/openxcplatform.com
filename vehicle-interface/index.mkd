@@ -108,7 +108,7 @@ OpenXC apps while moving is absolutely a two person job.
 
 ![Completed CAN translator](/images/assembly/openxc-assembly-19.jpg)
 
-<h2><a href="#software">Software</a></h2>
+<h2><a name="software">Software</a></h2>
 
 The [cantranslator][] repository (only accessible if logged in to GitHub and
 with access to the early release) contains the C source code that runs on the

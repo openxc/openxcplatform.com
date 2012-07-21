@@ -1,17 +1,63 @@
 ---
 layout: default
+title: Android Library API Guide - OpenXC
 ---
 
-Android Library Usage
-=============
+<div class="page-header">
+    <h1>Android Library API Guide</h1>
+</div>
 
 Vehicle measurements are accessed through an [Android service][services]. Your
-application connects to an in-process [VehicleManager][] which handles reading
-fresh data from the vehicle.
+application connects to an in-process [VehicleManager](#vehicle-manager) which
+handles reading fresh data from the vehicle.
 
 This document describes the interface for the OpenXC library **version 2.0**.
 
-### Service Binding
+<div class="page-header">
+    <h2>Concepts</h2>
+</div>
+
+**Remote and Local Service**
+
+TODO
+
+**Data Pipeline**
+
+TODO
+
+**Source**
+
+A data source injects new measurements into the OpenXC vehicle service. Sources
+can be added by the internal vehicle service itself (e.g. the source that
+connects to a USB device), the [Enabler][] (e.g. a Bluetooth device source) or
+an app (e.g. the trace source, as in the [tutorial][]).
+
+At whatever level you add the source, its data is made available to all other
+OpenXC apps in the system. This is because even when a source is added to the
+[VehicleManager][], it ferries incoming measurements back to the
+[VehicleService][]. Client apps can create and add their own custom sources,
+and when the client app is destroyed by Android the source will no longer send
+any data.
+
+<div class="alert alert-info">
+The <a href="/openxc-android/reference/com/openxc/sources/ApplicationSource.html">
+ApplicationSource</a> is a special case - it's the method by which data from an
+app's custom source is propagated back to the
+<a href="/openxc-android/reference/com/openxc/remote/VehicleService.html">VehicleService</a>
+ and then all other apps.
+</div>
+
+**Sink**
+
+TODO
+
+**Enabler**
+
+TODO
+
+<div class="page-header">
+    <h2><a name="vehicle-manager">VehicleManager Service</a></h2>
+</div>
 
 You must first [bind][binding] with the [VehicleManager][] before you can receive
 any vehicle data.
@@ -42,7 +88,9 @@ private ServiceConnection mConnection = new ServiceConnection() {
 };
 {% endhighlight %}
 
-### Synchronous
+<div class="page-header">
+    <h2>Synchronous Measurements</h2>
+</div>
 
 Once the service is bound and you have a connection to it in your activity, you
 can receive measurements on demand (i.e. synchronously).
@@ -57,14 +105,16 @@ try {
 }
 {% endhighlight %}
 
-### Asynchronous
+<div class="page-header">
+    <h2>Asynchronous Measurements</h2>
+</div>
 
 If you need to be kept up-to-date on any vehicle measurement, you can also
 register with the service to be notified of updates.
 
 {% highlight java %}
 VehicleSpeed.Listener listener = new VehicleSpeed.Listener() {
-    public void receive(VehicleMeasurement measurement) {
+    public void receive(Measurement measurement) {
         final VehicleSpeed speed = (VehicleSpeed) measurement;
         // do stuff with the measurement
     }
@@ -72,7 +122,9 @@ VehicleSpeed.Listener listener = new VehicleSpeed.Listener() {
 vehicle.addListener(VehicleSpeed.class, listener);
 {% endhighlight %}
 
-### Measurements
+<div class="page-header">
+    <h2>Measurements</h2>
+</div>
 
 You've probably noticed that vehicle data is returned encapsulated in an object.
 In the examples above, we used the [VehicleSpeed][] measurement. All of the data
@@ -82,7 +134,8 @@ The parent class provides a standard interface for all measurements, starting
 with a way to retrieve its value:
 
 {% highlight java %}
-vehicle.get(VehicleSpeed.class);
+VehicleSpeed measurement = vehicle.get(VehicleSpeed.class);
+KilometersPerHour value = measurement.getValue();
 {% endhighlight %}
 
 Occasionally a measurement will not have been received from the CAN translator
@@ -113,10 +166,12 @@ position:
 
 {% highlight java %}
 range = measurement.getRange();
-int percentage = measurement.getValue() / range;
+int percentage = measurement.getValue().doubleValue() / range;
 {% endhighlight %}
 
-### Location
+<div class="page-header">
+    <h2>Location</h2>
+</div>
 
 The Android framework includes built-in support for location information - most
 devices support determining position based on CellID, GPS and Wi-fi. OpenXC's
@@ -151,129 +206,11 @@ locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, l
 {% endhighlight %}
 
 [user location]: http://developer.android.com/guide/topics/location/obtaining-user-location.html
-
-## Testing
-
-### Button Events
-
-Unfortunately the Android emulator does not allow us to send arbitrary events
-from button presses without editing the source. In order to test your button
-event handlers, the recommended method it to write them in such a way that they
-can accept either VehicleButtonEvents or regular Android key events as input.
-You may want a flag to disable the Android key events when running in
-production.
-
-For example, the OpenXC specification includes a signal for a D-pad style
-controller. The 2012 Ford Focus has such a controller on the steering wheel.
-The Android emulator will send `KEYCODE_DPAD_*`
-[KeyEvents](http://developer.android.com/reference/android/view/KeyEvent.html)
-when you press the arrows on your computer's num pad. These are a good parallel
-and it should be simple to have your event handlers watch for *either* the
-vehicle D-pad event or the Android event.
-
-Here's an example - if you want your application to send a text message when the
-user presses the down button on the steering wheel, write a function that
-performs the action:
-
-{% highlight java %}
-public void sendTextMessage() {
-    // send a text message
-    ...
-}
-{% endhighlight %}
-
-To hook this up to Android `KeyEvent`, define an `onKey` method in your
-activity:
-
-{% highlight java %}
-@Override
-public boolean onKeyDown(int i, KeyEvent event) {
-    if (i == KeyEvent.KEYCODE_DPAD_DOWN) {
-        sendTextMessage();
-        return true;
-    }
-    super.onKeyDown(i, event);
-    return true;
-}
-{% endhighlight %}
-
-This connects your functionality to the virtual button in the Android emulator.
-To have this actually work in the car, you need to register a handler for the
-VehicleButtonEvent.
-
-{% highlight java %}
-VehicleButtonEvent.Listener listener = new VehicleButtonEvent.Listener() {
-    public void receive(VehicleMeasurement measurement) {
-        final VehicleButtonEvent event (VehicleButtonEvent) measurement;
-        if(event.getAction() ==
-                    VehicleButtonEvent.ButtonAction.PRESSED,
-                && event.getValue() ==
-                    VehicleButtonEvent.ButtonId.DOWN) {
-            sendTextMessage();
-        }
-    }
-}
-{% endhighlight %}
-
-### Emulated Vehicle Measurements
-
-The library ships with a method for playing back previously recorded vehicle
-measurement trace files for testing. The [VehicleMeasurement][] objects received
-by your application are identical to those received from a live vehicle.
-
-The trace file format is simply a plain text file of timestamps and OpenXC JSON
-messages separated by newlines, e.g.:
-
-    1332794184.319404: {"name":"fuel_consumed_since_restart","value":0.090000}
-    1332794184.502802: {"name":"steering_wheel_angle","value":-346.985229}
-    1332794184.559463: {"name":"torque_at_transmission","value":1.000000}
-
-In fact, this is the same method used by some of the instrumentation tests. Once
-you've created a file either by recording the output of the CAN translator
-module or building one by hand, copy it to your Android device's storage over
-USB. You can do this either by mounting the SD card over USB or using adb:
-
-{% highlight sh %}
-$ adb push driving.json /sdcard/openxc-driving.json
-{% endhighlight %}
-
-After binding with the
-[VehicleManager][], specify the type of data source and your trace file (we
-recommend storing these on the SD card):
-
-{% highlight java %}
-mTraceSource = new TraceVehicleDataSource(
-        "file:///sdcard/com.openxc/trace.json");
-mVehicleManager.addSource(mTraceSource);
-    "file:///sdcard/com.openxc/trace.json");
-{% endhighlight %}
-
-Don't forget to also remove this data source when you activity pauses,
-otherwise you could start the trace playback multiple times simultaneously:
-
-{% highlight java %}
-public void onPause() {
-    ...
-    if(mIsBound) {
-        mVehicleManager.removeSource(mTraceSource);
-        ...
-    }
-}
-{% endhighlight %}
-
-We have two short trace files available for testing: [idling while parked][] and
-a [short drive][].
-
-[short drive]: https://github.com/openxc/openxc-android/blob/tracedashboard/examples/res/raw/driving
-[idling while parked]: https://github.com/openxc/openxc-android/blob/tracedashboard/examples/res/raw/parked
-
-[apache]: http://www.apache.org/licenses/LICENSE-2.0.html
 [binding]: http://developer.android.com/guide/topics/fundamentals/bound-services.html#Binding)
 [services]: http://developer.android.com/guide/topics/fundamentals/services.html
-[AIDL]: http://developer.android.com/guide/developing/tools/aidl.html
-[OpenXC]: http://openxcplatform.com
-
-[VehicleManager]: /openxc-android/com/openxc/VehicleManager.html
-[VehicleMeasurement]: /openxc-android/com/openxc/measurements/VehicleMeasurement.html
-[VehicleSpeed]: /openxc-android/com/openxc/measurements/VehicleSpeed.html
-[Measurement]: /openxc-android/com/openxc/measurements/Measurement.html
+[VehicleManager]: /openxc-android/reference/com/openxc/VehicleManager.html
+[VehicleService]: /openxc-android/reference/com/openxc/remote/VehicleService.html
+[VehicleSpeed]: /openxc-android/reference/com/openxc/measurements/VehicleSpeed.html
+[Measurement]: /openxc-android/reference/com/openxc/measurements/Measurement.html
+[Enabler]: /getting-started/library-installation.html#enabler
+[tutorial]: /getting-started/tutorial.html
