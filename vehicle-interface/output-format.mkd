@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Output Format - OpenXC
 ---
 
 Signal Translation Specification

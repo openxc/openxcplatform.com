@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Developer Agreement - OpenXC
 ---
 
 OpenXC Developer Agreemeement

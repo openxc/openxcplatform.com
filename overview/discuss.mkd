@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Discuss - OpenXC
 ---
 
 <h2>GitHub</h2>

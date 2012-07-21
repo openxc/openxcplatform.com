@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Vehicle Interface - OpenXC
 ---
 
 CAN Translator Module
