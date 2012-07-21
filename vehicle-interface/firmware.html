@@ -1,0 +1,31 @@
+---
+layout: default
+title: Firmware - OpenXC
+---
+
+### Custom CAN Signal Definition
+
+Developers that know the details of the CAN bus they will be using can choose to
+implement their own signal definitions for the translator. The documentation for
+this process is available at the [cantranslator][] repository (only accessible
+if logged in to GitHub and with access to the early release).
+
+### Updating from a .hex file
+
+Updates to the translator source may be distributed as pre-compiled binaries,
+e.g. if they are distributed by an OEM who does not wish to make the CAN signals
+public.
+
+In this case, you will have a .hex file and can use the `upload_hex.sh` script
+to update your device. This script requires that `avrdude` is installed, or that
+you have the `MPIDE_DIR` environment variable pointing to a valid MPIDE
+installation (see the "Command Line Building" section above for details). Once
+that's setup, run it like so:
+
+{% highlight sh %}
+$ ./upload_hex.sh new-version.hex
+{% endhighlight %}
+
+Note that if you are using Windows, you also need to install the
+[FTDI driver](http://www.ftdichip.com/Drivers/VCP.htm) - get the setup
+executable version from that page.

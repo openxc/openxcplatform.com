@@ -47,6 +47,17 @@ As of January 2012, OpenXC is supported on:
     * 2012 Edge
     * 2012 Lincoln MKX
 
+## Concepts
+
+TODO
+
+JSON
+CAN
+OBD-II - include picture of port
+normal CAN messages vs diagnostic
+CAN messages vs signals
+firmware
+
 ## Hardware
 
 The current implementation uses the [Digilent chipKIT Max32][chipkit], an
@@ -57,6 +68,8 @@ most OpenXC applications.
 The translator is currently powered via its micro-USB board, which is connected
 to the host device. CAN messages are received via the OBD-II port in the
 driver's footwell.
+
+TODO move parts list here, then link to assembly
 
 ### Cables & Ports
 
@@ -90,59 +103,6 @@ experimental support for communicating with a Bluetooth vehicle interface.
 
 We're using the RN-42 bluetooth adpater, and the instructions for wiring this up
 to a chipKIT are in the [cantranslator][] repository on GitHub.
-
-## Testing
-
-Make sure that the tablet and CAN translator module are out of the way of the
-driver. They should be securely held down or preferably with another person in
-the passenger seat. The OBD-II and USB cables should also be routed away from
-the brake and accelerator pedals to avoid getting tangled. You should also avoid
-draping the cablse over the steering wheel, as they can get caught in the
-turning mechanism and make steering difficult.
-
-We recommend keeping the CAN translator between seats or on the passenger seat,
-with the OBD-II cable routed along the floor on the driver's side, around the
-back of the seat and up between the seats.
-
-Most importantly, *do not* try to test your application while in motion! Testing
-OpenXC apps while moving is absolutely a two person job.
-
-![Completed CAN translator](/images/assembly/openxc-assembly-19.jpg)
-
-<h2><a name="software">Software</a></h2>
-
-The [cantranslator][] repository (only accessible if logged in to GitHub and
-with access to the early release) contains the C source code that runs on the
-Arduino-compatible chipKIT device. Most OpenXC users won't need to touch this
-component - they will most likely be using a pre-built binary on the vehicle
-interface that knows about proprietary vehicle signals.
-
-### Updating from a .hex file
-
-Updates to the translator source may be distributed as pre-compiled binaries,
-e.g. if they are distributed by an OEM who does not wish to make the CAN signals
-public.
-
-In this case, you will have a .hex file and can use the `upload_hex.sh` script
-to update your device. This script requires that `avrdude` is installed, or that
-you have the `MPIDE_DIR` environment variable pointing to a valid MPIDE
-installation (see the "Command Line Building" section above for details). Once
-that's setup, run it like so:
-
-{% highlight sh %}
-$ ./upload_hex.sh new-version.hex
-{% endhighlight %}
-
-Note that if you are using Windows, you also need to install the
-[FTDI driver](http://www.ftdichip.com/Drivers/VCP.htm) - get the setup
-executable version from that page.
-
-### Custom CAN Signal Definition
-
-Developers that know the details of the CAN bus they will be using can choose to
-implement their own signal definitions for the translator. The documentation for
-this process is available at the [cantranslator][] repository (only accessible
-if logged in to GitHub and with access to the early release).
 
 [MPIDE]: https://github.com/chipKIT32/chipKIT32-MAX/downloads
 [Max32 page]: http://digilentinc.com/Products/Detail.cfm?NavPath=2,719,895&Prod=CHIPKIT-MAX32.

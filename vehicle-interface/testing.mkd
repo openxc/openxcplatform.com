@@ -1,0 +1,43 @@
+---
+layout: default
+title: Vehicle Interface Testing - OpenXC
+---
+
+## Testing
+
+Make sure that the tablet and CAN translator module are out of the way of the
+driver. They should be securely held down or preferably with another person in
+the passenger seat. The OBD-II and USB cables should also be routed away from
+the brake and accelerator pedals to avoid getting tangled. You should also avoid
+draping the cablse over the steering wheel, as they can get caught in the
+turning mechanism and make steering difficult.
+
+We recommend keeping the CAN translator between seats or on the passenger seat,
+with the OBD-II cable routed along the floor on the driver's side, around the
+back of the seat and up between the seats.
+
+Most importantly, *do not* try to test your application while in motion! Testing
+OpenXC apps while moving is absolutely a two person job.
+
+![Completed CAN translator](/images/assembly/openxc-assembly-19.jpg)
+
+<h2><a name="software">Software</a></h2>
+
+The [cantranslator][] repository (only accessible if logged in to GitHub and
+with access to the early release) contains the C source code that runs on the
+Arduino-compatible chipKIT device. Most OpenXC users won't need to touch this
+component - they will most likely be using a pre-built binary on the vehicle
+interface that knows about proprietary vehicle signals.
+
+## Viewer
+
+The `reader.py` Python program in this repository can be used to view the output
+of the CAN translator over micro-USB. Just plug it in and run the script with
+the `--verbose` flag to have all messages parsed and printed to stdout.
+
+{% highlight sh %}
+$ python reader.py -v
+{% endhighlight %}
+
+serial
+usb

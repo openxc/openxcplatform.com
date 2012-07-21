@@ -30,16 +30,6 @@ The expected format of an event message is:
 This format is good for something like a button event, where there are two
 discrete pieces of information in the measurement.
 
-## Viewer
-
-The `reader.py` Python program in this repository can be used to view the output
-of the CAN translator over micro-USB. Just plug it in and run the script with
-the `--verbose` flag to have all messages parsed and printed to stdout.
-
-{% highlight sh %}
-$ python reader.py -v
-{% endhighlight %}
-
 ## Signal List
 
 This is the list of signals officially supported by the Android library. Be
