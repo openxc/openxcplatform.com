@@ -17,7 +17,7 @@ of kits with OpenXC signals defined for the 2012 Ford Focus. Join the project's
 </div>
 
 The library ships with a method for playing back previously recorded vehicle
-measurement trace files for testing. The [VehicleMeasurement][] objects received
+measurement trace files for testing. The [Measurement][] objects received
 by your application are identical to those received from a live vehicle.
 
 The trace file format is simply a plain text file of timestamps and OpenXC JSON
@@ -130,3 +130,5 @@ VehicleButtonEvent.Listener listener = new VehicleButtonEvent.Listener() {
 [vehicle interface]: http://openxcplatform.com/vehicle-interface/hardware
 [short drive]: https://github.com/openxc/openxc-android/blob/tracedashboard/examples/res/raw/driving
 [idling while parked]: https://github.com/openxc/openxc-android/blob/tracedashboard/examples/res/raw/parked
+[Measurement]: /openxc-android/reference/com/openxc/measurements/Measurement.html
+[VehicleManager]: /openxc-android/reference/com/openxc/VehicleManager.html
