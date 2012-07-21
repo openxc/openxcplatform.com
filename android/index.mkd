@@ -27,15 +27,22 @@ device:
 
 * Must support **Android 2.3** or greater (i.e. API level 10)
 
-**Supported Devices**
+<div class="page-header">
+    <h2>Confirmed Supported Android Devices</h2>
+</div>
 
-* Tablets
-    * [Toshiba Thrive][thrive] 10.1" - the reference device used by the core OpenXC
-      developers. This tablet includes a full-size USB port.
-* Phones
-    * Samsung [Galaxy Nexus][galaxynexus] - compatible with Bluetooth only.
+**Tablets**
 
-**Known Incompatible Devices**
+* [Toshiba Thrive][thrive] 10.1" - the reference device used by the core OpenXC
+  developers. This tablet includes a full-size USB port.
+
+**Phones**
+
+* Samsung [Galaxy Nexus][galaxynexus] - compatible with Bluetooth only.
+
+<div class="page-header">
+    <h2>Known Incompatible Devices</h2>
+</div>
 
 * Samsung Galaxy Tab - USB host mode is not fully enabled and is not compatible
   with a USB CAN translator.
