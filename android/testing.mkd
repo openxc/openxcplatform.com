@@ -1,0 +1,16 @@
+---
+layout: default
+title: Testing - OpenXC
+---
+
+<div class="page-header">
+    <h1>Android Testing</h1>
+</div>
+
+Before you can test your app in a vehicle, you will need to find or build a
+functional [vehicle interface][]. Ford is currently providing a limited number
+of kits with OpenXC signals defined for the 2012 Ford Focus. Join the project's
+[Google Group][gg] to find out how to get one of these.
+
+[gg]: http://groups.google.com/group/openxc
+[vehicle interface]: http://openxcplatform.com/vehicle-interface/hardware
