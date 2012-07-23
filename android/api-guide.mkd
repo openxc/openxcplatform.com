@@ -19,13 +19,36 @@ This document describes the interface for the OpenXC library **version 2.0**.
 
 **Remote and Local Service**
 
-TODO
+Android exposes many of its system level functions in the form of services. This
+is a useful paradigm for long-running components of an application and perfect
+for OpenXC, which needs to maintain a connection to the vehicle to continue
+receiving new measurements.
+
+Services can run either inside an application's address space or as an external
+process; OpenXC uses both.
+
+The core of the system is the `VehicleService`, which runs in a separate process
+to any app. Since only one application at a time can connect to a USB device ,
+this service controls access to the USB CAN translator. From here, new data from
+the vehicle (or other sources, as you'll see) is propagated to any
+applications using the OpenXC library. The benefit is that multiple
+OpenXC-enabled apps can run on the same system, simultaneously.
+
+Application developers use a second, in-process service - the `VehicleManager`.
+This service provides the interface that you'll use when developing your app.
+Behind the scenes, it binds to the `VehicleService` (running in another process)
+and communicates with it using the [Android Interface Definition
+Language][aidl]. The benefit of using the `VehicleManager` in-process is that
+developers don't need to care about any of this - it's all abstracted away.
 
 **Data Pipeline**
 
-TODO
+The `VehicleManager` uses the concept of a pipeline to funnel data from
+"sources" to "sinks." This is a one-way pipeline.
 
-**Source**
+TODO diagram of data sources/sinks/services
+
+*Source*
 
 A data source injects new measurements into the OpenXC vehicle service. Sources
 can be added by the internal vehicle service itself (e.g. the source that
@@ -47,9 +70,55 @@ app's custom source is propagated back to the
  and then all other apps.
 </div>
 
-**Sink**
+The built-in sources for application developers are:
 
-TODO
+* [BluetoothVehicleDataSource][] - connects to a Bluetooth-enabled CAN
+  translator and injects the data into the OpenXC system so it is
+  indistiguishable from a USB source.
+* [TraceVehicleDataSource][] - injects vehicle measurements from a pre-recorded
+  [trace file][].
+
+*Sink*
+
+A data sink receives every new measurement put into the pipeline by the sources.
+It receives the data in nearly raw form, as a `RawMeasurmenet` instead of a
+fully processed `Measurement` object. This can be useful if you need to be able
+to serialize the data without knowing exactly what type of values it contains
+(e.g. a string, float, or bool).
+
+Data sinks handle the core of the library's asynchronous notification system,
+too. The `VehicleManager` always adds an instance of the
+[MeasurementListenerSink][], which keeps tabs on which applications want to be
+notified of changes in measurments.
+
+The built-in sinks for application developers are:
+
+* [FileRecorderSink][] - records all incoming vehicle measurements to a file on
+  the internal storage that can later be used as a [trace file][].
+* [UploaderSink][] - send all incoming vehicle measurements to a URL via HTTP.
+
+
+*Remote Service*
+
+The remote process `VehicleService` also uses a pipeline, but it's not
+accessible to application developers. It uses only two sources:
+
+* [ApplicationSource][] - this source has a special callback that the
+  `VehicleManager` instances in all OpenXC apps use to send any new measurements
+  they create back to the `VehicleService`. The purpose is that e.g. a trace
+  data source or Bluetooth source instantiated in an application can share its
+  data with all other apps in the system.
+* [UsbVehicleDataSource][] - since only one application can connect to a USB
+  device at a time, the single instance of the `VehicleService` takes care of
+  it.
+
+and it only uses two sinks:
+
+* [RemoteCallbackSink][]
+* [MockedLocationSink][]
+
+Application developers don't need to worry about these, but it's good to know
+how data flow through the system.
 
 **Enabler**
 
@@ -214,3 +283,5 @@ locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, l
 [Measurement]: /openxc-android/reference/com/openxc/measurements/Measurement.html
 [Enabler]: /getting-started/library-installation.html#enabler
 [tutorial]: /getting-started/tutorial.html
+[aidl]: http://developer.android.com/guide/components/aidl.html
+[trace file]: /android/testing.html
