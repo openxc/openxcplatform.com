@@ -7,7 +7,7 @@ title: App Tutorial - OpenXC
     <h1>App Tutorial</h1>
 </div>
 
-<div class="pull-right well span2">
+<div class="pull-right well">
     <ul class="nav nav-list">
         <li class="nav-header">Next Steps</li>
         <li><a href="/vehicle-interface/index.html">Vehicle Interface</a></li>

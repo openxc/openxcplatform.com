@@ -7,7 +7,7 @@ title: Library Setup - OpenXC
     <h1>Android Library Installation</h1>
 </div>
 
-<div class="pull-right well span2">
+<div class="pull-right well">
     <ul class="nav nav-list">
         <li class="nav-header">Next Step</li>
         <li><a href="/getting-started/tutorial.html">

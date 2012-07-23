@@ -7,7 +7,7 @@ title: Getting Started - OpenXC
     <h1>Getting Started</h1>
 </div>
 
-<div class="pull-right well span3">
+<div class="pull-right well">
     <ul class="nav nav-list">
         <li class="nav-header">Next Step</li>
         <li><a href="/getting-started/library-installation.html">
