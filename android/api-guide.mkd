@@ -27,23 +27,23 @@ receiving new measurements.
 Services can run either inside an application's address space or as an external
 process; OpenXC uses both.
 
-The core of the system is the `VehicleService`, which runs in a separate process
+The core of the system is the [VehicleService][], which runs in a separate process
 to any app. Since only one application at a time can connect to a USB device ,
 this service controls access to the USB CAN translator. From here, new data from
 the vehicle (or other sources, as you'll see) is propagated to any
 applications using the OpenXC library. The benefit is that multiple
 OpenXC-enabled apps can run on the same system, simultaneously.
 
-Application developers use a second, in-process service - the `VehicleManager`.
+Application developers use a second, in-process service - the [VehicleManager][].
 This service provides the interface that you'll use when developing your app.
-Behind the scenes, it binds to the `VehicleService` (running in another process)
+Behind the scenes, it binds to the [VehicleService][] (running in another process)
 and communicates with it using the [Android Interface Definition
-Language][aidl]. The benefit of using the `VehicleManager` in-process is that
+Language][aidl]. The benefit of using the [VehicleManager][] in-process is that
 developers don't need to care about any of this - it's all abstracted away.
 
 **Data Pipeline**
 
-The `VehicleManager` uses the concept of a pipeline to funnel data from
+The [VehicleManager][] uses the concept of a pipeline to funnel data from
 "sources" to "sinks." This is a one-way pipeline.
 
 TODO diagram of data sources/sinks/services
@@ -87,7 +87,7 @@ to serialize the data without knowing exactly what type of values it contains
 (e.g. a string, float, or bool).
 
 Data sinks handle the core of the library's asynchronous notification system,
-too. The `VehicleManager` always adds an instance of the
+too. The [VehicleManager][] always adds an instance of the
 [MeasurementListenerSink][], which keeps tabs on which applications want to be
 notified of changes in measurments.
 
@@ -100,27 +100,37 @@ The built-in sinks for application developers are:
 
 *Remote Service*
 
-The remote process `VehicleService` also uses a pipeline, but it's not
+The remote process [VehicleService][] also uses a pipeline, but it's not
 accessible to application developers. It uses only two sources:
 
 * [ApplicationSource][] - this source has a special callback that the
-  `VehicleManager` instances in all OpenXC apps use to send any new measurements
-  they create back to the `VehicleService`. The purpose is that e.g. a trace
+  [VehicleManager][] instances in all OpenXC apps use to send any new measurements
+  they create back to the [VehicleService][]. The purpose is that e.g. a trace
   data source or Bluetooth source instantiated in an application can share its
   data with all other apps in the system.
 * [UsbVehicleDataSource][] - since only one application can connect to a USB
-  device at a time, the single instance of the `VehicleService` takes care of
+  device at a time, the single instance of the [VehicleService][] takes care of
   it.
 
 and it only uses two sinks:
 
-* [RemoteCallbackSink][]
-* [MockedLocationSink][]
+* [RemoteCallbackSink][] - funnels vehicle data asynchronously with AIDL to
+  applications.
+* [MockedLocationSink][] - pushes location and speed information from the
+  vehicle into the normal Android location framework.
 
 Application developers don't need to worry about these, but it's good to know
 how data flow through the system.
 
 **Enabler**
+
+The enabler does a few things:
+
+* Provides a common point to change settings about data sources and sink.
+* Make sure the remote [VehicleService][] stays alive.
+* Keeps the [VehicleService][] started at boot.
+* Minimizes the amount of XML cruft that application developers are required to
+  add to their apps.
 
 TODO
 
@@ -263,7 +273,7 @@ Add the `ACCESS_FINE_LOCATION` and `ACCESS_MOCK_LOCATION` permission to your
 <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
 {% endhighlight %}
 
-Open a connection to the `VehicleManager` as described earlier in "Service
+Open a connection to the [VehicleManager][] as described earlier in "Service
 Binding." Then access [user location][] in the traditional Android fashion -
 data from the `LocationManager.GPS_PROVIDER` and
 `VehicleManager.VEHICLE_LOCATION_PROVIDER` providers will be coming from OpenXC.
@@ -285,3 +295,12 @@ locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, l
 [tutorial]: /getting-started/tutorial.html
 [aidl]: http://developer.android.com/guide/components/aidl.html
 [trace file]: /android/testing.html
+[BluetoothVehicleDataSource]: /openxc-android/reference/com/openxc/sources/bluetooth/BluetoothVehicleDataSource.html
+[TraceVehicleDataSource]: /openxc-android/reference/com/openxc/sources/trace/TraceVehicleDataSource.html
+[MeasurementListenerSink]: /openxc-android/reference/com/openxc/sinks/MeasurementListenerSink.html
+[FileRecorderSink]: /openxc-android/reference/com/openxc/sinks/FileRecorderSink.html
+[UploaderSink]: /openxc-android/reference/com/openxc/sinks/UploaderSink.html
+[ApplicationSource]: /openxc-android/reference/com/openxc/sources/ApplicationSource.html
+[UsbVehicleDataSource]: /openxc-android/reference/com/openxc/sources/usb/UsbVehicleDataSource.html
+[RemoteCallbackSink]: /openxc-android/reference/com/openxc/sinks/RemoteCallbackSink.html
+[MockedLocationSink]: /openxc-android/reference/com/openxc/sinks/MockedLocationSink.html
