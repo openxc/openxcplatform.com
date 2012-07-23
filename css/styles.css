@@ -39,3 +39,7 @@ div.highlight code {
 code {
     padding: 0;
 }
+
+.stacked img {
+    margin-bottom: 10px;
+}
