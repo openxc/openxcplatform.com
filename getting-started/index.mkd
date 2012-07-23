@@ -64,8 +64,6 @@ CAN translator and reads the translated vehicle data. OpenXC developers can
 write applications on this device and use any of the data through a Java
 library.
 
-TODO simplified arch diagram
-
 ![OpenXC Architecture Diagram](/images/openxc-architecture.jpeg)
 
 [can]: http://en.wikipedia.org/wiki/CAN_bus
