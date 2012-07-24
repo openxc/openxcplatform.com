@@ -21,7 +21,7 @@ monitor and control everything from the throttle position to the ambient air
 temperature. These devices communicate with each other over a wired in-vehicle
 network, a [CAN bus][can].
 
-![In-vehicle Network](/images/can-diagram.pong)
+![In-vehicle Network](/images/can-diagram.png)
 
 The CAN bus is one of the primary components of [OBD-II][obd2], a vehicle
 diagnostic standard mandatory for all cars sold in the United States since 1996.
