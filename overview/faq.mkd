@@ -70,7 +70,7 @@ programming language and OS agnostic
 The reference host device is <a href="/android/host.html">Android</a>, but
 there's no reason you couldn't use a Windows or Linux laptop with a USB port
 (i.e. any of them). A port of the
- <a href="/android/library-usage.html">openxc-android</a> library to Python or
+ <a href="/android/api-guide.html">openxc-android</a> library to Python or
 plain old (non-Android) Java would be a great addition to the project.
 </p>
 

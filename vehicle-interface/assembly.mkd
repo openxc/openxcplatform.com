@@ -33,7 +33,7 @@ Slide the round grommet onto the bare wire end of the cable. Cut a section of
 
 Crimp a female pin onto the following wires and verify the connection to the
 expected pin using a multimeter. The pinout for the cable recommended above is
-available at [OBD2Cables.com](obd2). wire, and insert the pin into the correct
+available at [OBD2Cables.com][obd2]. wire, and insert the pin into the correct
 housing.
 
 Trim the red (battery voltage) and brown (signal ground) wires down to the

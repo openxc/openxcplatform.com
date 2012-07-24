@@ -233,7 +233,7 @@ Bought all of the [parts](#parts) for the CAN translator? We have a detailed
 [max32]: http://digilentinc.com/Products/Detail.cfm?NavPath=2,719,895&Prod=CHIPKIT-MAX32.
 [cantranslator]: https://github.com/openxc/cantranslator
 [output-format]: /vehicle-interface/output-format.html
-[host device]: /android/host.html
+[host device]: /android/index.html
 [chipkit]: http://www.digilentinc.com/Products/Catalog.cfm?NavPath=2,892&Cat=18
 [arduino]: http://arduino.cc
 [Network Shield]: http://digilentinc.com/Products/Detail.cfm?NavPath=2,719,943&Prod=CHIPKIT-NETWORK-SHIELD
