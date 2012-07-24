@@ -3,8 +3,9 @@ layout: default
 title: FAQ - OpenXC
 ---
 
-Developer FAQ
-=============
+<div class="page-header">
+    <h1>Frequently Asked Questions</h1>
+</div>
 
 <dl>
 
