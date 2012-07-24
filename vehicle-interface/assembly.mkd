@@ -7,6 +7,15 @@ title: Vehicle Interface Assembly - OpenXC
     <h1>CAN Translator Assembly</h1>
 </div>
 
+<div class="pull-right well">
+    <ul class="nav nav-list">
+        <li class="nav-header">Next Step</li>
+        <li><a href="/vehicle-interface/output-format.html">
+            Familiarize yourself with the output format <i class="icon-arrow-right"></i>
+        </a></li>
+    </p>
+</div>
+
 Make sure you've purchased all of the required
 [parts](/vehicle-interface/index.html#parts) before beginning.
 
@@ -260,8 +269,19 @@ pin.
 If you have any problems with the assembly instructions, please ask for help in
 the [Google Group](http://groups.google.com/group/openxc).
 
+<div class="page-header">
+<h2>Next Steps</h2>
+</div>
+
+Once you've constructed a CAN translator, you should familiarize yourself with
+the [output format][], load a [firmware][] and then [test it in a
+vehicle][testing].
+
 [max32]: http://digilentinc.com/Products/Detail.cfm?NavPath=2,892,894&Prod=CHIPKIT-MAX32
 [networkshield]: http://digilentinc.com/Products/Detail.cfm?NavPath=2,892,942&Prod=CHIPKIT-NETWORK-SHIELD
 [obd2]: http://www.obd2cables.com/products/obd-cables/j1962m-ra-to/cable-j1962m-ra-type-b-to-open-end-6ft.html
 [crimpconnectors]: http://www.pololu.com/catalog/product/1914
 [crimppins]: http://www.pololu.com/catalog/product/1930
+[output format]: /vehicle-interface/output-format.html
+[testing]: /vehicle-interface/testing.html
+[firmware]: /vehicle-interface/firmware.html

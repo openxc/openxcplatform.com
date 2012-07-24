@@ -7,6 +7,15 @@ title: Firmware - OpenXC
     <h1>CAN Translator Firmware</h1>
 </div>
 
+<div class="pull-right well">
+    <ul class="nav nav-list">
+        <li class="nav-header">Next Step</li>
+        <li><a href="/vehicle-interface/testing.html">
+            Test your CAN translator <i class="icon-arrow-right"></i>
+        </a></li>
+    </p>
+</div>
+
 <div class="page-header">
     <h2>Updating with a .hex File</h2>
 </div>
@@ -54,6 +63,13 @@ implement their own signal definitions for the translator. The documentation for
 this process is available at the [cantranslator][] repository (only accessible
 if logged in to GitHub and with access to the early release).
 
+<div class="page-header">
+<h2>Next Steps</h2>
+</div>
+
+You're now ready to [test your CAN translator in a vehicle][testing].
+
 [winavr]: http://winavr.sourceforge.net/
 [upload_hex.sh]: https://github.com/openxc/cantranslator/blob/master/upload_hex.sh
 [MPIDE]: https://github.com/chipKIT32/chipKIT32-MAX/downloads
+[testing]: /vehicle-interface/testing.html

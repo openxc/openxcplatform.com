@@ -16,7 +16,6 @@ title: Vehicle Interface - OpenXC
     </p>
 </div>
 
-
 The vehicle interface (or CAN translator) is based on a microcontroller with two
 external connections - one to the CAN bus via the OBD-II port, and one to the
 [host device][] via USB or serial. It passively listens for a subset of CAN
@@ -154,14 +153,74 @@ USB connection is **not** already receiving the messages.
 <h2>Concepts</h2>
 </div>
 
-TODO
+**CAN**
 
-JSON
-CAN
-OBD-II - include picture of port
-normal CAN messages vs diagnostic
-CAN messages vs signals
-firmware
+Modern automobiles are laced with a number of microcontrollers and sensors that
+monitor and control everything from the throttle postion to the ambient air
+temperature. These devices communicate with each other over a wired in-vehicle
+network, a [CAN bus][can].
+
+![In-vehicle Network](/images/can-diagram.png)
+*(Creative Commons, Ford Motor Company)*
+
+Compared to something like the network of the Internet, CAN is relatively simple
+and low-level. CAN buses have 2 wires, and vehicles typically have two or three
+CAN buses running at speeds ranging from 125Kbps to 500Kbps. The protocol used
+to send data between nodes on the network is roughly equivalent to a link layer
+protocol like MAC or ARP. It's a broadcast network and only one node can send
+data at a time. It handles message priorities at the bit level which makes it a
+good choice for vehicle networks, when you absolutely, positively, **must** make
+sure the brake pedal status is sent.
+
+**CAN Data Format**
+
+CAN network traffic is organized into frames (or messages) that have:
+
+* an 11 bit identifier
+* up to 64 bits of data
+
+Within the 64 bits of data of each **CAN message** there are typically multiple
+data points, e.g. the steering wheel angle, a quality factor for the sensor, the
+center point of the steering wheel, etc. Each of these bit fields is known as a
+**CAN signal**.
+
+The exact format of these bit fields and messages are typically considered
+sensitive information by vehicle manufacturers. The OpenXC CAN translator allows
+these companies to keep that information private, but still give consumers and
+developers access to the data contained within. Even for engineers inside the
+companies, dealing with a standard data format across many vehicles is often
+preferable to keeping track of a database of CAN message and signal definitions.
+
+**On-Board Diagnostics**
+
+The CAN bus is one of the primary components of [OBD-II][obd2], a vehicle
+diagnostic standard mandatory for all cars sold in the United States since 1996.
+The OBD-II standard sends and receives messages on the CAN bus. If you've ever
+watched your mechanic plug a tool in somewhere underneath your steering wheel,
+or seen a vehicle monitoring app for your smartphone, that's OBD-II in action.
+You'll always find the port by the driver's knees.
+
+![OBD-II Port with Cable in a Mustang](/images/obd-ii-cable.jpg)
+
+Diagnostic messages work slightly differently than the CAN messages used by all
+other in-vehicle systems. When you turn on your car, the CAN bus is very busy
+with so-called "normal" messages. For example, the engine control unit (ECU)
+continuously sends a CAN message with the engine speed (in RPM). The cluster
+listens for this message on the bus and updates the tachometer arm when it
+receives a new value. The cluster doesn't have to query for anything.
+
+Conversely, diagnostic messages use a request/response style. When you attach an
+off-the-shelf OBD-II scan tool, it sends specially formatted diagnostic command
+messages over the CAN bus. Nodes on the network that can output diagnostic
+information are listening for these messages, and send out the requested status
+information over CAN when asked. There's no point in sending these messages when
+nothing is attached and capable of interpreting the results, so these messages
+are not sent continuously to minimize the level of traffic on the network.
+
+The diagnostic request protocol is relatively standard across vehicle
+manufacturers, but beyond the standardized (and mandated) [OBD-II
+parameters](http://en.wikipedia.org/wiki/OBD-II_PIDs), the diagnostic message
+identifiers and formats are also largely proprietary.
 
 <div class="page-header">
 <h2>Next Steps</h2>
@@ -182,3 +241,5 @@ Bought all of the [parts](#parts) for the CAN translator? We have a detailed
 [obd2]: http://www.obd2cables.com/products/obd-cables/j1962m-ra-to/cable-j1962m-ra-type-b-to-open-end-6ft.html
 [crimpconnectors]: http://www.pololu.com/catalog/product/1914
 [crimppins]: http://www.pololu.com/catalog/product/1930
+[can]: http://en.wikipedia.org/wiki/CAN_bus
+[obd2]: http://en.wikipedia.org/wiki/On-board_diagnostics

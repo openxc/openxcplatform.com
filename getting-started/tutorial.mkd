@@ -10,8 +10,8 @@ title: App Tutorial - OpenXC
 <div class="pull-right well">
     <ul class="nav nav-list">
         <li class="nav-header">Next Steps</li>
-        <li><a href="/vehicle-interface/index.html">Vehicle Interface</a></li>
         <li><a href="/android/index.html">Host Device</a></li>
+        <li><a href="/vehicle-interface/index.html">Vehicle Interface</a></li>
     </ul>
 </div>
 
@@ -232,7 +232,7 @@ you'd like to see a more in-depth example, take look at the [MPG][] app or the
 </div>
 
 You've now completed the OpenXC Android tutorial, but there's more to learn
-about the [vehicle interface][] and [host device][].
+about the [host device][] and [vehicle interface][].
 
 [sdk]: http://developer.android.com/sdk/index.html
 [gg]: http://groups.google.com/group/openxc

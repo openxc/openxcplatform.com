@@ -7,14 +7,17 @@ title: Output Format - OpenXC
     <h1>Translation Output Format</h1>
 </div>
 
+<div class="pull-right well">
+    <ul class="nav nav-list">
+        <li class="nav-header">Next Step</li>
+        <li><a href="/vehicle-interface/firmware.html">
+            Flash the firmware <i class="icon-arrow-right"></i>
+        </a></li>
+    </p>
+</div>
+
 The microcontroller has a second USB controller operating in USB device mode. It
 sends the generic vehicle data over via bulk USB transfer as packed JSON.
-
-<div class="alert alert-info">
-There may not be a 1:1 relationship between input and output signals - i.e. raw
-engine timing CAN signals may be summarized in an "engine performance" metric on
-the abstract side of the interface.
-</div>
 
 There are two valid message types - single valued and event.
 
@@ -40,6 +43,12 @@ The expected format of an event message is:
 
 This format is good for something like a button event, where there are two
 discrete pieces of information in the measurement.
+
+<div class="alert alert-info">
+There may not be a 1:1 relationship between input and output signals - i.e. raw
+engine timing CAN signals may be summarized in an "engine performance" metric on
+the abstract side of the interface.
+</div>
 
 <div class="page-header">
     <h2>Signal List</h2>
@@ -118,3 +127,12 @@ selected a small set of the most interesting signals to get started.
     <dd>Value is State: left, right, up, down, ok.
         Event is State: idle, pressed, released, held_short, held_long, stuck</dd>
 </dl>
+
+<div class="page-header">
+<h2>Next Steps</h2>
+</div>
+
+Before you can receive data from a vehicle, you need to [load the proper firmware
+version][firmware].
+
+[firmware]: /vehicle-interface/firmware.html
