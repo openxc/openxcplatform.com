@@ -3,7 +3,9 @@ layout: default
 title: Vehicle Interface Testing - OpenXC
 ---
 
-## Testing
+<div class="page-header">
+    <h1>Testing</h1>
+</div>
 
 Make sure that the tablet and CAN translator module are out of the way of the
 driver. They should be securely held down or preferably with another person in
@@ -21,7 +23,9 @@ OpenXC apps while moving is absolutely a two person job.
 
 ![Completed CAN translator](/images/assembly/openxc-assembly-19.jpg)
 
-<h2><a name="software">Software</a></h2>
+<div class="page-header">
+    <h2>Source Code</h2>
+</div>
 
 The [cantranslator][] repository (only accessible if logged in to GitHub and
 with access to the early release) contains the C source code that runs on the
@@ -29,7 +33,9 @@ Arduino-compatible chipKIT device. Most OpenXC users won't need to touch this
 component - they will most likely be using a pre-built binary on the vehicle
 interface that knows about proprietary vehicle signals.
 
-## Viewer
+<div class="page-header">
+    <h2>Data Reader</h2>
+</div>
 
 The `reader.py` Python program in this repository can be used to view the output
 of the CAN translator over micro-USB. Just plug it in and run the script with
@@ -39,5 +45,6 @@ the `--verbose` flag to have all messages parsed and printed to stdout.
 $ python reader.py -v
 {% endhighlight %}
 
-serial
-usb
+TODO either link to more docs or put them here
+
+[cantranslator]: https://github.com/openxc/cantranslator

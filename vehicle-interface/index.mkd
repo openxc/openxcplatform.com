@@ -3,51 +3,156 @@ layout: default
 title: Vehicle Interface - OpenXC
 ---
 
-CAN Translator Module
-=============
+<div class="page-header">
+    <h1>Vehicle Interface</h1>
+</div>
 
-The CAN translation module is a microcontroller with two connections - one to
-the CAN bus via the OBD-II port, and one to the [host device][] via USB. It
-listens for a subset of CAN messages, performs required unit conversion or
-factoring and outputs a [generic version][output-format] to the USB
-interface.
+<div class="pull-right well">
+    <ul class="nav nav-list">
+        <li class="nav-header">Next Step</li>
+        <li><a href="/vehicle-interface/assembly.html">
+            Assemble the CAN translator <i class="icon-arrow-right"></i>
+        </a></li>
+    </p>
+</div>
+
+
+The vehicle interface (or CAN translator) is based on a microcontroller with two
+external connections - one to the CAN bus via the OBD-II port, and one to the
+[host device][] via USB or serial. It passively listens for a subset of CAN
+messages, performs required unit conversion or factoring and outputs a [generic
+version][output-format] to the USB interface.
 
 Unless you are implementing custom CAN messages, you will most likely need a
 pre-built OpenXC binary from the manufacturer of your vehicle. Each OEM can
-decide whether or not to participate in OpenXC and if so, how many of the
-signals they wish to expose.
+decide whether or not to participate in OpenXC and if so, which types of data
+they wish to expose.
 
-TODO
-There may not be a 1:1 relationship between input and output signals - i.e. raw
-engine timing CAN signals may be summarized in an "engine performance" metric on
-the abstract side of the interface.
+<div class="row">
+    <div class="span4">
+        <img title="CAN Translator with Enclosure"
+            src="/images/cantranslator-boxed-vertical.jpg"/>
+    </div>
+    <div class="span4">
+        <img title="CAN Translator with Cable"
+            src="/images/cantranslator-with-plug.jpg"/>
+    </div>
+</div>
 
+<div class="page-header">
+<h2>Supported Vehicles</h2>
+</div>
 
-As of January 2012, OpenXC is supported on:
+**Ford**
 
-### Supported Vehicles
+* 2011 - 2013 Focus (gas, electric and hybrid)
+* 2011 - 2012 Fusion
+* 2011 - 2012 Fiesta
+* 2012 Mustang
+* 2011 Figo
+* 2009 F-150
+* 2011 - 2012 E350
+* 2008 S-MAX
 
-* Ford Vehicles
-    * 2011 - 2013 Focus (gas, electric and hybrid)
-    * 2011 - 2012 Fusion
-    * 2011 - 2012 Fiesta
-    * 2012 Mustang
-    * 2011 Figo
-    * 2009 F-150
-    * 2011 - 2012 E350
-    * 2008 S-MAX
-* Unconfirmed Ford Vehicles
-    * 2006 - 2010, 2013 Fusion
-    * 2006 - 2013 Lincoln MKZ
-    * 2010, 2011, 2013 Mustang
-    * 2011 - 2012 Explorer
-    * 2010 - 2013 F-150
-    * 2009 - 2013 Flex
-    * 2009 - 2013 Lincoln MKT
-    * 2012 Edge
-    * 2012 Lincoln MKX
+These firmware for these vehicles is as of yet untested, but should work fine.
+If you use the CAN translator on one of these vehicles, do [let the developers
+know](/overview/discuss.html).
 
-## Concepts
+* 2006 - 2010, 2013 Fusion
+* 2006 - 2013 Lincoln MKZ
+* 2010, 2011, 2013 Mustang
+* 2011 - 2012 Explorer
+* 2010 - 2013 F-150
+* 2009 - 2013 Flex
+* 2009 - 2013 Lincoln MKT
+* 2012 Edge
+* 2012 Lincoln MKX
+
+<div class="page-header">
+<h2>Hardware</h2>
+</div>
+
+The current implementation uses the [Digilent chipKIT Max32][chipkit], an
+[Arduino-compatible][arduino] microcontroller based on PIC32. The [Network
+Shield][] add-on adds two CAN transceivers, which is enough to enable most
+OpenXC applications.
+
+The translator is powered via its micro-USB port, which is connected to the host
+device. CAN messages are received via the OBD-II port in the driver's footwell.
+
+<a name="parts">
+**Parts List**
+</a>
+
+This is a list of the hardware used in the reference OpenXC kit - you're
+guaranteed to have a 100% compatible OpenXC device if you use these parts
+exactly. There are many equally compatible variations on this list from hundreds
+of different vendors, so feel free to use other parts you may have on hand (like
+the crimp connectors, for example).
+
+* Digilent chipKIT Max32 Microcontroller from [Digilent][max32] ($50)
+* Digilent chipKIT Network Shield from [Digilent][Network Shield] ($55)
+* OBD-II Male to Breakout Cable from [OBD2Cables][obd2] ($13)
+* (3x) 2x6 Crimp Connector Housings from [Pololu][crimpconnectors] (< $1)
+* (4x) Female crimp pins from [Pololu][crimppins] (< $1)
+* Shrink tubing
+* Rubber cable grommet that fits the OBD-II cable
+* Enclosure at least 5" x 2.5" x 2.5"
+* Mounting spacers
+
+<div class="page-header">
+<h3>Device Connections</h3>
+</div>
+
+There are 3 USB ports on the combined Max32 and Network Shield, so getting the
+cables sorted out can be a bit confusion. The ports are meant to be used as
+follows:
+
+* USB-A (square) - not used.
+* Mini-USB - connect to the serial console for debugging and to upload new
+  firmware.
+*  Micro-USB - the OpenXC data is sent through this port - connect it to your
+   computer for testing with the Python script, or to an Android tablet to run
+   an OpenXC application.
+
+<div class="alert alert-error">
+<strong>A note about power:</strong> In order to power the board via micro-USB,
+we have to connect the 5v rails of the chipKIT and network shield. This means
+that you absolutely must not plug the mini-USB and micro-USB ports in to
+different devices at the same time! This would short 2 different 5v sources
+together and likely destroy the chipKIT and network shield.
+</div>
+
+The OBD-II cable is safe to plug in at any time, with the vehicle running or
+off. The cable only fits one way into the vehicle's port, like a USB cable.
+
+<div class="page-header">
+<h3>Bluetooth</h3>
+</div>
+
+The CAN translator now has experimental support for outputting data over a
+serial (UART) connection instead of USB. That means that you can use Bluetooth
+to connect a tablet (or even a phone!) to your car wirelessly. The Android
+library also has experimental support for communicating with a Bluetooth vehicle
+interface.
+
+![Bluetooth adapter](/images/bluetooth-translator.jpg)
+
+We're using the [RN-42](http://www.rovingnetworks.com/products/RN_42) bluetooth
+adpater with the SPP (Serial Port Profile) configuration. Connect the RX and TX
+pins of your serial adapter to *pins 18 and
+19* on the chipKIT and make sure it's set to use a baud rate of 115200.
+Whenever, the CAN translator isn't able to send messages over USB, it will send
+over this serial connection instead.
+
+To be absolutely clear, OpenXC messages are only sent over serial if an active
+USB connection is **not** already receiving the messages.
+
+*(and yes, we live dangerously and make all of our wires the same color!)*
+
+<div class="page-header">
+<h2>Concepts</h2>
+</div>
 
 TODO
 
@@ -58,56 +163,22 @@ normal CAN messages vs diagnostic
 CAN messages vs signals
 firmware
 
-## Hardware
+<div class="page-header">
+<h2>Next Steps</h2>
+</div>
 
-The current implementation uses the [Digilent chipKIT Max32][chipkit], an
-[Arduino-compatible][arduino] microcontroller based on PIC32 instead of ATmega. The network
-shield add-on gives the chipKIT two CAN transceivers, which is enough to enable
-most OpenXC applications.
-
-The translator is currently powered via its micro-USB board, which is connected
-to the host device. CAN messages are received via the OBD-II port in the
-driver's footwell.
-
-TODO move parts list here, then link to assembly
-
-### Cables & Ports
-
-There are 3 USB ports on the combined Max32 and Network Shield, so things can
-get a bit confusing. They should be used as follows:
-
-* USB-A (square) - not used.
-* Mini-USB - connect to the serial console for debugging and to upload new
-  firmware.
-*  Micro-USB - the OpenXC data is sent through this port - connect it to your
-   computer for testing with the Python script, or to an Android tablet to run
-   an OpenXC application.
-
-**An Important Note:** In order to power the board via micro-USB, we have to connect
-the 5v buses of the chipKIT and network shield. This means that you absolutely
-must not plug the mini-USB and micro-USB ports in to different devices at the
-same time! This would short 2 different 5v sources together and likely destroy
-the chipKIT and network shield.
-
-The OBD-II cable can be plugged in at any time, with the vehicle running or off.
-The cable only fits one way, like a USB cable.
-
-### Bluetooth
-
-The CAN translator now has experimental support for using regular old serial
-connections, instead of USB. That means that you can use Bluetooth to connect a
-tablet (or even a phone!) to your car wirelessly. The Android library also has
-experimental support for communicating with a Bluetooth vehicle interface.
-
-![Bluetooth adapter](/images/bluetooth-translator.jpg)
-
-We're using the RN-42 bluetooth adpater, and the instructions for wiring this up
-to a chipKIT are in the [cantranslator][] repository on GitHub.
+Bought all of the [parts](#parts) for the CAN translator? We have a detailed
+[assembly guide][] for you next.
 
 [MPIDE]: https://github.com/chipKIT32/chipKIT32-MAX/downloads
-[Max32 page]: http://digilentinc.com/Products/Detail.cfm?NavPath=2,719,895&Prod=CHIPKIT-MAX32.
+[max32]: http://digilentinc.com/Products/Detail.cfm?NavPath=2,719,895&Prod=CHIPKIT-MAX32.
 [cantranslator]: https://github.com/openxc/cantranslator
 [output-format]: /vehicle-interface/output-format.html
 [host device]: /android/host.html
 [chipkit]: http://www.digilentinc.com/Products/Catalog.cfm?NavPath=2,892&Cat=18
 [arduino]: http://arduino.cc
+[Network Shield]: http://digilentinc.com/Products/Detail.cfm?NavPath=2,719,943&Prod=CHIPKIT-NETWORK-SHIELD
+[assembly guide]: /vehicle-interface/assembly.html
+[obd2]: http://www.obd2cables.com/products/obd-cables/j1962m-ra-to/cable-j1962m-ra-type-b-to-open-end-6ft.html
+[crimpconnectors]: http://www.pololu.com/catalog/product/1914
+[crimppins]: http://www.pololu.com/catalog/product/1930

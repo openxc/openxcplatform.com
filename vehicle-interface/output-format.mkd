@@ -3,15 +3,24 @@ layout: default
 title: Output Format - OpenXC
 ---
 
-Signal Translation Specification
-=============
+<div class="page-header">
+    <h1>Translation Output Format</h1>
+</div>
 
 The microcontroller has a second USB controller operating in USB device mode. It
 sends the generic vehicle data over via bulk USB transfer as packed JSON.
 
+<div class="alert alert-info">
+There may not be a 1:1 relationship between input and output signals - i.e. raw
+engine timing CAN signals may be summarized in an "engine performance" metric on
+the abstract side of the interface.
+</div>
+
 There are two valid message types - single valued and event.
 
-### Single Valued
+<div class="page-header">
+    <h3>Single Valued</h3>
+</div>
 
 The expected format of a single valued message is:
 
@@ -19,7 +28,9 @@ The expected format of a single valued message is:
 {"name": "steering_wheel_angle", "value": 45}
 {% endhighlight %}
 
-### Event
+<div class="page-header">
+    <h3>Event</h3>
+</div>
 
 The expected format of an event message is:
 
@@ -30,7 +41,9 @@ The expected format of an event message is:
 This format is good for something like a button event, where there are two
 discrete pieces of information in the measurement.
 
-## Signal List
+<div class="page-header">
+    <h2>Signal List</h2>
+</div>
 
 This is the list of signals officially supported by the Android library. Be
 aware that vehicles do not neccessarily support all of these signals - there are

@@ -1,0 +1,59 @@
+---
+layout: default
+title: Firmware - OpenXC
+---
+
+<div class="page-header">
+    <h1>CAN Translator Firmware</h1>
+</div>
+
+<div class="page-header">
+    <h2>Updating with a .hex File</h2>
+</div>
+
+Updates to the CAN translator firmware may be distributed as pre-compiled
+binaries, e.g. if they are distributed by an OEM who does not wish to make the
+CAN signals public. If that's the case for your vehicle, you will have a `.hex` file and can use the
+[upload_hex.sh][] script to update your device.
+
+The script requires that `avrdude` is installed. There are two possible ways to
+get that dependency.
+
+<div class="alert alert-info">
+If you are using Windows, you also need to install the
+<a href="http://www.ftdichip.com/Drivers/VCP.htm">FTDI driver</a> - get the
+setup executable version from that page.
+</div>
+
+**With MPIDE**
+
+If you have [MPIDE][] installed, that includes a version of avrdude. You need to
+set the `MPIDE_DIR` environment variable in your terminal to point to the folder
+where you installed MPIDE. Once set, you should be able to use
+[upload_hex.sh][].
+
+**Without MPIDE**
+
+If you do not have MPIDE installed, you can find `avrdude` in your
+Linux distribution's package manager, through Homebrew in Mac OS X, or use
+[WinAVR][winavr] in Windows.
+
+Once you have `avrdude` installed, run the script with the `.hex` file you
+downloaded:
+
+{% highlight sh %}
+$ ./upload_hex.sh new-version.hex
+{% endhighlight %}
+
+<div class="page-header">
+    <h2>Custom CAN Signal Definition</h2>
+</div>
+
+Developers that know the details of the CAN bus they will be using can choose to
+implement their own signal definitions for the translator. The documentation for
+this process is available at the [cantranslator][] repository (only accessible
+if logged in to GitHub and with access to the early release).
+
+[winavr]: http://winavr.sourceforge.net/
+[upload_hex.sh]: https://github.com/openxc/cantranslator/blob/master/upload_hex.sh
+[MPIDE]: https://github.com/chipKIT32/chipKIT32-MAX/downloads
