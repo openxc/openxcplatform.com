@@ -11,7 +11,7 @@ Make sure that the tablet and CAN translator module are out of the way of the
 driver. They should be securely held down or preferably with another person in
 the passenger seat. The OBD-II and USB cables should also be routed away from
 the brake and accelerator pedals to avoid getting tangled. You should also avoid
-draping the cablse over the steering wheel, as they can get caught in the
+draping the cables over the steering wheel, as they can get caught in the
 turning mechanism and make steering difficult.
 
 We recommend keeping the CAN translator between seats or on the passenger seat,
@@ -55,7 +55,7 @@ $ python reader.py --dashboard
 If you get an error when trying to run the dashboard regarding the window, try
 making the terminal window a bit taller - it has a minimum size.
 
-It may also be neccessary to check the current version of the software you have
+It may also be necessary to check the current version of the software you have
 on a CAN translator - the `--version` flag will tell you that.
 
 {% highlight sh %}

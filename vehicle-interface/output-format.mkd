@@ -55,10 +55,10 @@ the abstract side of the interface.
 </div>
 
 This is the list of signals officially supported by the Android library. Be
-aware that vehicles do not neccessarily support all of these signals - there are
+aware that vehicles do not necessarily support all of these signals - there are
 plans to be able to check for the existence of a signal before using it.
 
-There are potentailly many more signals available on the CAN bus, but we've
+There are potentially many more signals available on the CAN bus, but we've
 selected a small set of the most interesting signals to get started.
 
 <dl>

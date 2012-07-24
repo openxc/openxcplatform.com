@@ -138,7 +138,7 @@ interface.
 ![Bluetooth adapter](/images/bluetooth-translator.jpg)
 
 We're using the [RN-42](http://www.rovingnetworks.com/products/RN_42) bluetooth
-adpater with the SPP (Serial Port Profile) configuration. Connect the RX and TX
+adapter with the SPP (Serial Port Profile) configuration. Connect the RX and TX
 pins of your serial adapter to *pins 18 and
 19* on the chipKIT and make sure it's set to use a baud rate of 115200.
 Whenever, the CAN translator isn't able to send messages over USB, it will send
@@ -156,7 +156,7 @@ USB connection is **not** already receiving the messages.
 **CAN**
 
 Modern automobiles are laced with a number of microcontrollers and sensors that
-monitor and control everything from the throttle postion to the ambient air
+monitor and control everything from the throttle position to the ambient air
 temperature. These devices communicate with each other over a wired in-vehicle
 network, a [CAN bus][can].
 

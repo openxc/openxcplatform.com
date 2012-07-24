@@ -45,7 +45,7 @@ If you already have a version of Eclipse installed besides the one for
 </div>
 
 <div class="alert alert-error">
-The verision of Eclipse available in the <strong>Ubuntu repository</strong> is
+The version of Eclipse available in the <strong>Ubuntu repository</strong> is
 <strong>not recommended</strong> - it's a really old version. You should always
 get the latest version directly from the Eclipse website.
 </div>
@@ -67,7 +67,7 @@ If you use an Internet proxy, you will need to configure the proxy settings in
 the Android SDK manager (in Tools -> Options).
 </div>
 
-* Clone the [openxc-android][] repository using Git or download the lastest
+* Clone the [openxc-android][] repository using Git or download the latest
   version in a ZIP file (look for the big ZIP icon like the example below).
   Right now, the code is only available to developers in the early preview.
 
@@ -77,7 +77,7 @@ the Android SDK manager (in Tools -> Options).
 
 * Open Eclipse and go to `File -> Import -> Maven -> Existing Maven Projects`.
   Browse to where you cloned the repository and select the folder. It will
-  detect a parent project and few different subprojects - you can uncheck every
+  detect a parent project and few different sub-projects - you can uncheck every
   box except the 'openxc' and 'examples' items.
 
 ![Importing a Maven Project in Eclipse](/images/screenshots/eclipse-import-maven.png)

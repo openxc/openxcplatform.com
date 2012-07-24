@@ -240,14 +240,14 @@ The built-in sources for application developers are:
 
 * [BluetoothVehicleDataSource][] - connects to a Bluetooth-enabled CAN
   translator and injects the data into the OpenXC system so it is
-  indistiguishable from a USB source.
+  indistinguishable from a USB source.
 * [TraceVehicleDataSource][] - injects vehicle measurements from a pre-recorded
   [trace file][].
 
 *Sink*
 
 A data sink receives every new measurement put into the pipeline by the sources.
-It receives the data in nearly raw form, as a `RawMeasurmenet` instead of a
+It receives the data in nearly raw form, as a `RawMeasurement` instead of a
 fully processed `Measurement` object. This can be useful if you need to be able
 to serialize the data without knowing exactly what type of values it contains
 (e.g. a string, float, or bool).
@@ -255,7 +255,7 @@ to serialize the data without knowing exactly what type of values it contains
 Data sinks handle the core of the library's asynchronous notification system,
 too. The [VehicleManager][] always adds an instance of the
 [MeasurementListenerSink][], which keeps tabs on which applications want to be
-notified of changes in measurments.
+notified of changes in measurements.
 
 The built-in sinks for application developers are:
 
@@ -296,8 +296,8 @@ applications.
 
 The enabler provides a common location to control which data sources and sinks
 are active, e.g. if the a trace file should be played back or recorded. settings
-about data sources and sink. It's preferrable to be able to change the data
-source on the fly, and not have to programatically load a trace file in any
+about data sources and sink. It's preferable to be able to change the data
+source on the fly, and not have to programmatically load a trace file in any
 application under test.
 
 With the enabler installed, the [VehicleService][] is also started automatically
