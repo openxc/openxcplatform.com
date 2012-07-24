@@ -227,6 +227,10 @@ Restart your app, and you should see the vehicle speed changing in the UI! If
 you'd like to see a more in-depth example, take look at the [MPG][] app or the
 [Vehicle Dashboard][].
 
+<div class="page-header">
+<h2>Next Steps</h2>
+</div>
+
 You've now completed the OpenXC Android tutorial, but there's more to learn
 about the [vehicle interface][] and [host device][].
 

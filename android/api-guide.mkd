@@ -14,127 +14,6 @@ handles reading fresh data from the vehicle.
 This document describes the interface for the OpenXC library **version 2.0**.
 
 <div class="page-header">
-    <h2>Concepts</h2>
-</div>
-
-**Remote and Local Service**
-
-Android exposes many of its system level functions in the form of services. This
-is a useful paradigm for long-running components of an application and perfect
-for OpenXC, which needs to maintain a connection to the vehicle to continue
-receiving new measurements.
-
-Services can run either inside an application's address space or as an external
-process; OpenXC uses both.
-
-The core of the system is the [VehicleService][], which runs in a separate process
-to any app. Since only one application at a time can connect to a USB device ,
-this service controls access to the USB CAN translator. From here, new data from
-the vehicle (or other sources, as you'll see) is propagated to any
-applications using the OpenXC library. The benefit is that multiple
-OpenXC-enabled apps can run on the same system, simultaneously.
-
-Application developers use a second, in-process service - the [VehicleManager][].
-This service provides the interface that you'll use when developing your app.
-Behind the scenes, it binds to the [VehicleService][] (running in another process)
-and communicates with it using the [Android Interface Definition
-Language][aidl]. The benefit of using the [VehicleManager][] in-process is that
-developers don't need to care about any of this - it's all abstracted away.
-
-**Data Pipeline**
-
-The [VehicleManager][] uses the concept of a pipeline to funnel data from
-"sources" to "sinks." This is a one-way pipeline.
-
-TODO diagram of data sources/sinks/services
-
-*Source*
-
-A data source injects new measurements into the OpenXC vehicle service. Sources
-can be added by the internal vehicle service itself (e.g. the source that
-connects to a USB device), the [Enabler][] (e.g. a Bluetooth device source) or
-an app (e.g. the trace source, as in the [tutorial][]).
-
-At whatever level you add the source, its data is made available to all other
-OpenXC apps in the system. This is because even when a source is added to the
-[VehicleManager][], it ferries incoming measurements back to the
-[VehicleService][]. Client apps can create and add their own custom sources,
-and when the client app is destroyed by Android the source will no longer send
-any data.
-
-<div class="alert alert-info">
-The <a href="/openxc-android/reference/com/openxc/sources/ApplicationSource.html">
-ApplicationSource</a> is a special case - it's the method by which data from an
-app's custom source is propagated back to the
-<a href="/openxc-android/reference/com/openxc/remote/VehicleService.html">VehicleService</a>
- and then all other apps.
-</div>
-
-The built-in sources for application developers are:
-
-* [BluetoothVehicleDataSource][] - connects to a Bluetooth-enabled CAN
-  translator and injects the data into the OpenXC system so it is
-  indistiguishable from a USB source.
-* [TraceVehicleDataSource][] - injects vehicle measurements from a pre-recorded
-  [trace file][].
-
-*Sink*
-
-A data sink receives every new measurement put into the pipeline by the sources.
-It receives the data in nearly raw form, as a `RawMeasurmenet` instead of a
-fully processed `Measurement` object. This can be useful if you need to be able
-to serialize the data without knowing exactly what type of values it contains
-(e.g. a string, float, or bool).
-
-Data sinks handle the core of the library's asynchronous notification system,
-too. The [VehicleManager][] always adds an instance of the
-[MeasurementListenerSink][], which keeps tabs on which applications want to be
-notified of changes in measurments.
-
-The built-in sinks for application developers are:
-
-* [FileRecorderSink][] - records all incoming vehicle measurements to a file on
-  the internal storage that can later be used as a [trace file][].
-* [UploaderSink][] - send all incoming vehicle measurements to a URL via HTTP.
-
-
-*Remote Service*
-
-The remote process [VehicleService][] also uses a pipeline, but it's not
-accessible to application developers. It uses only two sources:
-
-* [ApplicationSource][] - this source has a special callback that the
-  [VehicleManager][] instances in all OpenXC apps use to send any new measurements
-  they create back to the [VehicleService][]. The purpose is that e.g. a trace
-  data source or Bluetooth source instantiated in an application can share its
-  data with all other apps in the system.
-* [UsbVehicleDataSource][] - since only one application can connect to a USB
-  device at a time, the single instance of the [VehicleService][] takes care of
-  it.
-
-and it only uses two sinks:
-
-* [RemoteCallbackSink][] - funnels vehicle data asynchronously with AIDL to
-  applications.
-* [MockedLocationSink][] - pushes location and speed information from the
-  vehicle into the normal Android location framework.
-
-Application developers don't need to worry about these, but it's good to know
-how data flow through the system.
-
-**Enabler**
-
-The enabler does a few things:
-
-* Provides a common point to change settings about data sources and sink.
-* Make sure the remote [VehicleService][] stays alive.
-* Keeps the [VehicleService][] started at boot.
-* Minimizes the amount of XML cruft that application developers are required to
-  add to their apps.
-
-TODO
-
-<div class="page-header">
     <h2><a name="vehicle-manager">VehicleManager Service</a></h2>
 </div>
 
@@ -283,6 +162,153 @@ switching from built-in GPS to the vehicle's receiver.
 {% highlight java %}
 locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
 {% endhighlight %}
+
+<div class="page-header">
+    <h2>Concepts</h2>
+</div>
+
+![OpenXC Android Library Data Flow](/images/android-library-dataflow.png)
+
+**Data Flow**
+
+Vehicle data is first received by a physical interface, e.g. USB (#1 in the
+figure), in an Android process running the [VehicleService](#services). The data
+processed and encapsulated in Java objects as a part of a
+[DataPipeline](#pipeline) (#2) before being propagated to all client
+applications (#3).
+
+The client applications (in a separate process) receive the data in an instance
+of the [VehicleManager](#services) service (#4) which notifies any activities
+that have previous registered their interest in vehicle data (#5).
+
+<a name="services">
+**Remote and Local Services**
+</a>
+
+Android exposes many of its system level functions in the form of services. This
+is a useful paradigm for long-running components of an application and perfect
+for OpenXC, which needs to maintain a connection to the vehicle to continue
+receiving new measurements.
+
+Services can run either inside an application's address space or as an external
+process; OpenXC uses both.
+
+The core of the system is the [VehicleService][], which runs in a separate process
+to any app. Since only one application at a time can connect to a USB device ,
+this service controls access to the USB CAN translator. From here, new data from
+the vehicle (or other sources, as you'll see) is propagated to any
+applications using the OpenXC library. The benefit is that multiple
+OpenXC-enabled apps can run on the same system, simultaneously.
+
+Application developers use a second, in-process service - the [VehicleManager][].
+This service provides the interface that you'll use when developing your app.
+Behind the scenes, it binds to the [VehicleService][] (running in another process)
+and communicates with it using the [Android Interface Definition
+Language][aidl]. The benefit of using the [VehicleManager][] in-process is that
+developers don't need to care about any of this - it's all abstracted away.
+
+<a name="pipeline">
+**Data Pipeline**
+</a>
+
+The [VehicleManager][] uses the concept of a pipeline to funnel data from
+"sources" to "sinks." This is a one-way pipeline.
+
+*Source*
+
+A data source injects new measurements into the OpenXC vehicle service. Sources
+can be added by the internal vehicle service itself (e.g. the source that
+connects to a USB device), the [Enabler][] (e.g. a Bluetooth device source) or
+an app (e.g. the trace source, as in the [tutorial][]).
+
+At whatever level you add the source, its data is made available to all other
+OpenXC apps in the system. This is because even when a source is added to the
+[VehicleManager][], it ferries incoming measurements back to the
+[VehicleService][]. Client apps can create and add their own custom sources,
+and when the client app is destroyed by Android the source will no longer send
+any data.
+
+<div class="alert alert-info">
+The <a href="/openxc-android/reference/com/openxc/sources/ApplicationSource.html">
+ApplicationSource</a> is a special case - it's the method by which data from an
+app's custom source is propagated back to the
+<a href="/openxc-android/reference/com/openxc/remote/VehicleService.html">VehicleService</a>
+ and then all other apps.
+</div>
+
+The built-in sources for application developers are:
+
+* [BluetoothVehicleDataSource][] - connects to a Bluetooth-enabled CAN
+  translator and injects the data into the OpenXC system so it is
+  indistiguishable from a USB source.
+* [TraceVehicleDataSource][] - injects vehicle measurements from a pre-recorded
+  [trace file][].
+
+*Sink*
+
+A data sink receives every new measurement put into the pipeline by the sources.
+It receives the data in nearly raw form, as a `RawMeasurmenet` instead of a
+fully processed `Measurement` object. This can be useful if you need to be able
+to serialize the data without knowing exactly what type of values it contains
+(e.g. a string, float, or bool).
+
+Data sinks handle the core of the library's asynchronous notification system,
+too. The [VehicleManager][] always adds an instance of the
+[MeasurementListenerSink][], which keeps tabs on which applications want to be
+notified of changes in measurments.
+
+The built-in sinks for application developers are:
+
+* [FileRecorderSink][] - records all incoming vehicle measurements to a file on
+  the internal storage that can later be used as a [trace file][].
+* [UploaderSink][] - send all incoming vehicle measurements to a URL via HTTP.
+
+
+*Remote Service*
+
+The remote process [VehicleService][] also uses a pipeline, but it's not
+accessible to application developers. It uses only two sources:
+
+* [ApplicationSource][] - this source has a special callback that the
+  [VehicleManager][] instances in all OpenXC apps use to send any new measurements
+  they create back to the [VehicleService][]. The purpose is that e.g. a trace
+  data source or Bluetooth source instantiated in an application can share its
+  data with all other apps in the system.
+* [UsbVehicleDataSource][] - since only one application can connect to a USB
+  device at a time, the single instance of the [VehicleService][] takes care of
+  it.
+
+and it only uses two sinks:
+
+* [RemoteCallbackSink][] - funnels vehicle data asynchronously with AIDL to
+  applications.
+* [MockedLocationSink][] - pushes location and speed information from the
+  vehicle into the normal Android location framework.
+
+Application developers don't need to worry about these, but it's good to know
+how data flow through the system.
+
+**Enabler**
+
+The OpenXC Enabler app is primarily for convenience, but it also increases the
+reliability of the system by handling background tasks on behalf of client
+applications.
+
+The enabler provides a common location to control which data sources and sinks
+are active, e.g. if the a trace file should be played back or recorded. settings
+about data sources and sink. It's preferrable to be able to change the data
+source on the fly, and not have to programatically load a trace file in any
+application under test.
+
+With the enabler installed, the [VehicleService][] is also started automatically
+when the Android device boots up. A simple data sink like a trace file uploader
+can start immediately without any user interaction. This behavior probably isn't
+desirable for a phone-based OpenXC system, but makes more sense when using a
+tablet or other Android device that is permanently installed in the vehicle.
+
+As a developer, you can also appreciate that because the enabler takes care of
+starting the [VehicleService][], you don't need to add much to your
+application's `AndroidManifest.xml` - just the [VehicleManager][] service.
 
 [user location]: http://developer.android.com/guide/topics/location/obtaining-user-location.html
 [binding]: http://developer.android.com/guide/topics/fundamentals/bound-services.html#Binding)

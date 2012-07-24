@@ -175,9 +175,12 @@ If you don't want to use the enabler app, it's certainly possible to start the
 service from your application directly. Look at the [source for the
 enabler][enabler] to see exactly how to accomplish that.
 
+<div class="page-header">
+<h2>Next Steps</h2>
+</div>
+
 Once you have the library setup and the enabler installed, you can continue to
 writing your [first OpenXC app](/getting-started/tutorial.html).
-
 
 [downloads]: https://github.com/openxc/openxc-android/downloads
 [enabler]: https://github.com/openxc/openxc-android/tree/master/enabler
