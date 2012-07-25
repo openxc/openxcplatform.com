@@ -116,7 +116,7 @@ follows:
 
 <div class="alert alert-error">
 <strong>A note about power:</strong> In order to power the board via micro-USB,
-we have to connect the 5v rails of the chipKIT and network shield. This means
+you have to connect the 5v rails of the chipKIT and network shield. This means
 that you absolutely must not plug the mini-USB and micro-USB ports in to
 different devices at the same time! This would short 2 different 5v sources
 together and likely destroy the chipKIT and network shield.
@@ -226,8 +226,8 @@ identifiers and formats are also largely proprietary.
 <h2>Next Steps</h2>
 </div>
 
-Bought all of the [parts](#parts) for the CAN translator? We have a detailed
-[assembly guide][] for you next.
+Bought all of the [parts](#parts) for the CAN translator? The detailed [assembly
+guide][] is next.
 
 [MPIDE]: https://github.com/chipKIT32/chipKIT32-MAX/downloads
 [max32]: http://digilentinc.com/Products/Detail.cfm?NavPath=2,719,895&Prod=CHIPKIT-MAX32.

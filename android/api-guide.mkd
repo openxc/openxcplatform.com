@@ -85,8 +85,9 @@ vehicle.addListener(VehicleSpeed.class, listener);
 </div>
 
 You've probably noticed that vehicle data is returned encapsulated in an object.
-In the examples above, we used the [VehicleSpeed][] measurement. All of the data
-types supported by OpenXC are provided as children of the [Measurement][] class.
+In the examples above, you used the [VehicleSpeed][] measurement. All of the
+data types supported by OpenXC are provided as children of the [Measurement][]
+class.
 
 The parent class provides a standard interface for all measurements, starting
 with a way to retrieve its value:

@@ -230,8 +230,8 @@ pin.
   plug should go to CAN2. Make sure the + on your connector lines up with the +
   printed on the board - it should be the end closest to the center of the
   network shield.
-* Optionally, label the socket and connector indicated the proper plug and plug
-  orientation - we used a big "1" and "2" that you just line up.
+* Optionally, label the socket and connector indicating the proper plug
+  orientation, e.g. a big `1` and `2` that you line up.
 * Slide the grommet to about where the front plate will be.  Put the front plate
   on the grommet. Lay the cable flat on the outside of the Ethernet jack.  Bend
   the cable between the standoff and the power connector, being careful to put

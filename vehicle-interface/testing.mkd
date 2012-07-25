@@ -14,9 +14,9 @@ the brake and accelerator pedals to avoid getting tangled. You should also avoid
 draping the cables over the steering wheel, as they can get caught in the
 turning mechanism and make steering difficult.
 
-We recommend keeping the CAN translator between seats or on the passenger seat,
-with the OBD-II cable routed along the floor on the driver's side, around the
-back of the seat and up between the seats.
+The recommended location for the CAN translator is between seats or on the
+passenger seat, with the OBD-II cable routed along the floor on the driver's
+side, around the back of the seat and up between the seats.
 
 Most importantly, *do not* try to test your application while in motion! Testing
 OpenXC apps while moving is absolutely a two person job.

@@ -60,8 +60,8 @@ public void onPause() {
 }
 {% endhighlight %}
 
-We have two short trace files available for testing: [idling while parked][] and
-a [short drive][].
+There are two short trace files available for testing: [idling while parked][]
+and a [short drive][].
 
 <div class="page-header">
     <h2>Button Events</h2>
