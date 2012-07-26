@@ -58,7 +58,6 @@ mobile.
     </div>
 </div>
 
-
 The <a href="/android/index.html">**Android host device**</a> connects to the
 CAN translator and reads the translated vehicle data. OpenXC developers can
 write applications on this device and use any of the data through a Java

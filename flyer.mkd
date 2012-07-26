@@ -17,48 +17,49 @@ Labs** is also a founding member, and contributed to a demo of a prototype
 OpenXC system at the TechCrunch Disrupt conference in San Francisco in September
 2011.
 
-## Technical Overview
+### Technical Overview
 
-The OpenXC architecture is divided into two halves - a CAN translation module
-and a host device.
+The OpenXC architecture is divided into **two parts**:
 
-### CAN Translator Module
+<img src="/images/cantranslator-boxed-smaller.jpg"/>
 
-The CAN translation module is a device that reads proprietary CAN signals from
-the OBD-II port in the vehicle, converts from engineering units to a more human
-scale, and outputs a subset of the signals to another interface in a standard
-cross-vehicle format
+The <a href="/vehicle-interface/index.html">**CAN translator**</a> (or CAN
+reader) is a device that plugs into the OBD-II port (and thus to the CAN bus),
+reads and translates CAN messages into a [standard cross-vehicle
+format](/vehicle-interface/output-format.html). The translated messages can be
+sent over USB or Bluetooth, so they can be read by any computer or mobile
+mobile.
 
 The module is a microcontroller with two connections - one to the CAN bus via
 the OBD-II port, and one to the host device via USB. It listens for a subset
 of CAN messages, performs required unit conversion or factoring and outputs a
 generic version to the USB interface.
 
-![Completed CAN translator](/images/assembly/openxc-assembly-19-smaller.jpg)
-![Completed CAN translator](/images/assembly/openxc-assembly-17-smaller.jpg)
+<img src="/images/screenshots/mpg-app-1.png"/>
+<img src="/images/screenshots/mpg-app-2.png"/>
 
-### Host Device
-
-The host device is where all user code runs - it reads vehicle data over USB
-from the CAN translation module and makes it available to developers in a
-programmatic way.
-
-The reference host device is a standard Android device that supports the Android
-Platform version 3.1 or higher.
-
-![OpenXC Architecture Diagram](/images/openxc-architecture-smaller.jpeg)
+The <a href="/android/index.html">**Android host device**</a> connects to the
+CAN translator and reads the translated vehicle data. OpenXC developers can
+write applications on this device and use any of the data through a Java
+library.
 
 ### Supported Vehicles
 
-As of January 2012, OpenXC is supported on:
+**Ford**
 
-* Ford Vehicles
-    * 2011 - 2012 Focus
-    * 2012 Mustang
-    * 2012 Fiesta
-    * 2011 Figo
+* 2011 - 2013 Focus (gas and electric)
+* 2011 - 2012 Fusion (gas and hybrid)
+* 2011 - 2012 Fiesta
+* 2012 Mustang
+* 2011 Figo
+* 2009 F-150
+* 2011 - 2012 E350
+* 2008 S-MAX
 
-### Signal List
+Most other Ford vehicles from the past 3-4 years may also be supported, but are
+currently untested.
+
+#### Signal List
 
 This is the list of signals officially supported by the Android library. Be
 aware that vehicles do not necessarily support all of these signals - there are
@@ -103,12 +104,6 @@ selected a small set of the most interesting signals to get started.
 
     <dt>longitude</dt>
     <dd>-179.0 to 179.0 degrees</dd>
-
-    <dt>button_event</dt>
-    <dd>Value is State: left, right, up, down, ok.
-        Event is State: idle, pressed, released, held_short, held_long, stuck</dd>
-
-    <dt>More signals coming soon</dt>
 </dl>
 
 ## Contact

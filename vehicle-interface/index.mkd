@@ -53,7 +53,7 @@ they wish to expose.
 * 2011 - 2012 E350
 * 2008 S-MAX
 
-These firmware for these vehicles is as of yet untested, but should work fine.
+The firmware for these vehicles is as of yet untested, but should work fine.
 If you use the CAN translator on one of these vehicles, do [let the developers
 know](/overview/discuss.html).
 
