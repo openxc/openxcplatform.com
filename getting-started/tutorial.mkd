@@ -243,7 +243,7 @@ about the [host device][] and [vehicle interface][].
 [MPG]: https://github.com/openxc/mpg
 [Android service]: http://developer.android.com/guide/components/services.html
 [bind]: http://developer.android.com/guide/topics/fundamentals/bound-services.html#Binding)
-[VehicleManager]: /openxc-android/com/openxc/VehicleManager.html
+[VehicleManager]: /openxc-android/reference/com/openxc/VehicleManager.html
 [enabler]: https://github.com/openxc/openxc-android/tree/master/enabler
 [driving trace]: https://github.com/openxc/openxc-android/blob/tracedashboard/examples/res/raw/driving
 [library documentation]: /openxc-android/reference/com/openxc/measurements/package-summary.html
