@@ -5,10 +5,11 @@ title: OpenXC
 
 # The OpenXC Platform
 
-OpenXC is combination of open source hardware and software that lets consumers
-extend your vehicle with custom applications and pluggable modules. It uses
-standard, well-known tools to open up a wealth of data from the vehicle to
-developers.
+*openxcplatform.com*
+
+OpenXC is combination of open source hardware and software that lets you extend
+your vehicle with custom applications, sensors and actuators. It uses standard,
+well-known tools to open up a wealth of data from the vehicle to developers.
 
 ### Participating Members
 
@@ -24,24 +25,23 @@ The OpenXC architecture is divided into **two parts**:
 <img src="/images/cantranslator-boxed-smaller.jpg"/>
 
 The <a href="/vehicle-interface/index.html">**CAN translator**</a> (or CAN
-reader) is a device that plugs into the OBD-II port (and thus to the CAN bus),
-reads and translates CAN messages into a [standard cross-vehicle
+reader) is a device that plugs into the OBD-II port and reads and translates CAN
+messages into a [standard cross-vehicle
 format](/vehicle-interface/output-format.html). The translated messages can be
 sent over USB or Bluetooth, so they can be read by any computer or mobile
 mobile.
 
 The module is a microcontroller with two connections - one to the CAN bus via
-the OBD-II port, and one to the host device via USB. It listens for a subset
-of CAN messages, performs required unit conversion or factoring and outputs a
-generic version to the USB interface.
+the OBD-II port, and one to an Android device via USB or Bluetooth. It listens
+for a subset of CAN messages, performs required unit conversion or factoring and
+outputs a generic version to the USB interface as JSON.
 
 <img src="/images/screenshots/mpg-app-1.png"/>
 <img src="/images/screenshots/mpg-app-2.png"/>
 
 The <a href="/android/index.html">**Android host device**</a> connects to the
-CAN translator and reads the translated vehicle data. OpenXC developers can
-write applications on this device and use any of the data through a Java
-library.
+CAN translator and reads the vehicle data. OpenXC developers can write
+applications on this device and use any of the data through a Java library.
 
 ### Supported Vehicles
 
@@ -56,14 +56,13 @@ library.
 * 2011 - 2012 E350
 * 2008 S-MAX
 
-Most other Ford vehicles from the past 3-4 years may also be supported, but are
+Most other Ford vehicles from the past 3-4 years can also be supported, but are
 currently untested.
 
-#### Signal List
+**Signal List**
 
 This is the list of signals officially supported by the Android library. Be
-aware that vehicles do not necessarily support all of these signals - there are
-plans to be able to check for the existence of a signal before using it.
+aware that vehicles do not necessarily support all of these signals.
 
 There are potentially many more signals available on the CAN bus, but we've
 selected a small set of the most interesting signals to get started.
