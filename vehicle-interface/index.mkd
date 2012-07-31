@@ -103,16 +103,19 @@ the crimp connectors, for example).
 <h3><a name="connections">Device Connections</a></h3>
 </div>
 
-There are 3 USB ports on the combined Max32 and Network Shield, so getting the
+There are 2 USB ports on the combined Max32 and Network Shield, so getting the
 cables sorted out can be a bit confusion. The ports are meant to be used as
 follows:
 
-* USB-A (square) - not used.
 * Mini-USB - connect to the serial console for debugging and to upload new
   firmware.
 *  Micro-USB - the OpenXC data is sent through this port - connect it to your
    computer for testing with the Python script, or to an Android tablet to run
    an OpenXC application.
+
+<div class="pull-right">
+<img title="USB ports" src="/images/usbports.jpg"/>
+</div>
 
 <div class="alert alert-error">
 <strong>A note about power:</strong> In order to power the board via micro-USB,
