@@ -22,8 +22,8 @@ title: Firmware - OpenXC
 
 Updates to the CAN translator firmware may be distributed as pre-compiled
 binaries, e.g. if they are distributed by an OEM who does not wish to make the
-CAN signals public. If that's the case for your vehicle, you will have a `.hex` file and can use the
-[upload_hex.sh][] script to update your device.
+CAN signals public. If that's the case for your vehicle, you will have a `.hex`
+file and can use the [upload_hex.sh][] script to update your device.
 
 The script requires that `avrdude` is installed. There are two possible ways to
 get that dependency.
@@ -52,6 +52,12 @@ downloaded:
 
 {% highlight sh %}
 $ ./upload_hex.sh new-version.hex
+{% endhighlight %}
+
+If you're using Windows, run it like this:
+
+{% highlight sh %}
+$ sh ./upload_hex.sh new-version.hex
 {% endhighlight %}
 
 <div class="page-header">
