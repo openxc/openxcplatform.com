@@ -48,6 +48,22 @@ device must:
   with a USB CAN translator.
 
 <div class="page-header">
+    <h2>UI Design</h2>
+</div>
+
+User interface design for automotive environments is increasingly attracting
+attention, particularly due to concerns with [driver
+distraction](http://www.distraction.gov/). While building your OpenXC
+application, keep in mind the U.S. government's recently released [guidelines
+(PDF)](http://www.nhtsa.gov/staticfiles/rulemaking/pdf/Distraction_NPFG-02162012.pdf)
+for application design.
+
+Driver distraction aside, the most useful and interesting applications tend to
+be those without much driver interaction. The more you can automate or let the
+user deal with outside of their vehicle, the better the experience will likely
+be.
+
+<div class="page-header">
     <h2>Motivation</h2>
 </div>
 

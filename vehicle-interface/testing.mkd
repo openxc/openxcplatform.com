@@ -18,8 +18,10 @@ The recommended location for the CAN translator is between seats or on the
 passenger seat, with the OBD-II cable routed along the floor on the driver's
 side, around the back of the seat and up between the seats.
 
-Most importantly, *do not* try to test your application while in motion! Testing
-OpenXC apps while moving is absolutely a two person job.
+<div class="alert alert-error">
+Most importantly, <strong>do not</strong> try to test your application while in
+motion! Testing OpenXC apps while moving is absolutely a two person job.
+</div>
 
 ![Completed CAN translator](/images/assembly/openxc-assembly-19.jpg)
 
