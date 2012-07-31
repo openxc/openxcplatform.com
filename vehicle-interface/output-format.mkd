@@ -61,6 +61,11 @@ plans to be able to check for the existence of a signal before using it.
 There are potentially many more signals available on the CAN bus, but we've
 selected a small set of the most interesting signals to get started.
 
+<div class="alert">
+    <strong>Disclaimer:</strong> We make no claims as to the accuracy or
+    reliability of any of these pieces of data, and provide no warranty as such.
+</div>
+
 <dl>
     <dt>steering_wheel_angle</dt>
     <dd>-600 to +600 degrees</dd>
