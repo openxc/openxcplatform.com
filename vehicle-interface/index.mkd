@@ -100,7 +100,7 @@ the crimp connectors, for example).
 * Mounting spacers
 
 <div class="page-header">
-<h3>Device Connections</h3>
+<h3><a name="connections">Device Connections</a></h3>
 </div>
 
 There are 3 USB ports on the combined Max32 and Network Shield, so getting the
