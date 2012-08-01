@@ -76,7 +76,7 @@ plain old (non-Android) Java would be a great addition to the project.
 
 <a href="http://en.wikipedia.org/wiki/OBD-II_PIDs#Non-standard_PIDs">Source</a>
 
-<dt>Why does use a separate device to connect to the vehicle instead of
+<dt>Why does OpenXC use a separate device to connect to the vehicle instead of
 integrating it into the host device (Android or PC)?</dt>
 
 <dd>Very few if any vehicle manufacturers release their CAN message definitions. If
