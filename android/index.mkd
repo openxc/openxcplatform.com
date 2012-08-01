@@ -17,7 +17,7 @@ well-tested. When using USB, the host device must:
 * Support **Android 3.0** or greater (i.e. API level 12) if you plan to
   use the standard USB vehicle interface.
 * Have support for **USB host mode** and provide a way to plug in a USB
-  device - this does *not* mean the standard micro-USB port you use for
+  device - this does *not* mean the standard mini- or micro-USB port you use for
   debugging or copying files to the SD card. Some tablets offer a full-size
   USB port and others offer a dongle that exposes one.
 
