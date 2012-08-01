@@ -16,8 +16,8 @@ title: Output Format - OpenXC
     </p>
 </div>
 
-The microcontroller has a second USB controller operating in USB device mode. It
-sends the generic vehicle data over via bulk USB transfer as packed JSON.
+The microcontroller has a USB controller operating in USB device mode. It sends
+the generic vehicle data over via bulk USB transfer as packed JSON.
 
 There are two valid message types - single valued and event.
 
