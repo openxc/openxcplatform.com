@@ -104,7 +104,7 @@ the crimp connectors, for example).
 </div>
 
 There are 2 USB ports on the combined Max32 and Network Shield, so getting the
-cables sorted out can be a bit confusion. The ports are meant to be used as
+cables sorted out can be a bit confusing. The ports are meant to be used as
 follows:
 
 * Mini-USB - connect to the serial console for debugging and to upload new

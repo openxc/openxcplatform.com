@@ -47,7 +47,7 @@ mVehicleManager.addSource(mTraceSource);
     "file:///sdcard/com.openxc/trace.json");
 {% endhighlight %}
 
-Don't forget to also remove this data source when you activity pauses,
+Don't forget to also remove this data source when your activity pauses,
 otherwise you could start the trace playback multiple times simultaneously:
 
 {% highlight java %}
@@ -69,7 +69,7 @@ and a [short drive][].
 
 Unfortunately the Android emulator does not allow us to send arbitrary events
 from button presses without editing the source. In order to test your button
-event handlers, the recommended method it to write them in such a way that they
+event handlers, the recommended method is to write them in such a way that they
 can accept either VehicleButtonEvents or regular Android key events as input.
 You may want a flag to disable the Android key events when running in
 production.

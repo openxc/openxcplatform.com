@@ -19,7 +19,7 @@ This tutorial assumes you have a working knowledge of how to create an Android
 application. Setting up the development environment and understanding Android
 fundamentals is outside the scope of OpenXC, and already Google provides great
 documentation and tutorials - we won't repeat them here. The best place to start
-is [Gooogle's SDK guide][sdk].
+is [Google's SDK guide][sdk].
 
 Once you're comfortable with creating an Android app, continue on with this
 tutorial to enrich it with data from your vehicle. At this point, you should
@@ -103,7 +103,7 @@ public void onPause() {
 
 
 Now, when your app starts it will also start the OpenXC [VehicleManager][] and if
-the [Enabler][enabler] is running, it will be ready to received data from the
+the [Enabler][enabler] is running, it will be ready to receive data from the
 vehicle.
 
 <div class="page-header">

@@ -120,7 +120,7 @@ if(measurement.getAge() < 10) {
 {% endhighlight %}
 
 The range of every measurement is defined in the class, and can be queried
-programmatically if you need to figure out your the current value's relative
+programmatically if you need to figure out your current value's relative
 position:
 
 {% highlight java %}
@@ -180,7 +180,7 @@ applications (#3).
 
 The client applications (in a separate process) receive the data in an instance
 of the [VehicleManager](#services) service (#4) which notifies any activities
-that have previous registered their interest in vehicle data (#5).
+that have previously registered their interest in vehicle data (#5).
 
 <a name="services">
 **Remote and Local Services**

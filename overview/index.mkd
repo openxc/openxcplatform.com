@@ -8,7 +8,7 @@ title: Overview - OpenXC
 </div>
 
 OpenXC is combination of open source hardware and software that lets consumers
-extend your vehicle with custom applications and pluggable modules. It uses
+extend their vehicles with custom applications and pluggable modules. It uses
 standard, well-known tools to open up a wealth of data from the vehicle to
 developers.
 
@@ -41,7 +41,7 @@ vehicle integration to provide safer, more context aware interfaces.
 </div>
 
 OpenXC completely changes the customer experience with in-vehicle technology.
-Consider if every new vehicle includes a built-in base board at no cost to the
+Consider if every new vehicle included a built-in base board at no cost to the
 customer. This base board has connections to the dashboard interface and audio
 system and a [CAN translator](/vehicle-interface/index.html) - we
 would consider this OpenXC-compatible. The consumer has the option of making the

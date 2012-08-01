@@ -14,18 +14,18 @@ or via Bluetooth.
 The recommended vehicle interface is USB as it is much more robust and
 well-tested. When using USB, the host device must:
 
-* Must support **Android 3.0** or greater (i.e. API level 12) if you plan to
+* Support **Android 3.0** or greater (i.e. API level 12) if you plan to
   use the standard USB vehicle interface.
-* Must have support **USB host mode** and provide a way to plug in a USB
+* Have support for **USB host mode** and provide a way to plug in a USB
   device - this does *not* mean the standard micro-USB port you use for
   debugging or copying files to the SD card. Some tablets offer a full-size
   USB port and others offer a dongle that exposes one.
 
 Bluetooth support is currently experimental but has the lowest hardware
 requirements. When using a Bluetooth-equipped CAN translator, the Android host
-device:
+device must:
 
-* Must support **Android 2.3** or greater (i.e. API level 10)
+* Support **Android 2.3** or greater (i.e. API level 10)
 
 <div class="page-header">
     <h2>Confirmed Supported Android Devices</h2>
