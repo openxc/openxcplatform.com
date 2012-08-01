@@ -120,7 +120,7 @@ if(measurement.getAge() < 10) {
 {% endhighlight %}
 
 The range of every measurement is defined in the class, and can be queried
-programmatically if you need to figure out your current value's relative
+programmatically if you need to figure out the current value's relative
 position:
 
 {% highlight java %}

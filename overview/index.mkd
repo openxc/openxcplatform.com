@@ -7,8 +7,8 @@ title: Overview - OpenXC
     <h1>About</h1>
 </div>
 
-OpenXC is combination of open source hardware and software that lets consumers
-extend their vehicles with custom applications and pluggable modules. It uses
+OpenXC is a combination of open source hardware and software that lets you
+extend your vehicle with custom applications and pluggable modules. It uses
 standard, well-known tools to open up a wealth of data from the vehicle to
 developers.
 

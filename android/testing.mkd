@@ -47,7 +47,7 @@ mVehicleManager.addSource(mTraceSource);
     "file:///sdcard/com.openxc/trace.json");
 {% endhighlight %}
 
-Don't forget to also remove this data source when your activity pauses,
+Don't forget to also remove this data source when our activity pauses,
 otherwise you could start the trace playback multiple times simultaneously:
 
 {% highlight java %}
