@@ -87,6 +87,11 @@ the Android SDK manager (in Tools -> Options).
   to wait until after the project builds. Look in the "Problems" view for an
   error related to `pom.xml`, right click on it and choose `Quick fix` to
   install the connector.
+    * If you're not prompted to install the plugin and Eclipse just keeps
+      throwing up errors, try adding this URL manually as a new Software Site in
+      `Help -> Install New Software`:
+      http://rgladwell.github.com/m2e-android/updates/master. You can install
+      the Android M2E connector directly from there.
 * Right click on the `openxc` project, go to Maven -> Update Project
   Configuration. Select the `openxc` project in the dialog and click OK. Let
   Eclipse try to build the project (look in the bottom right for a status bar).
