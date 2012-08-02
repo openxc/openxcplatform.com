@@ -75,7 +75,15 @@ the Android SDK manager (in Tools -> Options).
 <img src="/images/screenshots/github.png" />
 </a>
 
-* Open Eclipse and go to `File -> Import -> Maven -> Existing Maven Projects`.
+* Open Eclipse and install the `m2e-android` plugin by going to `Help -> Install
+  New Software`, click on `Add` and use a name like 'M2E Android Connector' and
+  the URL "http://rgladwell.github.com/m2e-android/updates/master". Click OK,
+  and in the list of packages that loads, select and install "Android
+  Configurator for M2E". This step is temporarily necessary while we wait for a
+  bugfix to be released into the main Eclipse update system. Typically this
+  plugin is installed automatically.
+
+* In Eclipse go to `File -> Import -> Maven -> Existing Maven Projects`.
   Browse to where you cloned the repository and select the folder. It will
   detect a parent project and few different sub-projects - you can uncheck every
   box except the 'openxc' and 'examples' items.
@@ -87,11 +95,6 @@ the Android SDK manager (in Tools -> Options).
   to wait until after the project builds. Look in the "Problems" view for an
   error related to `pom.xml`, right click on it and choose `Quick fix` to
   install the connector.
-    * If you're not prompted to install the plugin and Eclipse just keeps
-      throwing up errors, try adding this URL manually as a new Software Site in
-      `Help -> Install New Software`:
-      http://rgladwell.github.com/m2e-android/updates/master. You can install
-      the Android M2E connector directly from there.
 * Right click on the `openxc` project, go to Maven -> Update Project
   Configuration. Select the `openxc` project in the dialog and click OK. Let
   Eclipse try to build the project (look in the bottom right for a status bar).
