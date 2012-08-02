@@ -27,7 +27,7 @@ There are two valid message types - single valued and event.
 
 The expected format of a single valued message is:
 
-{% highlight json %}
+{% highlight javascript %}
 {"name": "steering_wheel_angle", "value": 45}
 {% endhighlight %}
 
@@ -37,7 +37,7 @@ The expected format of a single valued message is:
 
 The expected format of an event message is:
 
-{% highlight json %}
+{% highlight javascript %}
 {"name": "button_event", "value": "up", "event": "pressed"}
 {% endhighlight %}
 
