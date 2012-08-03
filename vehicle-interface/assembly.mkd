@@ -110,7 +110,7 @@ the connection with a multimeter.
 
 1. Connect each of the HS, MS and INFO pairs of wires (see the table above) to
    one crimp pin housing each. There should be three crimp housings with two
-   wires connected to each - the + in pin 1 and - in pin 2.
+   wires connected to each - the + in pin 1 and - in pin 3.
 2. Print out or make small labels for HS, MS, INFO, and three "-+".
 3. Put the coordinating bus label on the crimp housing according to the table.
 4. On the other side of the crimp housing, place a "-+" label so it lines up
