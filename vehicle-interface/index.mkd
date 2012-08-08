@@ -96,7 +96,7 @@ the crimp connectors, for example).
 * (4x) Female crimp pins from [Pololu][crimppins] (< $1)
 * Shrink tubing
 * Rubber cable grommet that fits the OBD-II cable
-* Enclosure at least 5" x 2.5" x 2.5"
+* Enclosure from [PacTec][enclosure] ($11)
 * Mounting spacers
 
 <div class="page-header">
@@ -246,3 +246,4 @@ guide][] is next.
 [crimppins]: http://www.pololu.com/catalog/product/1930
 [can]: http://en.wikipedia.org/wiki/CAN_bus
 [obd2]: http://en.wikipedia.org/wiki/On-board_diagnostics
+[enclosure]: http://www.pactecenclosures.com/product-detail.php?productid=62&seriesid=45&classid=26
