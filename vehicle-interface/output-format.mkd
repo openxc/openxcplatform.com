@@ -77,7 +77,9 @@ selected a small set of the most interesting signals to get started.
     <dd>0 to 16382 RPM</dd>
 
     <dt>vehicle_speed</dt>
-    <dd>0 to 655 km/h</dd>
+    <dd>0 to 655 km/h (this will be positive even if going in reverse as it's
+        not a velocity, although you can use the gear status to figure out
+        direction)</dd>
 
     <dt>accelerator_pedal_position</dt>
     <dd>0 to 100%</dd>
