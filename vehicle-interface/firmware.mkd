@@ -59,11 +59,15 @@ downloaded:
 $ ./upload_hex.sh new-version.hex
 {% endhighlight %}
 
-If you're using Windows, run it like this:
+If you're using Windows, open a [Cygwin][] shell and run it like this:
 
 {% highlight sh %}
 $ sh ./upload_hex.sh new-version.hex
 {% endhighlight %}
+
+Note that this won't work in the normal Windows cmd.exe or PowerShell. If
+someone wants to figure out how to run shell scripts in these terminals, we
+would welcome a patch.
 
 <div class="page-header">
     <h2>Custom CAN Signal Definition</h2>
@@ -84,3 +88,4 @@ You're now ready to [test your CAN translator in a vehicle][testing].
 [upload_hex.sh]: https://github.com/openxc/cantranslator/blob/master/upload_hex.sh
 [MPIDE]: https://github.com/chipKIT32/chipKIT32-MAX/downloads
 [testing]: /vehicle-interface/testing.html
+[Cygwin]: http://www.cygwin.com/
