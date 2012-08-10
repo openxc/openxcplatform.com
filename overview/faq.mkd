@@ -89,7 +89,8 @@ separation of translation from user code provides stronger assurance that the
 message definitions will remain private, and the CAN bus will be protected from
 malicious writes from bad applications.</dd>
 
-<dt>How do I connect my host device to the web when I'm driving around town?</dt>
+<dt>How do I connect my host device to the web when I'm not near a Wi-Fi access
+    point?</dt>
 <dd>
 The device we recommend, the Toshiba Thrive, doesn't have 3G built-in. On the
 positive side, this means that the tablet is quite inexpensive even without a
