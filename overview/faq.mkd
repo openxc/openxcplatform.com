@@ -26,7 +26,9 @@ launch.
 <a href="http://groups.google.com/group/openxc">Google Group</a>, and that's the
 best place to get an answer to your question. Once the code is released on
 GitHub, you won't need any special permission or agreements from us to get
-started!
+started! You will currently only need to sign a developer agreement to get
+access to the vehicle interface firmware which lets you use an application in an
+actual Ford vehicle. This is not neccessary to begin developing in Android.
 </dd>
 
 <dt>Why not just use one of the many commercial OBD-II scanners instead of
