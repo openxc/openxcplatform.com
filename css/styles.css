@@ -30,3 +30,13 @@ code {
 .well {
     margin-left: 5px;
 }
+
+.footer-links {
+    margin: 10px 0;
+}
+
+.footer-links li {
+    display: inline;
+    margin-right: 10px;
+    list-style-type: disc;
+}
