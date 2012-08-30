@@ -65,8 +65,7 @@ Personally identifiable information collected on OpenXCplatform.com may be used:
     other sources
 * Comply with legal requirements
 
-### 5. Other (Non-Personally Identifiable) Information We Collect From Site
-Visitors:
+### 5. Other (Non-Personally Identifiable) Information We Collect From Site Visitors:
 
 OpenXCplatform.com collects other information, non-personally identifiable
 information from site visitors. This means that we do not track these items on
@@ -92,8 +91,7 @@ collect aggregate or other non-personally identifiable information about site
 visitors. An explanation for each of these items and how they work is included
 in Section 7 - Methods to Collect Information.
 
-### 6. How We Use the Aggregate or Non-Personally Identifiable Information We
-Collect:
+### 6. How We Use the Aggregate or Non-Personally Identifiable Information We Collect:
 
 Non-Personally identifiable information collected on OpenXCplatform.com may be
 used to:
