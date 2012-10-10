@@ -26,6 +26,51 @@ motion! Testing OpenXC apps while moving is absolutely a two person job.
 ![Completed CAN translator](/images/assembly/openxc-assembly-19.jpg)
 
 <div class="page-header">
+    <h2>Python Library</h2>
+</div>
+
+The [openxc-dashboard][] tool available as a part of the [OpenXC Python
+library][python-lib] can be used to view the output of the CAN translator over
+USB or UART. This is the most useful tool when determining which vehicle signals
+are working.
+
+The Python library can be installed with `pip`:
+
+{% highlight sh %}
+$ pip install https://github.com/openxc/openxc-python
+{% endhighlight %}
+
+Once installed, you can use any of the [tools it provides][python-lib].
+
+{% highlight sh %}
+# Show a dashboard summary of the current values
+$ openxc-dashboard
+...
+
+# Show a real-time stream of all messages
+$ openxc-dump
+...
+{% endhighlight %}
+
+It may also be necessary to check the current version of the software you have
+on a CAN translator - the `openxc-control` tool can tell you that.
+
+{% highlight sh %}
+$ openxc-control version
+Device is running version 1.1
+{% endhighlight %}
+
+You can also write a message back to the CAN translator (which may or may not
+write it through to the CAN bus, depending on if it is an approved signal or
+not):
+
+{% highlight sh %}
+$ openxc-control write steering_wheel_angle 42.0
+{% endhighlight %}
+
+[python-lib]: https://github.com/openxc/openxc-python
+
+<div class="page-header">
     <h2>Source Code</h2>
 </div>
 
@@ -35,70 +80,4 @@ Arduino-compatible chipKIT device. Most OpenXC users won't need to touch this
 component - they will most likely be using a pre-built binary on the vehicle
 interface that knows about proprietary vehicle signals.
 
-<div class="page-header">
-    <h2>Data Reader</h2>
-</div>
-
-The [reader.py][] Python program in the [cantranslator][] repository can be used
-to view the output of the CAN translator over micro-USB. Just plug it in and run
-the script with the `--verbose` flag to have all messages parsed and printed to
-stdout.
-
-{% highlight sh %}
-# Show a real-time stream of all messages
-$ python reader.py -v
-...
-
-# Show a dashboard summary of the current values
-$ python reader.py --dashboard
-...
-{% endhighlight %}
-
-If you get an error when trying to run the dashboard regarding the window, try
-making the terminal window a bit taller - it has a minimum size.
-
-It may also be necessary to check the current version of the software you have
-on a CAN translator - the `--version` flag will tell you that.
-
-{% highlight sh %}
-$ python reader.py --version
-Device is running version 1.0
-{% endhighlight %}
-
-You can write a one-off message back to the CAN translator (which may or may not
-write it through to the CAN bus, depending on if it is an approved signal or
-not) using the `-w` flag:
-
-{% highlight sh %}
-$ python -w steering_wheel_angle 42.0
-{% endhighlight %}
-
-### Dependencies
-
-The [reader.py][] script requires the `pyusb` Python library to be installed
-along with a backing system library for accessing USB devices. `libusb-1.0` is
-the recommended library.
-
-**Mac OS X**
-
-First install [homebrew][], then run:
-
-{% highlight sh %}
-$ brew install libusb
-{% endhighlight %}
-
-**Ubuntu**
-
-{% highlight sh %}
-$ sudo apt-get install libusb-0.1.4 python-setuptools
-{% endhighlight %}
-
-**All platforms**
-
-{% highlight sh %}
-$ sudo -E easy_install pyusb
-{% endhighlight %}
-
-[homebrew]: http://mxcl.github.com/homebrew/
 [cantranslator]: https://github.com/openxc/cantranslator
-[reader.py]: https://github.com/openxc/cantranslator/blob/master/reader.py
