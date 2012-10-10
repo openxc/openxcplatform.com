@@ -13,7 +13,7 @@ title: Output Format - OpenXC
         <li><a href="/vehicle-interface/firmware.html">
             Flash the firmware <i class="icon-arrow-right"></i>
         </a></li>
-    </p>
+    </ul>
 </div>
 
 The microcontroller has a USB controller operating in USB device mode. It sends

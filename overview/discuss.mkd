@@ -4,7 +4,7 @@ title: Discuss - OpenXC
 ---
 
 <div class="page-header">
-    <h1>Contributing & Getting Help</h1>
+    <h1>Contributing &amp; Getting Help</h1>
 </div>
 
 <div class="page-header">
