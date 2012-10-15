@@ -164,7 +164,7 @@ one:
 {% highlight java %}
 public void receive(Measurement measurement) {
     final VehicleSpeed speed = (VehicleSpeed) measurement;
-    mHandler.post(new Runnable() {
+    MyFirstApp.this.runOnUiThread(new Runnable() {
         public void run() {
             mVehicleSpeedView.setText(
                 "Vehicle speed (km/h): " + speed.getValue().doubleValue());
