@@ -35,10 +35,12 @@ device must:
 
 * [Toshiba Thrive][thrive] 10.1" - the reference device used by the core OpenXC
   developers. This tablet includes a full-size USB port.
+* Google Nexus 7 (using Bluetooth or a USB OTG adapter)
 
 **Phones**
 
-* Samsung [Galaxy Nexus][galaxynexus] - compatible with Bluetooth only.
+* Samsung [Galaxy Nexus][galaxynexus] (using Bluetooth or a USB OTG adapter,
+  although the CAN translator must be powered externally if using USB)
 
 <div class="page-header">
     <h2>Known Incompatible Devices</h2>
