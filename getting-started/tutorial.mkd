@@ -81,8 +81,8 @@ with your new ServiceConnection instance:
 
 {% highlight java %}
 public void onCreate(Bundle savedInstanceState) {
-	...
     super.onCreate(savedInstanceState);
+	...
     Intent intent = new Intent(this, VehicleManager.class);
     bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
 }
