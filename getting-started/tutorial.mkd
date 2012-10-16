@@ -16,10 +16,11 @@ title: App Tutorial - OpenXC
 </div>
 
 This tutorial assumes you have a working knowledge of how to create an Android
-application. Setting up the development environment and understanding Android
-fundamentals is outside the scope of OpenXC, and already Google provides great
-documentation and tutorials - we won't repeat them here. The best place to start
-is [Google's SDK guide][sdk].
+application. It isn't meant for copy and pasting into your editor - some sections 
+will require additional exception handling or changes to match your exact code.
+Setting up the development environment and understanding Android fundamentals is 
+outside the scope of OpenXC, and already Google provides great documentation and 
+tutorials - we won't repeat them here. The best place to start is [Google's SDK guide][sdk].
 
 Once you're comfortable with creating an Android app, continue on with this
 tutorial to enrich it with data from your vehicle. At this point, you should
@@ -58,23 +59,19 @@ connection to the OpenXC service.
 {% highlight java %}
 ...
 private VehicleManager mVehicleManager;
-private boolean mIsBound;
-private String TAG;
 
 private ServiceConnection mConnection = new ServiceConnection() {
     // Called when the connection with the service is established
     public void onServiceConnected(ComponentName className,
             IBinder service) {
-        Log.i(TAG, "Bound to VehicleManager");
+        Log.i("openxc", "Bound to VehicleManager");
         mVehicleManager = ((VehicleManager.VehicleBinder)service).getService();
-        mIsBound = true;
     }
 
     // Called when the connection with the service disconnects unexpectedly
     public void onServiceDisconnected(ComponentName className) {
-        Log.w(TAG, "VehicleService disconnected unexpectedly");
+        Log.w("openxc", "VehicleService disconnected unexpectedly");
         mVehicleManager = null;
-        mIsBound = false;
     }
 };
 {% endhighlight %}
@@ -84,10 +81,10 @@ with your new ServiceConnection instance:
 
 {% highlight java %}
 public void onCreate(Bundle savedInstanceState) {
+	...
     super.onCreate(savedInstanceState);
     Intent intent = new Intent(this, VehicleManager.class);
     bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
-	setContentView(R.Layout.activity_main);
 }
 {% endhighlight %}
 
@@ -97,11 +94,8 @@ pauses:
 {% highlight java %}
 public void onPause() {
     super.onPause();
-    if(mIsBound) {
-        Log.i(TAG, "Unbinding from vehicle service");
-        unbindService(mConnection);
-        mIsBound = false;
-    }
+    Log.i("openxc", "Unbinding from vehicle service");
+    unbindService(mConnection);
 }
 {% endhighlight %}
 
@@ -209,14 +203,10 @@ private TraceVehicleDataSource mTraceSource;
 public void onServiceConnected(ComponentName className, IBinder service) {
     ...
 	URI mTraceFile = new URI("file:///sdcard/com.openxc/trace.json");
-    mTraceSource = new TraceVehicleDataSource(MainActivity.this,
-            mTraceFile);
+    mTraceSource = new TraceVehicleDataSource(MainActivity.this, mTraceFile);
     mVehicleManager.addSource(mTraceSource);
 }
 {% endhighlight %}
-
-Note: You will need to include the usual Java exception handling for the above `URI` 
-instantiation and `addSource()` method.
 
 Also add this to the `onPause()` method of your activity, so you don't start the
 trace file playback multiple times:
@@ -224,10 +214,7 @@ trace file playback multiple times:
 {% highlight java %}
 public void onPause() {
     ...
-    if(mIsBound) {
-        mVehicleManager.removeSource(mTraceSource);
-        ...
-    }
+    mVehicleManager.removeSource(mTraceSource);
 }
 {% endhighlight %}
 
