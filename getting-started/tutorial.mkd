@@ -56,7 +56,10 @@ Add a [ServiceConnection][] to your activity. You'll use this to store a
 connection to the OpenXC service.
 
 {% highlight java %}
+...
 private VehicleManager mVehicleManager;
+private boolean mIsBound;
+private String TAG;
 
 private ServiceConnection mConnection = new ServiceConnection() {
     // Called when the connection with the service is established
@@ -84,6 +87,7 @@ public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     Intent intent = new Intent(this, VehicleManager.class);
     bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
+	setContentView(R.Layout.activity_main);
 }
 {% endhighlight %}
 
@@ -204,11 +208,15 @@ private TraceVehicleDataSource mTraceSource;
 
 public void onServiceConnected(ComponentName className, IBinder service) {
     ...
-    mTraceSource = new TraceVehicleDataSource(
-            "file:///sdcard/com.openxc/trace.json");
+	URI mTraceFile = new URI("file:///sdcard/com.openxc/trace.json");
+    mTraceSource = new TraceVehicleDataSource(MainActivity.this,
+            mTraceFile);
     mVehicleManager.addSource(mTraceSource);
 }
 {% endhighlight %}
+
+Note: You will need to include the usual Java exception handling for the above `URI` 
+instantiation and `addSource()` method.
 
 Also add this to the `onPause()` method of your activity, so you don't start the
 trace file playback multiple times:
