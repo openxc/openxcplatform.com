@@ -40,3 +40,12 @@ code {
     margin-right: 10px;
     list-style-type: disc;
 }
+
+.navbar .brand {
+    padding: 8px 20px 6px;
+}
+
+.navbar .nav > li {
+    padding-top: 3px;
+    font-size: 16px;
+}
