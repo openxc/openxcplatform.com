@@ -39,18 +39,20 @@ If you are using Windows, you also need to install the
 setup executable version from that page.
 </div>
 
-**With MPIDE**
+*With MPIDE*
 
 If you have [MPIDE][] installed, that includes a version of avrdude. You need to
 set the `MPIDE_DIR` environment variable in your terminal to point to the folder
 where you installed MPIDE. Once set, you should be able to use
 [upload_hex.sh][].
 
-**Without MPIDE**
+*Without MPIDE*
 
 If you do not have MPIDE installed, you can find `avrdude` in your
 Linux distribution's package manager, through Homebrew in Mac OS X, or use
 [WinAVR][winavr] in Windows.
+
+**Flashing**
 
 Once you have `avrdude` installed, run the script with the `.hex` file you
 downloaded:
