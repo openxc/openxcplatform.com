@@ -36,6 +36,12 @@ USB. You can do this either by mounting the SD card over USB or using adb:
 $ adb push driving.json /sdcard/openxc-driving.json
 {% endhighlight %}
 
+<div class="alert alert-error">
+<strong>Note:</strong> If you haven't already, make sure you install the
+<a href="/getting-started/library-installation.html#enabler">Enabler</a> app on
+your device. It's required even to use trace data.
+</div>
+
 After binding with the
 [VehicleManager][], specify the type of data source and your trace file (we
 recommend storing these on the SD card):
@@ -127,6 +133,7 @@ VehicleButtonEvent.Listener listener = new VehicleButtonEvent.Listener() {
 {% endhighlight %}
 
 [gg]: http://groups.google.com/group/openxc
+[Enabler]: http://openxcplatform.com/getting-started/library-installation.html
 [vehicle interface]: http://openxcplatform.com/vehicle-interface/index.html
 [short drive]: https://github.com/openxc/openxc-android/blob/tracedashboard/examples/res/raw/driving
 [idling while parked]: https://github.com/openxc/openxc-android/blob/tracedashboard/examples/res/raw/parked
