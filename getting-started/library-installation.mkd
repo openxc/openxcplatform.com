@@ -168,6 +168,12 @@ starts the vehicle service at boot and makes sure it stays alive - this way,
 your app doesn't have to worry about USB permissions or reacting to device
 detachment/reattachment.
 
+<div class="alert alert-error">
+<strong>Note:</strong> Even if you only plan to use previously recorded trace
+files and don't need to connect to a physical vehicle interface, the Enabler app
+still must be installed.
+</div>
+
 After you install the app, it's important that you launch it once manually from
 the app drawer, otherwise the service will not automatically start at boot.
 
