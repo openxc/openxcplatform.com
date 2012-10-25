@@ -34,7 +34,7 @@ The script requires that `avrdude` is installed. There are two possible ways to
 get that dependency.
 
 <div class="alert alert-info">
-If you are using Windows, you also need to install the
+If you are using Windows or OS X, you also need to install the
 <a href="http://www.ftdichip.com/Drivers/VCP.htm">FTDI driver</a> - get the
 setup executable version from that page.
 </div>
