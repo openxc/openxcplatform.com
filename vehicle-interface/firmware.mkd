@@ -52,6 +52,12 @@ If you do not have MPIDE installed, you can find `avrdude` in your
 Linux distribution's package manager, through Homebrew in Mac OS X, or use
 [WinAVR][winavr] in Windows.
 
+If you really feel like it, building `avrdude` from source should be possible in
+Cygwin, but you will need to determine which COM port the chipKIT shows up as
+and find the associated device link (e.g. COM(x) == /dev/ttyS(x-1) in Cygwin's
+shell). Once you've determined the path to the device, set the `PORT`
+environment variable before running `upload_hex.sh`.
+
 **Flashing**
 
 Once you have `avrdude` installed, run the script with the `.hex` file you
