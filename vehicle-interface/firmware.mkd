@@ -49,10 +49,12 @@ where you installed MPIDE. Once set, you should be able to use
 *Without MPIDE*
 
 If you do not have MPIDE installed, you can find `avrdude` in your
-Linux distribution's package manager, through Homebrew in Mac OS X, or use
-[WinAVR][winavr] in Windows.
+Linux distribution's package manager, through Homebrew in Mac OS X, or in
+Windows install either [WinAVR][winavr] or the `avrdude` package in Cygwin.
 
 **Flashing**
+
+*Linux, Mac OS X, Cygwin*
 
 Once you have `avrdude` installed, run the script with the `.hex` file you
 downloaded:
@@ -61,15 +63,32 @@ downloaded:
 $ ./upload_hex.sh new-version.hex
 {% endhighlight %}
 
-If you're using Windows, open a [Cygwin][] shell and run it like this:
+If you're using cygwin, you may need to figure out which COM port the device
+shows up as - the script default is `com4` but it may be different on your
+computer. To specify use `com3` for example:
+
+
+*Windows GUI, Powershell*
+
+If you're using Windows, you may need to figure out which COM port the device
+shows up as - the script default is `com4` but it may be different on your
+computer.
+
+Cygwin users can follow the Linux directions above. Otherwise, Windows users can
+use the GUI provided by [WinAVR][winavr] or run the `upload_hex.sh` script from
+Powershell:
 
 {% highlight sh %}
 $ sh ./upload_hex.sh new-version.hex
 {% endhighlight %}
 
-Note that this won't work in the normal Windows cmd.exe or PowerShell. If
-someone wants to figure out how to run shell scripts in these terminals, we
-would welcome a patch.
+To specify use `com3` for example:
+
+{% highlight sh %}
+$ sh ./upload_hex.sh new-version.hex com3
+{% endhighlight %}
+
+In Windows, this command will only work in Powershell, not the standard cmd.exe.
 
 <div class="page-header">
     <h2>Custom CAN Signal Definition</h2>
