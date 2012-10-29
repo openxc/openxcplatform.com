@@ -54,33 +54,17 @@ Windows install either [WinAVR][winavr] or the `avrdude` package in Cygwin.
 
 **Flashing**
 
-*Linux, Mac OS X, Cygwin*
-
 Once you have `avrdude` installed, run the script with the `.hex` file you
 downloaded:
 
 {% highlight sh %}
-$ ./upload_hex.sh new-version.hex
-{% endhighlight %}
-
-If you're using cygwin, you may need to figure out which COM port the device
-shows up as - the script default is `com4` but it may be different on your
-computer. To specify use `com3` for example:
-
-
-*Windows GUI, Powershell*
-
-If you're using Windows, you may need to figure out which COM port the device
-shows up as - the script default is `com4` but it may be different on your
-computer.
-
-Cygwin users can follow the Linux directions above. Otherwise, Windows users can
-use the GUI provided by [WinAVR][winavr] or run the `upload_hex.sh` script from
-Powershell:
-
-{% highlight sh %}
 $ sh ./upload_hex.sh new-version.hex
 {% endhighlight %}
+
+Windows users can use the GUI provided by [WinAVR][winavr], run the
+`upload_hex.sh` script from Powershell or use Cygwin. When using the script, you
+will need to figure out which COM port the device shows up as - the script
+default is `com4` but it may be different on your computer.
 
 To specify use `com3` for example:
 
