@@ -79,7 +79,7 @@ OpenXC applications.
 The translator is powered via its micro-USB port, which is connected to the host
 device. CAN messages are received via the OBD-II port in the driver's footwell.
 
-<a name="parts">
+<a name="parts" href="#parts">
 **Parts List**
 </a>
 
@@ -100,7 +100,7 @@ the crimp connectors, for example).
 * Mounting spacers
 
 <div class="page-header">
-<h3><a name="connections">Device Connections</a></h3>
+<h3><a name="connections" href="#connections">Device Connections</a></h3>
 </div>
 
 There are 2 USB ports on the combined Max32 and Network Shield, so getting the
