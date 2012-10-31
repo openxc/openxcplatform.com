@@ -22,27 +22,21 @@ the [openxc-android][] repository and also in the central Maven repository.
 Right now, the code is only available if you have access to the early release
 and are logged into GitHub.
 
-
 <div class="page-header">
     <h2>Installation</h2>
 </div>
 
-This project declares dependencies with Maven - you can choose to develop with
-OpenXC via [Eclipse](#eclipse) or the [command line](#cli). You also need to
-install the [Enabler](#enabler) application to your device - it takes care of a
-lot of boilerplate, so your app's code can be simpler.
+You can choose to develop with OpenXC via [Eclipse](#eclipse) or the [command
+line](#cli) with Maven. You also need to install the [Enabler](#enabler)
+application to your device - it takes care of a lot of boilerplate, so your
+app's code can be simpler.
 
 <div class="page-header">
     <h3><a name="eclipse">Using Eclipse</a></h3>
 </div>
 
 * Install [Eclipse](http://www.eclipse.org/downloads/) Indigo or later for Java
-  Developers. Other versions do not include Maven, which is required.
-<div class="alert alert-info">
-If you already have a version of Eclipse installed besides the one for
-"Java Developers" you can install the
-<a href="http://www.eclipse.org/m2e/download/">m2eclipse plugin</a> separately.
-</div>
+  Developers.
 
 <div class="alert alert-error">
 The version of Eclipse available in the <strong>Ubuntu repository</strong> is
@@ -50,11 +44,12 @@ The version of Eclipse available in the <strong>Ubuntu repository</strong> is
 get the latest version directly from the Eclipse website.
 </div>
 
-* Follow Google's
-  [excellent directions](http://developer.android.com/sdk/index.html) to
-  install the Android SDK and ADT plugin for Eclipse. Make sure you also install
-  at least one
-  [Android platform version](http://developer.android.com/sdk/installing/adding-packages.html).
+* Follow Google's [excellent
+  directions](http://developer.android.com/sdk/index.html) to install the
+  Android SDK and ADT plugin for Eclipse. Make sure you also install the latest
+  [Android platform
+  version](http://developer.android.com/sdk/installing/adding-packages.html) and
+  any additional platform versions that you wish to target.
 
 <div class="alert alert-error">
 If you are running 64-bit Ubuntu you will need to install the ia32-libs package.
@@ -64,46 +59,30 @@ install the correct 32-bit libraries.
 
 <div class="alert alert-error">
 If you use an Internet proxy, you will need to configure the proxy settings in
-the Android SDK manager (in Tools -> Options).
+the Android SDK manager (in `Tools -> Options`).
 </div>
 
-* Clone the [openxc-android][] repository using Git or download the latest
-  version in a ZIP file (look for the big ZIP icon like the example below).
-  Right now, the code is only available to developers in the early preview.
+* Clone the [openxc-android][] repository using Git (recommended) or download
+  the latest version in a ZIP file (look for the big ZIP icon like the example
+  below). Right now, the code is only available to developers in the early
+  preview.
 
 <a href="https://github.com/openxc/openxc-android">
 <img src="/images/screenshots/github.png" />
 </a>
 
-* Open Eclipse and go to `File -> Import -> Maven -> Existing Maven Projects`.
-  Browse to where you cloned the repository and select the folder. It will
-  detect a parent project and few different sub-projects - you can uncheck every
-  box except the 'openxc' and 'examples' items.
+* Open Eclipse and go to `File -> Import -> General -> Existing Projects into
+  Workspace`. Browse to where you cloned the repository and select the
+  `openxc-android` folder. Four projects should be detected - unless you will be
+  working on the OpenXC library internal itself, you can uncheck the `openxc-it`
+  testing project. Click `Finish` to import the projects.
 
-![Importing a Maven Project in Eclipse](/images/screenshots/eclipse-import-maven.png)
+![Importing a Project in Eclipse](/images/screenshots/eclipse-import.png)
 
-* You will be prompted to install the m2e-android connector - do that, then
-  restart Eclipse. If you are not prompted to install the connector you may need
-  to wait until after the project builds. Look in the "Problems" view for an
-  error related to `pom.xml`, right click on it and choose `Quick fix` to
-  install the connector.
-* Right click on the `openxc` project, go to Maven -> Update Project
-  Configuration. Select the `openxc` project in the dialog and click OK. Let
-  Eclipse try to build the project (look in the bottom right for a status bar).
-  There may still be errors in the build at this point.
-
-![Changing the Project Dependencies](/images/screenshots/eclipse-project-dependency.png)
-
-* Right click on your project and go to `Properties -> Android`.
-    In the "Library" section add a reference to the `openxc` project.
-
-![Updating the Maven project config](/images/screenshots/eclipse-update-maven.png)
-
-* If there are still errors in the build, Maven might have had trouble
-  downloading the dependencies. If you use an Internet proxy, you will need to
-  configure the [proxy settings](http://maven.apache.org/guides/mini/guide-proxies.html).
-  Otherwise, try asking in the [Google Group](/overview/discuss.html) for some help.
-* There should be no errors in Eclipse at this point.
+* Wait a few seconds for Eclipse to build the projects. At this point, there
+  should be no errors reported. You're ready to start working with OpenXC! If
+  you still have errors, try asking in the [Google
+  Group](/overview/discuss.html) for some help.
 
 Next up, install the [Enabler](#enabler) app.
 
@@ -162,11 +141,11 @@ Next up, install the [Enabler](#enabler) app.
 </div>
 
 The best way to make the USB vehicle interface available to your app is to
-install the OpenXC Enabler app - this is in the `openxc-android` source, but
-we've also made it available as an APK in the [downloads][] section. This app
-starts the vehicle service at boot and makes sure it stays alive - this way,
-your app doesn't have to worry about USB permissions or reacting to device
-detachment/reattachment.
+install the OpenXC Enabler app - the source for this app is in the
+`openxc-android` repository, but we've also made it available as an APK in the
+[downloads][] section. This app starts the vehicle service at boot and makes
+sure it stays alive - this way, your app doesn't have to worry about USB
+permissions or reacting to device detachment/reattachment.
 
 <div class="alert alert-error">
 <strong>Note:</strong> Even if you only plan to use previously recorded trace
@@ -174,8 +153,17 @@ files and don't need to connect to a physical vehicle interface, the Enabler app
 still must be installed.
 </div>
 
-After you install the app, it's important that you launch it once manually from
-the app drawer, otherwise the service will not automatically start at boot.
+*Eclipse*
+
+If you have the `enabler` project imported in Eclipse, right click on the
+project and select `Run As -> Android Application` with an Android device
+attached to install the app.
+
+*Maven*
+
+If you're using Maven at the command line:
+
+    $ mvn clean package android:deploy android:run -pl enabler -am
 
 If you don't want to use the enabler app, it's certainly possible to start the
 service from your application directly. Look at the [source for the
