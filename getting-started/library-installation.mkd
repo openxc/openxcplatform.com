@@ -32,7 +32,7 @@ application to your device - it takes care of a lot of boilerplate, so your
 app's code can be simpler.
 
 <div class="page-header">
-    <h3><a name="eclipse">Using Eclipse</a></h3>
+    <h3><a name="eclipse" href="#eclipse">Using Eclipse</a></h3>
 </div>
 
 * Install [Eclipse](http://www.eclipse.org/downloads/) Indigo or later for Java
@@ -87,7 +87,7 @@ the Android SDK manager (in `Tools -> Options`).
 Next up, install the [Enabler](#enabler) app.
 
 <div class="page-header">
-    <h3><a name="cli">Using the Command Line</a></h3>
+    <h3><a name="cli" href="#cli">Using the Command Line</a></h3>
 </div>
 
 If you prefer to compile and deploy from the command line, you can use
@@ -137,7 +137,7 @@ the `apklib` type is supported:
 Next up, install the [Enabler](#enabler) app.
 
 <div class="page-header">
-    <h3><a name="enabler">Enabler</a></h3>
+    <h3><a name="enabler" href="#enabler">Enabler</a></h3>
 </div>
 
 The best way to make the USB vehicle interface available to your app is to

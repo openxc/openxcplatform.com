@@ -14,7 +14,7 @@ handles reading fresh data from the vehicle.
 This document describes the interface for the OpenXC library **version 2.0**.
 
 <div class="page-header">
-    <h2><a name="vehicle-manager">VehicleManager Service</a></h2>
+    <h2><a name="vehicle-manager" href="#vehicle-manager">VehicleManager Service</a></h2>
 </div>
 
 You must first [bind][binding] with the [VehicleManager][] before you can receive
