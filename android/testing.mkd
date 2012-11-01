@@ -47,10 +47,8 @@ After binding with the
 recommend storing these on the SD card):
 
 {% highlight java %}
-mTraceSource = new TraceVehicleDataSource(
-        "file:///sdcard/com.openxc/trace.json");
+mTraceSource = new TraceVehicleDataSource("file:///sdcard/com.openxc/trace.json");
 mVehicleManager.addSource(mTraceSource);
-    "file:///sdcard/com.openxc/trace.json");
 {% endhighlight %}
 
 Don't forget to also remove this data source when our activity pauses,
