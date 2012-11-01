@@ -46,8 +46,9 @@ device must:
     <h2>Known Incompatible Devices</h2>
 </div>
 
-* Samsung Galaxy Tab - USB host mode is not fully enabled and is not compatible
-  with a USB CAN translator.
+* Samsung Galaxy Tab (the original version) - USB host mode is not fully enabled
+  and is not compatible with a USB CAN translator. Bluetooth should still work,
+  but it is untested.
 
 <div class="page-header">
     <h2>UI Design</h2>
