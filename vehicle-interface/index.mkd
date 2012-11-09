@@ -141,7 +141,7 @@ interface.
 
 ![Bluetooth adapter](/images/bluetooth-translator.jpg)
 
-We're using the [RN-42](http://www.rovingnetworks.com/products/RN_42) bluetooth
+We're using the [RN-42](https://www.sparkfun.com/products/10269) bluetooth
 adapter with the SPP (Serial Port Profile) configuration. Connect the RX and TX
 pins of your serial adapter to *pins 18 and 19* on the chipKIT and make sure
 it's set to use a baud rate of 115200. Whenever, the CAN translator isn't able
