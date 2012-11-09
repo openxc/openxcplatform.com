@@ -39,24 +39,18 @@ If you are using Windows or OS X, you also need to install the
 setup executable version from that page.
 </div>
 
-*With MPIDE*
-
-If you have [MPIDE][] installed, that includes a version of avrdude. You need to
-set the `MPIDE_DIR` environment variable in your terminal to point to the folder
-where you installed MPIDE. Once set, you should be able to use
-[upload_hex.sh][].
-
 *Without MPIDE*
 
-If you do not have MPIDE installed, you can find `avrdude` in your
-Linux distribution's package manager, through Homebrew in Mac OS X, or in
-Windows install either [WinAVR][winavr] or the `avrdude` package in Cygwin.
+If you do not already have [MPIDE][] installed (and that's fine, you don't
+really need it), you can find `avrdude` in your Linux distribution's package
+manager, through Homebrew in Mac OS X, or as [WinAVR][winavr] in Windows.
 
-If you really feel like it, building `avrdude` from source should be possible in
-Cygwin, but you will need to determine which COM port the chipKIT shows up as
-and find the associated device link (e.g. COM(x) == /dev/ttyS(x-1) in Cygwin's
-shell). Once you've determined the path to the device, set the `PORT`
-environment variable before running `upload_hex.sh`.
+*With MPIDE*
+
+If you have [MPIDE][] installed, that already includes a version of avrdude. You
+need to set the `MPIDE_DIR` environment variable in your terminal to point to
+the folder where you installed MPIDE. Once set, you should be able to use
+[upload_hex.sh][].
 
 **Flashing**
 
