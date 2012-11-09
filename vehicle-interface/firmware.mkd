@@ -62,8 +62,8 @@ Windows command line or Powershell):
 $ sh ./upload_hex.sh new-version.hex
 {% endhighlight %}
 
-Windows users can use the GUI provided by [WinAVR][winavr], run the
-`upload_hex.sh` script from Cygwin. When using the script, you
+Windows users can use the GUI provided by [WinAVR][winavr] or run the
+`upload_hex.sh` script with Cygwin. When using the script, you
 will need to figure out which COM port the device shows up as - the script
 default is `com4` but it may be different on your computer.
 
