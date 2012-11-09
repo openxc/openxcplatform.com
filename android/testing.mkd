@@ -20,12 +20,13 @@ The library ships with a method for playing back previously recorded vehicle
 measurement trace files for testing. The [Measurement][] objects received
 by your application are identical to those received from a live vehicle.
 
-The trace file format is simply a plain text file of timestamps and OpenXC JSON
-messages separated by newlines, e.g.:
+The trace file format is simply a plain text file of OpenXC JSON messages with
+an additional timestamp field, separated by newlines:
 
-    1332794184.319404: {"name":"fuel_consumed_since_restart","value":0.090000}
-    1332794184.502802: {"name":"steering_wheel_angle","value":-346.985229}
-    1332794184.559463: {"name":"torque_at_transmission","value":1.000000}
+    {"timestamp": 1351176963.426318, "name": "door_status", "value": "passenger", "event": true}
+    {"timestamp": 1351176963.438087, "name": "fine_odometer_since_restart", "value": 0.0}
+    {"timestamp": 1351176963.438211, "name": "brake_pedal_status", "value": false}
+    {"timestamp": 1351176963.438318, "name": "transmission_gear_position", "value": "second"}
 
 In fact, this is the same method used by some of the instrumentation tests. Once
 you've created a file either by recording the output of the CAN translator
