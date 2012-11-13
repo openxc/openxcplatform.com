@@ -29,7 +29,7 @@ motion! Testing OpenXC apps while moving is absolutely a two person job.
     <h2>Python Library</h2>
 </div>
 
-The [openxc-dashboard][] tool available as a part of the [OpenXC Python
+The `openxc-dashboard` tool available as a part of the [OpenXC Python
 library][python-lib] can be used to view the output of the CAN translator over
 USB or UART. This is the most useful tool when determining which vehicle signals
 are working.
