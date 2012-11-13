@@ -45,8 +45,7 @@ The <a href="/vehicle-interface/index.html">**CAN translator**</a> (or CAN
 reader) is a device that plugs into the OBD-II port (and thus to the CAN bus),
 reads and translates CAN messages into a [standard cross-vehicle
 format](/vehicle-interface/output-format.html). The translated messages can be
-sent over USB or Bluetooth, so they can be read by any computer or mobile
-mobile.
+sent over USB or Bluetooth, so they can be read by any computer or smartphone.
 
 <div class="row">
     <div class="span4">
