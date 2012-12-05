@@ -79,7 +79,9 @@ the Android SDK manager (in `Tools -> Options`).
 
 ![Importing a Project in Eclipse](/images/screenshots/eclipse-import.png)
 
-* Wait a few seconds for Eclipse to build the projects. At this point, there
+* Wait a few seconds for Eclipse to build the projects. If you get errors in the
+  projects about a required compliance level, you can fix this by going to
+  `Android Tools -> Fix Project Properties`. Otherwise, there
   should be no errors reported. You're ready to start working with OpenXC! If
   you still have errors, try asking in the [Google
   Group](/overview/discuss.html) for some help.
