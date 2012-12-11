@@ -1,0 +1,10 @@
+---
+layout: default
+title: Hardware Add-ons - OpenXC
+---
+
+<div class="page-header">
+    <h1>Hardware Add-Ons</h1>
+</div>
+
+Lorem ipsum.
