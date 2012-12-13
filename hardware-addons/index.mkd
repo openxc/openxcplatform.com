@@ -10,4 +10,3 @@ title: Hardware Add-ons - OpenXC
 OpenXC is both an Open Source Software and Hardware platform. Below are descriptions of current projects
 that have been created, as well and future plans for project. If you have projects in mind or 
 if you want to contribute to this page, please requests a pull access from git.
-
