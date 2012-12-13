@@ -1,0 +1,43 @@
+---
+layout: default
+title: Hardware Add-ons - OpenXC
+---
+
+<div class="page-header">
+    <h1>Retro Gauge</h1>
+</div>
+
+<div class="well">
+    <img src="/images/RetroGauge/overview.jpg" />
+    <legend>Retro Gauge</legend>
+</div>
+
+The Retro Gauge is a mechanical vehicle gauge that outputs data from OpenXC via serial 
+communication. The purpose of this gauge is to display vehicle data in a traditional automotive fashion, a gauge! The design intent was to keep the gauge as open and accessible as possible so that the Open Source community could contribute and benefit from the design. Below is a description of the different aspects of the project and how the gauge was created.
+
+
+<div class="page-header">
+    <h2>Motivation</h2>
+</div>
+
+The Retro Gauge was created as an alternative to aftermarket gauges on the market. When we
+looked at what a lot of hobbyists and car enthusiast were doing with their cars, we realized that aftermarket gauges were quite popular. However, these gauges were both expensive and required the installation of additional sensors, which was both timely and sometimes very technical. We decided to design a mechanical vehicle gauge that had the same form factor as existing gauges so that it would fit in existing gauge mounts. We also wanted to design a gauge that had the feel and aesthetics as aftermarket gauges.  
+ 
+<div class="page-header">
+    <h2>Eagle CAD Design</h2>
+</div> 
+
+<div class="well">
+    <img src="/images/RetroGauge/pcb.jpg" />
+</div>
+
+
+
+<div class="page-header">
+    <h2>Hardware Design</h2>
+</div> 
+
+
+<div class="page-header">
+    <h2>Sample Android Application</h2>
+</div> 
