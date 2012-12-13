@@ -28,9 +28,19 @@ looked at what a lot of hobbyists and car enthusiast were doing with their cars,
 </div> 
 
 <div class="well">
-    <img src="/images/RetroGauge/pcb.jpg" />
+	<div class="row">
+		<div class="span4">
+			<img src="/images/RetroGauge/pcb.jpg" />
+    		<legend>Retro Gauge PCB</legend>
+		</div>
+		<div class="span4">
+			<thead>
+				<a href="/documents/RetroGauge/rgEagle.zip">Eagle Files</a>
+				<a href="/documents/RetroGauge/rgBOM.zip">BOM</a>
+			</thead>
+		</div>
+	</div>
 </div>
-
 
 
 <div class="page-header">
