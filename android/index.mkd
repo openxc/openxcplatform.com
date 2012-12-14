@@ -36,6 +36,9 @@ device must:
 * [Toshiba Thrive][thrive] 10.1" - the reference device used by the core OpenXC
   developers. This tablet includes a full-size USB port.
 * Google Nexus 7 (using Bluetooth or a USB OTG adapter)
+* Samsung Galaxy Tab 7.7" (Bluetooth working fine, USB OTG unconfirmed as it
+  requires an additional Samsung adapter)
+
 
 **Phones**
 
