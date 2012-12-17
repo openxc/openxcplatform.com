@@ -25,7 +25,7 @@ Bluetooth support is currently experimental but has the lowest hardware
 requirements. When using a Bluetooth-equipped CAN translator, the Android host
 device must:
 
-* Support **Android 2.3** or greater (i.e. API level 10)
+* Support **Android 2.2** or greater (i.e. API level 8)
 
 <div class="page-header">
     <h2>Confirmed Supported Android Devices</h2>
