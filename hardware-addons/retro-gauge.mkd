@@ -42,7 +42,7 @@ looked at what a lot of hobbyists and car enthusiast were doing with their cars,
 	</div>
 </div>
 
-The design intent
+The design intent for the PCB was to allow developers to use common open source tools that are readily available and allow the gauge to be easily expanded. With this in mind, a [Arduino Pro Mini][arduino pro] was designed to easily fit into the board and a 6-pin header was added to allow the board to easily be flashed. 
 
 
 <div class="page-header">
@@ -53,3 +53,5 @@ The design intent
 <div class="page-header">
     <h2>Sample Android Application</h2>
 </div> 
+
+[arduino pro]: http://arduino.cc/en/Main/ArduinoBoardProMini
