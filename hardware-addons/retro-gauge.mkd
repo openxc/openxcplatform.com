@@ -8,7 +8,7 @@ title: Hardware Add-ons - OpenXC
 </div>
 
 <div class="well">
-    <img src="/images/RetroGauge/overview.jpg" />
+    <img src="/images/retro-gauge/overview.jpg" />
     <legend>Retro Gauge</legend>
 </div>
 
@@ -42,6 +42,7 @@ looked at what a lot of hobbyists and car enthusiast were doing with their cars,
 	</div>
 </div>
 
+The design intent
 
 
 <div class="page-header">
