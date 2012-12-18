@@ -55,10 +55,11 @@ looked at what a lot of hobbyists and car enthusiast were doing with their cars,
         <div class="span4">
             <img src="/images/retro-gauge/hardware.jpg" />
         </div>
-        <div class="span4">    
-			<thead>
-				The hardware was designed so that it would fit into existing 3" aftermarket gauge mounts. There are 3 main manufactures for small step motors that are most commonly used in automotive gauges--[Switec][switec], [VID][vid], [MCR][mcr]. For this project, the VID 29-07 was used since it was most readily available to purchase on ebay at the time of this project. Guy Carpenter's [Gaugette project][gaugette] has a great tutorial on how to implement these stepper motors. Thanks Guy!
-			</thead>
+        <div class="span4"> 
+            The hardware was designed so that it would fit into existing 3" aftermarket gauge mounts. In order to make installation as easy as possibly, only one port was added, a mini USB, to provide both power and data. It was also designed so that the gauge face could easily be swapped out to display different data types. Checkout [this][gaugeface] Instructionables project for directions on creating your own gauge face!</td></tr>
+            </div>
+            <div class="span4">
+            There are 3 main manufactures for small step motors that are most commonly used in automotive gauges--[Switec][switec], [VID][vid], [MCR][mcr]. For this project, the VID 29-07 was used since it was most readily available to purchase on ebay at the time of this project. Guy Carpenter's [Gaugette project][gaugette] has a great tutorial on how to implement these stepper motors. Thanks Guy!
 		</div>
 	</div>
 </div>
@@ -72,3 +73,4 @@ looked at what a lot of hobbyists and car enthusiast were doing with their cars,
 [switec]: <http://jukenswisstech.com/index.php/products/x10/>
 [vid]: <http://www.vid.wellgain.com/product.aspx>
 [mcr]: <http://mcrmotorusa.com/Stepper%20Motors.html>
+[gaugette]: <http://guy.carpenter.id.au/gaugette/about/>
