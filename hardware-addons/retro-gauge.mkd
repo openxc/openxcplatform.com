@@ -37,21 +37,38 @@ looked at what a lot of hobbyists and car enthusiast were doing with their cars,
 			<thead>
 				<a href="/documents/retro-gauge/rgEagle.zip">Eagle Files</a>
 				<a href="/documents/retro-gauge/rgBOM.zip">BOM</a>
+				The design intent for the PCB was to allow developers to use common open source tools that are readily available and allow the gauge to be easily expanded. With this in mind, a [Arduino Pro Mini][arduino pro] was designed to easily fit into the board and a 6-pin header was added to allow the board to easily be flashed. 
 			</thead>
 		</div>
 	</div>
 </div>
 
-The design intent for the PCB was to allow developers to use common open source tools that are readily available and allow the gauge to be easily expanded. With this in mind, a [Arduino Pro Mini][arduino pro] was designed to easily fit into the board and a 6-pin header was added to allow the board to easily be flashed. 
+
 
 
 <div class="page-header">
     <h2>Hardware Design</h2>
 </div> 
 
+<div class="well">
+    <div class ="row">
+        <div class="span4">
+            <img src="/images/retro-gauge/hardware.jpg" />
+        </div>
+        <div class="span4">    
+			<thead>
+				The hardware was designed so that it would fit into existing 3" aftermarket gauge mounts. There are 3 main manufactures for small step motors that are most commonly used in automotive gauges--[Switec][switec], [VID][vid], [MCR][mcr]. For this project, the VID 29-07 was used since it was most readily available to purchase on ebay at the time of this project. Guy Carpenter's [Gaugette project][gaugette] has a great tutorial on how to implement these stepper motors. Thanks Guy!
+			</thead>
+		</div>
+	</div>
+</div>
+
 
 <div class="page-header">
     <h2>Sample Android Application</h2>
 </div> 
 
-[arduino pro]: http://arduino.cc/en/Main/ArduinoBoardProMini
+[arduino pro]: <http://arduino.cc/en/Main/ArduinoBoardProMini>
+[switec]: <http://jukenswisstech.com/index.php/products/x10/>
+[vid]: <http://www.vid.wellgain.com/product.aspx>
+[mcr]: <http://mcrmotorusa.com/Stepper%20Motors.html>
