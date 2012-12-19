@@ -296,10 +296,9 @@ reliability of the system by handling background tasks on behalf of client
 applications.
 
 The enabler provides a common location to control which data sources and sinks
-are active, e.g. if the a trace file should be played back or recorded. settings
-about data sources and sink. It's preferable to be able to change the data
-source on the fly, and not have to programmatically load a trace file in any
-application under test.
+are active, e.g. if the a trace file should be played back or recorded. It's
+preferable to be able to change the data source on the fly, and not have to
+programmatically load a trace file in any application under test.
 
 With the enabler installed, the [VehicleService][] is also started automatically
 when the Android device boots up. A simple data sink like a trace file uploader
