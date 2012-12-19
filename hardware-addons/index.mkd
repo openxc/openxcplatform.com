@@ -7,6 +7,14 @@ title: Hardware Add-ons - OpenXC
     <h1>Hardware Add-Ons</h1>
 </div>
 
-OpenXC is both an Open Source Software and Hardware platform. Below are descriptions of current projects
-that have been created, as well and future plans for project. If you have projects in mind or 
-if you want to contribute to this page, please requests a pull access from git.
+OpenXC is both an Open Source Software and Hardware platform. On the Hardware side, OpenXC's aims to create a vehicle that uses pluggable (or wireless) modules to extend the functionality of your vehicle. Using open source hardware and software, the aim of this section is to explain how you can extend the funcitonality of your vehicle using open source tools. 
+
+Below are descriptions of current projects that have been created, as well as future plans for project. If you have projects in mind and want to contribute to this page, please requests a pull access from git.
+
+* [Retro Gauge][gauge]
+* Touch Controller
+* Shift Knob (Do we want to put this)
+* Wireless Solar Panel Heads-up-display (HUD)
+
+
+[gauge]: /hardware-addons/retro-gauge.html
