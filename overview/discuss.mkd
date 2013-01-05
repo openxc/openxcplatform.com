@@ -11,32 +11,36 @@ title: Discuss - OpenXC
     <h2>Find Source Code</h2>
 </div>
 
-<p>
-    Find all the source code for OpenXC at
-    <a href="https://github.com/openxc">GitHub</a>. The source code is currently
-    only available to developers signed up for the early release.
-</p>
+Find all the source code for OpenXC at [Github][]. The source code is currently
+only available to developers signed up for the early release.
 
 * [OpenXC Organization](https://github.com/openxc)
 * [OpenXC Android Library](https://github.com/openxc/openxc-android)
 * [CAN Translator Source](https://github.com/openxc/cantranslator)
+* [OpenXC Python Library](https://github.com/openxc/openxc-python)
 
 <div class="page-header">
-    <h2>Report Bugs</h2>
+    <h2>Getting Help</h2>
 </div>
 
-<p> You can report any bugs or issues on
-<a href="https://github.com/openxc">GitHub</a> as well, in the issue tracker for
-the appropriate project.</p>
+### Reporting Bugs
+
+You can report any bugs or issues on [Github][] as well, in the issue tracker
+for the appropriate project.
 
 * [OpenXC Android Library Issues](https://github.com/openxc/openxc-android/issues)
 * [CAN Translator Issues](https://github.com/openxc/cantranslator/issues)
 
-<div class="page-header">
-    <h2>Discuss with the Group</h2>
-</div>
+### Mailing List
 
-<p>Join the <a href="http://groups.google.com/group/openxc">
-    OpenXC Google Group</a> to ask any questions about the platform in
-    general, or about specific applications you're developing.
-    </p>
+Join the [OpenXC Google Group](http://groups.google.com/group/openxc) to ask any
+questions about the platform in general, or about specific applications you're
+developing.
+
+### IRC
+
+The official IRC channel is `#openxc` on Freenode (`irc://irc.freenode.net`),
+where the developers of OpenXC and other users can be found. A timely response
+isn't guaranteed here, so if nobody is around to help, try the mailing list.
+
+[Github]: https://github.com/openxc
