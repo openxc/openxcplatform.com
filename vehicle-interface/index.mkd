@@ -139,16 +139,21 @@ connect a tablet (or even a phone!) to your car wirelessly. The Android
 library also has experimental support for communicating with a Bluetooth vehicle
 interface.
 
+The CAN translator firmware must be compiled with the UART=1 flag for this
+feature to work.
+
 ![Bluetooth adapter](/images/bluetooth-translator.jpg)
 
 We're using the [RN-42](https://www.sparkfun.com/products/10269) bluetooth
-adapter with the SPP (Serial Port Profile) configuration. Connect the RX and TX
-pins of your serial adapter to *pins 18 and 19* on the chipKIT and make sure
-it's set to use a baud rate of 115200. Whenever, the CAN translator isn't able
-to send messages over USB, it will send over this serial connection instead.
+adapter with the SPP (Serial Port Profile) configuration. Set the baudrate on
+the RN-42 to `460800`. Hardware flow control is enabled (and required to hit these
+really high baud rates), so make sure to connect the `RTS` and `CTS` lines in
+addition to RX/TX.
 
-To be absolutely clear, OpenXC messages are only sent over serial if an active
-USB connection is **not** already receiving the messages.
+* Pin 0 - Connect to TX on RN-42
+* Pin 1 - Connect to RX on RN-42
+* Pin 18 - Connect to CTS on RN-42
+* Pin 19 - Connect to RTS on RN-42
 
 *(and yes, we live dangerously and make all of our wires the same color!)*
 

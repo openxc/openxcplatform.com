@@ -25,7 +25,7 @@ Bluetooth support is currently experimental but has the lowest hardware
 requirements. When using a Bluetooth-equipped CAN translator, the Android host
 device must:
 
-* Support **Android 2.3** or greater (i.e. API level 10)
+* Support **Android 2.2** or greater (i.e. API level 8)
 
 <div class="page-header">
     <h2>Confirmed Supported Android Devices</h2>
@@ -36,6 +36,9 @@ device must:
 * [Toshiba Thrive][thrive] 10.1" - the reference device used by the core OpenXC
   developers. This tablet includes a full-size USB port.
 * Google Nexus 7 (using Bluetooth or a USB OTG adapter)
+* Samsung Galaxy Tab 7.7" (Bluetooth working fine, USB OTG unconfirmed as it
+  requires an additional Samsung adapter)
+
 
 **Phones**
 
