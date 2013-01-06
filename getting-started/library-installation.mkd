@@ -1,0 +1,183 @@
+---
+layout: default
+title: Library Setup - OpenXC
+---
+
+<div class="page-header">
+    <h1>Android Library Installation</h1>
+</div>
+
+<div class="pull-right well">
+    <ul class="nav nav-list">
+        <li class="nav-header">Next Step</li>
+        <li><a href="/getting-started/tutorial.html">
+            App Tutorial <i class="icon-arrow-right"></i>
+        </a></li>
+    </p>
+</div>
+
+The OpenXC functionality is exposed via a Java library that includes some
+Android services your application can use. The library is available on GitHub in
+the [openxc-android][] repository and also in the central Maven repository.
+Right now, the code is only available if you have access to the early release
+and are logged into GitHub.
+
+<div class="page-header">
+    <h2>Installation</h2>
+</div>
+
+You can choose to develop with OpenXC via [Eclipse](#eclipse) or the [command
+line](#cli) with Maven. You also need to install the [Enabler](#enabler)
+application to your device - it takes care of a lot of boilerplate, so your
+app's code can be simpler.
+
+<div class="page-header">
+    <h3><a name="eclipse" href="#eclipse">Using Eclipse</a></h3>
+</div>
+
+* Install [Eclipse](http://www.eclipse.org/downloads/) Indigo or later for Java
+  Developers.
+
+<div class="alert alert-error">
+The version of Eclipse available in the <strong>Ubuntu repository</strong> is
+<strong>not recommended</strong> - it's a really old version. You should always
+get the latest version directly from the Eclipse website.
+</div>
+
+* Follow Google's [excellent
+  directions](http://developer.android.com/sdk/index.html) to install the
+  Android SDK and ADT plugin for Eclipse. Make sure you also install the latest
+  [Android platform
+  version](http://developer.android.com/sdk/installing/adding-packages.html) and
+  any additional platform versions that you wish to target.
+
+<div class="alert alert-error">
+If you are running 64-bit Ubuntu you will need to install the ia32-libs package.
+Other 64-bit Linux distributions will need to use their package managers to
+install the correct 32-bit libraries.
+</div>
+
+<div class="alert alert-error">
+If you use an Internet proxy, you will need to configure the proxy settings in
+the Android SDK manager (in `Tools -> Options`).
+</div>
+
+* Clone the [openxc-android][] repository using Git (recommended) or download
+  the latest version in a ZIP file (look for the big ZIP icon like the example
+  below). Right now, the code is only available to developers in the early
+  preview.
+
+<a href="https://github.com/openxc/openxc-android">
+<img src="/images/screenshots/github.png" />
+</a>
+
+* Open Eclipse and go to `File -> Import -> General -> Existing Projects into
+  Workspace`. Browse to where you cloned the repository and select the
+  `openxc-android` folder. Four projects should be detected - unless you will be
+  working on the OpenXC library internal itself, you can uncheck the `openxc-it`
+  testing project. Click `Finish` to import the projects.
+
+![Importing a Project in Eclipse](/images/screenshots/eclipse-import.png)
+
+* Wait a few seconds for Eclipse to build the projects. If you get errors in the
+  projects about a required compliance level, you can fix this by going to
+  `Android Tools -> Fix Project Properties`. Otherwise, there
+  should be no errors reported. You're ready to start working with OpenXC! If
+  you still have errors, try asking in the [Google
+  Group](/overview/discuss.html) for some help.
+
+Next up, install the [Enabler](#enabler) app.
+
+<div class="page-header">
+    <h3><a name="cli" href="#cli">Using the Command Line</a></h3>
+</div>
+
+If you prefer to compile and deploy from the command line, you can use
+[Maven](http://maven.apache.org/download.html). Using Maven is out of the scope
+of this documentation, so this is only recommended if you already know how to
+use Maven.
+
+The OpenXC library artifact is available in the central Maven repository, so you
+just need to add this to your `dependencies` section:
+
+{% highlight xml %}
+<dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>com.openxc</groupId>
+            <artifactId>openxc</artifactId>
+            <version>2.0</version>
+            <type>apklib</type>
+        </dependency>
+        ...
+    </dependencies>
+    ...
+</dependencyManagement>
+{% endhighlight %}
+
+You also need to add the
+[android-maven-plugin](http://code.google.com/p/maven-android-plugin/) so that
+the `apklib` type is supported:
+
+{% highlight xml %}
+<build>
+    <pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>com.jayway.maven.plugins.android.generation2</groupId>
+                <artifactId>android-maven-plugin</artifactId>
+                <version>3.3.0</version>
+                <extensions>true</extensions>
+            </plugin>
+        </plugins>
+        ...
+    </pluginManagement>
+    ...
+</build>
+{% endhighlight %}
+
+Next up, install the [Enabler](#enabler) app.
+
+<div class="page-header">
+    <h3><a name="enabler" href="#enabler">Enabler</a></h3>
+</div>
+
+The best way to make the USB vehicle interface available to your app is to
+install the OpenXC Enabler app - the source for this app is in the
+`openxc-android` repository, but we've also made it available as an APK in the
+[downloads][] section. This app starts the vehicle service at boot and makes
+sure it stays alive - this way, your app doesn't have to worry about USB
+permissions or reacting to device detachment/reattachment.
+
+<div class="alert alert-error">
+<strong>Note:</strong> Even if you only plan to use previously recorded trace
+files and don't need to connect to a physical vehicle interface, the Enabler app
+still must be installed.
+</div>
+
+*Eclipse*
+
+If you have the `enabler` project imported in Eclipse, right click on the
+project and select `Run As -> Android Application` with an Android device
+attached to install the app.
+
+*Maven*
+
+If you're using Maven at the command line:
+
+    $ mvn clean package android:deploy android:run -pl enabler -am
+
+If you don't want to use the enabler app, it's certainly possible to start the
+service from your application directly. Look at the [source for the
+enabler][enabler] to see exactly how to accomplish that.
+
+<div class="page-header">
+<h2>Next Steps</h2>
+</div>
+
+Once you have the library setup and the enabler installed, you can continue to
+writing your [first OpenXC app](/getting-started/tutorial.html).
+
+[downloads]: https://github.com/openxc/openxc-android/downloads
+[enabler]: https://github.com/openxc/openxc-android/tree/master/enabler
+[openxc-android]: https://github.com/openxc/openxc-android

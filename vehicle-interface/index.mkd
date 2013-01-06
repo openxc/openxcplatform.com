@@ -1,0 +1,260 @@
+---
+layout: default
+title: Vehicle Interface - OpenXC
+---
+
+<div class="page-header">
+    <h1>Vehicle Interface</h1>
+</div>
+
+<div class="pull-right well">
+    <ul class="nav nav-list">
+        <li class="nav-header">Next Step</li>
+        <li><a href="/vehicle-interface/assembly.html">
+            Assemble the CAN translator <i class="icon-arrow-right"></i>
+        </a></li>
+    </p>
+</div>
+
+The vehicle interface (or CAN translator) is based on a microcontroller with two
+external connections - one to the CAN bus via the OBD-II port, and one to the
+[host device][] via USB or serial. It passively listens for a subset of CAN
+messages, performs required unit conversion or factoring and outputs a [generic
+version][output-format] to the USB interface.
+
+Unless you are implementing custom CAN messages, you will most likely need a
+pre-built OpenXC binary from the manufacturer of your vehicle. Each OEM can
+decide whether or not to participate in OpenXC and if so, which types of data
+they wish to expose.
+
+The firmware for all supported Ford vehicles is currently available to anyone
+who signs this [developer agreement](/agreement.html).
+
+<div class="row">
+    <div class="span4">
+        <img title="CAN Translator with Enclosure"
+            src="/images/cantranslator-boxed-vertical.jpg"/>
+    </div>
+    <div class="span4">
+        <img title="CAN Translator with Cable"
+            src="/images/cantranslator-with-plug.jpg"/>
+    </div>
+</div>
+
+<div class="page-header">
+<h2>Supported Vehicles</h2>
+</div>
+
+**Ford**
+
+An up-to-date list of exactly which OpenXC messages are supported by each vehicle is maintained as a
+[Google Spreadsheet](https://docs.google.com/spreadsheet/ccc?key=0Ajz-75u_7nEydFJxUG4yOVZ1NXJlcjNvdzdSTDdyY0E).
+
+* 2011 - 2013 Focus (gas and electric)
+* 2011 - 2012 Fusion (gas and hybrid)
+* 2011 - 2012 Fiesta
+* 2012 Mustang
+* 2011 Figo
+* 2009 F-150
+* 2011 - 2012 E350
+* 2008 S-MAX
+
+The firmware for these vehicles is as of yet untested, but should work fine.
+If you use the CAN translator on one of these vehicles, do [let the developers
+know](/overview/discuss.html).
+
+* 2006 - 2010, 2013 Fusion
+* 2006 - 2013 Lincoln MKZ
+* 2010, 2011, 2013 Mustang
+* 2011 - 2012 Explorer
+* 2010 - 2013 F-150
+* 2009 - 2013 Flex
+* 2009 - 2013 Lincoln MKT
+* 2012 Edge
+* 2012 Lincoln MKX
+
+<div class="page-header">
+<h2>Hardware</h2>
+</div>
+
+The current implementation uses the [Digilent chipKIT Max32][chipkit], an
+[Arduino-compatible][arduino] microcontroller based on PIC32. The [Network
+Shield][] add-on adds two CAN transceivers, which is enough to enable most
+OpenXC applications.
+
+The translator is powered via its micro-USB port, which is connected to the host
+device. CAN messages are received via the OBD-II port in the driver's footwell.
+
+<a name="parts" href="#parts">
+**Parts List**
+</a>
+
+This is a list of the hardware used in the reference OpenXC kit - you're
+guaranteed to have a 100% compatible OpenXC device if you use these parts
+exactly. There are many equally compatible variations on this list from hundreds
+of different vendors, so feel free to use other parts you may have on hand (like
+the crimp connectors, for example).
+
+* Digilent chipKIT Max32 Microcontroller from [Digilent][max32] ($50)
+* Digilent chipKIT Network Shield from [Digilent][Network Shield] ($55)
+* OBD-II Male to Breakout Cable from [OBD2Cables][obd2] ($13)
+* (3x) 2x6 Crimp Connector Housings from [Pololu][crimpconnectors] (< $1)
+* (4x) Female crimp pins from [Pololu][crimppins] (< $1)
+* Shrink tubing
+* Rubber cable grommet that fits the OBD-II cable
+* Enclosure from [PacTec][enclosure] ($11)
+* Mounting spacers
+
+<div class="page-header">
+<h3><a name="connections" href="#connections">Device Connections</a></h3>
+</div>
+
+There are 2 USB ports on the combined Max32 and Network Shield, so getting the
+cables sorted out can be a bit confusing. The ports are meant to be used as
+follows:
+
+* Mini-USB - connect to the serial console for debugging and to upload new
+  firmware.
+*  Micro-USB - the OpenXC data is sent through this port - connect it to your
+   computer for testing with the Python script, or to an Android tablet to run
+   an OpenXC application.
+
+<div class="pull-right">
+<img title="USB ports" src="/images/usbports.jpg"/>
+</div>
+
+<div class="alert alert-error">
+<strong>A note about power:</strong> In order to power the board via micro-USB,
+you have to connect the 5v rails of the chipKIT and network shield. This means
+that you absolutely must not plug the mini-USB and micro-USB ports in to
+different devices at the same time! This would short 2 different 5v sources
+together and likely destroy the chipKIT and network shield.
+</div>
+
+The OBD-II cable is safe to plug in at any time, with the vehicle running or
+off. The cable only fits one way into the vehicle's port, like a USB cable.
+
+<div class="page-header">
+<h3>Bluetooth</h3>
+</div>
+
+The CAN translator software now has experimental support for sending data over a
+serial (UART) connection instead of USB. If you add a Bluetooth adapter that
+uses the Serial Port Profile to your CAN translator, you can
+connect a tablet (or even a phone!) to your car wirelessly. The Android
+library also has experimental support for communicating with a Bluetooth vehicle
+interface.
+
+The CAN translator firmware must be compiled with the UART=1 flag for this
+feature to work.
+
+![Bluetooth adapter](/images/bluetooth-translator.jpg)
+
+We're using the [RN-42](https://www.sparkfun.com/products/10269) bluetooth
+adapter with the SPP (Serial Port Profile) configuration. Set the baudrate on
+the RN-42 to `460800`. Hardware flow control is enabled (and required to hit these
+really high baud rates), so make sure to connect the `RTS` and `CTS` lines in
+addition to RX/TX.
+
+* Pin 0 - Connect to TX on RN-42
+* Pin 1 - Connect to RX on RN-42
+* Pin 18 - Connect to CTS on RN-42
+* Pin 19 - Connect to RTS on RN-42
+
+*(and yes, we live dangerously and make all of our wires the same color!)*
+
+<div class="page-header">
+<h2>Concepts</h2>
+</div>
+
+**CAN**
+
+Modern automobiles are laced with a number of microcontrollers and sensors that
+monitor and control everything from the throttle position to the ambient air
+temperature. These devices communicate with each other over a wired in-vehicle
+network, a [CAN bus][can].
+
+![In-vehicle Network](/images/can-diagram.png)
+*(Creative Commons, Ford Motor Company)*
+
+Compared to something like the network of the Internet, CAN is relatively simple
+and low-level. CAN buses have 2 wires, and vehicles typically have two or three
+CAN buses running at speeds ranging from 125Kbps to 500Kbps. The protocol used
+to send data between nodes on the network is roughly equivalent to a link layer
+protocol like MAC or ARP. It's a broadcast network and only one node can send
+data at a time. It handles message priorities at the bit level which makes it a
+good choice for vehicle networks, when you absolutely, positively, **must** make
+sure the brake pedal status is sent.
+
+**CAN Data Format**
+
+CAN network traffic is organized into frames (or messages) that have:
+
+* an 11 bit identifier
+* up to 64 bits of data
+
+Within the 64 bits of data of each **CAN message** there are typically multiple
+data points, e.g. the steering wheel angle, a quality factor for the sensor, the
+center point of the steering wheel, etc. Each of these bit fields is known as a
+**CAN signal**.
+
+The exact format of these bit fields and messages are typically considered
+sensitive information by vehicle manufacturers. The OpenXC CAN translator allows
+these companies to keep that information private, but still give consumers and
+developers access to the data contained within. Even for engineers inside the
+companies, dealing with a standard data format across many vehicles is often
+preferable to keeping track of a database of CAN message and signal definitions.
+
+**On-Board Diagnostics**
+
+The CAN bus is one of the primary components of [OBD-II][obd2], a vehicle
+diagnostic standard mandatory for all cars sold in the United States since 1996.
+The OBD-II standard sends and receives messages on the CAN bus. If you've ever
+watched your mechanic plug a tool in somewhere underneath your steering wheel,
+or seen a vehicle monitoring app for your smartphone, that's OBD-II in action.
+You'll always find the port by the driver's knees.
+
+![OBD-II Port with Cable in a Mustang](/images/obd-ii-cable.jpg)
+
+Diagnostic messages work slightly differently than the CAN messages used by all
+other in-vehicle systems. When you turn on your car, the CAN bus is very busy
+with so-called "normal" messages. For example, the engine control unit (ECU)
+continuously sends a CAN message with the engine speed (in RPM). The cluster
+listens for this message on the bus and updates the tachometer arm when it
+receives a new value. The cluster doesn't have to query for anything.
+
+Conversely, diagnostic messages use a request/response style. When you attach an
+off-the-shelf OBD-II scan tool, it sends specially formatted diagnostic command
+messages over the CAN bus. Nodes on the network that can output diagnostic
+information are listening for these messages, and send out the requested status
+information over CAN when asked. There's no point in sending these messages when
+nothing is attached and capable of interpreting the results, so these messages
+are not sent continuously to minimize the level of traffic on the network.
+
+The diagnostic request protocol is relatively standard across vehicle
+manufacturers, but beyond the standardized (and mandated) [OBD-II
+parameters](http://en.wikipedia.org/wiki/OBD-II_PIDs), the diagnostic message
+identifiers and formats are also largely proprietary.
+
+<div class="page-header">
+<h2>Next Steps</h2>
+</div>
+
+Bought all of the [parts](#parts) for the CAN translator? The detailed [assembly
+guide][] is next.
+
+[MPIDE]: https://github.com/chipKIT32/chipKIT32-MAX/downloads
+[max32]: http://digilentinc.com/Products/Detail.cfm?NavPath=2,719,895&Prod=CHIPKIT-MAX32.
+[cantranslator]: https://github.com/openxc/cantranslator
+[output-format]: /vehicle-interface/output-format.html
+[host device]: /android/index.html
+[chipkit]: http://www.digilentinc.com/Products/Catalog.cfm?NavPath=2,892&Cat=18
+[arduino]: http://arduino.cc
+[Network Shield]: http://digilentinc.com/Products/Detail.cfm?NavPath=2,719,943&Prod=CHIPKIT-NETWORK-SHIELD
+[assembly guide]: /vehicle-interface/assembly.html
+[obd2]: http://www.obd2cables.com/products/obd-cables/j1962m-ra-to/cable-j1962m-ra-type-b-to-open-end-6ft.html
+[crimpconnectors]: http://www.pololu.com/catalog/product/1914
+[crimppins]: http://www.pololu.com/catalog/product/1930
+[can]: http://en.wikipedia.org/wiki/CAN_bus
+[obd2]: http://en.wikipedia.org/wiki/On-board_diagnostics
+[enclosure]: http://www.pactecenclosures.com/product-detail.php?productid=62&seriesid=45&classid=26

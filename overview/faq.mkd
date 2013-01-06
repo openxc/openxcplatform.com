@@ -1,10 +1,11 @@
 ---
 layout: default
-permalink: /developers/faq.html
+title: FAQ - OpenXC
 ---
 
-Developer FAQ
-=============
+<div class="page-header">
+    <h1>Frequently Asked Questions</h1>
+</div>
 
 <dl>
 
@@ -25,7 +26,9 @@ launch.
 <a href="http://groups.google.com/group/openxc">Google Group</a>, and that's the
 best place to get an answer to your question. Once the code is released on
 GitHub, you won't need any special permission or agreements from us to get
-started!
+started! You will currently only need to sign a developer agreement to get
+access to the vehicle interface firmware which lets you use an application in an
+actual Ford vehicle. This is not neccessary to begin developing in Android.
 </dd>
 
 <dt>Why not just use one of the many commercial OBD-II scanners instead of
@@ -53,7 +56,7 @@ non-standard.
 </p>
 
 <p>
-OpenXC connects the OBD-II port, but it does not currently get data from
+OpenXC connects to the OBD-II port, but it does not currently get data from
 OBD-II diagnostic messages. The OpenXC CAN translator listens passively to the
 many CAN messages already flying across the buses that include data not covered
 by standard OBD-II messages. This includes nearly every sensor on vehicle, but
@@ -65,17 +68,17 @@ definitions or a pre-compiled OpenXC translator binary.
 <p>
 The most important difference between OpenXC and existing tools is the standard
 programming language and OS agnostic
- <a href="/developers/vehicle-interface/translation-specs.html">output</a> sent via USB.
-The reference host device is <a href="android/host.html">Android</a>, but
+ <a href="/vehicle-interface/output-format.html">output</a> sent via USB.
+The reference host device is <a href="/android/index.html">Android</a>, but
 there's no reason you couldn't use a Windows or Linux laptop with a USB port
 (i.e. any of them). A port of the
- <a href="/developers/android/library-usage.html">openxc-android</a> library to Python or
+ <a href="/android/api-guide.html">openxc-android</a> library to Python or
 plain old (non-Android) Java would be a great addition to the project.
 </p>
 
 <a href="http://en.wikipedia.org/wiki/OBD-II_PIDs#Non-standard_PIDs">Source</a>
 
-<dt>Why does use a separate device to connect to the vehicle instead of
+<dt>Why does OpenXC use a separate device to connect to the vehicle instead of
 integrating it into the host device (Android or PC)?</dt>
 
 <dd>Very few if any vehicle manufacturers release their CAN message definitions. If
@@ -86,7 +89,8 @@ separation of translation from user code provides stronger assurance that the
 message definitions will remain private, and the CAN bus will be protected from
 malicious writes from bad applications.</dd>
 
-<dt>How do I connect my host device to the web when I'm driving around town?</dt>
+<dt>How do I connect my host device to the web when I'm not near a Wi-Fi access
+    point?</dt>
 <dd>
 The device we recommend, the Toshiba Thrive, doesn't have 3G built-in. On the
 positive side, this means that the tablet is quite inexpensive even without a

@@ -1,0 +1,287 @@
+---
+layout: default
+title: Vehicle Interface Assembly - OpenXC
+---
+
+<div class="page-header">
+    <h1>CAN Translator Assembly</h1>
+</div>
+
+<div class="pull-right well">
+    <ul class="nav nav-list">
+        <li class="nav-header">Next Step</li>
+        <li><a href="/vehicle-interface/output-format.html">
+            Familiarize yourself with the output format <i class="icon-arrow-right"></i>
+        </a></li>
+    </p>
+</div>
+
+Make sure you've purchased all of the required
+[parts](/vehicle-interface/index.html#parts) before beginning.
+
+<div class="page-header">
+    <h2>OBD-II Cable</h2>
+</div>
+
+Slide the round grommet onto the bare wire end of the cable. Cut a section of
+3/8" shrink tubing about 1" long and slide it onto the the cable next.
+
+<div class="well">
+    <img src="/images/assembly/openxc-assembly-1.jpg" />
+    <legend>The grommet and shrink tubing on the OBD-II breakout cable.</legend>
+</div>
+
+Crimp a female pin onto the following wires and verify the connection to the
+expected pin using a multimeter. The pinout for the cable recommended above is
+available at [OBD2Cables.com][obd2]. wire, and insert the pin into the correct
+housing.
+
+Trim the red (battery voltage) and brown (signal ground) wires down to the
+insulator but leave them long. These should be saved for future use.
+
+Trim all of the other uncrimped wires down to the main cable insulation - we
+won't be needing these.
+
+<div class="well">
+<div class="row">
+<div class="span4">
+    <img src="/images/assembly/openxc-assembly-3.jpg" />
+    <legend>OBD-II breakout cable with crimped wires</legend>
+</div>
+<div class="span4">
+<table>
+<thead>
+<tr><th>Wire Color</th><th>OBD-II Pin</th><th>Bus</th><th>Polarity</th></tr>
+</thead>
+<tbody>
+<tr>
+    <td>White and black</td>
+    <td>6</td>
+    <td>HS</td>
+    <td>+</td>
+</tr>
+<tr>
+    <td>Green and black</td>
+    <td>14</td>
+    <td>HS</td>
+    <td>-</td>
+</tr>
+<tr>
+    <td>Light blue</td>
+    <td>1</td>
+    <td>INFO</td>
+    <td>+</td>
+</tr>
+<tr>
+    <td>Green</td>
+    <td>8</td>
+    <td>INFO</td>
+    <td>-</td>
+</tr>
+<tr>
+    <td>Orange</td>
+    <td>3</td>
+    <td>MS</td>
+    <td>+</td>
+</tr>
+<tr>
+    <td>Purple</td>
+    <td>11</td>
+    <td>MS</td>
+    <td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+When all pins are attached, test that you found the right colors by verifying
+the connection with a multimeter.
+
+<div class="well">
+    <img src="/images/assembly/openxc-assembly-2.jpg" />
+    <legend>Testing crimped OBD-II pins</legend>
+</div>
+
+<div class="page-header">
+    <h3>Crimp Housings</h3>
+</div>
+
+1. Connect each of the HS, MS and INFO pairs of wires (see the table above) to
+   one crimp pin housing each. There should be three crimp housings with two
+   wires connected to each - the + in pin 1 and - in pin 3.
+2. Print out or make small labels for HS, MS, INFO, and three "-+".
+3. Put the coordinating bus label on the crimp housing according to the table.
+4. On the other side of the crimp housing, place a "-+" label so it lines up
+   with the order of the wires.
+
+<div class="well">
+    <img src="/images/assembly/openxc-assembly-4.jpg" />
+    <legend>Attached crimp housings with labels</legend>
+</div>
+
+<div class="well">
+    <img src="/images/assembly/openxc-assembly-5.jpg" />
+    <legend>Crimp housings with +- labels</legend>
+</div>
+
+Slide the shrink tubing and center it on the end of the insulation.  Bend the
+extra wires and tuck them between the shrink tubing and main cable insulation.
+Leave the loop accessible to allow us to pull them free in the future.  With a
+heat gun, shrink the tubing.
+
+<div class="well">
+    <img src="/images/assembly/openxc-assembly-6.jpg" />
+    <legend>Tuck away the 2 unused wires in the shrink tubing for later use
+        before sealing it.</legend>
+</div>
+<div class="well">
+    <img src="/images/assembly/openxc-assembly-7.jpg" />
+    <legend>A completed OBD-II cable</legend>
+</div>
+
+<div class="page-header">
+    <h2>Lower Enclosure</h2>
+</div>
+
+1. Remove the four existing raised screw sockets from the inside bottom of enclosure.
+   A pair of angle cutters should do the trick.
+2. While holding the chipKIT on the enclosure's lower half, use a pen to mark
+  where the new mounting holes should go. They are asymmetrical, so they
+  definitely won't line up with the existing holes. Remove the chipKIT and drill
+  four new screw holes in the bottom of the enclosure.
+
+<div class="well">
+    <img src="/images/assembly/openxc-assembly-11.jpg"/>
+    <legend>Clipping off the existing raised screw sockets.</legend>
+</div>
+<div>
+    <img src="/images/assembly/openxc-assembly-12.jpg"/>
+    <legend>The empty enclosure with new mounting holes drilled.</legend>
+</div>
+
+1. Put screws into the 4 holes from below the enclosure. Place the enclosure
+   down on a table so the screws are kept in place while you insert the chipKIT.
+2. Mount the Network Shield on the Max32.
+3. Fit the Max32 onto the 4 screws. Again, the mounting holes are asymmetrical,
+   so it should only fit one way.
+4. Screw round stand-offs onto the screws. Tighten by holding stand-offs with
+   needle-nose pliers while tightening the other side with a screwdriver. Be
+   careful on the two screws nearest the Ethernet port - these don't have much
+   support, and the Network Shield could be damaged by over tightening.
+
+<div class="well">
+    <img src="/images/assembly/openxc-assembly-14.jpg" />
+    <legend>chipKIT rear with mounting screws</legend>
+</div>
+<div class="well">
+    <img src="/images/assembly/openxc-assembly-15.jpg" />
+    <legend>chipKIT front with mounting screws</legend>
+</div>
+
+<div class="page-header">
+    <h2>Front Plate</h2>
+</div>
+
+1. Using the template (coming soon, or just wing it), drill a hole for the
+   OBD-II cable.
+2. Trim the OBD-II cable hole and shape it with a round file.
+3. Using the template, drill out and shape the hole for the USB cable using a
+  straight file.
+
+<div class="page-header">
+    <h2>Power Jumper</h2>
+</div>
+
+1. Cut a length of wire, 2" to 3" long.
+2. Strip about an 1/8" on both ends.
+3. Crimp a female pin to one end.  Crimp a male pin to the other.
+
+<div class="well">
+    <img src="/images/assembly/openxc-assembly-8.jpg" />
+    <legend>Power jumper parts</legend>
+</div>
+<div class="well">
+    <img src="/images/assembly/openxc-assembly-9.jpg" />
+    <legend>Crimped power jumper wire</legend>
+</div>
+
+Put a 1x1 housing on the female end and shrink tubing on the male end, enough to
+cover a bit of the insulation and most of the crimp pin that will not actually
+get pushed into the socket.  Put a bend in the crimp pin about halfway between
+the pin and the wire, otherwise it won't fit in the enclosure. Rather than a
+single 90 degree bend, put in two bends of 45 degrees.  Don't make either of
+those bends on the skinny pin, put them both on the thicker body of the crimp
+pin.
+
+<div class="well">
+    <img src="/images/assembly/openxc-assembly-10.jpg" />
+    <legend>Bend the power jumper after shrink tubing to fit in the
+    enclosure.</legend>
+</div>
+
+<div class="page-header">
+    <h2>Final Assembly</h2>
+</div>
+
+* Connect the OBD-II cable crimp housings to the Network Shield. For most
+  vehicles (including the 2012 Focus) the HS plug should go to CAN1 and the INFO
+  plug should go to CAN2. Make sure the + on your connector lines up with the +
+  printed on the board - it should be the end closest to the center of the
+  network shield.
+* Optionally, label the socket and connector indicating the proper plug
+  orientation, e.g. a big `1` and `2` that you line up.
+* Slide the grommet to about where the front plate will be.  Put the front plate
+  on the grommet. Lay the cable flat on the outside of the Ethernet jack.  Bend
+  the cable between the standoff and the power connector, being careful to put
+  as little strain as possible on the small wires of the 2x6 connectors.  Push
+  the front plate into place.
+
+<div class="well">
+    <img src="/images/assembly/openxc-assembly-20.jpg" />
+    <legend>Install the OBD-II cable with the wires closer to the board's center.</legend>
+</div>
+<div class="well">
+    <img src="/images/assembly/openxc-assembly-18.jpg" />
+    <legend>Front plate and cable grommet installation.</legend>
+</div>
+
+* Connect the female end of the power jumper to pin 1 of JP4. Connect the male
+  end to 5vo on the POWER connector.
+
+<div class="well">
+    <img src="/images/assembly/openxc-assembly-17.jpg" />
+    <legend>Connect the power jumper from pin 1 of JP4 to 5vo.</legend>
+</div>
+
+* Put the back plate into place and attach the top of the enclosure.
+* Secure the enclosure with the two screws.
+* Attach the hook-side Velcro to the underside, leaving the enclosure screws
+  accessible.
+* [Put a bird on it.](http://www.putabirdonit.com/)
+
+<div class="well">
+    <img src="/images/assembly/openxc-assembly-19.jpg" />
+    <legend>The completed CAN translator!</legend>
+</div>
+
+If you have any problems with the assembly instructions, please ask for help in
+the [Google Group](http://groups.google.com/group/openxc).
+
+<div class="page-header">
+<h2>Next Steps</h2>
+</div>
+
+Once you've constructed a CAN translator, you should familiarize yourself with
+the [output format][], load a [firmware][] and then [test it in a
+vehicle][testing].
+
+[max32]: http://digilentinc.com/Products/Detail.cfm?NavPath=2,892,894&Prod=CHIPKIT-MAX32
+[networkshield]: http://digilentinc.com/Products/Detail.cfm?NavPath=2,892,942&Prod=CHIPKIT-NETWORK-SHIELD
+[obd2]: http://www.obd2cables.com/products/obd-cables/j1962m-ra-to/cable-j1962m-ra-type-b-to-open-end-6ft.html
+[crimpconnectors]: http://www.pololu.com/catalog/product/1914
+[crimppins]: http://www.pololu.com/catalog/product/1930
+[output format]: /vehicle-interface/output-format.html
+[testing]: /vehicle-interface/testing.html
+[firmware]: /vehicle-interface/firmware.html

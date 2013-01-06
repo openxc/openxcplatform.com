@@ -1,15 +1,6 @@
 body {
-  background-color: #FFF;
-  color: #222;
-  padding-top: 50px;
-}
-
-.hero-unit p {
-    padding-top: 20px;
-}
-
-li {
-    color: black;
+    padding-top: 60px;
+    padding-bottom: 40px;
 }
 
 legend {
@@ -18,19 +9,43 @@ legend {
     width:100%
 }
 
-.media-grid img {
-    display: block;
+footer {
+    margin-top: 40px;
+    padding: 35px 0 36px;
+    border-top: 1px solid #E5E5E5;
 }
 
-.media-grid li {
-    float: left;
-    padding: 4px;
-    margin: 0 0 18px 20px;
-    border: 1px solid #DDD;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
-    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+div.highlight code {
+    background-color: whiteSmoke;
+}
+
+code {
+    padding: 0;
+}
+
+.stacked img {
+    margin-bottom: 10px;
+}
+
+.well {
+    margin-left: 5px;
+}
+
+.footer-links {
+    margin: 10px 0;
+}
+
+.footer-links li {
+    display: inline;
+    margin-right: 10px;
+    list-style-type: disc;
+}
+
+.navbar .brand {
+    padding: 8px 20px 6px;
+}
+
+.navbar .nav > li {
+    padding-top: 3px;
+    font-size: 16px;
 }

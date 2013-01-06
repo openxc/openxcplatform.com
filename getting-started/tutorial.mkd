@@ -1,0 +1,248 @@
+---
+layout: default
+title: App Tutorial - OpenXC
+---
+
+<div class="page-header">
+    <h1>App Tutorial</h1>
+</div>
+
+<div class="pull-right well">
+    <ul class="nav nav-list">
+        <li class="nav-header">Next Steps</li>
+        <li><a href="/android/index.html">Host Device</a></li>
+        <li><a href="/vehicle-interface/index.html">Vehicle Interface</a></li>
+    </ul>
+</div>
+
+This tutorial assumes you have a working knowledge of how to create an Android
+application. It isn't meant for copy and pasting into your editor - some sections 
+will require additional exception handling or changes to match your exact code.
+Setting up the development environment and understanding Android fundamentals is 
+outside the scope of OpenXC, and already Google provides great documentation and 
+tutorials - we won't repeat them here. The best place to start is [Google's SDK guide][sdk].
+
+Once you're comfortable with creating an Android app, continue on with this
+tutorial to enrich it with data from your vehicle. At this point, you should
+have the OpenXC library
+[setup into your development environment][library project] and the `MyFirstApp`
+project from Google's tutorial. Instead of "Hello World", you're going to display
+the current vehicle speed.
+
+<div class="page-header">
+<h2>Android Manifest</h2>
+</div>
+
+The OpenXC library is exposed to applications through an
+[Android service][], the [VehicleManager][]. To use it, you will first need to
+define the service in your app's `AndroidManifest.xml`. Add this `<service>` tag
+to your app:
+
+{% highlight xml %}
+<application>
+    ...
+    <service android:name="com.openxc.VehicleManager"/>
+    ...
+</application>
+{% endhighlight %}
+
+<div class="page-header">
+<h2>VehicleManager Service</h2>
+</div>
+
+You must first [bind][] with the [VehicleManager][] before you can receive
+any vehicle data.
+
+Add a [ServiceConnection][] to your activity. You'll use this to store a
+connection to the OpenXC service.
+
+{% highlight java %}
+...
+private VehicleManager mVehicleManager;
+
+private ServiceConnection mConnection = new ServiceConnection() {
+    // Called when the connection with the service is established
+    public void onServiceConnected(ComponentName className,
+            IBinder service) {
+        Log.i("openxc", "Bound to VehicleManager");
+        mVehicleManager = ((VehicleManager.VehicleBinder)service).getService();
+    }
+
+    // Called when the connection with the service disconnects unexpectedly
+    public void onServiceDisconnected(ComponentName className) {
+        Log.w("openxc", "VehicleService disconnected unexpectedly");
+        mVehicleManager = null;
+    }
+};
+{% endhighlight %}
+
+In the `onCreate()` method of your activity, request to bind with the service
+with your new ServiceConnection instance:
+
+{% highlight java %}
+public void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+	...
+    Intent intent = new Intent(this, VehicleManager.class);
+    bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
+}
+{% endhighlight %}
+
+To make sure you don't leak memory, unbind from the service when your activity
+pauses:
+
+{% highlight java %}
+public void onPause() {
+    super.onPause();
+    Log.i("openxc", "Unbinding from vehicle service");
+    unbindService(mConnection);
+}
+{% endhighlight %}
+
+
+Now, when your app starts it will also start the OpenXC [VehicleManager][] and if
+the [Enabler][enabler] is running, it will be ready to receive data from the
+vehicle.
+
+<div class="page-header">
+<h2>Asynchronous Updates</h2>
+</div>
+
+Your activity now has a connection to the vehicle service, and you want to be
+notified whenever the speed of the vehicle changes.
+
+Add a [VehicleSpeed.Listener][Listener] instance to your activity:
+
+{% highlight java %}
+VehicleSpeed.Listener mSpeedListener = new VehicleSpeed.Listener() {
+    public void receive(Measurement measurement) {
+        // do stuff with the measurement
+    }
+};
+{% endhighlight %}
+
+In the `ServiceConnection.onServiceConnected()` method you defined just a moment
+ago, register this new `Listener` with the [VehicleManager][].
+
+{% highlight java %}
+public void onServiceConnected(ComponentName className, IBinder service) {
+    ...
+    mVehicleManager.addListener(VehicleSpeed.class, mSpeedListener);
+}
+{% endhighlight %}
+
+Now, every time a new value for [VehicleSpeed][] is received by the
+[VehicleManager][], the `receive(Measurement)` method of the new [Listener][]
+will be called with the data.
+
+<div class="page-header">
+<h2>Measurement Data</h2>
+</div>
+
+You want to actually do something with the vehicle speed when you receive it.
+Add a new [TextView][] to the file `res/layout/activity_main.xml` for the speed:
+
+{% highlight xml %}
+<TextView android:id="@+id/vehicle_speed"/>
+{% endhighlight %}
+
+Grab a reference to that text object in your activity's `onCreate()`:
+
+{% highlight java %}
+private TextView mVehicleSpeedView;
+public void onCreate(Bundle savedInstanceState) {
+    ...
+    mVehicleSpeedView = (TextView) findViewById(R.id.vehicle_speed);
+}
+{% endhighlight %}
+
+Replace your `Listener.receive(Measurement)` method with this
+one:
+
+{% highlight java %}
+public void receive(Measurement measurement) {
+    final VehicleSpeed speed = (VehicleSpeed) measurement;
+    MyFirstApp.this.runOnUiThread(new Runnable() {
+        public void run() {
+            mVehicleSpeedView.setText(
+                "Vehicle speed (km/h): " + speed.getValue().doubleValue());
+        }
+    });
+}
+{% endhighlight %}
+
+The text view will be updated every time the vehicle speed changes and display
+the latest value.
+
+That's all you need to do to get measurements from OpenXC. You can see the full
+list of `Measurement` Java classes that you can use in the
+[library documentation][].
+
+<div class="page-header">
+<h2>Testing</h2>
+</div>
+
+Your Android device likely doesn't have any vehicle data flowing through it yet.
+The next step is to use a pre-recorded vehicle trace file to simulate a real
+vehicle interface on your desk.
+
+Download the [driving trace][] and copy it to the SD card of your Android
+device. You can do this either by mounting the SD card over USB or using adb:
+
+{% highlight sh %}
+$ adb push driving.json /sdcard/openxc-driving.json
+{% endhighlight %}
+
+Next, tell the [VehicleManager][] that it should playback this trace file by
+adding the following to the end of the `ServiceConnection.onServiceConnection()`
+method:
+
+{% highlight java %}
+private TraceVehicleDataSource mTraceSource;
+
+public void onServiceConnected(ComponentName className, IBinder service) {
+    ...
+	URI mTraceFile = new URI("file:///sdcard/com.openxc/trace.json");
+    mTraceSource = new TraceVehicleDataSource(MainActivity.this, mTraceFile);
+    mVehicleManager.addSource(mTraceSource);
+}
+{% endhighlight %}
+
+Also add this to the `onPause()` method of your activity, so you don't start the
+trace file playback multiple times:
+
+{% highlight java %}
+public void onPause() {
+    ...
+    mVehicleManager.removeSource(mTraceSource);
+}
+{% endhighlight %}
+
+Restart your app, and you should see the vehicle speed changing in the UI! If
+you'd like to see a more in-depth example, take look at the [MPG][] app or the
+[Vehicle Dashboard][].
+
+<div class="page-header">
+<h2>Next Steps</h2>
+</div>
+
+You've now completed the OpenXC Android tutorial, but there's more to learn
+about the [host device][] and [vehicle interface][].
+
+[sdk]: http://developer.android.com/sdk/index.html
+[gg]: http://groups.google.com/group/openxc
+[vehicle interface]: /vehicle-interface/index.html
+[host device]: /android/index.html
+[library project]: /getting-started/library-installation.html
+[Vehicle Dashboard]: https://github.com/openxc/openxc-android/tree/master/examples
+[MPG]: https://github.com/openxc/mpg
+[Android service]: http://developer.android.com/guide/components/services.html
+[bind]: http://developer.android.com/guide/topics/fundamentals/bound-services.html#Binding)
+[VehicleManager]: /openxc-android/reference/com/openxc/VehicleManager.html
+[enabler]: https://github.com/openxc/openxc-android/tree/master/enabler
+[driving trace]: https://github.com/openxc/openxc-android/blob/tracedashboard/examples/res/raw/driving
+[library documentation]: /openxc-android/reference/com/openxc/measurements/package-summary.html
+[ServiceConnection]: http://developer.android.com/reference/android/content/ServiceConnection.html
+[Listener]: http://openxcplatform.com/openxc-android/reference/com/openxc/measurements/Measurement.Listener.html
+[VehicleSpeed]: http://openxcplatform.com/openxc-android/reference/com/openxc/measurements/VehicleSpeed.html
+[TextView]: http://developer.android.com/reference/android/widget/TextView.html

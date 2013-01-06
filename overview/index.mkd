@@ -1,11 +1,13 @@
 ---
 layout: default
-permalink: /about.html
+title: Overview - OpenXC
 ---
 
-## About
+<div class="page-header">
+    <h1>About</h1>
+</div>
 
-OpenXC is combination of open source hardware and software that lets consumers
+OpenXC is a combination of open source hardware and software that lets you
 extend your vehicle with custom applications and pluggable modules. It uses
 standard, well-known tools to open up a wealth of data from the vehicle to
 developers.
@@ -21,7 +23,9 @@ in the first iPhone was quickly upgraded in the next model, but a vehicle from
 vehicle. The average lifespan of a vehicle today is 13 years; a smartphone is 6
 to 9 months.
 
-### Guiding Principles
+<div class="page-header">
+    <h3>Guiding Principles</h3>
+</div>
 
 What if the user-facing hardware and software was independent from any one
 vehicle, and could be purchased and installed by consumers as an aftermarket
@@ -32,12 +36,14 @@ smartphones as the primary navigation, media and communications hub. However,
 the known dangers of using a handheld device while driving necessitate better
 vehicle integration to provide safer, more context aware interfaces.
 
-### Customer Experience
+<div class="page-header">
+    <h3>Customer Experience</h3>
+</div>
 
 OpenXC completely changes the customer experience with in-vehicle technology.
-Consider if every new vehicle includes a built-in base board at no cost to the
+Consider if every new vehicle included a built-in base board at no cost to the
 customer. This base board has connections to the dashboard interface and audio
-system and a [CAN translator](/developers/vehicle-interface/hardware.html) - we
+system and a [CAN translator](/vehicle-interface/index.html) - we
 would consider this OpenXC-compatible. The consumer has the option of making the
 vehicle OpenXC-enabled by adding a ~$40 module that includes the host device
 where OpenXC applications actually run. Other modules that add hardware features
@@ -54,7 +60,9 @@ The portability also benefits those in rental cars, car sharing programs and
 customers of short-term rentals like ZipCar. Consumers might even own an OpenXC
 system without owning a vehicle.
 
-### Developer Experience
+<div class="page-header">
+    <h3>Developer Experience</h3>
+</div>
 
 OpenXC opens up a previously opaque environment to an entirely new class of
 developers, who will bring more ideas and solutions to the table than any one
@@ -63,9 +71,11 @@ for applications isn't clear yet, but it could range from a "walled garden" app
 market (a la iTunes) to pre-loaded USB flash drives sold at drugstore checkout
 counters.
 
-## Participating Members
+<div class="page-header">
+    <h2>Participating Members</h2>
+</div>
 
-### Ford Motor Company
+**Ford Motor Company**
 
 ![Ford Logo](/images/ford-oval.png)
 
@@ -73,13 +83,15 @@ Ford is one of the founding members of OpenXC.
 
 [Press Release](http://corporate.ford.com/news-center/press-releases-detail/pr-ford-and-bug-labs-develop-35245)
 
-### Bug Labs
+**Bug Labs**
 
 ![Bug Labs Logo](/images/buglabs.jpg)
 
 [Press Release](http://www.buglabs.net/ford-buglabs)
 
-## Press
+<div class="page-header">
+    <h2>Press</h2>
+</div>
 
 * CNET, [Ford unveils OpenXC, invites open-source applications](http://news.cnet.com/8301-13772_3-20104962-52/ford-unveils-openxc-invites-open-source-applications/)
 * VentureBeat, [Hack your car with OpenXC, a platform for modding Ford car computers](http://venturebeat.com/2011/09/12/hack-your-car-with-openxc-platform-for-modding-ford-car-computers/")
@@ -89,7 +101,9 @@ Ford is one of the founding members of OpenXC.
 * TechCrunch, [Ford Partners With Bug Labs To Develop Open Source Platform For In-Car Innovatin’](http://techcrunch.com/2011/09/12/ford-partners-with-bug-labs-to-develop-open-source-platform-for-in-car-innovatin/)
 * Technology Review, [Ford Bets on the Digital Car](http://www.technologyreview.com/business/39413/page4/)
 
-## Other Projects
+<div class="page-header">
+    <h2>Related Work</h2>
+</div>
 
 There are some existing projects trying to accomplish similar things to OpenXC
 by making the vehicle more programmable. A by no means complete list:

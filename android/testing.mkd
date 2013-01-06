@@ -1,0 +1,140 @@
+---
+layout: default
+title: Testing - OpenXC
+---
+
+<div class="page-header">
+    <h1>Testing</h1>
+</div>
+
+Before you can test your app in a vehicle, you will need to find or build a
+functional [vehicle interface][]. Ford is currently providing a limited number
+of kits with OpenXC signals defined for the 2012 Ford Focus. Join the project's
+[Google Group][gg] to find out how to get one of these.
+
+<div class="page-header">
+    <h2>Simulated Vehicle Data</h2>
+</div>
+
+The library ships with a method for playing back previously recorded vehicle
+measurement trace files for testing. The [Measurement][] objects received
+by your application are identical to those received from a live vehicle.
+
+The trace file format is simply a plain text file of OpenXC JSON messages with
+an additional timestamp field, separated by newlines:
+
+    {"timestamp": 1351176963.426318, "name": "door_status", "value": "passenger", "event": true}
+    {"timestamp": 1351176963.438087, "name": "fine_odometer_since_restart", "value": 0.0}
+    {"timestamp": 1351176963.438211, "name": "brake_pedal_status", "value": false}
+    {"timestamp": 1351176963.438318, "name": "transmission_gear_position", "value": "second"}
+
+In fact, this is the same method used by some of the instrumentation tests. Once
+you've created a file either by recording the output of the CAN translator
+module or building one by hand, copy it to your Android device's storage over
+USB. You can do this either by mounting the SD card over USB or using adb:
+
+{% highlight sh %}
+$ adb push driving.json /sdcard/openxc-driving.json
+{% endhighlight %}
+
+<div class="alert alert-error">
+<strong>Note:</strong> If you haven't already, make sure you install the
+<a href="/getting-started/library-installation.html#enabler">Enabler</a> app on
+your device. It's required even to use trace data.
+</div>
+
+After binding with the
+[VehicleManager][], specify the type of data source and your trace file (we
+recommend storing these on the SD card):
+
+{% highlight java %}
+mTraceSource = new TraceVehicleDataSource("file:///sdcard/com.openxc/trace.json");
+mVehicleManager.addSource(mTraceSource);
+{% endhighlight %}
+
+Don't forget to also remove this data source when our activity pauses,
+otherwise you could start the trace playback multiple times simultaneously:
+
+{% highlight java %}
+public void onPause() {
+    ...
+    if(mIsBound) {
+        mVehicleManager.removeSource(mTraceSource);
+        ...
+    }
+}
+{% endhighlight %}
+
+There are two short trace files available for testing: [idling while parked][]
+and a [short drive][].
+
+<div class="page-header">
+    <h2>Button Events</h2>
+</div>
+
+Unfortunately the Android emulator does not allow us to send arbitrary events
+from button presses without editing the source. In order to test your button
+event handlers, the recommended method is to write them in such a way that they
+can accept either VehicleButtonEvents or regular Android key events as input.
+You may want a flag to disable the Android key events when running in
+production.
+
+For example, the OpenXC specification includes a signal for a D-pad style
+controller. The 2012 Ford Focus has such a controller on the steering wheel.
+The Android emulator will send `KEYCODE_DPAD_*`
+[KeyEvents](http://developer.android.com/reference/android/view/KeyEvent.html)
+when you press the arrows on your computer's num pad. These are a good parallel
+and it should be simple to have your event handlers watch for *either* the
+vehicle D-pad event or the Android event.
+
+Here's an example - if you want your application to send a text message when the
+user presses the down button on the steering wheel, write a function that
+performs the action:
+
+{% highlight java %}
+public void sendTextMessage() {
+    // send a text message
+    ...
+}
+{% endhighlight %}
+
+To hook this up to Android `KeyEvent`, define an `onKey` method in your
+activity:
+
+{% highlight java %}
+@Override
+public boolean onKeyDown(int i, KeyEvent event) {
+    if (i == KeyEvent.KEYCODE_DPAD_DOWN) {
+        sendTextMessage();
+        return true;
+    }
+    super.onKeyDown(i, event);
+    return true;
+}
+{% endhighlight %}
+
+This connects your functionality to the virtual button in the Android emulator.
+To have this actually work in the car, you need to register a handler for the
+VehicleButtonEvent.
+
+{% highlight java %}
+VehicleButtonEvent.Listener listener = new VehicleButtonEvent.Listener() {
+    public void receive(VehicleMeasurement measurement) {
+        final VehicleButtonEvent event (VehicleButtonEvent) measurement;
+        if(event.getAction() ==
+                    VehicleButtonEvent.ButtonAction.PRESSED,
+                && event.getValue() ==
+                    VehicleButtonEvent.ButtonId.DOWN) {
+            sendTextMessage();
+        }
+    }
+}
+{% endhighlight %}
+
+[gg]: http://groups.google.com/group/openxc
+[Enabler]: http://openxcplatform.com/getting-started/library-installation.html
+[vehicle interface]: http://openxcplatform.com/vehicle-interface/index.html
+[short drive]: https://github.com/openxc/openxc-android/blob/tracedashboard/examples/res/raw/driving
+[idling while parked]: https://github.com/openxc/openxc-android/blob/tracedashboard/examples/res/raw/parked
+[Measurement]: /openxc-android/reference/com/openxc/measurements/Measurement.html
+[VehicleManager]: /openxc-android/reference/com/openxc/VehicleManager.html

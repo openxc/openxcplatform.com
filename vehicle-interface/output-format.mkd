@@ -1,47 +1,70 @@
 ---
 layout: default
-permalink: /developers/vehicle-interface/translation-specs.html
+title: Output Format - OpenXC
 ---
 
-Signal Translation Specification
-=============
+<div class="page-header">
+    <h1>Translation Output Format</h1>
+</div>
 
-The microcontroller has a second USB controller operating in USB device mode. It
-sends the generic vehicle data over via bulk USB transfer as packed JSON.
+<div class="pull-right well">
+    <ul class="nav nav-list">
+        <li class="nav-header">Next Step</li>
+        <li><a href="/vehicle-interface/firmware.html">
+            Flash the firmware <i class="icon-arrow-right"></i>
+        </a></li>
+    </ul>
+</div>
+
+The microcontroller has a USB controller operating in USB device mode. It sends
+the generic vehicle data over via bulk USB transfer as packed JSON.
 
 There are two valid message types - single valued and event.
 
-### Single Valued
+<div class="page-header">
+    <h3>Single Valued</h3>
+</div>
 
 The expected format of a single valued message is:
 
-    {"name": "steering_wheel_angle", "value": 45}
+{% highlight javascript %}
+{"name": "steering_wheel_angle", "value": 45}
+{% endhighlight %}
 
-### Event
+<div class="page-header">
+    <h3>Event</h3>
+</div>
 
 The expected format of an event message is:
 
-    {"name": "button_event", "value": "up", "event": "pressed"}
+{% highlight javascript %}
+{"name": "button_event", "value": "up", "event": "pressed"}
+{% endhighlight %}
 
 This format is good for something like a button event, where there are two
 discrete pieces of information in the measurement.
 
-## Viewer
+<div class="alert alert-info">
+There may not be a 1:1 relationship between input and output signals - i.e. raw
+engine timing CAN signals may be summarized in an "engine performance" metric on
+the abstract side of the interface.
+</div>
 
-The `reader.py` Python program in this repository can be used to view the output
-of the CAN translator over micro-USB. Just plug it in and run the script with
-the `--verbose` flag to have all messages parsed and printed to stdout.
-
-    $ python reader.py -v
-
-## Signal List
+<div class="page-header">
+    <h2>Signal List</h2>
+</div>
 
 This is the list of signals officially supported by the Android library. Be
-aware that vehicles do not neccessarily support all of these signals - there are
+aware that vehicles do not necessarily support all of these signals - there are
 plans to be able to check for the existence of a signal before using it.
 
-There are potentailly many more signals available on the CAN bus, but we've
+There are potentially many more signals available on the CAN bus, but we've
 selected a small set of the most interesting signals to get started.
+
+<div class="alert">
+    <strong>Disclaimer:</strong> We make no claims as to the accuracy or
+    reliability of any of these pieces of data, and provide no warranty as such.
+</div>
 
 <dl>
     <dt>steering_wheel_angle</dt>
@@ -54,7 +77,9 @@ selected a small set of the most interesting signals to get started.
     <dd>0 to 16382 RPM</dd>
 
     <dt>vehicle_speed</dt>
-    <dd>0 to 655 km/h</dd>
+    <dd>0 to 655 km/h (this will be positive even if going in reverse as it's
+        not a velocity, although you can use the gear status to figure out
+        direction)</dd>
 
     <dt>accelerator_pedal_position</dt>
     <dd>0 to 100%</dd>
@@ -109,3 +134,12 @@ selected a small set of the most interesting signals to get started.
     <dd>Value is State: left, right, up, down, ok.
         Event is State: idle, pressed, released, held_short, held_long, stuck</dd>
 </dl>
+
+<div class="page-header">
+<h2>Next Steps</h2>
+</div>
+
+Before you can receive data from a vehicle, you need to [load the proper firmware
+version][firmware].
+
+[firmware]: /vehicle-interface/firmware.html

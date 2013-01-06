@@ -1,0 +1,332 @@
+---
+layout: default
+title: Android Library API Guide - OpenXC
+---
+
+<div class="page-header">
+    <h1>Android Library API Guide</h1>
+</div>
+
+Vehicle measurements are accessed through an [Android service][services]. Your
+application connects to an in-process [VehicleManager](#vehicle-manager) which
+handles reading fresh data from the vehicle.
+
+This document describes the interface for the OpenXC library **version 2.0**.
+
+<div class="page-header">
+    <h2><a name="vehicle-manager" href="#vehicle-manager">VehicleManager Service</a></h2>
+</div>
+
+You must first [bind][binding] with the [VehicleManager][] before you can receive
+any vehicle data.
+
+Request to bind with the service in the normal fashion:
+
+{% highlight java %}
+Intent intent = new Intent(this, VehicleManager.class);
+bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
+{% endhighlight %}
+
+Then, in your `onServiceConnected()` grab the service handle and cast it to the
+correct type:
+
+{% highlight java %}
+VehicleManager vehicle;
+private ServiceConnection mConnection = new ServiceConnection() {
+    // Called when the connection with the service is established
+    public void onServiceConnected(ComponentName className, IBinder service) {
+        vehicle = ((VehicleManager.VehicleManagerBinder)
+                service).getService();
+    }
+
+    // Called when the connection with the service disconnects unexpectedly
+    public void onServiceDisconnected(ComponentName className) {
+        vehicle = null;
+    }
+};
+{% endhighlight %}
+
+<div class="page-header">
+    <h2>Synchronous Measurements</h2>
+</div>
+
+Once the service is bound and you have a connection to it in your activity, you
+can receive measurements on demand (i.e. synchronously).
+
+{% highlight java %}
+try {
+    VehicleSpeed measurement = (VehicleSpeed) vehicle.get(VehicleSpeed.class);
+} catch(NoValueException e) {
+    Log.w(TAG, "The vehicle may not have made the measurement yet");
+} catch(UnrecognizedMeasurementTypeException e) {
+    Log.w(TAG, "The measurement type was not recognized");
+}
+{% endhighlight %}
+
+<div class="page-header">
+    <h2>Asynchronous Measurements</h2>
+</div>
+
+If you need to be kept up-to-date on any vehicle measurement, you can also
+register with the service to be notified of updates.
+
+{% highlight java %}
+VehicleSpeed.Listener listener = new VehicleSpeed.Listener() {
+    public void receive(Measurement measurement) {
+        final VehicleSpeed speed = (VehicleSpeed) measurement;
+        // do stuff with the measurement
+    }
+};
+vehicle.addListener(VehicleSpeed.class, listener);
+{% endhighlight %}
+
+<div class="page-header">
+    <h2>Measurements</h2>
+</div>
+
+You've probably noticed that vehicle data is returned encapsulated in an object.
+In the examples above, you used the [VehicleSpeed][] measurement. All of the
+data types supported by OpenXC are provided as children of the [Measurement][]
+class.
+
+The parent class provides a standard interface for all measurements, starting
+with a way to retrieve its value:
+
+{% highlight java %}
+VehicleSpeed measurement = vehicle.get(VehicleSpeed.class);
+KilometersPerHour value = measurement.getValue();
+{% endhighlight %}
+
+Occasionally a measurement will not have been received from the CAN translator
+yet - it could be a malfunction, or you're just checking too early for an
+infrequently updated measurement:
+
+{% highlight java %}
+try {
+    VehicleSpeed measurement = vehicle.get(VehicleSpeed.class);
+    // do stuff with it
+} catch(NoValueException e) {
+    Log.w(TAG, "The vehicle may not have made the measurement yet");
+}
+{% endhighlight %}
+
+You can check the age of a measurement to determine how long ago the state was
+actually reflected in the physical vehicle:
+
+{% highlight java %}
+if(measurement.getAge() < 10) {
+    // only if age is less than 10 seconds
+}
+{% endhighlight %}
+
+The range of every measurement is defined in the class, and can be queried
+programmatically if you need to figure out the current value's relative
+position:
+
+{% highlight java %}
+range = measurement.getRange();
+int percentage = measurement.getValue().doubleValue() / range;
+{% endhighlight %}
+
+<div class="page-header">
+    <h2>Location</h2>
+</div>
+
+The Android framework includes built-in support for location information - most
+devices support determining position based on CellID, GPS and Wi-fi. OpenXC's
+latitude, longitude and vehicle speed are exposed through this interface using a
+mocked location provider. This functionality is provided by Android primarily
+for testing, but it's also a useful way to inject location data from sources
+other than the built-in sensors. It works well with Bluetooth GPS receivers,
+too.
+
+If your app already uses the Android location framework, with a very small
+change you can increase the accuracy by taking advantage of the GPS receiver
+built into many vehicles (including the 2012 Ford Focus, even those without a
+navigation system).
+
+Add the `ACCESS_FINE_LOCATION` and `ACCESS_MOCK_LOCATION` permission to your
+   app's `AndroidManifest.xml`:
+
+{% highlight xml %}
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+<uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+{% endhighlight %}
+
+Open a connection to the [VehicleManager][] as described earlier in "Service
+Binding." Then access [user location][] in the traditional Android fashion -
+data from the `LocationManager.GPS_PROVIDER` and
+`VehicleManager.VEHICLE_LOCATION_PROVIDER` providers will be coming from OpenXC.
+You may want to continue to use the `GPS_PROVIDER` so your app can support
+switching from built-in GPS to the vehicle's receiver.
+
+{% highlight java %}
+locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
+{% endhighlight %}
+
+<div class="page-header">
+    <h2>Concepts</h2>
+</div>
+
+![OpenXC Android Library Data Flow](/images/android-library-dataflow.png)
+
+**Data Flow**
+
+Vehicle data is first received by a physical interface, e.g. USB (#1 in the
+figure), in an Android process running the [VehicleService](#services). The data
+processed and encapsulated in Java objects as a part of a
+[DataPipeline](#pipeline) (#2) before being propagated to all client
+applications (#3).
+
+The client applications (in a separate process) receive the data in an instance
+of the [VehicleManager](#services) service (#4) which notifies any activities
+that have previously registered their interest in vehicle data (#5).
+
+<a name="services">
+**Remote and Local Services**
+</a>
+
+Android exposes many of its system level functions in the form of services. This
+is a useful paradigm for long-running components of an application and perfect
+for OpenXC, which needs to maintain a connection to the vehicle to continue
+receiving new measurements.
+
+Services can run either inside an application's address space or as an external
+process; OpenXC uses both.
+
+The core of the system is the [VehicleService][], which runs in a separate process
+to any app. Since only one application at a time can connect to a USB device ,
+this service controls access to the USB CAN translator. From here, new data from
+the vehicle (or other sources, as you'll see) is propagated to any
+applications using the OpenXC library. The benefit is that multiple
+OpenXC-enabled apps can run on the same system, simultaneously.
+
+Application developers use a second, in-process service - the [VehicleManager][].
+This service provides the interface that you'll use when developing your app.
+Behind the scenes, it binds to the [VehicleService][] (running in another process)
+and communicates with it using the [Android Interface Definition
+Language][aidl]. The benefit of using the [VehicleManager][] in-process is that
+developers don't need to care about any of this - it's all abstracted away.
+
+<a name="pipeline">
+**Data Pipeline**
+</a>
+
+The [VehicleManager][] uses the concept of a pipeline to funnel data from
+"sources" to "sinks." This is a one-way pipeline.
+
+*Source*
+
+A data source injects new measurements into the OpenXC vehicle service. Sources
+can be added by the internal vehicle service itself (e.g. the source that
+connects to a USB device), the [Enabler][] (e.g. a Bluetooth device source) or
+an app (e.g. the trace source, as in the [tutorial][]).
+
+At whatever level you add the source, its data is made available to all other
+OpenXC apps in the system. This is because even when a source is added to the
+[VehicleManager][], it ferries incoming measurements back to the
+[VehicleService][]. Client apps can create and add their own custom sources,
+and when the client app is destroyed by Android the source will no longer send
+any data.
+
+<div class="alert alert-info">
+The <a href="/openxc-android/reference/com/openxc/sources/ApplicationSource.html">
+ApplicationSource</a> is a special case - it's the method by which data from an
+app's custom source is propagated back to the
+<a href="/openxc-android/reference/com/openxc/remote/VehicleService.html">VehicleService</a>
+ and then all other apps.
+</div>
+
+The built-in sources for application developers are:
+
+* [BluetoothVehicleDataSource][] - connects to a Bluetooth-enabled CAN
+  translator and injects the data into the OpenXC system so it is
+  indistinguishable from a USB source.
+* [TraceVehicleDataSource][] - injects vehicle measurements from a pre-recorded
+  [trace file][].
+
+*Sink*
+
+A data sink receives every new measurement put into the pipeline by the sources.
+It receives the data in nearly raw form, as a `RawMeasurement` instead of a
+fully processed `Measurement` object. This can be useful if you need to be able
+to serialize the data without knowing exactly what type of values it contains
+(e.g. a string, float, or bool).
+
+Data sinks handle the core of the library's asynchronous notification system,
+too. The [VehicleManager][] always adds an instance of the
+[MeasurementListenerSink][], which keeps tabs on which applications want to be
+notified of changes in measurements.
+
+The built-in sinks for application developers are:
+
+* [FileRecorderSink][] - records all incoming vehicle measurements to a file on
+  the internal storage that can later be used as a [trace file][].
+* [UploaderSink][] - send all incoming vehicle measurements to a URL via HTTP.
+
+
+*Remote Service*
+
+The remote process [VehicleService][] also uses a pipeline, but it's not
+accessible to application developers. It uses only two sources:
+
+* [ApplicationSource][] - this source has a special callback that the
+  [VehicleManager][] instances in all OpenXC apps use to send any new measurements
+  they create back to the [VehicleService][]. The purpose is that e.g. a trace
+  data source or Bluetooth source instantiated in an application can share its
+  data with all other apps in the system.
+* [UsbVehicleDataSource][] - since only one application can connect to a USB
+  device at a time, the single instance of the [VehicleService][] takes care of
+  it.
+
+and it only uses two sinks:
+
+* [RemoteCallbackSink][] - funnels vehicle data asynchronously with AIDL to
+  applications.
+* [MockedLocationSink][] - pushes location and speed information from the
+  vehicle into the normal Android location framework.
+
+Application developers don't need to worry about these, but it's good to know
+how data flow through the system.
+
+**Enabler**
+
+The OpenXC Enabler app is primarily for convenience, but it also increases the
+reliability of the system by handling background tasks on behalf of client
+applications.
+
+The enabler provides a common location to control which data sources and sinks
+are active, e.g. if the a trace file should be played back or recorded. It's
+preferable to be able to change the data source on the fly, and not have to
+programmatically load a trace file in any application under test.
+
+With the enabler installed, the [VehicleService][] is also started automatically
+when the Android device boots up. A simple data sink like a trace file uploader
+can start immediately without any user interaction. This behavior probably isn't
+desirable for a phone-based OpenXC system, but makes more sense when using a
+tablet or other Android device that is permanently installed in the vehicle.
+
+As a developer, you can also appreciate that because the enabler takes care of
+starting the [VehicleService][], you don't need to add much to your
+application's `AndroidManifest.xml` - just the [VehicleManager][] service.
+
+[user location]: http://developer.android.com/guide/topics/location/obtaining-user-location.html
+[binding]: http://developer.android.com/guide/topics/fundamentals/bound-services.html#Binding)
+[services]: http://developer.android.com/guide/topics/fundamentals/services.html
+[VehicleManager]: /openxc-android/reference/com/openxc/VehicleManager.html
+[VehicleService]: /openxc-android/reference/com/openxc/remote/VehicleService.html
+[VehicleSpeed]: /openxc-android/reference/com/openxc/measurements/VehicleSpeed.html
+[Measurement]: /openxc-android/reference/com/openxc/measurements/Measurement.html
+[Enabler]: /getting-started/library-installation.html#enabler
+[tutorial]: /getting-started/tutorial.html
+[aidl]: http://developer.android.com/guide/components/aidl.html
+[trace file]: /android/testing.html
+[BluetoothVehicleDataSource]: /openxc-android/reference/com/openxc/sources/bluetooth/BluetoothVehicleDataSource.html
+[TraceVehicleDataSource]: /openxc-android/reference/com/openxc/sources/trace/TraceVehicleDataSource.html
+[MeasurementListenerSink]: /openxc-android/reference/com/openxc/sinks/MeasurementListenerSink.html
+[FileRecorderSink]: /openxc-android/reference/com/openxc/sinks/FileRecorderSink.html
+[UploaderSink]: /openxc-android/reference/com/openxc/sinks/UploaderSink.html
+[ApplicationSource]: /openxc-android/reference/com/openxc/sources/ApplicationSource.html
+[UsbVehicleDataSource]: /openxc-android/reference/com/openxc/sources/usb/UsbVehicleDataSource.html
+[RemoteCallbackSink]: /openxc-android/reference/com/openxc/sinks/RemoteCallbackSink.html
+[MockedLocationSink]: /openxc-android/reference/com/openxc/sinks/MockedLocationSink.html

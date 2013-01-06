@@ -1,0 +1,105 @@
+---
+layout: default
+title: Android Host Device - OpenXC
+---
+
+<div class="page-header">
+    <h1>Android Host Device</h1>
+</div>
+
+OpenXC applications are standard Android applications that use the OpenXC
+library in conjunction with a vehicle interface module connected to a USB port
+or via Bluetooth.
+
+The recommended vehicle interface is USB as it is much more robust and
+well-tested. When using USB, the host device must:
+
+* Support **Android 3.0** or greater (i.e. API level 12) if you plan to
+  use the standard USB vehicle interface.
+* Support **USB host mode** and provide a way to plug in a USB device - this
+  does *not* mean the standard mini- or micro-USB port you use for debugging or
+  copying files to the SD card. Some tablets offer a full-size USB port and
+  others offer a dongle that exposes one.
+
+Bluetooth support is currently experimental but has the lowest hardware
+requirements. When using a Bluetooth-equipped CAN translator, the Android host
+device must:
+
+* Support **Android 2.2** or greater (i.e. API level 8)
+
+<div class="page-header">
+    <h2>Confirmed Supported Android Devices</h2>
+</div>
+
+**Tablets**
+
+* [Toshiba Thrive][thrive] 10.1" - the reference device used by the core OpenXC
+  developers. This tablet includes a full-size USB port.
+* Google Nexus 7 (using Bluetooth or a USB OTG adapter)
+* Samsung Galaxy Tab 7.7" (Bluetooth working fine, USB OTG unconfirmed as it
+  requires an additional Samsung adapter)
+
+
+**Phones**
+
+* Samsung [Galaxy Nexus][galaxynexus] (using Bluetooth or a USB OTG adapter,
+  although the CAN translator must be powered externally if using USB)
+
+<div class="page-header">
+    <h2>Known Incompatible Devices</h2>
+</div>
+
+* Samsung Galaxy Tab (the original version) - USB host mode is not fully enabled
+  and is not compatible with a USB CAN translator. Bluetooth should still work,
+  but it is untested.
+
+<div class="page-header">
+    <h2>UI Design</h2>
+</div>
+
+User interface design for automotive environments is increasingly attracting
+attention, particularly due to concerns with [driver
+distraction](http://www.distraction.gov/). While building your OpenXC
+application, keep in mind the U.S. government's recently released [guidelines
+(PDF)](http://www.nhtsa.gov/staticfiles/rulemaking/pdf/Distraction_NPFG-02162012.pdf)
+for application design.
+
+Driver distraction aside, the most useful and interesting applications tend to
+be those without much driver interaction. The more you can automate or let the
+user deal with outside of their vehicle, the better the experience will likely
+be.
+
+<div class="page-header">
+    <h2>Motivation</h2>
+</div>
+
+The requirements for the host device are quite flexible, but it's important that
+OpenXC rally around a single platform to maximize compatibility and momentum.
+Ideally, the platform should be accessible to a wide range of programmers from
+novice to expert, and it should use a popular programming language. The barriers
+to understanding and developing for vehicles are high enough (e.g. learning
+about CAN and about UI appropriate at 70mph) that learning a new niche
+programming language should be avoided. The platform should also use
+widely-available hardware to minimize the burden that individual developers must
+bear to start creating applications.
+
+Android is a massively popular application development environment. Since the
+vehicle interface is only a small part of any OpenXC application, this means
+that more general questions can be directed to the existing community of Android
+developers.
+
+The open hardware part of OpenXC is also supported by Android. All Android
+devices running version 3.1 or later have support for [USB devices][], and many
+tablets include a full-size USB port. OpenXC hardware modules like sensors and
+in-vehicle UI can use USB to connect to applications. Combined with the
+affordability and increasing popularity of Android-based tablets, the likelihood
+that an interested developer already has or can acquire one is high.
+
+Android, an open source project, lends itself well to custom hardware that would
+likely be used if OpenXC hosts are mass produced. Some of the most expensive
+components of a tablet (battery, LCD screen, GPS receiver, etc.) can be left out
+to hit an ever lower price point.
+
+[thrive]: http://us.toshiba.com/tablets/thrive/10-inch/
+[galaxynexus]: http://www.google.com/nexus
+[USB devices]: http://developer.android.com/guide/topics/usb/index.html
