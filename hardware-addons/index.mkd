@@ -12,9 +12,9 @@ extend your vehicle with new hardware.
 
 This page serves as a home for example projects built on the OpenXC platform
 that include some form of hardware add-on. If you have a hardware project of
-your own, fork the [openxc.github.com][] project on GitHub, add your page and
-send a pull request. We will include as many well documented, functional
-projects as we can.
+your own, fork the [openxc.github.com][] project on GitHub (that's this site!),
+add your documentation and send a pull request. We will include as many well
+documented, functional projects as we can.
 
 * [Retro Gauge](/hardware-addons/retro-gauge.html)
 
