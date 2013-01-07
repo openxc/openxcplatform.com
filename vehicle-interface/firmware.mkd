@@ -59,7 +59,7 @@ downloaded (Windows users see below, this script will *not* work with the standa
 Windows command line or Powershell):
 
 {% highlight sh %}
-$ sh ./upload_hex.sh new-version.hex
+$ sh ./upload_hex.sh <path to the .hex file you downloaded>
 {% endhighlight %}
 
 Windows users can use the GUI provided by [WinAVR][winavr] or run the
@@ -70,7 +70,7 @@ default is `com4` but it may be different on your computer.
 To specify use `com3` for example:
 
 {% highlight sh %}
-$ sh ./upload_hex.sh new-version.hex com3
+$ sh ./upload_hex.sh <path to the .hex file you downloaded> com3
 {% endhighlight %}
 
 In Windows, this command will only work in Cygwin, not the standard cmd.exe or
@@ -81,7 +81,7 @@ If you get errors about `$'\r': command not found` then you Git configuration
 added `CRLF` line endings and so you must run the script like this:
 
 {% highlight sh %}
-$ set -o igncr && export SHELLOPTS && sh ./upload_hex.sh new-version.hex
+$ set -o igncr && export SHELLOPTS && sh ./upload_hex.sh <path to the .hex file you downloaded>
 {% endhighlight %}
 
 <div class="page-header">
