@@ -1,0 +1,98 @@
+---
+layout: default
+title: Hardware Add-ons - OpenXC
+---
+
+<div class="page-header">
+    <h1>Bluetooth HUD</h1>
+</div>
+
+![Retro Gauge](/images/retro-gauge/overview.jpg)
+
+**Firmware Repository:** [github.com/openxc/retro-gauge-firmware][firmware]
+
+**Schematics Repository:** [github.com/openxc/retro-gauge-schematics][schematics]
+
+
+The Retro Gauge is a mechanical vehicle gauge that outputs data from OpenXC via
+serial communication. The purpose of this gauge is to display vehicle data in a
+traditional automotive fashion, a gauge! The design intent was to keep the gauge
+as open and accessible as possible so that the community could contribute and
+benefit from the design. Below is a description of the different aspects of the
+project and how the gauge was created.
+
+
+<div class="page-header">
+    <h2>Motivation</h2>
+</div>
+
+The Retro Gauge was created as an alternative to aftermarket gauges on the
+market. When we looked at what a lot of hobbyists and car enthusiasts were doing
+with their cars, we realized that aftermarket gauges were quite popular.
+However, these gauges were both expensive and required the installation of
+additional sensors, which was both timely and sometimes very technical. We
+decided to design a mechanical vehicle gauge that had the same form factor as
+existing gauges so that it would fit in existing gauge mounts. We also wanted to
+design a gauge that had the same feel and aesthetics as aftermarket gauges.
+
+<div class="page-header">
+    <h2>PCB Design</h2>
+</div>
+
+![Retro Gauge PCB](/images/retro-gauge/pcb.jpg)
+
+* [Eagle Schematics](https://github.com/openxc/retro-gauge-schematics)
+* [Bill of Materials](https://github.com/openxc/retro-gauge-schematics)
+
+The design intent for the PCB was to allow developers to use common open source
+tools that are readily available to allow the gauge to be easily expanded. With
+this in mind, an <a href="http://arduino.cc/en/Main/ArduinoBoardProMini">Arduino
+Pro Mini</a> was designed to easily fit into the board and a 6-pin header was
+added to allow the board to easily be flashed. A 2-digit 7 segment display was
+added to output the value of the desired signal as well as 2 RGB LEDs for
+aesthetics and visual signaling. The RGB value is digitally controlled using a
+Hue spectrum input (<a href="http://en.wikipedia.org/wiki/Hue">Hue Wiki</a>).
+
+
+<div class="page-header">
+    <h2>Hardware Design</h2>
+</div>
+
+![Hardware design](/images/retro-gauge/hardware.jpg)
+
+The hardware was designed so that it would fit into existing 3" aftermarket
+gauge mounts. In order to make installation as easy as possibly, only one port
+was added, a mini USB, to provide both power and data. It was also designed so
+that the gauge face could easily be swapped out to display different data types.
+
+There are 3 main manufactures for small step motors that are most commonly used
+in automotive gauges -
+[Switec](http://jukenswisstech.com/index.php/products/x10/),
+[VID](http://www.vid.wellgain.com/product.aspx), and
+[MCR](http://mcrmotorusa.com/Stepper%20Motors.html).
+
+For this project, the VID 29-07 was used since it was most readily available to
+purchase on eBay at the time of this project. Guy Carpenter's
+[Gaugette](http://guy.carpenter.id.au/gaugette/about/) project has a great
+tutorial on how to use and control these stepper motors. Thanks Guy!
+
+<div class="page-header">
+    <h2>Sample Android Application</h2>
+</div>
+
+In order to better interface with the gauge, we have created a sample Android
+application that demonstrates how to switch between different OpenXC signals.
+The application also allows you to either manually set the RGB value or have it
+mapped to the signal. The Retro Gauge can receive two types of data packet via
+serial communication.
+
+* Color data is delivered with three digits within angle brackets.  `<###>`
+  Valid values are between 0 and 259.
+* Value data is delivered with two digits each of value, and percentage.  The
+  numbers are separated by a comma, and enclosed in parentheses.  `(vv,pp)`
+
+For more documentation, checkout the [README][] file.
+
+[README]: http://github.com/openxc/retro-gauge-firmware/blob/master/README.mkd
+[firmware]: http://github.com/openxc/retro-gauge-firmware
+[schematics]: http://github.com/openxc/retro-gauge-schematics
