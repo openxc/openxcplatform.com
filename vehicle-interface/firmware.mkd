@@ -26,7 +26,7 @@ CAN signals public. If that's the case for your vehicle, you will have a `.hex`
 file and can use the [upload_hex.sh][] script to update your device.
 
 You need to have the **mini-USB** port connected to your computer to upload a
-new firmware. This different than the USB port that you use to read vehicle
+new firmware. This is different than the USB port that you use to read vehicle
 data - see the <a href="/vehicle-interface/index.html#connections">device
 connections</a> section to make sure you have the correct cable attached.
 
