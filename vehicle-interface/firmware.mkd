@@ -77,7 +77,7 @@ In Windows, this command will only work in Cygwin, not the standard cmd.exe or
 Powershell. If you have the `sh.exe` program installed by some other means (e.g.
 you have Git installed in Windows) then it will actually work in Powershell.
 
-If you get errors about `$'\r': command not found` then you Git configuration
+If you get errors about `$'\r': command not found` then your Git configuration
 added `CRLF` line endings and so you must run the script like this:
 
 {% highlight sh %}
