@@ -77,6 +77,13 @@ In Windows, this command will only work in Cygwin, not the standard cmd.exe or
 Powershell. If you have the `sh.exe` program installed by some other means (e.g.
 you have Git installed in Windows) then it will actually work in Powershell.
 
+If you get errors about `$'\r': command not found` then you Git configuration
+added `CRLF` line endings and so you must run the script like this:
+
+{% highlight sh %}
+$ set -o igncr && export SHELLOPTS && sh ./upload_hex.sh new-version.hex
+{% endhighlight %}
+
 <div class="page-header">
     <h2>Custom CAN Signal Definition</h2>
 </div>
