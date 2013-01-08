@@ -286,6 +286,24 @@ There are many potential enclosures that will be adequate for this device.
     <legend>Connect the power jumper from pin 1 of JP4 to 5vo.</legend>
 </div>
 
+ow is the time to add the SparkFun BlueSMiRF module if you want Bluetooth
+support.
+
+* Solder the 6-pin header strip to the BlueSMiRF breakout board.
+* Create 6 3" wires of different colors with a male crimp pin on one end and a
+  female crimp housing on the other. You may want to wrap the crimp housings in
+  shrink tubing to avoid shorts.
+* Attach the 6 wires to the BlueSMiRF board, and the other ends to the Network
+  Sheild like this:
+    * chipKIT Pin 0 - Connect to TX on RN-42
+    * chipKIT Pin 1 - Connect to RX on RN-42
+    * chipKIT Pin 18 - Connect to CTS on RN-42
+    * chipKIT Pin 19 - Connect to RTS on RN-42
+* Finally, find a good place to tucket the Bluetooth module away so the wires
+  aren't shorting out and it won't get in the way of the enclosure.
+
+Continuing on with final assembly:
+
 * Put the back plate into place and attach the top of the enclosure.
 * Secure the enclosure with the two screws.
 * Attach the hook-side Velcro to the underside, leaving the enclosure screws
