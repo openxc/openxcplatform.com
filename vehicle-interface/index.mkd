@@ -99,8 +99,28 @@ the crimp connectors, for example).
 * (4x) Female crimp pins from [Pololu][crimppins] (< $1)
 * Shrink tubing
 * Rubber cable grommet that fits the OBD-II cable
+
+Parts for the optional enclosure:
+
 * Enclosure from [PacTec][enclosure] ($11)
 * Mounting spacers
+
+<a name="tools" href="#tools">
+**Tools List**
+</a>
+
+This is a list of the tools needed to assemble the kit.
+
+* Heat gun (or lighter)
+* Volt meter (for testing continuity)
+* Crimp tool 
+* Optional - label maker
+
+For our suggested enclosure, you'll also need the following.
+
+* Angle cutters
+* Phillips head screw driver
+* Tools for etching and cutting plastic
 
 <div class="page-header">
 <h3><a name="connections" href="#connections">Device Connections</a></h3>
