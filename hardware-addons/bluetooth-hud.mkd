@@ -10,18 +10,17 @@ title: Hardware Add-ons - OpenXC
 
 The Bluetooth HUD is a wireless, solar-powered display module to be used inside
 the vehicle cockpit. The system uses LEDs reflecting off of the windshield to 
-send signals to the driver who then never has to take his or her eyes off the road. 
-In the picture shown below, the Bluetooth HUD is being used show fuel efficiency
-to the driver.
+send signals to the driver who can keep his hands on the wheel and his eyes on the road. 
+In the picture shown below, the Bluetooth HUD is being used show real-time fuel efficiency.
 
 ![Bluetooth HUD](/images/hud-on-dash.jpg)
 
-**Github Repository:** [github.com/openxc/simple-HUD][firmware]
+**Github Repository:** [github.com/openxc/simple-HUD](http://github.com/openxc/simple-HUD)
 
 The Bluetooth HUD microcontroller 
 responds to serial commands sent from any Bluetooth master (i.e. the host device) 
 and operates the 5 green 
-LEDs accordingly. The VU bar has an internal Li-Ion battery which should last 
+LEDs accordingly. The Bluetooth HUD has an internal Li-Ion battery which should last 
 between 6 and 40 hours depending on how many LEDs are lit. The battery will be 
 continuously charged by the solar panel if in the presence of sunlight. If a faster 
 charge is needed, there is a USB Mini port on the bottom of the unit. It can be 
@@ -64,7 +63,7 @@ The AVR, RN-42 and LEDs are all powered by a lithium-ion battery connected to JP
 The battery power is regulated to 3.3v by U2, a boost converter. This allows us to 
 drain the maximum amount of power from the battery without damaging it (the regulator 
 has a 2.6V cutoff). The battery can power the circuit for many hours depending on the 
-LED usage (anywhere from 6-48 hours).
+LED usage (anywhere from 6-40 hours).
 
 The battery can be charged from either a USB Mini power source or the attached solar 
 panel. The USB power source is the optimal way to charge the battery - it will charge 
@@ -73,7 +72,7 @@ designed to be used with a 6V solar panel like those available from Adafruit.com
 Li-Ion charger (U1, an MCP73831) isn't designed to take power from a variable 
 impediance source like a solar cell, but with a large input cap (C9) the circuit is 
 reasonably good at harvesting solar power. See ladyada's writeup on MPPT for her 
-solarlipo charger project (http://ladyada.net/products/usbdcsolarlipo/design.html).
+solarlipo charger project ([http://ladyada.net/products/usbdcsolarlipo/design.html](http://ladyada.net/products/usbdcsolarlipo/design.html)).
 
 With the small solar panel installed on the Bluetooth HUD, we measured between 100-200mA 
 under direct sunlight. A larger solar panel would be able to get closer to the 500mA 
@@ -84,7 +83,7 @@ to be under direct sunlight in order to actually charge the battery.
     <h2>Android Service</h2>
 </div>
 
-The HUD is exposed in Android via an in-process service. Take a look at the 
+The HUD is exposed in Android via an in-process service (code located [here][java]). Take a look at the 
 `HudTestActivity` for an example of how to use it - the test runs a KITT-style LED 
 fade on the HUD.
 
