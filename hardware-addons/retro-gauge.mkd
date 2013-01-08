@@ -7,11 +7,11 @@ title: Hardware Add-ons - OpenXC
     <h1>Retro Gauge</h1>
 </div>
 
-![Retro Gauge](/images/retro-gauge/overview.jpg)
-
 **Firmware Repository:** [github.com/openxc/retro-gauge-firmware][firmware]
 
 **Schematics Repository:** [github.com/openxc/retro-gauge-schematics][schematics]
+
+![Retro Gauge](/images/retro-gauge/overview.jpg)
 
 
 The Retro Gauge is a mechanical vehicle gauge that outputs data from OpenXC via
@@ -39,7 +39,6 @@ design a gauge that had the same feel and aesthetics as aftermarket gauges.
     <h2>PCB Design</h2>
 </div>
 
-![Retro Gauge PCB](/images/retro-gauge/pcb.jpg)
 
 * [Eagle Schematics](https://github.com/openxc/retro-gauge-schematics)
 * [Bill of Materials](https://github.com/openxc/retro-gauge-schematics)
@@ -53,17 +52,18 @@ added to output the value of the desired signal as well as 2 RGB LEDs for
 aesthetics and visual signaling. The RGB value is digitally controlled using a
 Hue spectrum input (<a href="http://en.wikipedia.org/wiki/Hue">Hue Wiki</a>).
 
+![Retro Gauge PCB](/images/retro-gauge/pcb.jpg)
 
 <div class="page-header">
     <h2>Hardware Design</h2>
 </div>
 
-![Hardware design](/images/retro-gauge/hardware.jpg)
-
 The hardware was designed so that it would fit into existing 3" aftermarket
 gauge mounts. In order to make installation as easy as possibly, only one port
 was added, a mini USB, to provide both power and data. It was also designed so
 that the gauge face could easily be swapped out to display different data types.
+
+![Hardware design](/images/retro-gauge/hardware.jpg)
 
 There are 3 main manufactures for small step motors that are most commonly used
 in automotive gauges -
