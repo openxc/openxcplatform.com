@@ -4,22 +4,30 @@ title: Hardware Add-ons - OpenXC
 ---
 
 <div class="page-header">
-    <h1>Bluetooth HUD</h1>
+    <h1>Bluetooth HUD 
+	<h2>(Heads Up Display)</h2></h1> 
 </div>
 
-![Retro Gauge](/images/retro-gauge/overview.jpg)
 
-**Firmware Repository:** [github.com/openxc/retro-gauge-firmware][firmware]
+The Bluetooth HUD is a wireless, solar-powered display module to be used inside
+the vehicle cockpit. The system uses LEDs reflecting off of the windshield to 
+send signals to the driver who then never has to take his or her eyes off the road. 
+In the picture shown below, the Bluetooth HUD is being used show fuel efficiency
+to the driver.
 
-**Schematics Repository:** [github.com/openxc/retro-gauge-schematics][schematics]
 
+![Bluetooth HUD](/images/hud-on-dash.jpg)
 
-The Retro Gauge is a mechanical vehicle gauge that outputs data from OpenXC via
-serial communication. The purpose of this gauge is to display vehicle data in a
-traditional automotive fashion, a gauge! The design intent was to keep the gauge
-as open and accessible as possible so that the community could contribute and
-benefit from the design. Below is a description of the different aspects of the
-project and how the gauge was created.
+**Github Repository:** [github.com/openxc/simple-HUD][firmware]
+
+The LED VU bar is a battery powered Bluetooth microcontroller. The microcontroller 
+responds to serial commands sent from any Bluetooth master and operates the 5 green 
+LEDs accordingly. The VU bar has an internal Li-Ion battery which should last 
+between 6 and 40 hours depending on how many LEDs are lit. The battery will be 
+continuously charged by the solar panel if in the presence of sunlight. If a faster 
+charge is needed, there is a USB Mini port on the bottom of the unit. It can be 
+plugged into any computer USB port or AC USB power adapter. The unit will consume 
+up to ~500mA of current to charge it's internal battery.
 
 
 <div class="page-header">
