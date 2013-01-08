@@ -17,5 +17,6 @@ add your documentation and send a pull request. We will include as many well
 documented, functional projects as we can.
 
 * [Retro Gauge](/hardware-addons/retro-gauge.html)
+* [Bluetooth HUD](/hardware-addons/bluetooth-hud.html)
 
 [openxc.github.com]: https://github.com/openxc/openxc.github.com
