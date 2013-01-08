@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Hardware Add-ons - OpenXC
+title: Retro Gauge - OpenXC
 ---
 
 <div class="page-header">
