@@ -8,20 +8,19 @@ title: Hardware Add-ons - OpenXC
 	<h2>(Heads Up Display)</h2></h1> 
 </div>
 
-
 The Bluetooth HUD is a wireless, solar-powered display module to be used inside
 the vehicle cockpit. The system uses LEDs reflecting off of the windshield to 
 send signals to the driver who then never has to take his or her eyes off the road. 
 In the picture shown below, the Bluetooth HUD is being used show fuel efficiency
 to the driver.
 
-
 ![Bluetooth HUD](/images/hud-on-dash.jpg)
 
 **Github Repository:** [github.com/openxc/simple-HUD][firmware]
 
-The LED VU bar is a battery powered Bluetooth microcontroller. The microcontroller 
-responds to serial commands sent from any Bluetooth master and operates the 5 green 
+The Bluetooth HUD microcontroller 
+responds to serial commands sent from any Bluetooth master (i.e. the host device) 
+and operates the 5 green 
 LEDs accordingly. The VU bar has an internal Li-Ion battery which should last 
 between 6 and 40 hours depending on how many LEDs are lit. The battery will be 
 continuously charged by the solar panel if in the presence of sunlight. If a faster 
@@ -29,78 +28,98 @@ charge is needed, there is a USB Mini port on the bottom of the unit. It can be
 plugged into any computer USB port or AC USB power adapter. The unit will consume 
 up to ~500mA of current to charge it's internal battery.
 
-
 <div class="page-header">
-    <h2>Motivation</h2>
+    <h2>Components</h2>
 </div>
 
-The Retro Gauge was created as an alternative to aftermarket gauges on the
-market. When we looked at what a lot of hobbyists and car enthusiasts were doing
-with their cars, we realized that aftermarket gauges were quite popular.
-However, these gauges were both expensive and required the installation of
-additional sensors, which was both timely and sometimes very technical. We
-decided to design a mechanical vehicle gauge that had the same form factor as
-existing gauges so that it would fit in existing gauge mounts. We also wanted to
-design a gauge that had the same feel and aesthetics as aftermarket gauges.
+The Bluetooth HUD is controlled by IC2, an ATMEGA 328P 8-bit microprocessor. The 
+ATMEGA communicates with a PC, Phone or Tablet (the host device) using Bluetooth via IC1. IC1 is 
+a Roving Networks RN-42, a common embedded Bluetooth IC. They communicate using a 
+serial UART bus. When a host connects to the RN-42, it transparently relays serial 
+data between the ATMEGA and the host device.
+
+![Bluetooth HUD internal](/images/bluetooth-hud-internal.jpg)
+
+**LEDs:**
+
+The ATMEGA is connected to LED1-5 using arduino pins 3,5,6,9 and 10, or PORTD3,5,6 
+and PORTB1,2. The LEDS are lit using generic NPN transistors Q2-6, since the 
+specified LEDs are high-intensity and require too much current for the pins on the 
+ATMEGA. Note that the values of R1-R10 depend on the desired intensity level. 75 
+ohms is a conservative value - to get maximum intensity out of the specified LEDs 
+we needed to use 0 ohm jumpers.
+
+**Programming:** 
+
+Capacitors C1 and C4 allow the ATMEGA to be remotely reset by briefly asserting 
+the DTR or CTS lines of the RN-42. With the accompanying bootloader, this allows 
+the ATMEGA to function like a Bluetooth arduino. The first time an Bluetooth HUD board 
+is assembled, the arduino bootloader needs to be installed. This can be accomplished 
+with an AVR programmer and the ICSP port (J1). As long as the RN-42 is correctly 
+configured (see above), code can be deployed to the ATMEGA.
+
+**Battery and Power:**
+
+The AVR, RN-42 and LEDs are all powered by a lithium-ion battery connected to JP1. 
+The battery power is regulated to 3.3v by U2, a boost converter. This allows us to 
+drain the maximum amount of power from the battery without damaging it (the regulator 
+has a 2.6V cutoff). The battery can power the circuit for many hours depending on the 
+LED usage (anywhere from 6-48 hours).
+
+The battery can be charged from either a USB Mini power source or the attached solar 
+panel. The USB power source is the optimal way to charge the battery - it will charge 
+at the maximum rate of 500mA provided that much power is available. The DC jack is 
+designed to be used with a 6V solar panel like those available from Adafruit.com. The 
+Li-Ion charger (U1, an MCP73831) isn't designed to take power from a variable 
+impediance source like a solar cell, but with a large input cap (C9) the circuit is 
+reasonably good at harvesting solar power. See ladyada's writeup on MPPT for her 
+solarlipo charger project (http://ladyada.net/products/usbdcsolarlipo/design.html).
+
+With the small solar panel installed on the Bluetooth HUD, we measured between 100-200mA 
+under direct sunlight. A larger solar panel would be able to get closer to the 500mA 
+maximum charge rate. If all of the LEDs are fully lit all the time, the LED board needs 
+to be under direct sunlight in order to actually charge the battery.
 
 <div class="page-header">
-    <h2>PCB Design</h2>
+    <h2>Android Service</h2>
 </div>
 
-![Retro Gauge PCB](/images/retro-gauge/pcb.jpg)
+The HUD is exposed in Android via an in-process service. Take a look at the 
+`HudTestActivity` for an example of how to use it - the test runs a KITT-style LED 
+fade on the HUD.
 
-* [Eagle Schematics](https://github.com/openxc/retro-gauge-schematics)
-* [Bill of Materials](https://github.com/openxc/retro-gauge-schematics)
+To build and deploy the test app to an attached Android device, make sure you have 
+Maven installed and run:
 
-The design intent for the PCB was to allow developers to use common open source
-tools that are readily available to allow the gauge to be easily expanded. With
-this in mind, an <a href="http://arduino.cc/en/Main/ArduinoBoardProMini">Arduino
-Pro Mini</a> was designed to easily fit into the board and a 6-pin header was
-added to allow the board to easily be flashed. A 2-digit 7 segment display was
-added to output the value of the desired signal as well as 2 RGB LEDs for
-aesthetics and visual signaling. The RGB value is digitally controlled using a
-Hue spectrum input (<a href="http://en.wikipedia.org/wiki/Hue">Hue Wiki</a>).
+	$ cd java
+	$ mvn install && mvn -pl test android:deploy
 
+**Pairing:**
+
+In Android, you will need to pair and authenticate with the HUD at least once before 
+it can be used with the `HudService`. The service doesn't attempt to do any 
+authentication at the moment, so it must be done by hand.
+
+When powered on, the unit will be a discoverable Bluetooth device. In the Android 
+"Bluetooth Settings" activity, you should be able to scan for an find a device named 
+"RN42-XXXX" where XXXX is the last 4 digits of the unit MAC address.
+
+If the Bluetooth device isn't visible, the unit is either currently connected to a 
+different Bluetooth master, or the battery has run out of charge. The battery can be 
+charged while running, so when in doubt connect the Bluetooth HUD to a USB power source 
+while testing.
 
 <div class="page-header">
-    <h2>Hardware Design</h2>
+    <h2>Additional Information</h2>
 </div>
 
-![Hardware design](/images/retro-gauge/hardware.jpg)
+All of the descriptions and more (including desktop testing) can be found here: [README]
 
-The hardware was designed so that it would fit into existing 3" aftermarket
-gauge mounts. In order to make installation as easy as possibly, only one port
-was added, a mini USB, to provide both power and data. It was also designed so
-that the gauge face could easily be swapped out to display different data types.
+All [firmware], [schematics], and [java] files can be found within the Github repository.
 
-There are 3 main manufactures for small step motors that are most commonly used
-in automotive gauges -
-[Switec](http://jukenswisstech.com/index.php/products/x10/),
-[VID](http://www.vid.wellgain.com/product.aspx), and
-[MCR](http://mcrmotorusa.com/Stepper%20Motors.html).
+![Bluetooth HUD external](/images/bluetooth-hud-external.jpg)
 
-For this project, the VID 29-07 was used since it was most readily available to
-purchase on eBay at the time of this project. Guy Carpenter's
-[Gaugette](http://guy.carpenter.id.au/gaugette/about/) project has a great
-tutorial on how to use and control these stepper motors. Thanks Guy!
-
-<div class="page-header">
-    <h2>Sample Android Application</h2>
-</div>
-
-In order to better interface with the gauge, we have created a sample Android
-application that demonstrates how to switch between different OpenXC signals.
-The application also allows you to either manually set the RGB value or have it
-mapped to the signal. The Retro Gauge can receive two types of data packet via
-serial communication.
-
-* Color data is delivered with three digits within angle brackets.  `<###>`
-  Valid values are between 0 and 259.
-* Value data is delivered with two digits each of value, and percentage.  The
-  numbers are separated by a comma, and enclosed in parentheses.  `(vv,pp)`
-
-For more documentation, checkout the [README][] file.
-
-[README]: http://github.com/openxc/retro-gauge-firmware/blob/master/README.mkd
-[firmware]: http://github.com/openxc/retro-gauge-firmware
-[schematics]: http://github.com/openxc/retro-gauge-schematics
+[README]: http://github.com/openxc/simple-hud/blob/master/README.mkd
+[firmware]: https://github.com/openxc/simple-hud/tree/master/firmware
+[schematics]: https://github.com/openxc/simple-hud/tree/master/assembly
+[java]: http://github.com/openxc/simple-hud/tree/master/java
