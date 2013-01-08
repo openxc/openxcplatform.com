@@ -7,7 +7,7 @@ title: Bluetooth HUD - OpenXC
     <h1>Bluetooth Heads-up Display</h1>
 </div>
 
-**Github Repository:** [github.com/openxc/simple-HUD](http://github.com/openxc/simple-HUD)
+**Github Repository:** [github.com/openxc/simple-hud](http://github.com/openxc/simple-hud)
 
 The Bluetooth HUD is a wireless, solar-powered display module to be used inside
 the vehicle cockpit. The system uses LEDs reflecting off of the windshield to
