@@ -79,7 +79,8 @@ projects about a required compliance level, you can fix this by going to
 reported. You're ready to start working with OpenXC! If you still have errors,
 try asking in the [Google Group](/overview/discuss.html) for some help.
 
-Next up, install the [Enabler](#enabler) app.
+Next up, you can start writing your [first OpenXC
+app](/getting-started/tutorial.html).
 
 <div class="page-header">
     <h3><a name="cli" href="#cli">Using the Command Line</a></h3>
@@ -130,15 +131,16 @@ the `apklib` type is supported:
 </build>
 {% endhighlight %}
 
-Next up, install the [Enabler](#enabler) app.
+Next up, you can start writing your [first OpenXC
+app](/getting-started/tutorial.html).
 
 <div class="page-header">
     <h3><a name="enabler" href="#enabler">Enabler</a></h3>
 </div>
 
 The best way to make the USB vehicle interface available to your app is to
-install the OpenXC Enabler app - the [source][enabler-source] for this app is in the
-[openxc-android][] repository.
+install the OpenXC Enabler app - the [source][enabler-source] for this app is in
+the [openxc-android][] repository.
 
 This app starts the vehicle service at boot and makes sure it stays alive - this
 way, your app doesn't have to worry about USB permissions or reacting to device
@@ -175,13 +177,12 @@ If you're using Maven at the command line:
 $ mvn clean package android:deploy android:run -pl enabler -am
 {% endhighlight %}
 
-
 <div class="page-header">
 <h2>Next Steps</h2>
 </div>
 
-Once you have the library setup and the enabler installed, you can continue to
-writing your [first OpenXC app](/getting-started/tutorial.html).
+Once you have the library set up, you can start writing your [first OpenXC
+app](/getting-started/tutorial.html).
 
 [APK]: https://s3.amazonaws.com/openxcplatform.com/openxc-enabler-v3.0.apk
 [openxc-android]: https://github.com/openxc/openxc-android
