@@ -144,11 +144,16 @@ Next up, install the [Enabler](#enabler) app.
 </div>
 
 The best way to make the USB vehicle interface available to your app is to
-install the OpenXC Enabler app - the source for this app is in the
-`openxc-android` repository, but we've also made it available as an [APK][].
+install the OpenXC Enabler app - the [source][enabler-source] for this app is in the
+[openxc-android][] repository.
+
 This app starts the vehicle service at boot and makes sure it stays alive - this
 way, your app doesn't have to worry about USB permissions or reacting to device
 detachment/reattachment.
+
+If you don't want to use the enabler app, it's certainly possible to start the
+service from your application directly. Look at the [source for the
+enabler][enabler-source] to see exactly how to accomplish that.
 
 <div class="alert alert-error">
 <strong>Note:</strong> Even if you only plan to use previously recorded trace
@@ -156,21 +161,27 @@ files and don't need to connect to a physical vehicle interface, the Enabler app
 still must be installed.
 </div>
 
-*Eclipse*
+There are three recommended ways to install the Enabler:
+
+**APK**
+
+The latest version of the Enabler is available as an [APK][], ready to install in
+Android.
+
+**Eclipse**
 
 If you have the `OpenXcEnablerActivity` project imported in Eclipse, right click
 on the project and select `Run As -> Android Application` with an Android device
 attached to install the app.
 
-*Maven*
+**Maven**
 
 If you're using Maven at the command line:
 
-    $ mvn clean package android:deploy android:run -pl enabler -am
+{% highlight sh %}
+$ mvn clean package android:deploy android:run -pl enabler -am
+{% endhighlight %}
 
-If you don't want to use the enabler app, it's certainly possible to start the
-service from your application directly. Look at the [source for the
-enabler][enabler] to see exactly how to accomplish that.
 
 <div class="page-header">
 <h2>Next Steps</h2>
@@ -180,5 +191,5 @@ Once you have the library setup and the enabler installed, you can continue to
 writing your [first OpenXC app](/getting-started/tutorial.html).
 
 [APK]: https://s3.amazonaws.com/openxcplatform.com/openxc-enabler-v3.0.apk
-[enabler]: https://github.com/openxc/openxc-android/tree/master/enabler
 [openxc-android]: https://github.com/openxc/openxc-android
+[enabler-source]: https://github.com/openxc/openxc-android/tree/master/enabler
