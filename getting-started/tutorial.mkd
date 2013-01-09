@@ -16,10 +16,10 @@ title: App Tutorial - OpenXC
 </div>
 
 This tutorial assumes you have a working knowledge of how to create an Android
-application. It isn't meant for copy and pasting into your editor - some sections 
+application. It isn't meant for copy and pasting into your editor - some sections
 will require additional exception handling or changes to match your exact code.
-Setting up the development environment and understanding Android fundamentals is 
-outside the scope of OpenXC, and already Google provides great documentation and 
+Setting up the development environment and understanding Android fundamentals is
+outside the scope of OpenXC, and already Google provides great documentation and
 tutorials - we won't repeat them here. The best place to start is [Google's SDK guide][sdk].
 
 Once you're comfortable with creating an Android app, continue on with this
@@ -28,6 +28,11 @@ have the OpenXC library
 [setup into your development environment][library project] and the `MyFirstApp`
 project from Google's tutorial. Instead of "Hello World", you're going to display
 the current vehicle speed.
+
+<div class="alert alert-error"> We'll mention this again at the end of the
+tutorial, but you will need to install the
+<a href="/getting-started/library-installation.html#enabler">Enabler</a> app
+before your application will work.</div>
 
 <div class="page-header">
 <h2>Android Manifest</h2>
@@ -98,7 +103,6 @@ public void onPause() {
     unbindService(mConnection);
 }
 {% endhighlight %}
-
 
 Now, when your app starts it will also start the OpenXC [VehicleManager][] and if
 the [Enabler][enabler] is running, it will be ready to receive data from the
@@ -187,40 +191,29 @@ The next step is to use a pre-recorded vehicle trace file to simulate a real
 vehicle interface on your desk.
 
 Download the [driving trace][] and copy it to the SD card of your Android
-device. You can do this either by mounting the SD card over USB or using adb:
+device. You can do this in one of three ways:
 
-{% highlight sh %}
-$ adb push driving.json /sdcard/openxc-driving.json
-{% endhighlight %}
+* Mount the Android device as USB disk.
+* Use the File Manager from the Android Device Monitor (included with the
+  Android SDK).
+* Copy the file with `abd` on the command line:
+	`$ adb push driving.json /sdcard/openxc-driving.json`
 
-Next, tell the [VehicleManager][] that it should playback this trace file by
-adding the following to the end of the `ServiceConnection.onServiceConnection()`
-method:
+Install the [Enabler][enabler] app if you haven't already. That
+application helps control the source of vehicle data, e.g. a USB CAN translator
+or a trace file.
 
-{% highlight java %}
-private TraceVehicleDataSource mTraceSource;
+Install a file manager in Android like the [OI File
+Manager](https://play.google.com/store/apps/details?id=org.openintents.filemanager)
+so the Enabler is able to browse for files on the SD card.
 
-public void onServiceConnected(ComponentName className, IBinder service) {
-    ...
-	URI mTraceFile = new URI("file:///sdcard/com.openxc/trace.json");
-    mTraceSource = new TraceVehicleDataSource(MainActivity.this, mTraceFile);
-    mVehicleManager.addSource(mTraceSource);
-}
-{% endhighlight %}
+Finally, run the `OpenXC Enabler` app on the device and go to `Settings -> Data
+Sources -> Trace File Playback`, check the `Playback trace file` option and
+browse for the trace file you copied over.
 
-Also add this to the `onPause()` method of your activity, so you don't start the
-trace file playback multiple times:
-
-{% highlight java %}
-public void onPause() {
-    ...
-    mVehicleManager.removeSource(mTraceSource);
-}
-{% endhighlight %}
-
-Restart your app, and you should see the vehicle speed changing in the UI! If
-you'd like to see a more in-depth example, take look at the [MPG][] app or the
-[Vehicle Dashboard][].
+Run the "Hello OpenXC" app and you should see the vehicle speed changing in the
+UI! If you'd like to see a more in-depth example, take look at the [MPG][] app
+or the [Vehicle Dashboard][].
 
 <div class="page-header">
 <h2>Next Steps</h2>
@@ -239,8 +232,8 @@ about the [host device][] and [vehicle interface][].
 [Android service]: http://developer.android.com/guide/components/services.html
 [bind]: http://developer.android.com/guide/topics/fundamentals/bound-services.html#Binding)
 [VehicleManager]: /openxc-android/reference/com/openxc/VehicleManager.html
-[enabler]: https://github.com/openxc/openxc-android/tree/master/enabler
-[driving trace]: https://github.com/openxc/openxc-android/blob/tracedashboard/examples/res/raw/driving
+[enabler]: /getting-started/library-installation.html#enabler
+[driving trace]: https://s3.amazonaws.com/openxcplatform.com/driving.json
 [library documentation]: /openxc-android/reference/com/openxc/measurements/package-summary.html
 [ServiceConnection]: http://developer.android.com/reference/android/content/ServiceConnection.html
 [Listener]: http://openxcplatform.com/openxc-android/reference/com/openxc/measurements/Measurement.Listener.html

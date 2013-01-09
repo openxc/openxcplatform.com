@@ -7,7 +7,7 @@ title: Bluetooth HUD - OpenXC
     <h1>Bluetooth Heads-up Display</h1>
 </div>
 
-**GitHub Repository:** [github.com/openxc/simple-hud](http://github.com/openxc/simple-hud)
+**GitHub Repository:** [github.com/openxc/simple-hud](https://github.com/openxc/simple-hud)
 
 The Bluetooth HUD is a wireless, solar-powered display module to be used inside
 the vehicle cockpit. The system uses LEDs reflecting off of the windshield to
@@ -85,9 +85,9 @@ charge the battery.
     <h2>Android Service</h2>
 </div>
 
-The HUD is exposed in Android via an in-process service (code located
-[here][java]). Take a look at the `HudTestActivity` for an example of how to use
-it - the test runs a KITT-style LED fade on the HUD.
+The HUD is exposed in Android via an in-process service. Take a look at the
+[HudTestActivity][android] for an example of how to use it - the test runs a
+KITT-style LED fade on the HUD.
 
 To build and deploy the test app to an attached Android device, make sure you
 have Maven installed and run:
@@ -120,12 +120,12 @@ USB power source while testing.
 All of the descriptions and more (including desktop testing) can be found in the
 project's [README][].
 
-The [firmware][], [schematics][], and [Android project][java] files can also be
+The [firmware][], [schematics][], and [Android project][android] files can also be
 found on GitHub.
 
 ![Bluetooth HUD external](/images/bluetooth-hud-external.jpg)
 
-[README]: http://github.com/openxc/simple-hud/blob/master/README.mkd
+[README]: https://github.com/openxc/simple-hud/blob/master/README.mkd
 [firmware]: https://github.com/openxc/simple-hud/tree/master/firmware
 [schematics]: https://github.com/openxc/simple-hud/tree/master/assembly
-[java]: http://github.com/openxc/simple-hud/tree/master/java
+[android]: https://github.com/openxc/simple-hud/tree/master/android

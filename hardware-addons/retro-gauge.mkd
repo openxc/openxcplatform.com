@@ -90,5 +90,5 @@ serial communication.
 
 For more documentation, checkout the [README][] file.
 
-[README]: http://github.com/openxc/retro-gauge/blob/master/README.mkd
-[github]: http://github.com/openxc/retro-gauge
+[README]: https://github.com/openxc/retro-gauge/blob/master/README.mkd
+[github]: https://github.com/openxc/retro-gauge

@@ -39,7 +39,6 @@ device must:
 * Samsung Galaxy Tab 7.7" (Bluetooth working fine, USB OTG unconfirmed as it
   requires an additional Samsung adapter)
 
-
 **Phones**
 
 * Samsung [Galaxy Nexus][galaxynexus] (using Bluetooth or a USB OTG adapter,
@@ -101,5 +100,5 @@ components of a tablet (battery, LCD screen, GPS receiver, etc.) can be left out
 to hit an ever lower price point.
 
 [thrive]: http://us.toshiba.com/tablets/thrive/10-inch/
-[galaxynexus]: http://www.google.com/nexus
-[USB devices]: http://developer.android.com/guide/topics/usb/index.html
+[galaxynexus]: http://www.google.com/nexus/
+[USB devices]: http://developer.android.com/guide/topics/connectivity/usb/index.html

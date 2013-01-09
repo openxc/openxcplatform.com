@@ -79,39 +79,36 @@ projects about a required compliance level, you can fix this by going to
 reported. You're ready to start working with OpenXC! If you still have errors,
 try asking in the [Google Group](/overview/discuss.html) for some help.
 
-Next up, install the [Enabler](#enabler) app.
+Next up, you can start writing your [first OpenXC
+app](/getting-started/tutorial.html).
 
 <div class="page-header">
     <h3><a name="cli" href="#cli">Using the Command Line</a></h3>
 </div>
 
 If you prefer to compile and deploy from the command line, you can use
-[Maven](http://maven.apache.org/download.html). Using Maven is out of the scope
+[Maven](http://maven.apache.org/download.cgi). Using Maven is out of the scope
 of this documentation, so this is only recommended if you already know how to
 use Maven. The OpenXC repository has the required `pom.xml` files to use it has
 a library.
 
-The OpenXC library artifact should soon be available in the central Maven
-repository, but until then you must manually install it to your local
-repository.
+The OpenXC library artifact is available in the central Maven repository, so you
+just need to add this to your `dependencies` section:
 
-<!-- The OpenXC library artifact is available in the central Maven repository, so you -->
-<!-- just need to add this to your `dependencies` section: -->
-
-<!-- {% highlight xml %} -->
-<!-- <dependencyManagement> -->
-    <!-- <dependencies> -->
-        <!-- <dependency> -->
-            <!-- <groupId>com.openxc</groupId> -->
-            <!-- <artifactId>openxc</artifactId> -->
-            <!-- <version>2.0</version> -->
-            <!-- <type>apklib</type> -->
-        <!-- </dependency> -->
-        <!-- ... -->
-    <!-- </dependencies> -->
-    <!-- ... -->
-<!-- </dependencyManagement> -->
-<!-- {% endhighlight %} -->
+{% highlight xml %}
+<dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>com.openxcplatform</groupId>
+            <artifactId>openxc</artifactId>
+            <version>3.0</version>
+            <type>apklib</type>
+        </dependency>
+        ...
+    </dependencies>
+    ...
+</dependencyManagement>
+{% endhighlight %}
 
 You also need to add the
 [android-maven-plugin](http://code.google.com/p/maven-android-plugin/) so that
@@ -134,15 +131,16 @@ the `apklib` type is supported:
 </build>
 {% endhighlight %}
 
-Next up, install the [Enabler](#enabler) app.
+Next up, you can start writing your [first OpenXC
+app](/getting-started/tutorial.html).
 
 <div class="page-header">
     <h3><a name="enabler" href="#enabler">Enabler</a></h3>
 </div>
 
 The best way to make the USB vehicle interface available to your app is to
-install the OpenXC Enabler app - the [source][enabler-source] for this app is in the
-[openxc-android][] repository.
+install the OpenXC Enabler app - the [source][enabler-source] for this app is in
+the [openxc-android][] repository.
 
 This app starts the vehicle service at boot and makes sure it stays alive - this
 way, your app doesn't have to worry about USB permissions or reacting to device
@@ -179,13 +177,12 @@ If you're using Maven at the command line:
 $ mvn clean package android:deploy android:run -pl enabler -am
 {% endhighlight %}
 
-
 <div class="page-header">
 <h2>Next Steps</h2>
 </div>
 
-Once you have the library setup and the enabler installed, you can continue to
-writing your [first OpenXC app](/getting-started/tutorial.html).
+Once you have the library set up, you can start writing your [first OpenXC
+app](/getting-started/tutorial.html).
 
 [APK]: https://s3.amazonaws.com/openxcplatform.com/openxc-enabler-v3.0.apk
 [openxc-android]: https://github.com/openxc/openxc-android
