@@ -62,10 +62,15 @@ If you use an Internet proxy, you will need to configure the proxy settings in
 the Android SDK manager (in `Tools -> Options`).
 </div>
 
-* Clone the [openxc-android][] repository using Git (recommended) or download
-  the latest version in a ZIP file (look for the big ZIP icon like the example
-  below). Right now, the code is only available to developers in the early
-  preview.
+* Get the [openxc-android][] source code in one of two ways:
+    * *Recommended method:* Clone the [openxc-android][] repository using Git. If you
+      don't already have Git installed, GitHub has a [good
+      reference](https://help.github.com/articles/set-up-git) for all platforms.
+      This method is recommended because it makes it easier to keep up-to-date
+      with changes in the OpenXC library.
+    * Download the latest version from [GitHub][openxc-android] as a ZIP file.
+      Look for the big ZIP icon like the example below). Right now, the code is
+      only available to developers in the early preview.
 
 <a href="https://github.com/openxc/openxc-android">
 <img src="/images/screenshots/github.png" />
