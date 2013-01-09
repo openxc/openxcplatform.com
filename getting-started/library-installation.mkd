@@ -95,25 +95,30 @@ Next up, install the [Enabler](#enabler) app.
 If you prefer to compile and deploy from the command line, you can use
 [Maven](http://maven.apache.org/download.html). Using Maven is out of the scope
 of this documentation, so this is only recommended if you already know how to
-use Maven.
+use Maven. The OpenXC repository has the required `pom.xml` files to use it has
+a library.
 
-The OpenXC library artifact is available in the central Maven repository, so you
-just need to add this to your `dependencies` section:
+The OpenXC library artifact should soon be available in the central Maven
+repository, but until then you must manually install it to your local
+repository.
 
-{% highlight xml %}
-<dependencyManagement>
-    <dependencies>
-        <dependency>
-            <groupId>com.openxc</groupId>
-            <artifactId>openxc</artifactId>
-            <version>2.0</version>
-            <type>apklib</type>
-        </dependency>
-        ...
-    </dependencies>
-    ...
-</dependencyManagement>
-{% endhighlight %}
+<!-- The OpenXC library artifact is available in the central Maven repository, so you -->
+<!-- just need to add this to your `dependencies` section: -->
+
+<!-- {% highlight xml %} -->
+<!-- <dependencyManagement> -->
+    <!-- <dependencies> -->
+        <!-- <dependency> -->
+            <!-- <groupId>com.openxc</groupId> -->
+            <!-- <artifactId>openxc</artifactId> -->
+            <!-- <version>2.0</version> -->
+            <!-- <type>apklib</type> -->
+        <!-- </dependency> -->
+        <!-- ... -->
+    <!-- </dependencies> -->
+    <!-- ... -->
+<!-- </dependencyManagement> -->
+<!-- {% endhighlight %} -->
 
 You also need to add the
 [android-maven-plugin](http://code.google.com/p/maven-android-plugin/) so that
@@ -144,10 +149,10 @@ Next up, install the [Enabler](#enabler) app.
 
 The best way to make the USB vehicle interface available to your app is to
 install the OpenXC Enabler app - the source for this app is in the
-`openxc-android` repository, but we've also made it available as an APK in the
-[downloads][] section. This app starts the vehicle service at boot and makes
-sure it stays alive - this way, your app doesn't have to worry about USB
-permissions or reacting to device detachment/reattachment.
+`openxc-android` repository, but we've also made it available as an [APK][].
+This app starts the vehicle service at boot and makes sure it stays alive - this
+way, your app doesn't have to worry about USB permissions or reacting to device
+detachment/reattachment.
 
 <div class="alert alert-error">
 <strong>Note:</strong> Even if you only plan to use previously recorded trace
@@ -178,6 +183,6 @@ enabler][enabler] to see exactly how to accomplish that.
 Once you have the library setup and the enabler installed, you can continue to
 writing your [first OpenXC app](/getting-started/tutorial.html).
 
-[downloads]: https://github.com/openxc/openxc-android/downloads
+[APK]: https://s3.amazonaws.com/openxcplatform.com/openxc-enabler-v3.0.apk
 [enabler]: https://github.com/openxc/openxc-android/tree/master/enabler
 [openxc-android]: https://github.com/openxc/openxc-android

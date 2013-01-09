@@ -23,7 +23,8 @@ Make sure you've purchased all of the required
     <h2>OBD-II Cable</h2>
 </div>
 
-Slide the round grommet onto the bare wire end of the cable. Cut a section of
+If you plan to use an anclosure, slide the round grommet onto the bare wire end of the cable.  
+(You won't be able to do this later without cutting a slit in the grommet.)  Cut a section of
 3/8" shrink tubing about 1" long and slide it onto the the cable next.
 
 <div class="well">
@@ -35,6 +36,11 @@ Crimp a female pin onto the following wires and verify the connection to the
 expected pin using a multimeter. The pinout for the cable recommended above is
 available at [OBD2Cables.com][obd2]. wire, and insert the pin into the correct
 housing.
+
+If you're new to crimp pins, check out one of the Internet's many tutorials. The most
+important detail is to note that each pin actually has two crimps.  One needs to 
+be crimpped to the wire for electrical connectivity, and one needs to be crimpped 
+to the wire insulation for strain relief.
 
 Trim the red (battery voltage) and brown (signal ground) wires down to the
 insulator but leave them long. These should be saved for future use.
@@ -141,6 +147,62 @@ heat gun, shrink the tubing.
     <legend>A completed OBD-II cable</legend>
 </div>
 
+Connect the OBD-II cable crimp housings to the Network Shield. For most
+  vehicles the HS plug should go to CAN1 and the MS
+  plug should go to CAN2. Make sure the + on your connector lines up with the CANH
+  printed on the board - it should be the pair of pins closest to the center of the
+  network shield.
+ Optionally, label the socket and connector indicating the proper plug
+  orientation, e.g. a big `1` and `2` that you line up.
+
+<div class="page-header">
+    <h2>Power Jumper</h2>
+</div>
+
+1. Cut a length of wire, 2" to 3" long.
+2. Strip about an 1/8" on both ends.
+3. Crimp a female pin to one end.  Crimp a male pin to the other.
+
+<div class="well">
+    <img src="/images/assembly/openxc-assembly-8.jpg" />
+    <legend>Power jumper parts</legend>
+</div>
+<div class="well">
+    <img src="/images/assembly/openxc-assembly-9.jpg" />
+    <legend>Crimped power jumper wire</legend>
+</div>
+
+Put a 1x1 housing on the female end.  
+
+If you are not planning to build our 
+suggested enclosure you can probably put a 1x1 housing on the male end, too.
+Otherwise, please note that a 1x1 housing on the male connector of the power
+jumper will not fit in the enclosure suggested later.  To make this fit, put
+ shrink tubing on the male end, enough to
+cover a bit of the insulation and most of the crimp pin that will not actually
+get pushed into the socket.  Put a bend in the crimp pin about halfway between
+the pin and the wire, otherwise it won't fit in the enclosure. Rather than a
+single 90 degree bend, put in two bends of 45 degrees.  Don't make either of
+those bends on the skinny pin, put them both on the thicker body of the crimp
+pin.
+
+<div class="well">
+    <img src="/images/assembly/openxc-assembly-10.jpg" />
+    <legend>Bend the power jumper after shrink tubing to fit in the
+    enclosure.</legend>
+</div>
+
+Connect the female end of the power jumper to pin 1 of JP4. 
+Connect the male end to 5vo on the POWER connector.
+
+<div class="page-header">
+    <h2>Optional Enclosure</h2>
+</div>
+
+At this point, the reader should be completely functional.  But without an enclosure,
+it is at risk of static shock damage and strain damage in the event of a drop.
+There are many potential enclosures that will be adequate for this device.  
+
 <div class="page-header">
     <h2>Lower Enclosure</h2>
 </div>
@@ -191,43 +253,12 @@ heat gun, shrink the tubing.
   straight file.
 
 <div class="page-header">
-    <h2>Power Jumper</h2>
-</div>
-
-1. Cut a length of wire, 2" to 3" long.
-2. Strip about an 1/8" on both ends.
-3. Crimp a female pin to one end.  Crimp a male pin to the other.
-
-<div class="well">
-    <img src="/images/assembly/openxc-assembly-8.jpg" />
-    <legend>Power jumper parts</legend>
-</div>
-<div class="well">
-    <img src="/images/assembly/openxc-assembly-9.jpg" />
-    <legend>Crimped power jumper wire</legend>
-</div>
-
-Put a 1x1 housing on the female end and shrink tubing on the male end, enough to
-cover a bit of the insulation and most of the crimp pin that will not actually
-get pushed into the socket.  Put a bend in the crimp pin about halfway between
-the pin and the wire, otherwise it won't fit in the enclosure. Rather than a
-single 90 degree bend, put in two bends of 45 degrees.  Don't make either of
-those bends on the skinny pin, put them both on the thicker body of the crimp
-pin.
-
-<div class="well">
-    <img src="/images/assembly/openxc-assembly-10.jpg" />
-    <legend>Bend the power jumper after shrink tubing to fit in the
-    enclosure.</legend>
-</div>
-
-<div class="page-header">
     <h2>Final Assembly</h2>
 </div>
 
 * Connect the OBD-II cable crimp housings to the Network Shield. For most
-  vehicles (including the 2012 Focus) the HS plug should go to CAN1 and the INFO
-  plug should go to CAN2. Make sure the + on your connector lines up with the +
+  vehicles the HS plug should go to CAN1 and the MS
+  plug should go to CAN2. Make sure the + on your connector lines up with the CANH
   printed on the board - it should be the end closest to the center of the
   network shield.
 * Optionally, label the socket and connector indicating the proper plug
@@ -254,6 +285,24 @@ pin.
     <img src="/images/assembly/openxc-assembly-17.jpg" />
     <legend>Connect the power jumper from pin 1 of JP4 to 5vo.</legend>
 </div>
+
+ow is the time to add the SparkFun BlueSMiRF module if you want Bluetooth
+support.
+
+* Solder the 6-pin header strip to the BlueSMiRF breakout board.
+* Create 6 3" wires of different colors with a male crimp pin on one end and a
+  female crimp housing on the other. You may want to wrap the crimp housings in
+  shrink tubing to avoid shorts.
+* Attach the 6 wires to the BlueSMiRF board, and the other ends to the Network
+  Sheild like this:
+    * chipKIT Pin 0 - Connect to TX on RN-42
+    * chipKIT Pin 1 - Connect to RX on RN-42
+    * chipKIT Pin 18 - Connect to CTS on RN-42
+    * chipKIT Pin 19 - Connect to RTS on RN-42
+* Finally, find a good place to tucket the Bluetooth module away so the wires
+  aren't shorting out and it won't get in the way of the enclosure.
+
+Continuing on with final assembly:
 
 * Put the back plate into place and attach the top of the enclosure.
 * Secure the enclosure with the two screws.

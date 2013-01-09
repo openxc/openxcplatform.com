@@ -105,8 +105,34 @@ the crimp connectors, for example).
 * (4x) Female crimp pins from [Pololu][crimppins] (< $1)
 * Shrink tubing
 * Rubber cable grommet that fits the OBD-II cable
+
+Parts for the optional enclosure:
+
 * Enclosure from [PacTec][enclosure] ($11)
 * Mounting spacers
+* SparkFun BlueSMiRF Silver Bluetooth Module (optional)
+    * 6 pin length of male to male header pins (right-angle works well)
+    * 6 additional female crimp housing
+    * 6 additional male crimp pins
+
+<a name="tools" href="#tools">
+**Tools List**
+</a>
+
+This is a list of the tools needed to assemble the kit.
+
+* Heat gun (or lighter)
+* Volt meter (for testing continuity)
+* Wire stripper
+* Crimp tool 
+* Optional - label maker
+
+For our suggested enclosure, you'll also need the following.
+
+* Angle cutters
+* Phillips head screw driver
+* Tools for etching and cutting plastic
+* Drill
 
 <div class="page-header">
 <h3><a name="connections" href="#connections">Device Connections</a></h3>
@@ -118,9 +144,9 @@ follows:
 
 * Mini-USB - connect to the serial console for debugging and to upload new
   firmware.
-*  Micro-USB - the OpenXC data is sent through this port - connect it to your
-   computer for testing with the Python script, or to an Android tablet to run
-   an OpenXC application.
+* Micro-USB - the OpenXC data is sent through this port - connect it to your
+  computer for testing with the Python script, or to an Android tablet to run
+  an OpenXC application.
 
 <div class="pull-right">
 <img title="USB ports" src="/images/usbports.jpg"/>
@@ -158,11 +184,6 @@ adapter with the SPP (Serial Port Profile) configuration. Set the baudrate on
 the RN-42 to `460800`. Hardware flow control is enabled (and required to hit these
 really high baud rates), so make sure to connect the `RTS` and `CTS` lines in
 addition to RX/TX.
-
-* Pin 0 - Connect to TX on RN-42
-* Pin 1 - Connect to RX on RN-42
-* Pin 18 - Connect to CTS on RN-42
-* Pin 19 - Connect to RTS on RN-42
 
 *(and yes, we live dangerously and make all of our wires the same color!)*
 
