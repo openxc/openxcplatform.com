@@ -13,7 +13,6 @@ title: Retro Gauge - OpenXC
 
 ![Retro Gauge](/images/retro-gauge/overview.jpg)
 
-
 The Retro Gauge is a mechanical vehicle gauge that outputs data from OpenXC via
 serial communication. The purpose of this gauge is to display vehicle data in a
 traditional automotive fashion, a gauge! The design intent was to keep the gauge
