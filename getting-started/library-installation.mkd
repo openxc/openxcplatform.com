@@ -19,8 +19,6 @@ title: Library Setup - OpenXC
 The OpenXC functionality is exposed via a Java library that includes some
 Android services your application can use. The library is available on GitHub in
 the [openxc-android][] repository and also in the central Maven repository.
-Right now, the code is only available if you have access to the early release
-and are logged into GitHub.
 
 <div class="page-header">
     <h2>Installation</h2>
@@ -61,8 +59,7 @@ Get the [openxc-android][] source code in one of two ways:
   This method is recommended because it makes it easier to keep up-to-date
   with changes in the OpenXC library.
 * Download the latest version from [GitHub][openxc-android] as a ZIP file.
-  Look for the big ZIP icon like the example below). Right now, the code is
-  only available to developers in the early preview.
+  Look for the big ZIP icon like the example below).
 
 <a href="https://github.com/openxc/openxc-android">
 <img src="/images/screenshots/github.png" />

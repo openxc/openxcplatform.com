@@ -11,8 +11,7 @@ title: Discuss - OpenXC
     <h2>Find Source Code</h2>
 </div>
 
-Find all the source code for OpenXC at [Github][]. The source code is currently
-only available to developers signed up for the early release.
+Find all the source code for OpenXC at [Github][].
 
 * [OpenXC Organization](https://github.com/openxc)
 * [OpenXC Android Library](https://github.com/openxc/openxc-android)

@@ -93,8 +93,7 @@ $ set -o igncr && export SHELLOPTS && sh ./upload_hex.sh <path to the .hex file 
 
 Developers that know the details of the CAN bus they will be using can choose to
 implement their own signal definitions for the translator. The documentation for
-this process is available at the [cantranslator][] repository (only accessible
-if logged in to GitHub and with access to the early release).
+this process is available at the [cantranslator][] repository.
 
 <div class="page-header">
 <h2>Next Steps</h2>
