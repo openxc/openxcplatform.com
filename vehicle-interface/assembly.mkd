@@ -246,7 +246,7 @@ There are many potential enclosures that will be adequate for this device.
     <h2>Front Plate</h2>
 </div>
 
-1. Using the template (coming soon, or just wing it), drill a hole for the
+1. Using the [template](/documents/CAN-Reader-Front-Panel-Template.pdf), drill a hole for the
    OBD-II cable.
 2. Trim the OBD-II cable hole and shape it with a round file.
 3. Using the template, drill out and shape the hole for the USB cable using a
