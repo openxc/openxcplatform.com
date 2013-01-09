@@ -39,7 +39,7 @@ housing.
 
 The most important detail 
 with crimp pins is to note that each pin actually has two crimps.  One needs to 
-be crimpped to the wire for electrical connectivity, and one needs to be crimpped 
+be crimped to the wire for electrical connectivity, and one needs to be crimped 
 to the wire insulation for strain relief.
 
 <div class="well">
