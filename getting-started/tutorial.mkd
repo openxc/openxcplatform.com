@@ -208,7 +208,7 @@ Manager](https://play.google.com/store/apps/details?id=org.openintents.filemanag
 so the Enabler is able to browse for files on the SD card.
 
 Finally, run the `OpenXC Enabler` app on the device and go to `Settings -> Data
-Sources -> Trace File Playback`, check the `Platback trace file` option and
+Sources -> Trace File Playback`, check the `Playback trace file` option and
 browse for the trace file you copied over.
 
 Run the "Hello OpenXC" app and you should see the vehicle speed changing in the

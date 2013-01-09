@@ -109,5 +109,6 @@ There are some existing projects trying to accomplish similar things to OpenXC
 by making the vehicle more programmable. A by no means complete list:
 
 * [nOBDy](http://nobdy.wikia.com/wiki/Nobdy_Wiki)
-* [MirrorLink / Terminal Mode](http://www.terminalmode.org/)
+* [MirrorLink](http://www.mirrorlink.com)
+* [AppLink](http://developer.ford.com)
 * [openguage](http://code.google.com/p/opengauge/)

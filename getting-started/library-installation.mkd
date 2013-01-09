@@ -87,7 +87,7 @@ app](/getting-started/tutorial.html).
 </div>
 
 If you prefer to compile and deploy from the command line, you can use
-[Maven](http://maven.apache.org/download.html). Using Maven is out of the scope
+[Maven](http://maven.apache.org/download.cgi). Using Maven is out of the scope
 of this documentation, so this is only recommended if you already know how to
 use Maven. The OpenXC repository has the required `pom.xml` files to use it has
 a library.
