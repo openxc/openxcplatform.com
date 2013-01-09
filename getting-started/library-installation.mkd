@@ -162,8 +162,8 @@ still must be installed.
 
 *Eclipse*
 
-If you have the `enabler` project imported in Eclipse, right click on the
-project and select `Run As -> Android Application` with an Android device
+If you have the `OpenXcEnablerActivity` project imported in Eclipse, right click
+on the project and select `Run As -> Android Application` with an Android device
 attached to install the app.
 
 *Maven*
