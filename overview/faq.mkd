@@ -9,18 +9,6 @@ title: FAQ - OpenXC
 
 <dl>
 
-<dt>If it's an open source project, why can't I access the source code on
-GitHub?</dt>
-<dd>OpenXC is in a limited early release as of January 2012, and the source code
-is not widely available yet. We have developers at various universities and
-companies creating the first OpenXC applications and tripping over the biggest
-bugs so you don't have to. We're adding more and more people to the project
-every day - drop your e-mail in the form on the <a href="/">front page</a> to
-get in the queue. OpenXC will not stay closed for much longer, we ask that you
-have patience while we make sure the system is as ready as possible for a wider
-launch.
-</dd>
-
 <dt>Who can I contact at Ford about OpenXC?</dt>
 <dd>The Ford team is always reading the
 <a href="http://groups.google.com/group/openxc">Google Group</a>, and that's the

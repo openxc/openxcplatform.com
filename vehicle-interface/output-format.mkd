@@ -100,7 +100,7 @@ selected a small set of the most interesting signals to get started.
     <dt>fine_odometer_since_restart</dt>
     <dd>0 to 4294967295.0 km (this has a much higher resolution than the
         odometer, but it restarts back to zero every time the vehicle
-        starts)</dd>
+        starts like a trip meter)</dd>
 
     <dt>ignition_status</dt>
     <dd>States: off, accessory, run, start</dd>
@@ -109,7 +109,8 @@ selected a small set of the most interesting signals to get started.
     <dd>0 - 100%</dd>
 
     <dt>fuel_consumed_since_restart</dt>
-    <dd>0 - 4294967295.0 L (this goes to 0 every time the vehicle restarts)</dd>
+    <dd>0 - 4294967295.0 L (this goes to 0 every time the vehicle restarts, like
+        a trip meter)</dd>
 
     <dt>door_status</dt>
     <dd>Value is State: driver, passenger, rear_left, rear_right.
@@ -131,8 +132,10 @@ selected a small set of the most interesting signals to get started.
     <dd>-179.0 to 179.0 degrees</dd>
 
     <dt>button_event</dt>
-    <dd>Value is State: left, right, up, down, ok.
-        Event is State: idle, pressed, released, held_short, held_long, stuck</dd>
+    <dd>Value is State: left, right, up, down, ok.<br/>
+        Event is State: idle, pressed, released, held_short, held_long, stuck<br/>
+        (The buttons this message refer to are highly dependent on the specific
+        vehicle, but if it's supported, try the steering wheel buttons.) </dd>
 </dl>
 
 <div class="page-header">

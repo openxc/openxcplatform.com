@@ -69,3 +69,8 @@ layout for now, although there could others in the future.
 
 There's lots you can do with the templates (they're using the Liquid template
 engine) - see the Jekyll docs: https://github.com/mojombo/jekyll/wiki.
+
+## License
+
+Except as otherwise noted, the content of the website is licensed under the
+Creative Commons Attribution 3.0 License.
