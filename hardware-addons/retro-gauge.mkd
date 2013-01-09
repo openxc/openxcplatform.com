@@ -7,9 +7,7 @@ title: Retro Gauge - OpenXC
     <h1>Retro Gauge</h1>
 </div>
 
-**Firmware Repository:** [github.com/openxc/retro-gauge-firmware][firmware]
-
-**Schematics Repository:** [github.com/openxc/retro-gauge-schematics][schematics]
+**GitHub Repository:** [github.com/openxc/retro-gauge][github]
 
 ![Retro Gauge](/images/retro-gauge/overview.jpg)
 
@@ -39,8 +37,8 @@ design a gauge that had the same feel and aesthetics as aftermarket gauges.
 </div>
 
 
-* [Eagle Schematics](https://github.com/openxc/retro-gauge-schematics)
-* [Bill of Materials](https://github.com/openxc/retro-gauge-schematics)
+* [Eagle Schematics](https://github.com/openxc/retro-gauge/tree/master/schematics)
+* [Bill of Materials](https://github.com/openxc/retro-gauge/blob/master/schematics/BOM.csv)
 
 The design intent for the PCB was to allow developers to use common open source
 tools that are readily available to allow the gauge to be easily expanded. With
@@ -92,6 +90,5 @@ serial communication.
 
 For more documentation, checkout the [README][] file.
 
-[README]: http://github.com/openxc/retro-gauge-firmware/blob/master/README.mkd
-[firmware]: http://github.com/openxc/retro-gauge-firmware
-[schematics]: http://github.com/openxc/retro-gauge-schematics
+[README]: http://github.com/openxc/retro-gauge/blob/master/README.mkd
+[github]: http://github.com/openxc/retro-gauge
