@@ -37,10 +37,15 @@ expected pin using a multimeter. The pinout for the cable recommended above is
 available at [OBD2Cables.com][obd2]. wire, and insert the pin into the correct
 housing.
 
-If you're new to crimp pins, check out one of the Internet's many tutorials. The most
-important detail is to note that each pin actually has two crimps.  One needs to 
+The most important detail 
+with crimp pins is to note that each pin actually has two crimps.  One needs to 
 be crimpped to the wire for electrical connectivity, and one needs to be crimpped 
 to the wire insulation for strain relief.
+
+<div class="well">
+    <img src="/images/assembly/crimp-pin-detail.jpg" />
+    <legend>Position the wire on the pin to get electrical connectivity as well as strain relief.</legend>
+</div>
 
 Trim the red (battery voltage) and brown (signal ground) wires down to the
 insulator but leave them long. These should be saved for future use.
