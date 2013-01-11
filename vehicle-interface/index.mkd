@@ -67,14 +67,14 @@ If you use the CAN translator on one of these vehicles, do [let the developers
 know](/overview/discuss.html).
 
 * 2006 - 2010, 2013 Fusion
-* 2006 - 2013 Lincoln MKZ
 * 2010, 2011, 2013 Mustang
-* 2011 - 2012 Explorer
+* 2011 - 2013 Explorer
 * 2010 - 2013 F-150
 * 2009 - 2013 Flex
+* 2007 - 2013 Edge
+* 2006 - 2013 Lincoln MKZ
 * 2009 - 2013 Lincoln MKT
-* 2012 Edge
-* 2012 Lincoln MKX
+* 2011 - 2013 Lincoln MKX
 
 <div class="page-header">
 <h2>Hardware</h2>
@@ -124,7 +124,7 @@ This is a list of the tools needed to assemble the kit.
 * Heat gun (or lighter)
 * Volt meter (for testing continuity)
 * Wire stripper
-* Crimp tool 
+* Crimp tool
 * Optional - label maker
 
 For our suggested enclosure, you'll also need the following.
