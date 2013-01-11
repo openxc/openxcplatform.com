@@ -38,7 +38,7 @@ documentation](http://openxcplatform.com/cantranslator/installation/binary.html)
 Developers that know the details of the CAN bus they will be using can choose to
 implement their own signal definitions for the translator. The process is
 described in the [CAN translator
-docuemntation](http://openxcplatform.com/cantranslator/installation/installation.html).
+documentation](http://openxcplatform.com/cantranslator/installation/installation.html).
 
 <div class="page-header">
 <h2>Next Steps</h2>
