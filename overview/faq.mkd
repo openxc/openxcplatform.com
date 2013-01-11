@@ -66,6 +66,29 @@ plain old (non-Android) Java would be a great addition to the project.
 
 <a href="http://en.wikipedia.org/wiki/OBD-II_PIDs#Non-standard_PIDs">Source</a>
 
+<dt>Why wouldn't I just use one of the inexpensive smartphone apps that connect
+to a cheap OBD-II Bluetooth adapter?</dt>
+
+<dd>
+
+<p>
+Smartphone apps like Torque are great, but most don't provide any programming
+interface for you to create new applications. OpenXC is not intended to be a
+"dashboard" application that you install and use - it's a platform for others to
+make custom applications that take advantage of vehicle data.
+</p>
+
+<p>
+There is actually no reason why existing OBD-II adapters couldn't work with the
+Android library (ongoing work in [this
+issue](https://github.com/openxc/openxc-android/issues/19)). Do keep in mind
+that the data available through the OBD-II standard is limited compared to the
+OEM provided OpenXC firmware binaries, and the performance of some cheap
+adapters can be poor.
+</p>
+
+</dd>
+
 <dt>Why does OpenXC use a separate device to connect to the vehicle instead of
 integrating it into the host device (Android or PC)?</dt>
 
