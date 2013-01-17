@@ -65,13 +65,14 @@ Get the [openxc-android][] source code in one of two ways:
 <img src="/images/screenshots/github.png" />
 </a>
 
-Open Eclipse and go to `File -> Import -> General -> Existing Projects into
-Workspace`. Browse to where you cloned the repository and select the
-`openxc-android` folder. Four projects should be detected - unless you will be
-working on the OpenXC library internal itself, you can uncheck the `openxc-it`
-testing project. Click `Finish` to import the projects.
+After cloning the `openxc-android` repository to your local disk, open Eclipse
+and go to `File -> New -> Other -> Android -> Android Project from Existing
+Source`. Browse to the `openxc-android` folder and it should detect the 4
+Android projects within the repository. Unless you will be working on the
+internals of the OpenXC library itself, you can uncheck the `openxc-it` testing
+project. Click `Finish` to add the projects.
 
-![Importing a Project in Eclipse](/images/screenshots/eclipse-import.png)
+![Adding a Project in Eclipse](/images/screenshots/eclipse-import.png)
 
 Wait a few seconds for Eclipse to build the projects. If you get errors in the
 projects about a required compliance level, you can fix this by going to
