@@ -9,7 +9,8 @@ OpenXC Developer Agreement
 Before you can receive the firmware for the CAN translator for Ford vehicles,
 you must read and sign this developer agreement. You will receive an e-mail with
 a link to download the firmware for all of the supported vehicles within 24
-hours after signing the form.
+hours after signing the form (this is unfortunately a manual process at the
+moment, so please bear with us over the weekend).
 
 By submitting your this form, you agree to voluntarily give consent to have your
 personal information collected, processed, and stored by Ford Motor Company and
