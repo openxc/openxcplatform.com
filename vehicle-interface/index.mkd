@@ -106,11 +106,8 @@ the crimp connectors, for example).
 * (1x) Male crimp pin from [Pololu]crimppinsmale] (< $1)
 * Shrink tubing
 * Rubber cable grommet that fits the OBD-II cable
-
-Parts for the optional enclosure:
-
-* Enclosure from [PacTec][enclosure] ($11)
-* Mounting spacers
+* Optional - Enclosure from [PacTec][enclosure] ($11)
+* Optional - Mounting spacers for use with the enclosure
 
 <a name="tools" href="#tools">
 **Tools List**
@@ -118,13 +115,13 @@ Parts for the optional enclosure:
 
 This is a list of the tools needed to assemble the kit.
 
-* Heat gun (or lighter)
-* Volt meter (for testing continuity)
 * Wire stripper
-* Crimp tool
+* Wire crimper
+* Heat gun (or lighter)
+* Multimeter for continuity testing
 * Optional - label maker
 
-For our suggested enclosure, you'll also need the following.
+For the suggested enclosure, you'll also need the following:
 
 * Angle cutters
 * Phillips head screw driver
@@ -184,7 +181,7 @@ addition to RX/TX.
 
 **Bluetooth Parts List**
 
-* SparkFun BlueSMiRF Silver Bluetooth Module (optional)
+* SparkFun BlueSMiRF Silver Bluetooth Module
 * 6 pin length of male to male header pins (right-angle works well)
 * 6 additional female  and male crimp housins and pins *or* a
   [pre-crimped assortment](http://www.pololu.com/catalog/product/1807).
