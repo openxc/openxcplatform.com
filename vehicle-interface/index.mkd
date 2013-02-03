@@ -103,6 +103,7 @@ the crimp connectors, for example).
 * OBD-II Male to Breakout Cable from [OBD2Cables][obd2] ($13)
 * (3x) 2x6 Crimp Connector Housings from [Pololu][crimpconnectors] (< $1)
 * (4x) Female crimp pins from [Pololu][crimppins] (< $1)
+* (1x) Male crimp pin from [Pololu]crimppinsmale] (< $1)
 * Shrink tubing
 * Rubber cable grommet that fits the OBD-II cable
 
@@ -110,10 +111,6 @@ Parts for the optional enclosure:
 
 * Enclosure from [PacTec][enclosure] ($11)
 * Mounting spacers
-* SparkFun BlueSMiRF Silver Bluetooth Module (optional)
-    * 6 pin length of male to male header pins (right-angle works well)
-    * 6 additional female crimp housing
-    * 6 additional male crimp pins
 
 <a name="tools" href="#tools">
 **Tools List**
@@ -185,7 +182,15 @@ the RN-42 to `460800`. Hardware flow control is enabled (and required to hit the
 really high baud rates), so make sure to connect the `RTS` and `CTS` lines in
 addition to RX/TX.
 
-*(and yes, we live dangerously and make all of our wires the same color!)*
+**Bluetooth Parts List**
+
+* SparkFun BlueSMiRF Silver Bluetooth Module (optional)
+* 6 pin length of male to male header pins (right-angle works well)
+* 6 additional female  and male crimp housins and pins *or* a
+  [pre-crimped assortment](http://www.pololu.com/catalog/product/1807).
+
+*(and yes, we live dangerously and made all of our wires the same color - not
+the recommended approach!)*
 
 <div class="page-header">
 <h2>Concepts</h2>
@@ -279,6 +284,7 @@ guide][] is next.
 [obd2]: http://www.obd2cables.com/products/obd-cables/j1962m-ra-to/cable-j1962m-ra-type-b-to-open-end-6ft.html
 [crimpconnectors]: http://www.pololu.com/catalog/product/1914
 [crimppins]: http://www.pololu.com/catalog/product/1930
+[crimppinsmale]: http://www.pololu.com/catalog/product/1931
 [can]: http://en.wikipedia.org/wiki/CAN_bus
 [obd2]: http://en.wikipedia.org/wiki/On-board_diagnostics
 [enclosure]: http://www.pactecenclosures.com/product-detail.php?productid=62&seriesid=45&classid=26
