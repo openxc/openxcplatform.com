@@ -95,12 +95,7 @@ selected a small set of the most interesting signals to get started.
             reverse, neutral</dd>
 
     <dt>odometer</dt>
-    <dd>0 to 16777214 km</dd>
-
-    <dt>fine_odometer_since_restart</dt>
-    <dd>0 to 4294967295.0 km (this has a much higher resolution than the
-        odometer, but it restarts back to zero every time the vehicle
-        starts like a trip meter)</dd>
+    <dd>0 to 16777214.000 km, with about 10m resolution</dd>
 
     <dt>ignition_status</dt>
     <dd>States: off, accessory, run, start</dd>
