@@ -3,8 +3,9 @@ layout: default
 title: Privacy Policy - OpenXC
 ---
 
-Privacy Policy
-========
+<div class="page-header">
+    <h1>Privacy Policy</h1>
+</div>
 
 openxcplatform.com Privacy Statement
 
@@ -294,3 +295,8 @@ this statement, the new statement will be posted to the website ten (10) days
 prior to the changes taking effect.
 
 The effective date of this privacy statement is September 10th, 2012.
+
+## Your California Privacy Rights
+
+<script type="text/javascript" src="http://www.ford.com/go/privacy/include.js"></script>
+<noscript>View <a href=" http://www.ford.com/help/privacy/california/">Your California Privacy Rights</a>.</noscript>
