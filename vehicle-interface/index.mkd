@@ -224,7 +224,7 @@ developers access to the data contained within. Even for engineers inside the
 companies, dealing with a standard data format across many vehicles is often
 preferable to keeping track of a database of CAN message and signal definitions.
 
-**On-Board Diagnostics**
+<a name="obd" href="#obd"><strong>On-Board Diagnostic</strong></a>
 
 The CAN bus is one of the primary components of [OBD-II][obd2], a vehicle
 diagnostic standard mandatory for all cars sold in the United States since 1996.
