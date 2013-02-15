@@ -182,7 +182,7 @@ The client applications (in a separate process) receive the data in an instance
 of the [VehicleManager](#services) service (#4) which notifies any activities
 that have previously registered their interest in vehicle data (#5).
 
-<a name="services">
+<a name="services" href="#services">
 **Remote and Local Services**
 </a>
 
@@ -208,7 +208,7 @@ and communicates with it using the [Android Interface Definition
 Language][aidl]. The benefit of using the [VehicleManager][] in-process is that
 developers don't need to care about any of this - it's all abstracted away.
 
-<a name="pipeline">
+<a name="pipeline" href="#pipeline">
 **Data Pipeline**
 </a>
 
