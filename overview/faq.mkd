@@ -16,7 +16,7 @@ best place to get an answer to your question. Once the code is released on
 GitHub, you won't need any special permission or agreements from us to get
 started! You will currently only need to sign a developer agreement to get
 access to the vehicle interface firmware which lets you use an application in an
-actual Ford vehicle. This is not neccessary to begin developing in Android.
+actual Ford vehicle. This is not necessary to begin developing in Android.
 </dd>
 
 <dt>Why not just use one of the many commercial OBD-II scanners instead of
@@ -66,6 +66,27 @@ plain old (non-Android) Java would be a great addition to the project.
 
 <a href="http://en.wikipedia.org/wiki/OBD-II_PIDs#Non-standard_PIDs">Source</a>
 
+<dt>How does the data from OpenXC compare to the standard OBD-II messages?</dt>
+
+<dd>
+<p>The answer to this is specific to the vehicle manufacturer and the OpenXC
+binaries they provide. OpenXC relies on "normal mode" CAN messages, and more
+sensors may be available than what is exposed in the OBD-II message set.</p>
+
+<p>One good example is measuring the amount of fuel consumed, for the purposes
+of calculating fuel economy. The OBD-II set provides the mass airflow, from
+which you can <a
+href="http://www.mp3car.com/engine-management-obd-ii-engine-diagnostics-etc/75138-calculating-mpg-from-vss-and-maf-from-obd2.html">calculate</a>
+how much fuel is consumed. When you can take advantage of proprietary sensor
+data, this can be much easier and potentially more accurate - e.g. with Ford's
+OpenXC binaries you can retrieve the amount of fuel consumed directly (at 25
+microliter resolution). </p>
+
+<p>For more information on the types of CAN messages, see the <a
+href="/vehicle-interface/index.html#obd">On-Board Diagnostics</a> section.</p>
+
+</dd>
+
 <dt>Why wouldn't I just use one of the inexpensive smartphone apps that connect
 to a cheap OBD-II Bluetooth adapter?</dt>
 
@@ -78,14 +99,12 @@ interface for you to create new applications. OpenXC is not intended to be a
 make custom applications that take advantage of vehicle data.
 </p>
 
-<p>
-There is actually no reason why existing OBD-II adapters couldn't work with the
-Android library (ongoing work in [this
-issue](https://github.com/openxc/openxc-android/issues/19)). Do keep in mind
-that the data available through the OBD-II standard is limited compared to the
-OEM provided OpenXC firmware binaries, and the performance of some cheap
-adapters can be poor.
-</p>
+<p> There is actually no reason why existing OBD-II adapters couldn't work with
+the Android library (ongoing work in <a
+href="https://github.com/openxc/openxc-android/issues/19">this issue</a>). Do
+keep in mind that the data available through the OBD-II standard is limited
+compared to the OEM provided OpenXC firmware binaries, and the performance of
+some cheap adapters can be poor. </p>
 
 </dd>
 

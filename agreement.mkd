@@ -3,8 +3,9 @@ layout: default
 title: Developer Agreement - OpenXC
 ---
 
-OpenXC Developer Agreement
-========
+<div class="page-header">
+    <h1>OpenXC Developer Agreement</h1>
+</div>
 
 Before you can receive the firmware for the CAN translator for Ford vehicles,
 you must read and sign this developer agreement. You will receive an e-mail with

@@ -7,9 +7,7 @@ title: Discuss - OpenXC
     <h1>Contributing &amp; Getting Help</h1>
 </div>
 
-<div class="page-header">
-    <h2>Find Source Code</h2>
-</div>
+### Source Code
 
 Find all the source code for OpenXC at [Github][].
 
@@ -17,6 +15,21 @@ Find all the source code for OpenXC at [Github][].
 * [OpenXC Android Library](https://github.com/openxc/openxc-android)
 * [CAN Translator Source](https://github.com/openxc/cantranslator)
 * [OpenXC Python Library](https://github.com/openxc/openxc-python)
+
+### Proprietary Vehicle Interface Firmware
+
+Unless you are implementing custom CAN messages, you will most likely need a
+pre-built OpenXC binary from the manufacturer of your vehicle. Each OEM can
+decide whether or not to participate in OpenXC and if so, which types of data
+they wish to expose.
+
+* [Ford](/agreement.html)
+
+### Contributor License Agreement
+
+We require all contributors to sign a one-time [Contributor License
+Agreement](/contributor-license-agreement.html) to make sure the code is free
+and always will be remain free.
 
 <div class="page-header">
     <h2>Getting Help</h2>

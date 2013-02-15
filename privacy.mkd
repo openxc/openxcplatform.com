@@ -3,10 +3,11 @@ layout: default
 title: Privacy Policy - OpenXC
 ---
 
-Privacy Policy
-========
+<div class="page-header">
+    <h1>Privacy Policy</h1>
+</div>
 
-OpenXCplatform.com Privacy Statement
+openxcplatform.com Privacy Statement
 
 ### 1. General Statement:
 
@@ -22,37 +23,37 @@ terms of this privacy statement.
 
 ### 2. Information About Our Organization and Website:
 
-This Privacy Statement applies to OpenXCplatform.com. OpenXCplatform.com is
+This Privacy Statement applies to openxcplatform.com. openxcplatform.com is
 owned by Ford Motor Company, Suite 225, 400 Hamilton Ave., Palo Alto, CA 94301.
 
 The business purpose of this website is to provide developers reference
-materials and documentation, and the ability to download source code and to
-apply for access to proprietary vehicle components.
+materials and documentation, and the ability to download source code and the
+ability to contribute to the project.
 
 ### 3. Personally Identifiable Information We Collect From You:
 
-When you visit OpenXCplatform.com we will not collect any personal information
+When you visit openxcplatform.com we will not collect any personal information
 about you unless you provide it to us voluntarily. Personal data includes
 information that is particular to you such as name, street address, telephone
 number, and email address. If you opt not to provide us with personal
 information you can still access our website, however you will be unable to
-apply for access to the Ford OpenXC proprietary interface.
+contribute to the project.
 
 Our primary goal in collecting personal information from you when you visit
-OpenXCplatform.com is to provide you the functionality and services that you
+openxcplatform.com is to provide you the functionality and services that you
 need to have a meaningful and customized experience while using the site
 features.
 
-When you apply for access to the Ford OpenXC proprietary interface, you are also
-interacting with the Adobe’s EchoSign website and are also subject to Adobe’s
-and the Adobe EchoSign privacy policies. We encourage you to review Adobe’s
+When you apply to contribute to the open source project, you are also
+interacting with the Adobe's EchoSign website and are also subject to Adobe's
+and the Adobe EchoSign privacy policies. We encourage you to review Adobe's
 privacy policies.
 
 ### 4. How We Use the Personally Identifiable Information We Collect:
 
-Personally identifiable information collected on OpenXCplatform.com may be used:
+Personally identifiable information collected on openxcplatform.com may be used:
 
-* Fulfill a site user request to access the Ford OpenXC proprietary interface
+* Fulfill a site user request to contribute to the open source project
 * Respond to your comments or requests for information
 * Meet a request for or to develop new products or services
 * Make the user experience more customer friendly
@@ -67,7 +68,7 @@ Personally identifiable information collected on OpenXCplatform.com may be used:
 
 ### 5. Other (Non-Personally Identifiable) Information We Collect From Site Visitors:
 
-OpenXCplatform.com collects other information, non-personally identifiable
+openxcplatform.com collects other information, non-personally identifiable
 information from site visitors. This means that we do not track these items on
 an individual basis that identifies the site visitor, but rather gather and
 collect this information on an aggregate [or anonymous] basis that includes all
@@ -76,7 +77,7 @@ are visited or the amount of time spent on our site.
 
 If you visit a related mobile site, we collect additional non-personal
 information which may include the type/model of the mobile device viewing the
-site and the mobile device’s service provider.
+site and the mobile device's service provider.
 
 Our primary goal in collecting aggregate information from you is to be able to
 perform site metrics that allow us to improve the functionality of the website.
@@ -93,7 +94,7 @@ in Section 7 - Methods to Collect Information.
 
 ### 6. How We Use the Aggregate or Non-Personally Identifiable Information We Collect:
 
-Non-Personally identifiable information collected on OpenXCplatform.com may be
+Non-Personally identifiable information collected on openxcplatform.com may be
 used to:
 
 * Compile aggregate and statistical data to help in website design and to
@@ -102,13 +103,13 @@ used to:
     and needs
 * Make the user experience more customer friendly
 
-OpenXCplatform.com utilizes non-personal data for the purpose of performing
-analytics on the user’s experience while visiting this site. This analysis:
+openxcplatform.com utilizes non-personal data for the purpose of performing
+analytics on the user's experience while visiting this site. This analysis:
 
 * Is performed on an aggregate level and does not identify you or your
     information personally
 * May involve the use of a third-party vendor acting on behalf of
-    OpenXCplatform.com
+    openxcplatform.com
 * Is performed in order to improve our website and the user experience
 * May include the use of session and/or persistent cookies to track user
     movement across this and other Ford Motor Company websites or to track other
@@ -126,11 +127,11 @@ having to log in every time you come back to one of our websites. They also
 allow us to tailor a website or advertisement to better match your interests and
 preferences. There are a couple different types of cookies.
 
-A "session" cookie is stored only in your computer’s working memory (RAM) and
-only lasts for your browsing session. When you close all your browser’s windows,
+A "session" cookie is stored only in your computer's working memory (RAM) and
+only lasts for your browsing session. When you close all your browser's windows,
 or when you shut down your computer, the session cookie disappears forever.
 
-A "persistent" cookie is stored on your computer’s hard drive until a specified
+A "persistent" cookie is stored on your computer's hard drive until a specified
 date, which could be tomorrow, next week, or 10 years from now. Persistent
 cookies stay on your computer until either a) they expire, b) they are
 overwritten with newer cookies, or c) you manually remove them. Most browsers
@@ -141,11 +142,11 @@ This site may use third-party click tracking analytics tools (such as DART,
 Omniture tags, DoubleClick, Efficient Frontier, and Google Analytics) to capture
 clickthrough statistics.
 
-OpenXCplatform.com may use spotlight ads/web beacons/GIF/pixel tags which are
+openxcplatform.com may use spotlight ads/web beacons/GIF/pixel tags which are
 site instrumentation tools that help us to determine, for instance, whether a
 page has been viewed or not and, if so, how many times. Emails or electronic
 newsletters we send may use tools (e.g., pixel tags or web beacons) to gather
-email metrics and information to improve the reader’s experience such as how
+email metrics and information to improve the reader's experience such as how
 many of the emails are opened, if they were printed or forwarded, the type of
 device (e.g., mobile or PC) from which they were opened, and the city, state,
 and county associated with the applicable IP address. In general, any electronic
@@ -154,14 +155,14 @@ beacon. When you visit our website the server housing the pages automatically
 generates a "session log."  We use session logs to help us determine how people
 travel through our site. In this way, we can structure our pages so that the
 information most frequently visited is easier to find. By tracking page visits,
-we can also determine if the information we’re providing is being used. The only
+we can also determine if the information we're providing is being used. The only
 data gathered is the Internet Protocol (IP) address from which you came (which
 contains no personal information), the website that referred you, the pages you
 visited and the date and time of those visits
 
 ### 8. Sharing Your Information:
 
-OpenXCplatform.com does not share, sell, or rent personally identifiable
+openxcplatform.com does not share, sell, or rent personally identifiable
 information with independent companies for their own use without providing you a
 choice.
 
@@ -178,17 +179,17 @@ of companies" is the group of companies related to us by common control or
 ownership. We share information within this "family" as a normal part of
 conducting business and offering products and services to our customers.
 
-Vendors, contractors or partners of OpenXCplatform.com who have access to your
+Vendors, contractors or partners of openxcplatform.com who have access to your
 personal information in connection with providing services for
-OpenXCplatform.com are required to keep the information confidential and are not
+openxcplatform.com are required to keep the information confidential and are not
 permitted to use this information for any other purpose than to carry out the
-services they are performing for OpenXCplatform.com.
+services they are performing for openxcplatform.com.
 
-Site metrics for OpenXCplatform.com may be shared with other Ford Motor Company
+Site metrics for openxcplatform.com may be shared with other Ford Motor Company
 websites or subsidiaries or affiliates. The information shared will be aggregate
 data and will not include any of your personally identifiable information.
 
-OpenXCplatform.com will disclose your personal information, without notice, if
+openxcplatform.com will disclose your personal information, without notice, if
 (1) in the good faith belief that such action is necessary to: (a) conform to
 the edicts of the law or comply with legal process served on Ford Motor Company,
 its affiliates or the site; (b) protect and defend the rights or property of
@@ -211,11 +212,11 @@ Ford Motor Company
 400 Hamilton Ave, Suite 225
 Palo Alto, CA 94301
 
-so that we may be able to process your changes. OpenXCplatform.com will use
+so that we may be able to process your changes. openxcplatform.com will use
 reasonable efforts to correct any factual inaccuracies in your information.
 
 The scope of access available for this request is for information stored in the
-database that holds the data for OpenXCplatform.com. Any personal information
+database that holds the data for openxcplatform.com. Any personal information
 that has been collected from you on other Company websites will not be
 accessible or changeable through the processing of this request.
 
@@ -225,19 +226,19 @@ Safeguarding information of visitors to our website is important to us. We use
 systems, policies and procedures to maintain accuracy of information and to
 protect information from loss, misuse or alteration.
 
-When you send personal information, such as email address or telephone numbers, to OpenXCplatform.com we use "Secure Socket Layers" or SSL to protect your data. SSL is encryption technology that helps safeguard your personal information against misuse by unauthorized individuals.
+When you send personal information, such as email address or telephone numbers, to openxcplatform.com we use "Secure Socket Layers" or SSL to protect your data. SSL is encryption technology that helps safeguard your personal information against misuse by unauthorized individuals.
 
-Vendors, contractors or partners of OpenXCplatform.com who have access to your personal information in connection with providing services for OpenXCplatform.com are required to keep the information confidential.
+Vendors, contractors or partners of openxcplatform.com who have access to your personal information in connection with providing services for openxcplatform.com are required to keep the information confidential.
 
 Vendors are not permitted to use this information for any other purpose than to
-carry out the services they are performing for OpenXCplatform.com.
+carry out the services they are performing for openxcplatform.com.
 
 ### 11. Processing of Personal Data:
 
 By visiting this site and by providing your personally identifiable information
 to us, you understand and consent to the collection, use, processing, transfer,
 and disclosure of your personally identifiable and non-personally identifiable
-information globally --- including to the United States – in accordance with
+information globally - including to the United States - in accordance with
 this Privacy Statement. Therefore, by visiting this site and by providing such
 information, you consent to the transfer of such information across country
 borders, and to the use, processing, and disclosure of such information in
@@ -248,27 +249,27 @@ than in your own country.
 
 ### 12. Links to Other Sites:
 
-OpenXCplatform.com provides links to other websites. We encourage you to review
+openxcplatform.com provides links to other websites. We encourage you to review
 the privacy statements of all sites that you visit, including those whose links
 are provided so that you can understand how those sites collect, use and share
-your information. OpenXCplatform.com is not responsible for the privacy
+your information. openxcplatform.com is not responsible for the privacy
 statements, content or data handling practices on other websites.
 
-### 13. Children’s Privacy:
+### 13. Children's Privacy:
 
-OpenXCplatform.com does not knowingly intend to collect personal information
+openxcplatform.com does not knowingly intend to collect personal information
 from children under 13 years of age.
 
 If a child has provided us with personal information a parent or guardian of
 that child may contact us at openxc@ford.com if they want this information
 deleted from our records. We will then make reasonable efforts to delete the
-child’s information from the database that stores information for
-OpenXCplatform.com.
+child's information from the database that stores information for
+openxcplatform.com.
 
 ### 14. Contacting Us:
 
 If you have any questions, comments or concerns about this online privacy
-statement for OpenXCplatform.com, OpenXCplatform.com privacy practices, or have
+statement for openxcplatform.com, openxcplatform.com privacy practices, or have
 any questions regarding the contents of this website please contact us at
 
 **E-mail**
@@ -281,16 +282,21 @@ Ford Motor Company
 Palo Alto, CA 94301
 </address>
 
-OpenXCplatform.com is committed to working with consumers to obtain a fair and
+openxcplatform.com is committed to working with consumers to obtain a fair and
 rapid resolution of any complaints or disputes about privacy and the handling of
-your data. OpenXCplatform.com will be happy to respond to your questions and
+your data. openxcplatform.com will be happy to respond to your questions and
 comments.
 
 ### 15. Privacy Statement Effective Date and Revision Days:
 
-Occasionally we may update the privacy statement for OpenXCplatform.com in order
+Occasionally we may update the privacy statement for openxcplatform.com in order
 to reflect any changes to the website or our privacy practices. If we update
 this statement, the new statement will be posted to the website ten (10) days
 prior to the changes taking effect.
 
 The effective date of this privacy statement is September 10th, 2012.
+
+## Your California Privacy Rights
+
+<script type="text/javascript" src="http://www.ford.com/go/privacy/include.js"></script>
+<noscript>View <a href=" http://www.ford.com/help/privacy/california/">Your California Privacy Rights</a>.</noscript>

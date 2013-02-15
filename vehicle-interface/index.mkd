@@ -161,23 +161,19 @@ off. The cable only fits one way into the vehicle's port, like a USB cable.
 <h3>Bluetooth</h3>
 </div>
 
-The CAN translator software now has experimental support for sending data over a
-serial (UART) connection instead of USB. If you add a Bluetooth adapter that
-uses the Serial Port Profile to your CAN translator, you can
-connect a tablet (or even a phone!) to your car wirelessly. The Android
-library also has experimental support for communicating with a Bluetooth vehicle
-interface.
+The CAN translator firmware supports for sending data over a serial (UART)
+connection instead of USB. If you add a Bluetooth adapter that uses the Serial
+Port Profile to your CAN translator, you can connect a tablet (or even a phone!)
+to your car wirelessly. The Android library also has support for communicating
+with a Bluetooth vehicle interface.
 
-The CAN translator firmware must be compiled with the UART=1 flag for this
-feature to work.
+The CAN translator firmware must be compiled with the `UART=1` flag for this
+feature to work. Manufacturers may choose to distribute pre-compiled binaries
+with this option enabled, too.
 
-![Bluetooth adapter](/images/bluetooth-translator.jpg)
-
-We're using the [RN-42](https://www.sparkfun.com/products/10269) bluetooth
-adapter with the SPP (Serial Port Profile) configuration. Set the baudrate on
-the RN-42 to `460800`. Hardware flow control is enabled (and required to hit these
-really high baud rates), so make sure to connect the `RTS` and `CTS` lines in
-addition to RX/TX.
+See the [CAN translator
+documentation](http://openxcplatform.com/cantranslator/output/uart.html) for
+more details on adding Bluetooth.
 
 **Bluetooth Parts List**
 
@@ -185,9 +181,6 @@ addition to RX/TX.
 * 6 pin length of male to male header pins (right-angle works well)
 * 6 additional female  and male crimp housins and pins *or* a
   [pre-crimped assortment](http://www.pololu.com/catalog/product/1807).
-
-*(and yes, we live dangerously and made all of our wires the same color - not
-the recommended approach!)*
 
 <div class="page-header">
 <h2>Concepts</h2>
@@ -231,7 +224,7 @@ developers access to the data contained within. Even for engineers inside the
 companies, dealing with a standard data format across many vehicles is often
 preferable to keeping track of a database of CAN message and signal definitions.
 
-**On-Board Diagnostics**
+<a name="obd" href="#obd"><strong>On-Board Diagnostic</strong></a>
 
 The CAN bus is one of the primary components of [OBD-II][obd2], a vehicle
 diagnostic standard mandatory for all cars sold in the United States since 1996.
