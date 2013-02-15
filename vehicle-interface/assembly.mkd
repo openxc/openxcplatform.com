@@ -222,8 +222,7 @@ There are many potential enclosures that will be adequate for this device.
 <div class="well">
     <img src="/images/assembly/openxc-assembly-11.jpg"/>
     <legend>Clipping off the existing raised screw sockets.</legend>
-</div>
-<div>
+
     <img src="/images/assembly/openxc-assembly-12.jpg"/>
     <legend>The empty enclosure with new mounting holes drilled.</legend>
 </div>
@@ -241,8 +240,7 @@ There are many potential enclosures that will be adequate for this device.
 <div class="well">
     <img src="/images/assembly/openxc-assembly-14.jpg" />
     <legend>chipKIT rear with mounting screws</legend>
-</div>
-<div class="well">
+
     <img src="/images/assembly/openxc-assembly-15.jpg" />
     <legend>chipKIT front with mounting screws</legend>
 </div>
@@ -277,8 +275,7 @@ There are many potential enclosures that will be adequate for this device.
 <div class="well">
     <img src="/images/assembly/openxc-assembly-20.jpg" />
     <legend>Install the OBD-II cable with the wires closer to the board's center.</legend>
-</div>
-<div class="well">
+
     <img src="/images/assembly/openxc-assembly-18.jpg" />
     <legend>Front plate and cable grommet installation.</legend>
 </div>
@@ -291,7 +288,7 @@ There are many potential enclosures that will be adequate for this device.
     <legend>Connect the power jumper from pin 1 of JP4 to 5vo.</legend>
 </div>
 
-ow is the time to add the SparkFun BlueSMiRF module if you want Bluetooth
+Now is the time to add the SparkFun BlueSMiRF module if you want Bluetooth
 support.
 
 * Solder the 6-pin header strip to the BlueSMiRF breakout board.
@@ -299,7 +296,7 @@ support.
   female crimp housing on the other. You may want to wrap the crimp housings in
   shrink tubing to avoid shorts.
 * Attach the 6 wires to the BlueSMiRF board, and the other ends to the Network
-  Sheild like this:
+  Shield like this:
     * chipKIT Pin 0 - Connect to TX on RN-42
     * chipKIT Pin 1 - Connect to RX on RN-42
     * chipKIT Pin 18 - Connect to CTS on RN-42
@@ -320,6 +317,18 @@ Continuing on with final assembly:
     <legend>The completed CAN translator!</legend>
 </div>
 
+<div class="page-header">
+    <h2>Additional Notes</h2>
+</div>
+
+The Vehicle Interface can be powered from the vehicle 12V power lines as seen below 
+and detailed in the docs [here][12V connection doc].
+
+<div class="well">
+    <img src="/images/assembly/openxc-assembly-12Vconnection.jpg" />
+    <legend>Powering the Vehicle Interface from the vehicle.</legend>
+</div>
+
 If you have any problems with the assembly instructions, please ask for help in
 the [Google Group](http://groups.google.com/group/openxc).
 
@@ -331,6 +340,7 @@ Once you've constructed a CAN translator, you should familiarize yourself with
 the [output format][], load a [firmware][] and then [test it in a
 vehicle][testing].
 
+[12V connection doc]: http://openxcplatform.com/cantranslator/
 [max32]: http://digilentinc.com/Products/Detail.cfm?NavPath=2,892,894&Prod=CHIPKIT-MAX32
 [networkshield]: http://digilentinc.com/Products/Detail.cfm?NavPath=2,892,942&Prod=CHIPKIT-NETWORK-SHIELD
 [obd2]: http://www.obd2cables.com/products/obd-cables/j1962m-ra-to/cable-j1962m-ra-type-b-to-open-end-6ft.html
