@@ -47,11 +47,15 @@ to the wire insulation for strain relief.
     <legend>Position the wire on the pin to get electrical connectivity as well as strain relief.</legend>
 </div>
 
-Trim the red (battery voltage) and brown (signal ground) wires down to the
-insulator but leave them long. These should be saved for future use.
+These instructions describe how to make a 3 bus cable.  You can potentially save yourself some time 
+by omitting one bus.  All vehicles use the High Speed bus.  The 2012 Focus makes 
+use of the Infotainment bus and does not use the Mid Speed bus.  If you intend to use this
+cable only with a 2012 Focus, you may omit the Mid Speed bus.  All other vehicles make use 
+of the Mid Speed bus and do not use the Infotainment bus.  If you do not plan to use your cable 
+in a 2012 Focus, you may omit the Infotainment bus connector.
 
-Trim all of the other uncrimped wires down to the main cable insulation - we
-won't be needing these.
+Before you trim any wires, verify that your cable uses standard wiring colors.  Using a multimeter, 
+verify that the wires you need connect to the proper pins.
 
 <div class="well">
 <div class="row">
@@ -107,13 +111,20 @@ won't be needing these.
 </div>
 </div>
 
-When all pins are attached, test that you found the right colors by verifying
-the connection with a multimeter.
+When all pins are attached, verify that you have good electrical conductivity 
+with the intended pin.
 
 <div class="well">
     <img src="/images/assembly/openxc-assembly-2.jpg" />
     <legend>Testing crimped OBD-II pins</legend>
 </div>
+
+After connecting and testing the crimp pins, trim the red (battery voltage) and brown (signal ground) 
+wires down to the insulation but leave them long. These should be saved for future use. Do 
+the same for any unused bus wires.
+
+Trim all of the other uncrimped wires down to the main cable insulation - we
+won't be needing them.
 
 <div class="page-header">
     <h3>Crimp Housings</h3>
@@ -121,11 +132,16 @@ the connection with a multimeter.
 
 1. Connect each of the HS, MS and INFO pairs of wires (see the table above) to
    one crimp pin housing each. There should be three crimp housings with two
-   wires connected to each - the + in pin 1 and - in pin 3.
-2. Print out or make small labels for HS, MS, INFO, and three "-+".
+   wires connected to each. The + in pin 1 or 2, and - in pin 3 or 4.
+2. Optionally, print out or make small labels for HS, MS, INFO, and three "-+".
 3. Put the coordinating bus label on the crimp housing according to the table.
 4. On the other side of the crimp housing, place a "-+" label so it lines up
    with the order of the wires.
+
+<div class="well">
+    <img src="/images/assembly/NetShieldSch.png" />
+    <legend>Excerpt of the chipKIT Network Shield Schematic: CAN transceiver connections</legend>
+</div>
 
 <div class="well">
     <img src="/images/assembly/openxc-assembly-4.jpg" />
@@ -140,7 +156,8 @@ the connection with a multimeter.
 Slide the shrink tubing and center it on the end of the insulation.  Bend the
 extra wires and tuck them between the shrink tubing and main cable insulation.
 Leave the loop accessible to allow us to pull them free in the future.  With a
-heat gun, shrink the tubing.
+heat gun, lighter, or candle, shrink the tubing.  If you don't have shrink tubing, 
+fasten the extra wires to the main cable with electrical tape.
 
 <div class="well">
     <img src="/images/assembly/openxc-assembly-6.jpg" />
@@ -259,9 +276,10 @@ There are many potential enclosures that will be adequate for this device.
     <h2>Final Assembly</h2>
 </div>
 
-* Connect the OBD-II cable crimp housings to the Network Shield. For most
-  vehicles the HS plug should go to CAN1 and the MS
-  plug should go to CAN2. Make sure the + on your connector lines up with the CANH
+* Connect the OBD-II cable crimp housings to the Network Shield. Connect the HS bus to 
+  CAN1.  For most vehicles the MS plug should go to CAN2. For use with a 2012 Focus, 
+  the Infotainment bus should be connected to CAN2 and the MS bus should remain 
+  disconnected. Make sure the + on your connector lines up with the CANH
   printed on the board - it should be the end closest to the center of the
   network shield.
 * Optionally, label the socket and connector indicating the proper plug
