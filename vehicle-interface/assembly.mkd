@@ -10,8 +10,8 @@ title: Vehicle Interface Assembly - OpenXC
 <div class="pull-right well">
     <ul class="nav nav-list">
         <li class="nav-header">Next Step</li>
-        <li><a href="/vehicle-interface/output-format.html">
-            Familiarize yourself with the output format <i class="icon-arrow-right"></i>
+        <li><a href="/vehicle-interface/testing.html">
+            Test the vehicle interface <i class="icon-arrow-right"></i>
         </a></li>
     </p>
 </div>
