@@ -66,76 +66,146 @@ selected a small set of the most interesting signals to get started.
     reliability of any of these pieces of data, and provide no warranty as such.
 </div>
 
+<div class="alert alert-info">
+    <strong>Ford specific frequencies:</strong> The frequencies listed here are
+    for the Ford pre-compiled binary firmware. Some frequencies are given as a
+    range because the rate has been slowed down a bit in the firmware so Android
+    devices or data loggers aren't overwhelmed. If you have a use for the
+    maximum frequency mentioned, post in the <a
+    href="http://groups.google.com/group/openxc">Google Group</a> and we can
+    update the binaries or release a "high speed" version.
+</div>
+
 <dl>
     <dt>steering_wheel_angle</dt>
-    <dd>-600 to +600 degrees</dd>
+    <dd>
+        -600 to +600 degrees
+        <p><strong>Ford frequency:</strong> 6Hz (max 90Hz)</p>
+    </dd>
 
     <dt>torque_at_transmission</dt>
-    <dd>-500 to 1500 Nm</dd>
+    <dd>
+        -500 to 1500 Nm
+        <p><strong>Ford frequency:</strong> 60Hz</p>
+    </dd>
 
     <dt>engine_speed<dt>
-    <dd>0 to 16382 RPM</dd>
+    <dd>
+        0 to 16382 RPM
+        <p><strong>Ford frequency:</strong> 4Hz (max 60Hz)</p>
+    </dd>
 
     <dt>vehicle_speed</dt>
     <dd>0 to 655 km/h (this will be positive even if going in reverse as it's
         not a velocity, although you can use the gear status to figure out
-        direction)</dd>
+        direction)
+
+        <p><strong>Ford frequency:</strong> 4Hz (max 60Hz)</p>
+    </dd>
 
     <dt>accelerator_pedal_position</dt>
-    <dd>0 to 100%</dd>
+    <dd>
+       0 to 100%
+        <p><strong>Ford frequency:</strong> 60Hz</p>
+    </dd>
 
     <dt>parking_brake_status</dt>
-    <dd>Boolean (true == brake engaged)</dd>
+    <dd>
+        Boolean (true == brake engaged)
+        <p><strong>Ford frequency:</strong> Sent only if value changes</p>
+    </dd>
 
     <dt>brake_pedal_status</dt>
-    <dd>Boolean (True == pedal pressed)</dd>
+    <dd>
+        Boolean (True == pedal pressed)
+        <p><strong>Ford frequency:</strong> Sent only if value changes</p>
+    </dd>
 
     <dt>transmission_gear_position</dt>
-    <dd>States: first, second, third, fourth, fifth, sixth, seventh, eighth,
-            reverse, neutral</dd>
+    <dd>
+        States: first, second, third, fourth, fifth, sixth, seventh, eighth,
+            reverse, neutral
+        <p><strong>Ford frequency:</strong> Sent only if value changes</p>
+    </dd>
 
     <dt>odometer</dt>
-    <dd>0 to 16777214 km</dd>
+    <dd>
+        0 to 16777214 km
+        <p><strong>Ford frequency:</strong> 10Hz</p>
+    </dd>
 
     <dt>fine_odometer_since_restart</dt>
-    <dd>0 to 4294967295.0 km (this has a much higher resolution than the
+    <dd>
+        0 to 4294967295.0 km (this has a much higher resolution than the
         odometer, but it restarts back to zero every time the vehicle
-        starts like a trip meter)</dd>
+        starts like a trip meter)
+        <p><strong>Ford frequency:</strong> 10Hz</p>
+    </dd>
 
     <dt>ignition_status</dt>
-    <dd>States: off, accessory, run, start</dd>
+    <dd>
+        States: off, accessory, run, start
+        <p><strong>Ford frequency:</strong> Sent only if value changes</p>
+    </dd>
 
     <dt>fuel_level</dt>
-    <dd>0 - 100%</dd>
+    <dd>
+        0 - 100%
+        <p><strong>Ford frequency:</strong> 48Hz</p>
+    </dd>
 
     <dt>fuel_consumed_since_restart</dt>
-    <dd>0 - 4294967295.0 L (this goes to 0 every time the vehicle restarts, like
-        a trip meter)</dd>
+    <dd>
+        0 - 4294967295.0 L (this goes to 0 every time the vehicle restarts, like
+        a trip meter)
+        <p><strong>Ford frequency:</strong> 10Hz</p>
+    </dd>
 
     <dt>door_status</dt>
-    <dd>Value is State: driver, passenger, rear_left, rear_right.
-        Event is Boolean: true == ajar</dd>
+    <dd>
+        Value is State: driver, passenger, rear_left, rear_right.
+        Event is Boolean: true == ajar
+        <p><strong>Ford frequency:</strong> Sent only if value changes</p>
+    </dd>
 
     <dt>headlamp_status</dt>
-    <dd>Boolean, true is on</dd>
+    <dd>
+        Boolean, true is on
+        <p><strong>Ford frequency:</strong> Sent only if value changes</p>
+    </dd>
 
     <dt>high_beam_status</dt>
-    <dd>Boolean, true is on</dd>
+    <dd>
+        Boolean, true is on
+        <p><strong>Ford frequency:</strong> Sent only if value changes</p>
+    </dd>
 
     <dt>windshield_wiper_status</dt>
-    <dd>Boolean, true is on</dd>
+    <dd>
+        Boolean, true is on
+        <p><strong>Ford frequency:</strong> Sent only if value changes</p>
+    </dd>
 
     <dt>latitude</dt>
-    <dd>-89.0 to 89.0 degrees</dd>
+    <dd>
+        -89.0 to 89.0 degrees
+        <p><strong>Ford frequency:</strong> 1Hz</p>
+    </dd>
 
     <dt>longitude</dt>
-    <dd>-179.0 to 179.0 degrees</dd>
+    <dd>
+        -179.0 to 179.0 degrees
+        <p><strong>Ford frequency:</strong> 1Hz</p>
+    </dd>
 
     <dt>button_event</dt>
-    <dd>Value is State: left, right, up, down, ok.<br/>
+    <dd>
+        Value is State: left, right, up, down, ok.<br/>
         Event is State: idle, pressed, released, held_short, held_long, stuck<br/>
         (The buttons this message refer to are highly dependent on the specific
-        vehicle, but if it's supported, try the steering wheel buttons.) </dd>
+        vehicle, but if it's supported, try the steering wheel buttons.)
+        <p><strong>Ford frequency:</strong> Sent only if value changes</p>
+    </dd>
 </dl>
 
 <div class="page-header">
