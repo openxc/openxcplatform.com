@@ -47,7 +47,7 @@ documentation](http://openxcplatform.com/cantranslator/installation/installation
 You're now ready to [test your CAN translator in a vehicle][testing].
 
 [winavr]: http://winavr.sourceforge.net/
-[upload_hex.sh]: https://github.com/openxc/cantranslator/blob/master/upload_hex.sh
+[upload_hex.sh]: https://github.com/openxc/cantranslator/blob/master/script/upload_hex.sh 
 [cantranslator]: https://github.com/openxc/cantranslator
 [MPIDE]: https://github.com/chipKIT32/chipKIT32-MAX/downloads
 [testing]: /vehicle-interface/testing.html
