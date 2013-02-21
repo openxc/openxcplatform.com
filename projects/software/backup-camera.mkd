@@ -10,7 +10,8 @@ title: Reverse Backup Camera
 **GitHub Repository:** [github.com/openxc/backup-camera][github-repo]
 
 This application, FordBackupCam, seeks to mimic the functionality of the built
-in Ford backup camera systems. The built-in systems serve as an aid to the
+in Ford backup camera systems. Charles Reitz developed the first version of 
+this app as a summer intern at Ford in 2012. The built-in systems serve as an aid to the
 driver by allowing him/her to see any obstacles that may be behind the vehicle
 in order to avoid a collision. This application provides an alternative to the
 built in camera systems by combining and OpenXC enabled Android app with a [USB

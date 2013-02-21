@@ -28,6 +28,5 @@ extend your vehicle with new hardware.
 
 * [Retro Gauge](/projects/hardware/retro-gauge.html)
 * [Bluetooth HUD](/projects/hardware/bluetooth-hud.html)
-* [Backup Camera](/projects/hardware/backup-camera.html)
 
 [openxc.github.com]: https://github.com/openxc/openxc.github.com
