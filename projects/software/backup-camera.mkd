@@ -7,11 +7,11 @@ title: Backup Camera
     <h1>Backup Camera - OpenXC App Example</h1>
 </div>
 
-![Backup Camera Icon](/images/screenshots/backup_cam_icon.png)**GitHub Repository:** [github.com/openxc/backup-camera](https://github.com/openxc/backup-camera)
+**GitHub Repository:** [github.com/openxc/backup-camera](https://github.com/openxc/backup-camera)
 
 This application, FordBackupCam, seeks to mimic the functionality of the built in Ford backup
 camera systems. The built-in systems serve as an aid to the driver by allowing
-him/her to see any obstacles that may be behind the vehicle in order to avoid a 
+him/her to see any obstacles that may be behind the vehicle in order to avoid a
 collision. This application provides an alternative to
 the built in camera systems by combining and OpenXC enabled Android app with a
 [USB webcam][].
@@ -20,7 +20,7 @@ the built in camera systems by combining and OpenXC enabled Android app with a
 
 **Safety Note:** FordBackupCam is intended to be used with a display device that has a fixed location,
 preferably permanently, in the vehicle. For example, mounted on the dash.
-Disclaimer: Never mount anything on the dash such that the driver's view is impeded. 
+Disclaimer: Never mount anything on the dash such that the driver's view is impeded.
 As this application serves to increase the level of safety, the
 tablet should never be mounted in such a way that safety is sacrificed.
 
@@ -34,8 +34,8 @@ tablet should never be mounted in such a way that safety is sacrificed.
 4. Ford Vehicle (list of supported vehicles can be found [here](/vehicle-interface/index.html))
 5. USB Hub (see note below)
 
-FordBackupCam requires a connection from the Android device to a Vehicle Interface 
-(installation instructions [here](/vehicle-interface/index.html)). As both the webcam 
+FordBackupCam requires a connection from the Android device to a Vehicle Interface
+(installation instructions [here](/vehicle-interface/index.html)). As both the webcam
 and the Vehicle Interface require a full-sized USB connection, a USB hub is required to connect both the CAN
 Translator and the USB webcam to the Android device. However, the Vehicle Interface can
 be connected via bluetooth in which case you don't need a USB hub as only 1 USB device will be plugged in.
@@ -45,19 +45,19 @@ be connected via bluetooth in which case you don't need a USB hub as only 1 USB 
 </div>
 
 Through the use of the Vehicle Interface, FordBackupCam continually reads real-time
-vehicle data. The app monitors two pieces of data: 
+vehicle data. The app monitors two pieces of data:
 
-* `transmission_gear_position` 
+* `transmission_gear_position`
 * `steering_wheel_angle`
 
 ### Reverse Input
 
-Once initially launched and then minimized, the app will automatically respond 
-when the vehicle is put into `reverse`. Once the vehicle is in `reverse` the 
-application will launch and show the video feed from the attached 
-USB camera. If installed correctly, the user will see what is behind the vehicle. 
+Once initially launched and then minimized, the app will automatically respond
+when the vehicle is put into `reverse`. Once the vehicle is in `reverse` the
+application will launch and show the video feed from the attached
+USB camera. If installed correctly, the user will see what is behind the vehicle.
 In order to simplify the user-experience, the application mirrors the camera feed such that an object on the right side
-behind the vehicle will appear on the right side of the tablets screen, just like 
+behind the vehicle will appear on the right side of the tablets screen, just like
 a rear-view mirror. Color coded guidlines are overlayed on top of the video feed
 to provide a distance reference for the driver.
 
@@ -68,7 +68,7 @@ launched.
 ### Steering Wheel Angle Input
 
 When the driver turns the steering wheel, the
-car will obviously not continue along the straight guiding-lines overlayed on the 
+car will obviously not continue along the straight guiding-lines overlayed on the
 video feed. When
 the driver backs up with the wheel turned left, the vehicle will turn backwards and to
 the left accordingly so new guiding lines will appear on the screen in
@@ -111,7 +111,7 @@ FordBackupCam is now ready to be used!
     <h2>Android Details</h2>
 </div>
 
-Below is a list of the four main classes with a brief description. For a 
+Below is a list of the four main classes with a brief description. For a
 more in-depth explanation please see the project [README].
 
 ### BackupCameraActivity
@@ -123,7 +123,7 @@ It contains two receivers:
 * Receiver that listens for a closing intent from the VehicleMonitoringService.
 
 Includes a method that monitors whether the activity is active or not,
-called isRunning(). 
+called isRunning().
 
 ### BootupReceiver
 
