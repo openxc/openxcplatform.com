@@ -1,15 +1,15 @@
 ---
 layout: default
-title: Reverse Backup Camera
+title: Rearview Camera
 ---
 
 <div class="page-header">
-    <h1>Reverse Backup Camera</h1>
+    <h1>Rearview Camera</h1>
 </div>
 
-**GitHub Repository:** [github.com/openxc/backup-camera][github-repo]
+**GitHub Repository:** [github.com/openxc/rearview-camera][github-repo]
 
-The Reverse Backup Camera is an Android app that uses OpenXC and a standard USB
+The Rearview Camera is an Android app that uses OpenXC and a standard USB
 webcam to add a rear-facing camera to a car that didn't come equipped with one
 from the factory. Charles Reitz developed the first version of
 this app as a summer intern at Ford in 2012.
@@ -24,12 +24,12 @@ devices, you can make an aftermarket system relatively inexpensively.
 
 **Disclaimer** This application is intended to be used with a display device
 that has a fixed, preferably permanent location in the vehicle. For example,
-mounted on the dash. Never mount anything on the dash such that the
-driver's view is impeded. While the backup camera application may help increase
+mounted on the dash. Never mount anything on the dash such that the driver's
+view is impeded. While the rearview camera application may help increase
 visibility, the OpenXC platform does not make any claims of a safety benefit.
 This application is inteded as a proof-of-concept.
 
-![Backup Camera Sequence](/images/screenshots/backup_cam_sequence.gif)
+![Rearview Camera Sequence](/projects/software/images/rearview_sequence.gif)
 
 <div class="page-header">
     <h2>Hardware Components</h2>
@@ -45,4 +45,4 @@ This application is inteded as a proof-of-concept.
 1. USB Hub (see note below)
 
 [USB webcam]: http://www.logitech.com/en-us/product/webcam-C110?crid=34
-[github-repo]: https://github.com/openxc/backup-camera
+[github-repo]: https://github.com/openxc/rearview-camera
