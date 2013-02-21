@@ -146,7 +146,7 @@ thus overlaying it on top of the video feed.
 The last bitmap that is drawn to the canvas is one that contains the
 dynamic lines. As previously discussed, the dynamic lines bend and change
 opacity based on the angle of the steering wheel. The angle of the
-steering wheel is accessed through the VehicleMonitoringService (see #4..
+steering wheel is accessed through the VehicleMonitoringService.
 
 ### VehicleMonitoringService
 
