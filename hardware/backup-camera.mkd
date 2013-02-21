@@ -9,19 +9,19 @@ title: Backup Camera
 
 ![Backup Camera Icon](/images/screenshots/backup_cam_icon.png)**GitHub Repository:** [github.com/openxc/backup-camera](https://github.com/openxc/backup-camera)
 
-This application, FordBackupCam seeks to mimic the functionality of the built in Ford backup
-camera systems. The built in systems serve as an aid to the driver by allowing
-him/her to see any obstacles that may be behind the vehicle in order to
-circumvent a collisional incident. This application provides an alternative to
+This application, FordBackupCam, seeks to mimic the functionality of the built in Ford backup
+camera systems. The built-in systems serve as an aid to the driver by allowing
+him/her to see any obstacles that may be behind the vehicle in order to avoid a 
+collision. This application provides an alternative to
 the built in camera systems by combining and OpenXC enabled Android app with a
 [USB webcam][].
 
 ![Backup Camera Screenshot](/images/screenshots/backup_cam_1.png)
 
-**Safety Note:** FordBackupCam is intended to be used on a device that has a fixed location,
+**Safety Note:** FordBackupCam is intended to be used with a display device that has a fixed location,
 preferably permanently, in the vehicle. For example, mounted on the dash.
-Disclaimer: Never mount anything on the dash such that the view of the driver is
-impeded. As this application serves to increase the level of safety, the
+Disclaimer: Never mount anything on the dash such that the driver's view is impeded. 
+As this application serves to increase the level of safety, the
 tablet should never be mounted in such a way that safety is sacrificed.
 
 <div class="page-header">
@@ -31,7 +31,7 @@ tablet should never be mounted in such a way that safety is sacrificed.
 1. Android Device (3.2 or later)
 2. [USB Webcam][]
 3. Vehicle Interface with vehicle-specific firmware
-4. Ford Vehicle (list of supported vehicles can be found [here](/vehicle-interface/index.html)
+4. Ford Vehicle (list of supported vehicles can be found [here](/vehicle-interface/index.html))
 5. USB Hub (see note below)
 
 FordBackupCam requires a connection from the Android device to a Vehicle Interface 
@@ -68,8 +68,8 @@ launched.
 ### Steering Wheel Angle Input
 
 When the driver turns the steering wheel, the
-car will obviously not continue along the straight, guiding lines that appear
-over top of the video feed. When
+car will obviously not continue along the straight guiding-lines overlayed on the 
+video feed. When
 the driver backs up with the wheel turned left, the vehicle will turn backwards and to
 the left accordingly so new guiding lines will appear on the screen in
 order to APPROXIMATE the path of the vehicle. The greater the angle of the
