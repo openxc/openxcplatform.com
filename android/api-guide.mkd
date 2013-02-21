@@ -165,7 +165,7 @@ locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, l
 {% endhighlight %}
 
 <div class="page-header">
-    <h2>Concepts</h2>
+    <h2><a href="#concepts" name="concepts">Concepts</a></h2>
 </div>
 
 ![OpenXC Android Library Data Flow](/images/android-library-dataflow.png)

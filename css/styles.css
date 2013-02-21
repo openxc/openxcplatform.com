@@ -31,6 +31,10 @@ code {
     margin-left: 5px;
 }
 
+.picture.well {
+    text-align: center;
+}
+
 .footer-links {
     margin: 10px 0;
 }
