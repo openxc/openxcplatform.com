@@ -17,7 +17,7 @@ as many well documented, functional projects as we can.
 <h2><a href="#software" name="software">Software-based Projects</a></h2>
 </div>
 
-* [Reverse Backup Camera](/projects/software/backup-camera.html)
+* [Rearview Camera](/projects/software/rearview-camera.html)
 
 <div class="page-header">
 <h2><a href="#hardware" name="hardware">Hardware-based Projects</a></h2>
