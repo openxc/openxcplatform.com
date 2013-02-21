@@ -18,5 +18,6 @@ documented, functional projects as we can.
 
 * [Retro Gauge](/hardware/retro-gauge.html)
 * [Bluetooth HUD](/hardware/bluetooth-hud.html)
+* [Backup Camera](/hardware/backup-camera.html)
 
 [openxc.github.com]: https://github.com/openxc/openxc.github.com
