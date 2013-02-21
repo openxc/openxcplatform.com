@@ -1,171 +1,47 @@
 ---
 layout: default
-title: Backup Camera
+title: Reverse Backup Camera
 ---
 
 <div class="page-header">
-    <h1>Backup Camera - OpenXC App Example</h1>
+    <h1>Reverse Backup Camera</h1>
 </div>
 
-**GitHub Repository:** [github.com/openxc/backup-camera](https://github.com/openxc/backup-camera)
+**GitHub Repository:** [github.com/openxc/backup-camera][github-repo]
 
-This application, FordBackupCam, seeks to mimic the functionality of the built in Ford backup
-camera systems. The built-in systems serve as an aid to the driver by allowing
-him/her to see any obstacles that may be behind the vehicle in order to avoid a
-collision. This application provides an alternative to
-the built in camera systems by combining and OpenXC enabled Android app with a
-[USB webcam][].
+This application, FordBackupCam, seeks to mimic the functionality of the built
+in Ford backup camera systems. The built-in systems serve as an aid to the
+driver by allowing him/her to see any obstacles that may be behind the vehicle
+in order to avoid a collision. This application provides an alternative to the
+built in camera systems by combining and OpenXC enabled Android app with a [USB
+webcam][].
 
-![Backup Camera Screenshot](/images/screenshots/backup_cam_1.png)
+**Safety Note:** FordBackupCam is intended to be used with a display device that
+has a fixed location, preferably permanently, in the vehicle. For example,
+mounted on the dash. Disclaimer: Never mount anything on the dash such that the
+driver's view is impeded. As this application serves to increase the level of
+safety, the tablet should never be mounted in such a way that safety is
+sacrificed.
 
-**Safety Note:** FordBackupCam is intended to be used with a display device that has a fixed location,
-preferably permanently, in the vehicle. For example, mounted on the dash.
-Disclaimer: Never mount anything on the dash such that the driver's view is impeded.
-As this application serves to increase the level of safety, the
-tablet should never be mounted in such a way that safety is sacrificed.
+![Backup Camera Sequence](/images/screenshots/backup_cam_sequence.gif)
 
 <div class="page-header">
     <h2>Hardware Components</h2>
 </div>
 
 1. Android Device (3.2 or later)
-2. [USB Webcam][]
-3. Vehicle Interface with vehicle-specific firmware
-4. Ford Vehicle (list of supported vehicles can be found [here](/vehicle-interface/index.html))
-5. USB Hub (see note below)
+1. [USB Webcam][]
+1. Vehicle Interface (VI) with vehicle-specific firmware
+1. OpenXC-supported vehicle (full list of [supported
+   vehicles](/vehicle-interface/index.html))
+1. USB Hub (see note below)
 
-FordBackupCam requires a connection from the Android device to a Vehicle Interface
-(installation instructions [here](/vehicle-interface/index.html)). As both the webcam
-and the Vehicle Interface require a full-sized USB connection, a USB hub is required to connect both the CAN
-Translator and the USB webcam to the Android device. However, the Vehicle Interface can
-be connected via bluetooth in which case you don't need a USB hub as only 1 USB device will be plugged in.
-
-<div class="page-header">
-    <h2>Functionality and Use</h2>
-</div>
-
-Through the use of the Vehicle Interface, FordBackupCam continually reads real-time
-vehicle data. The app monitors two pieces of data:
-
-* `transmission_gear_position`
-* `steering_wheel_angle`
-
-### Reverse Input
-
-Once initially launched and then minimized, the app will automatically respond
-when the vehicle is put into `reverse`. Once the vehicle is in `reverse` the
-application will launch and show the video feed from the attached
-USB camera. If installed correctly, the user will see what is behind the vehicle.
-In order to simplify the user-experience, the application mirrors the camera feed such that an object on the right side
-behind the vehicle will appear on the right side of the tablets screen, just like
-a rear-view mirror. Color coded guidlines are overlayed on top of the video feed
-to provide a distance reference for the driver.
-
-When the vehicle is taken out of reverse, the application will automatically
-close, returning the tablet to its previous screen before FordBackupCam was
-launched.
-
-### Steering Wheel Angle Input
-
-When the driver turns the steering wheel, the
-car will obviously not continue along the straight guiding-lines overlayed on the
-video feed. When
-the driver backs up with the wheel turned left, the vehicle will turn backwards and to
-the left accordingly so new guiding lines will appear on the screen in
-order to APPROXIMATE the path of the vehicle. The greater the angle of the
-steering wheel, the more the vehicle will turn, and thus the new guiding lines
-will shift and angle themselves more. This also works (mirrored, of course) if
-the wheel is turned to the right.
-
-The user's attention should be drawn to the dynamic guiding lines more as the
-magnitude of the angle of the steering wheel increases, so the straight guiding
-lines fade away while the dynamic lines become brighter and more opaque. The
-opposite is true as the magnitude of the angle of the steering wheel increases.
-The dynamic lines vanish when the vehicles steering wheel is straight.
-
-![Backup Camera Sequence](/images/screenshots/backup_cam_sequence.gif)
-
-<div class="page-header">
-    <h2>Installation instructions</h2>
-</div>
-
-1. Install OpenXC Enabler application on android device
-2. Install FordBackupCam application on same device
-3. Restart tablet (optionally, manually launch application after completing
-   steps 4-10. This must only be done once after installation
-4. Mount android device in vehicle
-5. Mount USB webcam on rear of vehicle (as shown below)
-6. Attach USB extension cable to camera and run it up to the front of the vehicle inside.
-7. Insert USB extension cable into hub
-8. Connect Vehicle Interface to OBD-II port (if not already done)
-9. Connect a separate USB cable, one end to the Vehicle Interface (more detailed
-   instructions at [here](/vehicle-interface/index.html), one end into the hub (full sized
-   end should be in the hub, micro end in the VI)
-10. Insert hub into Android device.
-
-FordBackupCam is now ready to be used!
-
-![Backup Camera Sequence](/images/screenshots/backup_cam.jpg)
-
-<div class="page-header">
-    <h2>Android Details</h2>
-</div>
-
-Below is a list of the four main classes with a brief description. For a
-more in-depth explanation please see the project [README].
-
-### BackupCameraActivity
-
-This is the main activity. When created, it starts the VehicleMonitoringService.
-It contains two receivers:
-
-* Receiver that listens for a USB device being detached.
-* Receiver that listens for a closing intent from the VehicleMonitoringService.
-
-Includes a method that monitors whether the activity is active or not,
-called isRunning().
-
-### BootupReceiver
-
-This is a receiver whose purpose is to listen for an intent sent by the
-Android system that the device has been booted. When received, the receiver
-launches the VehicleMonitoringService. The purpose of this is that it gives
-the app the ability to monitor the status of the transmission without the
-need for the application to be manually launched. The user can simply turn
-on the tablet and it's ready to go.
-
-### CameraPreview
-
-This is the view to which the screen is set.
-
-A png image containing the red, yellow, and green straight overlay lines
-is located in res/drawable. CameraPreview accesses this file and converts
-it to a bitmap. This bitmap is drawn to the canvas after the video feed,
-thus overlaying it on top of the video feed.
-
-The last bitmap that is drawn to the canvas is one that contains the
-dynamic lines. As previously discussed, the dynamic lines bend and change
-opacity based on the angle of the steering wheel. The angle of the
-steering wheel is accessed through the VehicleMonitoringService.
-
-### VehicleMonitoringService
-
-The purpose of this service is to bind with the VehicleManager, a service
-performed by the OpenXC Enabler application. The service implements two
-listeners, one for the steering wheel angle and one for the transmission gear
-position.
-
-<div class="page-header">
-    <h2>Additional Notes</h2>
-</div>
-
-1) USB WebCam is UVC camera, and it supports 640x480 resolution with YUYV
-format.
-
-2) Guaranteed supported platform : Toshiba Thrive running Android 3.2
-
-3) The [Android project][Android] files can be found on GitHub.
+FordBackupCam requires a connection from the Android device to a Vehicle
+Interface (installation instructions [here](/vehicle-interface/index.html)). As
+both the webcam and the VI require a full-sized USB connection, a
+USB hub is required to connect both the CAN Translator and the USB webcam to the
+Android device. However, the VI can be connected via bluetooth in
+which case you don't need a USB hub as only 1 USB device will be plugged in.
 
 [USB webcam]: http://www.logitech.com/en-us/product/webcam-C110?crid=34
-[README]: https://github.com/openxc/backup-camera/blob/master/README.md
-[Android]: https://github.com/openxc/backup-camera/tree/master/android
+[github-repo]: https://github.com/openxc/backup-camera
