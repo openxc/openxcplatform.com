@@ -333,7 +333,7 @@ BlueSMiRF](https://www.sparkfun.com/products/10269).
    female crimp housing on the other. You may want to wrap the crimp housings in
    shrink tubing to avoid shorts.
 1. Attach the 6 wires to the BlueSMiRF board, and the other ends to the Network
-   Sheild according to the pins defined in the
+   Shield according to the pins defined in the
    [documentation](http://openxcplatform.com/cantranslator/output/uart.html#chipkit-max32).
 1. Find a good place to tuck the Bluetooth module away so the wires aren't
    shorting out and it won't get in the way of the enclosure.
