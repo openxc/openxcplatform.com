@@ -16,10 +16,10 @@ well-tested. When using USB, the host device must:
 
 * Support **Android 3.0** or greater (i.e. API level 12) if you plan to
   use the standard USB vehicle interface.
-* Support **USB host mode** and provide a way to plug in a USB device - this
-  does *not* mean the standard mini- or micro-USB port you use for debugging or
-  copying files to the SD card. Some tablets offer a full-size USB port and
-  others offer a dongle that exposes one.
+* Support **USB host mode** or **USB OTG** - Some tablets offer a full-size USB
+  port and others are compatible with [USB OTG
+  adapters](http://www.monoprice.com/products/product.asp?c_id=108&cp_id=10833&cs_id=1083314&p_id=9724&format=2)
+  that attach to the micro-USB port normally used for charging.
 
 Bluetooth support is currently experimental but has the lowest hardware
 requirements. When using a Bluetooth-equipped CAN translator, the Android host
@@ -47,6 +47,10 @@ device must:
 <div class="page-header">
     <h2>Known Incompatible Devices</h2>
 </div>
+
+USB will *not* work with [USB A female-female
+adapters](http://www.monoprice.com/products/product.asp?c_id=103&cp_id=10314&cs_id=1031401&p_id=362&seq=1&format=2)
+as they do not pass the neccessary ID pin to use USB OTG on the Android device.
 
 * Samsung Galaxy Tab (the original version) - USB host mode is not fully enabled
   and is not compatible with a USB CAN translator. Bluetooth should still work,
