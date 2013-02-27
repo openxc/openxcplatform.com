@@ -14,6 +14,7 @@ hardware schematics (if you have them) and send a pull request. We will include
 as many well documented, functional projects as we can.
 
 * [Bluetooth HUD](/projects/hardware/bluetooth-hud.html)
+* [Nighttime Collision Warning, a.k.a. "Night Vision"](/projects/software/nightvision.html)
 * [Rearview Camera](/projects/software/rearview-camera.html)
 * [Retro Gauge](/projects/hardware/retro-gauge.html)
 
