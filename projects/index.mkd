@@ -1,0 +1,20 @@
+---
+layout: default
+title: Projects - OpenXC
+---
+
+<div class="page-header">
+    <h1>Projects using OpenXC</h1>
+</div>
+
+This page serves as a home for example projects built on the OpenXC platform. If
+you have a project of your own, fork the [openxc.github.com][] project on GitHub
+(that's this site!), add a new page for your project with links to the code and
+hardware schematics (if you have them) and send a pull request. We will include
+as many well documented, functional projects as we can.
+
+* [Bluetooth HUD](/projects/hardware/bluetooth-hud.html)
+* [Rearview Camera](/projects/software/rearview-camera.html)
+* [Retro Gauge](/projects/hardware/retro-gauge.html)
+
+[openxc.github.com]: https://github.com/openxc/openxc.github.com

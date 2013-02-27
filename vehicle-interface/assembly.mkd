@@ -235,8 +235,7 @@ device.
 <div class="picture well">
     <img src="/images/assembly/openxc-assembly-11.jpg"/>
     <legend>Clipping off the existing raised screw sockets.</legend>
-</div>
-<div>
+
     <img src="/images/assembly/openxc-assembly-12.jpg"/>
     <legend>The empty enclosure with new mounting holes drilled.</legend>
 </div>
@@ -255,6 +254,7 @@ device.
     <img src="/images/assembly/openxc-assembly-14.jpg" />
     <legend>chipKIT rear with mounting screws</legend>
 </div>
+
 <div class="picture well">
     <img src="/images/assembly/openxc-assembly-15.jpg" />
     <legend>chipKIT front with mounting screws</legend>
@@ -290,9 +290,9 @@ device.
 
 <div class="picture well">
     <img src="/images/assembly/openxc-assembly-20.jpg" />
-    <legend>Install the OBD-II cable with the wires closer to the board's
-        center.</legend>
+    <legend>Install the OBD-II cable with the wires closer to the board's center.</legend>
 </div>
+
 <div class="picture well">
     <img src="/images/assembly/openxc-assembly-18.jpg" />
     <legend>Front plate and cable grommet installation.</legend>
@@ -338,6 +338,26 @@ BlueSMiRF](https://www.sparkfun.com/products/10269).
 1. Find a good place to tuck the Bluetooth module away so the wires aren't
    shorting out and it won't get in the way of the enclosure.
 
+<div class="well">
+    <img src="/images/assembly/openxc-assembly-19.jpg" />
+    <legend>The completed CAN translator!</legend>
+</div>
+
+<div class="page-header">
+    <h2>Vehicle Power</h2>
+</div>
+
+The Vehicle Interface can be powered from the vehicle 12V power lines as seen below
+and detailed in the docs [here][12V connection doc].
+
+<div class="well">
+    <img src="/images/assembly/openxc-assembly-12Vconnection.jpg" />
+    <legend>Powering the Vehicle Interface from the vehicle.</legend>
+</div>
+
+If you have any problems with the assembly instructions, please ask for help in
+the [Google Group](http://groups.google.com/group/openxc).
+
 <div class="page-header">
 <h2>Next Steps</h2>
 </div>
@@ -345,6 +365,7 @@ BlueSMiRF](https://www.sparkfun.com/products/10269).
 Once you've constructed a CAN translator, you go through the [test
 procedure](/vehicle-interface/testing.html) to make sure it's working correctly.
 
+[12V connection doc]: http://openxcplatform.com/cantranslator/
 [max32]: http://digilentinc.com/Products/Detail.cfm?NavPath=2,892,894&Prod=CHIPKIT-MAX32
 [networkshield]: http://digilentinc.com/Products/Detail.cfm?NavPath=2,892,942&Prod=CHIPKIT-NETWORK-SHIELD
 [obd2]: http://www.obd2cables.com/products/obd-cables/j1962m-ra-to/cable-j1962m-ra-type-b-to-open-end-6ft.html

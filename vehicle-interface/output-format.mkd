@@ -130,7 +130,7 @@ selected a small set of the most interesting signals to get started.
 
     <dt>odometer</dt>
     <dd>
-        0 to 16777214 km
+        0 to 16777214.000 km, with about .2m resolution
         <p><strong>Ford frequency:</strong> 10Hz</p>
     </dd>
 

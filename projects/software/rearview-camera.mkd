@@ -1,0 +1,62 @@
+---
+layout: default
+title: Rearview Camera
+---
+
+<div class="page-header">
+    <h1>Rearview Camera</h1>
+</div>
+
+**GitHub Repository:** [github.com/openxc/rearview-camera][github-repo]
+
+The Rearview Camera is an Android app that uses OpenXC and a standard USB
+webcam to add a rear-facing camera to a car that didn't come equipped with one
+from the factory. Charles Reitz developed the first version of
+this app as a summer intern at Ford in 2012.
+
+Rearview cameras are undeniably useful, and have been found to minimize
+accidents while backing up. They will even be required in all new cars in the
+United states, [starting in
+2014](http://www.nytimes.com/2012/02/28/business/us-rule-set-for-cameras-at-cars-rear.html?_r=0).
+What about all the existing cars on the road? Using OpenXC to determine the
+current gear and the support for [USB webcams][USB webcam] in most Android
+devices, you can make a relatively inexpensive aftermarket system.
+
+
+**Disclaimer:** This application is intended to be used with a display device
+that has a fixed, preferably permanent location in the vehicle (mounted on the
+dashboard, for example). Never mount anything on the dash such that the driver's
+view is obstructed. While the rearview camera application may help increase
+visibility, the OpenXC platform does not make any claims of a safety benefit.
+This application is intended as a proof-of-concept.
+
+
+![Rearview Camera Sequence](/projects/software/images/rearview_sequence.gif)
+
+<div class="page-header">
+    <h2>Requirements</h2>
+</div>
+
+**Hardware**
+
+* OpenXC-compatible [Android
+   Device](http://openxcplatform.com/android/index.html) (3.2 or later) that
+   can [access UVC video devices](#android-usb-webcam).
+* [USB Webcam][] supporting UVC and a 640x480 resolution in the YUYV format.
+* [OpenXC Vehicle
+   Interface](https://openxcplatform.com/vehicle-interface/index.html) (VI) with
+   vehicle-specific firmware
+* [OpenXC-supported
+   vehicle](http://openxcplatform.com/vehicle-interface/output-format.html)
+* USB hub (if you will be using the VI over USB in addition to the camera)
+
+**Software**
+
+* [OpenXC Android
+  Library](http://openxcplatform.com/getting-started/library-installation.html)
+* [Android SDK](http://developer.android.com/sdk/index.html)
+* [Android NDK](http://developer.android.com/tools/sdk/ndk/index.html)
+* [Android Webcam library](https://github.com/openxc/android-webcam)
+
+[USB webcam]: http://www.logitech.com/en-us/product/webcam-C110?crid=34
+[github-repo]: https://github.com/openxc/rearview-camera
