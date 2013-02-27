@@ -20,7 +20,7 @@ United states, [starting in
 2014](http://www.nytimes.com/2012/02/28/business/us-rule-set-for-cameras-at-cars-rear.html?_r=0).
 What about all the existing cars on the road? Using OpenXC to determine the
 current gear and the support for [USB webcams][USB webcam] in most Android
-devices, you can make an aftermarket system relatively inexpensively.
+devices, you can make a relatively inexpensive aftermarket system.
 
 **Disclaimer** This application is intended to be used with a display device
 that has a fixed, preferably permanent location in the vehicle (mounted on the
@@ -58,3 +58,4 @@ This application is intended as a proof-of-concept.
 
 [USB webcam]: http://www.logitech.com/en-us/product/webcam-C110?crid=34
 [github-repo]: https://github.com/openxc/rearview-camera
+[Vehicle Interface]: /vehicle-interface/index.html
