@@ -23,26 +23,38 @@ current gear and the support for [USB webcams][USB webcam] in most Android
 devices, you can make an aftermarket system relatively inexpensively.
 
 **Disclaimer** This application is intended to be used with a display device
-that has a fixed, preferably permanent location in the vehicle. For example,
-mounted on the dash. Never mount anything on the dash such that the driver's
+that has a fixed, preferably permanent location in the vehicle (mounted on the
+dashboard, for example). Never mount anything on the dash such that the driver's
 view is impeded. While the rearview camera application may help increase
 visibility, the OpenXC platform does not make any claims of a safety benefit.
-This application is inteded as a proof-of-concept.
+This application is intended as a proof-of-concept.
 
 ![Rearview Camera Sequence](/projects/software/images/rearview_sequence.gif)
 
 <div class="page-header">
-    <h2>Hardware Components</h2>
+    <h2>Requirements</h2>
 </div>
 
-1. Android Device (3.1 or later) that supports USB webcams, or can be rooted to
-   add support. The Toshiba Thrive 10.1" is known to work without modification.
-1. [USB Webcam][]
-1. OpenXC Vehicle Interface (VI)
-1. OpenXC-supported vehicle (full list of [supported
-   vehicles](/vehicle-interface/index.html)) and the associated firmware for the
-   VI
-1. USB Hub (see note below)
+**Hardware**
+
+* OpenXC-compatible [Android
+   Device](http://openxcplatform.com/android/index.html) (3.2 or later) that
+   can [access UVC video devices](#android-usb-webcam).
+* [USB Webcam][] supporting UVC and a 640x480 resolution in the YUYV format.
+* [OpenXC Vehicle
+   Interface](https://openxcplatform.com/vehicle-interface/index.html) (VI) with
+   vehicle-specific firmware
+* [OpenXC-supported
+   vehicle](http://openxcplatform.com/vehicle-interface/output-format.html)
+* USB hub (if you will be using the VI over USB in addition to the camera)
+
+**Software**
+
+* [OpenXC Android
+  Library](http://openxcplatform.com/getting-started/library-installation.html)
+* [Android SDK](http://developer.android.com/sdk/index.html)
+* [Android NDK](http://developer.android.com/tools/sdk/ndk/index.html)
+* [Android Webcam library](https://github.com/openxc/android-webcam)
 
 [USB webcam]: http://www.logitech.com/en-us/product/webcam-C110?crid=34
 [github-repo]: https://github.com/openxc/rearview-camera
