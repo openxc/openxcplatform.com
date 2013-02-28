@@ -23,6 +23,9 @@ mounted on the dash. Never mount anything on the dash such that the driver's
 view is impeded. While the night vision camera application may help increase
 visibility, the OpenXC platform does not make any claims of a safety benefit.
 
+![Nightvision 1](/projects/images/nightvision1.png)
+
+
 <div class="page-header">
     <h2>Requirements</h2>
 </div>
@@ -47,6 +50,8 @@ visibility, the OpenXC platform does not make any claims of a safety benefit.
 * [Android SDK](http://developer.android.com/sdk/index.html)
 * [Android NDK](http://developer.android.com/tools/sdk/ndk/index.html)
 * [Android Webcam library](https://github.com/openxc/android-webcam)
+
+![Nightvision 2](/projects/images/nightvision2.png)
 
 [USB webcam]: http://www.logitech.com/en-us/product/webcam-C110?crid=34
 [github-repo]: https://github.com/openxc/nightvision

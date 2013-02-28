@@ -22,7 +22,6 @@ What about all the existing cars on the road? Using OpenXC to determine the
 current gear and the support for [USB webcams][USB webcam] in most Android
 devices, you can make a relatively inexpensive aftermarket system.
 
-
 **Disclaimer:** This application is intended to be used with a display device
 that has a fixed, preferably permanent location in the vehicle (mounted on the
 dashboard, for example). Never mount anything on the dash such that the driver's
