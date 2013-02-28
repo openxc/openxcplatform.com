@@ -15,7 +15,7 @@ send signals to the driver who can keep his hands on the wheel and his eyes on
 the road. In the picture shown below, the Bluetooth HUD is being used show
 real-time fuel efficiency.
 
-![Bluetooth HUD](/images/hud-on-dash.jpg)
+![Bluetooth HUD](/projects/images/hud-on-dash.jpg)
 
 
 The Bluetooth HUD microcontroller responds to serial commands sent from any
@@ -37,7 +37,7 @@ via IC1. IC1 is a Roving Networks RN-42, a common embedded Bluetooth IC. They
 communicate using a serial UART bus. When a host connects to the RN-42, it
 transparently relays serial data between the ATMEGA and the host device.
 
-![Bluetooth HUD internal](/images/bluetooth-hud-internal.jpg)
+![Bluetooth HUD internal](/projects/images/bluetooth-hud-internal.jpg)
 
 ### LEDs
 
@@ -123,7 +123,7 @@ project's [README][].
 The [firmware][], [schematics][], and [Android project][android] files can also be
 found on GitHub.
 
-![Bluetooth HUD external](/images/bluetooth-hud-external.jpg)
+![Bluetooth HUD external](/projects/images/bluetooth-hud-external.jpg)
 
 [README]: https://github.com/openxc/simple-hud/blob/master/README.mkd
 [firmware]: https://github.com/openxc/simple-hud/tree/master/firmware
