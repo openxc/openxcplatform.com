@@ -13,9 +13,9 @@ you have a project of your own, fork the [openxc.github.com][] project on GitHub
 hardware schematics (if you have them) and send a pull request. We will include
 as many well documented, functional projects as we can.
 
-* [Bluetooth HUD](/projects/hardware/bluetooth-hud.html)
-* [Nighttime Collision Warning, a.k.a. "Night Vision"](/projects/software/nightvision.html)
-* [Rearview Camera](/projects/software/rearview-camera.html)
-* [Retro Gauge](/projects/hardware/retro-gauge.html)
+* [Bluetooth HUD](/projects/bluetooth-hud.html)
+* [Nighttime Collision Warning, a.k.a. "Night Vision"](/projects/nightvision.html)
+* [Rearview Camera](/projects/rearview-camera.html)
+* [Retro Gauge](/projects/retro-gauge.html)
 
 [openxc.github.com]: https://github.com/openxc/openxc.github.com
