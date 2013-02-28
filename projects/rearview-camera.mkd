@@ -58,4 +58,3 @@ This application is intended as a proof-of-concept.
 
 [USB webcam]: http://www.logitech.com/en-us/product/webcam-C110?crid=34
 [github-repo]: https://github.com/openxc/rearview-camera
-[Vehicle Interface]: /vehicle-interface/index.html

@@ -254,6 +254,7 @@ device.
     <img src="/images/assembly/openxc-assembly-14.jpg" />
     <legend>chipKIT rear with mounting screws</legend>
 </div>
+
 <div class="picture well">
     <img src="/images/assembly/openxc-assembly-15.jpg" />
     <legend>chipKIT front with mounting screws</legend>
@@ -292,6 +293,7 @@ device.
     <legend>Install the OBD-II cable with the wires closer to the board's
         center.</legend>
 </div>
+
 <div class="picture well">
     <img src="/images/assembly/openxc-assembly-18.jpg" />
     <legend>Front plate and cable grommet installation.</legend>
@@ -336,6 +338,18 @@ BlueSMiRF](https://www.sparkfun.com/products/10269).
    [documentation](http://openxcplatform.com/cantranslator/output/uart.html#chipkit-max32).
 1. Find a good place to tuck the Bluetooth module away so the wires aren't
    shorting out and it won't get in the way of the enclosure.
+
+<div class="page-header">
+    <h2>Vehicle Power</h2>
+</div>
+
+The Vehicle Interface can be powered from the vehicle 12V power lines as seen
+below - connect 12v to `Vin` and ground to...`GND`.
+
+<div class="well">
+<img src="/images/assembly/openxc-assembly-12Vconnection.jpg" />
+<legend>Powering the Vehicle Interface from the vehicle.</legend>
+</div>
 
 <div class="page-header">
 <h2>Next Steps</h2>
