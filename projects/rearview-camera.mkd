@@ -29,7 +29,7 @@ view is impeded. While the rearview camera application may help increase
 visibility, the OpenXC platform does not make any claims of a safety benefit.
 This application is intended as a proof-of-concept.
 
-![Rearview Camera Sequence](/projects/software/images/rearview_sequence.gif)
+![Rearview Camera Sequence](/projects/images/rearview_sequence.gif)
 
 <div class="page-header">
     <h2>Requirements</h2>

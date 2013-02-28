@@ -9,7 +9,7 @@ title: Retro Gauge - OpenXC
 
 **GitHub Repository:** [github.com/openxc/retro-gauge][github]
 
-![Retro Gauge](/images/retro-gauge/overview.jpg)
+![Retro Gauge](/projects/images/retro-gauge/overview.jpg)
 
 The Retro Gauge is a mechanical vehicle gauge that outputs data from OpenXC via
 serial communication. The purpose of this gauge is to display vehicle data in a
@@ -49,7 +49,7 @@ added to output the value of the desired signal as well as 2 RGB LEDs for
 aesthetics and visual signaling. The RGB value is digitally controlled using a
 Hue spectrum input (<a href="http://en.wikipedia.org/wiki/Hue">Hue Wiki</a>).
 
-![Retro Gauge PCB](/images/retro-gauge/pcb.jpg)
+![Retro Gauge PCB](/projects/images/retro-gauge/pcb.jpg)
 
 <div class="page-header">
     <h2>Hardware Design</h2>
@@ -60,7 +60,7 @@ gauge mounts. In order to make installation as easy as possibly, only one port
 was added, a mini USB, to provide both power and data. It was also designed so
 that the gauge face could easily be swapped out to display different data types.
 
-![Hardware design](/images/retro-gauge/hardware.jpg)
+![Hardware design](/projects/images/retro-gauge/hardware.jpg)
 
 There are 3 main manufactures for small step motors that are most commonly used
 in automotive gauges -
