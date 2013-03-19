@@ -30,7 +30,8 @@ Make sure you've purchased all of the required
 
 If you plan to use an enclosure, slide the round grommet onto the bare wire end
 of the cable (you won't be able to do this later without cutting a slit in the
-grommet).  Cut a section of 3/8" shrink tubing about 1" long and slide it onto
+grommet).  If you don't use the grommet, plan on finding another form of strain 
+relief.  Cut a section of 3/8" shrink tubing about 1" long and slide it onto
 the cable.
 
 <div class="picture well">
@@ -213,13 +214,42 @@ recommended case.
 </div>
 
 <div class="page-header">
-    <h2>Optional Enclosure</h2>
+    <h2><a href="#electrical-assembly" name="electrical-assembly">Electrical Assembly</a></h2>
+</div>
+
+1. Connect the `CAN1` plug on the OBD-II cable to the 12-pin header labeled
+  `CAN1` on the Network Shield. Make sure the 2 wires line up with the `CANH`
+  and `CANL` labels on the board as well.
+1. Connect the `CAN2-1` plug on the OBD-II cable to the 12-pin header labeled
+  `CAN2` on the Network Shield if you are using any vehicle besides the 2012
+  Ford Focus.
+1. If you are planning to use the 2012 Ford Focus, connect the `CAN2-2` plug to
+  `CAN2` on the Network Shield instead.
+
+<div class="picture well">
+    <img src="/images/assembly/openxc-assembly-20.jpg" />
+    <legend>Install the OBD-II cable with the wires closer to the board's
+        center.</legend>
+</div>
+
+1. Connect the female end of the power jumper to pin 1 of JP4. Connect the male
+  end to 5vo on the POWER connector.
+
+<div class="picture well">
+    <img src="/images/assembly/openxc-assembly-17.jpg" />
+    <legend>Connect the power jumper from pin 1 of JP4 to 5vo.</legend>
 </div>
 
 At this point, the reader should be completely functional. But without an
 enclosure, it is at risk of static shock damage and strain damage in the event
 of a drop. There are many potential enclosures that will be adequate for this
 device.
+
+<div class="page-header">
+    <h2>Optional Enclosure</h2>
+</div>
+
+If you are using the recommended PacTec enclosure, it requires a few modifications.
 
 <div class="page-header">
     <h2>Lower Enclosure</h2>
@@ -274,14 +304,7 @@ device.
     <h2><a href="#final-assembly" name="final-assembly">Final Assembly</a></h2>
 </div>
 
-1. Connect the `CAN1` plug on the OBD-II cable to the 12-pin header labeled
-  `CAN1` on the Network Shield. Make sure the 2 wires line up with the `CANH`
-  and `CANL` labels on the board as well.
-1. Connect the `CAN2-1` plug on the OBD-II cable to the 12-pin header labeled
-  `CAN2` on the Network Shield if you are using any vehicle besides the 2012
-  Ford Focus.
-1. If you are planning to use the 2012 Ford Focus, connect the `CAN2-2` plug to
-  `CAN2` on the Network Shield instead.
+1. Complete the <a href="#electrical-assembly">Electrical Assembly</a> as described above.
 1. Slide the grommet to about where the front plate will be. Put the front plate
   on the grommet. Lay the cable flat on the outside of the Ethernet jack. Bend
   the cable between the standoff and the power connector, being careful to put
@@ -289,26 +312,13 @@ device.
   the front plate into place.
 
 <div class="picture well">
-    <img src="/images/assembly/openxc-assembly-20.jpg" />
-    <legend>Install the OBD-II cable with the wires closer to the board's
-        center.</legend>
-</div>
-
-<div class="picture well">
     <img src="/images/assembly/openxc-assembly-18.jpg" />
     <legend>Front plate and cable grommet installation.</legend>
 </div>
 
-1. Connect the female end of the power jumper to pin 1 of JP4. Connect the male
-  end to 5vo on the POWER connector.
-
-<div class="picture well">
-    <img src="/images/assembly/openxc-assembly-17.jpg" />
-    <legend>Connect the power jumper from pin 1 of JP4 to 5vo.</legend>
-</div>
-
 1. Put the back plate into place and attach the top of the enclosure.
 1. Secure the enclosure with the two screws.
+1. Affix the four rubber feet to the underside just to the outside of the four mounting screws.  (This will prevent scratches from the exposed screws.)
 1. Attach the hook-side Velcro to the underside, leaving the enclosure screws
   accessible.
 1. [Put a bird on it.](http://www.putabirdonit.com/)
