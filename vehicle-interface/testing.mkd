@@ -8,7 +8,7 @@ title: Vehicle Interface Test Procedure - OpenXC
 </div>
 
 1. Download the pre-compiled [vehicle emulator
-   firmware](http://openxcplatform.com.s3.amazonaws.com/openxc-emulator-firmware.zip)
+   firmware](http://openxcplatform.com.s3.amazonaws.com/openxc-canemulator-firmware.zip)
    and follow the instructions to [flash a pre-compiled
    binary](http://openxcplatform.com/cantranslator/installation/binary.html) to
    the vehicle interface.
