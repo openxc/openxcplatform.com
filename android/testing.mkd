@@ -51,8 +51,22 @@ Finally, run the `OpenXC Enabler` app on the device and go to `Settings -> Data
 Sources -> Trace File Playback`, check the `Playback trace file` option and
 browse for the trace file you copied over.
 
-There are two short trace files available for testing: [idling while parked][]
-and a [short drive][].
+<div class="page-header">
+    <h2><a href="#traces" name="traces">Vehicle Trace Files</a></h2>
+</div>
+
+There are a number of trace files available that exhibit different scenarios and
+driving behaviors.
+
+* [Idling while parked][idling while parked], toggling headlights, parking brake, etc.
+* [Short drive][short drive] around the block at low speed (~25MPH average)
+* [Idling for longer period of time][idling2]
+* [Highway commute][], about 40 minutes one way
+* [Tailgating][]
+* [Riding the brakes][]
+* [Speeding at highway speeds][speeding]
+* [Agressive driving][], hard acceleration and braking
+
 
 <div class="page-header">
     <h2>Button Events</h2>
@@ -122,5 +136,11 @@ VehicleButtonEvent.Listener listener = new VehicleButtonEvent.Listener() {
 [vehicle interface]: http://openxcplatform.com/vehicle-interface/index.html
 [short drive]: https://s3.amazonaws.com/openxcplatform.com/driving.json
 [idling while parked]: https://s3.amazonaws.com/openxcplatform.com/parked.json
+[idling2]: https://s3.amazonaws.com/openxcplatform.com/traces/idling.json
+[Highway commute]: https://s3.amazonaws.com/openxcplatform.com/traces/commute.json
+[Tailgating]: https://s3.amazonaws.com/openxcplatform.com/traces/tailgating.json
+[Riding the brakes]: https://s3.amazonaws.com/openxcplatform.com/traces/riding-brakes.json
+[speeding]: https://s3.amazonaws.com/openxcplatform.com/traces/highway-speeding.json
+[Agressive driving]:https://s3.amazonaws.com/openxcplatform.com/traces/aggressive-driving.json
 [Measurement]: /openxc-android/reference/com/openxc/measurements/Measurement.html
 [VehicleManager]: /openxc-android/reference/com/openxc/VehicleManager.html
