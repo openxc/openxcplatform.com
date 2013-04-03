@@ -75,3 +75,8 @@ When you're ready to begin writing an OpenXC app, continue on to
 [install the Android library](/getting-started/library-installation.html). You
 can get started even if you don't have a hardware vehicle interface (or even a
 car!).
+
+If you're interested in created a web application instead and want to leave the
+in-vehicle details to someone else, jump to the [vehicle data
+format](/vehicle-interface/output-format.html) section to
+know what type of data your app needs to accept.

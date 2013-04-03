@@ -50,6 +50,13 @@ engine timing CAN signals may be summarized in an "engine performance" metric on
 the abstract side of the interface.
 </div>
 
+If you're creating a web application that uses OpenXC data, this format is also
+used for trace files and with the
+[Uploader](https://github.com/openxc/openxc-android/blob/master/openxc/src/com/openxc/sinks/UploaderSink.java)
+built into the Android library. There's an [example web logging
+example](https://github.com/openxc/web-logging-example) in Python that
+illustrates a working example of how to receive and parse OpenXC data over HTTP.
+
 <div class="page-header">
     <h2>Signal List</h2>
 </div>
