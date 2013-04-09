@@ -14,8 +14,8 @@ title: FAQ - OpenXC
 The code has been released on GitHub and you don't need any special permission
 or agreements from Ford to begin developing an Android application and using
 the emulator. If you wish to use your application in an actual Ford vehicle,
-you will need to sign a developer agreement to get access to the [vehicle
-interface firmware](/vehicle-interface/firmware.html).
+you will need to sign a developer agreement to get access to the <a
+href="/vehicle-interface/firmware.html">vehicle interface firmware</a>.
 </p></dd>
 
 <dt>Why not just use one of the many commercial OBD-II scanners instead of
