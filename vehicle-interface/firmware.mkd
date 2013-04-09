@@ -25,11 +25,24 @@ binaries, e.g. if they are distributed by an OEM who does not wish to make the
 CAN signals public. If that's the case for your vehicle, you will have a `.hex`
 file and can use the [upload_hex.sh][] script to update your device.
 
-The firmware for all supported Ford vehicles is currently available to anyone
-who signs this [developer agreement](/agreement.html).
-
 The instructions for re-programming a CAN translator are in the [CAN translator
 documentation](http://openxcplatform.com/cantranslator/installation/binary.html).
+
+**Ford**
+
+Firmware for Ford vehicles is available through the [Ford
+Developer](https://developer.ford.com) website for logged-in users.
+
+An up-to-date list of exactly which OpenXC messages are supported by each vehicle is maintained as a
+[Google Spreadsheet](https://docs.google.com/spreadsheet/ccc?key=0Ajz-75u_7nEydFJxUG4yOVZ1NXJlcjNvdzdSTDdyY0E).
+
+**Emulator**
+
+A very simple CAN bus [emulator
+firmware](http://openxcplatform.com.s3.amazonaws.com/openxc-canemulator-firmware.zip)
+is available to test the connectivity of your vehicle interface with a computer
+or tablet. It generates fake vehicle data and continuously sends it over USB as
+if it were live data.
 
 <div class="page-header">
     <h2>Custom CAN Signal Definition</h2>
@@ -47,7 +60,7 @@ documentation](http://openxcplatform.com/cantranslator/installation/installation
 You're now ready to [test your CAN translator in a vehicle][testing].
 
 [winavr]: http://winavr.sourceforge.net/
-[upload_hex.sh]: https://github.com/openxc/cantranslator/blob/master/script/upload_hex.sh 
+[upload_hex.sh]: https://github.com/openxc/cantranslator/blob/master/script/upload_hex.sh
 [cantranslator]: https://github.com/openxc/cantranslator
 [MPIDE]: https://github.com/chipKIT32/chipKIT32-MAX/downloads
 [testing]: /vehicle-interface/testing.html
