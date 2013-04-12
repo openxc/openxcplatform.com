@@ -225,7 +225,7 @@ Bought all of the [parts](#parts) for the CAN translator? The detailed [assembly
 guide][] is next.
 
 [MPIDE]: https://github.com/chipKIT32/chipKIT32-MAX/downloads
-[max32]: http://digilentinc.com/Products/Detail.cfm?NavPath=2,719,895&Prod=CHIPKIT-MAX32.
+[max32]: http://digilentinc.com/Products/Detail.cfm?NavPath=2,719,895&Prod=CHIPKIT-MAX32
 [cantranslator]: https://github.com/openxc/cantranslator
 [output-format]: /vehicle-interface/output-format.html
 [host device]: /android/index.html
