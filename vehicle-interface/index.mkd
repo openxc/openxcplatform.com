@@ -139,7 +139,7 @@ more details on adding Bluetooth.
 
 **Bluetooth Parts List**
 
-* SparkFun BlueSMiRF Silver Bluetooth Module
+* SparkFun [BlueSMiRF Silver Bluetooth Module](https://www.sparkfun.com/products/10269)
 * 6 pin length of male to male header pins (right-angle works well)
 * 6 additional female  and male crimp housins and pins *or* a
   [pre-crimped assortment](http://www.pololu.com/catalog/product/1807).
