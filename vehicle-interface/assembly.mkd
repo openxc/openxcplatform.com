@@ -30,7 +30,7 @@ Make sure you've purchased all of the required
 
 If you plan to use an enclosure, slide the round grommet onto the bare wire end
 of the cable (you won't be able to do this later without cutting a slit in the
-grommet).  If you don't use the grommet, plan on finding another form of strain 
+grommet).  If you don't use the grommet, plan on finding another form of strain
 relief.  Cut a section of 3/8" shrink tubing about 1" long and slide it onto
 the cable.
 
@@ -61,9 +61,7 @@ the wire end, and once around the insulation.
 
 These instructions describe how to make a 3 bus cable. The chipKIT only has 2
 CAN controllers, so you will be using at most 2 of the buses at one time. Most
-vehicles use what we will call the `CAN1` and `CAN2-1` buses. The 2012 Ford
-Focus is the only vehicle at this time that uses the `CAN2-2` bus instead of
-`CAN2-1`.
+vehicles use what we will call the `CAN1` and `CAN2-1` buses.
 
 <div class="picture well">
 <div class="row">
@@ -221,10 +219,7 @@ recommended case.
   `CAN1` on the Network Shield. Make sure the 2 wires line up with the `CANH`
   and `CANL` labels on the board as well.
 1. Connect the `CAN2-1` plug on the OBD-II cable to the 12-pin header labeled
-  `CAN2` on the Network Shield if you are using any vehicle besides the 2012
-  Ford Focus.
-1. If you are planning to use the 2012 Ford Focus, connect the `CAN2-2` plug to
-  `CAN2` on the Network Shield instead.
+  `CAN2` on the Network Shield.
 
 <div class="picture well">
     <img src="/images/assembly/openxc-assembly-20.jpg" />
