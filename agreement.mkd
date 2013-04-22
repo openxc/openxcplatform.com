@@ -1,0 +1,15 @@
+---
+layout: default
+title: Developer Agreement - OpenXC
+---
+
+<div class="page-header">
+    <h1>OpenXC Developer Agreement</h1>
+</div>
+
+The Ford-specific OpenXC Developer agreement has been merged with the more
+general [Ford Developer Program](http://developer.ford.com) terms and
+conditions.
+
+The pre-compiled binaries for Ford vehicles are available after creating an
+account at the [Ford Developer Program](http://developer.ford.com).
