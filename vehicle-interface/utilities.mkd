@@ -37,7 +37,7 @@ are working.
 The Python library can be installed with `pip`:
 
 {% highlight sh %}
-$ pip install https://github.com/openxc/openxc-python
+$ pip install openxc
 {% endhighlight %}
 
 Once installed, you can use any of the [tools it provides][python-lib].
