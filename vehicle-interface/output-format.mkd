@@ -187,13 +187,13 @@ selected a small set of the most interesting signals to get started.
 
     <dt>latitude</dt>
     <dd>
-        -89.0 to 89.0 degrees
+        -89.0 to 89.0 degrees with standard GPS accuracy
         <p><strong>Ford frequency:</strong> 1Hz</p>
     </dd>
 
     <dt>longitude</dt>
     <dd>
-        -179.0 to 179.0 degrees
+        -179.0 to 179.0 degrees with standard GPS accuracy
         <p><strong>Ford frequency:</strong> 1Hz</p>
     </dd>
 
