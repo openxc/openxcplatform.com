@@ -35,6 +35,20 @@ tutorial, but you will need to install the
 before your application will work.</div>
 
 <div class="page-header">
+<h2>Using the Library</h2>
+</div>
+
+You must tell Android and Eclipse that your app intends to use the OpenXC
+library. In the Package Explorer in the left hande side of the Eclipse window,
+right click on your project's top-level folder (e.g. `MyFirstApp`) and select
+`Properties`.
+
+Select the `Android` option in the list on the left in the `Properties` window.
+There should now be a `Library` section on the right side. Click the `Add`
+button, and add the `openxc` project. It should now show up in the Library list
+with a green check mark.
+
+<div class="page-header">
 <h2>Android Manifest</h2>
 </div>
 
