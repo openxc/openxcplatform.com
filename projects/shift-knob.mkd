@@ -22,14 +22,15 @@ an appropriate haptic pulse through the driver's hand signalling that he or she 
 
 The Haptic Feedback Shift Knob was developed for two main reasons. First, the manual 
 transmission shift knob is a relatively plain component in most of today's vehicles.
-They come in all shapes and sizes, sold all across the globe, but almost all of them 
-lack any "smart" capabilities. The manual transmission shift knob is usually just a 
-piece of molded plastic attached to a threaded rod. 
+They come in all shapes and sizes, sold all across the globe, and yet almost all of them 
+lack any "smart" capabilities. The shift knob is a great space for innovation.
+
+![Normal Shift Knob](/projects/images/shift-knob/Focus_ST_Leather_gearshift.jpg)
 
 Secondly, most new manual transmission vehicles have a "shift indicator" light on the 
-instrument cluster that signals the driver to shift for best performance and/or fuel economy.
+instrument cluster that tells the driver to shift for best performance and/or fuel economy.
 This signal, while very useful, requires that the driver take his visual attention away from 
-the road while driver. This can pose a safety problem, so the idea came, "Why not send 
+the road while driving. This can pose a safety problem, so the idea came, "Why not send 
 haptic pulses through the driver's hand to tell him or her when to shift?" The device 
 could behave much like a cell phone in vibrate mode.
 
