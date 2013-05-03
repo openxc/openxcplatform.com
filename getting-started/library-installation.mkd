@@ -175,7 +175,7 @@ attached to install the app.
 If you're using Maven at the command line:
 
 {% highlight sh %}
-$ mvn clean package android:deploy android:run -pl enabler -am
+$ mvn clean install -pl openxc -am && mvn clean package android:deploy android:run -pl enabler
 {% endhighlight %}
 
 <div class="page-header">
