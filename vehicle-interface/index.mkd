@@ -145,7 +145,7 @@ more details on adding Bluetooth.
   [pre-crimped assortment](http://www.pololu.com/catalog/product/1807).
 
 <div class="page-header">
-<h2>Concepts</h2>
+<h2><a href="#concepts" name="concepts">Concepts</a></h2>
 </div>
 
 **CAN**
@@ -178,6 +178,8 @@ Within the 64 bits of data of each **CAN message** there are typically multiple
 data points, e.g. the steering wheel angle, a quality factor for the sensor, the
 center point of the steering wheel, etc. Each of these bit fields is known as a
 **CAN signal**.
+
+![CAN Message and Signal Diagram](/images/can-message.png)
 
 The exact format of these bit fields and messages are typically considered
 sensitive information by vehicle manufacturers. The OpenXC CAN translator allows
