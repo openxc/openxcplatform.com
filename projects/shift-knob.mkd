@@ -36,5 +36,13 @@ could behave much like a cell phone in vibrate mode.
 
 ![Shift Knob Internals](/projects/images/shift-knob/shift knob internals.jpg)
 
-[README]: https://github.com/openxc/retro-gauge/blob/master/README.mkd
+<div class="page-header">
+    <h1>Computation</h1>
+</div>
+
+The Haptic Feedback Shift Knob receives data via a USB cable. This cable is connected to a 
+an Android application on a host device which is in turn connected to a vehicle interface 
+(the provider of vehicle data). The 
+
+[README]: https://github.com/openxc/shift-knob/blob/master/README.mkd
 [github]: https://github.com/openxc/shift-knob
