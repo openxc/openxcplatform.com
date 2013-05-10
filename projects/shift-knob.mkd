@@ -17,7 +17,7 @@ an appropriate haptic pulse through the driver's hand signalling that he or she 
 ![OpenXC Shift Knob](/projects/images/shift-knob/assembled shift knob.jpg)
 
 <div class="page-header">
-    <h1>Motivation</h1>
+    <h2>Motivation</h2>
 </div>
 
 The Haptic Feedback Shift Knob was developed for two main reasons. First, the manual 
@@ -30,19 +30,40 @@ lack any "smart" capabilities. The shift knob is a great space for innovation.
 Secondly, most new manual transmission vehicles have a "shift indicator" light on the 
 instrument cluster that tells the driver to shift for best performance and/or fuel economy.
 This signal, while very useful, requires that the driver take his visual attention away from 
-the road while driving. This can pose a safety problem, so the idea came, "Why not send 
+the road. This can pose a safety problem, so the idea came, "Why not send 
 haptic pulses through the driver's hand to tell him or her when to shift?" The device 
 could behave much like a cell phone in vibrate mode.
 
 ![Shift Knob Internals](/projects/images/shift-knob/shift knob internals.jpg)
 
 <div class="page-header">
-    <h1>Computation</h1>
+    <h2>Haptic Feedback</h2>
 </div>
 
-The Haptic Feedback Shift Knob receives data via a USB cable. This cable is connected to a 
-an Android application on a host device which is in turn connected to a vehicle interface 
-(the provider of vehicle data). The 
+***INSERT PHOTO OF ASSORTED MOTORS/ECCENTRICS
+
+Most haptic feedback devices (including cell phones) use a motor with an eccentric mass
+to generate the vibration effect. The size of the motor and eccentric mass is dependent 
+on the weight of the device and type of vibration desired. For this particular case, it 
+was determined that a large eccentric mass would be needed with a rotation speed less than 
+10000 RPM. If the rotation speed is too great, then the "feel" may be undetectable or irritating.
+If too slow, then it may in distinguishable from the vibrations of regular driving.
+
+Example motors:
+
+* [10,000 RPM Toy Vibration Motor](http://www.amazon.com/0-04A-10000RPM-Vibrator-Vibration-Motor/dp/B005G0NQEG/)
+* [XBox 360 Vibration Motor](http://www.instructables.com/id/How-To-Disassemble-an-Xbox-360-Wireless-Controller/step15/Remove-The-Rumble-Packs/)
+
+<div class="page-header">
+    <h2>Control</h2>
+</div>
+
+The Haptic Feedback Shift Knob receives data from an Android application connected to a Vehicle 
+Interface (the provider of vehicle data). The Android app calculates the point at which the driver 
+should shift and sends the cooresponding signal to the shift knob. The embedded shift knob 
+microcontroller then energizes the haptic feedback motor sending a pulse through the driver's
+hand. The microcontroller also controls RGB LEDs and a 7 segment display which is used to show
+the current transmission gear position.
 
 [README]: https://github.com/openxc/shift-knob/blob/master/README.mkd
 [github]: https://github.com/openxc/shift-knob
