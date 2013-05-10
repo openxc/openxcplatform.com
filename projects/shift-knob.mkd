@@ -13,6 +13,8 @@ The Haptic Feedback Shift Knob is a manual transmission shift knob capable of
 sending haptic and visual signals to the driver. Using a built in algorithm, the 
 Shift Knob determines when the driver should shift for best performance and then sends
 an appropriate haptic pulse through the driver's hand signalling that he or she should shift.
+The embedded electronics in the shift knob are based on the [Arduino Pro Mini] with an on-board
+FTDI chip and USB connector.
 
 ![OpenXC Shift Knob](/projects/images/shift-knob/assembled shift knob.jpg)
 
@@ -67,3 +69,4 @@ the current transmission gear position.
 
 [README]: https://github.com/openxc/shift-knob/blob/master/README.mkd
 [github]: https://github.com/openxc/shift-knob
+[Arduino Pro Mini]: http://arduino.cc/en/Main/ArduinoBoardProMini
