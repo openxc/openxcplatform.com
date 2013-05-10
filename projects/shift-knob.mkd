@@ -25,7 +25,7 @@ transmission shift knob is a relatively plain component in most of today's vehic
 They come in all shapes and sizes, sold all across the globe, and yet almost all of them 
 lack any "smart" capabilities. The shift knob is a great space for innovation.
 
-![Normal Shift Knob](/projects/images/shift-knob/Focus_ST_Leather_gearshift.jpg)
+![Focus ST Shift Knob](/projects/images/shift-knob/in vehicle 2_small.jpg) ![Haptic Shift Knob](/projects/images/shift-knob/in vehicle 1_small.jpg)
 
 Secondly, most new manual transmission vehicles have a "shift indicator" light on the 
 instrument cluster that tells the driver to shift for best performance and/or fuel economy.
