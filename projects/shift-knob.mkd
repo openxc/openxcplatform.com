@@ -9,8 +9,6 @@ title: Shift Knob - OpenXC
 
 **GitHub Repository:** [github.com/openxc/shift-knob][github]
 
-*In-Depth Explanation:* [README]
-
 The Haptic Feedback Shift Knob is a manual transmission shift knob capable of 
 sending haptic and visual signals to the driver. Using a built in algorithm, the 
 Shift Knob determines when the driver should shift for best performance and then sends
