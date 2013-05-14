@@ -17,7 +17,8 @@ FTDI chip and USB connector.
 ![OpenXC Shift Knob](/projects/images/shift-knob/assembled_shift_knob.jpg)
 
 <div class="page-header">
-    <h2><a name="repositories"></a>Repositories</h2>
+	<a name="Repositories"></a>
+	<h2>Repositories</h2>
 </div>
 
 This project is contained in four different Github repositories:
@@ -46,6 +47,7 @@ calculates the vehicle shift point and tranmission gear position and sends this 
 embedded system over USB using the [FTDriver] library.
 
 <div class="page-header">
+	<a name="Motivation"></a>
     <h2>Motivation</h2>
 </div>
 
@@ -66,6 +68,7 @@ could behave much like a cell phone in vibrate mode.
 ![Shift Knob Internals](/projects/images/shift-knob/shift_knob_internals.jpg)
 
 <div class="page-header">
+	<a name="Haptic Feedback"></a>
     <h2>Haptic Feedback</h2>
 </div>
 
@@ -84,6 +87,7 @@ Example vibration motors:
 * [XBox 360 Motor]
 
 <div class="page-header">
+	<a name="3D Shift Knob Design"></a>
     <h2>3D Shift Knob Design</h2>
 </div>
 
@@ -98,6 +102,7 @@ The shift knob housing was designed to meet 3 goals:
 ![Breakdown of Shift Knob](/projects/images/shift-knob/breakdown_of_shift_knob.jpg)
 
 <div class="page-header">
+	<a name="PCB Design"></a>
     <h2>PCB Design</h2>
 </div>
 
@@ -112,6 +117,7 @@ brightness of the LEDs and the power to the vibration motor are all controlled w
 7 segment display is controlled by an 8-bit shift register. 
 
 <div class="page-header">
+	<a name="Control"></a>
     <h2>Control</h2>
 </div>
 
