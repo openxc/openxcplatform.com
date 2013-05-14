@@ -53,3 +53,11 @@ code {
     padding-top: 3px;
     font-size: 16px;
 }
+
+section {
+    padding-top: 30px;
+}
+
+.page-header {
+    margin: 20px 0 30px;
+}

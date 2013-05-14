@@ -51,21 +51,25 @@ Finally, run the `OpenXC Enabler` app on the device and go to `Settings -> Data
 Sources -> Trace File Playback`, check the `Playback trace file` option and
 browse for the trace file you copied over.
 
+<section id="traces">
+
 <div class="page-header">
-    <h2><a href="#traces" name="traces">Vehicle Trace Files</a></h2>
+    <h2><a href="#traces">Vehicle Trace Files</a></h2>
 </div>
 
-There are a number of trace files available that exhibit different scenarios and
-driving behaviors.
+  There are a number of trace files available that exhibit different scenarios and
+  driving behaviors.
 
-* [Idling while parked][idling while parked], toggling headlights, parking brake, etc.
-* [Short drive][short drive] around the block at low speed (~25MPH average)
-* [Idling for longer period of time][idling2]
-* [Highway commute][], about 40 minutes one way
-* [Tailgating][]
-* [Riding the brakes][]
-* [Speeding at highway speeds][speeding]
-* [Agressive driving][], hard acceleration and braking
+  * [Idling while parked][idling while parked], toggling headlights, parking brake, etc.
+  * [Short drive][short drive] around the block at low speed (~25MPH average)
+  * [Idling for longer period of time][idling2]
+  * [Highway commute][], about 40 minutes one way
+  * [Tailgating][]
+  * [Riding the brakes][]
+  * [Speeding at highway speeds][speeding]
+  * [Agressive driving][], hard acceleration and braking
+
+</section>
 
 
 <div class="page-header">
