@@ -53,14 +53,14 @@ If too slow, then it may in distinguishable from the vibrations of regular drivi
 
 Example vibration motors:
 
-* [10,000 RPM Toy Motor](http://www.amazon.com/0-04A-10000RPM-Vibrator-Vibration-Motor/dp/B005G0NQEG/)
-* [XBox 360 Motor](http://www.instructables.com/id/How-To-Disassemble-an-Xbox-360-Wireless-Controller/step15/Remove-The-Rumble-Packs/)
+* [10,000 RPM Toy Motor]
+* [XBox 360 Motor]
 
 <div class="page-header">
     <h2>3D Shift Knob Design</h2>
 </div>
 
-* [3D Design]
+**Github Directory:** [3D Design]
 
 The shift knob housing was designed to meet 3 goals:
 
@@ -76,7 +76,7 @@ The shift knob housing was designed to meet 3 goals:
 
 ***insert photos of PCBs
 
-* [Hardware]
+**Github Directory:** [Hardware]
 
 The Shift Knob PCBs were based off the [Arduino Pro Mini] allowing developers to use the open
 source platform, [Arduino], is program and interface with the atmega328 microcontroller. On the PCB
@@ -103,4 +103,6 @@ For more details about the shift knob design and Android application, please ref
 [3D Design]: https://github.com/openxc/shift-knob/tree/master/3D_Design
 [Hardware]: https://github.com/openxc/shift-knob/tree/master/Hardware
 [Arduino]: http://www.arduino.cc
+[10,000 RPM Toy Motor](http://www.amazon.com/0-04A-10000RPM-Vibrator-Vibration-Motor/dp/B005G0NQEG/)
+[XBox 360 Motor](http://www.instructables.com/id/How-To-Disassemble-an-Xbox-360-Wireless-Controller/step15/Remove-The-Rumble-Packs/)
 
