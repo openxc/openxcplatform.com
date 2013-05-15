@@ -23,12 +23,9 @@ messages, performs required unit conversion or factoring and outputs a [generic
 version][output-format] to the USB interface.
 
 Unless you are implementing custom CAN messages, you will most likely need a
-pre-built OpenXC binary from the manufacturer of your vehicle. Each OEM can
-decide whether or not to participate in OpenXC and if so, which types of data
-they wish to expose.
-
-The firmware for all supported Ford vehicles is currently available to anyone
-who signs this [developer agreement](/agreement.html).
+[pre-built OpenXC binary](/vehicle-interface/firmware.html) from the
+manufacturer of your vehicle. Each OEM can decide whether or not to participate
+in OpenXC and if so, which types of data they wish to expose.
 
 <div class="row">
     <div class="span4">
@@ -42,42 +39,7 @@ who signs this [developer agreement](/agreement.html).
 </div>
 
 <div class="page-header">
-<h2>Supported Vehicles</h2>
-</div>
-
-**Ford**
-
-An up-to-date list of exactly which OpenXC messages are supported by each vehicle is maintained as a
-[Google Spreadsheet](https://docs.google.com/spreadsheet/ccc?key=0Ajz-75u_7nEydFJxUG4yOVZ1NXJlcjNvdzdSTDdyY0E).
-
-The firmware for all supported Ford vehicles is currently available to anyone
-who signs this [developer agreement](/agreement.html).
-
-* 2011 - 2013 Focus (gas and electric)
-* 2011 - 2012 Fusion (gas and hybrid)
-* 2011 - 2012 Fiesta
-* 2012 Mustang
-* 2011 Figo
-* 2009 F-150
-* 2011 - 2012 E350
-* 2008 S-MAX
-
-The firmware for these vehicles is as of yet untested, but should work fine.
-If you use the CAN translator on one of these vehicles, do [let the developers
-know](/overview/discuss.html).
-
-* 2006 - 2010, 2013 Fusion
-* 2010, 2011, 2013 Mustang
-* 2011 - 2013 Explorer
-* 2010 - 2013 F-150
-* 2009 - 2013 Flex
-* 2007 - 2013 Edge
-* 2006 - 2013 Lincoln MKZ
-* 2009 - 2013 Lincoln MKT
-* 2011 - 2013 Lincoln MKX
-
-<div class="page-header">
-<h2>Hardware</h2>
+<h2 id="hardware"><a href="#hardware">Hardware</a></h2>
 </div>
 
 The current implementation uses the [Digilent chipKIT Max32][chipkit], an
@@ -88,9 +50,7 @@ OpenXC applications.
 The translator is powered via its micro-USB port, which is connected to the host
 device. CAN messages are received via the OBD-II port in the driver's footwell.
 
-<a name="parts" href="#parts">
 **Parts List**
-</a>
 
 This is a list of the hardware used in the reference OpenXC kit - you're
 guaranteed to have a 100% compatible OpenXC device if you use these parts
@@ -103,15 +63,13 @@ the crimp connectors, for example).
 * OBD-II Male to Breakout Cable from [OBD2Cables][obd2cable] ($13)
 * (3x) 2x6 Crimp Connector Housings from [Pololu][crimpconnectors] (< $1)
 * (4x) Female crimp pins from [Pololu][crimppins] (< $1)
-* (1x) Male crimp pin from [Pololu]crimppinsmale] (< $1)
+* (1x) Male crimp pin from [Pololu][crimppinsmale] (< $1)
 * Shrink tubing
 * Rubber cable grommet that fits the OBD-II cable
 * Optional - Enclosure from [PacTec][enclosure] ($11)
 * Optional - Mounting spacers for use with the enclosure
 
-<a name="tools" href="#tools">
 **Tools List**
-</a>
 
 This is a list of the tools needed to assemble the kit.
 
@@ -129,7 +87,7 @@ For the suggested enclosure, you'll also need the following:
 * Drill
 
 <div class="page-header">
-<h3><a name="connections" href="#connections">Device Connections</a></h3>
+  <h3 id="connections"><a href="#connections">Device Connections</a></h3>
 </div>
 
 There are 2 USB ports on the combined Max32 and Network Shield, so getting the
@@ -177,13 +135,13 @@ more details on adding Bluetooth.
 
 **Bluetooth Parts List**
 
-* SparkFun BlueSMiRF Silver Bluetooth Module
+* SparkFun [BlueSMiRF Silver Bluetooth Module](https://www.sparkfun.com/products/10269)
 * 6 pin length of male to male header pins (right-angle works well)
 * 6 additional female  and male crimp housins and pins *or* a
   [pre-crimped assortment](http://www.pololu.com/catalog/product/1807).
 
 <div class="page-header">
-<h2>Concepts</h2>
+<h2 id="concepts"><a href="#concepts">Concepts</a></h2>
 </div>
 
 **CAN**
@@ -217,6 +175,8 @@ data points, e.g. the steering wheel angle, a quality factor for the sensor, the
 center point of the steering wheel, etc. Each of these bit fields is known as a
 **CAN signal**.
 
+![CAN Message and Signal Diagram](/images/can-message.png)
+
 The exact format of these bit fields and messages are typically considered
 sensitive information by vehicle manufacturers. The OpenXC CAN translator allows
 these companies to keep that information private, but still give consumers and
@@ -224,7 +184,9 @@ developers access to the data contained within. Even for engineers inside the
 companies, dealing with a standard data format across many vehicles is often
 preferable to keeping track of a database of CAN message and signal definitions.
 
-<a name="obd" href="#obd"><strong>On-Board Diagnostic</strong></a>
+<h3 id="obd">
+<a href="#obd">On-Board Diagnostic</a>
+</h3>
 
 The CAN bus is one of the primary components of [OBD-II][obd2], a vehicle
 diagnostic standard mandatory for all cars sold in the United States since 1996.
@@ -259,11 +221,11 @@ identifiers and formats are also largely proprietary.
 <h2>Next Steps</h2>
 </div>
 
-Bought all of the [parts](#parts) for the CAN translator? The detailed [assembly
+Bought all of the [parts](#hardware) for the CAN translator? The detailed [assembly
 guide][] is next.
 
 [MPIDE]: https://github.com/chipKIT32/chipKIT32-MAX/downloads
-[max32]: http://digilentinc.com/Products/Detail.cfm?NavPath=2,719,895&Prod=CHIPKIT-MAX32.
+[max32]: http://digilentinc.com/Products/Detail.cfm?NavPath=2,719,895&Prod=CHIPKIT-MAX32
 [cantranslator]: https://github.com/openxc/cantranslator
 [output-format]: /vehicle-interface/output-format.html
 [host device]: /android/index.html

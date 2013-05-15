@@ -52,7 +52,7 @@ Sources -> Trace File Playback`, check the `Playback trace file` option and
 browse for the trace file you copied over.
 
 <div class="page-header">
-    <h2><a href="#traces" name="traces">Vehicle Trace Files</a></h2>
+    <h2 id="traces"><a href="#traces">Vehicle Trace Files</a></h2>
 </div>
 
 There are a number of trace files available that exhibit different scenarios and

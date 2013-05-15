@@ -17,7 +17,7 @@ title: Vehicle Interface Assembly - OpenXC
 </div>
 
 Make sure you've purchased all of the required
-[parts](/vehicle-interface/index.html#parts) before beginning.
+[parts](/vehicle-interface/index.html#hardware) before beginning.
 
 <div class="page-header">
     <h2>OBD-II Cable</h2>
@@ -30,7 +30,7 @@ Make sure you've purchased all of the required
 
 If you plan to use an enclosure, slide the round grommet onto the bare wire end
 of the cable (you won't be able to do this later without cutting a slit in the
-grommet).  If you don't use the grommet, plan on finding another form of strain 
+grommet).  If you don't use the grommet, plan on finding another form of strain
 relief.  Cut a section of 3/8" shrink tubing about 1" long and slide it onto
 the cable.
 
@@ -61,9 +61,7 @@ the wire end, and once around the insulation.
 
 These instructions describe how to make a 3 bus cable. The chipKIT only has 2
 CAN controllers, so you will be using at most 2 of the buses at one time. Most
-vehicles use what we will call the `CAN1` and `CAN2-1` buses. The 2012 Ford
-Focus is the only vehicle at this time that uses the `CAN2-2` bus instead of
-`CAN2-1`.
+vehicles use what we will call the `CAN1` and `CAN2-1` buses.
 
 <div class="picture well">
 <div class="row">
@@ -172,7 +170,7 @@ down.
 </div>
 
 <div class="page-header">
-    <h2><a href="#power-jumper" name="power-jumper">Power Jumper</a></h2>
+    <h2 id="power-jumper"><a href="#power-jumper">Power Jumper</a></h2>
 </div>
 
 1. Cut a length of wire, 2" to 3" long.
@@ -214,17 +212,14 @@ recommended case.
 </div>
 
 <div class="page-header">
-    <h2><a href="#electrical-assembly" name="electrical-assembly">Electrical Assembly</a></h2>
+    <h2 id="electrical-assembly"><a href="#electrical-assembly">Electrical Assembly</a></h2>
 </div>
 
 1. Connect the `CAN1` plug on the OBD-II cable to the 12-pin header labeled
   `CAN1` on the Network Shield. Make sure the 2 wires line up with the `CANH`
   and `CANL` labels on the board as well.
 1. Connect the `CAN2-1` plug on the OBD-II cable to the 12-pin header labeled
-  `CAN2` on the Network Shield if you are using any vehicle besides the 2012
-  Ford Focus.
-1. If you are planning to use the 2012 Ford Focus, connect the `CAN2-2` plug to
-  `CAN2` on the Network Shield instead.
+  `CAN2` on the Network Shield.
 
 <div class="picture well">
     <img src="/images/assembly/openxc-assembly-20.jpg" />
@@ -301,7 +296,7 @@ If you are using the recommended PacTec enclosure, it requires a few modificatio
   straight file.
 
 <div class="page-header">
-    <h2><a href="#final-assembly" name="final-assembly">Final Assembly</a></h2>
+    <h2 id="final-assembly"><a href="#final-assembly">Final Assembly</a></h2>
 </div>
 
 1. Complete the <a href="#electrical-assembly">Electrical Assembly</a> as described above.
@@ -332,7 +327,7 @@ the [Google Group](http://groups.google.com/group/openxc).
 </div>
 
 <div class="page-header">
-    <h2><a href="#bluetooth" name="bluetooth">Bluetooth</a></h2>
+    <h2 id="bluetooth"><a href="#bluetooth">Bluetooth</a></h2>
 </div>
 
 If you want wireless support, now is the time to add a Bluetooth module. These

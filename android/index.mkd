@@ -43,6 +43,7 @@ device must:
 
 * Samsung [Galaxy Nexus][galaxynexus] (using Bluetooth or a USB OTG adapter,
   although the CAN translator must be powered externally if using USB)
+* Samsung Galaxy S3 (using Bluetooth or a USB OTG adapter)
 
 <div class="page-header">
     <h2>Known Incompatible Devices</h2>

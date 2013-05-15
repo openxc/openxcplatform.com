@@ -35,6 +35,20 @@ tutorial, but you will need to install the
 before your application will work.</div>
 
 <div class="page-header">
+<h2>Using the Library</h2>
+</div>
+
+You must tell Android and Eclipse that your app intends to use the OpenXC
+library. In the Package Explorer in the left hande side of the Eclipse window,
+right click on your project's top-level folder (e.g. `MyFirstApp`) and select
+`Properties`.
+
+Select the `Android` option in the list on the left in the `Properties` window.
+There should now be a `Library` section on the right side. Click the `Add`
+button, and add the `openxc` project. It should now show up in the Library list
+with a green check mark.
+
+<div class="page-header">
 <h2>Android Manifest</h2>
 </div>
 
@@ -144,10 +158,20 @@ will be called with the data.
 </div>
 
 You want to actually do something with the vehicle speed when you receive it.
-Add a new [TextView][] to the file `res/layout/activity_main.xml` for the speed:
+Add a new [TextView][] to the file `res/layout/activity_main.xml` for the speed
+and add an `id` attribute to the exiting "hello world" `TextView`:
 
 {% highlight xml %}
-<TextView android:id="@+id/vehicle_speed"/>
+<TextView
+    android:id="@+id/textView1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/hello_world" />
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/textView1"
+    android:id="@+id/vehicle_speed" />
 {% endhighlight %}
 
 Grab a reference to that text object in your activity's `onCreate()`:
@@ -166,7 +190,7 @@ one:
 {% highlight java %}
 public void receive(Measurement measurement) {
     final VehicleSpeed speed = (VehicleSpeed) measurement;
-    MyFirstApp.this.runOnUiThread(new Runnable() {
+    MainActivity.this.runOnUiThread(new Runnable() {
         public void run() {
             mVehicleSpeedView.setText(
                 "Vehicle speed (km/h): " + speed.getValue().doubleValue());
@@ -181,6 +205,15 @@ the latest value.
 That's all you need to do to get measurements from OpenXC. You can see the full
 list of `Measurement` Java classes that you can use in the
 [library documentation][].
+
+<div class="page-header">
+<h2>Completed Example</h2>
+</div>
+
+If you're having trouble or want to double check your work, here is a completed
+version of the application:
+
+<script src="https://gist.github.com/peplin/5464835.js"></script>
 
 <div class="page-header">
 <h2>Testing</h2>

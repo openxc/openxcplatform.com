@@ -16,42 +16,21 @@ title: Output Format - OpenXC
     </ul>
 </div>
 
-The microcontroller has a USB controller operating in USB device mode. It sends
-the generic vehicle data over via bulk USB transfer as packed JSON.
+The vehicle interface sends generic vehicle data over one or more output
+interfaces (e.g. USB or Bluetooth) as JSON objects, separated by newlines.
 
-There are two valid message types - single valued and event.
+The OpenXC message format is documented and versioned in a [separate
+repository](https://github.com/openxc/openxc-message-format).
 
-<div class="page-header">
-    <h3>Single Valued</h3>
-</div>
-
-The expected format of a single valued message is:
-
-{% highlight javascript %}
-{"name": "steering_wheel_angle", "value": 45}
-{% endhighlight %}
+If you're creating a web application that uses OpenXC data, this format is also
+used for trace files and with the
+[Uploader](https://github.com/openxc/openxc-android/blob/master/openxc/src/com/openxc/sinks/UploaderSink.java)
+built into the Android library. There's an [example web logging
+example](https://github.com/openxc/web-logging-example) in Python that
+illustrates a working example of how to receive and parse OpenXC data over HTTP.
 
 <div class="page-header">
-    <h3>Event</h3>
-</div>
-
-The expected format of an event message is:
-
-{% highlight javascript %}
-{"name": "button_event", "value": "up", "event": "pressed"}
-{% endhighlight %}
-
-This format is good for something like a button event, where there are two
-discrete pieces of information in the measurement.
-
-<div class="alert alert-info">
-There may not be a 1:1 relationship between input and output signals - i.e. raw
-engine timing CAN signals may be summarized in an "engine performance" metric on
-the abstract side of the interface.
-</div>
-
-<div class="page-header">
-    <h2>Signal List</h2>
+    <h2>Vehicle Data</h2>
 </div>
 
 This is the list of signals officially supported by the Android library. Be
@@ -180,13 +159,13 @@ selected a small set of the most interesting signals to get started.
 
     <dt>latitude</dt>
     <dd>
-        -89.0 to 89.0 degrees
+        -89.0 to 89.0 degrees with standard GPS accuracy
         <p><strong>Ford frequency:</strong> 1Hz</p>
     </dd>
 
     <dt>longitude</dt>
     <dd>
-        -179.0 to 179.0 degrees
+        -179.0 to 179.0 degrees with standard GPS accuracy
         <p><strong>Ford frequency:</strong> 1Hz</p>
     </dd>
 
