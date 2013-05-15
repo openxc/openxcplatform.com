@@ -39,11 +39,11 @@ the network, you can start to get valuable data out of your car.
 
 The OpenXC architecture is divided into **two parts**:
 
-![Boxed CAN Translator](/images/cantranslator-boxed.jpg)
+![Boxed vehicle interface](/images/cantranslator-boxed.jpg)
 
-The <a href="/vehicle-interface/index.html">**CAN translator**</a> (or CAN
-reader) is a device that plugs into the OBD-II port (and thus to the CAN bus),
-reads and translates CAN messages into a [standard cross-vehicle
+The <a href="/vehicle-interface/index.html">**vehicle interface (VI)**</a> is a
+device that plugs into the OBD-II port (and thus to the CAN bus), reads and
+translates CAN messages into a [standard cross-vehicle
 format](/vehicle-interface/output-format.html). The translated messages can be
 sent over USB or Bluetooth, so they can be read by any computer or smartphone.
 
@@ -58,7 +58,7 @@ sent over USB or Bluetooth, so they can be read by any computer or smartphone.
 </div>
 
 The <a href="/android/index.html">**Android host device**</a> connects to the
-CAN translator and reads the translated vehicle data. OpenXC developers can
+vehicle interface and reads the translated vehicle data. OpenXC developers can
 write applications on this device and use any of the data through a Java
 library.
 

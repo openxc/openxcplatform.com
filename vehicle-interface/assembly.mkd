@@ -4,7 +4,7 @@ title: Vehicle Interface Assembly - OpenXC
 ---
 
 <div class="page-header">
-    <h1>CAN Translator Assembly</h1>
+    <h1>Vehicle Interface Assembly</h1>
 </div>
 
 <div class="pull-right well">
@@ -323,7 +323,7 @@ the [Google Group](http://groups.google.com/group/openxc).
 
 <div class="picture well">
     <img src="/images/assembly/openxc-assembly-19.jpg" />
-    <legend>The completed CAN translator!</legend>
+    <legend>The completed vehicle interface!</legend>
 </div>
 
 <div class="page-header">
@@ -360,7 +360,7 @@ below - connect 12v to `Vin` and ground to...`GND`.
 <h2>Next Steps</h2>
 </div>
 
-Once you've constructed a CAN translator, you go through the [test
+Once you've constructed a vehicle interface, you go through the [test
 procedure](/vehicle-interface/testing.html) to make sure it's working correctly.
 
 [12V connection doc]: http://openxcplatform.com/cantranslator/

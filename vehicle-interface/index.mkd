@@ -11,12 +11,12 @@ title: Vehicle Interface - OpenXC
     <ul class="nav nav-list">
         <li class="nav-header">Next Step</li>
         <li><a href="/vehicle-interface/assembly.html">
-            Assemble the CAN translator <i class="icon-arrow-right"></i>
+            Assemble the vehicle interface <i class="icon-arrow-right"></i>
         </a></li>
     </p>
 </div>
 
-The vehicle interface (or CAN translator) is based on a microcontroller with two
+The vehicle interface (VI or CAN translator) is based on a microcontroller with two
 external connections - one to the CAN bus via the OBD-II port, and one to the
 [host device][] via USB or serial. It passively listens for a subset of CAN
 messages, performs required unit conversion or factoring and outputs a [generic
@@ -29,11 +29,11 @@ in OpenXC and if so, which types of data they wish to expose.
 
 <div class="row">
     <div class="span4">
-        <img title="CAN Translator with Enclosure"
+        <img title="VI with Enclosure"
             src="/images/cantranslator-boxed-vertical.jpg"/>
     </div>
     <div class="span4">
-        <img title="CAN Translator with Cable"
+        <img title="VI with Cable"
             src="/images/cantranslator-with-plug.jpg"/>
     </div>
 </div>
@@ -119,17 +119,17 @@ off. The cable only fits one way into the vehicle's port, like a USB cable.
 <h3>Bluetooth</h3>
 </div>
 
-The CAN translator firmware supports for sending data over a serial (UART)
+The VI firmware supports for sending data over a serial (UART)
 connection instead of USB. If you add a Bluetooth adapter that uses the Serial
-Port Profile to your CAN translator, you can connect a tablet (or even a phone!)
+Port Profile to your VI, you can connect a tablet (or even a phone!)
 to your car wirelessly. The Android library also has support for communicating
 with a Bluetooth vehicle interface.
 
-The CAN translator firmware must be compiled with the `UART=1` flag for this
+The VI firmware must be compiled with the `UART=1` flag for this
 feature to work. Manufacturers may choose to distribute pre-compiled binaries
 with this option enabled, too.
 
-See the [CAN translator
+See the [VI
 documentation](http://openxcplatform.com/cantranslator/output/uart.html) for
 more details on adding Bluetooth.
 
@@ -178,8 +178,8 @@ center point of the steering wheel, etc. Each of these bit fields is known as a
 ![CAN Message and Signal Diagram](/images/can-message.png)
 
 The exact format of these bit fields and messages are typically considered
-sensitive information by vehicle manufacturers. The OpenXC CAN translator allows
-these companies to keep that information private, but still give consumers and
+sensitive information by vehicle manufacturers. The OpenXC VI allows these
+companies to keep that information private, but still give consumers and
 developers access to the data contained within. Even for engineers inside the
 companies, dealing with a standard data format across many vehicles is often
 preferable to keeping track of a database of CAN message and signal definitions.
@@ -221,7 +221,7 @@ identifiers and formats are also largely proprietary.
 <h2>Next Steps</h2>
 </div>
 
-Bought all of the [parts](#hardware) for the CAN translator? The detailed [assembly
+Bought all of the [parts](#hardware) for the VI? The detailed [assembly
 guide][] is next.
 
 [MPIDE]: https://github.com/chipKIT32/chipKIT32-MAX/downloads

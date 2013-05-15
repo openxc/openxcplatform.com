@@ -22,7 +22,7 @@ well-tested. When using USB, the host device must:
   that attach to the micro-USB port normally used for charging.
 
 Bluetooth support is currently experimental but has the lowest hardware
-requirements. When using a Bluetooth-equipped CAN translator, the Android host
+requirements. When using a Bluetooth-equipped vehicle interface, the Android host
 device must:
 
 * Support **Android 2.2** or greater (i.e. API level 8)
@@ -42,7 +42,7 @@ device must:
 **Phones**
 
 * Samsung [Galaxy Nexus][galaxynexus] (using Bluetooth or a USB OTG adapter,
-  although the CAN translator must be powered externally if using USB)
+  although the vehicle interface must be powered externally if using USB)
 * Samsung Galaxy S3 (using Bluetooth or a USB OTG adapter)
 
 <div class="page-header">
@@ -54,8 +54,8 @@ adapters](http://www.monoprice.com/products/product.asp?c_id=103&cp_id=10314&cs_
 as they do not pass the neccessary ID pin to use USB OTG on the Android device.
 
 * Samsung Galaxy Tab (the original version) - USB host mode is not fully enabled
-  and is not compatible with a USB CAN translator. Bluetooth should still work,
-  but it is untested.
+  and is not compatible with a USB vehicle interface. Bluetooth should still
+  work, but it is untested.
 
 <div class="page-header">
     <h2>UI Design</h2>

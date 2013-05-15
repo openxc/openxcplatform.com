@@ -232,9 +232,9 @@ device. You can do this in one of three ways:
 * Copy the file with `abd` on the command line:
 	`$ adb push driving.json /sdcard/openxc-driving.json`
 
-Install the [Enabler][enabler] app if you haven't already. That
-application helps control the source of vehicle data, e.g. a USB CAN translator
-or a trace file.
+Install the [Enabler][enabler] app if you haven't already. That application
+helps control the source of vehicle data, e.g. a vehicle interface or a trace
+file.
 
 Install a file manager in Android like the [OI File
 Manager](https://play.google.com/store/apps/details?id=org.openintents.filemanager)

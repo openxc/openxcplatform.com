@@ -97,9 +97,9 @@ VehicleSpeed measurement = vehicle.get(VehicleSpeed.class);
 KilometersPerHour value = measurement.getValue();
 {% endhighlight %}
 
-Occasionally a measurement will not have been received from the CAN translator
-yet - it could be a malfunction, or you're just checking too early for an
-infrequently updated measurement:
+Occasionally a measurement will not have been received from the vehicle
+interface yet - it could be a malfunction, or you're just checking too early for
+an infrequently updated measurement:
 
 {% highlight java %}
 try {
@@ -196,7 +196,7 @@ process; OpenXC uses both.
 
 The core of the system is the [VehicleService][], which runs in a separate process
 to any app. Since only one application at a time can connect to a USB device ,
-this service controls access to the USB CAN translator. From here, new data from
+this service controls access to the USB vehicle interface. From here, new data from
 the vehicle (or other sources, as you'll see) is propagated to any
 applications using the OpenXC library. The benefit is that multiple
 OpenXC-enabled apps can run on the same system, simultaneously.

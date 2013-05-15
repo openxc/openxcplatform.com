@@ -4,14 +4,14 @@ title: Firmware - OpenXC
 ---
 
 <div class="page-header">
-    <h1>CAN Translator Firmware</h1>
+    <h1>Vehicle Interface Firmware</h1>
 </div>
 
 <div class="pull-right well">
     <ul class="nav nav-list">
         <li class="nav-header">Next Step</li>
         <li><a href="/vehicle-interface/testing.html">
-            Test your CAN translator <i class="icon-arrow-right"></i>
+            Test your vehicle interface <i class="icon-arrow-right"></i>
         </a></li>
     </p>
 </div>
@@ -20,13 +20,13 @@ title: Firmware - OpenXC
     <h2>Updating with a .hex File</h2>
 </div>
 
-Updates to the CAN translator firmware may be distributed as pre-compiled
+Updates to the vehicle interface (VI) firmware may be distributed as pre-compiled
 binaries, e.g. if they are distributed by an OEM who does not wish to make the
 CAN signals public. If that's the case for your vehicle, you will have a `.hex`
 file and can use the [upload_hex.sh][] script to update your device.
 
-The instructions for re-programming a CAN translator are in the [CAN translator
-documentation](http://openxcplatform.com/cantranslator/installation/binary.html).
+The instructions for re-programming a VI are in the
+[VI documentation](http://openxcplatform.com/cantranslator/installation/binary.html).
 
 **Ford**
 
@@ -50,14 +50,14 @@ if it were live data.
 
 Developers that know the details of the CAN bus they will be using can choose to
 implement their own signal definitions for the translator. The process is
-described in the [CAN translator
+described in the [VI
 documentation](http://openxcplatform.com/cantranslator/installation/installation.html).
 
 <div class="page-header">
 <h2>Next Steps</h2>
 </div>
 
-You're now ready to [test your CAN translator in a vehicle][testing].
+You're now ready to [test your VI in a vehicle][testing].
 
 [winavr]: http://winavr.sourceforge.net/
 [upload_hex.sh]: https://github.com/openxc/cantranslator/blob/master/script/upload_hex.sh
