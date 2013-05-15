@@ -17,7 +17,7 @@ title: Vehicle Interface Assembly - OpenXC
 </div>
 
 Make sure you've purchased all of the required
-[parts](/vehicle-interface/index.html#parts) before beginning.
+[parts](/vehicle-interface/index.html#hardware) before beginning.
 
 <div class="page-header">
     <h2>OBD-II Cable</h2>
@@ -170,7 +170,7 @@ down.
 </div>
 
 <div class="page-header">
-    <h2><a href="#power-jumper" name="power-jumper">Power Jumper</a></h2>
+    <h2 id="power-jumper"><a href="#power-jumper">Power Jumper</a></h2>
 </div>
 
 1. Cut a length of wire, 2" to 3" long.
@@ -212,7 +212,7 @@ recommended case.
 </div>
 
 <div class="page-header">
-    <h2><a href="#electrical-assembly" name="electrical-assembly">Electrical Assembly</a></h2>
+    <h2 id="electrical-assembly"><a href="#electrical-assembly">Electrical Assembly</a></h2>
 </div>
 
 1. Connect the `CAN1` plug on the OBD-II cable to the 12-pin header labeled
@@ -296,7 +296,7 @@ If you are using the recommended PacTec enclosure, it requires a few modificatio
   straight file.
 
 <div class="page-header">
-    <h2><a href="#final-assembly" name="final-assembly">Final Assembly</a></h2>
+    <h2 id="final-assembly"><a href="#final-assembly">Final Assembly</a></h2>
 </div>
 
 1. Complete the <a href="#electrical-assembly">Electrical Assembly</a> as described above.
@@ -327,7 +327,7 @@ the [Google Group](http://groups.google.com/group/openxc).
 </div>
 
 <div class="page-header">
-    <h2><a href="#bluetooth" name="bluetooth">Bluetooth</a></h2>
+    <h2 id="bluetooth"><a href="#bluetooth">Bluetooth</a></h2>
 </div>
 
 If you want wireless support, now is the time to add a Bluetooth module. These

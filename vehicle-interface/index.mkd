@@ -39,7 +39,7 @@ in OpenXC and if so, which types of data they wish to expose.
 </div>
 
 <div class="page-header">
-<h2>Hardware</h2>
+<h2 id="hardware"><a href="#hardware">Hardware</a></h2>
 </div>
 
 The current implementation uses the [Digilent chipKIT Max32][chipkit], an
@@ -50,9 +50,7 @@ OpenXC applications.
 The translator is powered via its micro-USB port, which is connected to the host
 device. CAN messages are received via the OBD-II port in the driver's footwell.
 
-<a name="parts" href="#parts">
 **Parts List**
-</a>
 
 This is a list of the hardware used in the reference OpenXC kit - you're
 guaranteed to have a 100% compatible OpenXC device if you use these parts
@@ -71,9 +69,7 @@ the crimp connectors, for example).
 * Optional - Enclosure from [PacTec][enclosure] ($11)
 * Optional - Mounting spacers for use with the enclosure
 
-<a name="tools" href="#tools">
 **Tools List**
-</a>
 
 This is a list of the tools needed to assemble the kit.
 
@@ -91,7 +87,7 @@ For the suggested enclosure, you'll also need the following:
 * Drill
 
 <div class="page-header">
-<h3><a name="connections" href="#connections">Device Connections</a></h3>
+  <h3 id="connections"><a href="#connections">Device Connections</a></h3>
 </div>
 
 There are 2 USB ports on the combined Max32 and Network Shield, so getting the
@@ -145,7 +141,7 @@ more details on adding Bluetooth.
   [pre-crimped assortment](http://www.pololu.com/catalog/product/1807).
 
 <div class="page-header">
-<h2><a href="#concepts" name="concepts">Concepts</a></h2>
+<h2 id="concepts"><a href="#concepts">Concepts</a></h2>
 </div>
 
 **CAN**
@@ -188,7 +184,9 @@ developers access to the data contained within. Even for engineers inside the
 companies, dealing with a standard data format across many vehicles is often
 preferable to keeping track of a database of CAN message and signal definitions.
 
-<a name="obd" href="#obd"><strong>On-Board Diagnostic</strong></a>
+<h3 id="obd">
+<a href="#obd">On-Board Diagnostic</a>
+</h3>
 
 The CAN bus is one of the primary components of [OBD-II][obd2], a vehicle
 diagnostic standard mandatory for all cars sold in the United States since 1996.
@@ -223,7 +221,7 @@ identifiers and formats are also largely proprietary.
 <h2>Next Steps</h2>
 </div>
 
-Bought all of the [parts](#parts) for the CAN translator? The detailed [assembly
+Bought all of the [parts](#hardware) for the CAN translator? The detailed [assembly
 guide][] is next.
 
 [MPIDE]: https://github.com/chipKIT32/chipKIT32-MAX/downloads

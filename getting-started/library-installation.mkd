@@ -30,7 +30,7 @@ application to your device - it takes care of a lot of boilerplate, so your
 app's code can be simpler.
 
 <div class="page-header">
-    <h3><a name="eclipse" href="#eclipse">Using Eclipse</a></h3>
+    <h3 id="eclipse"><a href="#eclipse">Using Eclipse</a></h3>
 </div>
 
 Follow Google's [excellent
@@ -84,7 +84,7 @@ Next up, you can start writing your [first OpenXC
 app](/getting-started/tutorial.html).
 
 <div class="page-header">
-    <h3><a name="cli" href="#cli">Using the Command Line</a></h3>
+    <h3 id="cli"><a href="#cli">Using the Command Line</a></h3>
 </div>
 
 If you prefer to compile and deploy from the command line, you can use
@@ -136,7 +136,7 @@ Next up, you can start writing your [first OpenXC
 app](/getting-started/tutorial.html).
 
 <div class="page-header">
-    <h3><a name="enabler" href="#enabler">Enabler</a></h3>
+    <h3 id="enabler"><a href="#enabler">Enabler</a></h3>
 </div>
 
 The best way to make the USB vehicle interface available to your app is to

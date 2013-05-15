@@ -14,7 +14,7 @@ handles reading fresh data from the vehicle.
 This document describes the interface for the OpenXC library **version 2.0**.
 
 <div class="page-header">
-    <h2><a name="vehicle-manager" href="#vehicle-manager">VehicleManager Service</a></h2>
+    <h2 id="vehicle-manager"><a name="vehicle-manager">VehicleManager Service</a></h2>
 </div>
 
 You must first [bind][binding] with the [VehicleManager][] before you can receive
@@ -165,7 +165,7 @@ locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, l
 {% endhighlight %}
 
 <div class="page-header">
-    <h2><a href="#concepts" name="concepts">Concepts</a></h2>
+    <h2 id="concepts"><a href="#concepts">Concepts</a></h2>
 </div>
 
 ![OpenXC Android Library Data Flow](/images/android-library-dataflow.png)
@@ -173,7 +173,7 @@ locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, l
 **Data Flow**
 
 Vehicle data is first received by a physical interface, e.g. USB (#1 in the
-figure), in an Android process running the [VehicleService](#services). The data
+figure), in an Android process running the VehicleService. The data
 processed and encapsulated in Java objects as a part of a
 [DataPipeline](#pipeline) (#2) before being propagated to all client
 applications (#3).
@@ -182,9 +182,9 @@ The client applications (in a separate process) receive the data in an instance
 of the [VehicleManager](#services) service (#4) which notifies any activities
 that have previously registered their interest in vehicle data (#5).
 
-<a name="services" href="#services">
-**Remote and Local Services**
-</a>
+<h3 id="services">
+  <a href="#services">Remote and Local Services</a>
+</h3>
 
 Android exposes many of its system level functions in the form of services. This
 is a useful paradigm for long-running components of an application and perfect
@@ -208,9 +208,9 @@ and communicates with it using the [Android Interface Definition
 Language][aidl]. The benefit of using the [VehicleManager][] in-process is that
 developers don't need to care about any of this - it's all abstracted away.
 
-<a name="pipeline" href="#pipeline">
-**Data Pipeline**
-</a>
+<h3>
+<a href="#pipeline">Data Pipeline</a>
+</h3>
 
 The [VehicleManager][] uses the concept of a pipeline to funnel data from
 "sources" to "sinks." This is a one-way pipeline.
