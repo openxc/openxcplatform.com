@@ -17,7 +17,7 @@ FTDI chip and USB connector.
 ![OpenXC Shift Knob](/projects/images/shift-knob/assembled_shift_knob.jpg)
 
 <div class="page-header">
-	<a name="Repositories" class="anchor" href="#Repositories"><h2>Repositories</h2></a>
+	<h2 id="repositories"><a href="#repositories">Repositories</a></h2>
 </div>
 
 This project is contained in four different Github repositories:
