@@ -46,8 +46,7 @@ calculates the vehicle shift point and tranmission gear position and sends this 
 embedded system over USB using the [FTDriver] library.
 
 <div class="page-header">
-	<a name="Motivation"></a>
-    <h2>Motivation</h2>
+	<h2 id="motivation"><a href="#motivation">Motivation</a></h2>
 </div>
 
 The Haptic Feedback Shift Knob was developed for two main reasons. First, the manual 
@@ -67,8 +66,7 @@ could behave much like a cell phone in vibrate mode.
 ![Shift Knob Internals](/projects/images/shift-knob/shift_knob_internals.jpg)
 
 <div class="page-header">
-	<a name="Haptic Feedback"></a>
-    <h2>Haptic Feedback</h2>
+	<h2 id="haptic_feedback"><a href="#haptic_feedback">Haptic Feedback</a></h2>
 </div>
 
 ***INSERT PHOTO OF ASSORTED MOTORS/ECCENTRICS
@@ -86,8 +84,7 @@ Example vibration motors:
 * [XBox 360 Motor]
 
 <div class="page-header">
-	<a name="3D Shift Knob Design"></a>
-    <h2>3D Shift Knob Design</h2>
+	<h2 id="3Ddesign"><a href="#3Ddesign">3D Shift Knob Design</a></h2>
 </div>
 
 **Github Directory:** [3D Design]
@@ -101,8 +98,7 @@ The shift knob housing was designed to meet 3 goals:
 ![Breakdown of Shift Knob](/projects/images/shift-knob/breakdown_of_shift_knob.jpg)
 
 <div class="page-header">
-	<a name="PCB Design"></a>
-    <h2>PCB Design</h2>
+	<h2 id="PCB"><a href="#PCB">PCB Design</a></h2>
 </div>
 
 ***insert photos of PCBs
@@ -116,8 +112,7 @@ brightness of the LEDs and the power to the vibration motor are all controlled w
 7 segment display is controlled by an 8-bit shift register. 
 
 <div class="page-header">
-	<a name="Control"></a>
-    <h2>Control</h2>
+	<h2 id="control"><a href="#control">Control</a></h2>
 </div>
 
 The Haptic Feedback Shift Knob receives data from an Android application connected to a Vehicle 
