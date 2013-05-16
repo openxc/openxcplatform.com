@@ -52,7 +52,7 @@ configuring it to communicate with the VI.
    shorting out and it won't get in the way of the enclosure.
 
 Finally, you need to set the baud rate of the BlueSMiRF module to match the
-output data rate of the VI. Look in the [UART section][uart] of the VI firmware
+output data rate of the VI. Check in the [UART section][uart] of the VI firmware
 documentation for the correct baud rate for the latest release.
 
 *Requirements*
@@ -72,10 +72,10 @@ documentation for the correct baud rate for the latest release.
 1. Open a serial terminal to the connected device
 1. Send these [AT
    commands](http://www.sparkfun.com/datasheets/Wireless/Bluetooth/rn-bluetooth-um.pdf)
-   to set the baud rate to 230400 (replace 230400 with whatever value you found
+   to set the baud rate to 460800 (replace 460800 with whatever value you found
    in the [VI firmware documentation][uart])
    1. Type `$$$` to enter command mode - it should echo back `CMD`
-   1. Type `SU,23` and press Enter to switch the baud rate to 230400 (the first
+   1. Type `SU,46` and press Enter to switch the baud rate to 460800 (the first
       2 digits of the baud rate) - it should echo back `AOK`
    1. Type `D` and press Enter to print out the BlueSMiRF's settings - verify
       that the baud rate is set to what you expect it to be.
