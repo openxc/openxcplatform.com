@@ -50,6 +50,9 @@ OpenXC applications.
 The translator is powered via its micro-USB port, which is connected to the host
 device. CAN messages are received via the OBD-II port in the driver's footwell.
 
+If you want **wireless** support, we have documentation and an extended parts
+list for [adding a Bluetooth module](/vehicle-interface/bluetooth.html).
+
 **Parts List**
 
 This is a list of the hardware used in the reference OpenXC kit - you're
@@ -114,31 +117,6 @@ together and likely destroy the chipKIT and network shield.
 
 The OBD-II cable is safe to plug in at any time, with the vehicle running or
 off. The cable only fits one way into the vehicle's port, like a USB cable.
-
-<div class="page-header">
-<h3>Bluetooth</h3>
-</div>
-
-The VI firmware supports for sending data over a serial (UART)
-connection instead of USB. If you add a Bluetooth adapter that uses the Serial
-Port Profile to your VI, you can connect a tablet (or even a phone!)
-to your car wirelessly. The Android library also has support for communicating
-with a Bluetooth vehicle interface.
-
-The VI firmware must be compiled with the `UART=1` flag for this
-feature to work. Manufacturers may choose to distribute pre-compiled binaries
-with this option enabled, too.
-
-See the [VI
-documentation](http://openxcplatform.com/cantranslator/output/uart.html) for
-more details on adding Bluetooth.
-
-**Bluetooth Parts List**
-
-* SparkFun [BlueSMiRF Silver Bluetooth Module](https://www.sparkfun.com/products/10269)
-* 6 pin length of male to male header pins (right-angle works well)
-* 6 additional female  and male crimp housins and pins *or* a
-  [pre-crimped assortment](http://www.pololu.com/catalog/product/1807).
 
 <div class="page-header">
 <h2 id="concepts"><a href="#concepts">Concepts</a></h2>
