@@ -35,7 +35,8 @@ device must:
 
 * [Toshiba Thrive][thrive] 10.1" - the reference device used by the core OpenXC
   developers. This tablet includes a full-size USB port.
-* Google Nexus 7 (using Bluetooth or a USB OTG adapter)
+* Google Nexus 7 (using Bluetooth or a USB OTG adapter, but *not* with the
+  Asus-branded USB cable)
 * Samsung Galaxy Tab 7.7" (Bluetooth working fine, USB OTG unconfirmed as it
   requires an additional Samsung adapter)
 
@@ -52,6 +53,10 @@ device must:
 USB will *not* work with [USB A female-female
 adapters](http://www.monoprice.com/products/product.asp?c_id=103&cp_id=10314&cs_id=1031401&p_id=362&seq=1&format=2)
 as they do not pass the neccessary ID pin to use USB OTG on the Android device.
+
+Also, many USB cables provided with phones and tables have non-standard
+resistors in them that are incompatible with OTG. We recommend using a stadard,
+off-the-shelf USB cable and not the one provided with your device.
 
 * Samsung Galaxy Tab (the original version) - USB host mode is not fully enabled
   and is not compatible with a USB vehicle interface. Bluetooth should still
