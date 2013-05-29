@@ -106,10 +106,11 @@ The shift knob housing was designed to meet 3 goals:
 **Github Directory:** [Hardware]
 
 The Shift Knob PCBs were based off the [Arduino Pro Mini] allowing developers to use the open
-source platform, [Arduino], is program and interface with the atmega328 microcontroller. On the PCB
-there are 3 RGB LEDs, 7 segment display, and a connector to attach the vibration motor. The 
+source platform, [Arduino], to program and easily interface with the atmega328 microcontroller. On the PCB
+there are 3 RGB LEDs, a 7 segment display, and a connector to attach the vibration motor. The 
 brightness of the LEDs and the power to the vibration motor are all controlled with MOSFETs. The
-7 segment display is controlled by an 8-bit shift register. 
+7 segment display is controlled by an 8-bit shift register. Additionly, a linear 5V regulator is on-board
+in case the user wants to power the device from the 12V vehicle power rather than the 5V USB power.
 
 <div class="page-header">
 	<h2 id="control"><a href="#control">Control</a></h2>
