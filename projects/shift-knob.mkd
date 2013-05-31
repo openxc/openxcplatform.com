@@ -7,8 +7,8 @@ title: Shift Knob - OpenXC
     <h1>Shift Knob</h1>
 </div>
 
-The Haptic Feedback Shift Knob is a manual transmission shift knob capable of 
-sending haptic and visual signals to the driver. Using a built in algorithm, the 
+The Haptic Feedback Shift Knob is a manual transmission shift knob capable of
+sending haptic and visual signals to the driver. Using a built in algorithm, the
 Shift Knob determines when the driver should shift for best performance and then sends
 an appropriate haptic pulse through the driver's hand signalling that he or she should shift.
 The embedded electronics in the shift knob are based on the [Arduino Pro Mini] with an on-board
@@ -22,21 +22,21 @@ FTDI chip and USB connector.
 
 This project is contained in four different Github repositories:
 
-**<ins>Shiftknob 3D Design</ins>:**
+**<ins>Shift Knob 3D Design</ins>:**
 
-* The [shiftknob-3Ddesign] repository contains .STL files for the 3D printable shift 
-knob housings as well as documentation for creating your own physical shift knob design that works 
-with the PCBs already designed. Different vehicles and haptic feedback motors require different 
+* The [shiftknob-3Ddesign] repository contains .STL files for the 3D printable shift
+knob housings as well as documentation for creating your own physical shift knob design that works
+with the PCBs already designed. Different vehicles and haptic feedback motors require different
 housings and those housing files can be found and uploaded here.
 
 **<ins>Hardware</ins>:**
 
-* The [shiftknob-hardware] repository contains Eagle schematics and PCB layouts for 
+* The [shiftknob-hardware] repository contains Eagle schematics and PCB layouts for
 the shift knob embedded hardware.
 
 **<ins>Firmware</ins>:**
 
-* The [shiftknob-firmware] folder contains Arduino source code to run on the embedded 
+* The [shiftknob-firmware] folder contains Arduino source code to run on the embedded
 system as well as other firmware versions for differing applications.
 
 **<ins>Android App</ins>:**
@@ -49,18 +49,18 @@ embedded system over USB using the [FTDriver] library.
 	<h2 id="motivation"><a href="#motivation">Motivation</a></h2>
 </div>
 
-The Haptic Feedback Shift Knob was developed for two main reasons. First, the manual 
+The Haptic Feedback Shift Knob was developed for two main reasons. First, the manual
 transmission shift knob is a relatively plain component in most of today's vehicles.
-They come in all shapes and sizes, sold all across the globe, and yet almost all of them 
+They come in all shapes and sizes, sold all across the globe, and yet almost all of them
 lack any "smart" capabilities. The shift knob is a great space for innovation.
 
 ![Focus ST Shift Knob](/projects/images/shift-knob/in_vehicle_2_small.jpg) ![Haptic Shift Knob](/projects/images/shift-knob/in_vehicle_1_small.jpg)
 
-Secondly, most new manual transmission vehicles have a "shift indicator" light on the 
+Secondly, most new manual transmission vehicles have a "shift indicator" light on the
 instrument cluster that tells the driver to shift for best performance and/or fuel economy.
-This signal, while very useful, requires that the driver take his visual attention away from 
-the road. This can pose a safety problem, so the idea came, "Why not send 
-haptic pulses through the driver's hand to tell him or her when to shift?" The device 
+This signal, while very useful, requires that the driver take his visual attention away from
+the road. This can pose a safety problem, so the idea came, "Why not send
+haptic pulses through the driver's hand to tell him or her when to shift?" The device
 could behave much like a cell phone in vibrate mode.
 
 ![Shift Knob Internals](/projects/images/shift-knob/shift_knob_internals.jpg)
@@ -69,10 +69,10 @@ could behave much like a cell phone in vibrate mode.
 	<h2 id="haptic_feedback"><a href="#haptic_feedback">Haptic Feedback</a></h2>
 </div>
 
-Most haptic feedback devices such as cells phones and game controllers use a motor with an 
-eccentric mass to generate the vibration effect. The size of the motor and eccentric mass is 
-dependent on the weight of the device and type of vibration desired. For this particular case, it 
-was determined that a large eccentric mass would be needed with a rotation speed less than 
+Most haptic feedback devices such as cells phones and game controllers use a motor with an
+eccentric mass to generate the vibration effect. The size of the motor and eccentric mass is
+dependent on the weight of the device and type of vibration desired. For this particular case, it
+was determined that a large eccentric mass would be needed with a rotation speed less than
 10000 RPM. If the rotation speed is too great, then the "feel" may be undetectable or irritating.
 If too slow, then it may in distinguishable from the vibrations of regular driving.
 
@@ -81,8 +81,8 @@ Example vibration motors:
 * [XBox 360 Motor]
 * [10,000 RPM Toy Motor]
 
-For this particular version, two different housings were designed using the two different haptic 
-feedback motors listed above. The first shown [here](#motivation) uses the XBox 360 vibration 
+For this particular version, two different housings were designed using the two different haptic
+feedback motors listed above. The first shown [here](#motivation) uses the XBox 360 vibration
 motor and the version shown [below](#3Ddesign) uses the 10,00 RPM Toy Motor.
 
 ![Haptic Feedback Motors](/projects/images/shift-knob/motors.jpg)
@@ -111,7 +111,7 @@ For more details, files, and drawings please see README in the repository above.
 
 The Shift Knob PCBs were based off the [Arduino Pro Mini] allowing developers to use the open
 source platform, [Arduino], to program and easily interface with the atmega328 microcontroller. On the PCB
-there are 3 RGB LEDs, a 7 segment display, and a connector to attach the vibration motor. The 
+there are 3 RGB LEDs, a 7 segment display, and a connector to attach the vibration motor. The
 brightness of the LEDs and the power to the vibration motor are all controlled with MOSFETs. The
 7 segment display is controlled by an 8-bit shift register. Additionly, a linear 5V regulator is on-board
 in case the user wants to power the device from the 12V vehicle power rather than the 5V USB power.
@@ -122,21 +122,21 @@ in case the user wants to power the device from the 12V vehicle power rather tha
 	<h2 id="control"><a href="#control">Control</a></h2>
 </div>
 
-**Github Directories:** 
+**Github Directories:**
 
 * [shiftknob-firmware]
 * [shiftknob-android]
 
-The Haptic Feedback Shift Knob receives data from an Android application connected to a Vehicle 
-Interface (the provider of vehicle data). The Android app calculates the point at which the driver 
-should shift and sends the cooresponding signal to the shift knob. The embedded shift knob 
+The Haptic Feedback Shift Knob receives data from an Android application connected to a Vehicle
+Interface (the provider of vehicle data). The Android app calculates the point at which the driver
+should shift and sends the cooresponding signal to the shift knob. The embedded shift knob
 microcontroller then energizes the haptic feedback motor sending a pulse through the driver's
 hand. The microcontroller also controls RGB LEDs and a 7 segment display which is used to show
 the current transmission gear position.
 
 ![Shift Indicator App](/projects/images/shift-knob/app_screenshot.png)
 
-For more details about the shift knob design and Android application, please refer to the 
+For more details about the shift knob design and Android application, please refer to the
 [Repositories](#repositories) listed above.
 
 [README]: https://github.com/openxc/shift-knob/blob/master/README.mkd
