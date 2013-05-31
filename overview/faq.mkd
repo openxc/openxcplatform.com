@@ -44,7 +44,7 @@ non-standard.
 
 <p>
 OpenXC connects to the OBD-II port, but it does not currently get data from
-OBD-II diagnostic messages. The OpenXC CAN translator listens passively to the
+OBD-II diagnostic messages. The OpenXC vehicle interface listens passively to the
 many CAN messages already flying across the buses that include data not covered
 by standard OBD-II messages. This includes nearly every sensor on vehicle, but
 they are unfortunately non-standard as well. It's up to each auto company to

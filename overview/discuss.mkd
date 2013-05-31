@@ -13,7 +13,7 @@ You can report any bugs or issues on [Github][] as well, in the issue tracker
 for the appropriate project.
 
 * [OpenXC Android Library Issues](https://github.com/openxc/openxc-android/issues)
-* [CAN Translator Issues](https://github.com/openxc/cantranslator/issues)
+* [Vehicle Interface Firmware Issues](https://github.com/openxc/cantranslator/issues)
 
 ### Mailing List
 
@@ -33,7 +33,7 @@ Find all the source code for OpenXC at [Github][].
 
 * [OpenXC Organization](https://github.com/openxc)
 * [OpenXC Android Library](https://github.com/openxc/openxc-android)
-* [CAN Translator Source](https://github.com/openxc/cantranslator)
+* [Vehicle Interface Firmware Source](https://github.com/openxc/cantranslator)
 * [OpenXC Python Library](https://github.com/openxc/openxc-python)
 
 ### Proprietary Vehicle Interface Firmware

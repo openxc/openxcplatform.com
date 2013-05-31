@@ -4,7 +4,7 @@ title: Vehicle Interface Assembly - OpenXC
 ---
 
 <div class="page-header">
-    <h1>CAN Translator Assembly</h1>
+    <h1>Vehicle Interface Assembly</h1>
 </div>
 
 <div class="pull-right well">
@@ -240,6 +240,22 @@ enclosure, it is at risk of static shock damage and strain damage in the event
 of a drop. There are many potential enclosures that will be adequate for this
 device.
 
+If you want wireless support, now is the time to add a Bluetooth module. We have
+[setup instructions](/vehicle-interface/bluetooth.html) for the [SparkFun
+BlueSMiRF](https://www.sparkfun.com/products/10269).
+
+<div class="page-header">
+    <h2>Vehicle Power</h2>
+</div>
+
+The Vehicle Interface can be powered from the vehicle 12V power lines as seen
+below - connect 12v to `Vin` and ground to...`GND`.
+
+<div class="well">
+  <img src="/images/assembly/openxc-assembly-12Vconnection.jpg" />
+  <legend>Powering the Vehicle Interface from the vehicle.</legend>
+</div>
+
 <div class="page-header">
     <h2>Optional Enclosure</h2>
 </div>
@@ -323,44 +339,14 @@ the [Google Group](http://groups.google.com/group/openxc).
 
 <div class="picture well">
     <img src="/images/assembly/openxc-assembly-19.jpg" />
-    <legend>The completed CAN translator!</legend>
-</div>
-
-<div class="page-header">
-    <h2 id="bluetooth"><a href="#bluetooth">Bluetooth</a></h2>
-</div>
-
-If you want wireless support, now is the time to add a Bluetooth module. These
-assembly instructions are for the [SparkFun
-BlueSMiRF](https://www.sparkfun.com/products/10269).
-
-1. Solder the 6-pin header strip to the BlueSMiRF breakout board.
-1. Create 6 3" wires of different colors with a male crimp pin on one end and a
-   female crimp housing on the other. You may want to wrap the crimp housings in
-   shrink tubing to avoid shorts.
-1. Attach the 6 wires to the BlueSMiRF board, and the other ends to the Network
-   Shield according to the pins defined in the
-   [documentation](http://openxcplatform.com/cantranslator/output/uart.html#chipkit-max32).
-1. Find a good place to tuck the Bluetooth module away so the wires aren't
-   shorting out and it won't get in the way of the enclosure.
-
-<div class="page-header">
-    <h2>Vehicle Power</h2>
-</div>
-
-The Vehicle Interface can be powered from the vehicle 12V power lines as seen
-below - connect 12v to `Vin` and ground to...`GND`.
-
-<div class="well">
-<img src="/images/assembly/openxc-assembly-12Vconnection.jpg" />
-<legend>Powering the Vehicle Interface from the vehicle.</legend>
+    <legend>The completed vehicle interface!</legend>
 </div>
 
 <div class="page-header">
 <h2>Next Steps</h2>
 </div>
 
-Once you've constructed a CAN translator, you go through the [test
+Once you've constructed a vehicle interface, you go through the [test
 procedure](/vehicle-interface/testing.html) to make sure it's working correctly.
 
 [12V connection doc]: http://openxcplatform.com/cantranslator/

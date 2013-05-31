@@ -29,7 +29,7 @@ an additional timestamp field, separated by newlines:
     {"timestamp": 1351176963.438318, "name": "transmission_gear_position", "value": "second"}
 
 In fact, this is the same method used by some of the instrumentation tests. Once
-you've created a file either by recording the output of the CAN translator
+you've created a file either by recording the output of the vehicle interface
 module or building one by hand, copy it to your Android device's internal
 storage or SD card. You can do this in one of three ways:
 
@@ -39,9 +39,9 @@ storage or SD card. You can do this in one of three ways:
 * Copy the file with `abd` on the command line:
 	`$ adb push driving.json /sdcard/openxc-driving.json`
 
-Install the [Enabler][enabler] app if you haven't already. That
-application helps control the source of vehicle data, e.g. a USB CAN translator
-or a trace file.
+Install the [Enabler][enabler] app if you haven't already. That application
+helps control the source of vehicle data, e.g. a USB vehicle interface or a
+trace file.
 
 Install a file manager in Android like the [OI File
 Manager](https://play.google.com/store/apps/details?id=org.openintents.filemanager)

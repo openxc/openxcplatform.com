@@ -13,7 +13,9 @@ title: Vehicle Interface Test Procedure - OpenXC
    binary](http://openxcplatform.com/cantranslator/installation/binary.html) to
    the vehicle interface.
 1. Install the [Python
-   library](http://openxcplatform.com/openxc-python/#installation)
+   library](http://openxcplatform.com/openxc-python/#installation), *even if you
+   don't plan to write any applications in Python* - the command line tools used
+   for testing are installed with this library.
 1. Detach the mini-USB cable and attach the micro-USB port of the vehicle
    interface to the computer. If you are using Windows, install the driver
    included in the repository at `cantranslator/conf/windows-driver`.
