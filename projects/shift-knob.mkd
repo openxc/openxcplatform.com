@@ -129,7 +129,7 @@ in case the user wants to power the device from the 12V vehicle power rather tha
 
 The Haptic Feedback Shift Knob receives data from an Android application connected to a Vehicle
 Interface (the provider of vehicle data). The Android app calculates the point at which the driver
-should shift and sends the cooresponding signal to the shift knob. The embedded shift knob
+should shift and sends the corresponding signal to the shift knob. The embedded shift knob
 microcontroller then energizes the haptic feedback motor sending a pulse through the driver's
 hand. The microcontroller also controls RGB LEDs and a 7 segment display which is used to show
 the current transmission gear position.
