@@ -15,6 +15,12 @@ for the appropriate project.
 * [OpenXC Android Library Issues](https://github.com/openxc/openxc-android/issues)
 * [Vehicle Interface Firmware Issues](https://github.com/openxc/cantranslator/issues)
 
+### Wiki
+
+There is a [public wiki at
+GitHub](https://github.com/openxc/openxc.github.com/wiki) - anything is fair
+game for here, but please keep discussion on the mailing list.
+
 ### Mailing List
 
 Join the [OpenXC Google Group](http://groups.google.com/group/openxc) to ask any
