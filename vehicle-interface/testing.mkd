@@ -24,6 +24,9 @@ title: Vehicle Interface Test Procedure - OpenXC
    error about not being able to find the USB device, make sure the [power
    jumper](/vehicle-interface/assembly.html#power-jumper) is properly installed
    and the chipKIT has power (there will be a red LED when powered).
+   1. Did you get an error that there is `no backend available`? Go back to the
+      Python library docs and make sure you [installed a USB
+      backend](http://openxcplatform.com/openxc-python/#usb).
 1. If the version check was successful, run `openxc-dump` to test that data can
    be streamed from the vehicle interface. The emulator generates fake data
    continuously and sends it over USB.
