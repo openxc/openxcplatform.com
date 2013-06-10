@@ -153,7 +153,7 @@ show the current transmission gear position.
 
 ## Authors
 
-The Shift Knob was originally designed and developed by Zac Nelson at Ford.
+The Shift Knob was originally designed and developed by [Zac Nelson](http://github.com/zacnelson) at Ford.
 
 [README]: https://github.com/openxc/shift-knob/blob/master/README.mkd
 [Arduino Pro Mini]: http://arduino.cc/en/Main/ArduinoBoardProMini
