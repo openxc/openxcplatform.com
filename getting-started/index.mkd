@@ -76,7 +76,7 @@ When you're ready to begin writing an OpenXC app, continue on to
 can get started even if you don't have a hardware vehicle interface (or even a
 car!).
 
-If you're interested in created a web application instead and want to leave the
+If you're interested in creating a web application instead and want to leave the
 in-vehicle details to someone else, jump to the [vehicle data
-format](/vehicle-interface/output-format.html) section to
-know what type of data your app needs to accept.
+format](/vehicle-interface/output-format.html) section to know what type of data
+your app needs to accept.
