@@ -65,7 +65,7 @@ the crimp connectors, for example).
 * Digilent chipKIT Network Shield from [Digilent][Network Shield] ($55)
 * OBD-II Male to Breakout Cable from [OBD2Cables][obd2cable] ($13)
 * (3x) 2x6 Crimp Connector Housings from [Pololu][crimpconnectors] (< $1)
-* (4x) Female crimp pins from [Pololu][crimppins] (< $1)
+* (7x) Female crimp pins from [Pololu][crimppins] (< $1)
 * (1x) Male crimp pin from [Pololu][crimppinsmale] (< $1)
 * Shrink tubing
 * Rubber cable grommet that fits the OBD-II cable
