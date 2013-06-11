@@ -163,5 +163,5 @@ The Shift Knob was originally designed and developed by [Zac Nelson](http://gith
 [shiftknob-android]: https://github.com/openxc/shiftknob-android
 [Arduino]: http://www.arduino.cc
 [10,000 RPM Toy Motor]: http://www.amazon.com/0-04A-10000RPM-Vibrator-Vibration-Motor/dp/B005G0NQEG/
-[XBox 360 Motor]: http://www.instructables.com/id/How-To-Disassemble-an-Xbox-360-Wireless-Controller/step15/Remove-The-Rumble-Packs/
+[XBox 360 Motor]: https://plus.google.com/photos/116004564465576390065/albums/5859724801907560449?authkey=COiqwKvNwer1DQ
 [FTDriver]: https://github.com/ksksue/FTDriver
