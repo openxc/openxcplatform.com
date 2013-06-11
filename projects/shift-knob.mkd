@@ -92,8 +92,8 @@ Example vibration motors:
 * [10,000 RPM Toy Motor][]
 
 For this particular version, two different housings were designed using the two
-different haptic feedback motors listed above. The first shown
-[here](#motivation) uses the XBox 360 vibration motor and the version shown
+different haptic feedback motors listed above. The first housing shown
+[at the top of the page](#motivation) uses the XBox 360 vibration motor and the housing version shown
 [below](#3Ddesign) uses the 10,000 RPM Toy Motor.
 
 ![Haptic Feedback Motors](/projects/images/shift-knob/motors.jpg)
