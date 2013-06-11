@@ -13,7 +13,8 @@ An Android application monitors the vehicle's speed, RPM and transmission gear,
 and indicates to the drive when to shift (for the best performance or fuel
 economy) by vibrating the shift knob. The embedded electronics in the shift knob
 are based on the [Arduino Pro Mini][] with an on-board FTDI chip and USB
-connector. 
+connector. The Shift Knob was originally designed and developed by 
+[Zac Nelson](http://github.com/zacnelson) at Ford.
 
 ![OpenXC Shift Knob](/projects/images/shift-knob/assembled_shift_knob_1.jpg)
 
@@ -162,10 +163,6 @@ determine what the transmission gear position and then displays that gear number
 using an LED display, this shift knob uses an LED backlit LCD screen to display information. Check out this
 [teardown](https://plus.google.com/photos/116004564465576390065/albums/5844118951223917905?authkey=CIXD1Z_p57utOw)
 photo album for more details.
-
-## Authors
-
-The Shift Knob was originally designed and developed by [Zac Nelson](http://github.com/zacnelson) at Ford.
 
 [README]: https://github.com/openxc/shift-knob/blob/master/README.mkd
 [Arduino Pro Mini]: http://arduino.cc/en/Main/ArduinoBoardProMini
