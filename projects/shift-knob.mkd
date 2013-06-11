@@ -13,7 +13,7 @@ An Android application monitors the vehicle's speed, RPM and transmission gear,
 and indicates to the drive when to shift (for the best performance or fuel
 economy) by vibrating the shift knob. The embedded electronics in the shift knob
 are based on the [Arduino Pro Mini][] with an on-board FTDI chip and USB
-connector.
+connector. 
 
 ![OpenXC Shift Knob](/projects/images/shift-knob/assembled_shift_knob_1.jpg)
 
@@ -150,6 +150,18 @@ show the current transmission gear position.
 
 ![Shift Indicator App](/projects/images/shift-knob/app_screenshot.png)
 
+<div class="page-header">
+    <h2 id="similar_projects"><a href="#control">Similar Projects</a></h2>
+</div>
+
+**Indy-Cator:**
+
+* The [Indy-Cator](http://www.indy-cator.de/engl/indy-cator-shifter-knob.php) is one of the only "smart"
+shift knobs currently available on the market. This shift knob uses relative accelerometer positions to 
+determine what the transmission gear position and then displays that gear number to the driver. Rather than
+using an LED display, this shift knob uses an LED backlit LCD screen to display information. Check out this
+[teardown](https://plus.google.com/photos/116004564465576390065/albums/5844118951223917905?authkey=CIXD1Z_p57utOw)
+photo album for more details.
 
 ## Authors
 
