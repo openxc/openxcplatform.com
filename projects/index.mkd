@@ -17,5 +17,6 @@ as many well documented, functional projects as we can.
 * [Nighttime Collision Warning, a.k.a. "Night Vision"](/projects/nightvision.html)
 * [Rearview Camera](/projects/rearview-camera.html)
 * [Retro Gauge](/projects/retro-gauge.html)
+* [Shift Knob](/projects/shift-knob.html)
 
 [openxc.github.com]: https://github.com/openxc/openxc.github.com
