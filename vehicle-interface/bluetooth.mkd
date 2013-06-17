@@ -39,6 +39,12 @@ configuring it to communicate with the VI.
 * 6 additional female  and male crimp housins and pins *or* a
   [pre-crimped assortment](http://www.pololu.com/catalog/product/1807).
 
+<div class="picture well">
+    <img src="/images/assembly/bluetooth-wiring.jpg" />
+    <legend>Wiring the BlueSMiRF to the chipKIT (thanks to Jim Kearns for the
+        picture) </legend>
+</div>
+
 **Assembly Instructions**
 
 1. Solder the 6-pin header strip to the BlueSMiRF breakout board.
