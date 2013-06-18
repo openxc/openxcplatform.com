@@ -87,4 +87,28 @@ documentation for the correct baud rate for the latest release.
       that the baud rate is set to what you expect it to be.
 1. Power cycle the BlueSMiRF - you're all set!
 
+<div class="page-header">
+    <h2 id="troubleshooting"><a href="#troubleshooting">Troubleshooting</a></h2>
+</div>
+
+If you've assembled the Bluetooth module and flashed with a firmware, but you
+aren't receiving any data on your Android device, try these troubleshooting
+steps.
+
+* Confirm that the BlueSMiRF status light is green when your Android device
+  connects to the device. In the OpenXC Enabler, you should see a
+  `BluetoothVehicleDataSource` listed under `Sources`, and its socket should not
+  be null.
+* Double check the pins on the chipKIT side - they're very close together so
+  look from above and make sure they are in the correct numbered holes.
+* Double check the pins on the BlueSMiRF side - make the Rx and Tx aren't
+  flipped, and the same for CTS/RTS.
+* Confirm the baud rate of the RN-42 is correct - double check in the [PIC32
+  UART platform
+  docs](http://openxcplatform.com/cantranslator/platforms/max32.html#uart) to
+  find the correct rate.
+* Finally, take a picture of your setup and post a link in the [Google
+  Group](https://groups.google.com/forum/?fromgroups#!forum/openxc)
+  - sometimes another pair of eyes can catch those really tricky problems.
+
 [uart]: http://openxcplatform.com/cantranslator/platforms/max32.html#uart
