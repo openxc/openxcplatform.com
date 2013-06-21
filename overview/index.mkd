@@ -81,7 +81,20 @@ counters.
 
 Ford is one of the founding members of OpenXC.
 
+[Ford Website](http://www.ford.com/)
+
 [Press Release](http://corporate.ford.com/news-center/press-releases-detail/pr-ford-and-bug-labs-develop-35245)
+
+**CrossChasm**
+
+![CrossChasm Logo](/images/logo-crosschasm.png)
+
+CrossChasm contributed to the OpenXC vehicle interface firmware to support their
+C5 hardware OBD interface, and [offers the C5 for
+sale](http://crosschasm.com/SolutionCenter/OpenXC.aspx) through their website.
+
+* [CrossChasm Website](http://www.crosschasm.com/)
+* [CrossChasm OpenXC Page](http://crosschasm.com/SolutionCenter/OpenXC.aspx)
 
 **Bug Labs**
 
@@ -89,6 +102,8 @@ Ford is one of the founding members of OpenXC.
 
 Bug Labs contributed to a prototype version of the OpenXC platform demonstrated
 at TechCrunch Disrupt 2011 in New York.
+
+[Bug Labs Website](http://buglabs.net/)
 
 [Press Release](http://www.buglabs.net/ford-buglabs)
 
