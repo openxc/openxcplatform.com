@@ -87,6 +87,9 @@ Ford is one of the founding members of OpenXC.
 
 ![Bug Labs Logo](/images/buglabs.jpg)
 
+Bug Labs contributed to a prototype version of the OpenXC platform demonstrated
+at TechCrunch Disrupt 2011 in New York.
+
 [Press Release](http://www.buglabs.net/ford-buglabs)
 
 <div class="page-header">
