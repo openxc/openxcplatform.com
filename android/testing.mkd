@@ -142,5 +142,5 @@ VehicleButtonEvent.Listener listener = new VehicleButtonEvent.Listener() {
 [Riding the brakes]: https://s3.amazonaws.com/openxcplatform.com/traces/riding-brakes.json
 [speeding]: https://s3.amazonaws.com/openxcplatform.com/traces/highway-speeding.json
 [Agressive driving]:https://s3.amazonaws.com/openxcplatform.com/traces/aggressive-driving.json
-[Measurement]: /openxc-android/reference/com/openxc/measurements/Measurement.html
-[VehicleManager]: /openxc-android/reference/com/openxc/VehicleManager.html
+[Measurement]: http://android.openxcplatform.com/reference/com/openxc/measurements/Measurement.html
+[VehicleManager]: http://android.openxcplatform.com/reference/com/openxc/VehicleManager.html
