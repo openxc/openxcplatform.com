@@ -15,19 +15,23 @@ Assuming you have Ruby and RubyGems installed:
 
     $ gem install rdiscount jekyll
 
+Then, assuming you have Python's pip installed:
+
+    $ pip install pygements
+
 Then run the local development server:
 
     $ cd openxc.github.com
-    $ jekyll --serve
+    $ jekyll serve -w
 
 and point your browser to http://localhost:4000.
 
 Jekyll uses the templates in the repository to generate a static html version of
 the site. The static version is always dumped in the `_site` subdirectory in the
-repository - this is *not* committed, since it's automatically generated.
-The jekyll config has auto-recompile enabled, so anytime you change a file it
-will regenerate whatever files have changed, so you just need to refresh the
-browser to see your latest updates.
+repository - this is *not* committed, since it's automatically generated. The
+`-w` flag turns on auto-recompilation, so anytime you change a file it will
+regenerate whatever files have changed, so you just need to refresh the browser
+to see your latest updates.
 
 ### Installing Ruby and RubyGems
 

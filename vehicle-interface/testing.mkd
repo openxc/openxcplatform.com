@@ -16,21 +16,19 @@ title: Vehicle Interface Test Procedure - OpenXC
    library](http://openxcplatform.com/openxc-python/#installation), *even if you
    don't plan to write any applications in Python* - the command line tools used
    for testing are installed with this library.
-1. Detach the mini-USB cable and attach the micro-USB port of the vehicle
-   interface to the computer. If you are using Windows, install the driver
-   included in the repository at `cantranslator/conf/windows-driver`.
+1. Attach the USB connection for data (the micro-USB connection on the
+   chipKIT-based VI) to the computer. If you are using Windows, install the
+   driver included in the repository at `cantranslator/conf/windows-driver`.
 1. Run `openxc-control version` at the command line - it should print out the
    current version of the attached vehicle interface. If you instead get an
-   error about not being able to find the USB device, make sure the [power
-   jumper](/vehicle-interface/assembly.html#power-jumper) is properly installed
-   and the chipKIT has power (there will be a red LED when powered).
+   error about not being able to find the USB device, make sure the the VI has
+   power (look for an LED).
    1. Did you get an error that there is `no backend available`? Go back to the
       Python library docs and make sure you [installed a USB
       backend](http://openxcplatform.com/openxc-python/#usb).
 1. If the version check was successful, run `openxc-dump` to test that data can
    be streamed from the vehicle interface. The emulator generates fake data
    continuously and sends it over USB.
-1. Detach the micro-USB cable and re-attach the mini-USB cable.
 1. Download and flash a [pre-compiled
    firmware](http://openxcplatform.com/cantranslator/installation/binary.html)
    for the actual vehicle you want to test.
@@ -39,13 +37,11 @@ title: Vehicle Interface Test Procedure - OpenXC
 1. Try running `openxc-dump` - it should not return an error, but should block
    and return no data - this is the expected output when not attached to a live
    CAN bus.
-1. Attach the [CAN bus headers](/vehicle-interface/assembly.html#final-assembly)
-   to the Network Shield and head out to the vehicle.
-1. In the vehicle, attach the OBD-II cable to the car and the micro-USB cable
-   from computer to the Network Shield. `openxc-control version` should still
-   return the proper version, `openxc-dump` should return a stream of live
-   vehicle data, and now `openxc-dashboard` will show the vehicle parameters in
-   a useful windowed display.
+1. In the vehicle, attach the OBD-II cable to the car and the USB data
+   connection to the computer. `openxc-control version` should still return the
+   proper version, `openxc-dump` should return a stream of live vehicle data,
+   and now `openxc-dashboard` will show the vehicle parameters in a useful
+   windowed display.
 
 If you have issues at any point in this process, check for similar issues in the
 [Google Group](http://groups.google.com/group/openxc) and otherwise create a new

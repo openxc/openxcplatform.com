@@ -10,8 +10,8 @@ title: Vehicle Interface - OpenXC
 <div class="pull-right well">
     <ul class="nav nav-list">
         <li class="nav-header">Next Step</li>
-        <li><a href="/vehicle-interface/assembly.html">
-            Assemble the vehicle interface <i class="icon-arrow-right"></i>
+        <li><a href="/vehicle-interface/testing.html">
+            Test the vehicle interface <i class="icon-arrow-right"></i>
         </a></li>
     </p>
 </div>
@@ -27,6 +27,8 @@ Unless you are implementing custom CAN messages, you will most likely need a
 manufacturer of your vehicle. Each OEM can decide whether or not to participate
 in OpenXC and if so, which types of data they wish to expose.
 
+<h2>Off-the-shelf chipKIT-based VI</h2>
+
 <div class="row">
     <div class="span4">
         <img title="VI with Enclosure"
@@ -38,183 +40,32 @@ in OpenXC and if so, which types of data they wish to expose.
     </div>
 </div>
 
-<div class="page-header">
-<h2 id="hardware"><a href="#hardware">Hardware</a></h2>
-</div>
+This VI design was the first OpenXC interface, and is still fully supported by
+the `cantranslator` firmware. The design design uses entirely off-the-shelf
+components, built on top of a Digilent chipKIT Max32 development board (open
+source hardware!). The VI can be assembled for with a range of functionality
+starting at around $110, with no soldering required.
 
-The current implementation uses the [Digilent chipKIT Max32][chipkit], an
-[Arduino-compatible][arduino] microcontroller based on PIC32. The [Network
-Shield][] add-on adds two CAN transceivers, which is enough to enable most
-OpenXC applications.
+[chipKIT-based OpenXC Vehicle Interface
+Documentation](http://openxcplatform.com/chipkit-vehicle-interface)
 
-The translator is powered via its micro-USB port, which is connected to the host
-device. CAN messages are received via the OBD-II port in the driver's footwell.
+<h2>CrossChasm C5</h2>
 
-If you want **wireless** support, we have documentation and an extended parts
-list for [adding a Bluetooth module](/vehicle-interface/bluetooth.html).
+[CrossChasm](http://crosschasm.com/) has graciously made the C5 [available for
+purchase](http://crosschasm.com/SolutionCenter/OpenXC.aspx) from their website,
+and contributed code to the `cantranslator` firmware to support their platform.
 
-**Parts List**
-
-This is a list of the hardware used in the reference OpenXC kit - you're
-guaranteed to have a 100% compatible OpenXC device if you use these parts
-exactly. There are many equally compatible variations on this list from hundreds
-of different vendors, so feel free to use other parts you may have on hand (like
-the crimp connectors, for example).
-
-* Digilent chipKIT Max32 Microcontroller from [Digilent][max32] ($50)
-* Digilent chipKIT Network Shield from [Digilent][Network Shield] ($55)
-* OBD-II Male to Breakout Cable from [OBD2Cables][obd2cable] ($13)
-* (3x) 2x6 Crimp Connector Housings from [Pololu][crimpconnectors] (< $1)
-* (7x) Female crimp pins from [Pololu][crimppins] (< $1)
-* (1x) Male crimp pin from [Pololu][crimppinsmale] (< $1)
-* Shrink tubing
-* Rubber cable grommet that fits the OBD-II cable
-* Optional - Enclosure from [PacTec][enclosure] ($11)
-* Optional - Mounting spacers for use with the enclosure
-
-**Tools List**
-
-This is a list of the tools needed to assemble the kit.
-
-* Wire stripper
-* Wire crimper
-* Heat gun (or lighter)
-* Multimeter for continuity testing
-* Optional - label maker
-
-For the suggested enclosure, you'll also need the following:
-
-* Angle cutters
-* Phillips head screw driver
-* Tools for etching and cutting plastic
-* Drill
-
-<div class="page-header">
-  <h3 id="connections"><a href="#connections">Device Connections</a></h3>
-</div>
-
-There are 2 USB ports on the combined Max32 and Network Shield, so getting the
-cables sorted out can be a bit confusing. The ports are meant to be used as
-follows:
-
-* Mini-USB - connect to the serial console for debugging and to upload new
-  firmware.
-* Micro-USB - the OpenXC data is sent through this port - connect it to your
-  computer for testing with the Python script, or to an Android tablet to run
-  an OpenXC application.
-
-<div class="pull-right">
-<img title="USB ports" src="/images/usbports.jpg"/>
-</div>
-
-<div class="alert alert-error">
-<strong>A note about power:</strong> In order to power the board via micro-USB,
-you have to connect the 5v rails of the chipKIT and network shield. This means
-that you absolutely must not plug the mini-USB and micro-USB ports in to
-different devices at the same time! This would short 2 different 5v sources
-together and likely destroy the chipKIT and network shield.
-</div>
-
-The OBD-II cable is safe to plug in at any time, with the vehicle running or
-off. The cable only fits one way into the vehicle's port, like a USB cable.
-
-<div class="page-header">
-<h2 id="concepts"><a href="#concepts">Concepts</a></h2>
-</div>
-
-**CAN**
-
-Modern automobiles are laced with a number of microcontrollers and sensors that
-monitor and control everything from the throttle position to the ambient air
-temperature. These devices communicate with each other over a wired in-vehicle
-network, a [CAN bus][can].
-
-![In-vehicle Network](/images/can-diagram.png)
-*(Creative Commons, Ford Motor Company)*
-
-Compared to something like the network of the Internet, CAN is relatively simple
-and low-level. CAN buses have 2 wires, and vehicles typically have two or three
-CAN buses running at speeds ranging from 125Kbps to 500Kbps. The protocol used
-to send data between nodes on the network is roughly equivalent to a link layer
-protocol like MAC or ARP. It's a broadcast network and only one node can send
-data at a time. It handles message priorities at the bit level which makes it a
-good choice for vehicle networks, when you absolutely, positively, **must** make
-sure the brake pedal status is sent.
-
-**CAN Data Format**
-
-CAN network traffic is organized into frames (or messages) that have:
-
-* an 11 bit identifier
-* up to 64 bits of data
-
-Within the 64 bits of data of each **CAN message** there are typically multiple
-data points, e.g. the steering wheel angle, a quality factor for the sensor, the
-center point of the steering wheel, etc. Each of these bit fields is known as a
-**CAN signal**.
-
-![CAN Message and Signal Diagram](/images/can-message.png)
-
-The exact format of these bit fields and messages are typically considered
-sensitive information by vehicle manufacturers. The OpenXC VI allows these
-companies to keep that information private, but still give consumers and
-developers access to the data contained within. Even for engineers inside the
-companies, dealing with a standard data format across many vehicles is often
-preferable to keeping track of a database of CAN message and signal definitions.
-
-<h3 id="obd">
-<a href="#obd">On-Board Diagnostic</a>
-</h3>
-
-The CAN bus is one of the primary components of [OBD-II][obd2], a vehicle
-diagnostic standard mandatory for all cars sold in the United States since 1996.
-The OBD-II standard sends and receives messages on the CAN bus. If you've ever
-watched your mechanic plug a tool in somewhere underneath your steering wheel,
-or seen a vehicle monitoring app for your smartphone, that's OBD-II in action.
-You'll always find the port by the driver's knees.
-
-![OBD-II Port with Cable in a Mustang](/images/obd-ii-cable.jpg)
-
-Diagnostic messages work slightly differently than the CAN messages used by all
-other in-vehicle systems. When you turn on your car, the CAN bus is very busy
-with so-called "normal" messages. For example, the engine control unit (ECU)
-continuously sends a CAN message with the engine speed (in RPM). The cluster
-listens for this message on the bus and updates the tachometer arm when it
-receives a new value. The cluster doesn't have to query for anything.
-
-Conversely, diagnostic messages use a request/response style. When you attach an
-off-the-shelf OBD-II scan tool, it sends specially formatted diagnostic command
-messages over the CAN bus. Nodes on the network that can output diagnostic
-information are listening for these messages, and send out the requested status
-information over CAN when asked. There's no point in sending these messages when
-nothing is attached and capable of interpreting the results, so these messages
-are not sent continuously to minimize the level of traffic on the network.
-
-The diagnostic request protocol is relatively standard across vehicle
-manufacturers, but beyond the standardized (and mandated) [OBD-II
-parameters](http://en.wikipedia.org/wiki/OBD-II_PIDs), the diagnostic message
-identifiers and formats are also largely proprietary.
+The C5 is a very compact interface, so it's great for fleet deployments.
 
 <div class="page-header">
 <h2>Next Steps</h2>
 </div>
 
-Bought all of the [parts](#hardware) for the VI? The detailed [assembly
-guide][] is next.
+Once you've purchased or constructed a vehicle interface, you go through the
+[test procedure](/vehicle-interface/testing.html) to make sure it's working
+correctly.
 
-[MPIDE]: https://github.com/chipKIT32/chipKIT32-MAX/downloads
-[max32]: http://digilentinc.com/Products/Detail.cfm?NavPath=2,719,895&Prod=CHIPKIT-MAX32
-[cantranslator]: https://github.com/openxc/cantranslator
 [output-format]: /vehicle-interface/output-format.html
 [host device]: /android/index.html
-[chipkit]: http://www.digilentinc.com/Products/Catalog.cfm?NavPath=2,892&Cat=18
-[arduino]: http://arduino.cc
-[Network Shield]: http://digilentinc.com/Products/Detail.cfm?NavPath=2,719,943&Prod=CHIPKIT-NETWORK-SHIELD
-[assembly guide]: /vehicle-interface/assembly.html
-[obd2cable]: http://www.obd2cables.com/products/obd-cables/j1962m-ra-to/cable-j1962m-ra-type-b-to-open-end-6ft.html
-[crimpconnectors]: http://www.pololu.com/catalog/product/1914
-[crimppins]: http://www.pololu.com/catalog/product/1930
-[crimppinsmale]: http://www.pololu.com/catalog/product/1931
 [can]: http://en.wikipedia.org/wiki/CAN_bus
 [obd2]: http://en.wikipedia.org/wiki/On-board_diagnostics
-[enclosure]: http://www.pactecenclosures.com/product-detail.php?productid=62&seriesid=45&classid=26

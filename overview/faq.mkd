@@ -82,7 +82,7 @@ OpenXC binaries you can retrieve the amount of fuel consumed directly (at 25
 microliter resolution). </p>
 
 <p>For more information on the types of CAN messages, see the <a
-href="/vehicle-interface/index.html#obd">On-Board Diagnostics</a> section.</p>
+href="/vehicle-interface/concepts.html#obd">On-Board Diagnostics</a> section.</p>
 
 </dd>
 
