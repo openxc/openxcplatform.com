@@ -230,10 +230,10 @@ and when the client app is destroyed by Android the source will no longer send
 any data.
 
 <div class="alert alert-info">
-The <a href="/openxc-android/reference/com/openxc/sources/ApplicationSource.html">
+The <a href="http://android.openxcplatform.com/reference/com/openxc/sources/ApplicationSource.html">
 ApplicationSource</a> is a special case - it's the method by which data from an
 app's custom source is propagated back to the
-<a href="/openxc-android/reference/com/openxc/remote/VehicleService.html">VehicleService</a>
+<a href="http://android.openxcplatform.com/reference/com/openxc/remote/VehicleService.html">VehicleService</a>
  and then all other apps.
 </div>
 
@@ -313,20 +313,20 @@ application's `AndroidManifest.xml` - just the [VehicleManager][] service.
 [user location]: http://developer.android.com/guide/topics/location/strategies.html
 [binding]: http://developer.android.com/guide/components/bound-services.html#Binding
 [services]: http://developer.android.com/guide/components/services.html
-[VehicleManager]: /openxc-android/reference/com/openxc/VehicleManager.html
-[VehicleService]: /openxc-android/reference/com/openxc/remote/VehicleService.html
-[VehicleSpeed]: /openxc-android/reference/com/openxc/measurements/VehicleSpeed.html
-[Measurement]: /openxc-android/reference/com/openxc/measurements/Measurement.html
+[VehicleManager]: http://android.openxcplatform.com/reference/com/openxc/VehicleManager.html
+[VehicleService]: http://android.openxcplatform.com/reference/com/openxc/remote/VehicleService.html
+[VehicleSpeed]: http://android.openxcplatform.com/reference/com/openxc/measurements/VehicleSpeed.html
+[Measurement]: http://android.openxcplatform.com/reference/com/openxc/measurements/Measurement.html
 [Enabler]: /getting-started/library-installation.html#enabler
 [tutorial]: /getting-started/tutorial.html
 [aidl]: http://developer.android.com/guide/components/aidl.html
 [trace file]: /android/testing.html
-[BluetoothVehicleDataSource]: /openxc-android/reference/com/openxc/sources/bluetooth/BluetoothVehicleDataSource.html
-[TraceVehicleDataSource]: /openxc-android/reference/com/openxc/sources/trace/TraceVehicleDataSource.html
-[MeasurementListenerSink]: /openxc-android/reference/com/openxc/sinks/MeasurementListenerSink.html
-[FileRecorderSink]: /openxc-android/reference/com/openxc/sinks/FileRecorderSink.html
-[UploaderSink]: /openxc-android/reference/com/openxc/sinks/UploaderSink.html
-[ApplicationSource]: /openxc-android/reference/com/openxc/sources/ApplicationSource.html
-[UsbVehicleDataSource]: /openxc-android/reference/com/openxc/sources/usb/UsbVehicleDataSource.html
-[RemoteCallbackSink]: /openxc-android/reference/com/openxc/sinks/RemoteCallbackSink.html
-[MockedLocationSink]: /openxc-android/reference/com/openxc/sinks/MockedLocationSink.html
+[BluetoothVehicleDataSource]: http://android.openxcplatform.com/reference/com/openxc/sources/bluetooth/BluetoothVehicleDataSource.html
+[TraceVehicleDataSource]: http://android.openxcplatform.com/reference/com/openxc/sources/trace/TraceVehicleDataSource.html
+[MeasurementListenerSink]: http://android.openxcplatform.com/reference/com/openxc/sinks/MeasurementListenerSink.html
+[FileRecorderSink]: http://android.openxcplatform.com/reference/com/openxc/sinks/FileRecorderSink.html
+[UploaderSink]: http://android.openxcplatform.com/reference/com/openxc/sinks/UploaderSink.html
+[ApplicationSource]: http://android.openxcplatform.com/reference/com/openxc/sources/ApplicationSource.html
+[UsbVehicleDataSource]: http://android.openxcplatform.com/reference/com/openxc/sources/usb/UsbVehicleDataSource.html
+[RemoteCallbackSink]: http://android.openxcplatform.com/reference/com/openxc/sinks/RemoteCallbackSink.html
+[MockedLocationSink]: http://android.openxcplatform.com/reference/com/openxc/sinks/MockedLocationSink.html

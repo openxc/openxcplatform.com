@@ -264,11 +264,11 @@ about the [host device][] and [vehicle interface][].
 [MPG]: https://github.com/openxc/mpg
 [Android service]: http://developer.android.com/guide/components/services.html
 [bind]: http://developer.android.com/guide/topics/fundamentals/bound-services.html#Binding)
-[VehicleManager]: /openxc-android/reference/com/openxc/VehicleManager.html
+[VehicleManager]: http://android.openxcplatform.com/reference/com/openxc/VehicleManager.html
 [enabler]: /getting-started/library-installation.html#enabler
 [driving trace]: https://s3.amazonaws.com/openxcplatform.com/driving.json
-[library documentation]: /openxc-android/reference/com/openxc/measurements/package-summary.html
+[library documentation]: http://android.openxcplatform.com/reference/com/openxc/measurements/package-summary.html
 [ServiceConnection]: http://developer.android.com/reference/android/content/ServiceConnection.html
-[Listener]: http://openxcplatform.com/openxc-android/reference/com/openxc/measurements/Measurement.Listener.html
-[VehicleSpeed]: http://openxcplatform.com/openxc-android/reference/com/openxc/measurements/VehicleSpeed.html
+[Listener]: http://android.openxcplatform.com/reference/com/openxc/measurements/Measurement.Listener.html
+[VehicleSpeed]: http://android.openxcplatform.com/reference/com/openxc/measurements/VehicleSpeed.html
 [TextView]: http://developer.android.com/reference/android/widget/TextView.html
