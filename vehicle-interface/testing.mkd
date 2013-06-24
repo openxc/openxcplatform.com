@@ -13,7 +13,7 @@ title: Vehicle Interface Test Procedure - OpenXC
    binary](http://vi-firmware.openxcplatform.com/installation/binary.html) to
    the vehicle interface.
 1. Install the [Python
-   library](http://openxcplatform.com/openxc-python/#installation), *even if you
+   library](http://python.openxcplatform.com/installation), *even if you
    don't plan to write any applications in Python* - the command line tools used
    for testing are installed with this library.
 1. Attach the USB connection for data (the micro-USB connection on the
@@ -25,7 +25,7 @@ title: Vehicle Interface Test Procedure - OpenXC
    power (look for an LED).
    1. Did you get an error that there is `no backend available`? Go back to the
       Python library docs and make sure you [installed a USB
-      backend](http://openxcplatform.com/openxc-python/#usb).
+      backend](http://python.openxcplatform.com/#usb).
 1. If the version check was successful, run `openxc-dump` to test that data can
    be streamed from the vehicle interface. The emulator generates fake data
    continuously and sends it over USB.
