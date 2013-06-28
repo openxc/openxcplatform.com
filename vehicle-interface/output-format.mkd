@@ -35,7 +35,9 @@ illustrates a working example of how to receive and parse OpenXC data over HTTP.
 
 This is the list of signals officially supported by the Android library. Be
 aware that vehicles do not necessarily support all of these signals - there are
-plans to be able to check for the existence of a signal before using it.
+plans to be able to check for the existence of a signal before using it. For
+information on which data is supported on your vehicle, see the [binary
+firmware](/vehicle-interface/firmware.html) documentation.
 
 There are potentially many more signals available on the CAN bus, but we've
 selected a small set of the most interesting signals to get started.

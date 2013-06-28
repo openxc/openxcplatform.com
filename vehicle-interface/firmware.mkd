@@ -34,8 +34,12 @@ documentation.
 Firmware for Ford vehicles is available through the [Ford
 Developer](https://developer.ford.com) website for logged-in users.
 
-An up-to-date list of exactly which OpenXC messages are supported by each vehicle is maintained as a
-[Google Spreadsheet](https://docs.google.com/spreadsheet/ccc?key=0Ajz-75u_7nEydFJxUG4yOVZ1NXJlcjNvdzdSTDdyY0E).
+An up-to-date list of exactly which OpenXC messages are supported by each
+vehicle is maintained as a [Google
+Spreadsheet](https://docs.google.com/spreadsheet/ccc?key=0Ajz-75u_7nEydFJxUG4yOVZ1NXJlcjNvdzdSTDdyY0E).
+The spreadsheet also identifies which of the CAN buses each data element is
+available on, so you can make sure to buy or build vehicle interface that
+[connects to the right buses](/vehicle-interface#obd-pins).
 
 **Emulator**
 

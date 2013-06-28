@@ -27,6 +27,43 @@ Unless you are implementing custom CAN messages, you will most likely need a
 manufacturer of your vehicle. Each OEM can decide whether or not to participate
 in OpenXC and if so, which types of data they wish to expose.
 
+<h3 id="obd-pins"><a href="#obd-pins">CAN Buses on OBD Pins</a></h3>
+
+The OBD-II port has one standard pin pair for a single CAN bus, but many
+automakers expose other buses on additional, non-standard pin pairs.
+
+<div class="well">
+<table>
+<thead>
+<tr><th>OBD-II Pin Pair</th><th>OpenXC Bus Name</th><th>Other common name</th></tr>
+</thead>
+<tbody>
+<tr>
+    <td>6 (+) and 14 (-)</td>
+    <td>CAN1</td>
+    <td>CAN high / CAN low from ISO 15765-4 and SAE-J2284</td>
+</tr>
+<tr>
+    <td>3 (+) and 11 (-)</td>
+    <td>CAN2-1</td>
+    <td>Ford secondary, Chrysler CCD</td>
+</tr>
+<tr>
+    <td>1 (+) and 8 (-)</td>
+    <td>CAN2-2</td>
+    <td>Ford: infotainment, GM: J2411</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+Most vehicle data is available from CAN1, and all vehicle interfaces connect
+that bus. Some data is available only on CAN2-1 or CAN2-2, and unfortunately
+these buses are not currently connected by all vehicle interfaces. To find out
+if the informatino you need is on a bus connected by a particular VI, check the
+[binary firmware](/vehicle-interface/firmware.html) documentation for your
+vehicle manufacturer.
+
 <h2>DIY chipKIT-based VI</h2>
 
 <div class="row">
@@ -46,6 +83,9 @@ components, built on top of a Digilent chipKIT Max32 development board (open
 source hardware!). The VI can be assembled for with a range of functionality
 starting at around $110, with no soldering required.
 
+The chipKIT VI can connect to up to 2 CAN buses simultaneously, and you can
+choose from any of [CAN1, CAN2-1 or CAN2-2](#obd-pins).
+
 [chipKIT-based OpenXC Vehicle Interface
 Documentation](http://chipkit-vi.openxcplatform.com/)
 
@@ -57,7 +97,8 @@ and contributed code to the `cantranslator` firmware to support their platform.
 
 ![CrossChasm C5](/images/crosschasm-c5.png)
 
-The C5 is a very compact interface, so it's great for fleet deployments.
+The C5 is a very compact interface, so it's great for fleet deployments. It
+connects to the [CAN1 bus pins](#obd-pins) only.
 
 [CrossChasm C5
 Documentation](http://vi-firmware.openxcplatform.com/platforms/crosschasm-c5.html)
