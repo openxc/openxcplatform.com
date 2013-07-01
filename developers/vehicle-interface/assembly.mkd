@@ -1,1 +1,11 @@
-../../vehicle-interface/index.mkd
+---
+layout: default
+title: Vehicle Interface - OpenXC
+---
+
+<div class="page-header">
+    <h1>Vehicle Interface</h1>
+</div>
+
+This page has moved to [Vehicle Interface
+Hardware](/vehicle-interface/index.html).
