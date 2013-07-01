@@ -1,0 +1,10 @@
+---
+layout: default
+title: Retro Gauge - OpenXC
+---
+
+<div class="page-header">
+    <h1>Retro Gauge</h1>
+</div>
+
+The Retro Gauge has [moved](/projects/retro-gauge.html).
