@@ -1,0 +1,10 @@
+---
+layout: default
+title: Trace Analyzer - OpenXC
+---
+
+<div class="page-header">
+    <h1>Trace Analyzer</h1>
+</div>
+
+The trace analyzer has [moved](http://trace-analyzer.openxcplatform.com/).
