@@ -13,7 +13,7 @@ title: Vehicle Interface - OpenXC
         <li><a href="/vehicle-interface/testing.html">
             Test the vehicle interface <i class="icon-arrow-right"></i>
         </a></li>
-    </p>
+    </ul>
 </div>
 
 The vehicle interface (VI or CAN translator) is based on a microcontroller with two
