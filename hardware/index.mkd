@@ -1,0 +1,10 @@
+---
+layout: default
+title: Hardware Projects - OpenXC
+---
+
+<div class="page-header">
+    <h1>Hardware Projects</h1>
+</div>
+
+Projects have moved to the [Projects](/projects) section.
