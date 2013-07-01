@@ -1,1 +1,10 @@
-../../getting-started/library-installation.mkd
+---
+layout: default
+title: Library Setup - OpenXC
+---
+
+<div class="page-header">
+    <h1>Android Library Installation</h1>
+</div>
+
+This page has [moved](/getting-started/library-installation.html).

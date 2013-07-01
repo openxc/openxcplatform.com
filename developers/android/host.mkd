@@ -1,1 +1,10 @@
-../../android/index.mkd
+---
+layout: default
+title: Android Host Device - OpenXC
+---
+
+<div class="page-header">
+    <h1>Android Host Device</h1>
+</div>
+
+This page has [moved](http://openxcplatform.com/android/index.html).

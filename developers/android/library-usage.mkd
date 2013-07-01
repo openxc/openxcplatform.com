@@ -1,1 +1,10 @@
-../../android/api-guide.mkd
+---
+layout: default
+title: Android Library API Guide - OpenXC
+---
+
+<div class="page-header">
+    <h1>Android Library API Guide</h1>
+</div>
+
+This page has [moved](/android/api-guide.html).
