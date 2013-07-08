@@ -26,7 +26,7 @@ CAN signals public. If that's the case for your vehicle, you will have a `.hex`
 file and can use the [upload_hex.sh][] script to update your device.
 
 The instructions for re-programming a VI are in the [binary
-firwmare](http://vi-firmware.openxcplatform.com/installation/binary.html) VI
+firwmare](http://vi-firmware.openxcplatform.com/en/latest/installation/binary.html) VI
 documentation.
 
 **Ford**
@@ -56,7 +56,7 @@ if it were live data.
 Developers that know the details of the CAN bus they will be using can choose to
 implement their own signal definitions for the translator. The process is
 described in the [building from source
-documentation](http://vi-firmware.openxcplatform.com/installation/installation.html).
+documentation](http://vi-firmware.openxcplatform.com/en/latest/installation/installation.html).
 
 <div class="page-header">
 <h2>Next Steps</h2>

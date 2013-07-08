@@ -101,7 +101,7 @@ The C5 is a very compact interface, so it's great for fleet deployments. It
 connects to the [CAN1 bus pins](#obd-pins) only.
 
 [CrossChasm C5
-Documentation](http://vi-firmware.openxcplatform.com/platforms/crosschasm-c5.html)
+Documentation](http://vi-firmware.openxcplatform.com/en/latest/platforms/crosschasm-c5.html)
 
 
 <div class="page-header">
