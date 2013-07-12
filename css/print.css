@@ -3,6 +3,32 @@ a:link:after, a:visited:after {
     content:" [" attr(href) "] ";
 }
 
-.nav, .footer-links, .nav-container {
+.navbar-inner, .nav, .footer-links, .nav-container {
   display: none;
+}
+
+h1 {
+  font-size: 20px;
+  line-height: 0.5;
+}
+
+h2 {
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.page-header {
+  padding-bottom: 5px;
+  margin: 5px;
+}
+
+#print-logo {
+    display: block;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.navbar-inner {
+  min-height: 0;
+  box-shadow: 0;
 }

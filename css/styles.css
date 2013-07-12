@@ -60,3 +60,7 @@ h2:before, h3:before {
     height: 60px;
     margin: -60px 0 0;
 }
+
+#print-logo {
+    display: none;
+}
