@@ -3,6 +3,6 @@ a:link:after, a:visited:after {
     content:" [" attr(href) "] ";
 }
 
-.nav {
+.nav, .footer-links, .nav-container {
   display: none;
 }
