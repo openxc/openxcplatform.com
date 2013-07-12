@@ -1,0 +1,8 @@
+/* For printing, show links */
+a:link:after, a:visited:after {
+    content:" [" attr(href) "] ";
+}
+
+.nav {
+  display: none;
+}
