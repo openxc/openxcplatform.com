@@ -253,7 +253,9 @@ or the [Vehicle Dashboard][].
 </div>
 
 You've now completed the OpenXC Android tutorial, but there's more to learn
-about the [host device][] and [vehicle interface][].
+about the [host device][] and [vehicle interface][]. If you are having trouble,
+check out the [troubleshooting](/getting-started/troubleshooting.html) steps.
+
 
 [sdk]: http://developer.android.com/sdk/index.html
 [gg]: http://groups.google.com/group/openxc
