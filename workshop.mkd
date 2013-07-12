@@ -1,0 +1,61 @@
+---
+layout: default
+title: OpenXC Workshop Materials
+---
+
+<div class="page-header">
+    <h1>{{page.title}}</h1>
+</div>
+
+Thanks for attending an [OpenXC](http://openxcplatform.com) workshop! This page
+is a collection of links and resources for what you will be working on over the
+weekend. If you have questions after the event, ask anything in the [Google
+Group](http://groups.google.com/group/openxc).
+
+### Software - Android Development
+
+* Download the [Android Developer Tools Bundle](http://developer.android.com/sdk/index.html).
+* Build your [first Android app](http://developer.android.com/sdk/index.html)
+* [Install the OpenXC library](http://openxcplatform.com/getting-started/library-installation.html)
+* Install [the Enabler](http://developer.android.com/sdk/index.html)
+* Add vehicle data to your app by following [the tutorial](http://developer.android.com/sdk/index.html)
+* Run your app on a supported [physical Android
+  device](http://developer.android.com/sdk/index.html)
+* Learn more about how the [Android library is designed](http://developer.android.com/sdk/index.html)
+
+If you get stuck, check out the
+[troubleshooting](/getting-started/troubleshooting.html) steps.
+
+### Hardware - Building a Retro Gauge
+
+* Read about the [Retro Gauge](http://developer.android.com/sdk/index.html) that
+  you will build
+* Grab a Retro Gauge parts kit and go through the [hands-on
+  lab](http://developer.android.com/sdk/index.html)
+
+### Android Packages
+
+To make things easier, we've collected Android APK files (the package format for
+Android apps) of everything you may want to install on a device during the
+workshop. Open these links on the device and it will install the application
+directly.
+
+* [Retro gauge driver](#)
+* [OpenXC Enabler](#)
+* [OpenXC vehicle dashboard](#)
+* [OpenXC backup camera](#)
+* [Android webcam example](#)
+
+### TechShop Austin-Round Rock Local Downloads
+
+Since some of the files you need to download are rather large, we've
+cached them on the local network at TechShop for you.
+
+* Android Developer Tools Bundle
+  * Windows - [32-bit](#), [64-bit](#)
+  * Mac OS X - [64-bit](#)
+  * Linux - [32-bit](#), [64-bit](#)
+* [OpenXC Android library Git repository](#)
+* [FTdriver Git repository](#)
+* GitHub Client - [Windows](#), [Mac OS X](#)
+* Git - [Windows](#), [Mac OS X](#)
