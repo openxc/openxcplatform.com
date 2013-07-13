@@ -20,6 +20,9 @@ The OpenXC functionality is exposed via a Java library that includes some
 Android services your application can use. The library is available on GitHub in
 the [openxc-android][] repository and also in the central Maven repository.
 
+There is a [screencast walkthrough](http://www.youtube.com/watch?v=4uelN6Km_CI)
+of the complete installation and OpenXC app tutorial on YouTube.
+
 <div class="page-header">
     <h2>Installation</h2>
 </div>

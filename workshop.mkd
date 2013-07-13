@@ -14,6 +14,8 @@ Group](http://groups.google.com/group/openxc).
 
 ### Software - Android Development
 
+* Watch a [screencast](http://www.youtube.com/watch?v=4uelN6Km_CI) of the
+  Android library setup and initial app development
 * Download the [Android Developer Tools Bundle](http://developer.android.com/sdk/index.html).
 * Build your [first Android app](http://developer.android.com/sdk/index.html)
 * [Install the OpenXC library](http://openxcplatform.com/getting-started/library-installation.html)
