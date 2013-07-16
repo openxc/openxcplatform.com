@@ -19,4 +19,10 @@ as many well documented, functional projects as we can.
 * [Retro Gauge](/projects/retro-gauge.html)
 * [Shift Knob](/projects/shift-knob.html)
 
+## Research Projects
+
+* [WIMXWAYNE](http://groups.geni.net/geni/wiki/WIMXWAYNE) - WiMAX Prototyping in
+  Metro Detroit: Integrating GENI Engineering with Wireless Network Applications
+  and Science
+
 [openxc.github.com]: https://github.com/openxc/openxc.github.com
