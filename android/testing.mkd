@@ -141,7 +141,7 @@ VehicleButtonEvent.Listener listener = new VehicleButtonEvent.Listener() {
 {% endhighlight %}
 
 [gg]: http://groups.google.com/group/openxc
-[Enabler]: http://openxcplatform.com/getting-started/library-installation.html
+[Enabler]: http://openxcplatform.com/getting-started/library-installation.html#enabler
 [vehicle interface]: http://openxcplatform.com/vehicle-interface/index.html
 [short drive]: https://s3.amazonaws.com/openxcplatform.com/driving.json
 [idling while parked]: https://s3.amazonaws.com/openxcplatform.com/parked.json
