@@ -38,10 +38,12 @@ app's code can be simpler.
 
 Follow Google's [excellent
 directions](http://developer.android.com/sdk/index.html) to install the Android
-Developer Tools (ADT), which includes the Android SDT, Eclipse and the Android
+Developer Tools (ADT), which includes the Android SDK, Eclipse and the Android
 plugin for Eclipse. Make sure you also install the latest [Android platform
 version](http://developer.android.com/sdk/installing/adding-packages.html) and
-any additional platform versions that you wish to target.
+any additional platform versions that you wish to target. You may also need the
+latest [Java
+JDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html).
 
 <div class="alert alert-error">
 If you are running 64-bit Ubuntu you will need to install the ia32-libs package.
