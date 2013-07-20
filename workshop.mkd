@@ -30,10 +30,10 @@ If you get stuck, check out the
 
 ### Hardware - Building a Retro Gauge
 
-* Read about the [Retro Gauge](http://developer.android.com/sdk/index.html) that
+* Read about the [Retro Gauge](http://openxcplatform.com/projects/retro-gauge.html) that
   you will build
 * Grab a Retro Gauge parts kit and go through the [hands-on
-  lab](http://developer.android.com/sdk/index.html)
+  lab](http://retro-gauge-lab.openxcplatform.com/)
 
 ### Android Packages
 
