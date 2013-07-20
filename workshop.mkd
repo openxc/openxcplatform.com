@@ -17,13 +17,14 @@ Group](http://groups.google.com/group/openxc).
 * Watch a [screencast](http://www.youtube.com/watch?v=4uelN6Km_CI) of the
   Android library setup and initial app development
 * Download the [Android Developer Tools Bundle](http://developer.android.com/sdk/index.html).
-* Build your [first Android app](http://developer.android.com/sdk/index.html)
+* Build your [first Android app](http://developer.android.com/training/basics/firstapp/index.html)
 * [Install the OpenXC library](http://openxcplatform.com/getting-started/library-installation.html)
 * Install [the Enabler](http://openxcplatform.com/getting-started/library-installation.html#enabler)
-* Add vehicle data to your app by following [the tutorial](http://developer.android.com/sdk/index.html)
+* Add vehicle data to your app by following [the tutorial](http://openxcplatform.com/getting-started/tutorial.html)
 * Run your app on a supported [physical Android
-  device](http://developer.android.com/sdk/index.html)
-* Learn more about how the [Android library is designed](http://developer.android.com/sdk/index.html)
+  device](http://openxcplatform.com/android/index.htm)
+* Learn more about how the [Android library is
+  designed](http://openxcplatform.com/android/api-guide.html)
 
 If you get stuck, check out the
 [troubleshooting](/getting-started/troubleshooting.html) steps.
