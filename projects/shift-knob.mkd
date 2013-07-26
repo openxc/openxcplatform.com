@@ -9,7 +9,7 @@ title: Shift Knob - OpenXC
 
 The Haptic Feedback Shift Knob is a replacement for a manual transmission shift
 knob that adds haptic and visual feedback to help drivers shift appropriately.
-An Android application monitors the vehicle's speed, RPM, transmission gear and 
+An Android application monitors the vehicle's speed, RPM and 
 accelerator pedal position. Based on this information, the application calculates and then 
 indicates to the driver when he or she should shift by vibrating the shift knob. 
 After feeling the haptic "pulse" the driver
@@ -145,11 +145,17 @@ vehicle power rather than the 5V USB power.
 The Haptic Feedback Shift Knob receives commands over USB from an Android
 application connected to an [OpenXC Vehicle
 Interface](http://openxcplatform.com/vehicle-interface/index.html). The Android
-app determines when the driver should shift and sends the corresponding command
-to the shift knob. The embedded shift knob microcontroller then energizes the
-haptic feedback motor sending a pulse through the driver's hand. The
+application can calculate the shift point for best fuel efficiency or performance.
+In performance mode, the user can set a specific RPM shift point. In fuel efficiency 
+mode, the application dynamically calculates when the driver should shift based
+on the pedal position and the current transmission gear.
+
+
+Once the shift point is determined, the Android application sends the corresponding command to the shift knob. 
+The embedded shift knob microcontroller energizes the
+haptic feedback motor based on the received command and sends a pulse through the driver's hand. The
 microcontroller also controls RGB LEDs and a 7 segment display which is used to
-show the current transmission gear position.
+show the current transmission gear position and provide shift knob color control.
 
 ![Shift Indicator App](/projects/images/shift-knob/app_screenshot.png)
 
