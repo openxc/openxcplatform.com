@@ -51,16 +51,3 @@ directly.
 * [OpenXC backup camera](https://github.com/openxc/rearview-camera/releases/download/v1.0/rearview.apk)
 * [Android webcam example](https://github.com/openxc/android-webcam/releases/download/v1.0/webcam-example.apk)
 
-### TechShop Austin-Round Rock Local Downloads
-
-Since some of the files you need to download are rather large, we've
-cached them on the local network at TechShop for you.
-
-* Android Developer Tools Bundle
-  * Windows - [32-bit](http://alarmpi/adt-bundle-windows-x86-20130522.zip), [64-bit](http://alarmpi/adt-bundle-windows-x86_64-20130522.zip)
-  * Mac OS X - [64-bit](http://alarmpi/adt-bundle-mac-x86_64-20130522.zip)
-  * Linux - [32-bit](http://alarmpi/adt-bundle-linux-x86-20130522.zip), [64-bit](http://alarmpi/adt-bundle-linux-x86_64-20130522%20(1).zip)
-* [OpenXC Android library Git repository](http://alarmpi/openxc-android.zip)
-* [FTdriver Git repository](http://alarmpi/FTDriver-openxc.zip)
-* GitHub Client - [Windows](http://alarmpi/GitHubSetup.exe), [Mac OS X](http://alarmpi/mac-GitHub%20for%20Mac%20156.zip)
-* Git - [Windows](http://alarmpi/Git-1.8.3-preview20130601.exe), [Mac OS X](http://alarmpi/git-1.8.3.2-intel-universal-snow-leopard.dmg)
