@@ -58,6 +58,10 @@ browse for the trace file you copied over.
 There are a number of trace files available that exhibit different scenarios and
 driving behaviors.
 
+These files are delivered as gzip compressed files, so if you download one and
+it seems to be corrupted binary, try again using an updated browser - it should
+auto-detect an uncompress when you download:
+
 * [NYC - Downtown, Crosstown](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/downtown-crosstown.json)
 * [NYC - East Downtown](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/downtown-east.json)
 * [NYC - West Downtown](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/downtown-west2.json)
@@ -75,7 +79,6 @@ driving behaviors.
 * [Riding the brakes][]
 * [Speeding at highway speeds][speeding]
 * [Agressive driving][], hard acceleration and braking
-
 
 <div class="page-header">
     <h2>Button Events</h2>
