@@ -240,6 +240,11 @@ Install a file manager in Android like the [OI File
 Manager](https://play.google.com/store/apps/details?id=org.openintents.filemanager)
 so the Enabler is able to browse for files on the SD card.
 
+To install a file manager on an Android Emulator, download the APK file from the 
+[product web site](http://openintents.org/en/filemanager), start the emulator, 
+and from the command line install the APK file with adb:
+<pre><code>$ adb install FileManager-2.0.2.apk</code></pre>
+
 Finally, run the `OpenXC Enabler` app on the device and go to `Settings -> Data
 Sources -> Trace File Playback`, check the `Playback trace file` option and
 browse for the trace file you copied over.
