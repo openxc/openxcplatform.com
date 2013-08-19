@@ -62,6 +62,12 @@ These files are delivered as gzip compressed files, so if you download one and
 it seems to be corrupted binary, try again using an updated browser - it should
 auto-detect an uncompress when you download:
 
+<div class="alert alert-error">
+     Some Android devices' browsers will continue to have problems
+     with the gzipped files.  Skip to the next section to get
+     uncompressed traces if you are having problems on Android.
+</div>
+
 * [NYC - Downtown, Crosstown](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/downtown-crosstown.json)
 * [NYC - East Downtown](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/downtown-east.json)
 * [NYC - West Downtown](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/downtown-west2.json)
@@ -79,6 +85,14 @@ auto-detect an uncompress when you download:
 * [Riding the brakes][]
 * [Speeding at highway speeds][speeding]
 * [Agressive driving][], hard acceleration and braking
+
+<div class="page-header">
+    <h3 id="uncompressed-traces">Uncompressed Vehicle Trace Files</h3>
+</div>
+
+* [Highway Commute and Local Stop](http://s3.amazonaws.com/openxcplatform.com/traces/localwithgps-uncompressed.json)
+* [Idling while parked](http://s3.amazonaws.com/openxcplatform.com/traces/parked-uncompressed.json)
+* [Speeding at highway speeds](http://s3.amazonaws.com/openxcplatform.com/traces/highway-speeding-uncompressed.json)
 
 <div class="page-header">
     <h2>Button Events</h2>
