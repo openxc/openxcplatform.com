@@ -89,7 +89,7 @@ choose from any of [CAN1, CAN2-1 or CAN2-2](#obd-pins).
 [chipKIT-based OpenXC Vehicle Interface
 Documentation](http://chipkit-vi.openxcplatform.com/)
 
-<h2>CrossChasm C5</h2>
+<h2 id="cross-chasm"><a href="#cross-chasm">CrossChasm C5</a></h2>
 
 [CrossChasm](http://crosschasm.com/) has graciously made the C5 [available for
 purchase](http://crosschasm.com/SolutionCenter/OpenXC.aspx) from their website,
