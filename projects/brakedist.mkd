@@ -1,0 +1,158 @@
+---
+layout: default
+title: Brake Distance Tracking - OpenXC
+---
+
+<div class="page-header">
+    <h1>Brake Distance Tracking</h1>
+</div>
+
+The Brake Distance Tracking project is a research project to warn drivers when 
+they follow other vehicles too closely. The project consists of four major components:
+vehicle tracking, traction detection, android software and user interface. Vehicle tracking
+accomplished with a SICK DMT-20 LiDAR sensor. Traction detection is done via a custom 
+Arduino-based sensor module. The user interface is a slightly modified Retro Gauge. 
+Finally, the android software is run on a Nexus tablet and implements OpenXC. The android 
+application uses data collected from the LiDAR, the sensor module and OpenXC to determine
+the required braking distance for a safe stop. Should the driver follow too closely, the 
+Retro Gauge changes color and needle position to warn the driver. The Brake Distance 
+Tracking project was designed and implemented by 2013 summer intern 
+[Dario Yazdi](http://github.com/darioyazdi) at the Ford Silicon Valley Lab. 
+
+<!--TODO: organize and add repository information -->
+
+<div class="page-header">
+    <h2 id="repositories"><a href="#repositories">Repositories</a></h2>
+</div>
+
+<div class="page-header">
+    <h2 id="motivation"><a href="#motivation">Motivation</a></h2>
+</div>
+
+The manual transmission shift knob is a relatively plain component in most of
+today's vehicles. They come in all shapes and sizes, sold all across the globe,
+and yet almost all of them lack any "smart" capabilities. The shift knob is a
+great space for innovation.
+
+![Focus ST Shift Knob](/projects/images/shift-knob/in_vehicle_2_small.jpg)
+
+![Haptic Shift Knob](/projects/images/shift-knob/in_vehicle_1_small.jpg)
+
+Most new manual transmission vehicles have a "shift indicator" light on the
+instrument cluster that tells the driver to shift for best performance and/or
+fuel economy. While useful, this HMI requires the driver direct his or her
+attention away from the road. This can pose a driver distraction, so the idea
+came, "Why not send haptic pulses through the shift knob to tell the driver when
+to shift?" The device could behave much like a cell phone in vibrate mode.
+
+![Shift Knob Internals](/projects/images/shift-knob/shift_knob_internals.jpg)
+
+<div class="page-header">
+    <h2 id="haptic_feedback"><a href="#haptic_feedback">
+        Haptic Feedback
+    </a></h2>
+</div>
+
+Most haptic feedback devices such as cells phones and game controllers use a
+motor with an eccentric mass to generate the vibration effect. The size of the
+motor and eccentric mass is dependent on the weight of the device and type of
+vibration desired. For this particular case, it was determined that a large
+eccentric mass would be needed with a rotation speed less than 10,000 RPM. If the
+rotation speed is too great, then the "feel" may be undetectable or irritating.
+If too slow, then it may in distinguishable from the vibrations of regular
+driving.
+
+Example vibration motors:
+
+* [XBox 360 Motor][]
+* [10,000 RPM Toy Motor][]
+
+For this particular version, two different housings were designed using the two
+different haptic feedback motors listed above. The first housing shown
+[at the top of the page](#motivation) uses the XBox 360 vibration motor and the housing version shown
+[below](#3Ddesign) uses the 10,000 RPM Toy Motor.
+
+![Haptic Feedback Motors](/projects/images/shift-knob/motors.jpg)
+
+<div class="page-header">
+    <h2 id="3Ddesign"><a href="#3Ddesign">3D Shift Knob Design</a></h2>
+</div>
+
+**GitHub Directory:** [shiftknob-3Ddesign][]
+
+The shift knob housing was designed to meet 3 goals:
+
+1. Able to attach to existing vehicle shift levers
+1. Fit PCBs, vibration motor, and a USB cable attachment
+1. Be ergonomically friendly
+
+For more details, files, and drawings please see the [README][shiftknob-3Ddesign].
+
+![Breakdown of Shift Knob](/projects/images/shift-knob/breakdown_of_shift_knob.jpg)
+
+<div class="page-header">
+    <h2 id="PCB"><a href="#PCB">PCB Design</a></h2>
+</div>
+
+**GitHub Directory:** [shiftknob-hardware][]
+
+The Shift Knob PCBs are based off the [Arduino Pro Mini][] allowing developers
+to use the open source [Arduino][] platform to program and easily interface with
+the ATmega328 microcontroller. The PCB has 3 RGB LEDs, a 7 segment display, and
+a connector to attach the vibration motor. The brightness of the LEDs and the
+power to the vibration motor are all controlled with MOSFETs. The 7 segment
+display is controlled by an 8-bit shift register. Additionally, a linear 5V
+regulator is on-board in case the user wants to power the device from the 12V
+vehicle power rather than the 5V USB power.
+
+![Shift Knob PCBs](/projects/images/shift-knob/shiftknob_pcbs.jpg)
+
+<div class="page-header">
+    <h2 id="control"><a href="#control">Control</a></h2>
+</div>
+
+**GitHub Directories:**
+
+* [shiftknob-firmware][]
+* [shiftknob-android][]
+
+The Haptic Feedback Shift Knob receives commands over USB from an Android
+application connected to an [OpenXC Vehicle
+Interface](http://openxcplatform.com/vehicle-interface/index.html). The Android
+application can calculate the shift point for best fuel efficiency or performance.
+In performance mode, the user can set a specific RPM shift point. In fuel efficiency 
+mode, the application dynamically calculates when the driver should shift based
+on the pedal position and the current transmission gear.
+
+
+Once the shift point is determined, the Android application sends the corresponding command to the shift knob. 
+The embedded shift knob microcontroller energizes the
+haptic feedback motor based on the received command and sends a pulse through the driver's hand. The
+microcontroller also controls RGB LEDs and a 7 segment display which is used to
+show the current transmission gear position and provide shift knob color control.
+
+![Shift Indicator App](/projects/images/shift-knob/app_screenshot.png)
+
+<div class="page-header">
+    <h2 id="similar_projects"><a href="#control">Similar Projects</a></h2>
+</div>
+
+**Indy-Cator:**
+
+* The [Indy-Cator](http://www.indy-cator.de/engl/indy-cator-shifter-knob.php) is one of the only "smart"
+shift knobs currently available on the market. This shift knob uses relative accelerometer positions to 
+determine what the transmission gear position and then displays that gear number to the driver. Rather than
+using an LED display, this shift knob uses an LED backlit LCD screen to display information. Check out this
+[teardown](https://plus.google.com/photos/116004564465576390065/albums/5844118951223917905?authkey=CIXD1Z_p57utOw)
+photo album for more details.
+
+[README]: https://github.com/openxc/shift-knob/blob/master/README.mkd
+[Arduino Pro Mini]: http://arduino.cc/en/Main/ArduinoBoardProMini
+[shiftknob-3Ddesign]: https://github.com/openxc/shiftknob-3Ddesign
+[shiftknob-hardware]: https://github.com/openxc/shiftknob-hardware
+[shiftknob-firmware]: https://github.com/openxc/shiftknob-firmware
+[shiftknob-android]: https://github.com/openxc/shiftknob-android
+[Arduino]: http://www.arduino.cc
+[10,000 RPM Toy Motor]: http://www.amazon.com/0-04A-10000RPM-Vibrator-Vibration-Motor/dp/B005G0NQEG/
+[XBox 360 Motor]: https://plus.google.com/photos/116004564465576390065/albums/5859724801907560449?authkey=COiqwKvNwer1DQ
+[FTDriver]: https://github.com/openxc/FTDriver
