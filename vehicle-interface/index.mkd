@@ -78,7 +78,7 @@ vehicle manufacturer.
 </div>
 
 This VI design was the first OpenXC interface, and is still fully supported by
-the `cantranslator` firmware. The design design uses entirely off-the-shelf
+the latest VI firmware. The design design uses entirely off-the-shelf
 components, built on top of a Digilent chipKIT Max32 development board (open
 source hardware!). The VI can be assembled for with a range of functionality
 starting at around $110, with no soldering required.
@@ -93,7 +93,7 @@ Documentation](http://chipkit-vi.openxcplatform.com/)
 
 [CrossChasm](http://crosschasm.com/) has graciously made the C5 [available for
 purchase](http://crosschasm.com/SolutionCenter/OpenXC.aspx) from their website,
-and contributed code to the `cantranslator` firmware to support their platform.
+and contributed code to the VI firmware to support their platform.
 
 ![CrossChasm C5](/images/crosschasm-c5.png)
 
