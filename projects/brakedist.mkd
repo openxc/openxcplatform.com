@@ -19,60 +19,35 @@ Retro Gauge changes color and needle position to warn the driver. The Brake Dist
 Tracking project was designed and implemented by 2013 summer intern 
 [Dario Yazdi](http://github.com/darioyazdi) at the Ford Silicon Valley Lab. 
 
+<div class="page-header">
+    <h2 id="motivation"><a href="#motivation">Motivation</a></h2>
+</div>
+
+Why warn drivers about too close a following distance? Many drivers do not have 
+a good sense for the correct following distance. Even if they knew exactly the correct 
+following distance, it is difficult to accurately judge the distance. What if it's raining? 
+How much more distance should one allow? Accoriding to NHTSA data, rear end collisions are
+resposible of 30% of all collisons. Preventing even a small percentage of rear end collisions
+would therefore greatly improve road safety. 
+
+Beyond the potential for imporving road safety, the sensor package designed for this project 
+can be applied to a countless number of other projects. The traction detection scheme used 
+in this project is fairly simple, but it too can be applied or expanded upon in useful ways to future projects.  
+
 <!--TODO: organize and add repository information -->
 
 <div class="page-header">
     <h2 id="repositories"><a href="#repositories">Repositories</a></h2>
 </div>
 
-<div class="page-header">
-    <h2 id="motivation"><a href="#motivation">Motivation</a></h2>
-</div>
-
-The manual transmission shift knob is a relatively plain component in most of
-today's vehicles. They come in all shapes and sizes, sold all across the globe,
-and yet almost all of them lack any "smart" capabilities. The shift knob is a
-great space for innovation.
-
-![Focus ST Shift Knob](/projects/images/shift-knob/in_vehicle_2_small.jpg)
-
-![Haptic Shift Knob](/projects/images/shift-knob/in_vehicle_1_small.jpg)
-
-Most new manual transmission vehicles have a "shift indicator" light on the
-instrument cluster that tells the driver to shift for best performance and/or
-fuel economy. While useful, this HMI requires the driver direct his or her
-attention away from the road. This can pose a driver distraction, so the idea
-came, "Why not send haptic pulses through the shift knob to tell the driver when
-to shift?" The device could behave much like a cell phone in vibrate mode.
-
-![Shift Knob Internals](/projects/images/shift-knob/shift_knob_internals.jpg)
 
 <div class="page-header">
-    <h2 id="haptic_feedback"><a href="#haptic_feedback">
-        Haptic Feedback
+    <h2 id="LiDAR"><a href="#lidar">
+        LiDAR
     </a></h2>
 </div>
 
-Most haptic feedback devices such as cells phones and game controllers use a
-motor with an eccentric mass to generate the vibration effect. The size of the
-motor and eccentric mass is dependent on the weight of the device and type of
-vibration desired. For this particular case, it was determined that a large
-eccentric mass would be needed with a rotation speed less than 10,000 RPM. If the
-rotation speed is too great, then the "feel" may be undetectable or irritating.
-If too slow, then it may in distinguishable from the vibrations of regular
-driving.
 
-Example vibration motors:
-
-* [XBox 360 Motor][]
-* [10,000 RPM Toy Motor][]
-
-For this particular version, two different housings were designed using the two
-different haptic feedback motors listed above. The first housing shown
-[at the top of the page](#motivation) uses the XBox 360 vibration motor and the housing version shown
-[below](#3Ddesign) uses the 10,000 RPM Toy Motor.
-
-![Haptic Feedback Motors](/projects/images/shift-knob/motors.jpg)
 
 <div class="page-header">
     <h2 id="3Ddesign"><a href="#3Ddesign">3D Shift Knob Design</a></h2>
