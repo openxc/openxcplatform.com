@@ -19,6 +19,8 @@ Retro Gauge changes color and needle position to warn the driver. The Brake Dist
 Tracking project was designed and implemented by 2013 summer intern 
 [Dario Yazdi](http://github.com/darioyazdi) at the Ford Silicon Valley Lab. 
 
+![Sensor Closeup](/projects/images/brakedist/lidar_close_up.JPG)
+
 <div class="page-header">
     <h2 id="motivation"><a href="#motivation">Motivation</a></h2>
 </div>
@@ -32,7 +34,9 @@ would therefore greatly improve road safety.
 
 Beyond the potential for imporving road safety, the sensor package designed for this project 
 can be applied to a countless number of other projects. The traction detection scheme used 
-in this project is fairly simple, but it too can be applied or expanded upon in useful ways to future projects.  
+in this project is fairly simple, but it too can be applied or expanded upon in useful ways to future projects. 
+
+![Following Distance](/projects/images/brakedist/following_distance.jpg) 
 
 <div class="page-header">
     <h2 id="repositories"><a href="#repositories">Repositories</a></h2>
@@ -66,6 +70,9 @@ ha 0-100m range on natural targets and communicates through an RS232 interface. 
 The sensor is physically mounted to the car with a piece of .080" sheet aluminum bent into a "U" shape. This allows a mount to quickly and easily be fabricated with the use of a shear, brake and some drills. Hole pattern templates for both sensor's bolt pattern the hood bolt pattern are available in the LiDAR repository. The hardware for the sensor to mount attachment is M6. The mount is attached to the hood with 8-32 hardware. It is important that the sensor be attached to the mount and the mount to the car with positive retention fasteners. This ensures that the fasteners do not loosen as they are subjected to road vibrations. Vibration isolaters should be placed in between the hood and the sensor mount before assembly. This is in an effort to reduce sensor vibration.  
 
 The sensor has a separate power and data interface. The power interface is accessable via screw terminals once the back plate of the sensor has been removed. Only the first two terminals (+24V and GND) need to be wired to use the sensor as its used in this projcet. The wires are then routed through a cable gland to the exterior of the sensor. I found that an ethernet cable with the ends cut off works well for the power cable. The sensor operates on 24 volt power. This presents some difficulty as the car operates on 12 volts. To overcome this, a [boost converter][] is fed from battery power and its output is used to power the sensor with 24 volts. Do not wire the battery and sensor power directly together. A fuse should be used and at the least, a quick release [connector][] should be used. 
+
+![Lidar Panel](/projects/images/brakedist/lidar_panel.jpg)
+![Battery](/projects/images/brakedist/battery_connection.jpg)
 
 The sensor uses a non-standard command set for command via the RS232 interface. A list of commands is abvailable on the sensor's data sheet. The basic syntax for a command is as follows: 
 
@@ -107,7 +114,12 @@ The firmware requires the following libraries:
 [DHTlib](https://github.com/adafruit/DHT-sensor-library)  
 [aJson](https://github.com/interactive-matter/aJson)  
 
+![Board](/projects/images/brakedist/board.jpg)
+
 The sensor board is housed in a [Pelican Box][] which is bolted onto the side of the LiDAR mount. This makes for the shortest wire routing possible. The pelican box is drilled with the same hole pattern template use for the LiDAR mount. The sensor's are attached to a sensor mount that is magnetically held in the wheel well. The CAD files for the mount can be found in the brakedist repo. These files can easily be printed on a hobbyist 3D printer. To assemble the sensor module, simply glue the humidity sensor to the exterior of the housing, glue the infrared temeperature sensor into its hole and glue two or more appropriately sized magnets into their cavities (there are four magnet cavities, but in practice two magnets sufficed). It is reccomended for ease of assembly and dissassembly that all connections to the board be made with pluggable connectors.  
+
+![Sensor Module](/projects/images/brakedist/sensor_module.jpg)
+
 
 <div class="page-header">
     <h2 id="Android"><a href="#Android">Android</a></h2>
@@ -141,6 +153,8 @@ The android software makes use of the following libraries:
 <div class="page-header">
     <h2 id="User Interface"><a href="#User Interface"> User Interface</a></h2>
 </div>
+
+![Gauge Mount](/projects/images/brakedist/gauge_mount.jpg)
 
 The user interface for this project is based on the [Retro Gauge][] OpenXC project by Dave Evans. The gauge is modified with a different gauge face and also lacks the numerical readeout of Dave's original gauge. As part of this project a modular gauge mount was also designed. This mount pairs with Chad Bean's modular docking project and allows for a seamless integration into a vehicle with a modular dock already installed. The mount is 3D printed and has two halves that bolt together. The CATPart files and stl files for the gauge mount can be found int the [brakedist][] repo. 
 
