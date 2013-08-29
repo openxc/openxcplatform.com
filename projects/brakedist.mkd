@@ -47,87 +47,59 @@ in this project is fairly simple, but it too can be applied or expanded upon in 
     </a></h2>
 </div>
 
+LiDAR was chosen to be the best method of vehicle tracking for this project. 
+It was determined that a range between 30 and 60m was required to measure most 
+brake distances at highway speeds. Though OEM sensors used for ACC may have fit requirement, 
+the vehicle on which the project wad implemented did not have such sensors. Furthermore, 
+on that data is not available yet over OpenXC.  As a result, LiDAR was chosen over other vehicle
+tracking methods because units were commercially available and proved the easiest way
+to implement vehicle tracking on a car not already equipped with it. Note that it is not 
+intended that anyone else implement this project by adding LiDAR equiptment to their car. 
+This project can be attempted by others once OEM vehicle trakcing information is available 
+via OpenXC. 
+
+The specific LiDAR sensor that was chosen for the project was a [SICK DMT10-2-1111][]. This sensor 
+ha 0-100m range on natural targets and communicates through an RS232 interface. The sensor measures via a Class 1 non-visible laser and is therefore safe for use in traffic. The sensor is also IP67 rated and includes a visible laser for aiming. 
+
+The sensor is physically mounted to the car with a piece of .080" sheet aluminum bent into a "U" shape. This allows a mount to quickly and easily be fabricated with the use of a shear, brake and some drills. Hole pattern templates for both sensor's bolt pattern the hood bolt pattern are available in the LiDAR repository. The hardware for the sensor to mount attachment is M6. The mount is attached to the hood with 8-32 hardware. It is important that the sensor be attached to the mount and the mount to the car with positive retention fasteners. This ensures that the fasteners do not loosen as they are subjected to road vibrations. Vibration isolaters should be placed in between the hood and the sensor mount before assembly. This is in an effort to reduce sensor vibration.  
+
+The sensor has a separate power and data interface. The power interface is accessable via screw terminals once the back plate of the sensor has been removed. Only the first two terminals (+24V and GND) need to be wired to use the sensor as its used in this projcet. The wires are then routed through a cable gland to the exterior of the sensor. I found that an ethernet cable with the ends cut off works well for the power cable. The sensor operates on 24 volt power. This presents some difficulty as the car operates on 12 volts. To overcome this, a [boost converter][] is fed from battery power and its output is used to power the sensor with 24 volts. Do not wire the battery and sensor power directly together. A fuse should be used and at the least, a quick release [connector][] should be used. 
+
+The sensor uses a non-standard command set for command via the RS232 interface. A list of commands is abvailable on the sensor's data sheet. The basic syntax for a command is as follows: 
+
+<PRE> {one-byte command} {space} {newline} {carrige return} </PRE>
+
+The command set and data parsing is implemented in the senosr module arduino code, so one need not worry about figuring out the sensor's command set unless they need to use a very specific functionality of the sensor. 
+
+
+
+<div class="page-header">
+    <h2 id="Traction Detection"><a href="#Traction Detection"> Traction Detection</a></h2>
+</div>
+
+This project uses a custom sensor module to detect traction. The sensor module resides in the wheel well and collects ambient temperature, humidity and tire temperature. The sensor board has provisions for dust density measurement, but at the time of this writing that feature is not available. The module also includes a level shifter and functions transcodes messages to and from the laser sensor. 
+
+The sensor board is based around an [Arduino][] Mega, and is made from a protoboard. This allows the board to easily be replicated by hobbyists without the need to order custom PCBs. The first step in  making he sensor board is to solder headers to the protoboard such that an Arduino Mega can plug into the sensor board. From here, we will connect the sensors to the appropriate pins. 
+
+The sensor board is housed in a [Pelican Box][] which is bolted onto the side of the LiDAR mount. This makes for the shortest wire routing possible. The pelican box is drilled with the same hole pattern template use for the LiDAR mount. The sensor's are attached to a sensor mount that is magnetically held in the wheel well. The CAD files for the mount can be found in the brakedist repo. These files can easily be printed on a hobbyist 3D printer. To assemble the sensor module, simply glue the humidity sensor to the exterior of the housing, glue the infrared temeperature sensor into its hole and glue two or more appropriately sized magnets into their cavities (there are four magnet cavities, but in practice two magnets sufficed). 
+
+<div class="page-header">
+    <h2 id="Android"><a href="#Android">Android</a></h2>
+</div>
 
 
 <div class="page-header">
-    <h2 id="3Ddesign"><a href="#3Ddesign">3D Shift Knob Design</a></h2>
+    <h2 id="User Interface"><a href="#User Interface"> User Interface</a></h2>
 </div>
 
-**GitHub Directory:** [shiftknob-3Ddesign][]
+The user interface for this project is based on the [Retro Gauge][] OpenXC project by Dave Evans. The gauge is modified with a different gauge face and also lacks the numerical readeout of Dave's original gauge. As part of this project a modular gauge mount was also designed. This mount pairs with Chad Bean's modular docking project and allows for a seamless integration into a vehicle with a modular dock already installed. The mount is 3D printed and has two halves that bolt together. The CATPart files and stl files for the gauge mount can be found int the [brakedist][] repo. 
 
-The shift knob housing was designed to meet 3 goals:
-
-1. Able to attach to existing vehicle shift levers
-1. Fit PCBs, vibration motor, and a USB cable attachment
-1. Be ergonomically friendly
-
-For more details, files, and drawings please see the [README][shiftknob-3Ddesign].
-
-![Breakdown of Shift Knob](/projects/images/shift-knob/breakdown_of_shift_knob.jpg)
-
-<div class="page-header">
-    <h2 id="PCB"><a href="#PCB">PCB Design</a></h2>
-</div>
-
-**GitHub Directory:** [shiftknob-hardware][]
-
-The Shift Knob PCBs are based off the [Arduino Pro Mini][] allowing developers
-to use the open source [Arduino][] platform to program and easily interface with
-the ATmega328 microcontroller. The PCB has 3 RGB LEDs, a 7 segment display, and
-a connector to attach the vibration motor. The brightness of the LEDs and the
-power to the vibration motor are all controlled with MOSFETs. The 7 segment
-display is controlled by an 8-bit shift register. Additionally, a linear 5V
-regulator is on-board in case the user wants to power the device from the 12V
-vehicle power rather than the 5V USB power.
-
-![Shift Knob PCBs](/projects/images/shift-knob/shiftknob_pcbs.jpg)
-
-<div class="page-header">
-    <h2 id="control"><a href="#control">Control</a></h2>
-</div>
-
-**GitHub Directories:**
-
-* [shiftknob-firmware][]
-* [shiftknob-android][]
-
-The Haptic Feedback Shift Knob receives commands over USB from an Android
-application connected to an [OpenXC Vehicle
-Interface](http://openxcplatform.com/vehicle-interface/index.html). The Android
-application can calculate the shift point for best fuel efficiency or performance.
-In performance mode, the user can set a specific RPM shift point. In fuel efficiency 
-mode, the application dynamically calculates when the driver should shift based
-on the pedal position and the current transmission gear.
-
-
-Once the shift point is determined, the Android application sends the corresponding command to the shift knob. 
-The embedded shift knob microcontroller energizes the
-haptic feedback motor based on the received command and sends a pulse through the driver's hand. The
-microcontroller also controls RGB LEDs and a 7 segment display which is used to
-show the current transmission gear position and provide shift knob color control.
-
-![Shift Indicator App](/projects/images/shift-knob/app_screenshot.png)
-
-<div class="page-header">
-    <h2 id="similar_projects"><a href="#control">Similar Projects</a></h2>
-</div>
-
-**Indy-Cator:**
-
-* The [Indy-Cator](http://www.indy-cator.de/engl/indy-cator-shifter-knob.php) is one of the only "smart"
-shift knobs currently available on the market. This shift knob uses relative accelerometer positions to 
-determine what the transmission gear position and then displays that gear number to the driver. Rather than
-using an LED display, this shift knob uses an LED backlit LCD screen to display information. Check out this
-[teardown](https://plus.google.com/photos/116004564465576390065/albums/5844118951223917905?authkey=CIXD1Z_p57utOw)
-photo album for more details.
-
-[README]: https://github.com/openxc/shift-knob/blob/master/README.mkd
-[Arduino Pro Mini]: http://arduino.cc/en/Main/ArduinoBoardProMini
-[shiftknob-3Ddesign]: https://github.com/openxc/shiftknob-3Ddesign
-[shiftknob-hardware]: https://github.com/openxc/shiftknob-hardware
-[shiftknob-firmware]: https://github.com/openxc/shiftknob-firmware
-[shiftknob-android]: https://github.com/openxc/shiftknob-android
 [Arduino]: http://www.arduino.cc
-[10,000 RPM Toy Motor]: http://www.amazon.com/0-04A-10000RPM-Vibrator-Vibration-Motor/dp/B005G0NQEG/
-[XBox 360 Motor]: https://plus.google.com/photos/116004564465576390065/albums/5859724801907560449?authkey=COiqwKvNwer1DQ
 [FTDriver]: https://github.com/openxc/FTDriver
+
+[boost converter]: http://www.amazon.com/gp/product/B00AMZEUYU/ref=s9_simh_gw_p422_d15_i5?pf_rd_m=ATVPDKIKX0DER&pf_rd_s=center-3&pf_rd_r=1YH0FWTZ4HT7W35B8YGK&pf_rd_t=101&pf_rd_p=470938811&pf_rd_i=507846
+[SICK DMT10-2-1111]: https://www.mysick.com/eCat.aspx?go=FinderSearch&Cat=GUS&At=Fa&Cult=English&FamilyID=400&Category=Produktfinder&Selections=47373
+[connector]: https://www.sparkfun.com/products/9923
+[Retro Gauge]: http://openxcplatform.com/projects/retro-gauge.html
+[Pelican Box]: http://www.amazon.com/gp/product/B001OPM5QC/ref=ox_sc_act_title_4?ie=UTF8&psc=1&smid=A34FFV8YYDM571
+[brakedist]:
