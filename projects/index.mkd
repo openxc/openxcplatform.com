@@ -18,6 +18,7 @@ as many well documented, functional projects as we can.
 * [Rearview Camera](/projects/rearview-camera.html)
 * [Retro Gauge](/projects/retro-gauge.html)
 * [Shift Knob](/projects/shift-knob.html)
+* [Brake Distance Tracking](/project/brakedist.html)
 
 ## Research Projects
 

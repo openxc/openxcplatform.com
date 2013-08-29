@@ -77,7 +77,7 @@ The command set and data parsing is implemented in the senosr module arduino cod
     <h2 id="Traction Detection"><a href="#Traction Detection"> Traction Detection</a></h2>
 </div>
 
-This project uses a custom sensor module to detect traction. The sensor module resides in the wheel well and collects ambient temperature, humidity and tire temperature. The sensor board has provisions for dust density measurement, but at the time of this writing that feature is not available. The module also includes a level shifter and functions transcodes messages to and from the laser sensor. 
+This project uses a custom sensor module to detect traction. The sensor module resides in the wheel well and collects ambient temperature, [humidity][] and [tire temperature][]. The sensor board has provisions for dust density measurement, but at the time of this writing that feature is not available. The module also includes a [level shifter][] and functions transcodes messages to and from the laser sensor. 
 
 The sensor board is based around an [Arduino][] Mega, and is made from a protoboard. This allows the board to easily be replicated by hobbyists without the need to order custom PCBs. The first step in  making he sensor board is to solder headers to the protoboard such that an Arduino Mega can plug into the sensor board. From here, we will connect the sensors to the appropriate pins. 
 
@@ -103,3 +103,6 @@ The user interface for this project is based on the [Retro Gauge][] OpenXC proje
 [Retro Gauge]: http://openxcplatform.com/projects/retro-gauge.html
 [Pelican Box]: http://www.amazon.com/gp/product/B001OPM5QC/ref=ox_sc_act_title_4?ie=UTF8&psc=1&smid=A34FFV8YYDM571
 [brakedist]:
+[humidity]: 
+[tire temperature]: 
+[level shifter]:
