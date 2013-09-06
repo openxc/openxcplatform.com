@@ -24,7 +24,7 @@ Group](http://groups.google.com/group/openxc).
 * Install [the Enabler](http://openxcplatform.com/getting-started/library-installation.html#enabler)
 * Add vehicle data to your app by following [the tutorial](http://openxcplatform.com/getting-started/tutorial.html)
 * Run your app on a supported [physical Android
-  device](http://openxcplatform.com/android/index.htm)
+  device](http://openxcplatform.com/android/index.html)
 * Learn more about how the [Android library is
   designed](http://openxcplatform.com/android/api-guide.html)
 
