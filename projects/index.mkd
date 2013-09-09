@@ -20,6 +20,32 @@ as many well documented, functional projects as we can.
 * [Shift Knob](/projects/shift-knob.html)
 * [Brake Distance Tracking](/projects/brakedist.html)
 
+
+### Boing Boing Data Driven Hackathon Projects
+Data Driven was a hackathon organized around OpenXC as part of Boing
+Boing's
+<a href="http://boingboing.net/tag/ingenuity">Ingenuity</a> event.
+Check out some of the great projects that came out of the hackathon
+below:
+
+* [OpenXC Van-Go](http://boingboing.net/2013/09/03/car-tells-robot-artist-what-to.html): This team used [Super-Awesome Sylvia's](http://sylviashow.com/) [WaterColorBot](http://watercolorbot.com/).
+  to paint pictures based on live OpenXC data.  TechNinja explains
+  more <a
+  href="https://www.youtube.com/watch?feature=player_embedded&v=8xWfO5t02wI">here</a>.
+  Joe Grand gives us a vehicle tour in this <a
+  href="https://www.youtube.com/watch?v=VZedQH9FHiw">video</a>.
+* [Autobahn](http://boingboing.net/2013/09/04/car-composes-kraftwerkian-musi.html):
+  Using real-time data gathered from OpenXC, Autobahn synthesizes the
+  data into a MIDI [musical composition](https://www.youtube.com/watch?feature=player_embedded&v=dj-LJQyGjls#t=39).
+* [Smart Brake Light](http://ledpixelart.com/portfolio-item/smart-brake-light-prototype-2/)
+  Al began this hack at Data Driven and expanded on it at the Ford
+  Electrified Vehicle Hackathon.  Using his existing PIXEL hardware
+  device with 32x32 RGB LEDs, he introduced functionality that would
+  warn drivers of suddent stops.  At the Electrified Vehicle
+  Hackathon, Al's team added voice triggering and funcionality to
+  thank a fellow driver for something.  See the
+  [demo](http://ledpixelart.com/portfolio-item/smart-brake-light-prototype-2/) here.	
+
 ## Research Projects
 
 * [WIMXWAYNE](http://groups.geni.net/geni/wiki/WIMXWAYNE) - WiMAX Prototyping in
