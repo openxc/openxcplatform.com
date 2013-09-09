@@ -40,8 +40,8 @@ below:
   Al began this hack at Data Driven and expanded on it at the Ford
   Electrified Vehicle Hackathon.  Using his existing PIXEL hardware
   device with 32x32 RGB LEDs, he introduced functionality that would
-  warn drivers of suddent stops.  At the Electrified Vehicle
-  Hackathon, Al's team added voice triggering and funcionality to
+  warn drivers of sudden stops.  At the Electrified Vehicle
+  Hackathon, Al's team added voice triggering and functionality to
   thank a fellow driver for something.  See the
   [demo](http://ledpixelart.com/portfolio-item/smart-brake-light-prototype-2/) here.	
 
