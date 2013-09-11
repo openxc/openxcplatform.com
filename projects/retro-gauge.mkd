@@ -7,19 +7,40 @@ title: Retro Gauge - OpenXC
     <h1>Retro Gauge</h1>
 </div>
 
-**GitHub Repository:** [github.com/openxc/retro-gauge][github]
-
 **Documentation and Assembly Lab:** [retro-gauge-lab.openxcplatform.com](http://retro-gauge-lab.openxcplatform.com/)
 
 ![Retro Gauge](/projects/images/retro-gauge/overview.jpg)
 
-The Retro Gauge is a mechanical vehicle gauge that outputs data from OpenXC via
-serial communication. The purpose of this gauge is to display vehicle data in a
-traditional automotive fashion, a gauge! The design intent was to keep the gauge
-as open and accessible as possible so that the community could contribute and
-benefit from the design. Below is a description of the different aspects of the
-project and how the gauge was created.
+The Retro Gauge is a mechanical vehicle gauge that displays data received over a
+serial communication line. One possible use of the gauge is to display vehicle
+data from the [OpenXC platform][openxc].
 
+The design intent was to keep the gauge as open and accessible as possible so
+that the community could contribute and benefit from the design.
+
+<div class="page-header">
+    <h2 id="repositories"><a href="#repositories">Repositories</a></h2>
+</div>
+
+This project is contained in four different GitHub repositories:
+
+**Mechanical Enclosure Design** - The
+[retro-gauge-enclosure](http://github.com/openxc-retro-gauge/retro-gauge-enclosure)
+repository contains .STL and STEP files for the 3D printable gauge housing.
+
+**Hardware** - The
+[retro-gauge-hardware](http://github.com/openxc-retro-gauge/retro-gauge-hardware)
+repository contains Eagle schematics and PCB layouts for the gauge's embedded
+hardware.
+
+**Firmware** - The
+[retro-gauge-firmware](http://github.com/openxc-retro-gauge/retro-gauge-firmware)
+repository contains Arduino source code to run on the Retro Gauge.
+
+**Android** - The
+[retro-gauge-android](http://github.com/openxc-retro-gauge/retro-gauge-android)
+repository contains an Android application to control the gauge with vehicle
+data from the [OpenXC platform][openxc].
 
 <div class="page-header">
     <h2>Motivation</h2>
@@ -37,10 +58,6 @@ design a gauge that had the same feel and aesthetics as aftermarket gauges.
 <div class="page-header">
     <h2>PCB Design</h2>
 </div>
-
-
-* [Eagle Schematics](https://github.com/openxc/retro-gauge/tree/master/schematics)
-* [Bill of Materials](https://github.com/openxc/retro-gauge/blob/master/schematics/BOM.csv)
 
 The design intent for the PCB was to allow developers to use common open source
 tools that are readily available to allow the gauge to be easily expanded. With
@@ -64,33 +81,15 @@ that the gauge face could easily be swapped out to display different data types.
 
 ![Hardware design](/projects/images/retro-gauge/hardware.jpg)
 
-There are 3 main manufactures for small step motors that are most commonly used
-in automotive gauges -
+There are 3 main manufactures for small stepper motors that are most commonly
+used in automotive gauges -
 [Switec](http://jukenswisstech.com/index.php/products/x10/),
 [VID](http://www.vid.wellgain.com/product.aspx), and
 [MCR](http://mcrmotorusa.com/Stepper%20Motors.html).
 
-For this project, the VID 29-07 was used since it was most readily available to
-purchase on eBay at the time of this project. Guy Carpenter's
+For this project, the VID 29-07 was used since it was most readily available on
+eBay at the time of this project. Guy Carpenter's
 [Gaugette](http://guy.carpenter.id.au/gaugette/about/) project has a great
 tutorial on how to use and control these stepper motors. Thanks Guy!
 
-<div class="page-header">
-    <h2>Sample Android Application</h2>
-</div>
-
-In order to better interface with the gauge, we have created a sample Android
-application that demonstrates how to switch between different OpenXC signals.
-The application also allows you to either manually set the RGB value or have it
-mapped to the signal. The Retro Gauge can receive two types of data packet via
-serial communication.
-
-* Color data is delivered with three digits within angle brackets.  `<###>`
-  Valid values are between 0 and 259.
-* Value data is delivered with two digits each of value, and percentage.  The
-  numbers are separated by a comma, and enclosed in parentheses.  `(vv,pp)`
-
-For more documentation, checkout the [README][] file.
-
-[README]: https://github.com/openxc/retro-gauge/blob/master/README.mkd
-[github]: https://github.com/openxc/retro-gauge
+[openxc]: http://openxcplatform.com
