@@ -74,9 +74,9 @@ $ openxc-control write steering_wheel_angle 42.0
     <h2>Source Code</h2>
 </div>
 
-The [cantranslator][] repository contains the C source code that runs on the
+The [vi-firmware][] repository contains the C source code that runs on the
 Arduino-compatible chipKIT device. Most OpenXC users won't need to touch this
 component - they will most likely be using a pre-built binary on the vehicle
 interface that knows about proprietary vehicle signals.
 
-[cantranslator]: https://github.com/openxc/cantranslator
+[vi-firmware]: https://github.com/openxc/vi-firmware

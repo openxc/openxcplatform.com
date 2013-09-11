@@ -65,8 +65,8 @@ documentation](http://vi-firmware.openxcplatform.com/en/latest/installation/inst
 You're now ready to [test your VI in a vehicle][testing].
 
 [winavr]: http://winavr.sourceforge.net/
-[upload_hex.sh]: https://github.com/openxc/cantranslator/blob/master/script/upload_hex.sh
-[cantranslator]: https://github.com/openxc/cantranslator
+[upload_hex.sh]: https://github.com/openxc/vi-firmware/blob/master/script/upload_hex.sh
+[vi-firmware]: https://github.com/openxc/vi-firmware
 [MPIDE]: https://github.com/chipKIT32/chipKIT32-MAX/downloads
 [testing]: /vehicle-interface/testing.html
 [Cygwin]: http://www.cygwin.com/

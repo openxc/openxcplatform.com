@@ -210,8 +210,7 @@ list of `Measurement` Java classes that you can use in the
 <h2>Completed Example</h2>
 </div>
 
-If you're having trouble or want to double check your work, here is a completed
-version of the application:
+If you're having trouble or want to double check your work, check out a completed Eclipse project [here](https://github.com/openxc/openxc-starter), or browse the code below: 
 
 <script src="https://gist.github.com/peplin/5464835.js"></script>
 

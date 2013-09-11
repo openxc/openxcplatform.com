@@ -18,7 +18,7 @@ title: Vehicle Interface Test Procedure - OpenXC
    for testing are installed with this library.
 1. Attach the USB connection for data (the micro-USB connection on the
    chipKIT-based VI) to the computer. If you are using Windows, install the
-   driver included in the repository at `cantranslator/conf/windows-driver`.
+   driver included in the repository at `vi-firmware/conf/windows-driver`.
 1. Run `openxc-control version` at the command line - it should print out the
    current version of the attached vehicle interface. If you instead get an
    error about not being able to find the USB device, make sure the the VI has
