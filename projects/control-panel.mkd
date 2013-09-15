@@ -1,0 +1,156 @@
+---
+layout: default
+title: Wireless Control Gadget -OpenXC
+---
+
+<div class="page-header">
+    <h1>Wireless Control Gadget</h1>
+</div>
+
+<div class="page-header">
+    <h2 id="repositories"><a href="#repositories">Repositories</a></h2>
+</div>
+
+
+
+<div class="page-header">
+    <h2 id="motivation"><a href="#motivation">Motivation</a></h2>
+</div>
+
+Modern automobile comes with lots of in-car functionalities. A typical approach is to add new knobs or buttons to for a new function, which can lead to overwhelmingly complicated design for the vehicle user-interface on the control panel. A alternative hardware solution is to redesign the whole vehicle user-interface to be reconfigurable. Imagine we can put on the knobs, buttons, or any kind of control gadget on the control panel, and take the ones we don’t need off the panel. The idea can dramatically change the automotive interior design and provides a new user experience to drivers.
+
+<div class="page-header">
+    <h2 id="innovation"><a href="#innovation">Innovation & Invention </a></h2>
+</div>
+
+The idea is to have a strong magnet in each of the control gadget. And redesign the panel such that there is sheet metal embedded in it. The strong magnet would help the control gadget to be firmly attached to the panel. The control gadgets will then communicate with the vehicle using wireless technologies, such as Zigbee and Bluetooth. OpenXC is then used as the last step to connect to the vehicle using Android devices.
+
+<div class="page-header">
+    <h2 id="hardware"><a href="#hardware">Hardware Design</a></h2>
+</div>
+
+<div class="page-header">
+    <h2 id="system"><a href="#system">System Overview</a></h2>
+</div>
+
+Each control gadget has embedded Zigbee transceiver, and all the control gadgets communicate to the main network PAN coordinator node, which is connected to an Arduino port. Another port of the Arduino is now connected to the Bluetooth transceiver. Bluetooth is used for communication between Arduino and Android device, while the Android device connects to the OpenXC Vehicle Interface at the vehicle OBD-II port. 
+
+<div class="page-header">
+    <h2 id="zigbee"><a href="#zigbee">Zigbee</a></h2>
+</div>
+
+The Zigbee transceivers are used to communicate between control gadgets and to the main network PAN coordinator. The XBee transceivers from Digi International is used to make the Zigbee network.
+
+The XBee transceivers need to be loaded with the correct firmware to make it functional and form a Zigbee network. Every network must have one Zigbee coordinator and several Zigbee router and Zigbee End Devices. Routers are not used in my implemention. Instead,  End Devices are used because they enable the sleep mode, which is critical in power management of the whole gadget system. Different network device type would have different device firmware. In my implementation, the XBee that is connected to the Arduino is used as the Zigbee coordinator, and those XBee transceivers in the control gadgets are used as Zigbee End Device. 
+
+To load the firmware, developers must first install the X-CTU software from Digi International:
+http://www.digi.com/support/productdetail?pid=3352&osvid=57&type=utilities
+At the time of writing, the software is only working in Windows OS. However, it is possible to actually 
+
+The functional firmware for the X-CTU are in the following repository:
+They are in the form of the _________
+
+Note that the firmware for Zigbee End Device and Zigbee Coordinator is different. On the Zigbee End Device firmware, in order to save power consumption, I set the device to be always sleeping, unless a button is pressed to wake up the device. Sleeping device can not perform communication task, and only maintains lowest power consumption until being waken up. Depending on the firmware setting, in my design, to wake up a sleeping device, simply ground the Pin 9 on the XBee transceiver, or the DTR pin on the XBee Explorer USB board.
+
+
+In the current prototyping stage, I am using the XBee Explorer USB as the breakout board to match the XBee transceiver. As the pins on the original XBee transceivers do not have the regular pin spacing as the breadboard, using XBee Explorer USB provides the regular pin spacing as the breadboard. Additionally, XBee Explorer USB also takes care of voltage conversion, and can take wider range of the input power supply voltage. 
+
+Troubleshooting:
+
+1.	Reset the board: connect the RST pin to GND
+2.	Hardware reset: 
+
+
+
+<div class="page-header">
+    <h2 id="bluetooth"><a href="#bluetooth">Bluetooth</a></h2>
+</div>
+Bluetooth is responsible of the wireless communication between the Arduino and the Android devices. In my implementation, I am using the BlueSMiRF transceiver. Once all the wires are in the right connection, communicating using Bluetooth is very simple. The green LED light on the BlueSMiRF indicates that the connection is currently active. For the purpose of this project, the BlueSMiRF transceiver should always have Bluetooth connection on, and that would be the first thing to check in terms of troubleshooting. 
+
+
+<div class="page-header">
+    <h2 id="power"><a href="#power">Power Supply</a></h2>
+</div>
+Arduino will be powered by vehicle 12V power supply. For the current implementation, each of the control gadget has an embedded high capacity LiR2032 coin cell battery, which is in fact the lithium ion rechargeable coin cell battery based on the popular CR2032. 
+
+The battery is wired directly through a On/Off switch to power the XBee Explorer USB.
+
+<div class="page-header">
+    <h2 id="design guideline"><a href="#design guideline">Hardware Design Guideline</a></h2>
+</div>
+
+*Tactile Identification
+–	User can identify the function without seeing
+
+*Visual Recognition
+–	Intuitive design that conveys the function
+
+*Minimal Thickness and overall Dimension
+
+
+<div class="page-header">
+    <h2 id="PCB"><a href="#PCB">PCB Design</a></h2>
+</div>
+
+PCB is used to secure the connection and get rid of the complicated internal wire harnessing to make a functional control gadget. To make a functional prototype we need to package the XBee Explorer USB board, XBee transceiver, and few switches, buttons, and a potentiometer. Various connection is needed to wire all the buttons so that when the buttons are pressed, the device would wake up and start sending data. Basically, when the buttons are pressed, the Pin 9 of the XBee transceiver(or  DTR on XBee Explorer USB) will be grounded. There are also ports on the PCB that where the battery would connect to. The potentiometer is used to vary the analog input signal to the XBee transceiver, and is basically the knob.
+
+I used Eagle CAD to design the PCB. The PCB is designed in such a way that it has similar pin spacing as the XBee Explorer USB, and the idea is to minimize the clearance between the two boards as much as possible to ensure minimal dimension. 
+
+The silkscreen layer of the PCB provides the label of each pin, and they are base on the same pin labels as the XBee Explorer USB board.
+
+Refer to the actual schematics for more details on the PCB design.
+
+<div class="page-header">
+    <h2 id="packaging"><a href="#packaging">Packaging</a></h2>
+</div>
+
+Things to check before soldering:
+
+1.	Battery is fully charged. A charged LiR2032 battery comes at around 4.2V.
+2.	XBee transceiver is fully functional and can transmit data without any issue.
+
+Soldering and Packaging Process:
+
+1.	Solder the resistor, LED, and two push buttons on the PCB. Make sure the push buttons are in the correct orientation, the pins shoul. Glue the top of the push button with small piece elastomeric dome to enhance the feedback of pushing the button.
+2.	Solder the pin headers on the XBee Explorer USB Board
+3.	Slide the PCB onto the XBee Explorer USB Board, and make sure the side of the PCB with the straight edge (not the one with the chamfered edge) sits on top of the Mini-USB connection on the XBee Explorer board. 
+4.	Solder the pin header again on the PCB side.
+5.	Solder the wires on the On/Off switch and use the shrink tube to ensure electrical connection
+6.	Solder the orange wire(middle terminal) of the On/Off switch to the ground terminal of the battery holder
+7.	Solder the wires on the battery holder.
+8.	Glue the On/Off switch to the bottom of the knob base where the cut-out is. 
+9.	Glue the potentiometer to the Pot Holder.
+
+Before Proceed:
+
+MAKE SURE XBee is transmitting data once again with the new PCB. Try to press the button to see if the blue LED turns on.
+
+10.	Slide the PCB assembly and the battery holder(with battery attached) in the knob base via the four columns, and ensure that the battery holder is securely held in the bottom. 
+11.	Solder the rest of the wires to connect the positive and negative terminal on the PCB and the battery terminal. 
+12.	Solder the potentiometer to the corresponding pins on the PCB. Make sure the solder is precise and small so that the assembly has enough clearance for functional buttons. 
+13.	Slide the Pot Holder via the four columns and try to press the buttons. 
+14.	
+
+
+<div class="page-header">
+    <h2 id="arduino"><a href="#arduino">Arduino</a></h2>
+</div>
+
+
+
+<div class="page-header">
+    <h2 id="android"><a href="#android">Android</a></h2>
+</div>
+
+The UI for the Android is for demo purpose. The main page of the Android application is for user to demo each of the control gadget. Make sure to click the “Connect to Bluetooth” button to establish connection to the BlueSMiRF before proceed to any of the demo. The Bluetooth Service will be started once the Bluetooth connection is successfully formed, and a Broadcast receiver is established to listen to the incoming data from the Bluetooth. This receiver inside the Bluetooth service of the Andorid application will send out different broadcast depending on from which control gadget the data is coming from.
+
+By choosing a particular demo, a new broadcast receiver will be established inside the demo activity and change the UI accordingly. 
+
+In the DemoRGB activity, the command for the different interior lighting color would be sent via OpenXC Vehicle Manager API, which eventually send the command to the OpenXC Vehicle Interface and finally to the vehicle.
+
+
+Common troubleshoot:
+Ensure the Bluetooth connection is active for any of the functions.
+
+
+
