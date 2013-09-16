@@ -7,11 +7,12 @@ title: Docking Station - OpenXC
     <h1>Docking Station</h1>
 </div>
 
-The OpenXC docking station is a hardware platform that allows car enthusiasts and hackers alike to create their own hardware and easily integrate it with OpenXC. The docking station features three different docking slots each with their own USB connection via pogo pins and embedded magnets for easy connection. Projects like the Retro Gauge can be easily modified to use the docking station. The Docking Station was originally designed and developed by 
-Chad Bean at Ford.
+The OpenXC docking station is a hardware platform that allows car enthusiasts and hackers alike to create their own hardware and easily integrate it with OpenXC. The docking station features three different docking slots, each with their own USB connection via pogo pins and embedded magnets for easy connection. Projects like the Retro Gauge can be easily modified to use the docking station. The Docking Station was originally designed and developed by 
+Chad Bean during his summer internship at [Ford Silicon Valley Lab](http://fordsvl.com).
 
 ![OpenXC Docking Station](/projects/images/docking-station-1.png)
 
+<!--
 <div class="page-header">
     <h2 id="repositories"><a href="#repositories">Repositories</a></h2>
 </div>
@@ -22,37 +23,42 @@ The [(Insert Here)] repository contains a `.STL`  file for the 3D printable
 docking station. However, do to the docking stations large size, often times hobbyist
 printers will produce a warped part. We had our docking station made from a SLA 
 printer. 
+-->
 
 <div class="page-header">
     <h2 id="motivation"><a href="#motivation">Motivation</a></h2>
 </div>
 
-OpenXC is an open source project that easily allows android developers to create applications. However, if someone wants to utilize OpenXC’s open-source hardware capabilities for prototyping there is no way to have temporary hardware affixed to that car without duct tape and such.
+OpenXC is an open source project that easily allows experimenters to create applications. However, if someone wants to utilize OpenXC’s open-source hardware capabilities for prototyping there is no way to have temporary hardware affixed to that car without duct tape or other prototyping materials.
 
 ![Docking Station Installed](/projects/images/docking-station-2.png)
 
- The docking station offers a user-friendly connection from an android device to hardware devices. The docking station also provides good insight as to how we can manufacture cars that are more modular and willing to accept new technology. Thus, you are not stuck with a fairly new car which already has out of date systems.
+ The docking station offers a user-friendly connection from an Android device to hardware devices. The docking station also provides good insight as to how we could manufacture cars that are more modular and willing to accept new technology. Thus, you would not be stuck with a fairly new car that already has out of date systems.
 
 <div class="page-header">
     <h2 id="3Ddesign"><a href="#3Ddesign">3D Docking Station Design</a></h2>
 </div>
 
+<!--
+
 **GitHub Directory:** [Docking Station-3Ddesign (Insert Here)][]
+
+-->
 
 The docking station platform was designed to meet 3 goals:
 
 1. Incorporate a modular design that could easily be adopted by hardware developers
 2. Accept standard USB signals
-3. Able to communicate and power Auxilary devices
+3. Able to communicate and power auxiliary devices
 
-Since this is the first iteration of the dock a simple store bought powered USB hub which limits the symmetry across all three docking slots was used. If the user wishes to power auxiliary hardware from an android device, the android device must be docked on the left most slot. The reason being is that this is the “host” connection as from the USB hub. For charging all slots are useable. 
+Since this is the first iteration of the dock a simple store-bought, powered USB hub which limits the symmetry across all three docking slots was used. If the user wishes to power auxiliary hardware from an Android device, the Android device must be docked on the left-most slot. The reason being is that this is the "host" connection for the USB hub. All slots may be used for simple charging.
 
-The Powered USB hub came with an 120VAC to 5VDC wall wart that is not useful since vehicles have a 12VDC power supply. The docking station utilizes the vehicle power by splicing out two connection from the 12V lines and feeding these into a 5V @ 5A buck converter, which has plenty of power. The USB standard is only 500mA/ channel, so there is plenty of overhead to daisy-chain another USB Hub if needed.
+The powered USB hub came with an 120VAC to 5VDC wall wart that is not useful since vehicles have a 12VDC power supply. The docking station utilizes the vehicle power by splicing out two connection from the 12V lines and feeding these into a 5V @ 5A buck converter, which has plenty of power. The USB standard is only 500mA/ channel, so there is plenty of overhead to daisy-chain another USB Hub if needed.
 
 **Android Phone Dock**
 ![Phone Dock](/projects/images/phone-dock-3.png)
 
-This phone dock fits the Nexus 4, Galaxy S4 and other similar dimensioned phone with the micro usb connector centered on the bottom of the phone. It is very simplistic as far as design goes.
+This phone dock fits the Nexus 4, Galaxy S4 and other similarly-dimensioned phones with the micro usb connector centered on the bottom of the phone. It is very simplistic as far as design goes.
 
 ![Phone Dock](/projects/images/phone-dock-2.png)
 
@@ -60,4 +66,6 @@ Pogo pins make contact with the docking station and passively relay the USB conn
 
 ![Phone Dock](/projects/images/phone-dock-1.png)
 
+<!--
 **GitHub Directory:** [Phone Dock-3Ddesign (Insert Here)][]
+-->
