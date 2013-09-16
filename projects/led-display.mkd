@@ -1,0 +1,27 @@
+---
+layout: default
+title: LED Display - OpenXC
+---
+
+<div class="page-header">
+    <h1>LED Display</h1>
+</div>
+
+![OpenXC LED Display](/projects/images/led/led-photo-6.jpg)
+
+The LED Display is a data visualization tool for drivers that works on top of the OpenXC platform. It consists of 20 RGB LEDs that act as a bar graph and can be programmed to readout any OpenXC signals. The LED Display runs off an arduino mega which receives serial commands from and android device. This project was developed by Chad Bean at Ford's Silicon Valley Lab.
+
+
+![OpenXC LED Display 1](/projects/images/led/led-photo-2.jpg)
+
+**LED PCB:**
+
+The [(Insert Here)] repository contains the zipped gerber 274x  files and excellon drill files for manufacturing the LED display board. Also included in the repository is the schematic and board layout files for use in eagle. Note: to maximize performance the LED Display should be driven with 1A, but it can also be programmed to work at the 500mA USB standard.
+
+<div class="page-header">
+    <h2 id="motivation"><a href="#motivation">Motivation</a></h2>
+</div>
+
+The motivation behind this project was to design open source hardware for us with Ford's OpenXC project. Furthermore, it is a way for drivers to visualize car data without taking your eyes off the road. The LED Display can also utilize different colors in order to send the driver messages. i.e. when displaying efficiency if the LEDs are red then the driver knows current MPG is poor.
+
+![LED_prototype](/projects/images/led/led-photo-21.jpg)
