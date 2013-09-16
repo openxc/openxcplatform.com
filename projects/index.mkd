@@ -19,6 +19,7 @@ as many well documented, functional projects as we can.
 * [Retro Gauge](/projects/retro-gauge.html)
 * [Shift Knob](/projects/shift-knob.html)
 * [Brake Distance Tracking](/projects/brakedist.html)
+* [Docking Station](/projects/docking-station.html)
 
 
 ### Boing Boing Data Driven Hackathon Projects
