@@ -20,6 +20,7 @@ as many well documented, functional projects as we can.
 * [Shift Knob](/projects/shift-knob.html)
 * [Brake Distance Tracking](/projects/brakedist.html)
 * [Docking Station](/projects/docking-station.html)
+* [LED Display](/projects/led-display.html)
 
 
 ### Boing Boing Data Driven Hackathon Projects
