@@ -42,8 +42,6 @@ future projects.
 
 ![Following Distance](/projects/images/brakedist/following_distance.jpg)
 
-
-
 <div class="page-header">
     <h2 id="repositories"><a href="#repositories">Repositories</a></h2>
 </div>
@@ -79,6 +77,7 @@ The LiDAR sensor is physically mounted to the car with a piece of .080" sheet al
 The sensor has a separate power and data interface. The power interface is accessible via screw terminals once the back plate of the sensor has been removed. Only the first two terminals (+24V and GND) need to be wired to use the sensor as its used in this project. The wires are then routed through a cable gland to the exterior of the sensor. We found that an ethernet cable with the ends cut off works well for the power cable. The sensor operates on 24 volt power. This presents some difficulty as the car operates on 12 volts. To overcome this, a [boost converter][] is fed from battery power and its output is used to power the sensor with 24 volts. Do not wire the battery and sensor power directly together: a fuse should be used and at the least, a quick-release [connector][] should be used.
 
 ![Lidar Panel](/projects/images/brakedist/lidar_panel.jpg)
+
 ![Battery](/projects/images/brakedist/battery_connection.jpg)
 
 The sensor uses a non-standard command set for communications via the RS232
