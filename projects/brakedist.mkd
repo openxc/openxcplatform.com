@@ -9,15 +9,18 @@ title: Brake Distance Tracking - OpenXC
 
 The Brake Distance Tracking project is a research project to warn drivers when 
 they follow other vehicles too closely. The project consists of four major components:
-vehicle tracking, traction detection, android software and user interface. Vehicle tracking
-accomplished with a SICK DMT-2 LiDAR sensor. Traction detection is done via a custom 
-Arduino-based sensor module. The user interface is a slightly modified Retro Gauge. 
-Finally, the android software is run on a Nexus tablet and implements OpenXC. The android 
-application uses data collected from the LiDAR, the sensor module and OpenXC to determine
+vehicle distance measurement, traction detection, Android software and user interface. 
+We measure the distance between vehicles with a SICK DMT-2 LiDAR sensor. 
+Traction is calculated via a custom 
+Arduino-based sensor module and the user interface is a slightly modified [Retro Gauge]
+(/projects/retro-gauge). 
+Finally, the Android software is run on a Nexus tablet and implements OpenXC. The Android 
+application uses data collected from the LiDAR, the sensor module and real-time vehicle data
+from OpenXC to determine
 the required braking distance for a safe stop. Should the driver follow too closely, the 
 Retro Gauge changes color and needle position to warn the driver. The Brake Distance 
 Tracking project was designed and implemented by 2013 summer intern 
-[Dario Yazdi](http://github.com/darioyazdi) at the Ford Silicon Valley Lab. 
+[Dario Yazdi](http://github.com/darioyazdi) at the [Ford Silicon Valley Lab](http://fordsvl.com). 
 
 ![Sensor Closeup](/projects/images/brakedist/lidar_close_up.JPG)
 
@@ -25,26 +28,27 @@ Tracking project was designed and implemented by 2013 summer intern
     <h2 id="motivation"><a href="#motivation">Motivation</a></h2>
 </div>
 
-Why warn drivers about too close a following distance? Many drivers do not have 
-a good sense for the correct following distance. Even if they knew exactly the correct 
+Why warn drivers about following too closely? Many drivers do not have 
+a good sense for the correct following distance and even if they knew the correct 
 following distance, it is difficult to accurately judge the distance. What if it's raining? 
-How much more distance should one allow? Accoriding to NHTSA data, rear end collisions are
-resposible of 30% of all collisons. Preventing even a small percentage of rear end collisions
+How much more space should one allow? According to NHTSA data, 30% of all collisions 
+are rear end collisions. Preventing even a small fraction of rear end collisions
 would therefore greatly improve road safety. 
 
-Beyond the potential for imporving road safety, the sensor package designed for this project 
-can be applied to a countless number of other projects. The traction detection scheme used 
-in this project is fairly simple, but it too can be applied or expanded upon in useful ways to future projects. 
+Beyond the potential for improving road safety, the sensor package designed for this project 
+can be applied to a countless number of other projects. The traction detection scheme
+is fairly simple, but it too can be applied or expanded upon in useful ways for
+future projects. 
 
 ![Following Distance](/projects/images/brakedist/following_distance.jpg) 
+
+
 
 <div class="page-header">
     <h2 id="repositories"><a href="#repositories">Repositories</a></h2>
 </div>
 
-[brakedist](gitlab.fordsvl.com/brakedist.git)
-
-The brakedist repository contains all of the files associated with the project. This includes CAD files, hole pattern templates, firmware, android code, and various other files. Additionally there are several software libraries and datasheets that this project depends on. These are not included in the repository but are linked to in the relevent sections of this page. 
+The brakedist repository contains all of the files associated with the project. This includes CAD files, hole pattern templates, firmware, Android code, and various other files. Additionally there are several software libraries and datasheets that this project depends on. These are not included in the repository but are linked to in the relevant sections of this page.  **We will put the brakedist repository up soon.**
 
 
 <div class="page-header">
@@ -53,32 +57,36 @@ The brakedist repository contains all of the files associated with the project. 
     </a></h2>
 </div>
 
-LiDAR was chosen to be the best method of vehicle tracking for this project. 
-It was determined that a range between 30 and 60m was required to measure most 
-brake distances at highway speeds. Though OEM sensors used for ACC may have fit requirement, 
-the vehicle on which the project wad implemented did not have such sensors. Furthermore, 
-on that data is not available yet over OpenXC.  As a result, LiDAR was chosen over other vehicle
+We chose LiDAR to measure distance between vehicles for several reasons.
+First, we determined that a range between 30 and 60m was required to measure most 
+brake distances at highway speeds. Though built-in sensors used for automatic cruise control
+(ACC) in many Ford vehicles may have fit this requirement, 
+our prototype vehicle (a 2011 Mustang GT) did not have these sensors. Furthermore, 
+following distance data from built-in sensors is not yet available through OpenXC.
+As a result, LiDAR was chosen over other vehicle
 tracking methods because units were commercially available and proved the easiest way
-to implement vehicle tracking on a car not already equipped with it. Note that it is not 
-intended that anyone else implement this project by adding LiDAR equiptment to their car. 
-This project can be attempted by others once OEM vehicle trakcing information is available 
-via OpenXC. 
+to implement vehicle tracking on a car not already equipped with it.  Alternatively, this
+project could be implemented with built-in ACC sensor data once it becomes available through
+OpenXC.
 
 The specific LiDAR sensor that was chosen for the project was a [SICK DMT10-2-1111][]. This sensor 
-ha 0-100m range on natural targets and communicates through an RS232 interface. The sensor measures via a Class 1 non-visible laser and is therefore safe for use in traffic. The sensor is also IP67 rated and includes a visible laser for aiming. 
+has a 0-100m range on natural targets and communicates through an RS232 interface. 
+The sensor uses a Class 1 non-visible laser and is therefore safe for use in traffic. 
+The sensor is also IP67 rated and includes a visible laser for aiming. 
 
-The sensor is physically mounted to the car with a piece of .080" sheet aluminum bent into a "U" shape. This allows a mount to quickly and easily be fabricated with the use of a shear, brake and some drills. Hole pattern templates for both sensor's bolt pattern the hood bolt pattern are available in the LiDAR repository. The hardware for the sensor to mount attachment is M6. The mount is attached to the hood with 8-32 hardware. It is important that the sensor be attached to the mount and the mount to the car with positive retention fasteners. This ensures that the fasteners do not loosen as they are subjected to road vibrations. Vibration isolaters should be placed in between the hood and the sensor mount before assembly. This is in an effort to reduce sensor vibration.  
+The LiDAR sensor is physically mounted to the car with a piece of .080" sheet aluminum bent into a "U" shape. This allows a mount to quickly and easily be fabricated with the use of a shear, brake and some drills. Hole pattern templates for both sensor's bolt pattern the hood bolt pattern are available in the LiDAR repository. The hardware for the sensor to mount attachment is M6. The mount is attached to the hood with 8-32 hardware. It is important that the sensor be attached to the mount and the mount to the car with positive retention fasteners. This ensures that the fasteners do not loosen as they are subjected to road vibrations. Vibration isolators should be placed in-between the hood and the sensor mount before assembly. This is in an effort to reduce sensor vibration.  
 
-The sensor has a separate power and data interface. The power interface is accessable via screw terminals once the back plate of the sensor has been removed. Only the first two terminals (+24V and GND) need to be wired to use the sensor as its used in this projcet. The wires are then routed through a cable gland to the exterior of the sensor. I found that an ethernet cable with the ends cut off works well for the power cable. The sensor operates on 24 volt power. This presents some difficulty as the car operates on 12 volts. To overcome this, a [boost converter][] is fed from battery power and its output is used to power the sensor with 24 volts. Do not wire the battery and sensor power directly together. A fuse should be used and at the least, a quick release [connector][] should be used. 
+The sensor has a separate power and data interface. The power interface is accessible via screw terminals once the back plate of the sensor has been removed. Only the first two terminals (+24V and GND) need to be wired to use the sensor as its used in this project. The wires are then routed through a cable gland to the exterior of the sensor. We found that an ethernet cable with the ends cut off works well for the power cable. The sensor operates on 24 volt power. This presents some difficulty as the car operates on 12 volts. To overcome this, a [boost converter][] is fed from battery power and its output is used to power the sensor with 24 volts. Do not wire the battery and sensor power directly together: a fuse should be used and at the least, a quick-release [connector][] should be used. 
 
 ![Lidar Panel](/projects/images/brakedist/lidar_panel.jpg)
 ![Battery](/projects/images/brakedist/battery_connection.jpg)
 
-The sensor uses a non-standard command set for command via the RS232 interface. A list of commands is abvailable on the sensor's data sheet. The basic syntax for a command is as follows: 
+The sensor uses a non-standard command set for communications via the RS232 
+interface. A list of commands is available on the sensor's data sheet. The basic syntax for a command is as follows: 
 
-<PRE> {one-byte command} {space} {newline} {carrige return} </PRE>
+<PRE> {one-byte command} {space} {newline} {carriage return} </PRE>
 
-The command set and data parsing is implemented in the senosr module arduino code, so one need not worry about figuring out the sensor's command set unless they need to use a very specific functionality of the sensor. 
+The command set and data parsing is implemented in the sensor module Arduino code, so one need not worry about figuring out the sensor's command set unless they need to use a very specific functionality of the sensor. 
 
 
 
@@ -86,7 +94,7 @@ The command set and data parsing is implemented in the senosr module arduino cod
     <h2 id="Traction Detection"><a href="#Traction Detection"> Traction Detection</a></h2>
 </div>
 
-This project uses a custom sensor module to detect traction. The sensor module resides in the wheel well and collects ambient temperature, [humidity][] and [tire temperature][]. The sensor board has provisions for dust density measurement, but at the time of this writing that feature is not available. The module also includes a [level shifter][] and functions transcodes messages to and from the laser sensor.    
+This project uses a custom sensor module to detect traction. The sensor module resides in the wheel well and collects ambient temperature, [humidity][] and [tire temperature][]. The sensor board has provisions for dust density measurement, but at the time of this writing that feature is not available. The module also includes a [level shifter][] to transcode messages to and from the laser sensor.    
 
 The sensor board is based around an [Arduino][] Mega, and is made from a protoboard. This allows the board to easily be replicated by hobbyists without the need to order custom PCBs. The first step in  making he sensor board is to solder headers to the protoboard such that an Arduino Mega can plug into the sensor board. From here, we will connect the sensors to the appropriate pins. Power for the board is provided via the [FTDI][] cable. 
 
@@ -103,11 +111,11 @@ TX2 &rarr;  FTDI RX
 
 A 1&mu;F filter cap should be used between the 5V and GND. 
 
-Wire the MAX232 as specefied in the data sheet, specifically:       
+Wire the MAX232 as specified in the data sheet, specifically:       
 MAX232 13 &rarr; RS232 RX   
 MAX232 14 &rarr; RS232 TX
 
-The firmware for the board is avalable in the brakedist repo. The firmware outputs/recieves debug messages via Serial0, RS232 via Serial1 and JSON sensor readings via Serial2. The communication with the android device is all done through Serial2, therefore when the sensor board is deployed on a vehicle, it is only neccessary to connect the FTDI device via USB. The Arduino built in USB device need only be connected to flash the device or debug the senor board. 
+The firmware for the board is available in the brakedist repo. The firmware outputs/receives debug messages via Serial0, RS232 via Serial1 and JSON sensor readings via Serial2. The communication with the Android device is all done through Serial2, therefore when the sensor board is deployed on a vehicle, it is only necessary to connect the FTDI device via USB. The Arduino built in USB device need only be connected to flash the device or debug the sensor board. 
 
 The firmware requires the following libraries:      
 [i2Cmaster](http://homepage.hispeed.ch/peterfleury/avr-software.html)    
@@ -116,7 +124,7 @@ The firmware requires the following libraries:
 
 ![Board](/projects/images/brakedist/board.jpg)
 
-The sensor board is housed in a [Pelican Box][] which is bolted onto the side of the LiDAR mount. This makes for the shortest wire routing possible. The pelican box is drilled with the same hole pattern template use for the LiDAR mount. The sensor's are attached to a sensor mount that is magnetically held in the wheel well. The CAD files for the mount can be found in the brakedist repo. These files can easily be printed on a hobbyist 3D printer. To assemble the sensor module, simply glue the humidity sensor to the exterior of the housing, glue the infrared temeperature sensor into its hole and glue two or more appropriately sized magnets into their cavities (there are four magnet cavities, but in practice two magnets sufficed). It is reccomended for ease of assembly and dissassembly that all connections to the board be made with pluggable connectors.  
+The sensor board is housed in a [Pelican Box][] which is bolted onto the side of the LiDAR mount. This makes for the shortest wire routing possible. The Pelican box is drilled with the same hole pattern template use for the LiDAR mount. The sensors are attached to a sensor mount that is magnetically held in the wheel well. The CAD files for the mount can be found in the brakedist repo and can easily be printed on a hobbyist 3D printer. To assemble the sensor module, simply glue the humidity sensor to the exterior of the housing, glue the infrared temperature sensor into its hole and glue two or more appropriately sized magnets into their cavities (there are four magnet cavities, but in practice two magnets sufficed). It is recommended for ease of assembly and disassembly that all connections to the board be made with pluggable connectors.  
 
 ![Sensor Module](/projects/images/brakedist/sensor_module.jpg)
 
@@ -125,27 +133,27 @@ The sensor board is housed in a [Pelican Box][] which is bolted onto the side of
     <h2 id="Android"><a href="#Android">Android</a></h2>
 </div>
 
-The android software for the project takes in sensor readings from the sensor module and the LiDAR unit and with the addition of OpenXC data, computes the safe following distance. Should a driver follow too closely, the android software alerts them by manipulating the display of the Retro Gauge. 
+The Android software for the project takes in sensor readings from the sensor module and the LiDAR unit and with the addition of real-time OpenXC data, computes the safe following distance. Should a driver follow too closely, the Android software alerts them by manipulating the display of the Retro Gauge. 
 
-The android software consists of five major components: 
+The Android software consists of five major components: 
 
 *Main Activity*   
-The main activity is responsible for controlling the app lifecycle and also for controlling the user interface. Additionally, the main activity instantiates all the other classes and has ultimate control over program exectution. 
+The main activity is responsible for controlling the app lifecycle and also for controlling the user interface. Additionally, the main activity instantiates all the other classes and has ultimate control over program execution. 
 
 *Compute Distance*    
-Compute Distance is the core class of for the brake distance tracking project. Compute distance stores the states of all the sensors and runs in its own thread continously updating the sensor values and computing the brake distance based on these values. 
+Compute Distance is the core class for the brake distance tracking project. Compute distance stores the states of all the sensors and runs in its own thread, continuously updating the sensor values and computing the brake distance based on these values. 
 
 *Data Logger*    
-The data logger is a class that stores keeps a record of all the state of the compute distance variables. It stores these values as JSON strings with a timestamp appended. These logs can then be used to improve the algorithms used to detect traction and compute braking distance. The data logger class was written to be flexible and can therefore be used with other projects in need os a simple data logger. 
+The data logger is a class that keeps a record of all the state of the compute distance variables. It stores these values as JSON strings with a timestamp appended. These logs can then be used to improve the algorithms used to detect traction and compute braking distance. The data logger class was written to be flexible and can therefore be used with other projects in need os a simple data logger. 
 
 *Serial Link*    
-The serial link class abstracts away the low level communications with the sensor module, retro gauge and LiDAR. There are two instances of Serial Link which are members of the Compute Distance instance. Each serial link is implemented in its own thread and constantly checks for new data and writes outgoing data. The serial link class makes use of streams to both make writing to a the file system more seamless and also to handle message buffering. 
+The serial link class abstracts away the low level communications with the sensor module, Retro Gauge and LiDAR. There are two instances of Serial Link which are members of the Compute Distance instance. Each serial link is implemented in its own thread and constantly checks for new data and writes outgoing data. The serial link class makes use of streams to both make writing to the file system more seamless and also to handle message buffering. 
 
 *JSON Transcoder*    
-The JSON trascoder class consists of a number of static methods and variables used to convert to and from java objects used in the compute distance class and JSON strings. This class is based on a streaming JSON parser and therefore could be expanded to parse very long JSON messages and process the data as it is read. 
+The JSON transcoder class consists of a number of static methods and variables used to convert to and from Java objects used in the compute distance class and JSON strings. This class is based on a streaming JSON parser and therefore could be expanded to parse very long JSON messages and process the data as it is read. 
 
-The android software makes use of the following libraries:    
-[OpenXC](https://github.com/openxc/openxc-android)    
+The Android software makes use of the following libraries:    
+[OpenXC](https://github.com/openxc/openxc-Android)    
 [Jackson JSON](http://jackson.codehaus.org/)    
 [FTDriver](https://github.com/openxc/FTDriver)    
 
@@ -156,7 +164,7 @@ The android software makes use of the following libraries:
 
 ![Gauge Mount](/projects/images/brakedist/gauge_mount.jpg)
 
-The user interface for this project is based on the [Retro Gauge][] OpenXC project by Dave Evans. The gauge is modified with a different gauge face and also lacks the numerical readeout of Dave's original gauge. As part of this project a modular gauge mount was also designed. This mount pairs with Chad Bean's modular docking project and allows for a seamless integration into a vehicle with a modular dock already installed. The mount is 3D printed and has two halves that bolt together. The CATPart files and stl files for the gauge mount can be found int the [brakedist][] repo. 
+The user interface for this project is based on the [Retro Gauge][] OpenXC project by Dave Evans. The gauge is modified with a different gauge face and also lacks the numerical readeout of Dave's original design. As part of this project a modular gauge mount was also designed. This mount pairs with Chad Bean's modular docking project and allows for a seamless integration into a vehicle with a modular dock already installed. The mount is 3D printed and has two halves that bolt together. The CATPart files and stl files for the gauge mount can be found int the brakedist repo. 
 
 [Arduino]: http://www.arduino.cc
 [boost converter]: http://www.amazon.com/gp/product/B00AMZEUYU/ref=s9_simh_gw_p422_d15_i5?pf_rd_m=ATVPDKIKX0DER&pf_rd_s=center-3&pf_rd_r=1YH0FWTZ4HT7W35B8YGK&pf_rd_t=101&pf_rd_p=470938811&pf_rd_i=507846
