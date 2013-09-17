@@ -46,7 +46,7 @@ below:
   warn drivers of sudden stops.  At the Electrified Vehicle
   Hackathon, Al's team added voice triggering and functionality to
   thank a fellow driver for something.  See the
-  [demo](http://ledpixelart.com/portfolio-item/smart-brake-light-prototype-2/) here.	
+  [demo](http://ledpixelart.com/portfolio-item/smart-brake-light-prototype-2/) and check out Al's [Instructable](http://www.instructables.com/id/Smart-Brake-Light-Proof-of-Concept/).
 
 ## Research Projects
 
