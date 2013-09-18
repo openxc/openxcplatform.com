@@ -1,3 +1,8 @@
+---
+layout: default
+title: Overview - OpenXC
+---
+
 <div style="page-header">
     <h1> Reference Documents </1>
 </div>
@@ -7,4 +12,5 @@ Below you'll find links to the reference documentation for the Android, Python, 
 
 
 * [Android Reference Library](android.openxcplatform.com/reference/packages.html)
-
+* [Python Reference Library](http://python.openxcplatform.com/en/latest/index.html#documentation)
+* [VI Firmware Documentation](http://vi-firmware.openxcplatform.com/en/latest/)
