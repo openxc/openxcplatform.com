@@ -11,6 +11,6 @@ title: Overview - OpenXC
 Below you'll find links to the reference documentation for the Android, Python, and Vehicle Interface libraries. 
 
 
-* [Android Reference Library](android.openxcplatform.com/reference/packages.html)
+* [Android Reference Library](http://android.openxcplatform.com/reference/packages.html)
 * [Python Reference Library](http://python.openxcplatform.com/en/latest/index.html#documentation)
 * [VI Firmware Documentation](http://vi-firmware.openxcplatform.com/en/latest/)

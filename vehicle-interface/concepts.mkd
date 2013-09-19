@@ -47,9 +47,7 @@ developers access to the data contained within. Even for engineers inside the
 companies, dealing with a standard data format across many vehicles is often
 preferable to keeping track of a database of CAN message and signal definitions.
 
-<h2 id="obd">
-<a href="#obd">On-Board Diagnostics</a>
-</h2>
+
 
 The CAN bus is one of the primary components of [OBD-II][obd2], a vehicle
 diagnostic standard mandatory for all cars sold in the United States since 1996.
@@ -59,6 +57,12 @@ or seen a vehicle monitoring app for your smartphone, that's OBD-II in action.
 You'll always find the port by the driver's knees.
 
 ![OBD-II Port with Cable in a Mustang](/images/obd-ii-cable.jpg)
+
+This means that every vehicle in the United States has a very accessible place to connect to the same network used by all of the vehicle's subsystems. That's where OpenXC comes in - with some knowledge of how to process the messages on the network, you can start to get valuable data out of your car.
+
+<h2 id="obd">
+<a href="#obd">On-Board Diagnostics</a>
+</h2>
 
 Diagnostic messages work slightly differently than the CAN messages used by all
 other in-vehicle systems. When you turn on your car, the CAN bus is very busy
