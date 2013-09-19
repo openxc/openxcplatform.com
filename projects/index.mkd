@@ -21,7 +21,7 @@ as many well documented, functional projects as we can.
 * [Brake Distance Tracking](/projects/brakedist.html)
 * [Docking Station](/projects/docking-station.html)
 * [LED Display](/projects/led-display.html)
-
+* [Augmented Reality Instrument Cluster](/projects/augreality-ic.html)
 
 ### Boing Boing Data Driven Hackathon Projects
 Data Driven was a hackathon organized around OpenXC as part of Boing
