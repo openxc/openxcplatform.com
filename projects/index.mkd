@@ -48,6 +48,23 @@ below:
   thank a fellow driver for something.  See the
   [demo](http://ledpixelart.com/portfolio-item/smart-brake-light-prototype-2/) and check out Al's [Instructable](http://www.instructables.com/id/Smart-Brake-Light-Proof-of-Concept/).
 
+### Ford Electrified Vehicle Hackathon
+Ford hosted a hackathon over the weekend of September 7-8 at TechShop Menlo Park where participants used an experimental version of the OpenXC API that allowed them to control select functionality in the car via API calls.
+
+* **OpenXCThenThat:** *Winner, Best Application.* Similar to [If This Then That](http://ifttt.com/), OpenXCThenThat gives people a simple way to automate daily tasks in their lives.  For example, one could automate a task such that if a vehicle crosses out of a geofence, the owner of the car is notified by text.  Alternatively, as a car approaches an owner's home, OpenXCThenThat could automatically trigger interior lights and HVAC.
+
+* **Smart Brake Light:** *Winner, Craziest App* Please check out the project description above in the Boing Boing Data Driven hackathon.
+
+* **Smart Battery App:** *Winner, Best Eco App* This project used OpenXC to set the state of charge (SOC) on a plug-in hybrid vehicle so that it uses battery energy while going up a hill and and then captures energy while going downhill.  The project identified optimal points for when the vehicle would change the SOC setpoint and used geofencing to identify locations where the change would happen
+
+* **Follow Me:** *Winner, Best Use of Write APIs.*  This app runs in two cars traveling together on the highway.  The system monitors the current speed of the lead vehicle and pushes it to the following car through a cloud server. The following car sets its cruise control based on the speed of the lead-car.
+
+
+
+
+
+
+
 ## Research Projects
 
 * [WIMXWAYNE](http://groups.geni.net/geni/wiki/WIMXWAYNE) - WiMAX Prototyping in
