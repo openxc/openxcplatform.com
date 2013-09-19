@@ -131,6 +131,6 @@ Once you've purchased or constructed a vehicle interface, you go through the
 correctly.
 
 [output-format]: /vehicle-interface/output-format.html
-[host device]: /android/index.html
+[host device]: /host-devices/index.html
 [can]: http://en.wikipedia.org/wiki/CAN_bus
 [obd2]: http://en.wikipedia.org/wiki/On-board_diagnostics

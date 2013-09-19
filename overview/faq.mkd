@@ -57,10 +57,8 @@ The most important difference between OpenXC and existing tools is the standard
 programming language and OS agnostic
  <a href="/vehicle-interface/output-format.html">output</a> sent via USB.
 The reference host device is <a href="/android/index.html">Android</a>, but
-there's no reason you couldn't use a Windows or Linux laptop with a USB port
-(i.e. any of them). A port of the
- <a href="/android/api-guide.html">openxc-android</a> library to Python or
-plain old (non-Android) Java would be a great addition to the project.
+there's no reason you couldn't use a laptop with another programming environment
+(see all supported <a href="/host-devices/index.html">host devices</a>.
 </p>
 
 <a href="http://en.wikipedia.org/wiki/OBD-II_PIDs#Non-standard_PIDs">Source</a>

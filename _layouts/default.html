@@ -41,7 +41,7 @@
                 <ul class="nav">
                     <li class="{% if page.url contains 'overview' %}active{% endif %}"><a href="/overview/index.html">Overview</a></li>
                     <li class="{% if page.url contains 'getting-started' %}active{% endif %}"><a href="/getting-started/index.html">Getting Started</a></li>
-                    <li class="{% if page.url contains 'android' %}active{% endif %}"><a href="/android/index.html">App Development</a></li>
+                    <li class="{% if page.url contains 'android' or page.url contains 'host-devices' %}active{% endif %}"><a href="/host-devices/index.html">App Development</a></li>
                     <li class="{% if page.url contains 'vehicle-interface' %}active{% endif %}"><a href="/vehicle-interface/index.html">Vehicle Interface</a></li>
                     <li class="{% if page.url contains 'projects' %}active{% endif %}"><a href="/projects/index.html">Projects</a></li>
                 </ul>
@@ -71,17 +71,18 @@
                     <li><a href="/getting-started/tutorial.html">App Tutorial</a></li>
                     <li><a href="/getting-started/troubleshooting.html">Troubleshooting</a></li>
 
-                    <li class="nav-header">Android Host Device</li>
+                    <li class="nav-header">Application Host Devices</li>
+                    <li><a href="/host-devices/index.html">Supported Host Devices</a></li>
                     <li><a href="/android/index.html">Supported Android Hardware</a></li>
-                    <li><a href="/android/api-guide.html">Library API Guide</a></li>
-                    <li><a href="/android/testing.html">Testing</a></li>
-                    <li><a href="http://android.openxcplatform.com">Reference</a></li>
-                    <li><a href="https://github.com/openxc/openxc-android">Download Library</a></li>
+                    <li><a href="/android/api-guide.html">Android Library API Guide</a></li>
+                    <li><a href="/android/testing.html">Android Testing</a></li>
+                    <li><a href="http://android.openxcplatform.com">Android Reference</a></li>
+                    <li><a href="https://github.com/openxc/openxc-android">Download Android Library</a></li>
 
                     <li class="nav-header">Vehicle Interface (VI)</li>
                     <li><a href="/vehicle-interface/index.html">Supported VI Hardware</a></li>
                     <li><a href="/vehicle-interface/concepts.html">VI Concepts</a></li>
-                    <li><a href="/vehicle-interface/testing.html">Testing</a></li>
+                    <li><a href="/vehicle-interface/testing.html">VI Testing</a></li>
                     <li><a href="/vehicle-interface/output-format.html">Vehicle Data &amp; Output Format</a></li>
                     <li><a href="/vehicle-interface/firmware.html">Firmware</a></li>
                     <li><a href="/vehicle-interface/utilities.html">Utilities</a></li>

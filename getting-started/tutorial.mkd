@@ -10,7 +10,7 @@ title: App Tutorial - OpenXC
 <div class="pull-right well">
     <ul class="nav nav-list">
         <li class="nav-header">Next Steps</li>
-        <li><a href="/android/index.html">Host Device</a></li>
+        <li><a href="/host-devices/index.html">Host Device</a></li>
         <li><a href="/vehicle-interface/index.html">Vehicle Interface</a></li>
     </ul>
 </div>
@@ -210,7 +210,7 @@ list of `Measurement` Java classes that you can use in the
 <h2>Completed Example</h2>
 </div>
 
-If you're having trouble or want to double check your work, check out a completed Eclipse project [here](https://github.com/openxc/openxc-starter), or browse the code below: 
+If you're having trouble or want to double check your work, check out a completed Eclipse project [here](https://github.com/openxc/openxc-starter), or browse the code below:
 
 <script src="https://gist.github.com/peplin/5464835.js"></script>
 
@@ -239,8 +239,8 @@ Install a file manager in Android like the [OI File
 Manager](https://play.google.com/store/apps/details?id=org.openintents.filemanager)
 so the Enabler is able to browse for files on the SD card.
 
-To install a file manager on an Android Emulator, download the APK file from the 
-[product web site](http://openintents.org/en/filemanager), start the emulator, 
+To install a file manager on an Android Emulator, download the APK file from the
+[product web site](http://openintents.org/en/filemanager), start the emulator,
 and from the command line install the APK file with adb:
 <pre><code>$ adb install FileManager-2.0.2.apk</code></pre>
 
@@ -257,14 +257,15 @@ or the [Vehicle Dashboard][].
 </div>
 
 You've now completed the OpenXC Android tutorial, but there's more to learn
-about the [host device][] and [vehicle interface][]. If you are having trouble,
-check out the [troubleshooting](/getting-started/troubleshooting.html) steps.
+about supported [Android devices][] and [vehicle interfaces][]. If you are
+having trouble, check out the
+[troubleshooting](/getting-started/troubleshooting.html) steps.
 
 
 [sdk]: http://developer.android.com/sdk/index.html
 [gg]: http://groups.google.com/group/openxc
-[vehicle interface]: /vehicle-interface/index.html
-[host device]: /android/index.html
+[vehicle interfaces]: /vehicle-interface/index.html
+[Android devices]: /android/index.html
 [library project]: /getting-started/library-installation.html
 [Vehicle Dashboard]: https://github.com/openxc/openxc-android/tree/master/examples
 [MPG]: https://github.com/openxc/mpg
