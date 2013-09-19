@@ -57,10 +57,10 @@ sent over USB or Bluetooth, so they can be read by any computer or smartphone.
     </div>
 </div>
 
-The <a href="/android/index.html">**Android host device**</a> connects to the
-vehicle interface and reads the translated vehicle data. OpenXC developers can
-write applications on this device and use any of the data through a Java
-library.
+The <a href="/host-devices/index.html">**host device**</a> connects to the
+vehicle interface and reads the translated vehicle data (e.g. an Android tablet
+or Python environement on a laptop). OpenXC developers can write applications on
+this device using the data.
 
 ![OpenXC Architecture Diagram](/images/openxc-architecture.jpeg)
 

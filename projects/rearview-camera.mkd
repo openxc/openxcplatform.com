@@ -38,7 +38,7 @@ This application is intended as a proof-of-concept.
 **Hardware**
 
 * OpenXC-compatible [Android
-   Device](http://openxcplatform.com/android/index.html) (3.2 or later) that
+   Device](/android/index.html) (3.2 or later) that
    can [access UVC video devices](#android-usb-webcam).
 * [USB Webcam][] supporting UVC and a 640x480 resolution in the YUYV format.
 * [OpenXC Vehicle
