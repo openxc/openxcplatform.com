@@ -59,6 +59,18 @@ Ford hosted a hackathon over the weekend of September 7-8 at TechShop Menlo Park
 
 * **Follow Me:** *Winner, Best Use of Write APIs.*  This app runs in two cars traveling together on the highway.  The system monitors the current speed of the lead vehicle and pushes it to the following car through a cloud server. The following car sets its cruise control based on the speed of the lead-car.
 
+* **Death In the Air:** CO2 level monitoring inside a car.  Using an Arduino-based CO2 sensor, this project monitors the CO2 levels inside the car while driving.  If the level goes above some threshold, the app will instruct the HVAC system to bring in fresh air rather than recirculate the air.
+
+* **Backseat Driver:** An Android app that allows a backseat driver to bother their phone rather than the driver.  
+
+* **Stress Route:** This project uses a clip-on finger health sensor (blood oxygen level and heart rate) to identify stressful situations while driving.  Over time, the app could be used to infer high-stress geographic areas.
+
+* **Driver Buddy:** Driver Buddy aims to keep drivers alert while driving.  The app will cause the car to beep at regular intervals and change the radio volume every once in a while to keep the driver on their toes.
+
+* **S-Driver:** An app focused on safety, infotainment, and maintenance as a dashboard app for Android. The app monitors vehicle status and automatically uploads to Evernote using their API.  The app will trigger auto reminders in the car, such as a reminder telling you to get the car serviced.
+
+* **Engine Mode Change:** This project changes the EV behavior of the vehicle by automatically switching between the EV modes so that (if the car was over 50% SOC), it would run in EV mode most of the time.  If the accelerator pedal is pressed down hard, the app will enable the gasoline engine. This way you would drive around much more in EV mode, and only enable the engine when you really, really wanted it.
+
 
 
 
