@@ -1,0 +1,52 @@
+---
+layout: default
+title: SplitGAS Rideshare App - OpenXC
+---
+
+<div class="page-header">
+    <h1>SplitGAS Rideshare App</h1>
+</div>
+
+The SplitGAS Rideshare App seamlessly divides the cost of gas among passengers in a car. Using Bluetooth smartphone detection and OpenXC fuel consumption data, SplitGAS knows who is riding and exactly how much fuel is being used at any moment. At the end of the trip, SplitGAS charges each passenger his or her portion of the gas consumed via Dwolla. By offering an easy, accurate, and polite way to divide gas money, SplitGAS improves the trip experience for both drivers and riders. Ford Silicon Valley Lab summer intern Michela Meister designed and created the SplitGAS Rideshare App.
+
+<div class="page-header">
+    <h2 id="motivation"><a href="#motivation">Motivation</a></h2>
+</div>
+
+Over the past ten to twenty years, there has been a major shift in how people view car ownership. For many young people today, owning a car does not carry the same badge of freedom, rebellion, or adulthood that it did for their parents or grandparents. In fact, according to the New York Times article “As Young Lose Interest in Cars, G.M. Turns to MTV for Help” (March 22, 2012) 46% of all teenagers would rather have internet access than own a car. This same attitude is reflected in dropping licensing rates. In 1998, 64.4% of all teenagers had a driver’s license, while in 2008, only 46.3% did. 
+
+As more and more people are choosing to go car-less, ridesharing is emerging as an increasingly popular alternative. Companies like Sidecar and Lyft link users looking for a ride with users offering to chauffeur for pay, while Zimride helps people traveling along the same route connect to carpool.
+
+A difficult problem in any rideshare or carpool is to divide up the cost of gas. People frequently mis-estimate how much gas they are using, and for some requesting or receiving money can be a delicate or awkward interaction. This can be even more burdensome if some passengers do not have cash or are simply forgetful. While this may seem like a petty problem today, a few years from now, in a world where ridesharing may be the norm, small costs will add up for both drivers and riders. SplitGAS aims to solve this problem by offering an accurate, easy-to-use, and socially seamless way to split gas money.
+
+<div class="page-header">
+    <h2 id="app_flow"><a href="#app_flow">App Flow</a></h2>
+</div>
+
+Above is an example of typical app flow run on a driver’s tablet or Android phone. Pane A is the opening screen, where the driver enters the local price per gallon of gas and presses “start” to begin the trip. Once the trip has started, riders’ names are added and removed from the leaderboard (Pane B) as they enter and exit the car. When the driver clicks “end”, SplitGAS displays an itinerary report and bill (Pane C), showing when each passenger entered and exited the car. SplitGAS then bills each passenger his or her fare privately.
+
+<div class="page-header">
+    <h2 id="design"><a href="#design">Design: SplitGAS has three main components.</a></h2>
+</div>
+
+<div class="page-header">
+    <h2 id="phone_detection"><a href="#phone_detection">Phone Detection</a></h2>
+</div>
+
+SplitGAS detects passenger’s smartphones via Bluetooth in order to determine who is riding in a car. By continuously scanning for passengers, SplitGAS knows when someone enters or exits the car, without any active input from the riders or driver. 
+
+We considered many other methods of passenger detection. One such option was RFID: using smartphones, passengers could tag in and out of a car to mark their trip.  However, this method alters the driving and riding experience; passengers would have to change their normal habits to cater to the app. Another option was manual app entry by the driver of passenger enter and exit events. This, too, would alter driving routines and social norms, and, more importantly, might increase driver distraction. 
+
+SplitGAS Bluetooth detection requires no driver or passenger input and thus leaves the driving and riding experience untouched. Every twenty seconds, SplitGAS scans for near-by Bluetooth devices and compares the devices it finds to its list of devices from the previous scan. If a device has been added or removed, SplitGAS updates the status of the associated passenger appropriately. If a device enters the car, its passenger is now marked as “in”, and if a device leaves the car, its passenger is marked as “out”. In this way, SplitGAS monitors passengers without any user input.
+
+<div class="page-header">
+    <h2 id="fuel_calculation"><a href="#fuel_calculation">Fuel Calculation</a></h2>
+</div>
+
+SplitGAS uses OpenXC to read in the liters of fuel consumed since the start of the trip and divides the cost of fuel evenly between the passengers riding together over any one segment. For example, if Amy and Alex drive from San Jose to Palo Alto, pick up Andrew in Palo Alto, and then drive to San Francisco, Amy and Alex will split the cost of fuel from San Jose to Palo Alto, and all three will split the cost of fuel from Palo Alto to San Francisco. To do this, fuel calculation must be directly tied to phone detection. Whenever SplitGAS detects a device/passenger pair entering or exiting the car, it divides and updates the fuel costs for all passengers from that trip segment. This keeps fuel calculation fair, accurate, and behind the scenes.
+
+<div class="page-header">
+    <h2 id="payment_system"><a href="#payment_system">Payment System</a></h2>
+</div>
+
+At the end of a trip, SplitGAS charges each passenger his or her fare through Dwolla, an online payment system. Using the fuel calculations, SplitGAS uses a Dwolla API call to send a request for payment from the driver’s Dwolla account to each of the passengers’ Dwolla accounts. Passengers can then respond to the request for payment in their own time, either on their phones or at home on their computers. With this payment system SplitGAS takes care of all money exchanges in an easy-to-use and polite manner.
