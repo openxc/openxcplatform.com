@@ -23,11 +23,10 @@ A difficult problem in any rideshare or carpool is to divide up the cost of gas.
     <h2 id="app_flow"><a href="#app_flow">App Flow</a></h2>
 </div>
 
-Above is an example of typical app flow run on a driver’s tablet or Android phone. Pane A is the opening screen, where the driver enters the local price per gallon of gas and presses “start” to begin the trip. Once the trip has started, riders’ names are added and removed from the leaderboard (Pane B) as they enter and exit the car. When the driver clicks “end”, SplitGAS displays an itinerary report and bill (Pane C), showing when each passenger entered and exited the car. SplitGAS then bills each passenger his or her fare privately.
+![Flow 1](/projects/images/flow1.jpg) ![Flow 2](/projects/images/flow2.jpg)
+![Flow 3](/projects/images/flow3.jpg)
 
-<div class="page-header">
-    <h2 id="design"><a href="#design">Design: SplitGAS has three main components.</a></h2>
-</div>
+Above is an example of typical app flow run on a driver’s tablet or Android phone. First is the opening screen, where the driver enters the local price per gallon of gas and presses “start” to begin the trip. Once the trip has started, riders’ names are added and removed from the leaderboard (second screen) as they enter and exit the car. When the driver clicks “end”, SplitGAS displays an itinerary report and bill (third screen), showing when each passenger entered and exited the car. SplitGAS then bills each passenger his or her fare privately.
 
 <div class="page-header">
     <h2 id="phone_detection"><a href="#phone_detection">Phone Detection</a></h2>
@@ -35,7 +34,7 @@ Above is an example of typical app flow run on a driver’s tablet or Android ph
 
 SplitGAS detects passenger’s smartphones via Bluetooth in order to determine who is riding in a car. By continuously scanning for passengers, SplitGAS knows when someone enters or exits the car, without any active input from the riders or driver. 
 
-We considered many other methods of passenger detection. One such option was RFID: using smartphones, passengers could tag in and out of a car to mark their trip.  However, this method alters the driving and riding experience; passengers would have to change their normal habits to cater to the app. Another option was manual app entry by the driver of passenger enter and exit events. This, too, would alter driving routines and social norms, and, more importantly, might increase driver distraction. 
+We considered many other methods of passenger detection. One such option was RFID: passengers could tag in and out of a car to mark their trip.  However, this method alters the driving and riding experience; passengers would have to change their normal habits to cater to the app. Another option was manual app entry by the driver of passenger enter and exit events. This, too, would alter driving routines and social norms, and, more importantly, might increase driver distraction. 
 
 SplitGAS Bluetooth detection requires no driver or passenger input and thus leaves the driving and riding experience untouched. Every twenty seconds, SplitGAS scans for near-by Bluetooth devices and compares the devices it finds to its list of devices from the previous scan. If a device has been added or removed, SplitGAS updates the status of the associated passenger appropriately. If a device enters the car, its passenger is now marked as “in”, and if a device leaves the car, its passenger is marked as “out”. In this way, SplitGAS monitors passengers without any user input.
 
