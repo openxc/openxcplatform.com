@@ -31,7 +31,7 @@ All rendering on top of the surface view is handled by the Andengine OpenGL engi
 
 ![OpenXC Instrument Gauges](/projects/images/ARIC/ARIC_INSTRUMENTS.png)
 
-Augmented Reality navigation is handled by a collection of sensors and services. Location services are provided through the Google Play Services API. Orientation for Augmented Reality is user specified to use either the magnetic field and accelerometer sensors or the software orientation sensor. Performance for each sensor configuration varies by device. The application includes a primitive navigation feature that prompts the user for a hands-free voice input of a destination, then calculates the route using the Google Directions API. 
+Augmented Reality navigation is handled by a collection of sensors and services. Location services are provided through the Google Play Services API. Orientation for Augmented Reality is user specified to use either the magnetic field and accelerometer sensors or the software orientation sensor. Performance for each sensor configuration varies by device. The orientation sensor is enabled by default because it is less noisy than the accelerometer/magnetic field sensor fusion. It is worth noting that the orientation sensor is deprecated in Android because it is only accurate when there is negligible tablet roll. Since the tablet is held stable vertically for this application this inaccuracy should have minimal effect on the performance. The application includes a primitive navigation feature that prompts the user for a hands-free voice input of a destination, then calculates the route using the Google Directions API. 
 
 ![Augmented Reality Navigation](/projects/images/ARIC/ARIC_NAVPROMPT.png)
 
