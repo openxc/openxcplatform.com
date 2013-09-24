@@ -53,9 +53,9 @@ with a green check mark.
 </div>
 
 The OpenXC library is exposed to applications through an
-[Android service][], the [VehicleManager][]. To use it, you will first need to
+[Android Service][], the [VehicleManager][]. To use it, you will first need to
 define the service in your app's `AndroidManifest.xml`. Add this `<service>` tag
-to your app:
+to your app's `AndroidManifest.xml`:
 
 {% highlight xml %}
 <application>
@@ -69,15 +69,16 @@ to your app:
 <h2>VehicleManager Service</h2>
 </div>
 
-You must first [bind][] with the [VehicleManager][] before you can receive
+You must first [bind][] with the [VehicleManager][] Service before you can receive
 any vehicle data.
 
-Add a [ServiceConnection][] to your activity. You'll use this to store a
+Add a [ServiceConnection][] to your activity, where it will be executed at object creation time.. You'll use this to store a
 connection to the OpenXC service.
 
 {% highlight java %}
 ...
 private VehicleManager mVehicleManager;
+private boolean mBound = false;
 
 private ServiceConnection mConnection = new ServiceConnection() {
     // Called when the connection with the service is established
@@ -91,19 +92,22 @@ private ServiceConnection mConnection = new ServiceConnection() {
     public void onServiceDisconnected(ComponentName className) {
         Log.w("openxc", "VehicleService disconnected unexpectedly");
         mVehicleManager = null;
+        mBound = false;
     }
 };
 {% endhighlight %}
 
-In the `onCreate()` method of your activity, request to bind with the service
+In the `onStart()` method of your activity, request to bind with the service
 with your new ServiceConnection instance:
 
 {% highlight java %}
-public void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-	...
+protected void onStart()) {
+    super.onStart();
+
+    ...
     Intent intent = new Intent(this, VehicleManager.class);
-    bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
+    if (!mBound)
+         mBound = bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
 }
 {% endhighlight %}
 
@@ -115,6 +119,23 @@ public void onPause() {
     super.onPause();
     Log.i("openxc", "Unbinding from vehicle service");
     unbindService(mConnection);
+    mBound = false;
+}
+{% endhighlight %}
+
+And what you undo on Pause, you have to make sure is done by the time onResume is called, so:
+
+{% highlight java %}
+public void onResume() {
+    super.onResume();
+    if (!mBound) {
+        Intent intent = new Intent(this, VehicleManager.class);
+        mBound = bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
+        if (mBound)
+            Log.i("openxc", "Binding to Vehicle Manager");
+        else
+            Log.e("openxc", "Failed to bind to Vehicle Manager");
+    }
 }
 {% endhighlight %}
 
