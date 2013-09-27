@@ -16,11 +16,29 @@ title: Vehicle Interface - OpenXC
     </ul>
 </div>
 
-The vehicle interface (VI or CAN translator) is based on a microcontroller with two
-external connections - one to the CAN bus via the OBD-II port, and one to the
-[host device][] via USB or serial. It passively listens for a subset of CAN
-messages, performs required unit conversion or factoring and outputs a [generic
-version][output-format] to the USB interface.
+The Vehicle Interface (VI or CAN translator) is piece of hardware that connects
+to the car's CAN bus, translates proprietary CAN messages to the standard
+[OpenXC message format][output-format] and sends the output over USB, Bluetooth
+or Ethernet/WiFi to a [host device][].
+
+There are many possible implementations of a VI. The minimal functional
+requirements are that the VI:
+
+* Physically connects to the [OBD-II diagnostic
+  connetor](http://en.wikipedia.org/wiki/On-board_diagnostics#OBD-II_diagnostic_connector)
+  directly or with a cable.
+* Connects a CAN controller to at least the US federally mandated CAN bus pins.
+* Runs the open source [VI firmware](https://github.com/openxc/vi-firwmare).
+* can be reprogrammed the end user without additional hardware (most likely via
+  a USB or serial bootloader).
+
+Optionally, the VI may:
+
+* Connect another CAN controller to non-standard CAN bus pins (such as Ford's medium
+  speed or infotainment bus pins)
+* Allow lower-lever user re-programming and debugging via ISP or JTAG.
+* Pass 12v power from the vehicle through to a separate power jack for
+  peripherals (e.g. an [OpenXC dock](https://github.com/openxc/reference-dock)).
 
 Unless you are implementing custom CAN messages, you will most likely need a
 [pre-built OpenXC binary](/vehicle-interface/firmware.html) from the
@@ -113,6 +131,6 @@ Once you've purchased or constructed a vehicle interface, you go through the
 correctly.
 
 [output-format]: /vehicle-interface/output-format.html
-[host device]: /android/index.html
+[host device]: /host-devices/index.html
 [can]: http://en.wikipedia.org/wiki/CAN_bus
 [obd2]: http://en.wikipedia.org/wiki/On-board_diagnostics

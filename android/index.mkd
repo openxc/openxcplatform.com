@@ -7,9 +7,10 @@ title: Android Host Device - OpenXC
     <h1>Android Host Device</h1>
 </div>
 
-OpenXC applications are standard Android applications that use the OpenXC
-library in conjunction with a vehicle interface module connected to a USB port
-or via Bluetooth.
+OpenXC applications on Android are merely Android applications that use the
+OpenXC Android library to receive and parse data from a <a href="">vehicle
+interface</a>. Android is one of a few [options for writing
+applications](/host-devices/index.html) using OpenXC.
 
 Bluetooth support is working well now, and it has the lowest hardware
 requirements so it is the recommended interface.
@@ -82,37 +83,6 @@ Driver distraction aside, the most useful and interesting applications tend to
 be those without much driver interaction. The more you can automate or let the
 user deal with outside of their vehicle, the better the experience will likely
 be.
-
-<div class="page-header">
-    <h2>Motivation</h2>
-</div>
-
-The requirements for the host device are quite flexible, but it's important that
-OpenXC rally around a single platform to maximize compatibility and momentum.
-Ideally, the platform should be accessible to a wide range of programmers from
-novice to expert, and it should use a popular programming language. The barriers
-to understanding and developing for vehicles are high enough (e.g. learning
-about CAN and about UI appropriate at 70mph) that learning a new niche
-programming language should be avoided. The platform should also use
-widely-available hardware to minimize the burden that individual developers must
-bear to start creating applications.
-
-Android is a massively popular application development environment. Since the
-vehicle interface is only a small part of any OpenXC application, this means
-that more general questions can be directed to the existing community of Android
-developers.
-
-The open hardware part of OpenXC is also supported by Android. All Android
-devices running version 3.1 or later have support for [USB devices][], and many
-tablets include a full-size USB port. OpenXC hardware modules like sensors and
-in-vehicle UI can use USB to connect to applications. Combined with the
-affordability and increasing popularity of Android-based tablets, the likelihood
-that an interested developer already has or can acquire one is high.
-
-Android, an open source project, lends itself well to custom hardware that would
-likely be used if OpenXC hosts are mass produced. Some of the most expensive
-components of a tablet (battery, LCD screen, GPS receiver, etc.) can be left out
-to hit an ever lower price point.
 
 [thrive]: http://us.toshiba.com/tablets/thrive/10-inch/
 [galaxynexus]: http://www.google.com/nexus/
