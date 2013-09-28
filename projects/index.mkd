@@ -81,6 +81,15 @@ them to control select functionality in the car via API calls.
   the lead vehicle and pushes it to the following car through a cloud server.
   The following car sets its cruise control based on the speed of the lead-car.
 
+* **OpenXC-Graphite:** <a href="https://twitter.com/bobpielock">Bob
+    Pielock</a> and <a href="http://twitter.com/rogwilco">Nick
+    Williams</a> set up a Raspberry Pi running Raspbian, Graphite and a
+    bunch of other good stuff to collect and visualize data in the
+    car.  While the car was parked, they could actually display on the
+    built-in touchscreen via the video-in RCA jacks.  See Bob's blog
+    [post](http://masherydev.tumblr.com/post/61687512314/hacking-on-fords-openxc-platform)
+    for more details.
+
 * **Death In the Air:** CO2 level monitoring inside a car.  Using an
   Arduino-based CO2 sensor, this project monitors the CO2 levels inside the car
   while driving.  If the level goes above some threshold, the app will instruct
