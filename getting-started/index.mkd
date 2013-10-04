@@ -10,8 +10,8 @@ title: Getting Started - OpenXC
 <div class="pull-right well">
     <ul class="nav nav-list">
         <li class="nav-header">Next Step</li>
-        <li><a href="/getting-started/library-installation.html">
-            Setting up your Environment <i class="icon-arrow-right"></i>
+        <li><a href="/getting-started/step-by-step.html">
+            Step-by-Step Guide <i class="icon-arrow-right"></i>
         </a></li>
     <p></p>
     </ul>
