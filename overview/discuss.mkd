@@ -56,3 +56,14 @@ Agreement](/contributor-license-agreement.html) to make sure the code is free
 and always will be remain free.
 
 [Github]: https://github.com/openxc
+
+### Reference Documentation
+
+
+Below you'll find links to the reference documentation for the Android, Python, and Vehicle Interface libraries. 
+
+
+* [Android Reference Library](http://android.openxcplatform.com/reference/packages.html)
+* [Python Reference Library](http://python.openxcplatform.com/en/latest/index.html#documentation)
+* [VI Firmware Documentation](http://vi-firmware.openxcplatform.com/en/latest/)
+

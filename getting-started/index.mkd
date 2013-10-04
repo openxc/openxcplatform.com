@@ -11,15 +11,14 @@ title: Getting Started - OpenXC
     <ul class="nav nav-list">
         <li class="nav-header">Next Step</li>
         <li><a href="/getting-started/library-installation.html">
-            Configure your environment <i class="icon-arrow-right"></i>
+            Setting up your Environment <i class="icon-arrow-right"></i>
         </a></li>
-    </p>
+    <p></p>
+    </ul>
 </div>
 
 
 The OpenXC architecture is divided into **two parts**:
-
-![Boxed vehicle interface](/images/cantranslator-boxed.jpg)
 
 The <a href="/vehicle-interface/index.html">**vehicle interface (VI)**</a> is a
 device that plugs into the OBD-II port (and thus to the CAN bus), reads and
@@ -27,22 +26,37 @@ translates CAN messages into a [standard cross-vehicle
 format](/vehicle-interface/output-format.html), and sends the translated messages 
 over a USB or Bluetooth connection to your android device.
 
-<div class="row">
-    <div class="span4">
-        <img src="/images/android-in-car.jpg"/>
-    </div>
-    <div class="span4 stacked">
-        <img src="/images/screenshots/mpg-app-1.png"/>
-        <img src="/images/screenshots/mpg-app-2.png"/>
-    </div>
-</div>
+![Boxed vehicle interface](/images/cantranslator-boxed.jpg)
+
 
 The <a href="/android/index.html">**Android host device**</a> connects to the
 vehicle interface and reads the translated vehicle data. OpenXC developers can
 write applications on this device and use any of the data through a Java
 library.
 
-![OpenXC Architecture Diagram](/images/openxc-architecture.jpeg)
+<div class="row">
+    <div class="span3">
+        <img src="/images/android-in-car.jpg"/>
+    </div>
+    <div class="span2 stacked">
+        <img src="/images/screenshots/mpg-app-1.png"/>
+        <img src="/images/screenshots/mpg-app-2.png"/>
+    </div>
+</div>
+
+<div class="page-header">
+<h2>OpenXC Architecture</h2>
+</div>
+
+<p>
+The below Architecture Diagram gives a visual representation of both the Vehicle Interface
+and the Android device in terms of their relationship to the car's CAN network. 
+In this example, the CAN Network is broadcasting a signal describing the parking brake's status.
+The Vehicle Interface detects this signal, performs a translation using firmware specific to your
+vehicle, and sends the signal, now in a standard, generic format, to the USB connection where
+the Android App, using the OpenXC Library, can listen for it. </p>
+
+![OpenXC Architecture](/images/openxc-architecture.jpeg)
 
 [can]: http://en.wikipedia.org/wiki/CAN_bus
 [obd2]: http://en.wikipedia.org/wiki/On-board_diagnostics
@@ -52,7 +66,7 @@ library.
 </div>
 
 When you're ready to begin writing an OpenXC app, continue on to
-[install the Android library](/getting-started/library-installation.html). You
+[Step-by-Step Guide](/getting-started/step-by-step.html). You
 can get started even if you don't have a hardware vehicle interface (or even a
 car!).
 

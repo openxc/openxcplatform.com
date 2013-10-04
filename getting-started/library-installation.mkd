@@ -13,7 +13,8 @@ title: Library Setup - OpenXC
         <li><a href="/getting-started/tutorial.html">
             App Tutorial <i class="icon-arrow-right"></i>
         </a></li>
-    </p>
+    <p></p>
+    </ul>
 </div>
 
 The OpenXC functionality is exposed via a Java library that includes some

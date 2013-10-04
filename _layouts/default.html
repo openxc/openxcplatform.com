@@ -39,10 +39,10 @@
                 alt="OpenXC"/></a>
             <div class="nav-collapse">
                 <ul class="nav">
-                    <li class="{% if page.url contains 'overview' %}active{% endif %}"><a href="/overview/index.html">Project Overview</a></li>
-                    <li class="{% if page.url contains 'getting-started' %}active{% endif %}"><a href="/getting-started/index.html">Getting Started</a></li>
+                    <li class="{% if page.url contains 'overview' and page.url contains 'index' %}active{% endif %}"><a href="/overview/index.html">Project Overview</a></li>
                     <li class="{% if page.url contains 'faq' %}active{% endif %}"><a href="/overview/faq.html">FAQ</a></li>
-                    <li class="{% if page.url contains 'reference' %}active{% endif %}"><a href="/reference/index.html">Reference Docs</a></li>
+                    <li class="{% if page.url contains 'media' %}active{% endif %}"><a href="/overview/media.html">Media</a></li>
+                    <li class="{% if page.url contains 'getting-started' %}active{% endif %}"><a href="/getting-started/index.html">Getting Started</a></li>
                 </ul>
             </div>
         </div>
@@ -59,14 +59,14 @@
                 <ul class="nav nav-list">
                     <li class="nav-header">OpenXC</li>
                     <li><a href="/overview/index.html">Project Overview</a></li>
-                    <li><a href="/projects/index.html">Projects using OpenXC</a></li>
                     <li><a href="/overview/faq.html">F.A.Q.</a></li>
                     <li><a href="/overview/media.html">Media</a></li>
                     <li><a href="/overview/discuss.html">Contributing &amp; Getting Help</a></li>
 
                     <li class="nav-header">Getting Started</li>
                     <li><a href="/getting-started/index.html">Introduction</a></li>
-                    <li><a href="/getting-started/library-installation.html">Android Library Setup</a></li>
+                    <li><a href="/getting-started/step-by-step.html">Step-by-Step Guide</a></li>
+                    <li><a href="/getting-started/library-installation.html">Setting up your Environment</a></li>
                     <li><a href="/getting-started/tutorial.html">App Tutorial</a></li>
                     <li><a href="/getting-started/troubleshooting.html">Troubleshooting</a></li>
 
