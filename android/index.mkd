@@ -45,6 +45,7 @@ connection, the Android host device must:
 * Samsung [Galaxy Nexus][galaxynexus] (using Bluetooth or a USB OTG adapter,
   although the vehicle interface must be powered externally if using USB)
 * Samsung Galaxy S3 (using Bluetooth or a USB OTG adapter)
+* Samsung Galaxy Note GT-N7000 (using Bluetooth or a USB OTG adapter)
 * Micromax Canvas 2 A110 (using Bluetooth or a USB OTG adapter)
 
 <div class="page-header">
