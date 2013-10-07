@@ -64,3 +64,7 @@ h2:before, h3:before {
 #print-logo {
     display: none;
 }
+
+div.extra-screenshots {
+    display: none;
+}

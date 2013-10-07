@@ -7,19 +7,16 @@ title: Getting Started - OpenXC
     <h1>Getting Started</h1>
 </div>
 
-<div class="pull-right well">
-    <ul class="nav nav-list">
-        <li class="nav-header">Next Step</li>
-        <li><a href="/getting-started/library-installation.html">
-            Install the Android library <i class="icon-arrow-right"></i>
-        </a></li>
-    </p>
-</div>
-
 Modern automobiles are laced with a number of microcontrollers and sensors that
 monitor and control everything from the throttle position to the ambient air
 temperature. These devices communicate with each other over a wired in-vehicle
 network, a [CAN bus][can].
+
+<div class="alert alert-info">
+Did you just buy a <a href="/vehicle-interface/index.html">vehicle interface</a> and you
+want to do a quick "smoke test" and verify it works? <strong>Jump ahead to the <a
+href="/getting-started/first-steps.html">first steps.</a></strong>
+</div>
 
 ![In-vehicle Network](/images/can-diagram.png)
 

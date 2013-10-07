@@ -17,17 +17,17 @@ title: Firmware - OpenXC
 </div>
 
 <div class="page-header">
-    <h2>Updating with a .hex File</h2>
+    <h2>Programming a Binary Firmware</h2>
 </div>
 
-Updates to the vehicle interface (VI) firmware may be distributed as pre-compiled
-binaries, e.g. if they are distributed by an OEM who does not wish to make the
-CAN signals public. If that's the case for your vehicle, you will have a `.hex`
-file and can use the [upload_hex.sh][] script to update your device.
+Updates to the vehicle interface (VI) firmware are often distributed as
+pre-compiled binaries by car manufacturers that do not want to make their CAN
+message details public.
 
-The instructions for re-programming a VI are in the [binary
-firwmare](http://vi-firmware.openxcplatform.com/en/latest/installation/binary.html) VI
-documentation.
+Once you download the binary firmware for your car, you must follow the
+instructions for your particular vehicle interface for re-programming. Look for
+your VI on the [supported VI hardware page](/vehicle-interface/index.html) to
+find the instructions.
 
 **Ford**
 
