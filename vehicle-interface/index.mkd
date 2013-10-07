@@ -131,7 +131,7 @@ requirements are that the VI:
   connetor](http://en.wikipedia.org/wiki/On-board_diagnostics#OBD-II_diagnostic_connector)
   directly or with a cable.
 * Connects a CAN controller to at least the US federally mandated CAN bus pins.
-* Runs the open source [VI firmware](https://github.com/openxc/vi-firwmare).
+* Runs the open source [VI firmware](https://github.com/openxc/vi-firmware).
 * can be reprogrammed the end user without additional hardware (most likely via
   a USB or serial bootloader).
 
