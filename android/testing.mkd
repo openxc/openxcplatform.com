@@ -37,7 +37,7 @@ storage or SD card. You can do this in one of three ways:
 * Use the File Manager from the Android Device Monitor (included with the
   Android SDK).
 * Copy the file with `abd` on the command line:
-	`$ adb push driving.json /sdcard/openxc-driving.json`
+    `$ adb push driving.json /sdcard/openxc-driving.json`
 
 Install the [Enabler][enabler] app if you haven't already. That application
 helps control the source of vehicle data, e.g. a USB vehicle interface or a
