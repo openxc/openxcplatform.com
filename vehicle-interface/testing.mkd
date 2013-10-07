@@ -4,55 +4,7 @@ title: Vehicle Interface Test Procedure - OpenXC
 ---
 
 <div class="page-header">
-    <h1>Vehicle Interface Testing</h1>
+    <h1>{{ page.title }}</h1>
 </div>
 
-1. Download the pre-compiled [vehicle emulator
-   firmware](http://openxcplatform.com.s3.amazonaws.com/openxc-canemulator-firmware.zip)
-   and follow the instructions to [flash a pre-compiled
-   binary](http://openxcplatform.com/vehicle-interface/firmware.html) to
-   the vehicle interface.
-1. Install the [Python
-   library](http://python.openxcplatform.com/#installation), *even if you
-   don't plan to write any applications in Python* - the command line tools used
-   for testing are installed with this library.
-1. Attach the USB connection for data (the micro-USB connection on the
-   chipKIT-based VI) to the computer. If you are using Windows, install the
-   driver included in the repository at `vi-firmware/conf/windows-driver`.
-1. Run `openxc-control version` at the command line - it should print out the
-   current version of the attached vehicle interface. If you instead get an
-   error about not being able to find the USB device, make sure the the VI has
-   power (look for an LED).
-   1. Did you get an error that there is `no backend available`? Go back to the
-      Python library docs and make sure you [installed a USB
-      backend](http://python.openxcplatform.com/#usb).
-1. If the version check was successful, run `openxc-dump` to test that data can
-   be streamed from the vehicle interface. The emulator generates fake data
-   continuously and sends it over USB.
-1. Download and flash a [pre-compiled
-   firmware](http://vi-firmware.openxcplatform.com/en/latest/installation/binary.html)
-   for the actual vehicle you want to test.
-1. Confirm that `openxc-control version` still returns a valid version that now
-   is specific to your vehicle.
-1. Try running `openxc-dump` - it should not return an error, but should block
-   and return no data - this is the expected output when not attached to a live
-   CAN bus.
-1. In the vehicle, attach the OBD-II cable to the car and the USB data
-   connection to the computer. `openxc-control version` should still return the
-   proper version, `openxc-dump` should return a stream of live vehicle data,
-   and now `openxc-dashboard` will show the vehicle parameters in a useful
-   windowed display.
-
-If you have issues at any point in this process, check for similar issues in the
-[Google Group](http://groups.google.com/group/openxc) and otherwise create a new
-post to ask for some assistance.
-
-<div class="page-header">
-<h2>Next Steps</h2>
-</div>
-
-Now that you've confirmed the interface is working, you can [continue
-testing][testing] on a laptop or move on to an [Android app][].
-
-[testing]: /vehicle-interface/testing.html
-[Android app]: /getting-started/library-installation.html
+This page has [moved](/getting-started/first-steps.html).

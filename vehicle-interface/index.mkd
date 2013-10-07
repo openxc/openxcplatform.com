@@ -104,7 +104,9 @@ starting at around $110, with no soldering required.
 The chipKIT VI can connect to up to 2 CAN buses simultaneously, and you can
 choose from any of [CAN1, CAN2-1 or CAN2-2](#obd-pins).
 
-[chipKIT-based OpenXC Vehicle Interface
+* [chipKIT Binary Firmware Programming Instructions](http://vi-firmware.openxcplatform.com/en/latest/platforms/max32.html#flashing-a-pre-compiled-firmware)
+  * First, follow the [quick-start guide](http://vi-firmware.openxcplatform.com/en/latest/installation/binary.html#quick-start) to download the code.
+* [chipKIT-based OpenXC Vehicle Interface
 Documentation](http://chipkit-vi.openxcplatform.com/)
 
 <h2 id="cross-chasm"><a href="#cross-chasm">CrossChasm C5</a></h2>
@@ -118,7 +120,8 @@ and contributed code to the VI firmware to support their platform.
 The C5 is a very compact interface, so it's great for fleet deployments. It
 connects to the [CAN1 bus pins](#obd-pins) only.
 
-[CrossChasm C5
+* [C5 Binary Firmware Programming Instructions](http://www.crosschasm.com/Downloads/QuickStart%20guide%20to%20using%20C5%20Hardware%20and%20OpenXC.pdf)
+* [CrossChasm C5
 Documentation](http://vi-firmware.openxcplatform.com/en/latest/platforms/crosschasm-c5.html)
 
 
