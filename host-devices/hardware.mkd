@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: hardware
 title: Application Host Devices - OpenXC
 ---
 
@@ -43,3 +43,10 @@ very handy for testing custom firmware.
 The primary platform for OpenXC applications is Android, but for prototyping and
 testing, it is often preferable to use a low-overhead environment like Python
 when developing.
+
+## iOS
+
+There are a few reasons why iOS is not supported right now for - check out this
+[detailed discussion in the Google
+Group](https://groups.google.com/forum/#!topic/openxc/mUEiJDZ0oXg) to see if you
+can help.

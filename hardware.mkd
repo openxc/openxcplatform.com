@@ -1,0 +1,35 @@
+---
+layout: hardware
+title: Supported Hardware - OpenXC
+---
+
+<div class="page-header">
+    <h1>Supported Hardware</h1>
+</div>
+
+You can get started using OpenXC without any hardware, but to use it in a live
+vehicle you need a few parts.
+
+You need a **compatible vehicle interface (VI)**.
+
+<a href="/vehicle-interface/hardware.html">
+<button type="button" class="btn btn-primary btn-lg">
+See all supported VIs
+</button>
+</a>
+
+You need a **compatible host device**, most likely an Android tablet or phone.
+
+<a href="/host-devices/index.html">
+<button type="button" class="btn btn-primary btn-lg">
+See all host devices
+</button>
+</a>
+
+To run with live data, you need a **compatible vehicle**.
+
+<a href="/hardware/vehicles.html">
+<button type="button" class="btn btn-primary btn-lg">
+See all compatible vehicles
+</button>
+</a>

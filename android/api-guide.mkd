@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: developer
 title: Android Library API Guide - OpenXC
 ---
 
@@ -11,7 +11,7 @@ Vehicle measurements are accessed through an [Android service][services]. Your
 application connects to an in-process [VehicleManager](#vehicle-manager) which
 handles reading fresh data from the vehicle.
 
-This document describes the interface for the OpenXC library **version 2.0**.
+This document describes the interface for the OpenXC library **version 5.0**.
 
 <div class="page-header">
     <h2 id="vehicle-manager"><a name="vehicle-manager">VehicleManager Service</a></h2>

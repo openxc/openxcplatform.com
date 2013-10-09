@@ -9,13 +9,13 @@ title: Shift Knob - OpenXC
 
 The Haptic Feedback Shift Knob is a replacement for a manual transmission shift
 knob that adds haptic and visual feedback to help drivers shift appropriately.
-An Android application monitors the vehicle's speed, RPM and 
-accelerator pedal position. Based on this information, the application calculates and then 
-indicates to the driver when he or she should shift by vibrating the shift knob. 
+An Android application monitors the vehicle's speed, RPM and
+accelerator pedal position. Based on this information, the application calculates and then
+indicates to the driver when he or she should shift by vibrating the shift knob.
 After feeling the haptic "pulse" the driver
 can then appropriately respond. The embedded electronics in the shift knob
 are based on the [Arduino Pro Mini][] with an on-board FTDI chip and USB
-connector. The Shift Knob was originally designed and developed by 
+connector. The Shift Knob was originally designed and developed by
 [Zac Nelson](http://github.com/zacnelson) at Ford.
 
 ![OpenXC Shift Knob](/projects/images/shift-knob/assembled_shift_knob_1.jpg)
@@ -144,14 +144,14 @@ vehicle power rather than the 5V USB power.
 
 The Haptic Feedback Shift Knob receives commands over USB from an Android
 application connected to an [OpenXC Vehicle
-Interface](http://openxcplatform.com/vehicle-interface/index.html). The Android
+Interface](/vehicle-interface/hardware.html). The Android
 application can calculate the shift point for best fuel efficiency or performance.
-In performance mode, the user can set a specific RPM shift point. In fuel efficiency 
+In performance mode, the user can set a specific RPM shift point. In fuel efficiency
 mode, the application dynamically calculates when the driver should shift based
 on the pedal position and the current transmission gear.
 
 
-Once the shift point is determined, the Android application sends the corresponding command to the shift knob. 
+Once the shift point is determined, the Android application sends the corresponding command to the shift knob.
 The embedded shift knob microcontroller energizes the
 haptic feedback motor based on the received command and sends a pulse through the driver's hand. The
 microcontroller also controls RGB LEDs and a 7 segment display which is used to
@@ -166,7 +166,7 @@ show the current transmission gear position and provide shift knob color control
 **Indy-Cator:**
 
 * The [Indy-Cator](http://www.indy-cator.de/engl/indy-cator-shifter-knob.php) is one of the only "smart"
-shift knobs currently available on the market. This shift knob uses relative accelerometer positions to 
+shift knobs currently available on the market. This shift knob uses relative accelerometer positions to
 determine what the transmission gear position and then displays that gear number to the driver. Rather than
 using an LED display, this shift knob uses an LED backlit LCD screen to display information. Check out this
 [teardown](https://plus.google.com/photos/116004564465576390065/albums/5844118951223917905?authkey=CIXD1Z_p57utOw)

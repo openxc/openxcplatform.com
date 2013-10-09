@@ -8,5 +8,5 @@ title: Vehicle Interface Assembly - OpenXC
 </div>
 
 The assembly instructions for the chipKIT-based VI have been moved to a
-[separate website](http://openxcplatform.com/chipkit-vehicle-interface).
+[separate website](http://chipkit-vi.openxcplatform.com/).
 

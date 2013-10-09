@@ -8,4 +8,4 @@ title: Vehicle Interface - OpenXC
 </div>
 
 This page has moved to [Vehicle Interface
-Hardware](/vehicle-interface/index.html).
+Hardware](/vehicle-interface/hardware.html).

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: developer
 title: Vehicle Interface Utilities - OpenXC
 ---
 

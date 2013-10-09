@@ -1,19 +1,10 @@
 ---
-layout: default
+layout: developer
 title: Firmware - OpenXC
 ---
 
 <div class="page-header">
     <h1>Vehicle Interface Firmware</h1>
-</div>
-
-<div class="pull-right well">
-    <ul class="nav nav-list">
-        <li class="nav-header">Next Step</li>
-        <li><a href="/vehicle-interface/testing.html">
-            Test your vehicle interface <i class="icon-arrow-right"></i>
-        </a></li>
-    </p>
 </div>
 
 <div class="page-header">
@@ -22,24 +13,13 @@ title: Firmware - OpenXC
 
 Updates to the vehicle interface (VI) firmware are often distributed as
 pre-compiled binaries by car manufacturers that do not want to make their CAN
-message details public.
+message details public. Check the [list of supported
+vehicles](/hardware/vehicles.html) for your car.
 
 Once you download the binary firmware for your car, you must follow the
 instructions for your particular vehicle interface for re-programming. Look for
-your VI on the [supported VI hardware page](/vehicle-interface/index.html) to
+your VI on the [supported VI hardware page](/vehicle-interface/hardware.html) to
 find the instructions.
-
-**Ford**
-
-Firmware for Ford vehicles is available through the [Ford
-Developer](https://developer.ford.com) website for logged-in users.
-
-An up-to-date list of exactly which OpenXC messages are supported by each
-vehicle is maintained as a [Google
-Spreadsheet](https://docs.google.com/spreadsheet/ccc?key=0Ajz-75u_7nEydFJxUG4yOVZ1NXJlcjNvdzdSTDdyY0E).
-The spreadsheet also identifies which of the CAN buses each data element is
-available on, so you can make sure to buy or build vehicle interface that
-[connects to the right buses](/vehicle-interface#obd-pins).
 
 **Emulator**
 

@@ -169,7 +169,7 @@ The user interface for this project is based on the [Retro Gauge][] OpenXC proje
 [boost converter]: http://www.amazon.com/gp/product/B00AMZEUYU/ref=s9_simh_gw_p422_d15_i5?pf_rd_m=ATVPDKIKX0DER&pf_rd_s=center-3&pf_rd_r=1YH0FWTZ4HT7W35B8YGK&pf_rd_t=101&pf_rd_p=470938811&pf_rd_i=507846
 [SICK DMT10-2-1111]: https://www.mysick.com/eCat.aspx?go=FinderSearch&Cat=GUS&At=Fa&Cult=English&FamilyID=400&Category=Produktfinder&Selections=47373
 [connector]: https://www.sparkfun.com/products/9923
-[Retro Gauge]: http://openxcplatform.com/projects/retro-gauge.html
+[Retro Gauge]: /projects/retro-gauge.html
 [Pelican Box]: http://www.amazon.com/gp/product/B001OPM5QC/ref=ox_sc_act_title_4?ie=UTF8&psc=1&smid=A34FFV8YYDM571
 [humidity]: https://www.sparkfun.com/products/10167
 [tire temperature]: https://www.sparkfun.com/products/9570

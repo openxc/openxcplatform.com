@@ -1,10 +1,10 @@
 ---
-layout: default
-title: Projects - OpenXC
+layout: community
+title: Projects and Apps - OpenXC
 ---
 
 <div class="page-header">
-    <h1>Projects using OpenXC</h1>
+    <h1>Projects</h1>
 </div>
 
 This page serves as a home for example projects built on the OpenXC platform. If
@@ -12,6 +12,9 @@ you have a project of your own, fork the [openxc.github.com][] project on GitHub
 (that's this site!), add a new page for your project with links to the code and
 hardware schematics (if you have them) and send a pull request. We will include
 as many well documented, functional projects as we can.
+
+Don't miss the creative projects from [OpenXC hackathons and other
+events](/community/events.html), too.
 
 * [Bluetooth HUD](/projects/bluetooth-hud.html)
 * [Nighttime Collision Warning, a.k.a. "Night Vision"](/projects/nightvision.html)
@@ -21,102 +24,7 @@ as many well documented, functional projects as we can.
 * [Brake Distance Tracking](/projects/brakedist.html)
 * [Docking Station](/projects/docking-station.html)
 * [LED Display](/projects/led-display.html)
-
-### Boing Boing Data Driven Hackathon Projects
-
-Data Driven was a hackathon organized around OpenXC as part of Boing
-Boing's
-<a href="http://boingboing.net/tag/ingenuity">Ingenuity</a> event.
-Check out some of the great projects that came out of the hackathon
-below:
-
-* [OpenXC
-  Van-Go](http://boingboing.net/2013/09/03/car-tells-robot-artist-what-to.html):
-  This team used [Super-Awesome Sylvia's](http://sylviashow.com/)
-  [WaterColorBot](http://watercolorbot.com/). to paint pictures based on live
-  OpenXC data.  TechNinja explains more <a
-  href="https://www.youtube.com/watch?feature=player_embedded&v=8xWfO5t02wI">here</a>.
-  Joe Grand gives us a vehicle tour in <a
-  href="https://www.youtube.com/watch?v=VZedQH9FHiw">this video</a>.
-* [Autobahn](http://boingboing.net/2013/09/04/car-composes-kraftwerkian-musi.html):
-  Using real-time data gathered from OpenXC, Autobahn synthesizes the data into
-  a MIDI [musical
-  composition](https://www.youtube.com/watch?feature=player_embedded&v=dj-LJQyGjls#t=39).
-* [Smart Brake Light](http://ledpixelart.com/portfolio-item/smart-brake-light-prototype-2/)
-  Al began this hack at Data Driven and expanded on it at the Ford
-  Electrified Vehicle Hackathon.  Using his existing PIXEL hardware
-  device with 32x32 RGB LEDs, he introduced functionality that would
-  warn drivers of sudden stops.  At the Electrified Vehicle
-  Hackathon, Al's team added voice triggering and functionality to
-  thank a fellow driver for something.  See the
-  [demo](http://ledpixelart.com/portfolio-item/smart-brake-light-prototype-2/)
-  and check out Al's
-  [Instructable](http://www.instructables.com/id/Smart-Brake-Light-Proof-of-Concept/).
-
-### Ford Electrified Vehicle Hackathon
-
-Ford hosted a hackathon over the weekend of September 7-8 at TechShop Menlo Park
-where participants used an experimental version of the OpenXC API that allowed
-them to control select functionality in the car via API calls.
-
-* **OpenXCThenThat:** *Winner, Best Application.* Similar to [If This Then
-  That](http://ifttt.com/), OpenXCThenThat gives people a simple way to automate
-  daily tasks in their lives.  For example, one could automate a task such that
-  if a vehicle crosses out of a geofence, the owner of the car is notified by
-  text.  Alternatively, as a car approaches an owner's home, OpenXCThenThat
-  could automatically trigger interior lights and HVAC.
-
-* **Smart Brake Light:** *Winner, Craziest App* Please check out the project
-  description above in the Boing Boing Data Driven hackathon.
-
-* **Smart Battery App:** *Winner, Best Eco App* This project used OpenXC to set
-  the state of charge (SOC) on a plug-in hybrid vehicle so that it uses battery
-  energy while going up a hill and and then captures energy while going
-  downhill.  The project identified optimal points for when the vehicle would
-  change the SOC setpoint and used geofencing to identify locations where the
-  change would happen
-
-* **Follow Me:** *Winner, Best Use of Write APIs.*  This app runs in two cars
-  traveling together on the highway.  The system monitors the current speed of
-  the lead vehicle and pushes it to the following car through a cloud server.
-  The following car sets its cruise control based on the speed of the lead-car.
-
-* **OpenXC-Graphite:** <a href="https://twitter.com/bobpielock">Bob
-    Pielock</a> and <a href="http://twitter.com/rogwilco">Nick
-    Williams</a> set up a Raspberry Pi running Raspbian, Graphite and a
-    bunch of other good stuff to collect and visualize data in the
-    car.  While the car was parked, they could actually display on the
-    built-in touchscreen via the video-in RCA jacks.  See Bob's blog
-    [post](http://masherydev.tumblr.com/post/61687512314/hacking-on-fords-openxc-platform)
-    for more details.
-
-* **Death In the Air:** CO2 level monitoring inside a car.  Using an
-  Arduino-based CO2 sensor, this project monitors the CO2 levels inside the car
-  while driving.  If the level goes above some threshold, the app will instruct
-  the HVAC system to bring in fresh air rather than recirculate the air.
-
-* **Backseat Driver:** An Android app that allows a backseat driver to bother
-  their phone rather than the driver.
-
-* **Stress Route:** This project uses a clip-on finger health sensor (blood
-  oxygen level and heart rate) to identify stressful situations while driving.
-  Over time, the app could be used to infer high-stress geographic areas.
-
-* **Driver Buddy:** Driver Buddy aims to keep drivers alert while driving.  The
-  app will cause the car to beep at regular intervals and change the radio
-  volume every once in a while to keep the driver on their toes.
-
-* **S-Driver:** An app focused on safety, infotainment, and maintenance as a
-  dashboard app for Android. The app monitors vehicle status and automatically
-  uploads to Evernote using their API.  The app will trigger auto reminders in
-  the car, such as a reminder telling you to get the car serviced.
-
-* **Engine Mode Change:** This project changes the EV behavior of the vehicle by
-  automatically switching between the EV modes so that (if the car was over 50%
-  SOC), it would run in EV mode most of the time.  If the accelerator pedal is
-  pressed down hard, the app will enable the gasoline engine. This way you would
-  drive around much more in EV mode, and only enable the engine when you really,
-  really wanted it.
+* [Browser-based Drive Trace Analyzer](http://trace-analyzer.openxcplatform.com)
 
 ## Research Projects
 

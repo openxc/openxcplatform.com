@@ -92,4 +92,4 @@ eBay at the time of this project. Guy Carpenter's
 [Gaugette](http://guy.carpenter.id.au/gaugette/about/) project has a great
 tutorial on how to use and control these stepper motors. Thanks Guy!
 
-[openxc]: http://openxcplatform.com
+[openxc]: /

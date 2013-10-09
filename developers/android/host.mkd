@@ -7,4 +7,4 @@ title: Android Host Device - OpenXC
     <h1>Android Host Device</h1>
 </div>
 
-This page has [moved](http://openxcplatform.com/android/index.html).
+This page has [moved](/android/index.html).

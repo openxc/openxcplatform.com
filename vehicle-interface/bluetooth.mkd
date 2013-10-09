@@ -9,4 +9,4 @@ title: Bluetooth Support - OpenXC
 
 The Bluetooth support instructions for the chipKIT-based VI have been moved to a
 [separate
-website](http://openxcplatform.com/chipkit-vehicle-interface/bluetooth/hardware.html).
+website](http://chipkit-vi.openxcplatform.com/bluetooth/hardware.html).
