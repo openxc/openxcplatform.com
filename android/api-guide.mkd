@@ -239,7 +239,7 @@ app's custom source is propagated back to the
 
 The built-in sources for application developers are:
 
-* [BluetoothVehicleDataSource][] - connects to a Bluetooth-enabled CAN
+* [BluetoothVehicleInterface][] - connects to a Bluetooth-enabled CAN
   translator and injects the data into the OpenXC system so it is
   indistinguishable from a USB source.
 * [TraceVehicleDataSource][] - injects vehicle measurements from a pre-recorded
@@ -275,7 +275,7 @@ accessible to application developers. It uses only two sources:
   they create back to the [VehicleService][]. The purpose is that e.g. a trace
   data source or Bluetooth source instantiated in an application can share its
   data with all other apps in the system.
-* [UsbVehicleDataSource][] - since only one application can connect to a USB
+* [UsbVehicleInterface][] - since only one application can connect to a USB
   device at a time, the single instance of the [VehicleService][] takes care of
   it.
 
@@ -321,12 +321,12 @@ application's `AndroidManifest.xml` - just the [VehicleManager][] service.
 [tutorial]: /getting-started/tutorial.html
 [aidl]: http://developer.android.com/guide/components/aidl.html
 [trace file]: /android/testing.html
-[BluetoothVehicleDataSource]: http://android.openxcplatform.com/reference/com/openxc/sources/bluetooth/BluetoothVehicleDataSource.html
+[BluetoothVehicleInterface]: http://android.openxcplatform.com/reference/com/openxc/sources/bluetooth/BluetoothVehicleInterface.html
 [TraceVehicleDataSource]: http://android.openxcplatform.com/reference/com/openxc/sources/trace/TraceVehicleDataSource.html
 [MeasurementListenerSink]: http://android.openxcplatform.com/reference/com/openxc/sinks/MeasurementListenerSink.html
 [FileRecorderSink]: http://android.openxcplatform.com/reference/com/openxc/sinks/FileRecorderSink.html
 [UploaderSink]: http://android.openxcplatform.com/reference/com/openxc/sinks/UploaderSink.html
 [ApplicationSource]: http://android.openxcplatform.com/reference/com/openxc/sources/ApplicationSource.html
-[UsbVehicleDataSource]: http://android.openxcplatform.com/reference/com/openxc/sources/usb/UsbVehicleDataSource.html
+[UsbVehicleInterface]: http://android.openxcplatform.com/reference/com/openxc/sources/usb/UsbVehicleInterface.html
 [RemoteCallbackSink]: http://android.openxcplatform.com/reference/com/openxc/sinks/RemoteCallbackSink.html
 [MockedLocationSink]: http://android.openxcplatform.com/reference/com/openxc/sinks/MockedLocationSink.html

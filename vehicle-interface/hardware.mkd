@@ -132,7 +132,7 @@ Optionally, the VI may:
   speed or infotainment bus pins)
 * Allow lower-lever user re-programming and debugging via ISP or JTAG.
 * Pass 12v power from the vehicle through to a separate power jack for
-  peripherals (e.g. an [OpenXC dock](https://github.com/openxc/reference-dock)).
+  peripherals
 
 Unless you are implementing custom CAN messages, you will most likely need a
 [pre-built OpenXC binary](/vehicle-interface/firmware.html) from the

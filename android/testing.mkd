@@ -39,8 +39,8 @@ helps control the source of vehicle data, e.g. a USB vehicle interface or a
 trace file.
 
 Install a file manager in Android like the [OI File
-Manager](https://play.google.com/store/apps/details?id=org.openintents.filemanager)
-so the Enabler is able to browse for files on the SD card.
+Manager](http://openintents.org/en/filemanager) so the Enabler is able to browse
+for files on the SD card.
 
 Finally, run the `OpenXC Enabler` app on the device and go to `Settings -> Data
 Sources -> Trace File Playback`, check the `Playback trace file` option and
