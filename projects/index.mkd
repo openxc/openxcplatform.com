@@ -25,6 +25,7 @@ events](/community/events.html), too.
 * [Docking Station](/projects/docking-station.html)
 * [LED Display](/projects/led-display.html)
 * [Browser-based Drive Trace Analyzer](http://trace-analyzer.openxcplatform.com)
+* [Vehicle Simulator](/projects/simulator.html)
 
 ## Research Projects
 
