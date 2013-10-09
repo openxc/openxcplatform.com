@@ -1,4 +1,11 @@
-# openxc-vehicle-simulator
+---
+layout: default
+title: OpenXC Vehicle Simulator
+---
+
+<div class="page-header">
+    <h1>OpenXC Vehicle Simulator</h1>
+</div>
 
 **GitHub Repository:** [github.com/openxc/openxc-vehicle-simulator][github-repo]
 
