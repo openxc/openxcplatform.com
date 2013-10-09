@@ -12,6 +12,24 @@ extend your vehicle with custom applications and pluggable modules. It uses
 standard, well-known tools to open up a wealth of data from the vehicle to
 developers.
 
+OpenXC is an API to your car - by installing a small hardware module to read and
+translate metrics from a car's internal network, the data becomes accessible
+from most Android applications using the OpenXC library. You can start making
+vehicle-aware applications that have better interfaces based on context, can
+minimize distraction while driving, are integrated with other connected
+services, and can offer you more insight into your car's operation.
+
+Researchers at Ford Motor Company joined up to create a standard way of creating
+aftermarket software and hardware for vehicles. Every new car is full of
+computers and electronics, and there is growing interest in connecting the
+output from those systems to third-party applications and the web. Many
+companies are already offering tools to hook into the driver's interface, but
+for the most part they have limited availability for hobbyists and developers.
+What if the system was designed from the ground up to be open source and to give
+insight into the vehicle itself? With proper hardware isolation to ensure you
+can't "brick" your $20,000 investment in a car, OpenXC imagines when your car is
+as easy to program as your smartphone.
+
 Vehicles are indisputably becoming more and more connected, but until now the
 consumer hasn't had much control over the exact capabilities of their car. Very
 few infotainment systems are user upgradable, and thanks to the extremely fast
@@ -22,6 +40,20 @@ in the first iPhone was quickly upgraded in the next model, but a vehicle from
 2007 with an embedded modem would likely be stuck with it for the life of the
 vehicle. The average lifespan of a vehicle today is 13 years; a smartphone is 6
 to 9 months.
+
+## What can you do with OpenXC?
+
+Plug the OpenXC vehicle interface into your car and from Android, you can read
+data from the vehicle in real-time like the steering wheel angle, GPS position,
+and vehicle speed. Right now, OpenXC supports over a dozen different
+measurements on a growing list of Ford vehicles.
+
+A simple start is to take advantage of the GPS antenna on the roof of the car to
+improve the accuracy of your location aware application. Or get creative - why
+not generate a digital painting based on your steering wheel movements over the
+course of a day, and upload it directly to the web? No single company can think
+of all possibilities for applications, and that's why OpenXC gives the freedom
+of experimentation to developers.
 
 <div class="page-header">
     <h3>Guiding Principles</h3>
