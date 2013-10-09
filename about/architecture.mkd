@@ -60,6 +60,11 @@ vehicle interface and reads the translated vehicle data (e.g. an Android tablet
 or Python environement on a laptop). OpenXC developers can write applications on
 this device using the data.
 
+This architecture diagram illustrates how the VI, Android device and the car are
+connected. In this example, the status of the parking brake is broadcast on the
+vehicle's CAN bus. The VI receives the signal, translates it into a generic
+format and sends it out over USB to an Android App.
+
 ![OpenXC Architecture Diagram](/images/openxc-architecture.jpeg)
 
 [can]: http://en.wikipedia.org/wiki/CAN_bus
