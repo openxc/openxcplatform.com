@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: project
 title: Docking Station - OpenXC
 ---
 
@@ -7,7 +7,7 @@ title: Docking Station - OpenXC
     <h1>Docking Station</h1>
 </div>
 
-The OpenXC docking station is a hardware platform that allows car enthusiasts and hackers alike to create their own hardware and easily integrate it with OpenXC. The docking station features three different docking slots, each with their own USB connection via pogo pins and embedded magnets for easy connection. Projects like the Retro Gauge can be easily modified to use the docking station. The Docking Station was originally designed and developed by 
+The OpenXC docking station is a hardware platform that allows car enthusiasts and hackers alike to create their own hardware and easily integrate it with OpenXC. The docking station features three different docking slots, each with their own USB connection via pogo pins and embedded magnets for easy connection. Projects like the Retro Gauge can be easily modified to use the docking station. The Docking Station was originally designed and developed by
 Chad Bean during his summer internship at [Ford Silicon Valley Lab](http://fordsvl.com).
 
 ![OpenXC Docking Station](/projects/images/docking-station-1.png)
@@ -21,8 +21,8 @@ Chad Bean during his summer internship at [Ford Silicon Valley Lab](http://fords
 
 The [(Insert Here)] repository contains a `.STL`  file for the 3D printable
 docking station. However, do to the docking stations large size, often times hobbyist
-printers will produce a warped part. We had our docking station made from a SLA 
-printer. 
+printers will produce a warped part. We had our docking station made from a SLA
+printer.
 -->
 
 <div class="page-header">

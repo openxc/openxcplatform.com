@@ -1,0 +1,74 @@
+---
+layout: hardware
+title: Android Host Device - OpenXC
+---
+
+<div class="page-header">
+    <h1>Android Host Device</h1>
+</div>
+
+OpenXC applications on Android are merely Android applications that use the
+OpenXC Android library to receive and parse data from a <a href="">vehicle
+interface</a>. Android is one of a few [options for writing
+applications](/host-devices/index.html) using OpenXC.
+
+Bluetooth support is working well now, and it has the lowest hardware
+requirements so it is the recommended interface.
+When using a Bluetooth-equipped vehicle interface, the Android host
+device must run **Android 2.2** or greater (i.e. API level 8).
+
+Alternatively, if you wish to hard-wire to the vehicle interface with a USB
+connection, the Android host device must:
+
+* Run **Android 3.0** or greater (i.e. API level 12) if you plan to
+  use the standard USB vehicle interface.
+* Support **USB host mode** or **USB OTG** - Some tablets offer a full-size USB
+  port and others are compatible with [USB OTG
+  adapters](http://www.monoprice.com/products/product.asp?c_id=108&cp_id=10833&cs_id=1083314&p_id=9724&format=2)
+  that attach to the micro-USB port normally used for charging.
+
+<div class="page-header">
+    <h2>Confirmed Supported Android Devices</h2>
+</div>
+
+**Supported Tablets**
+
+* Google Nexus 7 (gen 1) (using Bluetooth or a USB OTG adapter) - the reference device
+  used by the core OpenXC developers.
+* [Toshiba Thrive][thrive] 10.1" - another device used by the core OpenXC
+  developers. This tablet includes a full-size USB port.
+* Samsung Galaxy Tab 7.7" (Bluetooth working fine, USB OTG unconfirmed as it
+  requires an additional Samsung adapter)
+
+**Supported Phones**
+
+* Samsung [Galaxy Nexus][galaxynexus] (using Bluetooth or a USB OTG adapter,
+  although the vehicle interface must be powered externally if using USB)
+* Samsung Galaxy S3 (using Bluetooth or a USB OTG adapter)
+* Samsung Galaxy Note GT-N7000 (using Bluetooth or a USB OTG adapter)
+* Micromax Canvas 2 A110 (using Bluetooth or a USB OTG adapter)
+
+<div class="page-header">
+    <h2>Known Unsupported Android Devices (for USB)</h2>
+</div>
+
+USB will *not* work with [USB A female-female
+adapters](http://www.monoprice.com/products/product.asp?c_id=103&cp_id=10314&cs_id=1031401&p_id=362&seq=1&format=2)
+as they do not pass the neccessary ID pin to use USB OTG on the Android device.
+
+**Unsupported Tablets**
+
+* Karbonn Tablet TA-FONE A37 HD
+* Samsung Galaxy Tab (the original version) - USB host mode is not fully enabled
+  and is not compatible with a USB vehicle interface.
+
+**Unsupported Phones**
+
+* Sony Xperia L
+* Sony Xperia E
+* UTC One (device is "not supported" by HTC's Android build even though it
+  supposedly has USB OTG)
+
+[thrive]: http://us.toshiba.com/tablets/thrive/10-inch/
+[galaxynexus]: http://www.google.com/nexus/
+[USB devices]: http://developer.android.com/guide/topics/connectivity/usb/index.html

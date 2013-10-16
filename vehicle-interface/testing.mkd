@@ -7,4 +7,4 @@ title: Vehicle Interface Test Procedure - OpenXC
     <h1>{{ page.title }}</h1>
 </div>
 
-This page has [moved](/getting-started/first-steps.html).
+This page has [moved](/getting-started/index.html).

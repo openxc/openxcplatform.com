@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: project
 title: Nighttime Forward Collision Warning
 ---
 
@@ -37,16 +37,14 @@ visibility, the OpenXC platform does not make any claims of a safety benefit.
    can [access UVC video devices](#android-usb-webcam).
 * [USB Webcam][] supporting UVC and a 640x480 resolution in the YUYV format.
 * [OpenXC Vehicle
-   Interface](https://openxcplatform.com/vehicle-interface/index.html) (VI) with
+   Interface](/vehicle-interface/hardware.html) (VI) with
    vehicle-specific firmware
-* [OpenXC-supported
-   vehicle](http://openxcplatform.com/vehicle-interface/output-format.html)
+* [OpenXC-supported vehicle](/hardware/vehicles.html)
 * USB hub (if you will be using the VI over USB in addition to the camera)
 
 **Software**
 
-* [OpenXC Android
-  Library](http://openxcplatform.com/getting-started/library-installation.html)
+* [OpenXC Android Library](/getting-started/library-installation.html)
 * [Android SDK](http://developer.android.com/sdk/index.html)
 * [Android NDK](http://developer.android.com/tools/sdk/ndk/index.html)
 * [Android Webcam library](https://github.com/openxc/android-webcam)

@@ -7,4 +7,4 @@ title: Output Format - OpenXC
     <h1>Translation Output Format</h1>
 </div>
 
-This page has moved to [Output Format](/vehicle-interface/output-format.html).
+This page has moved to [Output Format](/about/data-set.html).

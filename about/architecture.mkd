@@ -1,0 +1,73 @@
+---
+layout: about
+title: Technical Architecture - OpenXC
+---
+
+<div class="page-header">
+    <h1>Technical Architecture</h1>
+</div>
+
+Modern automobiles are laced with a number of microcontrollers and sensors that
+monitor and control everything from the throttle position to the ambient air
+temperature. These devices communicate with each other over a wired in-vehicle
+network, a [CAN bus][can].
+
+<div class="alert alert-info">
+Did you just buy a <a href="/vehicle-interface/hardware.html">vehicle interface</a> and you
+want to do a quick "smoke test" and verify it works? <strong>Jump ahead to the <a
+href="/getting-started/index.html">getting started guides.</a></strong>
+</div>
+
+![In-vehicle Network](/images/can-diagram.png)
+
+The CAN bus is one of the primary components of [OBD-II][obd2], a vehicle
+diagnostic standard mandatory for all cars sold in the United States since 1996.
+The OBD-II standard sends and receives messages on the CAN bus. If you've ever
+watched your mechanic plug a tool in somewhere underneath your steering wheel,
+or seen a vehicle monitoring app for your smartphone, that's OBD-II in action.
+You'll always find the port by the driver's knees.
+
+![OBD-II Port with Cable in a Mustang](/images/obd-ii-cable.jpg)
+
+This means that every vehicle in the United States has a very accessible place
+to connect to the same network used by all of the vehicle's subsystems. That's
+where OpenXC comes in - with some knowledge of how to process the messages on
+the network, you can start to get valuable data out of your car.
+
+The OpenXC architecture is divided into **two parts**:
+
+![Boxed vehicle interface](/images/cantranslator-boxed.jpg)
+
+The <a href="/vehicle-interface/index.html">**vehicle interface (VI)**</a> is a
+device that plugs into the OBD-II port (and thus to the CAN bus), reads and
+translates CAN messages into a [standard cross-vehicle
+format](https://github.com/openxc/openxc-message-format). The translated
+messages can be sent over USB or Bluetooth, so they can be read by any computer
+or smartphone.
+
+<div class="row">
+    <div class="span4">
+        <img src="/images/android-in-car.jpg"/>
+    </div>
+    <div class="span4 stacked">
+        <img src="/images/screenshots/mpg-app-1.png"/>
+        <img src="/images/screenshots/mpg-app-2.png"/>
+    </div>
+</div>
+
+The <a href="/host-devices/index.html">**host device**</a> connects to the
+vehicle interface and reads the translated vehicle data (e.g. an Android tablet
+or Python environement on a laptop). OpenXC developers can write applications on
+this device using the data.
+
+This architecture diagram illustrates how the VI, Android device and the car are
+connected. In this example, the status of the parking brake is broadcast on the
+vehicle's CAN bus. The VI receives the signal, translates it into a generic
+format and sends it out over USB to an Android App.
+
+![OpenXC Architecture Diagram](/images/openxc-architecture.jpeg)
+
+[can]: http://en.wikipedia.org/wiki/CAN_bus
+[obd2]: http://en.wikipedia.org/wiki/On-board_diagnostics
+
+

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: about
 title: FAQ - OpenXC
 ---
 
@@ -55,7 +55,7 @@ definitions or a pre-compiled OpenXC translator binary.
 <p>
 The most important difference between OpenXC and existing tools is the standard
 programming language and OS agnostic
- <a href="/vehicle-interface/output-format.html">output</a> sent via USB.
+ <a href="https://github.com/openxc/openxc-message-format">output</a> sent via USB.
 The reference host device is <a href="/android/index.html">Android</a>, but
 there's no reason you couldn't use a laptop with another programming environment
 (see all supported <a href="/host-devices/index.html">host devices</a>.

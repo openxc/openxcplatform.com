@@ -1,0 +1,153 @@
+---
+layout: hardware
+title: Vehicle Interface - OpenXC
+---
+
+<div class="page-header">
+    <h1>Supported Vehicle Interfaces</h1>
+</div>
+
+The Vehicle Interface (VI or CAN translator) is piece of hardware that connects
+to the car's CAN bus, translates proprietary CAN messages to the standard
+[OpenXC message format][output-format] and sends the output over USB, Bluetooth
+or Ethernet/WiFi to a [host device][].
+
+<h3 id="obd-pins"><a href="#obd-pins">CAN Buses on OBD Pins</a></h3>
+
+The OBD-II port has one standard pin pair for a single CAN bus, but many
+automakers expose other buses on additional, non-standard pin pairs. For this
+documentation, we'll use this nomenclature:
+
+<div class="well">
+<table>
+<thead>
+<tr><th>OBD-II Pin Pair</th><th>OpenXC Bus Name</th><th>Other common name</th></tr>
+</thead>
+<tbody>
+<tr>
+    <td>6 (+) and 14 (-)</td>
+    <td>CAN1</td>
+    <td>CAN high / CAN low from ISO 15765-4 and SAE-J2284</td>
+</tr>
+<tr>
+    <td>3 (+) and 11 (-)</td>
+    <td>CAN2-1</td>
+    <td>Ford secondary, Chrysler CCD</td>
+</tr>
+<tr>
+    <td>1 (+) and 8 (-)</td>
+    <td>CAN2-2</td>
+    <td>Ford: infotainment, GM: J2411</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+Most vehicle data is available from CAN1, and all vehicle interfaces connect
+that bus. Some data is available only on CAN2-1 or CAN2-2, and
+these buses are not connected to all available VIs (see below). To find out
+if the information you need is on a bus connected by a particular VI, check the
+[binary firmware](/vehicle-interface/firmware.html) documentation for your
+vehicle manufacturer.
+
+<h2 id="ford-reference-design"><a href="#ford-reference-design">Ford Reference VI</a></h2>
+
+The VI is a open source reference design for a "dongle" style vehicle interface
+that connects directly to the diagnostic port with no cable. Ford created this
+design and manufactured a small quantity to seed the developer community. If you
+have an idea for an OpenXC application and this hardware would help,
+[submit a
+request](https://docs.google.com/forms/d/1-l7_i7b6xsITh9q3Pr1NCjAU6Yw_cTPEgrPCNCggQec/viewform)
+to receive one of these prototypes.
+
+![Ford Reference VI](/images/ford-reference-vi.jpg)
+
+The reference VI is not as compact as the [C5](#cross-chasm), but it is open
+source hardware, so you are free to use or modify this design in your own
+hardware, and it connects to both the CAN1 and CAN2-1 [bus pins](#obd-pins) (and
+with a small modification can connect to CAN2-2).
+
+* [Reference VI Binary Firmware Programming
+  Instructions](http://vi.openxcplatform.com/firmware/programming/usb.html)
+* [Reference VI Documentation and Schematics](http://vi.openxcplatform.com/)
+
+<h2 id="cross-chasm"><a href="#cross-chasm">CrossChasm C5</a></h2>
+
+[CrossChasm](http://crosschasm.com/) has graciously made the C5 [available for
+purchase](http://crosschasm.com/SolutionCenter/OpenXC.aspx) from their website,
+and contributed code to the VI firmware to support their platform.
+
+![CrossChasm C5](/images/crosschasm-c5.png)
+
+The C5 is a very compact interface, so it's great for fleet deployments. It
+connects to the [CAN1 bus pins](#obd-pins) only.
+
+* [C5 Binary Firmware Programming Instructions](http://www.crosschasm.com/Downloads/QuickStart%20guide%20to%20using%20C5%20Hardware%20and%20OpenXC.pdf)
+* [CrossChasm C5
+Documentation](http://vi-firmware.openxcplatform.com/en/latest/platforms/crosschasm-c5.html)
+
+<h2 id="diy-chipkit"><a href="#diy-chipkit">DIY chipKIT-based VI</a></h2>
+
+<div class="row">
+    <div class="span4">
+        <img title="VI with Enclosure"
+            src="/images/cantranslator-boxed-vertical.jpg"/>
+    </div>
+    <div class="span4">
+        <img title="VI with Cable"
+            src="/images/cantranslator-with-plug.jpg"/>
+    </div>
+</div>
+
+This VI design was the first OpenXC interface, and is still fully supported by
+the latest VI firmware. The design design uses entirely off-the-shelf
+components, built on top of a Digilent chipKIT Max32 development board (open
+source hardware!). The VI can be assembled for with a range of functionality
+starting at around $110, with no soldering required.
+
+The chipKIT VI can connect to up to 2 CAN buses simultaneously, and you can
+choose from any of [CAN1, CAN2-1 or CAN2-2](#obd-pins).
+
+* [chipKIT Binary Firmware Programming Instructions](http://vi-firmware.openxcplatform.com/en/latest/platforms/max32.html#flashing-a-pre-compiled-firmware)
+  * First, follow the [quick-start guide](http://vi-firmware.openxcplatform.com/en/latest/installation/binary.html#quick-start) to download the code.
+* [chipKIT-based OpenXC Vehicle Interface
+Documentation](http://chipkit-vi.openxcplatform.com/)
+
+<h2>Other Implementations</h2>
+
+There are many possible implementations of a VI. The minimal functional
+requirements are that the VI:
+
+* Physically connects to the [OBD-II diagnostic
+  connetor](http://en.wikipedia.org/wiki/On-board_diagnostics#OBD-II_diagnostic_connector)
+  directly or with a cable.
+* Connects a CAN controller to at least the US federally mandated CAN bus pins.
+* Runs the open source [VI firmware](https://github.com/openxc/vi-firmware).
+* can be reprogrammed the end user without additional hardware (most likely via
+  a USB or serial bootloader).
+
+Optionally, the VI may:
+
+* Connect another CAN controller to non-standard CAN bus pins (such as Ford's medium
+  speed or infotainment bus pins)
+* Allow lower-lever user re-programming and debugging via ISP or JTAG.
+* Pass 12v power from the vehicle through to a separate power jack for
+  peripherals
+
+Unless you are implementing custom CAN messages, you will most likely need a
+[pre-built OpenXC binary](/vehicle-interface/firmware.html) from the
+manufacturer of your vehicle. Each OEM can decide whether or not to participate
+in OpenXC and if so, which types of data they wish to expose.
+
+<div class="page-header">
+<h2>Next Steps</h2>
+</div>
+
+Once you've purchased or constructed a vehicle interface, you go through the
+[test procedure](/vehicle-interface/testing.html) to make sure it's working
+correctly.
+
+[output-format]: https://github.com/openxc/openxc-message-format
+[host device]: /host-devices/index.html
+[can]: http://en.wikipedia.org/wiki/CAN_bus
+[obd2]: http://en.wikipedia.org/wiki/On-board_diagnostics

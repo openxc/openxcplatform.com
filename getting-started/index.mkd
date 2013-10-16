@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: developer
 title: Getting Started - OpenXC
 ---
 
@@ -7,73 +7,37 @@ title: Getting Started - OpenXC
     <h1>Getting Started</h1>
 </div>
 
-Modern automobiles are laced with a number of microcontrollers and sensors that
-monitor and control everything from the throttle position to the ambient air
-temperature. These devices communicate with each other over a wired in-vehicle
-network, a [CAN bus][can].
+Are you looking to develop an **Android app**?
 
-<div class="alert alert-info">
-Did you just buy a <a href="/vehicle-interface/index.html">vehicle interface</a> and you
-want to do a quick "smoke test" and verify it works? <strong>Jump ahead to the <a
-href="/getting-started/first-steps.html">first steps.</a></strong>
-</div>
+<a href="/android/getting-started.html">
+<button type="button" class="btn btn-primary btn-lg">
+Get Started with the Android Library
+</button>
+</a>
 
-![In-vehicle Network](/images/can-diagram.png)
+Are you looking to develop an **Python app**, or you want to analyze data from
+your car on a laptop?
 
-The CAN bus is one of the primary components of [OBD-II][obd2], a vehicle
-diagnostic standard mandatory for all cars sold in the United States since 1996.
-The OBD-II standard sends and receives messages on the CAN bus. If you've ever
-watched your mechanic plug a tool in somewhere underneath your steering wheel,
-or seen a vehicle monitoring app for your smartphone, that's OBD-II in action.
-You'll always find the port by the driver's knees.
+<a href="/python/getting-started.html">
+<button type="button" class="btn btn-success btn-lg">
+Get Started with the Python Library
+</button>
+</a>
 
-![OBD-II Port with Cable in a Mustang](/images/obd-ii-cable.jpg)
+Are you a vehicle network expert, or do you want to **contribute to the embedded
+vehicle interface firmware**?
 
-This means that every vehicle in the United States has a very accessible place
-to connect to the same network used by all of the vehicle's subsystems. That's
-where OpenXC comes in - with some knowledge of how to process the messages on
-the network, you can start to get valuable data out of your car.
+<a href="/vehicle-interface/firmware.html">
+<button type="button" class="btn btn-info btn-lg">
+Get Started with the Vehicle Interface Firmware
+</button>
+</a>
 
-The OpenXC architecture is divided into **two parts**:
+Do you want to create an app or tool in another programming language or
+development environment?
 
-![Boxed vehicle interface](/images/cantranslator-boxed.jpg)
-
-The <a href="/vehicle-interface/index.html">**vehicle interface (VI)**</a> is a
-device that plugs into the OBD-II port (and thus to the CAN bus), reads and
-translates CAN messages into a [standard cross-vehicle
-format](/vehicle-interface/output-format.html). The translated messages can be
-sent over USB or Bluetooth, so they can be read by any computer or smartphone.
-
-<div class="row">
-    <div class="span4">
-        <img src="/images/android-in-car.jpg"/>
-    </div>
-    <div class="span4 stacked">
-        <img src="/images/screenshots/mpg-app-1.png"/>
-        <img src="/images/screenshots/mpg-app-2.png"/>
-    </div>
-</div>
-
-The <a href="/host-devices/index.html">**host device**</a> connects to the
-vehicle interface and reads the translated vehicle data (e.g. an Android tablet
-or Python environement on a laptop). OpenXC developers can write applications on
-this device using the data.
-
-![OpenXC Architecture Diagram](/images/openxc-architecture.jpeg)
-
-[can]: http://en.wikipedia.org/wiki/CAN_bus
-[obd2]: http://en.wikipedia.org/wiki/On-board_diagnostics
-
-<div class="page-header">
-<h2>Next Steps</h2>
-</div>
-
-When you're ready to begin writing an OpenXC app, continue on to
-[install the Android library](/getting-started/library-installation.html). You
-can get started even if you don't have a hardware vehicle interface (or even a
-car!).
-
-If you're interested in creating a web application instead and want to leave the
-in-vehicle details to someone else, jump to the [vehicle data
-format](/vehicle-interface/output-format.html) section to know what type of data
-your app needs to accept.
+<a href="https://github.com/openxc/openxc-message-format">
+<button type="button" class="btn btn-primary btn-lg">
+Read the VI Output Format Specs
+</button>
+</a>

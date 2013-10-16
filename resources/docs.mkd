@@ -1,0 +1,21 @@
+---
+layout: developer
+title: Sources and Docs - OpenXC
+---
+
+<div class="page-header">
+    <h1>Sources and Docs</h1>
+</div>
+
+These are the links to source code and documentation for all of the core OpenXC
+projects.
+
+* OpenXC Android Library
+    * [Source](https://github.com/openxc/openxc-android)
+    * [Javadocs](http://android.openxcplatform.com)
+* OpenXC Vehicle Interface Firmware
+    * [Source](https://github.com/openxc/vi-firmware)
+    * [Docs](http://vi.openxcplatform.com)
+* OpenXC Python Library
+    * [Source](https://github.com/openxc/openxc-python)
+    * [Docs](http://python.openxcplatform.com)

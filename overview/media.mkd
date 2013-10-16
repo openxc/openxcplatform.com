@@ -1,10 +1,10 @@
 ---
-layout: default
-title: Media - OpenXC
+layout: about
+title: Media Kit - OpenXC
 ---
 
 <div class="page-header">
-    <h1>Media</h1>
+    <h1>Media Kit</h1>
 </div>
 
 The OpenXC logo is available in a number of different configurations and file

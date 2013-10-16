@@ -39,11 +39,10 @@
                 alt="OpenXC"/></a>
             <div class="nav-collapse">
                 <ul class="nav">
-                    <li class="{% if page.url contains 'overview' %}active{% endif %}"><a href="/overview/index.html">Overview</a></li>
-                    <li class="{% if page.url contains 'getting-started' %}active{% endif %}"><a href="/getting-started/index.html">Getting Started</a></li>
-                    <li class="{% if page.url contains 'android' or page.url contains 'host-devices' %}active{% endif %}"><a href="/host-devices/index.html">App Development</a></li>
-                    <li class="{% if page.url contains 'vehicle-interface' %}active{% endif %}"><a href="/vehicle-interface/index.html">Vehicle Interface</a></li>
-                    <li class="{% if page.url contains 'projects' %}active{% endif %}"><a href="/projects/index.html">Projects</a></li>
+                    <li class="{% if page.section == 'about' %}active{% endif %}"><a href="/overview/index.html">About</a></li>
+                    <li class="{% if page.section == 'developer' %}active{% endif %}"><a href="/getting-started/index.html">Developers</a></li>
+                    <li class="{% if page.section == 'hardware' %}active{% endif %}"><a href="/hardware.html">Hardware</a></li>
+                    <li class="{% if page.section == 'community' %}active{% endif %}"><a href="/overview/discuss.html">Community</a></li>
                 </ul>
             </div>
         </div>
@@ -53,63 +52,7 @@
 </div>
 
 <div class="container-fluid">
-    <div class="row">
-        {% if page.url != "/index.html" %}
-        <div class="nav-container span3">
-            <div class="well">
-                <ul class="nav nav-list">
-                    <li class="nav-header">OpenXC</li>
-                    <li><a href="/overview/index.html">Overview</a></li>
-                    <li><a href="/projects/index.html">Projects using OpenXC</a></li>
-                    <li><a href="/overview/faq.html">F.A.Q.</a></li>
-                    <li><a href="/overview/media.html">Media</a></li>
-                    <li><a href="/overview/discuss.html">Contributing &amp; Getting Help</a></li>
-
-                    <li class="nav-header">Getting Started</li>
-                    <li><a href="/getting-started/index.html">Introduction</a></li>
-                    <li><a href="/getting-started/first-steps.html">First Test, Sanity Check</a></li>
-                    <li><a href="/getting-started/library-installation.html">Android Library Setup</a></li>
-                    <li><a href="/getting-started/tutorial.html">App Tutorial</a></li>
-                    <li><a href="/getting-started/troubleshooting.html">Troubleshooting</a></li>
-
-                    <li class="nav-header">Application Host Devices</li>
-                    <li><a href="/host-devices/index.html">Supported Host Devices</a></li>
-                    <li><a href="/android/index.html">Supported Android Hardware</a></li>
-                    <li><a href="/android/api-guide.html">Android Library API Guide</a></li>
-                    <li><a href="/android/testing.html">Android Testing</a></li>
-                    <li><a href="http://android.openxcplatform.com">Android Reference</a></li>
-                    <li><a href="https://github.com/openxc/openxc-android">Download Android Library</a></li>
-
-                    <li class="nav-header">Vehicle Interface (VI)</li>
-                    <li><a href="/vehicle-interface/index.html">Supported VI Hardware</a></li>
-                    <li><a href="/vehicle-interface/concepts.html">VI Concepts</a></li>
-                    <li><a href="/vehicle-interface/testing.html">VI Testing</a></li>
-                    <li><a href="/vehicle-interface/output-format.html">Vehicle Data &amp; Output Format</a></li>
-                    <li><a href="/vehicle-interface/firmware.html">Firmware</a></li>
-                    <li><a href="/vehicle-interface/utilities.html">Utilities</a></li>
-                    <li><a href="https://github.com/openxc/vi-firmware">Download Source Code</a></li>
-
-                    </ul></li>
-                </ul>
-            </div>
-        </div>
-        {% endif %}
-
-        <div class="span9">
-            {{ content }}
-
-            <footer>
-                <p>
-                    Except as otherwise noted, the content of this page is licensed
-                    under the
-                    <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License.</a>
-                </p>
-                <ul class="footer-links">
-                    <li><a href="/privacy.html">Privacy Policy</a></li>
-                </ul>
-            </footer>
-        </div>
-    </div>
+{{ content }}
 </div>
 
 <script type="text/javascript"

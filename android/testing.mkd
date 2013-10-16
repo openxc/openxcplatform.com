@@ -1,16 +1,11 @@
 ---
-layout: default
+layout: developer
 title: Testing - OpenXC
 ---
 
 <div class="page-header">
     <h1>Testing</h1>
 </div>
-
-Before you can test your app in a vehicle, you will need to find or build a
-functional [vehicle interface][]. Ford is currently providing a limited number
-of kits with OpenXC signals defined for the 2012 Ford Focus. Join the project's
-[Google Group][gg] to find out how to get one of these.
 
 <div class="page-header">
     <h2>Simulated Vehicle Data</h2>
@@ -44,55 +39,14 @@ helps control the source of vehicle data, e.g. a USB vehicle interface or a
 trace file.
 
 Install a file manager in Android like the [OI File
-Manager](https://play.google.com/store/apps/details?id=org.openintents.filemanager)
-so the Enabler is able to browse for files on the SD card.
+Manager](http://openintents.org/en/filemanager) so the Enabler is able to browse
+for files on the SD card.
 
 Finally, run the `OpenXC Enabler` app on the device and go to `Settings -> Data
 Sources -> Trace File Playback`, check the `Playback trace file` option and
 browse for the trace file you copied over.
 
-<div class="page-header">
-    <h2 id="traces"><a href="#traces">Vehicle Trace Files</a></h2>
-</div>
-
-There are a number of trace files available that exhibit different scenarios and
-driving behaviors.
-
-These files are delivered as gzip compressed files, so if you download one and
-it seems to be corrupted binary, try again using an updated browser - it should
-auto-detect an uncompress when you download:
-
-<div class="alert alert-error">
-     Some Android devices' browsers will continue to have problems
-     with the gzipped files.  Skip to the next section to get
-     uncompressed traces if you are having problems on Android.
-</div>
-
-* [NYC - Downtown, Crosstown](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/downtown-crosstown.json)
-* [NYC - East Downtown](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/downtown-east.json)
-* [NYC - West Downtown](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/downtown-west2.json)
-* [NYC - West Downtown 2](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/downtown-west.json)
-* [NYC - Uptown Crosstown](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/uptown-crossdown.json)
-* [NYC - Uptown Crosstown 2](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/uptown-crosstown.json)
-* [NYC - West Uptown ](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/uptown-west2.json)
-* [NYC - West Uptown](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/uptown-west.json)
-* [Highway Commute and Local Stop](http://openxcplatform.com.s3.amazonaws.com/traces/localwithgps.json)
-* [Idling while parked][idling while parked], toggling headlights, parking brake, etc.
-* [Short drive][short drive] around the block at low speed (~25MPH average)
-* [Idling for longer period of time][idling2]
-* [Highway commute][], about 40 minutes one way
-* [Tailgating][]
-* [Riding the brakes][]
-* [Speeding at highway speeds][speeding]
-* [Agressive driving][], hard acceleration and braking
-
-<div class="page-header">
-    <h3 id="uncompressed-traces">Uncompressed Vehicle Trace Files</h3>
-</div>
-
-* [Highway Commute and Local Stop](http://s3.amazonaws.com/openxcplatform.com/traces/localwithgps-uncompressed.json)
-* [Idling while parked](http://s3.amazonaws.com/openxcplatform.com/traces/parked-uncompressed.json)
-* [Speeding at highway speeds](http://s3.amazonaws.com/openxcplatform.com/traces/highway-speeding-uncompressed.json)
+There are a [number of trace files available](/resources/traces.html).
 
 <div class="page-header">
     <h2>Button Events</h2>
@@ -157,16 +111,24 @@ VehicleButtonEvent.Listener listener = new VehicleButtonEvent.Listener() {
 }
 {% endhighlight %}
 
+<div class="page-header">
+    <h2>UI Design</h2>
+</div>
+
+User interface design for automotive environments is increasingly attracting
+attention, particularly due to concerns with [driver
+distraction](http://www.distraction.gov/). While building your OpenXC
+application, keep in mind the U.S. government's recently released [guidelines
+(PDF)](http://www.nhtsa.gov/staticfiles/rulemaking/pdf/Distraction_NPFG-02162012.pdf)
+for application design.
+
+Driver distraction aside, the most useful and interesting applications tend to
+be those without much driver interaction. The more you can automate or let the
+user deal with outside of their vehicle, the better the experience will likely
+be.
+
 [gg]: http://groups.google.com/group/openxc
-[Enabler]: http://openxcplatform.com/getting-started/library-installation.html#enabler
-[vehicle interface]: http://openxcplatform.com/vehicle-interface/index.html
-[short drive]: https://s3.amazonaws.com/openxcplatform.com/driving.json
-[idling while parked]: https://s3.amazonaws.com/openxcplatform.com/parked.json
-[idling2]: https://s3.amazonaws.com/openxcplatform.com/traces/idling.json
-[Highway commute]: https://s3.amazonaws.com/openxcplatform.com/traces/commute.json
-[Tailgating]: https://s3.amazonaws.com/openxcplatform.com/traces/tailgating.json
-[Riding the brakes]: https://s3.amazonaws.com/openxcplatform.com/traces/riding-brakes.json
-[speeding]: https://s3.amazonaws.com/openxcplatform.com/traces/highway-speeding.json
-[Agressive driving]:https://s3.amazonaws.com/openxcplatform.com/traces/aggressive-driving.json
+[Enabler]: /android/library-installation.html#enabler
+[vehicle interface]: /vehicle-interface/hardware.html
 [Measurement]: http://android.openxcplatform.com/reference/com/openxc/measurements/Measurement.html
 [VehicleManager]: http://android.openxcplatform.com/reference/com/openxc/VehicleManager.html

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: developer
 title: Vehicle Interface Concepts - OpenXC
 ---
 
@@ -80,6 +80,5 @@ manufacturers, but beyond the standardized (and mandated) [OBD-II
 parameters](http://en.wikipedia.org/wiki/OBD-II_PIDs), the diagnostic message
 identifiers and formats are also largely proprietary.
 
-[output-format]: /vehicle-interface/output-format.html
 [can]: http://en.wikipedia.org/wiki/CAN_bus
 [obd2]: http://en.wikipedia.org/wiki/On-board_diagnostics
