@@ -4,7 +4,7 @@ title: Library Setup - OpenXC
 ---
 
 <div class="page-header">
-    <h1>Android Library Installation</h1>
+    <h1>Setting up your Environment</h1>
 </div>
 
 <div class="pull-right well">
@@ -13,7 +13,8 @@ title: Library Setup - OpenXC
         <li><a href="/getting-started/tutorial.html">
             App Tutorial <i class="icon-arrow-right"></i>
         </a></li>
-    </p>
+    <p></p>
+    </ul>
 </div>
 
 The OpenXC functionality is exposed via a Java library that includes some
@@ -24,7 +25,7 @@ There is a [screencast walkthrough](http://www.youtube.com/watch?v=4uelN6Km_CI)
 of the complete installation and OpenXC app tutorial on YouTube.
 
 <div class="page-header">
-    <h2>Installation</h2>
+    <h2>Android Library Installation</h2>
 </div>
 
 You can choose to develop with OpenXC via [Eclipse](#eclipse) or the [command
@@ -58,19 +59,24 @@ the Android SDK manager (in `Tools -> Options`).
 
 Get the [openxc-android][] source code in one of two ways:
 
-* *Recommended method:* Clone the [openxc-android][] repository using Git. If you
+* *Recommended method:* The latest stable version of the OpenXC Android source code
+can always be found [here](https://github.com/openxc/openxc-android/releases). 
+Make sure to download both the source code as well as the OpenXC Enabler App .apk. 
+There is also an example application available for your reference. Extract the 
+files to the location where you'd like the library to sit on your local computer.
+
+* *Other Options:* Clone the [openxc-android][] repository using Git. If you
   don't already have Git installed, GitHub has a [good
   reference](https://help.github.com/articles/set-up-git) for all platforms.
-  This method is recommended because it makes it easier to keep up-to-date
-  with changes in the OpenXC library.
-* Download the latest version from [GitHub][openxc-android] as a ZIP file.
+  This method gets you the most up-to-date changes in the OpenXC library, but might not be as stable. 
+  You can also download the latest version from [GitHub][openxc-android] as a ZIP file.
   Look for the big ZIP icon like the example below).
 
 <a href="https://github.com/openxc/openxc-android">
 <img src="/images/screenshots/github.png" />
 </a>
 
-After cloning the `openxc-android` repository to your local disk, open Eclipse
+After obtaining a copy of the `openxc-android` repository, open Eclipse
 and go to `File -> New -> Other -> Android -> Android Project from Existing
 Source`. Browse to the `openxc-android` folder and it should detect the 4
 Android projects within the repository. Unless you will be working on the
@@ -80,13 +86,11 @@ project. Click `Finish` to add the projects.
 ![Adding a Project in Eclipse](/images/screenshots/eclipse-import.png)
 
 Wait a few seconds for Eclipse to build the projects. If you get errors in the
-projects about a required compliance level, you can fix this by going to
-`Android Tools -> Fix Project Properties`. Otherwise, there should be no errors
-reported. You're ready to start working with OpenXC! If you still have errors,
-try asking in the [Google Group](/overview/discuss.html) for some help.
+projects about a required compliance level, you can fix this by right-clicking on the errored project,
+and going to `Android Tools -> Fix Project Properties`. Otherwise, there should be no errors
+reported. If you still have errors, try asking in the [Google Group](/overview/discuss.html) for some help.
 
-Next up, you can start writing your [first OpenXC
-app](/getting-started/tutorial.html).
+
 
 <div class="page-header">
     <h3 id="cli"><a href="#cli">Using the Command Line</a></h3>
@@ -137,11 +141,10 @@ the `apklib` type is supported:
 </build>
 {% endhighlight %}
 
-Next up, you can start writing your [first OpenXC
-app](/getting-started/tutorial.html).
+
 
 <div class="page-header">
-    <h3 id="enabler"><a href="#enabler">Enabler</a></h3>
+    <h2 id="enabler"><a href="#Enabler">Enabler</a></h2>
 </div>
 
 The best way to make the USB vehicle interface available to your app is to
@@ -182,6 +185,61 @@ If you're using Maven at the command line:
 {% highlight sh %}
 $ mvn clean install -pl openxc -am && mvn clean package android:deploy android:run -pl enabler
 {% endhighlight %}
+
+
+
+<div class="page-header">
+<h2>Other Required Software</h2>
+</div>
+Throughout the setup process, you'll need to pull in a few packages in order to both flash
+firmware to your Vehicle Interface, as well as test the interface to make sure it's working.
+This will require Cygwin (on Windows) or Homebrew (on Mac). Linux users will be able to pull
+in the required packages right off the command line.
+
+<h3>Windows</h3>
+<ol>
+    <li>Download the <strong>32-bit</strong> setup file for <a href=http://www.cygwin.com>Cygwin</a>.</li>
+    <li>Run the Cygwin installer. The Cygwin installer lets you specify additional packages you'd like to include with your 
+        Cygwin installation. Make sure to include all of the following packages:
+        <ul>
+            <li>git</li>
+            <li>curl</li>
+            <li>libsas12</li>
+            <li>ca-certificates</li>
+            <li>patchutils</li>
+            <li>python</li>
+            <li>python-setuptools</li>
+            <li>libusb-win32</li>
+        </ul>
+    </li>
+    <li>Install the OpenXC Python library via Cygwin using the following command: <strong>sudo easy_install -U openxc</strong>.
+    See <a href=http://python.openxcplatform.com/en/latest/#installation>
+    the Python documentation</a> for more information.</li>
+</ol>
+
+<h3>Mac OS X</h3>
+<ol>
+    <li>Open a terminal window, then install the Python OpenXC library using easy_install: <strong>sudo easy_install -U openxc</strong>.
+     See <a href=http://python.openxcplatform.com/en/latest/#installation>
+    the Python documentation</a> for more information.</li>
+    <li>Install <a href="mxcl.github.com/homebrew/">Homebrew</a> (A package manager for OS X) using the following command: 
+        <strong>ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"</strong>.</li>
+    <li>Using Homebrew, install the USB Backend used to connect a Vehicle Interface to your computer via USB. You can do this
+    with the following command: <strong>brew install libusb</strong></li>
+    <li>Again using Homebrew, install git if you don't already have it installed. <strong>brew install git</strong></li>
+</ol>
+
+<h3>Ubuntu</h3>
+<ol>
+    <li>Install the Python OpenXC library using pip: <strong>pip install -U openxc</strong></li>
+    <li>Install libusb from the main repository: <strong>sudo apt-get install libusb-1.0-0</strong></li>
+</ol>
+<h3>Arch Linux</h3>
+<ol>
+    <li>Install the Python OpenXC library using pip: <strong>pip install -U openxc</strong></li>
+    <li>Install libusb via pacman: <strong>sudo pacman -S libusbx</strong></li>
+</ol>    
+
 
 <div class="page-header">
 <h2>Next Steps</h2>
