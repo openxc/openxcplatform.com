@@ -1,0 +1,78 @@
+---
+layout: default
+title: Step-by-Step Guide - OpenXC
+---
+
+<div class="page-header">
+<h2>Step-By-Step Guide to Developing with OpenXC</h2>
+</div>
+
+Follow this step-by-step guide to ensure you've covered all your bases while developing your OpenXC
+Application.
+
+<ol>
+    <li>Set up and configure your Workstation
+        <ul>
+            <li><a href="/getting-started/library-installation.html">Set up your Dev Environment</a></li>
+            <li><a href="http://python.openxcplatform.com/#installation">Obtain the Python library and tools</a></li>
+            <li><a href="http://vi-firmware.openxcplatform.com/en/latest/installation/binary.html">Install the necessary tools for flashing firmware to your Vehicle Interface</a></li>
+        </ul>
+    </li>
+
+    <li>Develop your first OpenXC Android Application
+        <ul>
+            <li><a href="/getting-started/library-installation.html#enabler">Install the Enabler App</a></li>
+            <li><a href="/getting-started/tutorial.html">Walk through the App Tutorial</a></li>
+            <li><a href="/android/testing.html">Test your application</a></li>
+        </ul>
+    </li>
+        
+    <li>Set up and configure your Vehicle Interface
+        <ul>
+            <li><a href="/vehicle-interface/index.html">Obtain or build a Vehicle Interface</a></li>
+            <li><a href="/vehicle-interface/firmware.html">Flash Firmware</a></li>
+            <li><a href="/vehicle-interface/testing.html">Use Python to test your Vehicle Interface</a></li>
+        </ul>
+    </li>
+    
+    <li>Test the full system in the car
+        <ul>
+            <li>Plug the Vehicle Interface into your vehicles OBDII port.</li>
+            <li>Connect the Vehicle Interface to your Android device
+                <ul>
+                    <li>Using USB: 
+                        <ul>
+                            <li>Connect the Vehicle Interface's micro-usb port to the Android device using an OTG (On the Go) cable.</li>
+                        </ul>
+                    </li>
+                    <li>Using Bluetooth:
+                        <ul><strong>First Session</strong>
+                            <li>On your Android device, go to Settings->Bluetooth and turn Bluetooth on.</li>
+                            <li>Scan for devices, and click on OpenXC to pair your device with the Vehicle Interface.</li>
+                        </ul>
+                        <ul><strong>Subsequent Sessions</strong>
+                            <li>Bluetooth should pair automatically when your application is opened.</li>
+                        </ul>
+                    </li>
+                </ul></li>
+            <li>Open the <a href="/getting-started/library-installation.html#enabler">Enabler app</a>, then use the Home button on your Android device to leave the activity.</li>
+            <li>Run your application.</li>
+        </ul>
+    </li>
+                            
+</ol>
+
+If everything goes well, your app should now be streaming data from your car through the Vehicle Interface. 
+
+If something goes wrong, ensure that you didn't miss an earlier step. Go back and test your application and Vehicle Interface
+using the various testing tools to try and narrow down the problem. If all else fails, or if you can't find a solution to your problem,
+check for similar issues in the [Google Group](groups.google.com/group/openxc). If you can't find a similar issue, create a new post to get some assistance.
+
+<div class="page-header">
+<h2>Next Steps</h2>
+</div>
+
+When you're ready to begin writing an OpenXC app, continue on to
+[set up your Dev Environment](/getting-started/library-installation.html). You
+can get started even if you don't have a hardware vehicle interface (or even a
+car!). 
