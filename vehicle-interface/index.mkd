@@ -77,8 +77,8 @@ hardware, and it connects to both the CAN1 and CAN2-1 [bus pins](#obd-pins) (and
 with a small modification can connect to CAN2-2).
 
 * [Reference VI Binary Firmware Programming
-  Instructions](http://vi.openxcplatform.com/firmware/programming/usb.html)
-* [Reference VI Documentation and Schematics](http://vi.openxcplatform.com/)
+  Instructions](http://vi-firmware.openxcplatform.com/en/latest/platforms/ford.html)
+* [Reference VI Documentation and Schematics](http://vi-firmware.openxcplatform.com/)
 
 <h2 id="cross-chasm"><a href="#cross-chasm">CrossChasm C5</a></h2>
 
