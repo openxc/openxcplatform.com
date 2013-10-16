@@ -41,3 +41,12 @@ development environment?
 Read the VI Output Format Specs
 </button>
 </a>
+
+If you're not sure what you want, try the step-by-step guide for setting
+everything up:
+
+<a href="/getting-started/step-by-step.html">
+<button type="button" class="btn btn-primary btn-lg">
+Step-by-step Getting Started Guide
+</button>
+</a>
