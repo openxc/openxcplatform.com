@@ -132,7 +132,7 @@ public void onResume() {
 {% endhighlight %}
 
 Now, when your app starts it will also start the OpenXC [VehicleManager][] and if
-the [Enabler](/android/library-installation.html#enabler) is running, it will be ready to receive data from the
+the [Enabler][enabler] is running, it will be ready to receive data from the
 vehicle.
 
 <div class="page-header">
@@ -279,7 +279,7 @@ having trouble, check out the
 [Android service]: http://developer.android.com/guide/components/services.html
 [bind]: http://developer.android.com/guide/topics/fundamentals/bound-services.html#Binding)
 [VehicleManager]: http://android.openxcplatform.com/reference/com/openxc/VehicleManager.html
-[enabler]: /getting-started/library-installation.html#enabler
+[enabler]:/android/library-installation.html#enabler
 [driving trace]: https://s3.amazonaws.com/openxcplatform.com/driving.json
 [library documentation]: http://android.openxcplatform.com/reference/com/openxc/measurements/package-summary.html
 [ServiceConnection]: http://developer.android.com/reference/android/content/ServiceConnection.html
