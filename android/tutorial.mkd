@@ -264,7 +264,7 @@ or the [Vehicle Dashboard][].
 </div>
 
 You've now completed the OpenXC Android tutorial, but there's more to learn
-about supported [Android devices][] and [vehicle interfaces][]. If you are
+about supported [Android devices](/android/hardware.html) and [vehicle interfaces][]. If you are
 having trouble, check out the
 [troubleshooting](/getting-started/troubleshooting.html) steps.
 
