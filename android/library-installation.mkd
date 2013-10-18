@@ -180,7 +180,7 @@ $ mvn clean install -pl openxc -am && mvn clean package android:deploy android:r
 
 Once you have the library set up, you can start writing your [first OpenXC
 app](/android/tutorial.html). If you are having trouble, check out the
-[troubleshooting](/getting-started/troubleshooting.html) steps.
+[troubleshooting](/android/troubleshooting.html) steps.
 
 [APK]: https://s3.amazonaws.com/openxcplatform.com/openxc-enabler-v3.0.apk
 [openxc-android]: https://github.com/openxc/openxc-android
