@@ -77,7 +77,7 @@ reported. You're ready to start working with OpenXC! If you still have errors,
 try asking in the [Google Group](/overview/discuss.html) for some help.
 
 Next up, you can start writing your [first OpenXC
-app](/getting-started/tutorial.html).
+app](/android/tutorial.html).
 
 <div class="page-header">
     <h3 id="cli"><a href="#cli">Using the Command Line</a></h3>
@@ -129,7 +129,7 @@ the `apklib` type is supported:
 {% endhighlight %}
 
 Next up, you can start writing your [first OpenXC
-app](/getting-started/tutorial.html).
+app](/android/tutorial.html).
 
 <div class="page-header">
     <h3 id="enabler"><a href="#enabler">Enabler</a></h3>
@@ -179,7 +179,7 @@ $ mvn clean install -pl openxc -am && mvn clean package android:deploy android:r
 </div>
 
 Once you have the library set up, you can start writing your [first OpenXC
-app](/getting-started/tutorial.html). If you are having trouble, check out the
+app](/android/tutorial.html). If you are having trouble, check out the
 [troubleshooting](/getting-started/troubleshooting.html) steps.
 
 [APK]: https://s3.amazonaws.com/openxcplatform.com/openxc-enabler-v3.0.apk

@@ -22,7 +22,7 @@ Application.
     <li>Develop your first OpenXC Android Application
         <ul>
             <li><a href="/getting-started/library-installation.html#enabler">Install the Enabler App</a></li>
-            <li><a href="/getting-started/tutorial.html">Walk through the App Tutorial</a></li>
+            <li><a href="/android/tutorial.html">Walk through the App Tutorial</a></li>
             <li><a href="/android/testing.html">Test your application</a></li>
         </ul>
     </li>
