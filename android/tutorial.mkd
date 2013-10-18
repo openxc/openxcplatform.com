@@ -266,7 +266,7 @@ or the [Vehicle Dashboard][].
 You've now completed the OpenXC Android tutorial, but there's more to learn
 about supported [Android devices](/android/hardware.html) and [vehicle interfaces][]. If you are
 having trouble, check out the
-[troubleshooting](/getting-started/troubleshooting.html) steps.
+[troubleshooting](/android/troubleshooting.html) steps.
 
 
 [sdk]: http://developer.android.com/sdk/index.html
