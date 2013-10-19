@@ -17,7 +17,7 @@ Assuming you have Ruby and RubyGems installed:
 
 Then, assuming you have Python's pip installed:
 
-    $ pip install pygements
+    $ pip install pygments
 
 Then run the local development server:
 
