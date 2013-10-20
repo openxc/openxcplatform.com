@@ -148,6 +148,6 @@ Once you've purchased or constructed a vehicle interface, you go through the
 correctly.
 
 [output-format]: https://github.com/openxc/openxc-message-format
-[host device]: /host-devices/index.html
+[host device]: /host-devices/hardware.html
 [can]: http://en.wikipedia.org/wiki/CAN_bus
 [obd2]: http://en.wikipedia.org/wiki/On-board_diagnostics
