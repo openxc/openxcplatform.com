@@ -20,7 +20,7 @@ See all supported VIs
 
 You need a **compatible host device**, most likely an Android tablet or phone.
 
-<a href="/host-devices/index.html">
+<a href="/host-devices/hardware.html">
 <button type="button" class="btn btn-primary btn-lg">
 See all host devices
 </button>
