@@ -1,0 +1,53 @@
+---
+layout: contributors
+title: Contributing How-to
+---
+
+<div class="page-header">
+    <h1>Contributing How-to</h1>
+</div> 
+
+### How to Contribute Details
+
+1. Sign the one-time [Contributor License Agreement](../contributor-license-agreement.html).
+2. Fork the repositor in which you would like to make changes.
+
+    * List of OpenXC Repositories: [OpenXC Repositories](http://github.com/openxc).
+    * How to fork a GitHub Repository: [GitHub - Forking](https://help.github.com/articles/fork-a-repo#step-1-fork-the-spoon-knife-repository).
+
+3. Make a local clone of your newly forked repository.
+
+    * How to clone a fork: [GitHub - Clone your fork](https://help.github.com/articles/fork-a-repo#step-2-clone-your-fork).
+
+4. Make changes using the IDE of your choice.
+5. Commit your changes frequently.
+
+    * How to add changes to your local repository: [GitRef - Add](http://gitref.org/basic/#add).
+    * How to commit changes to your local repository: [GitRef - Commit](http://gitref.org/basic/#commit).
+
+6. When your changes are complete, push your new branch to your GitHub fork.
+
+    * How to push your local branch: [GitHub - Pushing a branch](https://help.github.com/articles/pushing-to-a-remote#pushing-a-branch).
+
+7. Create a pull request for your changes.
+
+    * How to request a pull: [GitHub - Initiating the Pull Request](https://help.github.com/articles/using-pull-requests#initiating-the-pull-request)
+
+
+### Contributing Tips & Tricks
+
+#### Use the GitHub Issue Tracking System
+Prior to making a change, use the [GitHub Issues](https://github.com/features/projects/issues) for the repository for which you would like to make changes. This opens intended changes up for internal discussion with other contributors which leads to better overall solutions. 
+
+Create new issues for changes you would like to make. 
+
+Contribute to existing issues as a way to start developing within the repository.
+
+#### Make use of GitHub Mentions and References
+To keep comments, issues, and pull requests organized, use [GitHub Mentions](https://help.github.com/articles/github-flavored-markdown#name-and-team-mentions-autocomplete) and [GitHub References](https://help.github.com/articles/github-flavored-markdown#references). 
+
+Using the @```user_name``` mention notifies the user with username, ```user_name``` that they have been "mentioned".
+
+Using the #```issue_number``` reference in other issues and pull requests allows users to notify eachother that those issues and pull requests are related.
+
+
