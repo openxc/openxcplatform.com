@@ -42,11 +42,11 @@ documentation](http://vi-firmware.openxcplatform.com/en/latest/installation/inst
 <h2>Next Steps</h2>
 </div>
 
-You're now ready to [test your VI in a vehicle][testing].
+You're now ready to [get started with a quick test or being programming an
+app](/getting-started/index.html).
 
 [winavr]: http://winavr.sourceforge.net/
 [upload_hex.sh]: https://github.com/openxc/vi-firmware/blob/master/script/upload_hex.sh
 [vi-firmware]: https://github.com/openxc/vi-firmware
 [MPIDE]: https://github.com/chipKIT32/chipKIT32-MAX/downloads
-[testing]: /vehicle-interface/testing.html
 [Cygwin]: http://www.cygwin.com/

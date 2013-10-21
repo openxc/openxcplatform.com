@@ -143,11 +143,12 @@ in OpenXC and if so, which types of data they wish to expose.
 <h2>Next Steps</h2>
 </div>
 
-Once you've purchased or constructed a vehicle interface, you go through the
-[test procedure](/vehicle-interface/testing.html) to make sure it's working
-correctly.
+Once you've purchased or constructed a vehicle interface, you can [get started
+with one of the programming environments](/getting-started/index.html) to make
+sure it's working correctly. Both the Python and Android environments have a
+"smoke test" you can use without writing any code.
 
 [output-format]: https://github.com/openxc/openxc-message-format
-[host device]: /host-devices/index.html
+[host device]: /host-devices/hardware.html
 [can]: http://en.wikipedia.org/wiki/CAN_bus
 [obd2]: http://en.wikipedia.org/wiki/On-board_diagnostics

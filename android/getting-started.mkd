@@ -92,5 +92,5 @@ code</a> for that app).
 </div>
 
 You can now [install the OpenXC Android
-library](/getting-started/library-installation.html) and get started creating
+library](/android/library-installation.html) and get started creating
 your first app.
