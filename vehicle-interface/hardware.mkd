@@ -52,12 +52,10 @@ vehicle manufacturer.
 
 <h2>Obtaining a Vehicle Interface</h2>
 
-There are several ways you can obtain a vehicle interface. 
+There are two ways you can obtain a vehicle interface. 
 
-* [Submit a request](https://docs.google.com/forms/d/1-l7_i7b6xsITh9q3Pr1NCjAU6Yw_cTPEgrPCNCggQec/viewform)
-to have a <a href="#ford-reference-design">Ford Reference VI</a> sent to you. 
-
-* Purchase a <a href="#cross-chasm">CrossChasm C5 Vehicle Interface</a>
+* Purchase a Pre-Made VI: The <a href="#ford-reference-design">Ford Reference VI</a>
+and <a href="#cross-chasm">CrossChasm C5 Vehicle Interface</a> are both available for purchase.
 
 * <a href="#diy-chipkit">Build one yourself!</a> The original OpeNXC design
 was built on a chipKIT development board and is still fully supported. The
