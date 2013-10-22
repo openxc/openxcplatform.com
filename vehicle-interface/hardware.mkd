@@ -50,6 +50,20 @@ if the information you need is on a bus connected by a particular VI, check the
 [binary firmware](/vehicle-interface/firmware.html) documentation for your
 vehicle manufacturer.
 
+<h2>Obtaining a Vehicle Interface</h2>
+
+There are several ways you can obtain a vehicle interface. 
+
+* [Submit a request](https://docs.google.com/forms/d/1-l7_i7b6xsITh9q3Pr1NCjAU6Yw_cTPEgrPCNCggQec/viewform)
+to have a <a href="#ford-reference-design">Ford Reference VI</a> sent to you. 
+
+* Purchase a <a href="#cross-chasm">CrossChasm C5 Vehicle Interface</a>
+
+* <a href="#diy-chipkit">Build one yourself!</a> The original OpeNXC design
+was built on a chipKIT development board and is still fully supported. The
+design is open-source and posted below, along with instructions on how to assemble
+all the required parts.
+
 <h2 id="ford-reference-design"><a href="#ford-reference-design">Ford Reference VI</a></h2>
 
 The VI is a open source reference design for a "dongle" style vehicle interface
@@ -100,9 +114,9 @@ Documentation](http://vi-firmware.openxcplatform.com/en/latest/platforms/crossch
 </div>
 
 This VI design was the first OpenXC interface, and is still fully supported by
-the latest VI firmware. The design design uses entirely off-the-shelf
+the latest VI firmware. The design uses entirely off-the-shelf
 components, built on top of a Digilent chipKIT Max32 development board (open
-source hardware!). The VI can be assembled for with a range of functionality
+source hardware!). The VI can be assembled with a range of functionality
 starting at around $110, with no soldering required.
 
 The chipKIT VI can connect to up to 2 CAN buses simultaneously, and you can
@@ -130,14 +144,14 @@ Optionally, the VI may:
 
 * Connect another CAN controller to non-standard CAN bus pins (such as Ford's medium
   speed or infotainment bus pins)
-* Allow lower-lever user re-programming and debugging via ISP or JTAG.
+* Allow lower-level user re-programming and debugging via ISP or JTAG.
 * Pass 12v power from the vehicle through to a separate power jack for
   peripherals
 
 Unless you are implementing custom CAN messages, you will most likely need a
-[pre-built OpenXC binary](/vehicle-interface/firmware.html) from the
+[pre-built OpenXC binary firmware](/vehicle-interface/firmware.html) from the
 manufacturer of your vehicle. Each OEM can decide whether or not to participate
-in OpenXC and if so, which types of data they wish to expose.
+in OpenXC and if so, decide which types of data they wish to expose.
 
 <div class="page-header">
 <h2>Next Steps</h2>
