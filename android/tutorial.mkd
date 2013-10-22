@@ -31,7 +31,7 @@ before your application will work.</div>
 </div>
 
 You must tell Android and Eclipse that your app intends to use the OpenXC
-library. In the Package Explorer in the left hande side of the Eclipse window,
+library. In the Package Explorer in the left hand side of the Eclipse window,
 right click on your project's top-level folder (e.g. `MyFirstApp`) and select
 `Properties`.
 
@@ -55,6 +55,36 @@ to your app's `AndroidManifest.xml`:
     <service android:name="com.openxc.VehicleManager"/>
     ...
 </application>
+{% endhighlight %}
+
+<div class="page-header">
+<h2>Imported Packages</h2>
+</div>
+Here you'll find a list of all the required packages that you'll need to import
+in order for the test app to run. For information on the android specific packages,
+refer to the Google Android documentation. For more information on the OpenXC packages,
+check out the [Android API Guide][Android API Guide]. 
+
+Add the following lines of code to your code file:
+
+{% highlight java %}
+import android.app.Activity;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.content.ServiceConnection;
+import android.os.Bundle;
+import android.os.IBinder;
+import android.util.Log;
+import android.view.Menu;
+import android.widget.TextView;
+
+import com.openxc.VehicleManager;
+import com.openxc.measurements.Measurement;
+import com.openxc.measurements.UnrecognizedMeasurementTypeException;
+import com.openxc.measurements.VehicleSpeed;
+import com.openxc.remote.VehicleServiceException;
+
 {% endhighlight %}
 
 <div class="page-header">
@@ -264,8 +294,9 @@ or the [Vehicle Dashboard][].
 </div>
 
 You've now completed the OpenXC Android tutorial, but there's more to learn
-about supported [Android devices][Android devices] and [vehicle interfaces][]. If you are
-having trouble, check out the
+about supported [Android devices][Android devices] and [vehicle interfaces][]. You can
+also check out the [Android API Guide][Android API Guide] for more information on
+how to use the API. If you are having trouble, check out the
 [troubleshooting](/android/troubleshooting.html) steps.
 
 
@@ -286,3 +317,4 @@ having trouble, check out the
 [Listener]: http://android.openxcplatform.com/reference/com/openxc/measurements/Measurement.Listener.html
 [VehicleSpeed]: http://android.openxcplatform.com/reference/com/openxc/measurements/VehicleSpeed.html
 [TextView]: http://developer.android.com/reference/android/widget/TextView.html
+[Android API Guide]: /android/api-guide.html
