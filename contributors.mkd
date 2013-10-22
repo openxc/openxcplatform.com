@@ -17,7 +17,7 @@ We require all contributors to sign a one-time [Contributor License Agreement](.
 ### Code
 You can find all of [OpenXC's code](http://github.com/openxc) in [GitHub](http://github.com).
 
-OpenXC maintains seperate repositories for different code bases: 
+OpenXC maintains separate repositories for different code bases: 
 
 * The OpenXC Vehicle Interface firmware library: [vi-firmware](http://github.com/openxc/vi-firmware)
 * The OpenXC Android library: [openxc-android](http://github.com/openxc/openxc-android)
@@ -30,11 +30,11 @@ OpenXC contributors are encouraged to make use of the [OpenXC Community tools](.
 
 These tools include:
 
-* [A Google Group](http://groups.google.com/forum/#!forum/openxc).
+* [A Google Group](http://groups.google.com/forum/#!forum/openxc) for OpenXC.
 * [A wiki](https://github.com/openxc/openxcplatform.com/wiki) hosted at GitHub.
 * An IRC channel, ```#openxc``` on Freenode (```irc://irc.freenode.net```). 
 
-### Contribution Best Practices
+### How to Contribute
 For best results, OpenXC developers should follow these guidelines:
 
 * Sign the one-time [Contributor License Agreement](../contributor-license-agreement.html).
@@ -43,3 +43,5 @@ For best results, OpenXC developers should follow these guidelines:
 * Make changes, checking-in those changes frequently.
 * When your changes are complete, push your new branch to your GitHub fork. 
 * Create and send a pull request for your changes. 
+
+For more detailed instructions for how to contribute, see [Contributing Details](/contributors/contributing_details.html).
