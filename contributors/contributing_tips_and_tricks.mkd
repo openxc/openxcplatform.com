@@ -1,0 +1,36 @@
+---
+layout: contributors
+title: Contributing Tips and Tricks
+---
+
+<div class="page-header">
+    <h1>Contributing Tips and Tricks</h1>
+</div>
+
+### Git and GitHub Tutorials
+If you are new to Git and/or GitHub, it is recommended you review the following resources, put together by the experts at GitHub. 
+
+* [Git Reference](http://gitref.org)
+* [GitHub Help](https://github.com/openxc/vi-firmware#openxc-vehicle-interface-firmware)
+
+### Use the GitHub Issue Tracking System
+Prior to making a change, use the [GitHub Issues](https://github.com/features/projects/issues) for the repository for which you would like to make changes. This opens intended changes up for internal discussion with other contributors which leads to better overall solutions. 
+
+Create new issues for changes you would like to make. 
+
+Contribute to existing issues as a way to start developing within the repository.
+
+### Make use of GitHub Mentions and References
+To keep comments, issues, and pull requests organized, use [GitHub Mentions](https://help.github.com/articles/github-flavored-markdown#name-and-team-mentions-autocomplete) and [GitHub References](https://help.github.com/articles/github-flavored-markdown#references). 
+
+Using the @```user_name``` mention notifies the user with username, ```user_name```, that they have been "mentioned".
+
+Using the #```issue_number``` reference in other issues and pull requests allows users to notify each other that those issues and pull requests are related.
+
+### Read the Repo's README Section
+Each [OpenXC Repository](http://github.com/openxc/) has a detailed README section with details helpful to perspective contributors. Read the README section of any repository to which you plan to contribute. Examples of these README sections:
+
+* [openxcplatform.com Repo's README](https://github.com/openxc/openxcplatform.com#openxcplatformcom)
+* [openxc-android Repo's README](https://github.com/openxc/openxc-android#openxc-android-library)
+* [vi-firmware Repo's README](https://github.com/openxc/vi-firmware#openxc-vehicle-interface-firmware)
+* Each [OpenXC Repository](http://github.com/openxc/) contains a README section.
