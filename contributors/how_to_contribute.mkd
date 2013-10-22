@@ -14,7 +14,7 @@ Contributions are welcome - we want to keep it as easy as possible to contribute
 2. Check for existing issues in the [OpenXC Repository](http://github.com/openxc/) corresponding to your issue.
 3. If an issue does not already exist, create a new issue.
    * Clearly describe the issue including steps to reproduce, if the issue is a bug. 
-   * Make sure you include the virsion that is affected by the issue. 
+   * Be sure to include any information about platforms or versions affected by the issue.
 
 ### Making Changes
 1. If you haven't already, create a new issue on GitHub for your bug fix or new feature. 
@@ -39,4 +39,5 @@ Contributions are welcome - we want to keep it as easy as possible to contribute
    * How to push your local branch: [GitHub - Pushing a branch](https://help.github.com/articles/pushing-to-a-remote#pushing-a-branch).
 2. Sign the [Contributor License Agreement](http://openxcplatform.com/contributor-license-agreement.html) (CLA)
 3. Submit a pull request to the repository in the openxc organization. 
+   * Note: small changes such as spelling corrections and simple bug fixes can be pulled from the master branch. Any larger changes should be pulled from the "next" branch in each repository. Please initiate your pull requests to the correct branch.
    * How to request a pull: [GitHub - Initiating the Pull Request](https://help.github.com/articles/using-pull-requests#initiating-the-pull-request)
