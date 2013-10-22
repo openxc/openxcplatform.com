@@ -1,28 +1,45 @@
 ---
 layout: contributors
-title: Contributing Details
+title: How To Contribute
 ---
 
 <div class="page-header">
-    <h1>Contributing Details</h1>
+    <h1>How to Contribute</h1>
 </div> 
 
-## How to Contribute Details
+Contributions are welcome - we want to keep it as easy as possible to contribute changes that get things working in your environment. There are a few guidelines that we need contributors to follow so that we can have a chance of keeping on top of things.
 
-1. Sign the one-time [Contributor License Agreement](../contributor-license-agreement.html).
+### Report Issues
+1. Make sure your have a [GitHub account](https://github.com/join)
+2. Check for existing issues in the [OpenXC Repository](http://github.com/openxc/) corresponding to your issue.
+3. If an issue does not already exist, create a new issue.
+   * Clearly describe the issue including steps to reproduce, if the issue is a bug. 
+   * Make sure you include the virsion that is affected by the issue. 
+
+### Making Changes
+1. If you haven't already, create a new issue on GitHub for your bug fix or new feature. 
 2. Fork the repository in which you would like to make changes.
-    * List of OpenXC Repositories: [OpenXC Repositories](http://github.com/openxc).
-    * How to fork a GitHub Repository: [GitHub - Forking](https://help.github.com/articles/fork-a-repo#step-1-fork-the-spoon-knife-repository).
+   * List of OpenXC Repositories: [OpenXC Repositories](http://github.com/openxc).
+   * How to fork a GitHub Repository: [GitHub - Forking](https://help.github.com/articles/fork-a-repo#step-1-fork-the-spoon-knife-repository).
 3. Make a local clone of your newly forked repository.
-    * How to clone a fork: [GitHub - Clone your fork](https://help.github.com/articles/fork-a-repo#step-2-clone-your-fork).
-4. Make changes using the IDE of your choice.
-5. Commit your changes frequently.
-    * How to add changes to your local repository: [GitRef - Add](http://gitref.org/basic/#add).
-    * How to commit changes to your local repository: [GitRef - Commit](http://gitref.org/basic/#commit).
-6. When your changes are complete, push your new branch to your GitHub fork.
-    * How to push your local branch: [GitHub - Pushing a branch](https://help.github.com/articles/pushing-to-a-remote#pushing-a-branch).
-7. Create a pull request for your changes.
-    * How to request a pull: [GitHub - Initiating the Pull Request](https://help.github.com/articles/using-pull-requests#initiating-the-pull-request)
+   * How to clone a fork: [GitHub - Clone your fork](https://help.github.com/articles/fork-a-repo#step-2-clone-your-fork).
+4. Create a new branch related to the issue on which you are working.
+   * Avoid working on the ```master``` branch.
+   * How to create a branch: [GitRef - Branching](http://gitref.org/branching/#branch)
+5. Make changes using the IDE of your choice.
+6. Commit your changes frequently, in logical units.
+   * Check for unnecessary whitespace with ```git diff --check``` before committing
+   * Make sure your commit messages are in the [proper format](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html). 
+   * Make sure you have tested your changes and added any necessary tests.
+   * How to add changes to your local repository: [GitRef - Add](http://gitref.org/basic/#add).
+   * How to commit changes to your local repository: [GitRef - Commit](http://gitref.org/basic/#commit). 
+
+### Submitting Changes
+1. Push the changes in your branch to your GitHub fork.
+   * How to push your local branch: [GitHub - Pushing a branch](https://help.github.com/articles/pushing-to-a-remote#pushing-a-branch).
+2. Sign the [Contributor License Agreement](http://openxcplatform.com/contributor-license-agreement.html) (CLA)
+3. Submit a pull request to the repository in the openxc organization. 
+   * How to request a pull: [GitHub - Initiating the Pull Request](https://help.github.com/articles/using-pull-requests#initiating-the-pull-request)
 
 
 
