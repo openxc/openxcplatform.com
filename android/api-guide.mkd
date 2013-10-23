@@ -27,6 +27,14 @@ Intent intent = new Intent(this, VehicleManager.class);
 bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
 {% endhighlight %}
 
+This will require you to import the VehicleManager class from OpenXC:
+
+{% highlight java %}
+import com.openxc.VehicleManager;
+{% endhighlight %}
+
+
+
 Then, in your `onServiceConnected()` grab the service handle and cast it to the
 correct type:
 
@@ -51,7 +59,19 @@ private ServiceConnection mConnection = new ServiceConnection() {
 </div>
 
 Once the service is bound and you have a connection to it in your activity, you
-can receive measurements on demand (i.e. synchronously).
+can receive measurements on demand (i.e. synchronously). As an example,
+take a look at how you can retrieve vehicle speed data from the car.
+
+First, import the VehicleSpeed class, which is part of the measurements package.
+You'll also need to import the necessary exception classes.
+
+{% highlight java %}
+import com.openxc.measurements.VehicleSpeed;
+import com.openxc.measurements.UnrecognizedMeasurementTypeException;
+import com.openxc.remote.VehicleServiceException;
+{% endhighlight %}
+
+You can then create a VehicleSpeed object and get the speed from the vehicle object.
 
 {% highlight java %}
 try {
@@ -62,6 +82,8 @@ try {
     Log.w(TAG, "The measurement type was not recognized");
 }
 {% endhighlight %}
+If you want to access a different measurement, cast the measurement to any of the 
+available measurement objects in the API.
 
 <div class="page-header">
     <h2>Asynchronous Measurements</h2>
