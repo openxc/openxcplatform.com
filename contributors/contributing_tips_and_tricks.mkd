@@ -1,5 +1,5 @@
 ---
-layout: contributors
+layout: community
 title: Contributing Tips and Tricks
 ---
 
