@@ -12,11 +12,28 @@ OpenXC Android library to receive and parse data from a <a href="">vehicle
 interface</a>. Android is one of a few [options for writing
 applications](/host-devices/index.html) using OpenXC.
 
+
+<div class="page-header">
+    <h2>Connecting your Device to the Vehicle Interface</h2>
+</div>
+
+
+<div class="page-header">
+    <h3>Bluetooth</h3>
+</div>
 Bluetooth support is working well now, and it has the lowest hardware
 requirements so it is the recommended interface.
+
+The OpenXC Enabler application handles the actual communication to the
+Vehicle Interface. You don't need to add any extra code to your application
+to communicate via Bluetooth to it.
+
 When using a Bluetooth-equipped vehicle interface, the Android host
 device must run **Android 2.2** or greater (i.e. API level 8).
 
+<div class="page-header">
+    <h3>USB OTG Cable</h3>
+</div>
 Alternatively, if you wish to hard-wire to the vehicle interface with a USB
 connection, the Android host device must:
 
@@ -28,7 +45,7 @@ connection, the Android host device must:
   that attach to the micro-USB port normally used for charging.
 
 <div class="page-header">
-    <h2>Confirmed Supported Android Devices</h2>
+    <h4>Confirmed Supported Android Devices</h4>
 </div>
 
 **Supported Tablets**
@@ -49,7 +66,7 @@ connection, the Android host device must:
 * Micromax Canvas 2 A110 (using Bluetooth or a USB OTG adapter)
 
 <div class="page-header">
-    <h2>Known Unsupported Android Devices (for USB)</h2>
+    <h4>Known Unsupported Android Devices</h4>
 </div>
 
 USB will *not* work with [USB A female-female
@@ -66,8 +83,8 @@ as they do not pass the neccessary ID pin to use USB OTG on the Android device.
 
 * Sony Xperia L
 * Sony Xperia E
-* UTC One (device is "not supported" by HTC's Android build even though it
-  supposedly has USB OTG)
+* HTC One (USB OTG Not Support by Stock HTC Rom, but the phone has the required hardware. Other roms, such as
+Cyanogenmod, have been reported to work.)
 
 [thrive]: http://us.toshiba.com/tablets/thrive/10-inch/
 [galaxynexus]: http://www.google.com/nexus/
