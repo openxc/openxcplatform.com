@@ -32,13 +32,19 @@ Java code to get this Hello World working. There is some Java in this app, in
 
 **Android Developer Tools are Self-Contained**
 
-The SDK is entirely self-contained - it has Eclipse, Java and the Android
-bits. Don't overthink it and go digging around Oracle's site to install Java
+The SDK is entirely self-contained - it has Eclipse, Java and the Android bits.
+Don't overthink it and go digging around Oracle's site to install Java
 separately - that will likely bring you a world of hurt. If your system is stuck
 in a strange configuration, we recommend that you uninstall everything (Android,
-Eclipse, Java, etc), re-extract the Android ADT zip file and start Eclipse
-from that directory. Note that there is no Windows installer - you just un-zip
-the ADT and run it directly.
+Eclipse, Java, etc), re-extract the Android ADT zip file and start Eclipse from
+that directory. Note that there is no Windows installer - you just un-zip the
+ADT and run it directly.
+
+**Required Compliance Level**
+
+If you get errors in the projects about a required compliance level, you can fix
+this by right-clicking on the errored project, then going to `Android Tools ->
+Fix Project Properties`.
 
 **ADT / Eclipse XML Editing**
 
@@ -59,13 +65,13 @@ Windows.
 
 **Android Devices**
 
-Make sure you enable USB debugging on your Android device -
-the option is at `Settings -> Developer Tools -> USB debugging` or `Settings ->
-Applications -> Developer Options -> USB debugging`.
+Make sure you enable USB debugging on your Android device - the option is at
+`Settings -> Developer Tools -> USB debugging` or `Settings -> Applications ->
+Developer Options -> USB debugging`.
 
 If there is no `Developer Tools` option and you have a very recent Android
-device, it's hidden by default - enable it by going to `Settings -> About
-Phone` and clicking `Build Number` 7 times (no, I'm not kidding!).
+device, it's hidden by default - enable it by going to `Settings -> About Phone`
+and clicking `Build Number` 7 times (no, I'm not kidding!).
 
 If you are using Windows and even after enabling USB debugging your device is
 not recognized, it may require Windows drivers from the specific manufacturer.
