@@ -46,39 +46,36 @@ If you use an Internet proxy, you will need to configure the proxy settings in
 the Android SDK manager (in `Tools -> Options`).
 </div>
 
-Get the [openxc-android][] source code in one of three ways:
+Get the [openxc-android][] source code in one of two ways:
 
-* *Recommended method:* The latest stable version of the OpenXC Android source code
-can always be found [here](https://github.com/openxc/openxc-android/releases). 
-Make sure to download both the source code as well as the OpenXC Enabler App .apk. 
-The Vehicle Dashboard app is also available, which can be helpful in testing your Vehicle Interface. 
-Extract the files to the location where you'd like the library to sit on your local workstation.
-
-* Clone the [openxc-android][] repository using Git. If you
-  don't already have Git installed, GitHub has a [good
+* *Recommended method:* The latest stable version of the OpenXC Android source
+  code can always be found at the [Releases
+  page](https://github.com/openxc/openxc-android/releases). Make sure to
+  download both the source code as well as the OpenXC Enabler .apk. The
+  Vehicle Dashboard app is also available, which can be helpful in testing your
+  Vehicle Interface. Extract the files to the location where you'd like the
+  library to sit on your local workstation.
+* Alternatively, clone the [openxc-android][] repository using Git. If you don't
+  already have Git installed, GitHub has a [good
   reference](https://help.github.com/articles/set-up-git) for all platforms.
-  This method gets you the most up-to-date changes in the OpenXC library, but might not be as stable. 
-* You can also download the latest version from [GitHub][openxc-android] as a ZIP file.
-  Look for the big ZIP icon like the example below).
+  This method gets you the most up-to-date changes in the OpenXC library, but
+  might not be as stable.
 
 <a href="https://github.com/openxc/openxc-android">
 <img src="/images/screenshots/github.png" />
 </a>
 
-After obtaining the `openxc-android` library, open Eclipse
-and go to `File -> New -> Other -> Android -> Android Project from Existing
-Source`. Browse to the `openxc-android` folder and it should detect the 4
-Android projects within the repository. Unless you will be working on the
-internals of the OpenXC library itself, you can uncheck the `openxc-it` testing
-project. Click `Finish` to add the projects.
+After obtaining the `openxc-android` library, open Eclipse and go to `File ->
+Import -> Android -> Existing Android Code Into Workspace`. Browse to and select
+the `openxc-android` folder you downloaded - Eclipse should should detect 4
+Android projects within the folder. Unless you will be working on the internals
+of the OpenXC library itself, you can uncheck the `openxc-it` testing project.
+Click `Finish` to add the projects.
 
-![Adding a Project in Eclipse](/images/screenshots/eclipse-import.png)
-
-Wait a few seconds for Eclipse to build the projects. If you get errors in the
-projects about a required compliance level, you can fix this by right-clicking on the errored project,
-then going to `Android Tools -> Fix Project Properties`. Otherwise, there should be no errors
+Wait a few seconds for Eclipse to build the projects - there should be no errors
 reported. You're ready to start working with OpenXC! If you still have errors,
-try asking in the [Google Group](/overview/discuss.html) for some help.
+check the [troubleshooting](/android/troubleshooting.html) section or [ask for
+some help from the community](/overview/discuss.html).
 
 <div class="page-header">
     <h3 id="cli"><a href="#cli">Maven</a></h3>
@@ -99,7 +96,7 @@ just need to add this to your `dependencies` section:
         <dependency>
             <groupId>com.openxcplatform</groupId>
             <artifactId>openxc</artifactId>
-            <version>3.0</version>
+            <version>5.0.0</version>
             <type>apklib</type>
         </dependency>
         ...
@@ -119,7 +116,7 @@ the `apklib` type is supported:
             <plugin>
                 <groupId>com.jayway.maven.plugins.android.generation2</groupId>
                 <artifactId>android-maven-plugin</artifactId>
-                <version>3.3.0</version>
+                <version>3.7.0</version>
                 <extensions>true</extensions>
             </plugin>
         </plugins>
@@ -129,20 +126,19 @@ the `apklib` type is supported:
 </build>
 {% endhighlight %}
 
-
 <div class="page-header">
     <h2 id="enabler">Enabler</h2>
 </div>
 
-The best way to make the vehicle interface available to your app is to
-install the OpenXC Enabler app - the [source][enabler-source] for this app is in
-the [openxc-android][] repository.
+The best way to make the vehicle interface available to your app is to install
+the OpenXC Enabler app - the [source][enabler-source] for this app is in the
+[openxc-android][] repository.
 
 This app starts the vehicle service at boot and makes sure it stays alive - this
 way, your app doesn't have to worry about USB permissions or reacting to device
 detachment/reattachment.
 
-If you don't want to use the enabler app, it's certainly possible to start the
+If you don't want to use the Enabler app, it's certainly possible to start the
 service from your application directly. Look at the [source for the
 enabler][enabler-source] to see exactly how to accomplish that.
 
@@ -152,12 +148,17 @@ files and don't need to connect to a physical vehicle interface, the Enabler app
 still must be installed.
 </div>
 
-There are three recommended ways to install the Enabler:
+There are three ways to install the Enabler:
 
 **APK**
 
-The latest version of the Enabler is available as an [APK][] on the Android Library
-Releases page, ready to install in Android.
+The latest version of the Enabler is available as an [APK][] on the Android
+Library Releases page, ready to install in Android. Download that file directly
+on your Android device and open it to install, or use the command line:
+
+{% highlight sh %}
+$ adb uninstall openxc-enabler.apk
+{% endhighlight %}
 
 **Eclipse**
 
