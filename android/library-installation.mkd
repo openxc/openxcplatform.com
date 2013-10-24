@@ -46,20 +46,20 @@ If you use an Internet proxy, you will need to configure the proxy settings in
 the Android SDK manager (in `Tools -> Options`).
 </div>
 
-Get the [openxc-android][] source code in one of three ways:
+Get the [openxc-android][] source code in one of two ways:
 
-* *Recommended method:* The latest stable version of the OpenXC Android source code
-can always be found [here](https://github.com/openxc/openxc-android/releases). 
-Make sure to download both the source code as well as the OpenXC Enabler App .apk. 
-The Vehicle Dashboard app is also available, which can be helpful in testing your Vehicle Interface. 
-Extract the files to the location where you'd like the library to sit on your local workstation.
-
-* Clone the [openxc-android][] repository using Git. If you
-  don't already have Git installed, GitHub has a [good
+* *Recommended method:* The latest stable version of the OpenXC Android source
+  code can always be found at the [Releases
+  page](https://github.com/openxc/openxc-android/releases). Make sure to
+  download both the source code as well as the OpenXC Enabler .apk. The
+  Vehicle Dashboard app is also available, which can be helpful in testing your
+  Vehicle Interface. Extract the files to the location where you'd like the
+  library to sit on your local workstation.
+* Alternatively, clone the [openxc-android][] repository using Git. If you don't
+  already have Git installed, GitHub has a [good
   reference](https://help.github.com/articles/set-up-git) for all platforms.
-  This method gets you the most up-to-date changes in the OpenXC library, but might not be as stable. 
-* You can also download the latest version from [GitHub][openxc-android] as a ZIP file.
-  Look for the big ZIP icon like the example below).
+  This method gets you the most up-to-date changes in the OpenXC library, but
+  might not be as stable.
 
 <a href="https://github.com/openxc/openxc-android">
 <img src="/images/screenshots/github.png" />
