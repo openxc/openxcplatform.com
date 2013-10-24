@@ -24,7 +24,7 @@ right firmware for your VI and to learn how to re-program it.
 If you don't have an Android device, or you want to write apps using Python, you
 can use a laptop to test.
 
-1. Install the [Python library](http://python.openxcplatform.com/#installation) -
+1. If you haven't already, install the [Python library](http://python.openxcplatform.com/#installation) -
   don't forget the [USB backend!](http://python.openxcplatform.com/en/latest/#usb).
 1. Attach the programmed VI to your computer with a USB cable, or pair with it
    via Bluetooth and open a serial terminal (the Bluetooth pairing process
