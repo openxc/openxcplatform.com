@@ -35,10 +35,4 @@ The official IRC channel is `#openxc` on Freenode (`irc://irc.freenode.net`),
 where the developers of OpenXC and other users can be found. A timely response
 isn't guaranteed here, so if nobody is around to help, try the mailing list.
 
-### Contributor License Agreement
-
-We require all contributors to sign a one-time [Contributor License
-Agreement](/contributor-license-agreement.html) to make sure the code is free
-and always will be remain free.
-
 [GitHub]: https://github.com/openxc

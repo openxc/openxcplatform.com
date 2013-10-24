@@ -1,10 +1,10 @@
 ---
 layout: community
-title: Contributors Welcome!
+title: Open Source Contributor Resources
 ---
 
 <div class="page-header">
-    <h1>Welcome Contributors!</h1>
+    <h1>{{ page.title }}</h1>
 </div>
 
 Would you like to help make OpenXC better? OpenXC is a platform consisting of
@@ -12,10 +12,15 @@ both open source hardware and open source software, meaning anyone can
 contribute!
 
 ### Contributor License Agreement
-We require all contributors to sign a one-time [Contributor License Agreement](../contributor-license-agreement.html) to make sure the code is free and always will remain free.
+
+We require all contributors to sign a one-time [Contributor License
+Agreement](../contributor-license-agreement.html) to make sure the code is free
+and always will remain free.
 
 ### Code
-You can find all of [OpenXC's code](http://github.com/openxc) in [GitHub](http://github.com).
+
+You can find all of [OpenXC's code](http://github.com/openxc) in
+[GitHub](http://github.com).
 
 OpenXC maintains separate repositories for different code bases:
 
@@ -26,22 +31,7 @@ OpenXC maintains separate repositories for different code bases:
 * Code for many other OpenXC related projects can be found in the general GitHub site: [openxc](http://github.com/openxc)
 
 ### Community
-OpenXC contributors are encouraged to make use of the [OpenXC Community tools](../overview/discuss.html).
 
-These tools include:
+OpenXC contributors are encouraged to make use of the [OpenXC community tools](../overview/discuss.html).
 
-* [A Google Group](http://groups.google.com/forum/#!forum/openxc) for OpenXC.
-* [A wiki](https://github.com/openxc/openxcplatform.com/wiki) hosted at GitHub.
-* An IRC channel, ```#openxc``` on Freenode (```irc://irc.freenode.net```).
-
-### How to Contribute
-For best results, OpenXC developers should follow these guidelines:
-
-* Sign the one-time [Contributor License Agreement](../contributor-license-agreement.html).
-* Fork the GitHub repository for which you would like to contribute from the [OpenXC Repository List](http://github.com/openxc).
-* Create a branch which will contain the changes that will be made.
-* Make changes, checking-in those changes frequently.
-* When your changes are complete, push your new branch to your GitHub fork.
-* Create and send a pull request for your changes.
-
-For more detailed instructions for how to contribute, see [Contributing Details](/contributors/guide.html).
+For more detailed instructions for how to contribute, see the more detailed [contributing guide](/contributors/guide.html).
