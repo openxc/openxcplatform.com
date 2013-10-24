@@ -31,7 +31,7 @@ before your application will work.</div>
 </div>
 
 You must tell Android and Eclipse that your app intends to use the OpenXC
-library. In the Package Explorer in the left hande side of the Eclipse window,
+library. In the Package Explorer in the left hand side of the Eclipse window,
 right click on your project's top-level folder (e.g. `MyFirstApp`) and select
 `Properties`.
 
@@ -57,6 +57,7 @@ to your app's `AndroidManifest.xml`:
 </application>
 {% endhighlight %}
 
+
 <div class="page-header">
 <h2>VehicleManager Service</h2>
 </div>
@@ -64,8 +65,20 @@ to your app's `AndroidManifest.xml`:
 You must first [bind][] with the [VehicleManager][] Service before you can receive
 any vehicle data.
 
-Add a [ServiceConnection][] to your activity, where it will be executed at object creation time.. You'll use this to store a
+To start, import the VehicleManager class from the OpenXC library.
+
+{% highlight java %}
+import com.openxc.VehicleManager;
+{% endhighlight %}
+
+<sub>**Note**: If you're ever missing an include, you can over over the errored code and
+select to import the necessary class. You can also use Ctrl + Shift + O to import
+any missing classes (Cmd + Shift + O on Mac).</sub>
+
+Next, add a [ServiceConnection][] to your activity, where it will be executed at object creation time. You'll use this to store a
 connection to the OpenXC service.
+
+
 
 {% highlight java %}
 ...
@@ -142,7 +155,18 @@ vehicle.
 Your activity now has a connection to the vehicle service, and you want to be
 notified whenever the speed of the vehicle changes.
 
-Add a [VehicleSpeed.Listener][Listener] instance to your activity:
+First, import the Measurement and VehicleSpeed class from the measurements package, as well as the
+required exception classes.
+
+{% highlight java %}
+
+import com.openxc.measurements.VehicleSpeed;
+import com.openxc.measurements.Measurement;
+import com.openxc.measurements.UnrecognizedMeasurementTypeException;
+import com.openxc.remote.VehicleServiceException;
+{% endhighlight %}
+
+Then add a [VehicleSpeed.Listener][Listener] instance to your activity:
 
 {% highlight java %}
 VehicleSpeed.Listener mSpeedListener = new VehicleSpeed.Listener() {
@@ -158,7 +182,14 @@ ago, register this new `Listener` with the [VehicleManager][].
 {% highlight java %}
 public void onServiceConnected(ComponentName className, IBinder service) {
     ...
+    try {
     mVehicleManager.addListener(VehicleSpeed.class, mSpeedListener);
+    } catch (VehicleServiceException e) {
+        e.printStackTrace();
+    } catch (UnrecognizedMeasurementTypeException e){
+        e.printStackTrace();
+    }
+    ...
 }
 {% endhighlight %}
 
@@ -264,8 +295,9 @@ or the [Vehicle Dashboard][].
 </div>
 
 You've now completed the OpenXC Android tutorial, but there's more to learn
-about supported [Android devices][Android devices] and [vehicle interfaces][]. If you are
-having trouble, check out the
+about supported [Android devices][Android devices] and [vehicle interfaces][]. You can
+also check out the [Android API Guide][Android API Guide] for more information on
+how to use the API. If you are having trouble, check out the
 [troubleshooting](/android/troubleshooting.html) steps.
 
 
@@ -286,3 +318,4 @@ having trouble, check out the
 [Listener]: http://android.openxcplatform.com/reference/com/openxc/measurements/Measurement.Listener.html
 [VehicleSpeed]: http://android.openxcplatform.com/reference/com/openxc/measurements/VehicleSpeed.html
 [TextView]: http://developer.android.com/reference/android/widget/TextView.html
+[Android API Guide]: /android/api-guide.html
