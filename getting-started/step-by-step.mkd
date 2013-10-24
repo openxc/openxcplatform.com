@@ -12,18 +12,7 @@ developing your OpenXC
 application.
 
 <ol>
-    <li>Set up and configure your Workstation
-        <ul>
-            <li><a href="/getting-started/library-installation.html">
-                Set up your Dev Environment</a></li>
-            <li><a href="http://python.openxcplatform.com/#installation">
-                Obtain the Python library and tools</a></li>
-            <li><a
-            href="http://vi-firmware.openxcplatform.com/en/latest/installation/binary.html">
-                Install the necessary tools for flashing firmware to your Vehicle
-                Interface</a></li>
-        </ul>
-    </li>
+    <li><a href="/getting-started/preparing-workstation.html">Set up and configure your Workstation</a></li>
 
     <li>Develop your first OpenXC Android Application
         <ul>
