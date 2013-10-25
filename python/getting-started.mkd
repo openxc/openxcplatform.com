@@ -19,13 +19,40 @@ post to ask for some assistance.
 Visit the [VI firmware page](/vehicle-interface/firmware.html) to find the
 right firmware for your VI and to learn how to re-program it.
 
+<h2 id="cygwin">Windows Setup</h2>
+
+Windows users need to do a little extra setup before installing the OpenXC
+Python library. You need to install Cygwin to use the OpenXC Python command line
+tools and an extra USB driver if you wish to connecto to a vehicle interface via
+USB.
+
+<ol>
+    <li>Download the <strong>32-bit</strong> setup file for <a href=http://www.cygwin.com>Cygwin</a>.</li>
+    <li>Run the Cygwin installer. The Cygwin installer lets you specify additional packages you'd like to include with your
+        Cygwin installation. Make sure to include all of the following packages:
+        <ul>
+            <li>python</li>
+            <li>python-setuptools</li>
+            <li>libusb-win32</li>
+        </ul>
+    </li>
+    <li>If you plan to connect to the vehicle interface via USB, install the
+      <a href=https://github.com/openxc/vi-firmware/tree/master/conf/windows-driver>
+      VI USB Driver</a>.
+</ol>
+
 ## Python Smoke Test
 
 If you don't have an Android device, or you want to write apps using Python, you
 can use a laptop to test.
 
-1. Install the [Python library](http://python.openxcplatform.com/#installation) -
-  don't forget the [USB backend!](http://python.openxcplatform.com/en/latest/#usb).
+1. If you're using Windows, you need to set up [Cygwin](#cygwin) to get a
+   suitable command line environment.
+1. [Install the OpenXC Python
+   library](http://python.openxcplatform.com/#installation) with `pip` or
+   `easy_install` - don't forget the
+   [USB backend](http://python.openxcplatform.com/en/latest/#usb) if you want to
+   connect to the VI via USB instead of Bluetooth.
 1. Attach the programmed VI to your computer with a USB cable, or pair with it
    via Bluetooth and open a serial terminal (the Bluetooth pairing process
    depends on your platform, so we leave that as an exercise for the user). On
