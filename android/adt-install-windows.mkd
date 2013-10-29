@@ -1,0 +1,60 @@
+---
+layout: developer
+title: Android Installation in Windows Walkthrough - OpenXC
+---
+<div class="page-header">
+    <h1>Android Installation in Windows</h1>
+</div>
+
+<ul>
+  <li>
+    Download the Android Developer Tools from Google (<a class="extra-screenshots-controls" href="#extra-android-download">show me</a>)
+    <img class="extra-screenshots" id="extra-android-download" title="Download the ADT" src="/images/android-windows-install/1-download.png"/>
+  </li>
+
+  <li>
+    Choose the option to open the file when the download is completed.
+    (<a class="extra-screenshots-controls" href="#extra-download">show me</a>)
+    <img class="extra-screenshots" id="extra-download" title="Open the Downloaded File When Complete" src="/images/android-windows-install/2-download-open.png"/>
+  </li>
+  <li>
+    The ZIP file should open automatically in an archiver program like 7-Zip.
+    (<a class="extra-screenshots-controls" href="#extra-openzip">show me</a>)
+    <img class="extra-screenshots" id="extra-openzip" title="Open the ZIP file" src="/images/android-windows-install/3-openzip.png"/>
+  </li>
+  <li>
+    Extract the folder to your Documents directory, or another place you would
+    like to keep the Android files. If there's an option to preserve the folder
+    structure in the ZIP, make sure that is <strong>checked</strong>.
+    (<a class="extra-screenshots-controls" href="#extra-extract">show me</a>)
+    <img class="extra-screenshots" id="extra-extract" title="Extract the Android folder" src="/images/android-windows-install/4-extract.png"/>
+  </li>
+  <li>
+    Go to the extracted files in the file browser. You should see
+    <code>eclipse</code> and <code>sdk</code> folders and an <code>SDK
+    Manager.exe</code> file. If you see many more files, then your archiver
+    program did not preserve the folders correctly and you need to re-extract
+    it. Eclipse and the Android SDK Manager will <strong>not work</strong> if
+    the folder structure is lost.
+    (<a class="extra-screenshots-controls" href="#extra-extracted">show me</a>)
+    <img class="extra-screenshots" id="extra-extracted" title="Goto the extracted files" src="/images/android-windows-install/5-extracted.png"/>
+  </li>
+  <li>
+    Go into the <code>eclipse</code> folder and double-click the
+    <code>eclipse</code> executable to run the development environment.
+    (<a class="extra-screenshots-controls" href="#extra-openeclipse">show me</a>)
+    <img class="extra-screenshots" id="extra-openeclipse" title="Open Eclipse" src="/images/android-windows-install/6-open-eclipse.png"/>
+  </li>
+  <li>
+    When prompted, click OK to select the default workspace or select another
+    folder - this is where you Android project files will be stored by default.
+    (<a class="extra-screenshots-controls" href="#extra-workspace">show me</a>)
+    <img class="extra-screenshots" id="extra-workspace" title="Select a workspace" src="/images/android-windows-install/7-workspace.png"/>
+  </li>
+  <li>
+    Eclipse should now be opened, and you can continue with the <a href="/android/library-installation.html#eclipse">setup and
+    tutorial</a>.
+    (<a class="extra-screenshots-controls" href="#extra-done">show me</a>)
+    <img class="extra-screenshots" id="extra-done" title="Completed" src="/images/android-windows-install/8-eclipse-opened.png"/>
+  </li>
+</ul>

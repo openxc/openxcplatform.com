@@ -38,7 +38,7 @@ Android device.
 <li>On your Android phone or tablet, go to <code>Settings -> Bluetooth</code> and click
 <code>Search for Devices</code>. Look for a device named something similar to
 <code>OpenXC-VI-XXXX</code> - select it to pair and use the password <code>1234</code>
-(<a class="extra-screenshots" href="#extra-settings-screenshots">show me</a>)
+(<a class="extra-screenshots-controls" href="#extra-settings-screenshots">show me</a>)
 
 <br/>
 <div class="extra-screenshots" id="extra-settings-screenshots">
@@ -53,7 +53,7 @@ Android device.
 <li>Run the OpenXC Enabler app, go to <code>Settings -> Data Sources</code> and check "Use
 a Bluetooth Vehicle Interface", then click on "Bluetooth Device" and select the
 <code>OpenXC-VI-XXXX</code> device you just paired.
-(<a class="extra-screenshots" href="#extra-enabler-screenshots">show me</a>)
+(<a class="extra-screenshots-controls" href="#extra-enabler-screenshots">show me</a>)
 
 <div class="extra-screenshots" id="extra-enabler-screenshots">
 <img title="OpenXC Enabler App" src="/images/test-screenshots/android-enabler.png"/>
@@ -71,7 +71,7 @@ will now see a <code>BluetoothVehicleInterface</code> in the "Data Sources" list
 VI is plugged into a running vehicle, after a few seconds it will open a
 connection and start receiving vehicle data.
 <br/>
-(<a class="extra-screenshots" href="#extra-active-enabler-screenshots">show me</a>)
+(<a class="extra-screenshots-controls" href="#extra-active-enabler-screenshots">show me</a>)
 
 <div class="extra-screenshots" id="extra-active-enabler-screenshots">
 <img title="OpenXC Enabler App" src="/images/test-screenshots/android-enabler-active-bluetooth.png"/>
