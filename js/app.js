@@ -5,7 +5,7 @@ $(document).ready(function() {
         }
     });
 
-    $('a.extra-screenshots').each(function(i, value) {
+    $('.extra-screenshots-controls').each(function(i, value) {
         $(value).click(function() {
             $($(value).attr("href")).show();
             return false;
