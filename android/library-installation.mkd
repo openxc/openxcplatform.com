@@ -35,6 +35,10 @@ any additional platform versions that you wish to target. You may also need the
 latest [Java
 JDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html).
 
+If you find yourself stuck and you need extra help installing the Android tools
+in Windows, check out this [detailed screenshot
+walkthrough](/android/adt-install-windows.html).
+
 <div class="alert alert-error">
 If you are running 64-bit Ubuntu you will need to install the ia32-libs package.
 Other 64-bit Linux distributions will need to use their package managers to
@@ -43,7 +47,7 @@ install the correct 32-bit libraries.
 
 <div class="alert alert-error">
 If you use an Internet proxy, you will need to configure the proxy settings in
-the Android SDK manager (in `Tools -> Options`).
+the Android SDK manager (in the <code>Tools -> Options</code> menu).
 </div>
 
 Get the [openxc-android][] source code in one of two ways:
