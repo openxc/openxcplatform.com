@@ -1,52 +1,37 @@
 ---
 layout: developer
-title: Firmware - OpenXC
+title: VI Firmware - OpenXC
 ---
 
 <div class="page-header">
     <h1>Vehicle Interface Firmware</h1>
 </div>
 
+Before you can use a vehicle interface (VI), it has to be programmed with a
+firmware that understands data sent by your car. With OpenXC, those are often
+distributed as pre-compiled binaries by car manufacturers. Check the [list of supported
+vehicles](/hardware/vehicles.html) for your car's make and model, and for
+links to download the firmware.
+
+Once you download the binary firmware for your car, look up the instructions for
+your vehicle interface on the [supported VI hardware
+page](/vehicle-interface/hardware.html) - it's different for each.
+
+**Emulator Firmware**
+
+If you don't have access to a car and you want to verify the connection to the
+VI from your host device (or it's winter in Michigan and you'd just rather stay
+inside), there is a simple emulator firmware on the [vi-firmware releases
+page](https://github.com/openxc/vi-firmware/releases)
+(grab `openxc-canemulator-firmware-*.zip` from the latest version). It generates
+fake vehicle data and continuously sends it over USB and Bluetooth as if it were
+live data. It's completely random data, so don't try and build an app against
+it.
+
 <div class="page-header">
-    <h2>Programming a Binary Firmware</h2>
-</div>
-
-Updates to the vehicle interface (VI) firmware are often distributed as
-pre-compiled binaries by car manufacturers that do not want to make their CAN
-message details public. Check the [list of supported
-vehicles](/hardware/vehicles.html) for your car.
-
-Once you download the binary firmware for your car, you must follow the
-instructions for your particular vehicle interface for re-programming. Look for
-your VI on the [supported VI hardware page](/vehicle-interface/hardware.html) to
-find the instructions.
-
-**Emulator**
-
-A very simple CAN bus [emulator
-firmware](http://openxcplatform.com.s3.amazonaws.com/openxc-canemulator-firmware.zip)
-is available to test the connectivity of your vehicle interface with a computer
-or tablet. It generates fake vehicle data and continuously sends it over USB as
-if it were live data.
-
-<div class="page-header">
-    <h2>Custom CAN Signal Definition</h2>
+    <h2>Advanced: Custom CAN Signal Definition</h2>
 </div>
 
 Developers that know the details of the CAN bus they will be using can choose to
-implement their own signal definitions for the translator. The process is
-described in the [building from source
-documentation](http://vi-firmware.openxcplatform.com/en/latest/installation/installation.html).
-
-<div class="page-header">
-<h2>Next Steps</h2>
-</div>
-
-You're now ready to [get started with a quick test or being programming an
-app](/getting-started/index.html).
-
-[winavr]: http://winavr.sourceforge.net/
-[upload_hex.sh]: https://github.com/openxc/vi-firmware/blob/master/script/upload_hex.sh
-[vi-firmware]: https://github.com/openxc/vi-firmware
-[MPIDE]: https://github.com/chipKIT32/chipKIT32-MAX/downloads
-[Cygwin]: http://www.cygwin.com/
+implement their own signal definitions for the VI. The process is
+described in the [advanced firmware docs](/firmware/audience.html).

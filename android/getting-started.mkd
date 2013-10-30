@@ -18,6 +18,11 @@ If you have issues at any point in this process, check for similar issues in the
 [Google Group](http://groups.google.com/group/openxc) and otherwise create a new
 post to ask for some assistance.
 
+<div class="alert alert-error">
+Most importantly, <strong>do not</strong> try to test your application while in
+motion! Testing OpenXC apps while moving is absolutely a two person job.
+</div>
+
 ## Program the Vehicle Interface
 
 Visit the [VI firmware page](/vehicle-interface/firmware.html) to find the
