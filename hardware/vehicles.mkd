@@ -15,9 +15,11 @@ Developer](https://developer.ford.com) website for logged-in users.
 An up-to-date list of exactly which OpenXC messages are supported by each
 vehicle is maintained as a [Google
 Spreadsheet](https://docs.google.com/spreadsheet/ccc?key=0Ajz-75u_7nEydFJxUG4yOVZ1NXJlcjNvdzdSTDdyY0E).
-The spreadsheet also identifies which of the CAN buses each data element is
-available on, so you can make sure to buy or build vehicle interface that
-[connects to the right buses](/vehicle-interface#obd-pins).
+The spreadsheet also identifies which firmware file you should use for your car - e.g.
+type 1, type 2, etc. Finally, it identifies which of the CAN buses each data
+element is available on, so you can make sure to buy or build vehicle interface
+that [connects to the right buses](/vehicle-interface#obd-pins) for the data you
+want.
 
 ## Standard Message Support
 
