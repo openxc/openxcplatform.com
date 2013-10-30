@@ -45,48 +45,12 @@ connection, the Android host device must:
   that attach to the micro-USB port normally used for charging.
 
 <div class="page-header">
-    <h4>Confirmed Supported Android Devices</h4>
+    <h4>Android Device Compatibility</h4>
 </div>
 
-**Supported Tablets**
+For a partial list of supported Android devices, see the [supported
+devices](https://github.com/openxc/openxcplatform.com/wiki/Android-device-compatibility)
+page in the wiki. If you've used another device successfully (or
+unsuccessfully), feel free to update the wiki.
 
-* Google Nexus 7 (gen 1) (using Bluetooth or a USB OTG adapter) - the reference device
-  used by the core OpenXC developers.
-* Google Nexus 7 (gen 2) (using Bluetooth or a USB OTG adapter)
-* [Toshiba Thrive][thrive] 10.1" - another device used by the core OpenXC
-  developers. This tablet includes a full-size USB port.
-* Samsung Galaxy Tab 7.7" (Bluetooth working fine, USB OTG unconfirmed as it
-  requires an additional Samsung adapter)
-
-**Supported Phones**
-
-* Samsung [Galaxy Nexus][galaxynexus] (using Bluetooth or a USB OTG adapter,
-  although the vehicle interface must be powered externally if using USB)
-* Samsung Galaxy S3 (using Bluetooth or a USB OTG adapter)
-* Samsung Galaxy Note GT-N7000 (using Bluetooth or a USB OTG adapter)
-* Micromax Canvas 2 A110 (using Bluetooth or a USB OTG adapter)
-
-<div class="page-header">
-    <h4>Known Unsupported Android Devices</h4>
-</div>
-
-USB will *not* work with [USB A female-female
-adapters](http://www.monoprice.com/products/product.asp?c_id=103&cp_id=10314&cs_id=1031401&p_id=362&seq=1&format=2)
-as they do not pass the neccessary ID pin to use USB OTG on the Android device.
-
-**Unsupported Tablets**
-
-* Karbonn Tablet TA-FONE A37 HD
-* Samsung Galaxy Tab (the original version) - USB host mode is not fully enabled
-  and is not compatible with a USB vehicle interface.
-
-**Unsupported Phones**
-
-* Sony Xperia L
-* Sony Xperia E
-* HTC One (USB OTG Not Support by Stock HTC Rom, but the phone has the required hardware. Other roms, such as
-Cyanogenmod, have been reported to work.)
-
-[thrive]: http://us.toshiba.com/tablets/thrive/10-inch/
-[galaxynexus]: http://www.google.com/nexus/
 [USB devices]: http://developer.android.com/guide/topics/connectivity/usb/index.html
