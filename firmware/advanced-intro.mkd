@@ -32,6 +32,11 @@ CAN bus traffic, making it a low cost and extremely flexible version of some of
 the more expensive industry tools - and one that works on platforms besides
 Windows, too!
 
+The firmware is written in C++, but for most common reading and writing use
+cases, you don't need to write any new code. The CAN signals to translate are
+configured with JSON files - simple, human readable files you can edit in any
+text editor.
+
 ## Getting Started
 
 The best place to start is with the [VI
