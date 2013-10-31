@@ -4,33 +4,38 @@ title: Vehicle Interface Concepts - OpenXC
 ---
 
 <div class="page-header">
-<h1>Concepts</h1>
+<h1>VI Concepts</h1>
 </div>
+
+Before getting too deep into advanced VI firmware programming, make sure you
+understand the terms we use throughout the documentation.
 
 <h2>CAN Bus</h2>
 
 Modern automobiles are laced with a number of microcontrollers and sensors that
 monitor and control everything from the throttle position to the ambient air
-temperature. These devices communicate with each other over a wired in-vehicle
-network, a [CAN bus][can].
+temperature. These devices communicate typically communicate over a wired in-vehicle
+network like a [CAN bus][can].
 
 ![In-vehicle Network](/images/can-diagram.png)
+
 *(Creative Commons, Ford Motor Company)*
 
 Compared to something like the network of the Internet, CAN is relatively simple
-and low-level. CAN buses have 2 wires, and vehicles typically have two or three
-CAN buses running at speeds ranging from 125Kbps to 500Kbps. The protocol used
-to send data between nodes on the network is roughly equivalent to a link layer
-protocol like MAC or ARP. It's a broadcast network and only one node can send
-data at a time. It handles message priorities at the bit level which makes it a
-good choice for vehicle networks, when you absolutely, positively, **must** make
-sure the brake pedal status is sent.
+and low-level. CAN is a 2-wire network, and vehicles typically have two or
+three separate CAN buses running at speeds ranging from 125Kbps (medium speed)
+to 500Kbps (high speed). The protocol used to send data between nodes on the
+network is roughly equivalent to a link layer protocol like MAC or ARP. It's a
+broadcast network and only one node can send data at a time. It handles message
+priorities at the bit level which makes it a good choice for vehicle networks,
+when you absolutely, positively, **must** make sure the brake pedal status is
+sent.
 
 <h3>CAN Data Format</h3>
 
 CAN network traffic is organized into frames (or messages) that have:
 
-* an 11 bit identifier
+* an 11 bit identifier (in standard frames)
 * up to 64 bits of data
 
 Within the 64 bits of data of each **CAN message** there are typically multiple
@@ -79,6 +84,16 @@ The diagnostic request protocol is relatively standard across vehicle
 manufacturers, but beyond the standardized (and mandated) [OBD-II
 parameters](http://en.wikipedia.org/wiki/OBD-II_PIDs), the diagnostic message
 identifiers and formats are also largely proprietary.
+
+Diagnostic style messages aren't currently supported by the VI firmware, but
+there's nothing stopping it from happening - just time and effort.
+
+<div class="page-header">
+<h2>Next Steps</h2>
+</div>
+
+Now that we agree on terminology, continue to the [custom data
+example](/firmware/custom-data-example.html).
 
 [can]: http://en.wikipedia.org/wiki/CAN_bus
 [obd2]: http://en.wikipedia.org/wiki/On-board_diagnostics

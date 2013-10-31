@@ -1,0 +1,302 @@
+---
+layout: developer
+title: Getting Started with Custom Data - OpenXC
+---
+
+<div class="page-header">
+    <h1>Getting Started with Custom Data</h1>
+</div>
+
+In this example, we'll pick a simple use case and walk through how to configure
+and compile the firmware. You'll need to be comfortable getting around at the
+command line, but you don't need to know any C++. The VI firmware can be
+configured and built in Windows, Linux (Ubuntu and Arch are tested) or Mac OS X.
+
+Let's say we have a vehicle with a high speed CAN bus on the standard HS pins,
+connecting to the "CAN1" controller on our vehicle interface. There's a CAN
+message on this bus sent by an ECU, and we want to read one numeric signal from
+the message - for this example, let it be the accelerator pedal position as a
+percentage.
+
+## CAN Message and Signal Details
+
+The message contains driver control signals, so we'll give it the name
+`Driver_Controls` so we can keep track of it. The message ID is `0x102`.
+
+In the message, there is a signal we'll call `Accelerator_Pedal_Pos` that starts
+at bit `5` and is `7` bits wide - enough to represent pedal positions from 0 to
+100.
+
+The value on the bus is exactly how we want it to appear in the translated
+version over USB or Bluetooth. We want the name to be
+`accelerator_pedal_position` and we want to hide the rest of the details.
+
+## JSON Mapping File
+
+The configuration file format used for the VI firmware lis what we call a JSON
+mapping file. [JSON](http://en.wikipedia.org/wiki/JSON) is a human-readable data
+format that's a alternative to XML - we use it because it's easy to parse and
+easy to write by hand and the syntax is fairly obvious. Each configuration file,
+or mapping, is a single JSON object.
+
+### CAN Bus Definition
+
+We'll start by defining the CAN buses that we want to connect - save this in a
+file called `accelerator-config.json`:
+
+{% highlight js %}
+{   "name": "accelerator",
+    "buses": {
+        "hs": {
+            "controller": 1,
+            "speed": 500000
+        }
+    }
+}
+{% endhighlight %}
+
+* We gave this configuration the name `accelerator` - that will show up when we
+  query for the query from the VI.
+* We defined 1 CAN bus and called it `hs` for "high speed" - the name is
+  arbitrary but we'll use it later on, so make it short and sweet. `hs`, `ms`,
+  `info` - these are good names.
+* We configured this bus to be connected to the `#1` controller on the VI -
+  that's typically what's connected to the high speed bus in most vehicles.
+* We set the speed of this CAN bus at 500Kbps - the `speed` attribute is in
+  bytes per second, so we set it to `500000`.
+
+### CAN Message Definition
+
+Next up, let's define the CAN message we want to translate from the bus. Modify
+the file so it looks like this:
+
+{% highlight js %}
+{   "name": "accelerator",
+    "buses": {
+        "hs": {
+            "controller": 1,
+            "speed": 500000
+        }
+    },
+    "messages": {
+        "0x102": {
+            "name": "Driver_Controls"
+        }
+    }
+}
+{% endhighlight %}
+
+* We added a `messages` field to the JSON object.
+* We added a `0x102` field to `messages` - that's our CAN message's ID and we
+  use it here as a "key" for the object.
+* Within the `0x102` message object, we set the name of the message. This is
+  just used in comments so we can keep track of which message is which, rather
+  than memorizing the ID.
+
+### CAN Signal Definition
+
+Don't stop yet...we have to define our CAN signal before anything will be
+translated. Modify the file again:
+
+{% highlight js %}
+{   "name": "accelerator",
+    "buses": {
+        "hs": {
+            "controller": 1,
+            "speed": 500000
+        }
+    },
+    "messages": {
+        "0x102": {
+            "name": "Driver_Controls",
+            "signals": {
+                "Accelerator_Pedal_Pos": {
+                    "generic_name": "accelerator_pedal_position",
+                    "bit_position": 5,
+                    "bit_size": 7
+                }
+            }
+        }
+    }
+}
+{% endhighlight %}
+
+* We added a `signals` field to the `0x102` message object, after the `name`.
+  The order doesn't matter, just watch out for the commas required after each
+  field and value pair. There's no comma after the last field in an object.
+* We added an `Accelerator_Pedal_Pos` field in the `signals` object - that's the
+  name of the signal, and like the message name, this is just for human
+  readability.
+* The `generic_name` is what the `name` field will be in the translated format
+  over USB and Bluetooth - we set it to `accelerator_pedal_position`.
+* We set the `bit_position` and `bit_size` for the signal.
+
+That's it - the configuration is finished. When we compile the VI firmware with
+this configuration, it will read our CAN message from the bus, parse and
+translate it into a JSON output message with a `name` and `value`, and send it
+out over USB and Bluetooth. Next, we'll walk through how to do the compilation.
+
+## Compiling the VI Firmware
+
+### Environment Setup
+
+Before we can compile, we need to set up our development environment. Bear with
+it...there's a few steps but you only have to do it once!
+
+When you see `$` it means this is a shell command - run the command after the
+`$` but don't include it. The example shell commands may also be prefixed with a
+folder name, if it needs to be run from a particular location.
+
+#### Windows
+
+Download [Cygwin](http://www.cygwin.com) and run the installer - during the
+installation process, select these packages:
+
+    make, gcc, patchutils, git, unzip, python, check, curl, libsasl2, python-setuptools
+
+After it's installed, open a new Cygwin terminal and configure it to ignore
+Windows-style line endings in scripts by running this command:
+
+{% highlight sh %}
+$ set -o igncr && export SHELLOPTS
+{% endhighlight %}
+
+#### Linux
+
+We need to install Git from our distribution's package manager.
+
+In Ubuntu:
+
+{% highlight sh %}
+$ sudo apt-get install git
+{% endhighlight %}
+
+In Arch Linux:
+
+{% highlight sh %}
+$ [sudo] pacman -S git
+{% endhighlight %}
+
+#### OS X
+
+Open the Terminal app and install [Homebrew](http://mxcl.github.com/homebrew/)
+by running this command:
+
+{% highlight sh %}
+$ ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"
+{% endhighlight %}
+
+Once Homebrew is installed, use it to install Git:
+
+{% highlight sh %}
+$ brew install git
+{% endhighlight %}
+
+#### All Platforms
+
+If we're on a network that requires an Internet proxy (e.g. at work on a
+corporate network) set these environment variables.
+
+{% highlight sh %}
+$ export http_proxy=<your proxy>
+$ export https_proxy=$http_proxy
+$ export all_proxy=$http_proxy
+{% endhighlight %}
+
+Clone the [vi-firmware](https://github.com/openxc/vi-firmware) repository:
+
+{% highlight sh %}
+$ git clone https://github.com/openxc/vi-firmware
+{% endhighlight %}
+
+Run the `bootstrap.sh` script:
+
+{% highlight sh %}
+$ cd vi-firmware
+vi-firmware/ $ script/bootstrap.sh
+{% endhighlight %}
+
+If there were no errors, we are ready to compile. If there are errors, try to
+follow the recommendations in the error messages. You may need to manually
+install the dependencies if your environment is not in a predictable state. The
+`bootstrap.sh` script is tested in Cygwin, OS X Mountain Lion, Ubuntu 12.04 and
+Arch Linux.
+
+### Testing Compilation
+
+Let's confirm the development environment is set up correctly by compiling the
+emulator version of the firmware. Move to the `vi-firmware/src` directory and
+compile the emulator for the [reference VI from
+Ford](http://vi.openxcplatform.com):
+
+    vi-firmware/ $ cd src
+    vi-firmware/src $ PLATFORM=FORDBOARD make emulator
+    Compiling for FORDBOARD...
+    ...
+    Compiled successfully for FORDBOARD running under a bootloader.
+
+There will be a lot more output when you run this but it should end with
+`Compiled successfully...`. If you got an error, try and follow what it
+recommends, then look at the troubleshooting section, and finally ask for help
+on the [Google Group](/overview/discuss.html).
+
+### Compiling, False Start
+
+Assuming the emulator compiled successfully , we're ready to build for an actual
+live CAN bus. Clean up the build to make sure the emulator doesn't conflict:
+
+{% highlight sh %}
+vi-firmware/src $ make clean
+{% endhighlight %}
+
+and then compile for a real vehicle - just leave off the `emulator` option:
+
+{% highlight sh %}
+vi-firmware/src $ PLATFORM=FORDBOARD make
+{% endhighlight %}
+
+Whoa - we just a bunch of errors about an `undefined reference` like this:
+
+    vi_firmware.cpp:55: undefined reference to `openxc::signals::getCanBuses()'
+
+What's going on? The open source VI firmware doesn't include any CAN message
+definitions by default. In fact there is no implementation of the C++ file
+`signals.cpp`, one that's required to build - we need to implement the
+functions defined in `signals.h` before the firmware will compile.
+
+### Compiling with the Missing Link
+
+Didn't we say that we didn't have to know how to write C++, though? Correct!
+We've reached the final piece - the OpenXC Python library includes a tool that
+will *generate the C++ for `signals.cpp`* from the JSON configuration file we
+wrote earlier.
+
+From the environment setup, we already have the OpenXC Python library installed.
+Assuming the `accelerator-config.json` file is in our home directory, run this
+to generate a valid `signals.cpp` for our CAN signal:
+
+{% highlight sh %}
+vi-firmware/src $ openxc-generate-firmware-code --message-set ~/accelerator-config.json > signals.cpp
+{% endhighlight %}
+
+and then try compiling again:
+
+    vi-firmware/src $ PLATFORM=FORDBOARD make
+    Compiling for FORDBOARD...
+    15 Compiling build/FORDBOARD/signals.o
+    Producing build/FORDBOARD/vi-firmware-FORDBOARD.elf
+    Producing build/FORDBOARD/vi-firmware-FORDBOARD.bin
+    Compiled successfully for FORDBOARD running under a bootloader.
+
+Success! The compiled firmware is located at
+`build/FORDBOARD/vi-firmware-FORDBOARD.bin`. We can use the same VI re-flashing
+procedure that we used for a binary firmware from an automaker with our custom
+firmware - the process is going to depend on the VI you have, so see the list of
+[supported VIs](/vehicle-interface/hardware.html) to find the right instructions.
+
+There's a *lot* more you can do with the firmware - many more CAN signals
+simultaneously, raw CAN messages, advanced data transformation, etc. For complete
+details, see the [VI Firmware docs](http://vi-firmware.openxcplatform.com/). YOu
+can find the right `PLATFORM` value for your VI in the [VI firmware supported
+platforms
+page](http://vi-firmware.openxcplatform.com/en/latest/platforms/platforms.html).

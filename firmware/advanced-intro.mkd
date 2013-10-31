@@ -1,0 +1,50 @@
+---
+layout: developer
+title: Advanced Firmware Development - OpenXC
+---
+
+<div class="page-header">
+    <h1>Advanced Firmware Development</h1>
+</div>
+
+So you've seen the [available binary firmware](/vehicle-interface/firmware.html)
+and you're not satisfied. Your car's automaker doesn't support OpenXC yet, or
+want some data that's not made available - you really need to know the engine
+oil pressure, and it's not in any binary firmware. Maybe you work for a car
+company or an aftermarket supplier and you want to support some completely
+custom application, or you want to write some messages back to the bus.
+
+You're in luck - OpenXC can support all of these use cases. The core of the
+vehicle data translation resides in the firmware that runs on the vehicle
+interface. Besides knowing how to connect to the CAN bus and how to send data
+out over USB and Bluetooth, the firmware is also programmed with
+vehicle-specific knowledge that allows it to pick out the right messages from
+the car and translate the data into something you can use in your application.
+
+The core of the firmware is open source - not the vehicle-specific parts, but
+the framework that makes it easy to do the translation once you understand the
+vehicle. When an automaker releases a binary firmware for an OpenXC VI, they're
+probably taking the open source firmware, mixing in their proprietary vehicle
+knowledge, and send you the resulting compiled binary.
+
+The OpenXC VI firmware is also increasingly capable of reading and writing raw
+CAN bus traffic, making it a low cost and extremely flexible version of some of
+the more expensive industry tools - and one that works on platforms besides
+Windows, too!
+
+The firmware is written in C++, but for most common reading and writing use
+cases, you don't need to write any new code. The CAN signals to translate are
+configured with JSON files - simple, human readable files you can edit in any
+text editor.
+
+## Getting Started
+
+The best place to start is with the [VI
+Concepts](/vehicle-interface/concepts.html) page, to make sure you understand
+all of the concepts and terms required to build the VI firmware from source. The
+auto industry tends to be fairly jargon-laden, so even if you're an expert it's
+good to make sure we have the same understanding or the definitions.
+
+Once you've read that (or if you're feeling confident...) jump into the [custom
+CAN signal example](/firmware/custom-data-example.html) for a brief introduction
+to compiling the firmware to translate a new piece of data from the car.

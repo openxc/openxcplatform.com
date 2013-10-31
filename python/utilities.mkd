@@ -1,0 +1,55 @@
+---
+layout: developer
+title: Vehicle Interface Utilities - OpenXC
+---
+
+<div class="page-header">
+    <h1>Vehicle Interface Utilities</h1>
+</div>
+
+The `openxc-dashboard` tool available as a part of the [OpenXC Python
+library][python-lib] can be used to view the output of the vehicle interface
+over USB or UART. This is the most useful tool when determining which vehicle
+signals are working.
+
+The Python library can be installed with `pip`:
+
+{% highlight sh %}
+$ pip install openxc
+{% endhighlight %}
+
+Once installed, you can use any of the [tools it provides][python-lib].
+
+{% highlight sh %}
+# Show a dashboard summary of the current values
+$ openxc-dashboard
+...
+
+# Show a real-time stream of all messages
+$ openxc-dump
+...
+{% endhighlight %}
+
+It may also be necessary to check the current version of the software you have
+on a vehicle interface - the `openxc-control` tool can tell you that.
+
+{% highlight sh %}
+$ openxc-control version
+Device is running version 1.1
+{% endhighlight %}
+
+You can also write a message back to the vehicle interface (which may or may not
+write it through to the CAN bus, depending on if it is an approved signal or
+not):
+
+{% highlight sh %}
+$ openxc-control write --name steering_wheel_angle --value 42.0
+{% endhighlight %}
+
+You can write raw CAN messages, too:
+
+{% highlight sh %}
+$ openxc-control write --bus 1 --id 42 --data 0x1234
+{% endhighlight %}
+
+[python-lib]: https://github.com/openxc/openxc-python
