@@ -226,13 +226,14 @@ Arch Linux.
 
 Let's confirm the development environment is set up correctly by compiling the
 emulator version of the firmware. Move to the `vi-firmware/src` directory and
-compile the emulator for the chipKIT VI:
+compile the emulator for the [reference VI from
+Ford](http://vi.openxcplatform.com):
 
     vi-firmware/ $ cd src
-    vi-firmware/src $ PLATFORM=CHIPKIT make emulator
-    Compiling for CHIPKIT...
+    vi-firmware/src $ PLATFORM=FORDBOARD make emulator
+    Compiling for FORDBOARD...
     ...
-    Compiled successfully for CHIPKIT running under a bootloader.
+    Compiled successfully for FORDBOARD running under a bootloader.
 
 There will be a lot more output when you run this but it should end with
 `Compiled successfully...`. If you got an error, try and follow what it
@@ -251,7 +252,7 @@ vi-firmware/src $ make clean
 and then compile for a real vehicle - just leave off the `emulator` option:
 
 {% highlight sh %}
-vi-firmware/src $ PLATFORM=CHIPKIT make
+vi-firmware/src $ PLATFORM=FORDBOARD make
 {% endhighlight %}
 
 Whoa - we just a bunch of errors about an `undefined reference` like this:
@@ -280,19 +281,22 @@ vi-firmware/src $ openxc-generate-firmware-code --message-set ~/accelerator-conf
 
 and then try compiling again:
 
-    vi-firmware/src $ PLATFORM=CHIPKIT make
-    Compiling for CHIPKIT...
-    15 Compiling build/CHIPKIT/signals.o
-    Producing build/CHIPKIT/vi-firmware-CHIPKIT.elf
-    Producing build/CHIPKIT/vi-firmware-CHIPKIT.hex
-    Compiled successfully for CHIPKIT running under a bootloader.
+    vi-firmware/src $ PLATFORM=FORDBOARD make
+    Compiling for FORDBOARD...
+    15 Compiling build/FORDBOARD/signals.o
+    Producing build/FORDBOARD/vi-firmware-FORDBOARD.elf
+    Producing build/FORDBOARD/vi-firmware-FORDBOARD.bin
+    Compiled successfully for FORDBOARD running under a bootloader.
 
 Success! The compiled firmware is located at
-`build/CHIPKIT/vi-firmware-CHIPKIT.hex`. We can use the same VI re-flashing
+`build/FORDBOARD/vi-firmware-FORDBOARD.bin`. We can use the same VI re-flashing
 procedure that we used for a binary firmware from an automaker with our custom
 firmware - the process is going to depend on the VI you have, so see the list of
 [supported VIs](/vehicle-interface/hardware.html) to find the right instructions.
 
 There's a *lot* more you can do with the firmware - many more CAN signals
 simultaneously, raw CAN messages, advanced data transformation, etc. For complete
-details, see the [VI Firmware docs](http://vi-firmware.openxcplatform.com/).
+details, see the [VI Firmware docs](http://vi-firmware.openxcplatform.com/). YOu
+can find the right `PLATFORM` value for your VI in the [VI firmware supported
+platforms
+page](http://vi-firmware.openxcplatform.com/en/latest/platforms/platforms.html).
