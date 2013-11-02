@@ -7,10 +7,6 @@ title: Getting Started - OpenXC
     <h1>Getting Started</h1>
 </div>
 
-To start developing using OpenXC, you'll want to check out
-the [Preparing your Workstation][Preparing your Workstation] page to make
-sure you have everything you'll need.
-
 So, what are you looking to do?
 
 Are you looking to develop an **Android app**?
