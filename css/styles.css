@@ -68,3 +68,7 @@ h2:before, h3:before {
 .extra-screenshots {
     display: none;
 }
+
+button.getting-started {
+    margin-bottom: 15px;
+}
