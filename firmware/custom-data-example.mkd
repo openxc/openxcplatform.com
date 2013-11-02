@@ -80,7 +80,8 @@ the file so it looks like this:
     },
     "messages": {
         "0x102": {
-            "name": "Driver_Controls"
+            "name": "Driver_Controls",
+            "bus": "hs"
         }
     }
 }
@@ -89,9 +90,11 @@ the file so it looks like this:
 * We added a `messages` field to the JSON object.
 * We added a `0x102` field to `messages` - that's our CAN message's ID and we
   use it here as a "key" for the object.
-* Within the `0x102` message object, we set the name of the message. This is
-  just used in comments so we can keep track of which message is which, rather
-  than memorizing the ID.
+* Within the `0x102` message object:
+  * We set the name of the message. This is just used in comments so we can keep
+    track of which message is which, rather than memorizing the ID.
+  * We set the `bus` field to `hs`, so this message will be pulled from the bus
+    we defined (and named `hs`).
 
 ### CAN Signal Definition
 
