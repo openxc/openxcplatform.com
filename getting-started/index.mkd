@@ -30,7 +30,7 @@ Get Started with the Python Library
 Are you a vehicle network expert, or do you want to **contribute to the embedded
 vehicle interface firmware**?
 
-<a href="/vehicle-interface/advanced-intro.html">
+<a href="/firmware/advanced-intro.html">
 <button type="button" class="btn btn-info btn-lg getting-started">
 Get Started with the Vehicle Interface Firmware
 </button>
