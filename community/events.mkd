@@ -7,6 +7,12 @@ title: Events - OpenXC
     <h1>Events</h1>
 </div>
 
+## London Traffic Tamer App Challenge
+Ford is currently sponsoring the [Traffic Tamer App Challenge](http://traffic.challengepost.com)
+aimed at solving the issue of traffic congestion in the city of London. Part of this
+challenge encourages developers to use OpenXC in their solution to address the problem.
+Submissions are open from October 23rd, 2013 to January 15th, 2014. 
+
 ## Personalized Fuel Efficiency Challenge
 
 On March 27th, Ford launched a [challenge](http://ford.challengepost.com) to the
