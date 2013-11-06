@@ -92,8 +92,9 @@ there's nothing stopping it from happening - just time and effort.
 <h2>Next Steps</h2>
 </div>
 
-Now that we agree on terminology, continue to the [custom data
-example](/firmware/custom-data-example.html).
+Now that we agree on terminology, continue to the [custom data example in the VI
+firmware
+docs](http://vi-firmware.openxcplatform.com/en/latest/config/getting-started.html).
 
 [can]: http://en.wikipedia.org/wiki/CAN_bus
 [obd2]: http://en.wikipedia.org/wiki/On-board_diagnostics
