@@ -251,10 +251,11 @@ list of `Measurement` Java classes that you can use in the
 [library documentation][].
 
 <div class="page-header">
-<h2>Completed Example</h2>
+<h2>Testing</h2>
 </div>
 
-If you're having trouble or want to double check your work, check out a completed Eclipse project [here](https://github.com/openxc/openxc-starter).
+If you're having trouble or want to double check your work, check out a
+completed Eclipse project [here](https://github.com/openxc/openxc-starter).
 
 Your Android device likely doesn't have any vehicle data flowing through it yet.
 The next step is to use a pre-recorded vehicle trace file to simulate a real
