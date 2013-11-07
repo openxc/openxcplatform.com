@@ -305,7 +305,7 @@ how to use the API. If you are having trouble, check out the
 [gg]: http://groups.google.com/group/openxc
 [vehicle interfaces]: /vehicle-interface/hardware.html
 [Android devices]: /android/hardware.html
-[library project]: /getting-started/library-installation.html
+[library project]: /android/library-installation.html
 [Vehicle Dashboard]: https://github.com/openxc/openxc-android/tree/master/examples
 [MPG]: https://github.com/openxc/mpg
 [Android service]: http://developer.android.com/guide/components/services.html

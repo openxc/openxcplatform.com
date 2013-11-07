@@ -339,7 +339,7 @@ application's `AndroidManifest.xml` - just the [VehicleManager][] service.
 [VehicleService]: http://android.openxcplatform.com/reference/com/openxc/remote/VehicleService.html
 [VehicleSpeed]: http://android.openxcplatform.com/reference/com/openxc/measurements/VehicleSpeed.html
 [Measurement]: http://android.openxcplatform.com/reference/com/openxc/measurements/Measurement.html
-[Enabler]: /getting-started/library-installation.html#enabler
+[Enabler]: /android/library-installation.html#enabler
 [tutorial]: /android/tutorial.html
 [aidl]: http://developer.android.com/guide/components/aidl.html
 [trace file]: /android/testing.html

@@ -12,7 +12,7 @@ test it in a car with your Android device or laptop.
 
 If you want to start working on an Android application before buying any
 hardware, you can skip ahead to the [Android library
-setup](/getting-started/library-installation.html).
+setup](/android/library-installation.html).
 
 If you have issues at any point in this process, check for similar issues in the
 [Google Group](http://groups.google.com/group/openxc) and otherwise create a new

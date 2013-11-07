@@ -7,4 +7,4 @@ title: Library Setup - OpenXC
     <h1>Android Library Installation</h1>
 </div>
 
-This page has [moved](/getting-started/library-installation.html).
+This page has [moved](/android/library-installation.html).
