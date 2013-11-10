@@ -106,7 +106,7 @@ In the `onCreate()` method of your activity, request to bind with the service
 with your new ServiceConnection instance:
 
 {% highlight java %}
-protected void onCreate()) {
+protected void onCreate() {
     super.onCreate();
 
     ...
