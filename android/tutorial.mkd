@@ -102,17 +102,18 @@ private ServiceConnection mConnection = new ServiceConnection() {
 };
 {% endhighlight %}
 
-In the `onStart()` method of your activity, request to bind with the service
+In the `onCreate()` method of your activity, request to bind with the service
 with your new ServiceConnection instance:
 
 {% highlight java %}
-protected void onStart()) {
-    super.onStart();
+protected void onCreate()) {
+    super.onCreate();
 
     ...
     Intent intent = new Intent(this, VehicleManager.class);
-    if (!mBound)
-         mBound = bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
+    if(!mBound) {
+      mBound = bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
+    }
 }
 {% endhighlight %}
 
