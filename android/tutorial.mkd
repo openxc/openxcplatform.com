@@ -40,6 +40,10 @@ There should now be a `Library` section on the right side. Click the `Add`
 button, and add the `openxc` project. It should now show up in the Library list
 with a green check mark.
 
+Next, you need to open the `libs` folder in your project and delete the file
+`android-support-v4.jar` - there's already a version of this in the OpenXC
+library and they will conflict.
+
 <div class="page-header">
 <h2>Android Manifest</h2>
 </div>
