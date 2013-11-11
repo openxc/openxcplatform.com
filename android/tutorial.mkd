@@ -156,21 +156,21 @@ vehicle.
 Your activity now has a connection to the vehicle service, and you want to be
 notified whenever the speed of the vehicle changes.
 
-First, import the Measurement and VehicleSpeed class from the measurements package, as well as the
+First, import the Measurement and EngineSpeed class from the measurements package, as well as the
 required exception classes.
 
 {% highlight java %}
 
-import com.openxc.measurements.VehicleSpeed;
+import com.openxc.measurements.EngineSpeed;
 import com.openxc.measurements.Measurement;
 import com.openxc.measurements.UnrecognizedMeasurementTypeException;
 import com.openxc.remote.VehicleServiceException;
 {% endhighlight %}
 
-Then add a [VehicleSpeed.Listener][Listener] instance to your activity:
+Then add a [EngineSpeed.Listener][Listener] instance to your activity:
 
 {% highlight java %}
-VehicleSpeed.Listener mSpeedListener = new VehicleSpeed.Listener() {
+EngineSpeed.Listener mSpeedListener = new EngineSpeed.Listener() {
     public void receive(Measurement measurement) {
         // do stuff with the measurement
     }
@@ -184,7 +184,7 @@ ago, register this new `Listener` with the [VehicleManager][].
 public void onServiceConnected(ComponentName className, IBinder service) {
     ...
     try {
-    mVehicleManager.addListener(VehicleSpeed.class, mSpeedListener);
+    mVehicleManager.addListener(EngineSpeed.class, mSpeedListener);
     } catch (VehicleServiceException e) {
         e.printStackTrace();
     } catch (UnrecognizedMeasurementTypeException e){
@@ -194,7 +194,7 @@ public void onServiceConnected(ComponentName className, IBinder service) {
 }
 {% endhighlight %}
 
-Now, every time a new value for [VehicleSpeed][] is received by the
+Now, every time a new value for [EngineSpeed][] is received by the
 [VehicleManager][], the `receive(Measurement)` method of the new [Listener][]
 will be called with the data.
 
@@ -222,10 +222,10 @@ and add an `id` attribute to the exiting "hello world" `TextView`:
 Grab a reference to that text object in your activity's `onCreate()`:
 
 {% highlight java %}
-private TextView mVehicleSpeedView;
+private TextView mEngineSpeedView;
 public void onCreate(Bundle savedInstanceState) {
     ...
-    mVehicleSpeedView = (TextView) findViewById(R.id.vehicle_speed);
+    mEngineSpeedView = (TextView) findViewById(R.id.vehicle_speed);
 }
 {% endhighlight %}
 
@@ -234,10 +234,10 @@ one:
 
 {% highlight java %}
 public void receive(Measurement measurement) {
-    final VehicleSpeed speed = (VehicleSpeed) measurement;
+    final EngineSpeed speed = (EngineSpeed) measurement;
     MainActivity.this.runOnUiThread(new Runnable() {
         public void run() {
-            mVehicleSpeedView.setText(
+            mEngineSpeedView.setText(
                 "Vehicle speed (km/h): " + speed.getValue().doubleValue());
         }
     });
@@ -318,6 +318,6 @@ how to use the API. If you are having trouble, check out the
 [library documentation]: http://android.openxcplatform.com/reference/com/openxc/measurements/package-summary.html
 [ServiceConnection]: http://developer.android.com/reference/android/content/ServiceConnection.html
 [Listener]: http://android.openxcplatform.com/reference/com/openxc/measurements/Measurement.Listener.html
-[VehicleSpeed]: http://android.openxcplatform.com/reference/com/openxc/measurements/VehicleSpeed.html
+[EngineSpeed]: http://android.openxcplatform.com/reference/com/openxc/measurements/EngineSpeed.html
 [TextView]: http://developer.android.com/reference/android/widget/TextView.html
 [Android API Guide]: /android/api-guide.html
