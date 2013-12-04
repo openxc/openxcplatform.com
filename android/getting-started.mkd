@@ -56,17 +56,15 @@ Android device.
 </li>
 
 <li>Run the OpenXC Enabler app, go to <code>Settings -> Data Sources</code> and check "Use
-a Bluetooth Vehicle Interface", then click on "Bluetooth Device" and select the
-<code>OpenXC-VI-XXXX</code> device you just paired.
+a Bluetooth Vehicle Interface". The "Bluetooth Device" preference below that
+should have "Automatic" selected - this will connect to the first paired OpenXC
+VI it finds.
 (<a class="extra-screenshots-controls" href="#extra-enabler-screenshots">show me</a>)
 
 <div class="extra-screenshots" id="extra-enabler-screenshots">
 <img title="OpenXC Enabler App" src="/images/test-screenshots/android-enabler.png"/>
 <img title="OpenXC Enabler App" src="/images/test-screenshots/android-enabler-settings.png"/>
 <img title="OpenXC Enabler App" src="/images/test-screenshots/android-enabler-settings-bluetooth.png"/>
-<img title="OpenXC Enabler App" src="/images/test-screenshots/android-enabler-settings-bluetooth-device.png"/>
-<img title="OpenXC Enabler App" src="/images/test-screenshots/android-enabler-settings-bluetooth-device-selected.png"/>
-<img title="OpenXC Enabler App" src="/images/test-screenshots/android-enabler-settings-bluetooth-device-selected-selected.png"/>
 </div>
 
 </li>
