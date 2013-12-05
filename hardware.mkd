@@ -12,24 +12,18 @@ vehicle you need a few parts.
 
 You need a **compatible vehicle interface (VI)**.
 
-<a href="/vehicle-interface/hardware.html">
-<button type="button" class="btn btn-primary btn-lg">
+<a href="/vehicle-interface/hardware.html" class="btn btn-primary btn-lg">
 See all supported VIs
-</button>
 </a>
 
 You need a **compatible host device**, most likely an Android tablet or phone.
 
-<a href="/host-devices/hardware.html">
-<button type="button" class="btn btn-success btn-lg">
+<a class="btn btn-success btn-lg" href="/host-devices/hardware.html">
 See all host devices
-</button>
 </a>
 
 To run with live data, you need a **compatible vehicle**.
 
-<a href="/hardware/vehicles.html">
-<button type="button" class="btn btn-info btn-lg">
+<a class="btn btn-primary btn-lg" href="/hardware/vehicles.html">
 See all compatible vehicles
-</button>
 </a>

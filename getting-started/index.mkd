@@ -12,44 +12,34 @@ So, what are you looking to do?
 Are you looking to develop an **Android app**, or did you just buy a vehicle
 interface and want to test it?
 
-<a href="/android/getting-started.html">
-<button type="button" class="btn btn-primary btn-lg getting-started">
+<a class="btn btn-success btn-lg"  href="/android/getting-started.html">
 Get Started with the Android Library
-</button>
 </a>
 
 Are you looking to develop an **Python app**, or you want to analyze data from
 your car on a laptop?
 
-<a href="/python/getting-started.html">
-<button type="button" class="btn btn-success btn-lg getting-started">
+<a class="btn btn-primary btn-lg"  href="/python/getting-started.html">
 Get Started with the Python Library
-</button>
 </a>
 
 Are you a vehicle network expert, or do you want to **contribute to the embedded
 vehicle interface firmware**?
 
-<a href="/firmware/advanced-intro.html">
-<button type="button" class="btn btn-info btn-lg getting-started">
+<a class="btn btn-info btn-lg"  href="/firmware/advanced-intro.html">
 Get Started with the Vehicle Interface Firmware
-</button>
 </a>
 
 Do you want to create an app or tool in another programming language or
 development environment?
 
-<a href="https://github.com/openxc/openxc-message-format">
-<button type="button" class="btn btn-primary btn-lg getting-started">
+<a class="btn btn-success btn-lg"  href="https://github.com/openxc/openxc-message-format">
 Read the VI Output Format Specs
-</button>
 </a>
 
 If you're not sure what you want, try the step-by-step guide for setting
 everything up:
 
-<a href="/getting-started/step-by-step.html">
-<button type="button" class="btn btn-primary btn-lg getting-started">
+<a class="btn btn-primary btn-lg"  href="/getting-started/step-by-step.html">
 Step-by-step Getting Started Guide
-</button>
 </a>
