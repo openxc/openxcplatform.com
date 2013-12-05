@@ -3,20 +3,19 @@
 <head>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Overview - OpenXC</title>
+    <title>{{ page.title }}</title>
 
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
 
     <link rel="stylesheet" type="text/css"
-            href="/css/vendor/bootstrap-2.0.4.min.css">
+            href="/static/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="screen"
-        href="/css/styles.css"/>
-    <link rel="stylesheet" type="text/css"
-            href="/css/vendor/bootstrap-responsive-2.0.4.min.css">
+        href="/static/css/styles.css"/>
 
     <link rel="stylesheet" type="text/css" media="screen"
-        href="/css/pygments/default.css"/>
+        href="/static/css/pygments/default.css"/>
 
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -25,28 +24,29 @@
 
 <body>
 
-<div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-        <div class="container-fluid">
-            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </a>
-            <a class ="brand" href="/"><img src="/images/openxc-logo.png"
-                alt="OpenXC"/></a>
-            <div class="nav-collapse">
-                <ul class="nav">
-                </ul>
-            </div>
-        </div>
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/"><img src="/images/openxc-logo.png"
+          alt="OpenXC"/>
+      </a>
     </div>
+
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="{% if page.section == 'about' %}active{% endif %}"><a href="/overview/index.html">About</a></li>
+        <li class="{% if page.section == 'developer' %}active{% endif %}"><a href="/getting-started/index.html">Developers</a></li>
+        <li class="{% if page.section == 'hardware' %}active{% endif %}"><a href="/hardware.html">Hardware</a></li>
+        <li class="{% if page.section == 'community' %}active{% endif %}"><a href="/overview/discuss.html">Community</a></li>
+      </ul>
+    </div>
+  </div>
 </div>
 
-<div class="container-fluid">
+<div class="container">
     <div class="row">
 
-        <div class="span12">
+        <div class="col-md-12">
           <div class="page-header">
             <h1>Not Found (404)</h1>
         </div>
@@ -54,20 +54,25 @@
         <p>We couldn't find the page you were looking for - try starting at the
           <a href="/">OpenXC home page</a>.
         </p>
-
-            <footer>
-                <p>
-                    Except as otherwise noted, the content of this page is licensed
-                    under the
-                    <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License.</a>
-                </p>
-                <ul class="footer-links">
-                    <li><a href="/privacy.html">Privacy Policy</a></li>
-                </ul>
-            </footer>
-        </div>
     </div>
+
+    <footer>
+        <p>
+            Except as otherwise noted, the content of this page is licensed
+            under the
+            <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License.</a>
+        </p>
+        <ul class="footer-links">
+            <li><a href="/privacy.html">Privacy Policy</a></li>
+        </ul>
+    </footer>
 </div>
+
+<script
+    src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="/static/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/static/js/app.js"></script>
+<script type="text/javascript" src="/static/bootstrap/js/transition.js"></script>
 
 <script type="text/javascript">
 

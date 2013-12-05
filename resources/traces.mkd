@@ -14,7 +14,7 @@ These files are delivered as gzip compressed files, so if you download one and
 it seems to be corrupted binary, try again using an updated browser - it should
 auto-detect an uncompress when you download:
 
-<div class="alert alert-error">
+<div class="alert alert-danger">
      Some Android devices' browsers will continue to have problems
      with the gzipped files.  Skip to the next section to get
      uncompressed traces if you are having problems on Android.

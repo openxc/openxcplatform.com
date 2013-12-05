@@ -13,36 +13,36 @@ formats. If you need the source image, it's available either for
 [Illustrator](/images/logos/openxc-logo-color.ai) (.ai).
 
 <a href="/images/logos/openxc-logo-whiteonblack.png">
-<img src="/images/logos/openxc-logo-whiteonblack-thumb.png"/>
+<img class="img-responsive" src="/images/logos/openxc-logo-whiteonblack-thumb.png"/>
 </a>
 
 * White logo on black background
 
 <a href="/images/logos/openxc-logo-blackbg.png">
-<img src="/images/logos/openxc-logo-blackbg-thumb.png"/>
+<img class="img-responsive" src="/images/logos/openxc-logo-blackbg-thumb.png"/>
 </a>
 
 * Black logo on white background
 
 <a href="/images/logos/openxc-logo-blackonwhite.png">
-<img src="/images/logos/openxc-logo-blackonwhite-thumb.png"/>
+<img class="img-responsive" src="/images/logos/openxc-logo-blackonwhite-thumb.png"/>
 </a>
 
 * Color logo on gray Background
 
 <a href="/images/logos/openxc-logo-gray.png">
-<img src="/images/logos/openxc-logo-gray-thumb.png"/>
+<img class="img-responsive" src="/images/logos/openxc-logo-gray-thumb.png"/>
 </a>
 
 * Color logo on transparent background
 
 <a href="/images/logos/openxc-logo-transparent.png">
-<img src="/images/logos/openxc-logo-transparent-thumb.png"/>
+<img class="img-responsive" src="/images/logos/openxc-logo-transparent-thumb.png"/>
 </a>
 
 * Color logo on white background
 
 <a href="/images/logos/openxc-logo-whitebg.png">
-<img src="/images/logos/openxc-logo-whitebg-thumb.png"/>
+<img class="img-responsive" src="/images/logos/openxc-logo-whitebg-thumb.png"/>
 </a>
 

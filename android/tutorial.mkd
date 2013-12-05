@@ -18,7 +18,7 @@ tutorial to enrich it with data from your vehicle. At this point, you should
 have the OpenXC library
 [setup into your development environment][library project].
 
-<div class="alert alert-error"> We'll mention this again at the end of the
+<div class="alert alert-danger"> We'll mention this again at the end of the
 tutorial, but you will need to install the
 <a href="/android/library-installation.html#enabler">Enabler</a> app
 before your application will work.</div>

@@ -27,16 +27,13 @@ code {
     margin-bottom: 10px;
 }
 
-.well {
-    margin-left: 5px;
-}
-
 .picture.well {
     text-align: center;
 }
 
 .footer-links {
     margin: 10px 0;
+    padding: 10px 0;
 }
 
 .footer-links li {
@@ -45,13 +42,18 @@ code {
     list-style-type: disc;
 }
 
-.navbar .brand {
-    padding: 8px 20px 6px;
+.nav-header {
+    color: #999;
+    text-transform: uppercase;
+    font-size: 13px;
 }
 
-.navbar .nav > li {
-    padding-top: 3px;
-    font-size: 16px;
+.navbar-text {
+    margin: 5px 0 0 10px;
+}
+
+.navbar-brand {
+    padding: 10px 15px 0 15px;
 }
 
 h2:before, h3:before {
@@ -71,4 +73,12 @@ h2:before, h3:before {
 
 button.getting-started {
     margin-bottom: 15px;
+}
+
+/* Make images responsive by default to avoid img-responsive class on almost
+every img */
+img {
+    display: inline-block;
+    height: auto;
+    max-width: 100%;
 }

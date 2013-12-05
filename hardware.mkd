@@ -21,7 +21,7 @@ See all supported VIs
 You need a **compatible host device**, most likely an Android tablet or phone.
 
 <a href="/host-devices/hardware.html">
-<button type="button" class="btn btn-primary btn-lg">
+<button type="button" class="btn btn-success btn-lg">
 See all host devices
 </button>
 </a>
@@ -29,7 +29,7 @@ See all host devices
 To run with live data, you need a **compatible vehicle**.
 
 <a href="/hardware/vehicles.html">
-<button type="button" class="btn btn-primary btn-lg">
+<button type="button" class="btn btn-info btn-lg">
 See all compatible vehicles
 </button>
 </a>
