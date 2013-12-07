@@ -161,7 +161,7 @@ Library Releases page, ready to install in Android. Download that file directly
 on your Android device and open it to install, or use the command line:
 
 {% highlight sh %}
-$ adb uninstall openxc-enabler.apk
+$ adb install openxc-enabler.apk
 {% endhighlight %}
 
 **Eclipse**
