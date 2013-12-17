@@ -36,10 +36,3 @@ development environment?
 <a class="btn btn-success btn-lg"  href="https://github.com/openxc/openxc-message-format">
 Read the VI Output Format Specs
 </a>
-
-If you're not sure what you want, try the step-by-step guide for setting
-everything up:
-
-<a class="btn btn-primary btn-lg"  href="/getting-started/step-by-step.html">
-Step-by-step Getting Started Guide
-</a>
