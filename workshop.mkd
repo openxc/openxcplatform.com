@@ -47,7 +47,6 @@ directly.
 
 * [Retro gauge driver](https://github.com/openxc/retro-gauge/releases/download/v1.1/GaugeDriver.apk)
 * [OpenXC Enabler](https://github.com/openxc/openxc-android/releases/download/v4.0.2/openxc-enabler.apk)
-* [OpenXC vehicle dashboard](https://github.com/openxc/openxc-android/releases/download/v4.0.2/openxc-examples.apk)
 * [OpenXC backup camera](https://github.com/openxc/rearview-camera/releases/download/v1.0/rearview.apk)
 * [Android webcam example](https://github.com/openxc/android-webcam/releases/download/v1.0/webcam-example.apk)
 

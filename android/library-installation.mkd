@@ -55,10 +55,9 @@ Get the [openxc-android][] source code in one of two ways:
 * *Recommended method:* The latest stable version of the OpenXC Android source
   code can always be found at the [Releases
   page](https://github.com/openxc/openxc-android/releases). Make sure to
-  download both the source code as well as the OpenXC Enabler .apk. The
-  Vehicle Dashboard app is also available, which can be helpful in testing your
-  Vehicle Interface. Extract the files to the location where you'd like the
-  library to sit on your local workstation.
+  download both the source code as well as the OpenXC Enabler .apk. Extract the
+  files to the location where you'd like the library to sit on your local
+  workstation.
 * Alternatively, clone the [openxc-android][] repository using Git. If you don't
   already have Git installed, GitHub has a [good
   reference](https://help.github.com/articles/set-up-git) for all platforms.

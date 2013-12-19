@@ -31,11 +31,9 @@ right firmware for your VI and to learn how to re-program it.
 ## Android Smoke Test
 
 <ol>
-<li>Install the OpenXC Enabler and Vehicle Dashboard application from the
+<li>Install the OpenXC Enabler application from the
 <a href="https://github.com/openxc/openxc-android/releases">latest release page</a> - the
-two green buttons link directly the APK files that can be installed on your
-Android device.
-
+green button links to the APK file that can be installed on your Android device.
 </li>
 
 <li>Plug in your vehicle interface to a USB connector or a vehicle, so that it powers up.</li>
@@ -81,10 +79,8 @@ connection and start receiving vehicle data.
 </div>
 </li>
 
-<li>Open the Vehicle Dashboard app, which will now be displaying live data from
-the car (you can also look at <a
-href="https://github.com/openxc/openxc-android/tree/master/examples">the
-code</a> for that app).
+<li>Click the "View Vehicle Data" button in the Enabler to see live data from
+the car.
 <br/>
 <img title="OpenXC Enabler App" src="/images/test-screenshots/android-dashboard.png"/>
 </li>

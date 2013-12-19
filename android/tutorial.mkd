@@ -328,7 +328,6 @@ how to use the API. If you are having trouble, check out the
 [vehicle interfaces]: /vehicle-interface/hardware.html
 [Android devices]: /android/hardware.html
 [library project]: /android/library-installation.html
-[Vehicle Dashboard]: https://github.com/openxc/openxc-android/tree/master/examples
 [enabler]:/android/library-installation.html#enabler
 [driving trace]: https://s3.amazonaws.com/openxcplatform.com/driving.json
 [library documentation]: http://android.openxcplatform.com/reference/com/openxc/measurements/package-summary.html
