@@ -36,27 +36,14 @@ right firmware for your VI and to learn how to re-program it.
 green button links to the APK file that can be installed on your Android device.
 </li>
 
-<li>Plug in your vehicle interface to a USB connector or a vehicle, so that it powers up.</li>
-
-<li>On your Android phone or tablet, go to <code>Settings -> Bluetooth</code> and click
-<code>Search for Devices</code>. Look for a device named something similar to
-<code>OpenXC-VI-XXXX</code> - select it to pair and use the password <code>1234</code>
-(<a class="extra-screenshots-controls" href="#extra-settings-screenshots">show me</a>)
-
-<br/>
-<div class="extra-screenshots" id="extra-settings-screenshots">
-<img title="OpenXC Enabler App" src="/images/test-screenshots/android-settings.png"/>
-<img title="OpenXC Enabler App" src="/images/test-screenshots/android-settings-bluetooth.png"/>
-<img title="OpenXC Enabler App" src="/images/test-screenshots/android-settings-bluetooth-pairing.png"/>
-<img title="OpenXC Enabler App" src="/images/test-screenshots/android-settings-bluetooth-paired.png"/>
-</div>
-
-</li>
+<li>Plug the vehicle interface into the OBD-II port in your car - it will be
+somewhere below the steering wheel, possibly behind a door. It should light up
+blue if it's plugged in all the way and the car is running.</li>
 
 <li>Run the OpenXC Enabler app, go to <code>Settings -> Data Sources</code> and check "Use
-a Bluetooth Vehicle Interface". The "Bluetooth Device" preference below that
-should have "Automatic" selected - this will connect to the first paired OpenXC
-VI it finds.
+a Bluetooth Vehicle Interface". Press the "Bluetooth Device" option below, and
+you should see a device named something like <code>OpenXC-VI-XXXX</code>.
+Select that to pair with the VI - use the PIN <code>1234</code>.
 (<a class="extra-screenshots-controls" href="#extra-enabler-screenshots">show me</a>)
 
 <div class="extra-screenshots" id="extra-enabler-screenshots">
