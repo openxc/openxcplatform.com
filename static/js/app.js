@@ -7,7 +7,7 @@ $(document).ready(function() {
 
     $('.extra-screenshots-controls').each(function(i, value) {
         $(value).click(function() {
-            $($(value).attr("href")).show();
+            $($(value).attr("href")).toggle();
             return false;
         });
     });
