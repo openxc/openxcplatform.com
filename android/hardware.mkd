@@ -21,12 +21,13 @@ applications](/host-devices/index.html) using OpenXC.
 <div class="page-header">
     <h3>Bluetooth</h3>
 </div>
-Bluetooth support is working well now, and it has the lowest hardware
-requirements so it is the recommended interface.
+
+A Bluetooth vehicle interface is the most widely supported by Android devices,
+so it is the recommended interface.
 
 The OpenXC Enabler application handles the actual communication to the
 Vehicle Interface. You don't need to add any extra code to your application
-to communicate via Bluetooth to it.
+to communicate via Bluetooth.
 
 When using a Bluetooth-equipped vehicle interface, the Android host
 device must run **Android 2.2** or greater (i.e. API level 8).

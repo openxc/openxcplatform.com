@@ -40,36 +40,35 @@ green button links to the APK file that can be installed on your Android device.
 somewhere below the steering wheel, possibly behind a door. It should light up
 blue if it's plugged in all the way and the car is running.</li>
 
-<li>Run the OpenXC Enabler app, go to <code>Settings -> Data Sources</code> and check "Use
-a Bluetooth Vehicle Interface". Press the "Bluetooth Device" option below, and
-you should see a device named something like <code>OpenXC-VI-XXXX</code>.
-Select that to pair with the VI - use the PIN <code>1234</code>.
-(<a class="extra-screenshots-controls" href="#extra-enabler-screenshots">show me</a>)
+<li>Run the OpenXC Enabler app, hit the <code>Search for Bluetooth VI</code>
+button and wait a moment. Within a minute, it should detect your Bluetooth VI
+and prompt to pair - use the PIN <code>1234</code>.
+<br/>
+(<a class="extra-screenshots-controls" href="#extra-inactive-enabler-screenshots">show me</a>)
 
-<div class="extra-screenshots" id="extra-enabler-screenshots">
-<img title="OpenXC Enabler App" src="/images/test-screenshots/android-enabler.png"/>
-<img title="OpenXC Enabler App" src="/images/test-screenshots/android-enabler-settings.png"/>
-<img title="OpenXC Enabler App" src="/images/test-screenshots/android-enabler-settings-bluetooth.png"/>
+<div class="extra-screenshots" id="extra-inactive-enabler-screenshots">
+<img title="OpenXC Enabler App" src="/images/test-screenshots/enabler-disconnected.png"/>
+<img title="OpenXC Enabler App" src="/images/test-screenshots/enabler-pairing.png"/>
 </div>
 
-</li>
+</li
 
-<li>Return to the Enabler's main screen (hit the back button twice), and you
-will now see a <code>BluetoothVehicleInterface</code> in the "Data Sources" list. If your
-VI is plugged into a running vehicle, after a few seconds it will open a
-connection and start receiving vehicle data.
+<li>If your VI is plugged into a running vehicle, after a few seconds it will
+open a connection and start receiving vehicle data. You should see a Bluetooth
+icon appear next to "Active Connections" and the "Messages Received" number
+should be increasing.
 <br/>
 (<a class="extra-screenshots-controls" href="#extra-active-enabler-screenshots">show me</a>)
 
 <div class="extra-screenshots" id="extra-active-enabler-screenshots">
-<img title="OpenXC Enabler App" src="/images/test-screenshots/android-enabler-active-bluetooth.png"/>
+<img title="OpenXC Enabler App" src="/images/test-screenshots/enabler-connected.png"/>
 </div>
 </li>
 
 <li>Click the "View Vehicle Data" button in the Enabler to see live data from
 the car.
 <br/>
-<img title="OpenXC Enabler App" src="/images/test-screenshots/android-dashboard.png"/>
+<img title="OpenXC Enabler App" src="/images/test-screenshots/dashboard.png"/>
 </li>
 </ol>
 
