@@ -43,7 +43,7 @@ The best place to start is with the [VI
 Concepts](/vehicle-interface/concepts.html) page, to make sure you understand
 all of the concepts and terms required to build the VI firmware from source. The
 auto industry tends to be fairly jargon-laden, so even if you're an expert it's
-good to make sure we have the same understanding or the definitions.
+good to make sure we have the same understanding of the definitions.
 
 Once you've read that (or if you're feeling confident...) jump into the [custom
 CAN signal example in the VI firmware
