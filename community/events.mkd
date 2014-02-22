@@ -11,7 +11,7 @@ title: Events - OpenXC
 Ford is currently sponsoring the [Traffic Tamer App Challenge](http://traffic.challengepost.com)
 aimed at solving the issue of traffic congestion in the city of London. Part of this
 challenge encourages developers to use OpenXC in their solution to address the problem.
-Submissions are open from October 23rd, 2013 to ~~January 15th, 2014~~ March 4th, 2014 at 5:00pm EST. 
+Submissions are open from October 23rd, 2013 to ~~January 15th, 2014~~ March 4th, 2014 at 5:00pm EST.
 
 ## Personalized Fuel Efficiency Challenge
 
@@ -134,4 +134,4 @@ materials](/workshop.html) collected just for the event.
 * *(past event)* San Jose, Calif.: Aug. 16-17
 * *(past event)* Pittsburgh: Sept. 13-14
 * *(past event)* Menlo Park, Calif.: Nov. 9-10
-* Chandler, Ariz.: Dec. 13-14
+* Chandler, Ariz.: TBD
