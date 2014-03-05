@@ -17,5 +17,9 @@ as many well documented, functional projects as we can.
 * [Nighttime Collision Warning, a.k.a. "Night Vision"](/projects/nightvision.html)
 * [Rearview Camera](/projects/rearview-camera.html)
 * [Retro Gauge](/projects/retro-gauge.html)
+* [Stanford Senior Design Project](/projects/stanford-me113-spring-2013)
+    * [Shape Retaining Mount](/projects/stanford-me113-spring-2013/shape-retaining-mount.html)
+    * [3D Printed Tablet Mount](/projects/stanford-me113-spring-2013/3d-printed-tablet-mount.html)
+    * [Smartphone User Interface Cloning](/projects/stanford-me113-spring-2013/smartphone-user-interface-cloning.html)
 
 [openxc.github.com]: https://github.com/openxc/openxc.github.com
