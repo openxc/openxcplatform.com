@@ -1,0 +1,119 @@
+---
+layout: default
+title: Smartphone User Interface Cloning - OpenXC
+---
+
+[ssdpLink]: /projects/stanford-me113-spring-2013/
+
+<div class="page-header">
+    <h1>Smartphone User Interface Cloning</h1>
+</div>
+
+**GitHub Repository:**
+[here](https://github.com/embirico/stanford-me113-spring-2013)
+
+This work was done in the context of a
+[Stanford Senior Design Project][ssdpLink].
+
+![Smartphone User Interface Cloning](/projects/images/stanford-me113-spring-2013/suic_overview.jpg)
+
+Smartphone User Interface Cloning is the idea of using a large, fixed touchscreen mounted
+in a car to interact with the driver's smartphone. The static touchscreen
+displays exactly what the phone is displaying, and the phone responds to touch gestures
+on the display as though they were on the phone itself.
+
+(We called this 'User Interface Cloning' (UIC) instead of 'Mirroring' because when explaining
+this idea to people, they frequently misunderstood the idea as not including the touch
+input capability.)
+
+<div class="page-header">
+    <h2>Motivation</h2>
+</div>
+
+The big picture motivation including explaining why good smart device integration
+is important, is discussed in [Stanford Senior Design Project][ssdpLink].
+There's also the added bonus of making it easier and safer to use existing OpenXC projects!
+
+There are currently several forms of smartphone integration in cars.
+Two main trends are:
+
+* Button-based feature access. Each new feature requires a new button, as exemplified
+  by [Chevy's Siri commercial](http://youtu.be/g4aVDp-OQaA).
+
+  -> This clearly isn't a very adaptable or modular system.
+* Touchscreens running interfaces developed by car manufacturers, recently compatible
+  with certain pre-approved apps that have custom-coded interfaces.
+  (Example: [Cadillac CUE](http://www.cadillac.com/cadillac-cue.html).)
+
+  -> This is only falsely modular as there is no way a manufacturer will be able to
+  keep up with the multitude of useful apps being developed.
+
+Both of these lack modularity and don't give users the choice of an interface they are
+comfortable with. Here are 2 ways to solve this:
+
+* The car directly clones the phone's interface, and we trust users and developers to make
+  responsible choices about how they use this interface. A manufacturer could still work
+  towards driver saftey by moderating the interaction between driver and display. (E.g.
+  infrared hand sensors near the screen, eye movement detection coupled with audio warnings
+  or warnings through vibrations, etc.)
+
+  -> We chose to demonstrate this idea as UIC.
+* A smart-device-related company such as Apple or Google takes responsibility from car
+  manufacturers to deliver a good and familiar experience that complies with official
+  driver distraction guidelines.
+
+  -> Apple announced [iOS in the Car](http://www.apple.com/ios/ios7/features/)
+  two days after the end of this project. :) This isn't open source and will likely provide
+  limited functionality, but it's a step in the right direction.
+
+<div class="page-header">
+    <h2>Implementation</h2>
+</div>
+
+For the sake of time, our implemenation simply piggybacked off an Android app-pair
+called
+[MirrorOp Sender](https://play.google.com/store/apps/details?id=com.awindinc.sphone2tv)
+and
+[MirrorOp Reciever](https://play.google.com/store/apps/details?id=com.awindinc.receiver).
+
+**Hardware:**
+
+1. The **Android phone** you wish to UIC. Nexus models are recommended,
+   or at least newer/popular
+   models, which have more active forums discussing rooting.
+2. An **Android tablet** which will serve as your static display.
+   Larger is better.
+
+**How to set up:**
+
+1. **Root your phone** if it isn't already rooted. MirrorOp Sender requires root priviledges.
+    * The best way to do this is to find a forum post specific to your device by googling
+      'root [device name and model]'.
+2. **Install MirrorOp Sender onto your phone.**
+4. **Grant MirrorOp Sender root/SuperUser priviledges.**
+3. **Install MirrorOp Reciever onto your tablet.**
+5. Use Wifi to connect your devices.
+    * For testing, you can simply log onto the same network.
+    * For in-car use, **create a hotspot with one device, and log into that
+    hotspot with the other device**.
+    * You can also use Wifi Direct.
+
+**Usage recommendations:**
+
+* Phone homescreens tend to be in the portrait orientation,
+  so **mount your tablet in the vertical orientation**
+  and **lock your phone's orientation to vertical**
+  (you can do the latter by downloading
+  [Rotation Lock](https://play.google.com/store/apps/details?id=org.penghuang.tools.rotationlock)).
+* **Put your tablet as near as possible to your field of vision.**
+* Android icons aren't designed for use while driving so **download a widget
+  that improves your homescreen** such as
+  [Car Widget](https://play.google.com/store/apps/details?id=com.anod.car.home.free).
+* Change your settings to **prevent your tablet from going to sleep.**
+* **Prevent your phone from going to sleep.** Since you use your phone outside of the car,
+  a toggle switch such as
+  [Screen Timeout Toggle](https://play.google.com/store/apps/details?id=com.chemdroid.screentimeouttoggle)
+  is probably better.
+* **Charge both devices while using UIC.**
+
+

@@ -1,0 +1,59 @@
+---
+layout: default
+title: Shape Retaining Mount - OpenXC
+---
+
+[ssdpLink]: /projects/stanford-me113-spring-2013/
+
+<div class="page-header">
+    <h1> Shape Retaining Mount</h1>
+</div>
+
+**GitHub Repository:**
+[here](https://github.com/embirico/stanford-me113-spring-2013)
+
+This work was done in the context of a
+[Stanford Senior Design Project][ssdpLink].
+
+![Shape Retaining Mount](/projects/images/stanford-me113-spring-2013/srm_flat1.jpg)
+
+![Shape Retaining Mount](/projects/images/stanford-me113-spring-2013/srm_flat2.jpg)
+
+Our group decided to make a universal phone/tablet mount that would allow the user to bring any smart-device into their car and place it in a location that is safe and easy to use.
+
+We made several iterations on this idea and came up with two that we thought were representative of the potential of the concept.
+
+The first was made of two separate latex balloons connected to the same vacuum pump. This concept shows that the mount assembly rigidly holds the device in place no matter the angle, size or brand.
+
+The second mount is made out of a tupperware container full of ground coffee with a sheet of 0.006" thick latex stretched over the top. We believe that this represents the future of the mount. It is aesthetically more appealing and could potentially provide a better hold. Our next iteration would include the the front being a convex shape which would help ease the placement of the phone or tablet and provide a better angle for gripping the device.
+
+This design, while still in early stages, is a novel solution to
+our problem. It has the potential to provide a long-term solution to the problem of rapidly advancing technology. We are currently pursuing alternative designs and welcome any constructive input.
+
+<div class="page-header">
+    <h2>Motivation</h2>
+</div>
+
+Big picture motivation, explaining why good smart-device integration is important etc.,
+is discussed in [Stanford Senior Design Project][ssdpLink].
+There's also the added bonus of making it easier and safer to use existing OpenXC projects!
+
+The inspiration for this idea came from work that Cornell is doing on creating robotic hands using jamming phase materials. The device they created was basically a large latex balloon filled with ground coffee and attached to a vacuum pump. When the vacuum is applied, the coffee grains lock into place and very strongly maintain whatever shape they were in before the vacuum was applied. Since  it can conform to any shape, we realized that we could use this same idea for a universal phone/tablet mount. If Ford was able to implement a universal mount like this one then people would be able to use whatever phone or tablet they are familiar with, and would have the capability of easily replacing it with newer technology as it comes out.
+
+We believe that this mount design if refined and implemented would allow the average user to keep their vehicle's electronics and therefore the vehicle feeling newer and therefore more valuable over a longer period of time. In addition to customer satisfaction with the vehicle, we believe that the familiarity with the operation of  music and navigation will help the driver be safer and enjoy the experience of the vehicle more.
+
+
+<div class="page-header">
+    <h2>Implementation</h2>
+</div>
+
+1. The final version of our shape retaining mount was made using a tupperware container full of ground coffee with a sheet of latex stretched across the top.
+
+2. The vacuum pump was connected to the shape retaining mount and to a relief valve.
+
+   ![T-Junction](/projects/images/stanford-me113-spring-2013/srm_tJunction.jpg)
+   ![Relief Valve](/projects/images/stanford-me113-spring-2013/srm_reliefValve.jpg)
+
+<div class="page-header">
+    <h2>Comments</h2>
+</div>

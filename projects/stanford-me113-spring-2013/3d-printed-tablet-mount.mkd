@@ -1,0 +1,114 @@
+---
+layout: default
+title: 3D Printed Tablet Mount - OpenXC
+---
+
+[ssdpLink]: /projects/stanford-me113-spring-2013/
+[suicLink]: /projects/stanford-me113-spring-2013/smartphone-user-interface-cloning.html
+
+<div class="page-header">
+    <h1>3D Printed Tablet Mount</h1>
+</div>
+
+**GitHub Repository:**
+[here](https://github.com/embirico/stanford-me113-spring-2013)
+
+This work was done in the context of a
+[Stanford Senior Design Project][ssdpLink],
+specifically to mount a tablet being used for
+[Smartphone User Interface Cloning][suicLink].
+
+![3D Printed Tablet Mount](/projects/images/stanford-me113-spring-2013/3dpm_overview.jpg)
+![3D Printed Tablet Mount](/projects/images/stanford-me113-spring-2013/3dpm_overview_withTablet.jpg)
+
+The 3D printed tablet mount is a way to hold a variety of smart-devices
+in a solid and safe position, symbolically hiding the
+infotainment features that the
+smart device replaces. The configuration shown is holding a
+[Google Nexus 10 tablet](http://www.google.com/nexus/10/)
+in a SYNC 1.5 Ford Mustang.
+
+<div class="page-header">
+    <h2>Motivation</h2>
+</div>
+
+The big picture motivation including explaining why good smart device integration
+is important, is discussed in [Stanford Senior Design Project][ssdpLink].
+There's also the added bonus of making it easier and safer to use existing OpenXC projects!
+
+The design attempts to focus on three key ideas beyond simply holding the tablet/device
+in position and giving you access to charging ports/buttons:
+
+* **Hold the tablet as near as possible to the driver's field of vision.**
+  The design is off-centered towards the driver and even juts out beyond the top of
+  the dash.
+* **Demonstrate the user experience of a car that was designed from
+  the getgo to work with smart devices.** This car would have a dedicated space
+  for devices, and would not come equipped with redudant features.
+* **Allow device upgrades:** let the car's electronics be as new as the user's
+  phone.
+  New devices can be used with the existing setup by 3D printing an adapter
+  for the new device.
+
+<div class="page-header">
+    <h2>Implementation</h2>
+</div>
+
+1. The mount was printed on a [Projet](http://printin3d.com/3d-printers)
+   from CAD files you can download from
+   [github](https://github.com/embirico/stanford-me113-spring-2013).
+
+   ![Exploded View of Mount](/projects/images/stanford-me113-spring-2013/3dpm_exploded.jpg)
+
+    * `joiner` refers to the part that is screwed onto the car's center stack itself.
+      `mount` refers to the part that interfaces between `joiner` and the tablet.
+      As `joiner` was too large to print flat on the Projet, it was split into
+      `joinerMiddle`, `bevelLeft` and `bevelRight`.
+    * As we did not have access to CAD files, most dimensions and curves where estimated to
+      varying degrees of accuracy. Notably, the bevels are too
+      large and had to be sawed/filed down.
+    * The total print cost on the Projet was around $300. If printed on printers of lower
+      resolution, it could be roughly 50% cheaper. However, it would first be advisable to
+      simplify the CAD to have more planar surfaces rather than curved surfaces.
+    * Both parts of the mount share a common hole which is hidden when the tablet is inserted.
+      This is to allow for a handhold for easy removal of the entire center stack+mount assembly.
+    * If making a `mount` for a different device, be sure to orient the buttons facing the
+      driver, and also give access to charging ports and buttons.
+    * The T-slot interface between `joiner` and `mount` could be improved by opening it
+      (removing the back face), making it easier to remove filler.
+
+2. `joiner` is attached to the car with 4 bolts through the back of the center stack
+   into
+   [brass threaded inserts](http://www.mcmaster.com/#catalog/119/3267/=n5msfa "McMaster 93365A140")
+   which were melted into `joiner`.
+
+   ![Brass threaded inserts](/projects/images/stanford-me113-spring-2013/3dpm_assemble0.jpg)
+   ![Bolt hole in panel](/projects/images/stanford-me113-spring-2013/3dpm_assemble1.jpg)
+   ![Joiner bolted to panel](/projects/images/stanford-me113-spring-2013/3dpm_assemble2.jpg)
+
+    * To work with the car's center stack, you'll have to do some dissassembly of
+      the dashboard. See further below for detailed instructions.
+
+3. Spraypaint is a nice finishing touch.
+
+   ![Complete joiner+mount+panel assembly](/projects/images/stanford-me113-spring-2013/3dpm_complete.jpg)
+
+<div class="page-header">
+    <h2>Removing the Center Stack</h2>
+</div>
+
+Mounting the assembly required nearly no modification to the center stack, with the acception of drilling four holes. Removing the center stack was a very quick and easy process and required nothing
+but a 7mm socket wrench.
+
+1. Unscrew the top of the gear shifter.
+
+    ![Unscrew Gear Shifter](/projects/images/stanford-me113-spring-2013/3dpm_dissasemble1.jpg)
+
+2. Lift up the center console, pulling initially from the cupholder region.
+
+    ![Lift Up Center Console](/projects/images/stanford-me113-spring-2013/3dpm_dissasemble3.jpg)
+
+3. Using a 7mm socket wrench, remove the bolts at the bottom of the center
+stack. Then pull the stack from the dashboard.
+
+    ![Detach Center Stack](/projects/images/stanford-me113-spring-2013/3dpm_dissasemble4.jpg)
