@@ -54,7 +54,8 @@ in position and giving you access to charging ports/buttons:
     <h2>Implementation</h2>
 </div>
 
-1. The mount was printed on a [Projet](http://printin3d.com/3d-printers)
+1. The mount was printed on a
+   [Projet](http://www.3dsystems.com/3d-printers/professional/overview)
    from CAD files you can download from
    [github](https://github.com/embirico/stanford-me113-spring-2013).
 
