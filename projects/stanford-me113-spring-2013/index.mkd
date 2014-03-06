@@ -17,6 +17,11 @@ title: Stanford Senior Design Project - OpenXC
 The following work was undertaken (enjoyed) as a senior capstone design project
 of four Stanford Mechanical Engineering Candidates during Spring 2013.
 
+* [Forrest Berg](http://www.linkedin.com/pub/forrest-berg/54/431/431)
+* [Alexander Embiricos](http://www.embiri.co/)
+* [Jacob Gowan](http://www.jacobgowan.com/)
+* [Emily Henriksson](http://emilyhenriksson.weebly.com/)
+
 Dave Evans acted as the primary liason from the Ford Silicon Valley Laboratory.
 
 <div class="page-header">
