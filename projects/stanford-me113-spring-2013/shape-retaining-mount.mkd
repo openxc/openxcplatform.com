@@ -80,7 +80,7 @@ Four balloon prototype
 ----------------------
 ![Four balloon prototype](/projects/images/stanford-me113-spring-2013/srm_balloon_prototype.jpg)
 
-Bonus : glove SRM
+Bonus: glove SRM
 ------------------------
 
 One of the early ideas was to creat a mount that was as close as possible to a hand,
