@@ -88,7 +88,7 @@ and
 
 1. **Root your phone** if it isn't already rooted. MirrorOp Sender requires root priviledges.
     * The best way to do this is to find a forum post specific to your device by googling
-      'root [device name and model]'.
+      `root [device name and model]`.
 2. **Install MirrorOp Sender onto your phone.**
 4. **Grant MirrorOp Sender root/SuperUser priviledges.**
 3. **Install MirrorOp Reciever onto your tablet.**
