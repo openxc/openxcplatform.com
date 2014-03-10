@@ -1,0 +1,110 @@
+---
+layout: default
+title: Stanford Senior Design Project - OpenXC
+---
+
+[srmLink]: /projects/stanford-me113-spring-2013/shape-retaining-mount.html
+[suicLink]: /projects/stanford-me113-spring-2013/smartphone-user-interface-cloning.html
+[3dpmLink]: /projects/stanford-me113-spring-2013/3d-printed-tablet-mount.html
+
+<div class="page-header">
+    <h1>Stanford Senior Design Project</h1>
+</div>
+
+**GitHub Repository:**
+[here](https://github.com/embirico/stanford-me113-spring-2013)
+
+The following work was undertaken (enjoyed) as a senior capstone design project
+of four Stanford Mechanical Engineering Candidates during Spring 2013.
+
+* [Forrest Berg](http://www.linkedin.com/pub/forrest-berg/54/431/431)
+* [Alexander Embiricos](http://www.embiri.co/)
+* [Jacob Gowan](http://www.jacobgowan.com/)
+* [Emily Henriksson](http://emilyhenriksson.weebly.com/)
+
+Dave Evans acted as the primary liason from the Ford Silicon Valley Laboratory.
+
+<div class="page-header">
+    <h2>Problem Statement</h2>
+</div>
+
+While the car is built to last for at least 10 years and over 100,000 miles, consumer
+electronics often have a life cycle of around 12-18 months. As a result, a car may feel old
+for most of its lifespan. Together with Ford SVL we set out to design a solution that would
+make car electronics more modular so as to better keep up with and leverage
+rapidly changing technology.
+
+<div class="page-header">
+    <h2>Key Observation</h2>
+</div>
+
+During our needfinding process, we found that Silicon Valley interviewees tend to:
+
+* Own a smartphone which is newer than 3 years old.
+* Use their smartphone instead of their car's infotainment system for
+  features such as music. Smartphones were used even for features such as
+  navigation, for which the car has a specifically designed interface.
+* Use their smartphone without proper mounting, and without considering
+  driver distraction issues.
+
+<div class="page-header">
+    <h2>Proposed Solutions</h2>
+</div>
+
+We decided on two main solutions which approach the problem of **clean, modular and safe
+smart-device integration** from different perspectives. These solutions are
+implemented in three separate projects:
+
+* **[Shape Retaining Mount (SRM)][srmLink]**
+
+  To enable the frequent swapping of a variety of devices with unpredictable shapes,
+  we designed and built a Shape Retaining Mount,
+  a soft surface which can harden around
+  an object to secure it. This mount could also be used to hold non-smart devices, or
+  even instrument panels for those not inclined towards touchscreen interfaces.
+
+* **[Smartphone User Interface Cloning (UIC)][suicLink]**
+
+  To go beyond simply fixturing a device in a predetermined position, and in order to be
+  truly convenient and safe, we created a hybrid hardware/software solution:
+  Smartphone User Interface Cloning
+  is the idea that many safety and practical benefits can be gained from encouraging
+  a driver to interact with his phone *via* a permanent touch-screen on the console.
+  This concept is significantly different from [MirrorLink](http://www.mirrorlink.com/),
+  so please [read more][suicLink] to find out how.
+
+* **[3D Printed Tablet Mount][3dpmLink]**
+
+  To demonstrate our UIC concept, we created a semi-permanent,
+  3D Printed Tablet Mountfor a SYNC 1.5 Ford Mustang
+  that can be used to fixture a variety of devices by printing different
+  adaptor parts.
+  Although there's nothing particularly unusual about the project, it can provide a solid
+  reference for any hobbyists seeking to create similar projects.
+
+<div class="page-header">
+  <h2>Conclusion and Evaluation</h2>
+</div>
+
+We believe to have given two possible answers to the question of in-car electronics
+modularity:
+
+On a physical level, our shape-retaining mount concept can be refined to allow
+the design of swappable interfaces by users or by the manufacturer.
+This was our "We don't think other people will think of this" idea. :)
+One area that would need to be investigated is safety,
+especially if the user is the person responsible for placing the device in the
+mount.
+
+At a higher level, we believe that manufacturers must both streamline the
+conflict/overlap between smart devices and infotainment, as well as provide a
+better way for users to interact with their devices in the car.
+Our idea of simple display mirroring is the cleanest way of providing such an
+interface that can both evolve with technology and provide some control
+over driver distraction. However, it provides no garuantee that content will
+comply with official driver distraction standards and as such, may be
+unrealistic from an OEM perspective.
+Nonetheless, manufacturers cannot afford to duplicate all work done in the
+smart-device space. It may be that trusting respected institutions like Apple
+or Google to lead here can provide a middle ground between user experience and
+safety.

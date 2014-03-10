@@ -20,6 +20,7 @@ events](/community/events.html), too.
 * [Nighttime Collision Warning, a.k.a. "Night Vision"](/projects/nightvision.html)
 * [Rearview Camera](/projects/rearview-camera.html)
 * [Retro Gauge](/projects/retro-gauge.html)
+<<<<<<< HEAD
 * [Shift Knob](/projects/shift-knob.html)
 * [Brake Distance Tracking](/projects/brakedist.html)
 * [Docking Station](/projects/docking-station.html)
@@ -32,5 +33,11 @@ events](/community/events.html), too.
 * [WIMXWAYNE](http://groups.geni.net/geni/wiki/WIMXWAYNE) - WiMAX Prototyping in
   Metro Detroit: Integrating GENI Engineering with Wireless Network Applications
   and Science
+=======
+* [Stanford Senior Design Project](/projects/stanford-me113-spring-2013)
+    * [Shape Retaining Mount](/projects/stanford-me113-spring-2013/shape-retaining-mount.html)
+    * [3D Printed Tablet Mount](/projects/stanford-me113-spring-2013/3d-printed-tablet-mount.html)
+    * [Smartphone User Interface Cloning](/projects/stanford-me113-spring-2013/smartphone-user-interface-cloning.html)
+>>>>>>> 1b79ff4e5539d58f8010737c26db96de9c946d0d
 
 [openxc.github.com]: https://github.com/openxc/openxc.github.com

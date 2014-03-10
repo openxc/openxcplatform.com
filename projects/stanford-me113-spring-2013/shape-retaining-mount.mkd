@@ -1,0 +1,94 @@
+---
+layout: default
+title: Shape Retaining Mount - OpenXC
+---
+
+[ssdpLink]: /projects/stanford-me113-spring-2013/
+
+<div class="page-header">
+    <h1> Shape Retaining Mount</h1>
+</div>
+
+**GitHub Repository:**
+[here](https://github.com/embirico/stanford-me113-spring-2013)
+
+This work was done in the context of a
+[Stanford Senior Design Project][ssdpLink].
+
+![Shape Retaining Mount](/projects/images/stanford-me113-spring-2013/srm_flat1.jpg)
+
+![Shape Retaining Mount](/projects/images/stanford-me113-spring-2013/srm_full_setup.jpg)
+
+Our group decided to make a universal phone/tablet mount that would allow the user to bring any smart-device into their car and place it in a location that is safe and easy to use.
+
+We made several iterations on this idea and came up with two that we thought were representative of the potential of the concept.
+
+The first was made of four separate latex balloons connected to the same vacuum pump. This concept showed that the mount assembly can rigidly hold the device in place no matter the angle, size or brand. (See picture in appendix.)
+
+The second mount is made out of a tupperware container full of ground coffee with a sheet of 0.006" thick latex stretched over the top. We believe that this represents the future of the mount. It is aesthetically more appealing and could potentially provide a better hold. Our next iteration would include the the front being a convex shape which would help ease the placement of the phone or tablet and provide a better angle for gripping the device.
+
+This design, while still in early stages, is a novel solution to
+our problem. It has the potential to provide a long-term solution to the problem of rapidly advancing technology.
+
+<div class="page-header">
+    <h2>Motivation</h2>
+</div>
+
+The big picture motivation including explaining why good smart device integration
+is important, is discussed in [Stanford Senior Design Project][ssdpLink].
+There's also the added bonus of making it easier and safer to use existing OpenXC projects!
+
+The inspiration for this idea came from the Cornell Creative Machines Lab's
+[Universal Jamming Gripper](http://creativemachines.cornell.edu/jamming_gripper).
+The device they created is basically a large latex balloon filled with ground coffee and attached to a vacuum pump. When the vacuum is applied, the coffee grains lock into place and very strongly maintain whatever shape they were in before the vacuum was applied. Since  it can conform to any shape, we realized that we could use this same idea for a universal phone/tablet mount. If Ford was able to implement a universal mount like this one, then people would be able to use whatever phone or tablet they are familiar with, and would have the capability of easily replacing it with newer technology as it comes out.
+
+We believe that this mount design, if refined and implemented, would allow the average user to keep their vehicle's electronics (and therefore the vehicle) feeling newer and therefore more valuable over a longer period of time. In addition to customer satisfaction with the vehicle, we believe that users' existing familiarity with the operation of their chosen device will help the driver be safer and enjoy the experience of the vehicle more.
+
+
+<div class="page-header">
+    <h2>Implementation</h2>
+</div>
+
+1. After choosing an appropriately sized container (we chose 9"x14"x1.5"), drill a circular hole into the back of basin. Insert a male hose barb that is slightly greater in diameter than the drilled hole on one side, and tighten a corresponding nut on the other side of the plastic to greate an airtight seal. Fill the barb with cotton to act as a filter
+(to keep the coffee grind out of the air system).
+
+![Connections](/projects/images/stanford-me113-spring-2013/srm_barb.jpg)
+![Connections](/projects/images/stanford-me113-spring-2013/srm_connections.jpg)
+
+2. On the lid cut out all undesired material out of the center while leaving the edges in place to create an airtight seal.
+
+3. In our trials we found that finely ground coffee provided a very strong grip in smaller baloons, but that it took far too long to evacuate the air in larger applications. Our ideal mix of ground coffee was two units of roughly ground beans to one unit of medium and one unit of finely ground beans, mixed thoroughly.
+
+4. Cut out an appropriately sized sheet of latex to cover the top of the container without stretching it. Ensure that there is an inch of extra material extending beyond the edge of the container. We chose to use 0.006" thick latex as it provided more grip than the larger 0.008" and 0.012" options that we had. Be aware, however, that the thinner the latex the shorter its lifespan.
+
+5. After you have filled container with the correct mixture of grounds, place your sheet of latex over the top of the container. Have someone hold the latex taught (but not stretched) over the top of the container. Then keeping the latex as taught as possible, place the lid on the top of the latex forming an airtight seal.
+
+6. If you are not iterating on this particular project and are planning to make this a more permanent creation hot glue can be used to make the airseal better by first using hot glue to seal the area around the male hose barb. Then with the top still on, trim the excess latex from the sheet and use hot glue to secure the seal around the top of the device.
+
+7. We chose to use a
+[Parker/Hargraves CTS E107-12-090 vacuum pump](http://www.hargravesfluidics.com/index.php)
+due to its small size but high power and large flow rate. The pump was attached using clear tubing to the release valve and to the male hose barb. Clear tubing was used to detect if there were any leaks in the filters. Zip ties or hot glue could be used to further secure the connections for the vacuum system.
+
+![Shape Retaining Mount](/projects/images/stanford-me113-spring-2013/srm_flat2.jpg)
+
+
+<div class="page-header">
+    <h2>Appendix</h2>
+</div>
+
+Four balloon prototype
+----------------------
+![Four balloon prototype](/projects/images/stanford-me113-spring-2013/srm_balloon_prototype.jpg)
+
+Bonus: glove SRM
+------------------------
+
+One of the early ideas was to creat a mount that was as close as possible to a hand,
+the part the body that phones and tablets are designed for.
+To this end we filled a glove with the coffee and experimented with its forming
+capabilities.
+We found that while the hand was entertaining to play with,
+it was simply not rigid enough to provide an adequate hold.
+
+![Glove SRM](/projects/images/stanford-me113-spring-2013/srm_glove.jpg)
+
