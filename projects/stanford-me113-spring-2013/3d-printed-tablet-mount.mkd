@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: project
 title: 3D Printed Tablet Mount - OpenXC
 ---
 
