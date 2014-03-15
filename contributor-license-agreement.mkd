@@ -13,8 +13,8 @@ Agreement](http://en.wikipedia.org/wiki/Contributor_License_Agreement) (CLA).
 
 The CLA makes everyone's rights clear. It states:
 
-* You grant copyright license for your contributions to Ford Motor Company
-* You grant patent license for your contributions to Ford
+* You grant copyright license for your contributions to the OpenXC Platform
+* You grant patent license for your contributions to the OpenXC Platform
 * Your contribution is entirely voluntary
 * Your work is your original creation
 * You are not required to provide support for your contributions
@@ -25,19 +25,15 @@ description of it is not legally binding.
 The CLA is beneficial to our contributors and users because:
 
 * It ensures that we will always be able to release our projects, free from any
-    individual contributor revoking our rights to distribute their
-    contribution.
-* This also means that, if you fork a Ford project, or utilize it in a
-    commercial product, you know that you are clear of patent and copyright
-    issues.
+  individual contributor revoking our rights to distribute their contribution.
+* This also means that if you fork an OpenXC project or utilize it in a
+  commercial product, you know that you are clear of patent and copyright
+  issues.
 * It makes clear what is required of our contributors.
 
-**The most important thing about the CLA is that it doesn't give Ford any special
-rights - it just makes things more explicit.**
+**The most important thing about the CLA is that it doesn't give the OpenXC
+Platform maintainers any special rights - it just makes your contribution more
+explicitly open source.**
 
-<script type='text/javascript' language='JavaScript' src='https://secure.echosign.com/public/widget?f=52MC8WHX444N7F'></script>
-
-By submitting your this form, you agree to voluntarily give consent to have your
-personal information collected, processed, and stored by Ford Motor Company and
-its vendors in databases located in the U.S.A., and to global transfers of this
-information within Ford's vendors and Ford and its affiliates.
+The form for the CLA will be sent to you by one of the OpenXC maintainers after
+you submit a pull request on GitHub with your contribution.
