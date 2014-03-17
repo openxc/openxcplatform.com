@@ -160,7 +160,7 @@ show the current transmission gear position and provide shift knob color control
 ![Shift Indicator App](/projects/images/shift-knob/app_screenshot.png)
 
 <div class="page-header">
-    <h2 id="similar_projects"><a href="#control">Similar Projects</a></h2>
+    <h2 id="similar_projects"><a href="#similar_projects">Similar Projects</a></h2>
 </div>
 
 **Indy-Cator:**
