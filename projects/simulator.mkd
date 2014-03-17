@@ -44,13 +44,13 @@ at 100Hz to produce plausible data for things like the torque and engine speed.
 The world outside the car is currently assumed to be a flat, featureless sphere,
 solely for the purpose of generating GPS data.
 
-The core of the emulator is python running a local web server through
+The core of the simulator is python running a local web server through
 [Flask](http://flask.pocoo.org/docs/installation).  The user interface is
-accessed through a web browser pointed at localhost.  The Emulator also listens
+accessed through a web browser pointed at localhost.  The Simulator also listens
 for incoming network connections from the OpenXC Enabler, running on an Android
 device.
 
-## Installing the Emulator
+## Installing the Simulator
 Once you've cloned the repository, install the Python Flask dependencies with
 `pip`:
 
@@ -63,7 +63,7 @@ Another option is to run the install with sudo:
 
       $ sudo pip install -r pip-requirements.txt
 
-## Running the Emulator
+## Running the Simulator
 To run the app:
 
       $ ./emulate.py
@@ -84,7 +84,7 @@ confuse it.  When emulate.py is started, it displays a list of IPs on which it
 listens for connections from the OpenXC Enabler.
 
 ## Under the Hood
-The Emulator is comprised of three main components:  The State Manager, The User
+The Simulator is comprised of three main components:  The State Manager, The User
 Interface, and the Dynamics Model.  The Network Connection to the OpenXC Enabler
 makes use of the
 [OpenXC Web API](https://github.com/openxc/web-logging-example#api).
@@ -95,7 +95,7 @@ GUI also displays the outgoing data to the user.  This is not intended to be any
 sort of video game, nor a simulation of the driving experience.  It is only
 intended to simulate the data that might be generated on the CAN bus.  The user
 interface uses [Flask](http://flask.pocoo.org/) and
-[jQuery](http://jqueryui.com/) to provide interaction with the Emulator.
+[jQuery](http://jqueryui.com/) to provide interaction with the Simulator.
 
 emulate.py
 
@@ -141,7 +141,7 @@ for moving data from the State Manager to the Enablers.
 The Dynamics Model iterates at 100Hz.  Data is kept in the Physics Model with a
 higher precision than is used in the CAN traffic.  (This will help reproduce
 conditions that have created failures in vehicles, but did not fail with the
-current emulator.)
+previous hardware emulator.)
 
 dynamics_model.py
 
