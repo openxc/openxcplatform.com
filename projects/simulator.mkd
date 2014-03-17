@@ -10,24 +10,24 @@ title: OpenXC Vehicle Simulator - OpenXC
 **GitHub Repository:** [github.com/openxc/openxc-vehicle-simulator][github-repo]
 
 ## Overview
-The OpenXC Vehicle Emulator is a web application intended for developers to run
+The OpenXC Vehicle Simulator is a web application intended for developers to run
 on local machines to generate a simulated OpenXC vehicle data trace in real
 time, to be used for testing Android applications.
 
 ![Emulator screen shot](images/emulator-screen-shot.png)
 
 This is intended to compliment the Enabler's ability to play back a recorded
-trace file.  The Emulator does not attempt to provide a high precision depiction
+trace file.  The Simulator does not attempt to provide a high precision depiction
 of a specific vehicle.  If an app requires a high degree of accuracy, debuging
-should be done with a trace.  The Emulator provides real-time manipulation of
+should be done with a trace.  The Simulator provides real-time manipulation of
 the data.  This allows the developer to create and change desired conditions in
 real time.
 
-The OpenXC Emulator creates vehicle data in the OpenXC format, emulating data
-that comes from the OpenXC Vehicle Interface.  It emulates all of the signals in
+The OpenXC Simulator creates vehicle data in the OpenXC format, simulating data
+that comes from the OpenXC Vehicle Interface.  It simulates all of the signals in
 the
 [official OpenXC signal list](/about/data-set.html),
-at the listed frequencies.  The emulator also takes user input for the vehicle
+at the listed frequencies.  The simulator also takes user input for the vehicle
 controls.  (Pedals, steering wheel, etc.)  The generated data is displayed for
 the user and sent to the Android host device via TCP connection.  The vehicle
 dynamics model is simple.  It is modular, allowing for different vehicles, but
