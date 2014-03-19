@@ -16,7 +16,7 @@ time, to be used for testing Android applications.
 
 ![Emulator screen shot](images/emulator-screen-shot.png)
 
-This is intended to compliment the Enabler's ability to play back a recorded
+This is intended to complement the Enabler's ability to play back a recorded
 trace file.  The Simulator does not attempt to provide a high precision depiction
 of a specific vehicle.  If an app requires a high degree of accuracy, debuging
 should be done with a trace.  The Simulator provides real-time manipulation of
