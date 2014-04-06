@@ -23,7 +23,7 @@ right firmware for your VI and to learn how to re-program it.
 
 Windows users need to do a little extra setup before installing the OpenXC
 Python library. You need to install Cygwin to use the OpenXC Python command line
-tools and an extra USB driver if you wish to connecto to a vehicle interface via
+tools and an extra USB driver if you wish to connect to a vehicle interface via
 USB.
 
 <ol>
