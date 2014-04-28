@@ -25,6 +25,7 @@ Then run the local development server:
     $ jekyll serve -w
 
 and point your browser to http://localhost:4000.
+(Note that for newer versions of jekyll, the run command is `jekyll serve`.)
 
 Jekyll uses the templates in the repository to generate a static html version of
 the site. The static version is always dumped in the `_site` subdirectory in the
@@ -77,4 +78,4 @@ engine) - see the Jekyll docs: https://github.com/mojombo/jekyll/wiki.
 ## License
 
 Except as otherwise noted, the content of the website is licensed under the
-Creative Commons Attribution 3.0 License.
+Creative Commons Attribution 4.0 International License.

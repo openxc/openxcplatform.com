@@ -33,4 +33,9 @@ events](/community/events.html), too.
   Metro Detroit: Integrating GENI Engineering with Wireless Network Applications
   and Science
 
+* [Stanford Senior Design Project, 2013](/projects/stanford-me113-spring-2013) - A senior capstone design project of four Stanford Mechanical Engineering Candidates during Spring 2013 
+    * [Shape Retaining Mount](/projects/stanford-me113-spring-2013/shape-retaining-mount.html)
+    * [3D Printed Tablet Mount](/projects/stanford-me113-spring-2013/3d-printed-tablet-mount.html)
+    * [Smartphone User Interface Cloning](/projects/stanford-me113-spring-2013/smartphone-user-interface-cloning.html)
+
 [openxc.github.com]: https://github.com/openxc/openxc.github.com

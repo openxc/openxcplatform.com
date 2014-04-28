@@ -34,4 +34,4 @@ it.
 
 Developers that know the details of the CAN bus they will be using can choose to
 implement their own signal definitions for the VI. The process is
-described in the [advanced firmware docs](/firmware/audience.html).
+described in the [advanced firmware docs](/firmware/advanced-intro.html).
