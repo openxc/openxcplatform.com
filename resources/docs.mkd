@@ -19,3 +19,5 @@ projects.
 * OpenXC Python Library
     * [Source](https://github.com/openxc/openxc-python)
     * [Docs](http://python.openxcplatform.com)
+* OpenXC Message Format Specification
+    * [Source and Docs](https://github.com/openxc/openxc-message-format)

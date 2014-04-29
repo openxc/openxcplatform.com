@@ -7,6 +7,19 @@ title: Supported Vehicles - OpenXC
     <h1>Supported Vehicles</h1>
 </div>
 
+## All Vehicles Sold in the U.S. (OBD-II)
+
+To read standard OBD-II diagnostics data, use the open source OBD-II OpenXC
+firmware. You can download the latest compiled  version of that firmware from
+the [vi-firmware releases page](https://github.com/openxc/vi-firmware/releases).
+
+Grab the `openxc-obd2-firmware-*.zip` file for the latest version, which
+contains the OBD-II firmware for each of the supported vehicle interfaces.
+
+Next, look up the instructions for uploading the firmware to your vehicle
+interface on the [supported VI hardware page](/vehicle-interface/hardware.html)
+- it's different for each.
+
 ## Ford
 
 Firmware for Ford vehicles is available through the [Ford
@@ -20,11 +33,6 @@ type 1, type 2, etc. Finally, it identifies which of the CAN buses each data
 element is available on, so you can make sure to buy or build vehicle interface
 that [connects to the right buses](/vehicle-interface#obd-pins) for the data you
 want.
-
-## Standard Message Support
-
-[Help us add support](https://github.com/openxc/vi-firmware/issues/24) for the
-standard and US federally mandated OBD-II messages!
 
 ## Other Brands
 

@@ -8,11 +8,12 @@ title: Advanced Firmware Development - OpenXC
 </div>
 
 So you've seen the [available binary firmware](/vehicle-interface/firmware.html)
-and you're not satisfied. Your car's automaker doesn't support OpenXC yet, or
-want some data that's not made available - you really need to know the engine
-oil pressure, and it's not in any binary firmware. Maybe you work for a car
-company or an aftermarket supplier and you want to support some completely
-custom application, or you want to write some messages back to the bus.
+and you're not satisfied. You're bored with OBD-II, your car's automaker doesn't
+support OpenXC yet, or want some data that's not made available - you really
+need to know the engine oil pressure, and it's not in any proprietary firmware.
+Maybe you work for a car company or an aftermarket supplier and you want to
+support some completely custom application, or you want to write some messages
+back to the bus.
 
 You're in luck - OpenXC can support all of these use cases. The core of the
 vehicle data translation resides in the firmware that runs on the vehicle
@@ -32,10 +33,10 @@ CAN bus traffic, making it a low cost and extremely flexible version of some of
 the more expensive industry tools - and one that works on platforms besides
 Windows, too!
 
-The firmware is written in C++, but for most common reading and writing use
-cases, you don't need to write any new code. The CAN signals to translate are
-configured with JSON files - simple, human readable files you can edit in any
-text editor.
+The firmware is written in C (with some minor C++ features like namespaces), but
+for most common reading and writing use cases, you don't need to write any new
+code. The CAN signals to translate are configured with JSON files - simple,
+human readable files you can edit in any text editor.
 
 ## Getting Started
 

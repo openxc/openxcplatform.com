@@ -37,7 +37,7 @@ USB.
         </ul>
     </li>
     <li>If you plan to connect to the vehicle interface via USB, install the
-      <a href=https://github.com/openxc/vi-firmware/tree/master/conf/windows-driver>
+      <a href="https://github.com/openxc/vi-windows-driver">
       VI USB Driver</a>.
 </ol>
 
@@ -57,7 +57,7 @@ can use a laptop to test.
    via Bluetooth and open a serial terminal (the Bluetooth pairing process
    depends on your platform, so we leave that as an exercise for the user). On
    Windows, install the driver from the [vi-firmware
-   repository](https://github.com/openxc/vi-firmware/tree/master/conf/windows-driver).
+   repository](https://github.com/openxc/vi-windows-driver).
 1. Run `openxc-control version` from the command line - it should print out the
    current version of the attached vehicle interface. If you instead get an
    error about not being able to find the USB device, make sure the VI has

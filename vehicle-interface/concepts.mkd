@@ -59,6 +59,47 @@ watched your mechanic plug a tool in somewhere underneath your steering wheel,
 or seen a vehicle monitoring app for your smartphone, that's OBD-II in action.
 You'll always find the port by the driver's knees.
 
+This means that every vehicle in the United States has a very accessible place
+to connect to the same network used by all of the vehicle's subsystems. At the
+very least, all gasoline engine cars in this country (and most hybrids and
+electric vehicles in practice) support parts of the [On-board
+Diagnostics](http://en.wikipedia.org/wiki/On-board_diagnostics) standard data
+set. You can read this data set with OpenXC (and see [why you might still want
+to use OpenXC]() over one of the other OBD-II dongles), but with OpenXC the same
+port may also give you access to much richer data from your car. With either
+support files from your automaker or some knowledge of how to decipher the
+messages on the network, you can significantly expand the data available to your
+applications.
+
+The <a href="/vehicle-interface/index.html">**vehicle interface (VI)**</a> is a
+device that plugs into the OBD-II port (and thus to the CAN bus), reads and
+translates OBD-II requests and CAN messages into a [standard cross-vehicle
+format](https://github.com/openxc/openxc-message-format). The translated
+messages can be sent over USB or Bluetooth, so they can be read by any computer
+or smartphone.
+
+<div class="row">
+    <div class="col-md-4">
+        <img class="img-responsive" src="/images/android-in-car.jpg"/>
+    </div>
+    <div class="col-md-4 stacked">
+        <img class="img-responsive" src="/images/screenshots/mpg-app-1.png"/>
+        <img class="img-responsive" src="/images/screenshots/mpg-app-2.png"/>
+    </div>
+</div>
+
+The <a href="/host-devices/index.html">**host device**</a> connects to the
+vehicle interface and reads the translated vehicle data (e.g. an Android tablet
+or Python environment on a laptop). OpenXC developers can write applications on
+this device using the data.
+
+This architecture diagram illustrates how the VI, Android device and the car are
+connected. In this example, the status of the parking brake is broadcast on the
+vehicle's CAN bus. The VI receives the signal, translates it into a generic
+format and sends it out over USB to an Android App.
+
+<img class="img-responsive" src="/images/openxc-architecture.jpeg" title="OpenXC Architecture Diagram"/>
+
 ![OBD-II Port with Cable in a Mustang](/images/obd-ii-cable.jpg)
 
 <h2 id="obd">
@@ -72,21 +113,24 @@ continuously sends a CAN message with the engine speed (in RPM). The cluster
 listens for this message on the bus and updates the tachometer arm when it
 receives a new value. The cluster doesn't have to query for anything.
 
-Conversely, diagnostic messages use a request/response style. When you attach an
-off-the-shelf OBD-II scan tool, it sends specially formatted diagnostic command
-messages over the CAN bus. Nodes on the network that can output diagnostic
-information are listening for these messages, and send out the requested status
-information over CAN when asked. There's no point in sending these messages when
-nothing is attached and capable of interpreting the results, so these messages
-are not sent continuously to minimize the level of traffic on the network.
+Conversely, diagnostic messages use a request/response style. An OBD-II scanner,
+or an OpenXC running the OBD-II firmware send specially formatted diagnostic
+command messages over the CAN bus. Nodes on the network that can output
+diagnostic information are listening for these messages, and send out the
+requested status information over CAN when asked. There's no point in sending
+these messages when nothing is attached and capable of interpreting the results,
+so these messages are not sent continuously to minimize the level of traffic on
+the network.
 
 The diagnostic request protocol is relatively standard across vehicle
 manufacturers, but beyond the standardized (and mandated) [OBD-II
 parameters](http://en.wikipedia.org/wiki/OBD-II_PIDs), the diagnostic message
 identifiers and formats are also largely proprietary.
 
-Diagnostic style messages aren't currently supported by the VI firmware, but
-there's nothing stopping it from happening - just time and effort.
+Diagnostic messages are fully supported by the open source
+[vi-firmware](vi-firmware.openxcplatform.com) and [ready-to-go
+binaries](/vehicle-interface/firmware.html) are available that scan your car for
+all supported PIDs.
 
 <div class="page-header">
 <h2>Next Steps</h2>

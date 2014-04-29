@@ -28,6 +28,10 @@ $ openxc-dashboard
 # Show a real-time stream of all messages
 $ openxc-dump
 ...
+
+# Send an OBD-II diagnostic request
+$ openxc-diag --message-id 0x7df --mode 0x3
+...
 {% endhighlight %}
 
 It may also be necessary to check the current version of the software you have

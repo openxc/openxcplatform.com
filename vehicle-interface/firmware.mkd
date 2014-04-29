@@ -8,16 +8,34 @@ title: VI Firmware - OpenXC
 </div>
 
 Before you can use a vehicle interface (VI), it has to be programmed with a
-firmware that understands data sent by your car. With OpenXC, those are often
-distributed as pre-compiled binaries by car manufacturers. Check the [list of supported
-vehicles](/hardware/vehicles.html) for your car's make and model, and for
-links to download the firmware.
+firmware that understands data sent by your car. You have a few options:
 
-Once you download the binary firmware for your car, look up the instructions for
-your vehicle interface on the [supported VI hardware
-page](/vehicle-interface/hardware.html) - it's different for each.
+**On-board Diagnostics (OBD-II) Data**
 
-**Emulator Firmware**
+To read *standard OBD-II diagnostics data*, use the open source OBD-II OpenXC
+firmware. You can download the latest compiled  version of that firmware from
+the [vi-firmware releases page](https://github.com/openxc/vi-firmware/releases).
+
+Grab the `openxc-obd2-firmware-*.zip` file for the latest version, which
+contains the OBD-II firmware for each of the supported vehicle interfaces.
+
+Next, look up the instructions for uploading the firmware to your vehicle
+interface on the [supported VI hardware page](/vehicle-interface/hardware.html)
+- it's different for each.
+
+**Expanded Proprietary Data**
+
+To read expanded data from a particular car, look for firmware distributed as
+pre-compiled binaries by your car's manufacturer. Check the [list of supported
+vehicles](/hardware/vehicles.html) for your car's make and model and for links
+to download the firmware.
+
+Once you have a binary firmware, look up the instructions for uploading the
+firmware to your vehicle interface on the [supported VI hardware
+page](/vehicle-interface/hardware.html)
+- it's different for each.
+
+**Emulated Data**
 
 If you don't have access to a car and you want to verify the connection to the
 VI from your host device (or it's winter in Michigan and you'd just rather stay
@@ -27,6 +45,11 @@ page](https://github.com/openxc/vi-firmware/releases)
 fake vehicle data and continuously sends it over USB and Bluetooth as if it were
 live data. It's completely random data, so don't try and build an app against
 it.
+
+Once you download the emulator firmware, look up the instructions for your
+vehicle interface on the [supported VI hardware
+page](/vehicle-interface/hardware.html) - it's different for each.
+
 
 <div class="page-header">
     <h2>Advanced: Custom CAN Signal Definition</h2>

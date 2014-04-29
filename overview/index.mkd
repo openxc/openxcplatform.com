@@ -45,8 +45,9 @@ to 9 months.
 
 Plug the OpenXC vehicle interface into your car and from Android, you can read
 data from the vehicle in real-time like the steering wheel angle, GPS position,
-and vehicle speed. Right now, OpenXC supports over a dozen different
-measurements on a growing list of Ford vehicles.
+and vehicle speed. Right now, OpenXC supports the U.S. federally mandated
+[On-Board Diagnostics](http://en.wikipedia.org/wiki/On-board_diagnostics) data
+on almost *all* cars and over an expanded data set on most Ford vehicles.
 
 A simple start is to take advantage of the GPS antenna on the roof of the car to
 improve the accuracy of your location aware application. Or get creative - why
