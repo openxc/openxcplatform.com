@@ -42,7 +42,7 @@ blue if it's plugged in all the way and the car is running.</li>
 
 <li>Run the OpenXC Enabler app, hit the <code>Search for Bluetooth VI</code>
 button and wait a moment. Within a minute, it should detect your Bluetooth VI
-and prompt to pair - use the PIN <code>1234</code>.
+and prompt to pair. If it asks for a PIN, use <code>1234</code>.
 <br/>
 (<a class="extra-screenshots-controls" href="#extra-inactive-enabler-screenshots">show me</a>)
 
