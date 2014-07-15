@@ -16,7 +16,7 @@ interface and want to test it?
 Get Started with the Android Library
 </a>
 
-Are you looking to develop an **Python app**, or you want to analyze data from
+Are you looking to develop a **Python app**, or you want to analyze data from
 your car on a laptop?
 
 <a class="btn btn-primary btn-lg"  href="/python/getting-started.html">
