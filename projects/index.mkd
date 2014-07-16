@@ -26,6 +26,7 @@ events](/community/events.html), too.
 * [LED Display](/projects/led-display.html)
 * [Browser-based Drive Trace Analyzer](http://trace-analyzer.openxcplatform.com)
 * [Vehicle Simulator](/projects/simulator.html)
+* [blueShift - An RGB LED Tachometer](http://petemills.blogspot.com/2014/07/blueshift-openxc-led-tachometer.html)
 
 ## Research Projects
 
