@@ -1,4 +1,5 @@
 <div class="separator" style="clear: both; text-align: left;">
+This project was originally shared at http://petemills.blogspot.com/2014/07/blueshift-openxc-led-tachometer.html
 An Arduino, some addressable LED's, a bluetooth module, code and a 3D printer come together to make blueShift - An OpenXC LED Tachometer. &nbsp;blueShift is so named for the <i>Blue</i>tooth protocol used for data communication, and the use of a tachometer to indicate when to <i>shift</i> your car. &nbsp;It may be amusing to note that the driver and passengers traveling in this car would observe <a href="http://en.wikipedia.org/wiki/Blueshift">Blueshift</a> when peering thru the windscreen, provided their velocity was sufficient.</div>
 <div class="separator" style="clear: both; text-align: left;">
 <br /></div>
