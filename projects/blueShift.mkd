@@ -1,1 +1,195 @@
-Testing inclusion of blueShift
+<div class="separator" style="clear: both; text-align: left;">
+An Arduino, some addressable LED's, a bluetooth module, code and a 3D printer come together to make blueShift - An OpenXC LED Tachometer. &nbsp;blueShift is so named for the <i>Blue</i>tooth protocol used for data communication, and the use of a tachometer to indicate when to <i>shift</i> your car. &nbsp;It may be amusing to note that the driver and passengers traveling in this car would observe <a href="http://en.wikipedia.org/wiki/Blueshift">Blueshift</a> when peering thru the windscreen, provided their velocity was sufficient.</div>
+<div class="separator" style="clear: both; text-align: left;">
+<br /></div>
+<div class="separator" style="clear: both; text-align: left;">
+<br /></div>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://4.bp.blogspot.com/-7u4VQ94Ca90/U7cTa1NGxiI/AAAAAAAAQ8Y/MOuxty8YixI/s1600/IMG_2876.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/-7u4VQ94Ca90/U7cTa1NGxiI/AAAAAAAAQ8Y/MOuxty8YixI/s1600/IMG_2876.jpg" height="240" width="320" /></a></div>
+<br />
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://3.bp.blogspot.com/-Pzmca_LLDSM/U7cTRSa-lGI/AAAAAAAAQ7w/Cpz_JKiMLTM/s1600/IMG_2872.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://3.bp.blogspot.com/-Pzmca_LLDSM/U7cTRSa-lGI/AAAAAAAAQ7w/Cpz_JKiMLTM/s1600/IMG_2872.jpg" height="240" width="320" /></a></div>
+<br />
+<br />
+<div class="separator" style="clear: both; text-align: center;">
+<object class="BLOGGER-youtube-video" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" data-thumbnail-src="https://i1.ytimg.com/vi/lUmPiPhLRXw/0.jpg" height="266" width="320"><param name="movie" value="https://www.youtube.com/v/lUmPiPhLRXw?version=3&f=user_uploads&c=google-webdrive-0&app=youtube_gdata" /><param name="bgcolor" value="#FFFFFF" /><param name="allowFullScreen" value="true" /><embed width="320" height="266"  src="https://www.youtube.com/v/lUmPiPhLRXw?version=3&f=user_uploads&c=google-webdrive-0&app=youtube_gdata" type="application/x-shockwave-flash" allowfullscreen="true"></embed></object></div>
+<br />
+<br />
+<div class="separator" style="clear: both; text-align: center;">
+</div>
+About a month ago I picked up a new car. &nbsp;It's a Ford Fiesta with a 1 liter, turbo, eco-boost engine. &nbsp;It achieves roughly 2.5 times greater fuel efficiency than my Jeep. &nbsp;This fuel efficiency was my primary impetus to purchase, but the new tech in automotive electronics is a pretty cool bonus.<br />
+<br />
+It took a couple days driving around to figure out all the bells, whistles, and electronic gizmos in the Fiesta, and just that quickly, I was looking for something more. &nbsp;What that turned out to be was Ford's OpenXC API. &nbsp;<a href="http://openxcplatform.com/">OpenXC</a> is part hardware, part software. &nbsp;It is open source, as the name suggests and aims to ease us into integrating vehicle data into our android apps, and in case of blueShift, embedded hardware.<br />
+<br />
+Let's take a brief, but closer look at OpenXC and the potential it provides. &nbsp;For quite some time now, auto manufacturers have provided an <a href="http://en.wikipedia.org/wiki/On-board_diagnostics">OnBoard Diagnostics port</a>. &nbsp;This OBD2 port, as it is sometimes called, is a digital interface to engine management parameters and chassis/body status. &nbsp;To the typical hobbyist, an OBD2 ports data is relatively inaccessible. &nbsp;You would need to know manufacturer proprietary PID's for the CAN messages you were viewing to discern "air intake temperature" from "outside air temperature" for instance. &nbsp;Likely, the information you were able to decode is specific to one vehicle make/model or worse, ECM batch. <br />
+<br />
+Under the OpenXC umbrella, Ford has developed a hardware module called a <a href="http://openxcplatform.com/vehicle-interface/hardware.html">Vehicle Interface or VI</a>. &nbsp;This VI plugs into your OBD2 port, and interprets engine parameters and chassis/body info. &nbsp;These data are then packaged into JSON format, and relayed out over Bluetooth SPP. &nbsp;If you were to look at the <a href="http://openxcplatform.com/about/data-set.html">OpenXC Data set</a>&nbsp;you would discover that listening to this Bluetooth connection provides you with a plethora of vehicle specific information in real time. &nbsp;For instance, you can read your accelerator pedal position, fuel level, odometer, brake pedal status, and of course engine speed. &nbsp;The list goes on.<br />
+<br />
+blueShift aims to utilize these engine speed data to drive a set of LED's in an easy to interpret, graphical manner. &nbsp;The circular nature of an <a href="http://www.adafruit.com/products/1586">off-the-shelf LED strip</a> lends itself to this project nicely. &nbsp;What's more, these LED's are individually addressable, RGB LED's. &nbsp;This means that we can set any LED on the ring to just about any color we like, at any time we like. &nbsp;blueShift takes advantage of these addressable <a href="https://www.google.com/search?q=WS2812B&amp;oq=WS2812B&amp;aqs=chrome..69i57&amp;sourceid=chrome&amp;es_sm=93&amp;ie=UTF-8">WS2812B LED's</a> to create an interesting and informative display. <br />
+<br />
+At first glance it may seem a <i>second</i>&nbsp;tachometer in my car is superfluous. &nbsp;I can say after having used blueShift, quite the opposite is true. &nbsp;The LED's are much easier to read with peripheral vision than the stock tachometer needle. &nbsp;Likewise, blueShift would be very useful for someone who races Ford automobiles. &nbsp;Additionally, blinky LED things are just plain cool, and no further justification for this project is therefore necessary.<br />
+<br />
+The only wired connection to blueShift is for power. &nbsp;All data transfer is accomplished over Bluetooth SPP. &nbsp;Presently, this power is derived from my vehicles on-board USB power. &nbsp;I have plans to derive power from the OpenXC VI power port in the future. &nbsp;This will require a small regulator to convert the vehicle ~14 V DC to a microcontroller compatible, regulated 5 V DC supply. &nbsp;This supply will also need to supply power for the LED ring, so current consumption should be considered.<br />
+<br />
+<br />
+<b><u>3D Printed Enclosure:</u></b><br />
+<br />
+Sometimes a project will take you to unanticipated places. &nbsp;In the case of blueShift, that ended up being the land of 3D printing. &nbsp;Typically when I make a new project I am left to drilling and milling existing enclosures, and sometimes tupperware. &nbsp;What I am left with is a finished product that looks less than finished. &nbsp;When I was envisioning how I wanted blueShift to look, it deviated rather drastically from the prototype seen below.<br />
+<br />
+<br />
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://4.bp.blogspot.com/-Ee1WaH4OnSY/U7cSm_RkVlI/AAAAAAAAQ50/7FAcXPV2oDk/s1600/IMG_2769.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/-Ee1WaH4OnSY/U7cSm_RkVlI/AAAAAAAAQ50/7FAcXPV2oDk/s1600/IMG_2769.jpg" height="320" width="240" /></a></div>
+<br />
+<br />
+Once it was decided to build a 3D printer to print blueShift's housing, I started down the path of designing a 3D printer of my own. &nbsp;I had a basic layout and construction method in mind when I started looking for approximate pricing on parts. &nbsp;I soon discovered that the constituent parts of my 3D printer design were approaching the cost of a 3D printer kit. &nbsp;This led me to purchase a Prusa i3v from <a href="http://www.makerfarm.com/">Maker Farm</a>, and I am glad I did. &nbsp;Together with my girlfriend Miriam, we assembled the kit in a few evenings. &nbsp;The decision to build a kit saved substantial time over designing a printer. &nbsp;Our first prints were the requisite calibration cubes and then jewelry as seen below. &nbsp;There is probably still some fiddling to do with the printer setup, but I am pretty pleased with the print quality so far.<br />
+<br />
+<br />
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://1.bp.blogspot.com/-OVcuOH1KVyg/U7db979B6MI/AAAAAAAARAw/FwQ1FzFUH50/s1600/IMG_2845.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/-OVcuOH1KVyg/U7db979B6MI/AAAAAAAARAw/FwQ1FzFUH50/s1600/IMG_2845.jpg" height="240" width="320" /></a></div>
+<br />
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://4.bp.blogspot.com/-NLSyIrsnJ3Q/U7db9ksOXeI/AAAAAAAARAs/TCGrhn6qHl4/s1600/IMG_2852.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/-NLSyIrsnJ3Q/U7db9ksOXeI/AAAAAAAARAs/TCGrhn6qHl4/s1600/IMG_2852.jpg" height="320" width="320" /></a></div>
+<br />
+<br />
+Here is a photo of the partially finished 3D printer.<br />
+<br />
+<br />
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://1.bp.blogspot.com/-SJxOsgJrNdQ/U7cSoWmktyI/AAAAAAAAQ6A/0fyrfq4fRJw/s1600/IMG_2750.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/-SJxOsgJrNdQ/U7cSoWmktyI/AAAAAAAAQ6A/0fyrfq4fRJw/s1600/IMG_2750.jpg" height="320" width="240" /></a></div>
+<br />
+<br />
+I designed the 3D models for blueShift in AutoCad 2014. &nbsp;I then exported the models as *.stl files and uploaded them to Thingiverse for sharing. &nbsp;<a href="http://www.thingiverse.com/thing:385088">You can download</a> the *.stl files to print your your own blueShift enclosure, or I think companies like Shapeways may print them out for you if you don't have a printer ( yet ). &nbsp;I have no experience with that.<br />
+<br />
+Below are some photos of the enclosure in various states of printing, and drawing revisions. &nbsp;The portions of the print that have large gaps and look like a lattice are intentional. &nbsp;This makes up supporting structure for parts with overhangs while printing. &nbsp;It is designed to break off easily, and in practice this is sometimes true.<br />
+<br />
+<br />
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://2.bp.blogspot.com/-9b_WjccpiGU/U7cSn0FFlfI/AAAAAAAAQ6E/bsdLdnUbXh0/s1600/IMG_2858.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://2.bp.blogspot.com/-9b_WjccpiGU/U7cSn0FFlfI/AAAAAAAAQ6E/bsdLdnUbXh0/s1600/IMG_2858.jpg" height="240" width="320" /></a></div>
+<br />
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://2.bp.blogspot.com/-7sWceGlxnCM/U7cSq-Vei0I/AAAAAAAAQ6M/43FpsqCRow0/s1600/IMG_2859.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://2.bp.blogspot.com/-7sWceGlxnCM/U7cSq-Vei0I/AAAAAAAAQ6M/43FpsqCRow0/s1600/IMG_2859.jpg" height="240" width="320" /></a></div>
+<br />
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://3.bp.blogspot.com/-W5H-ROeTdZ0/U7cSxKjomqI/AAAAAAAAQ6c/hb5Adhl1bU4/s1600/IMG_2861.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://3.bp.blogspot.com/-W5H-ROeTdZ0/U7cSxKjomqI/AAAAAAAAQ6c/hb5Adhl1bU4/s1600/IMG_2861.jpg" height="240" width="320" /></a></div>
+<br />
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://2.bp.blogspot.com/-QvBw0bt1ndM/U7cTkKmocOI/AAAAAAAAQ9A/8FVl8hPDZYQ/s1600/IMG_2881.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://2.bp.blogspot.com/-QvBw0bt1ndM/U7cTkKmocOI/AAAAAAAAQ9A/8FVl8hPDZYQ/s1600/IMG_2881.jpg" height="240" width="320" /></a></div>
+<br />
+<br />
+I am really enjoying 3D printing. &nbsp;Even with it's obvious limitations, I feel that I will make good use out of this tool. &nbsp;I see many opportunities to print things that may or may not be necessary, but ultimately I am having a great time with it.<br />
+<div class="separator" style="clear: both; text-align: center;">
+</div>
+<br />
+<br />
+<b><u>Electronics:</u></b><br />
+<br />
+<u>Part List:</u><br />
+<br />
+<ol>
+<li><a href="https://www.sparkfun.com/products/12665">NeoPixel Ring w/ 24 WS2812 RGB LED</a></li>
+<li><a href="https://www.sparkfun.com/products/11113">Arduino Pro Mini</a></li>
+<li><a href="https://www.sparkfun.com/products/12577">BlueSMiRF Bluetooth Module</a></li>
+<li>NPN transistor&nbsp;+ 1k0 base resistor</li>
+<li>Pushbutton Switch ( optional )</li>
+<li><a href="https://www.sparkfun.com/products/9718">FTDI cable for programming and power</a></li>
+<li><a href="http://openxcplatform.com/vehicle-interface/hardware.html">A Ford OpenXC VI</a></li>
+</ol>
+<br />
+I am using an RN-42 Bluetooth module from Sparkfun called a <a href="https://www.sparkfun.com/products/12577">BlueSMiRF&nbsp;</a>. &nbsp;One of the first things to do is connect to the modem and configure it for <i>Auto-Connect Master Mode (SM,3). &nbsp;</i>The <a href="http://dlnmh9ip6v2uc.cloudfront.net/datasheets/Wireless/Bluetooth/bluetooth_cr_UG-v1.0r.pdf">AT Command sheet</a> will walk you thru this process. &nbsp;For more detailed information on how to connect the Bluetooth module, and enter into command mode, refer to the <a href="https://learn.sparkfun.com/tutorials/using-the-bluesmirf">Sparkfun tutorial</a>.<br />
+<br />
+With the Bluetooth module configured, we can wire up the rest of the circuit and tuck it into the blueShift housing. &nbsp;Here are a few pictures that show this process. &nbsp;Great care should be taken to avoid short circuits. &nbsp;Currently I power the blueShift from an FTDI USB cable. <br />
+<br />
+<br />
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://1.bp.blogspot.com/-TjR3bQGKbIY/U7drPRreAVI/AAAAAAAARBE/ljTXs1dmoOQ/s1600/Screen+Shot+2014-07-04+at+11.03.17+PM.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/-TjR3bQGKbIY/U7drPRreAVI/AAAAAAAARBE/ljTXs1dmoOQ/s1600/Screen+Shot+2014-07-04+at+11.03.17+PM.png" height="248" width="320" /></a></div>
+<br />
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://2.bp.blogspot.com/-KMt_UbODYzo/U7cToEA13DI/AAAAAAAAQ9I/ZnAjrImWTBI/s1600/IMG_2883.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://2.bp.blogspot.com/-KMt_UbODYzo/U7cToEA13DI/AAAAAAAAQ9I/ZnAjrImWTBI/s1600/IMG_2883.jpg" height="320" width="296" /></a></div>
+<br />
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://1.bp.blogspot.com/-BuI_HIa4EAg/U7cTt0Hh9gI/AAAAAAAAQ9Y/Lueqg05K8a0/s1600/IMG_2885.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/-BuI_HIa4EAg/U7cTt0Hh9gI/AAAAAAAAQ9Y/Lueqg05K8a0/s1600/IMG_2885.jpg" height="240" width="320" /></a></div>
+<br />
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://2.bp.blogspot.com/-Mo11OOC-Z9k/U7cT07j8eII/AAAAAAAAQ9o/uhrUkMeEPF8/s1600/IMG_2887.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://2.bp.blogspot.com/-Mo11OOC-Z9k/U7cT07j8eII/AAAAAAAAQ9o/uhrUkMeEPF8/s1600/IMG_2887.jpg" height="240" width="320" /></a></div>
+<br />
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://1.bp.blogspot.com/-8AmKLAWMktI/U7cT3uzwwiI/AAAAAAAAQ94/hWA9czhIfug/s1600/IMG_2889.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/-8AmKLAWMktI/U7cT3uzwwiI/AAAAAAAAQ94/hWA9czhIfug/s1600/IMG_2889.jpg" height="320" width="240" /></a></div>
+<br />
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://3.bp.blogspot.com/-vsBk9dP3kKw/U7cT9YIGOVI/AAAAAAAAQ-A/TYO15QPte1c/s1600/IMG_2890.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://3.bp.blogspot.com/-vsBk9dP3kKw/U7cT9YIGOVI/AAAAAAAAQ-A/TYO15QPte1c/s1600/IMG_2890.jpg" height="240" width="320" /></a></div>
+<br />
+<br />
+The little tactile switch will perform a function in future software revisions. &nbsp;For now, it does nothing in software.<br />
+<br />
+<br />
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://3.bp.blogspot.com/-Awy668dlIMw/U7cUkNCemTI/AAAAAAAAQ_4/HVwyiCBItoI/s1600/IMG_2904.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://3.bp.blogspot.com/-Awy668dlIMw/U7cUkNCemTI/AAAAAAAAQ_4/HVwyiCBItoI/s1600/IMG_2904.jpg" height="320" width="240" /></a></div>
+<br />
+<br />
+The two red wires with header pins are for the bluetooth modem power. &nbsp;This is represented as a SPST switch on the schematic labeled "HEADER". &nbsp;It is necessary to unpower the modem when uploading new firmware to the Arduino. &nbsp;This should be shorted out while operating blueShift to power the Bluetooth Module, and disconnected for uploading new firmware to the arduino.<br />
+<br />
+<br />
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://1.bp.blogspot.com/-Me3XgzmQFkc/U7cUfffh-eI/AAAAAAAAQ_o/OsyDigGBnQ4/s1600/IMG_2903.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/-Me3XgzmQFkc/U7cUfffh-eI/AAAAAAAAQ_o/OsyDigGBnQ4/s1600/IMG_2903.jpg" height="240" width="320" /></a></div>
+<br />
+<br />
+This would be a good time to install the software and verify everything works. &nbsp;If you need to re-solder anything, it is better to find out now. &nbsp;The author may have experience that lead to this warning.<br />
+<br />
+In the picture below, this semi-opaque, 5mm thick disk is possibly polypropylene. &nbsp;I purchased the stock from an unknown bin at a shop and belt sanded it into shape. &nbsp;There are 3 equally spaced clearance holes drilled into this lens to accommodate the M3 mounting bolts which we are about to install. &nbsp;Drop the lens into the outer housing and line up the holes.<br />
+<br />
+<br />
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://3.bp.blogspot.com/-RyhRYpdwrRk/U7cUkOQq8zI/AAAAAAAAQ_0/vBtQoafzeOo/s1600/IMG_2905.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://3.bp.blogspot.com/-RyhRYpdwrRk/U7cUkOQq8zI/AAAAAAAAQ_0/vBtQoafzeOo/s1600/IMG_2905.jpg" height="320" width="240" /></a></div>
+<br />
+<br />
+Insert the assembled and tested inner housing into the outer. &nbsp;Line the three M3 bolts up and screw the entire assembly together.<br />
+<br />
+<br />
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://1.bp.blogspot.com/-pPlERSp6xjs/U7cUl2biBSI/AAAAAAAARAA/GWbzejUzDo8/s1600/IMG_2906.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/-pPlERSp6xjs/U7cUl2biBSI/AAAAAAAARAA/GWbzejUzDo8/s1600/IMG_2906.jpg" height="240" width="320" /></a></div>
+<br />
+<br />
+Screw the Ram Mount to the back of blueShift. &nbsp;This will now suction cup to your windshield and plug the FTDI USB cable into a USB port in your car. &nbsp;If you don't have a USB port onboard, &nbsp;there are 12 volt outlet to USB adapters available.<br />
+<br />
+<br />
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://4.bp.blogspot.com/-gNICu8Z5dps/U7cUua67JpI/AAAAAAAARAg/TPthrR80QXs/s1600/IMG_2910.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/-gNICu8Z5dps/U7cUua67JpI/AAAAAAAARAg/TPthrR80QXs/s1600/IMG_2910.jpg" height="320" width="240" /></a></div>
+<br />
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://3.bp.blogspot.com/-nhCcAFgoz_o/U7cUsKjmbvI/AAAAAAAARAY/oAV_8CqnF8I/s1600/IMG_2909.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://3.bp.blogspot.com/-nhCcAFgoz_o/U7cUsKjmbvI/AAAAAAAARAY/oAV_8CqnF8I/s1600/IMG_2909.jpg" height="240" width="320" /></a></div>
+<br />
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://2.bp.blogspot.com/-_KiZbDKJ_AI/U7cTWQrxixI/AAAAAAAAQ8I/t4SD4ndURsc/s1600/IMG_2875.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://2.bp.blogspot.com/-_KiZbDKJ_AI/U7cTWQrxixI/AAAAAAAAQ8I/t4SD4ndURsc/s1600/IMG_2875.jpg" height="240" width="320" /></a></div>
+<br />
+<b><u><br class="Apple-interchange-newline" />Software:</u></b><br />
+<br />
+You can download the Arduino code <a href="https://sites.google.com/site/pemills2011/file/blueShiftv0_7.ino?attredirects=0&amp;d=1">here</a>.<br />
+<br />
+When blueShift first turns on, there is a brief pause. &nbsp;During this time, we are waiting for the Ford OpenXC VI to boot up, and for blueShift to establish a connection to the VI. &nbsp;For a bit of fun, we display the "Waiting for Bluetooth Throbber" that you can see below.<br />
+<br />
+<br />
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://4.bp.blogspot.com/-PF5ojYROmR8/U7f-HSe4d9I/AAAAAAAARBU/BmQp2Bz4jhA/s1600/a2m2p.gif" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/-PF5ojYROmR8/U7f-HSe4d9I/AAAAAAAARBU/BmQp2Bz4jhA/s1600/a2m2p.gif" /></a></div>
+<br />
+<br />
+Once a connection is established and valid RPM data is coming thru, the display changes to "Run Mode". &nbsp;In this state, RPM is displayed as a green LED trail. &nbsp;It grows clockwise as RPM increases, with the final LED being displayed in red for a bit of visual interest.<br />
+<br />
+This final LED, the highest LED displayed, is "sticky". &nbsp;That is to say, as your RPM begins to decay, the peak RPM read will continue to be displayed as a single red LED. &nbsp;This will either persist until 3 seconds have elapsed since the peak measurement or once a positive rate RPM is detected. <br />
+<br />
+Since OpenXC provides with boolean headlamp status on the same bluetooth connection, we can implement auto-dimming of blueShift. &nbsp;As soon as your headlamps come on, blueShift will dim. &nbsp;When your headlamps return to the off state, blueShift will regain full brightness. &nbsp;This is not just a nicety - it is rather important. &nbsp;These LED are quite bright and without dimming at night the result is a well lit car interior.<br />
+<br />
+The sticky LED telltale can be seen in the video below. &nbsp;You can also see the auto-dimming feature towards the end of the video. &nbsp;It's a little hard to see when the headlights turn on because its still light out, but you can see blueShift get dimmer. &nbsp;You can also hear the headlight knob click on.<br />
+<br />
+<br />
+<div class="separator" style="clear: both; text-align: center;">
+<object class="BLOGGER-youtube-video" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" data-thumbnail-src="https://i1.ytimg.com/vi/qYp3V5nOi-k/0.jpg" height="266" width="320"><param name="movie" value="https://www.youtube.com/v/qYp3V5nOi-k?version=3&f=user_uploads&c=google-webdrive-0&app=youtube_gdata" /><param name="bgcolor" value="#FFFFFF" /><param name="allowFullScreen" value="true" /><embed width="320" height="266"  src="https://www.youtube.com/v/qYp3V5nOi-k?version=3&f=user_uploads&c=google-webdrive-0&app=youtube_gdata" type="application/x-shockwave-flash" allowfullscreen="true"></embed></object></div>
+<br />
+<br />
+At the time of this writing, blueShift is hard coded to a specific RPM span. &nbsp;That is to say, if you wanted the first LED to light at 500 RPM and the final LED to light at 6000 RPM, you would need to reflash the firmware. &nbsp;After I get a few more miles on my car I will want to change that so, I will probably use that tactile switch as a way to program the RPM span without reflashing firmware.<br />
+<br />
+To implement this I think it would be good to have a "programming mode" where say you enter program mode and blueShift will keep track of the highest RPM read. &nbsp;You press the button once to set this as the lower RPM span. &nbsp;Now, rev your engine and blueShift will remember the highest RPM achieved. &nbsp;Press the button to store this as the high RPM span. &nbsp;These new values will be saved to EEPROM and recalled at the next power on cycle.<br />
+<br />
+Additional firmware upgrades include moving to JSON parsing. &nbsp;Right now I just read the full JSON line and manually parse the string for the values I want. &nbsp;If something were to change in the VI firmware, it is possible to break my code.<br />
+<br />
+Are you making a blueShift? &nbsp;Send me a message, I would love to hear how it's going. &nbsp;Happy making!<br />
+<br />
