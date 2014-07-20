@@ -8,12 +8,14 @@ site.
 
 ## Local development
 
-If you do not have ruby and RubyGems installed (you already do on OS X), see
-below.
+Follow GitHub's docs for [Installing
+Jekyll](https://help.github.com/articles/using-jekyll-with-pages#installing-jekyll). You need Ruby and Bundler.
 
-Assuming you have Ruby and RubyGems installed:
+Once you have that installed, run:
 
-    $ gem install rdiscount jekyll
+    $ bundle install
+
+from the `openxcplatform.com` directory.
 
 Then, assuming you have Python's pip installed:
 
@@ -21,11 +23,9 @@ Then, assuming you have Python's pip installed:
 
 Then run the local development server:
 
-    $ cd openxc.github.com
-    $ jekyll serve -w
+    openxcplatform.com/ $ bundle exec jekyll serve -w
 
 and point your browser to http://localhost:4000.
-(Note that for newer versions of jekyll, the run command is `jekyll serve`.)
 
 Jekyll uses the templates in the repository to generate a static html version of
 the site. The static version is always dumped in the `_site` subdirectory in the
@@ -33,32 +33,6 @@ repository - this is *not* committed, since it's automatically generated. The
 `-w` flag turns on auto-recompilation, so anytime you change a file it will
 regenerate whatever files have changed, so you just need to refresh the browser
 to see your latest updates.
-
-### Installing Ruby and RubyGems
-
-**Cygwin in Windows**
-
-Install the `ruby`, `make`, `gcc`, `libiconv` and `zlib` packages in
-Cygwin using the `setup.exe`
-you downloaded earlier. Download the RubyGems TGZ package from
-http://rubygems.org/pages/download and put it in `C:\cygwin\home\<your
-username>`. Fire up Cygwin and run this:
-
-    $ tar -xzf rubygems*.tgz
-    $ cd rubygems*
-    $ ruby setup.rb
-
-Jekyll depends on posix-spawn v0.3.6, but that has a problem with compiling in
-Cygwin. The latest development version works, though, so install that gem from
-source before continuing:
-
-    $ git clone https://github.com/rtomayko/posix-spawn.git
-    $ cd posix-spawn
-    $ gem build posix-spawn.gemspec
-    $ gem install posix-spawn-0.3.6.gem
-
-If you didn't get any errors, return to the top of this section and install
-jekyll.
 
 ## Going Live
 
