@@ -1,3 +1,5 @@
 markdown: rdiscount
 pygments: true
 production: true
+gems:
+    - jekyll-sitemap
