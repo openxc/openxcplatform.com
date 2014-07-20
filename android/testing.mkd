@@ -8,12 +8,30 @@ title: Testing - OpenXC
 </div>
 
 <div class="page-header">
-    <h2>Simulated Vehicle Data</h2>
+    <h2>Vehicle Simulator</h2>
+</div>
+
+The [OpenXC Vehicle
+Simulator](https://github.com/openxc/openxc-vehicle-simulator) is a web
+application intended for developers to run on local machines to generate a
+simulated OpenXC vehicle data trace in real time, to be used for testing Android
+applications.
+
+Besides unit tests, the simulator is the recommended first step for testing your
+application.
+
+![Simulator Screenshot](/images/simulator-screenshot.png)
+
+<div class="page-header">
+    <h2>Pre-recorded Vehicle Data</h2>
 </div>
 
 The library ships with a method for playing back previously recorded vehicle
 measurement trace files for testing. The [Measurement][] objects received
-by your application are identical to those received from a live vehicle.
+by your application are identical to those received from a live vehicle. The
+vehicle simulator is generally a more flexible and easy to use option, but if
+you have a specific driving scenario you wish to repeat multiple times, a trace
+file is bets.
 
 The trace file format is simply a plain text file of OpenXC JSON messages with
 an additional timestamp field, separated by newlines:
