@@ -128,7 +128,7 @@ parameters](http://en.wikipedia.org/wiki/OBD-II_PIDs), the diagnostic message
 identifiers and formats are also largely proprietary.
 
 Diagnostic messages are fully supported by the open source
-[vi-firmware](vi-firmware.openxcplatform.com) and [ready-to-go
+[vi-firmware](http://vi-firmware.openxcplatform.com) and [ready-to-go
 binaries](/vehicle-interface/firmware.html) are available that scan your car for
 all supported PIDs.
 
