@@ -66,7 +66,7 @@ programming language and OS agnostic
  <a href="https://github.com/openxc/openxc-message-format">output</a> sent via USB.
 The reference host device is <a href="/android/index.html">Android</a>, but
 there's no reason you couldn't use a laptop with another programming environment
-(see all supported <a href="/host-devices/index.html">host devices</a>.
+(see all supported <a href="/host-devices/index.html">host devices</a>).
 </p>
 
 <a href="http://en.wikipedia.org/wiki/OBD-II_PIDs#Non-standard_PIDs">Source</a>
@@ -111,8 +111,8 @@ make custom applications that take advantage of vehicle data.
 
 <p>There is actually no reason why existing OBD-II adapters couldn't work with
 the Android library (ongoing work in <a
-href="https://github.com/openxc/openxc-android/issues/19">this issue</a>). Do
-the performance of some cheap adapters can be poor and some have been known to
+href="https://github.com/openxc/openxc-android/issues/19">this issue</a>), though
+the performance of some cheap adapters can be poor, and some have been known to
 drain car batteries.</p>
 
 </dd>
