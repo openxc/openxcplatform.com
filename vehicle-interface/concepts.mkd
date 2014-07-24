@@ -14,7 +14,7 @@ understand the terms we use throughout the documentation.
 
 Modern automobiles are laced with a number of microcontrollers and sensors that
 monitor and control everything from the throttle position to the ambient air
-temperature. These devices communicate typically communicate over a wired in-vehicle
+temperature. These devices typically communicate over a wired in-vehicle
 network like a [CAN bus][can].
 
 ![In-vehicle Network](/images/can-diagram.png)
