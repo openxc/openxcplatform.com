@@ -10,24 +10,48 @@ title: Vehicle Trace Files - OpenXC
 There are a number of trace files available that exhibit different scenarios and
 driving behaviors.
 
-These files are delivered as gzip compressed files, so if you download one and
-it seems to be corrupted binary, try again using an updated browser - it should
-auto-detect an uncompress when you download:
-
-<div class="alert alert-danger">
-     Some Android devices' browsers will continue to have problems
-     with the gzipped files.  Skip to the next section to get
-     uncompressed traces if you are having problems on Android.
+<div class="page-header">
+    <h3 id="delhi">Delhi, India</h3>
 </div>
 
-* [NYC - Downtown, Crosstown](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/downtown-crosstown.json)
-* [NYC - East Downtown](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/downtown-east.json)
-* [NYC - West Downtown](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/downtown-west2.json)
-* [NYC - West Downtown 2](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/downtown-west.json)
-* [NYC - Uptown Crosstown](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/uptown-crossdown.json)
-* [NYC - Uptown Crosstown 2](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/uptown-crosstown.json)
-* [NYC - West Uptown ](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/uptown-west2.json)
-* [NYC - West Uptown](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/uptown-west.json)
+* [Border Roads to AIIMS - West](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/Border_Roads_Organisation to AIIMS.json)
+* [DND Toll Plaza to AIIMS - East](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/DND_Toll_Plaza to AIIMS.json)
+* [Apollo Hospital to AIIMS - Southeast](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/Apollo_Hospita to AIIMS.json)
+* [Fortis Hospital to AIIMS - South](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/Fortis_Hospital to AIIMS.json)
+* [Ghitorni Metro to AIIMS - South](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/Ghitorni_Metro to AIIMS.json)
+* [New Delhi Railway to AIIMS - North](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/New_Delhi_Railway to AIIMS.json)
+* [Film City, Noida to AIIMS - East](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/Sector 16A_Noida to AIIMS.json)
+* [AIIMS to Border Roads](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/AIIMS to Border_Roads_Organisation.json)
+* [AIIMS to DND Toll Plaza](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/AIIMS to DND_Toll.json)
+* [AIIMS to Film City, Noida](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/AIIMS to FilmCity_sec 16A_Noida.json)
+* [AIIMS to Fortis Hospital](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/AIIMS to Fortis_Hospital.json)
+* [AIIMS to Ghitorni Metro](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/AIIMS to Ghitorni_Metro.json)
+* [AIIMS to HCL Sector 125](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/AIIMS to HCL_Sector-125.json)
+* [AIIMS to New Delhi Railway](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/AIIMS to New_Delhi_Railway.json)
+* [Film City, Noida to HCL](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/FilmCity_Noida to HCL sec 125_Noida.json)
+* [Kalindi Kunj Bridge to Apollo Hospital](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/Kalindi_Kunj_Bridge to Apollo_Hospital.json)
+* [Red Fort to RML Hospital](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/Red_Fort to RML_Hospital.json)
+* [RML Hospital to Moolchand](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/RML_Hospital to Moolchand.json)
+* [RML Hospital to Red Fort](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/RML_Hospital to Red_Fort.json)
+* [Noida to RML Hospital](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/Sector 125_Noida to RML_Hospital.json)
+
+<div class="page-header">
+    <h3 id="new-york-city">New York City, U.S.A.</h3>
+</div>
+
+* [Downtown, Crosstown](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/downtown-crosstown.json)
+* [East Downtown](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/downtown-east.json)
+* [West Downtown](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/downtown-west2.json)
+* [West Downtown 2](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/downtown-west.json)
+* [Uptown Crosstown](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/uptown-crossdown.json)
+* [Uptown Crosstown 2](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/uptown-crosstown.json)
+* [West Uptown ](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/uptown-west2.json)
+* [West Uptown](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/uptown-west.json)
+
+<div class="page-header">
+    <h3 id="scenarios-and-behaviors">Additional Scenarios and Driving Behaviors</h3>
+</div>
+
 * [Highway Commute and Local Stop](http://openxcplatform.com.s3.amazonaws.com/traces/localwithgps.json)
 * [Idling while parked][idling while parked], toggling headlights, parking brake, etc.
 * [Short drive][short drive] around the block at low speed (~25MPH average)
@@ -37,11 +61,6 @@ auto-detect an uncompress when you download:
 * [Riding the brakes][]
 * [Speeding at highway speeds][speeding]
 * [Agressive driving][], hard acceleration and braking
-
-<div class="page-header">
-    <h3 id="uncompressed-traces">Uncompressed Vehicle Trace Files</h3>
-</div>
-
 * [Highway Commute and Local Stop](http://s3.amazonaws.com/openxcplatform.com/traces/localwithgps-uncompressed.json)
 * [Idling while parked](http://s3.amazonaws.com/openxcplatform.com/traces/parked-uncompressed.json)
 * [Speeding at highway speeds](http://s3.amazonaws.com/openxcplatform.com/traces/highway-speeding-uncompressed.json)
