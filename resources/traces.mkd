@@ -10,30 +10,40 @@ title: Vehicle Trace Files - OpenXC
 There are a number of trace files available that exhibit different scenarios and
 driving behaviors.
 
-<div class="page-header">
-    <h3 id="delhi">Delhi, India</h3>
+Many of these files are delivered as gzip compressed files, so if you download 
+one and it seems to be corrupted binary, try again using an updated browser - 
+it should auto-detect an uncompress when you download:
+
+<div class="alert alert-danger">
+    Some Android devices' browsers will continue to have problems
+    with the gzipped files.  Skip to the next section to get
+    uncompressed traces if you are having problems on Android.
 </div>
 
-* [Border Roads to AIIMS - West](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/Border_Roads_Organisation to AIIMS.json)
-* [DND Toll Plaza to AIIMS - East](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/DND_Toll_Plaza to AIIMS.json)
-* [Apollo Hospital to AIIMS - Southeast](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/Apollo_Hospita to AIIMS.json)
-* [Fortis Hospital to AIIMS - South](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/Fortis_Hospital to AIIMS.json)
-* [Ghitorni Metro to AIIMS - South](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/Ghitorni_Metro to AIIMS.json)
-* [New Delhi Railway to AIIMS - North](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/New_Delhi_Railway to AIIMS.json)
-* [Film City, Noida to AIIMS - East](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/Sector 16A_Noida to AIIMS.json)
+<div class="page-header">
+    <h3 id="delhi">Delhi, India (Uncompressed)</h3>
+</div>
+
+* [Border Roads to AIIMS - West](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/Border_Roads_Organisation_to_AIIMS.json)
+* [DND Toll Plaza to AIIMS - East](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/DND_Toll_Plaza_to_AIIMS.json)
+* [Apollo Hospital to AIIMS - Southeast](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/Apollo_Hospita_to_AIIMS.json)
+* [Fortis Hospital to AIIMS - South](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/Fortis_Hospital_to_AIIMS.json)
+* [Ghitorni Metro to AIIMS - South](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/Ghitorni_Metro_to_AIIMS.json)
+* [New Delhi Railway to AIIMS - North](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/New_Delhi_Railway_to_AIIMS.json)
+* [Film City, Noida to AIIMS - East](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/Sector 16A_Noida_to_AIIMS.json)
 * [AIIMS to Border Roads](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/AIIMS_to_Border_Roads_Organisation.json)
-* [AIIMS to DND Toll Plaza](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/AIIMS to DND_Toll.json)
-* [AIIMS to Film City, Noida](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/AIIMS to FilmCity_sec 16A_Noida.json)
-* [AIIMS to Fortis Hospital](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/AIIMS to Fortis_Hospital.json)
-* [AIIMS to Ghitorni Metro](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/AIIMS to Ghitorni_Metro.json)
-* [AIIMS to HCL Sector 125](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/AIIMS to HCL_Sector-125.json)
-* [AIIMS to New Delhi Railway](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/AIIMS to New_Delhi_Railway.json)
-* [Film City, Noida to HCL](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/FilmCity_Noida to HCL sec 125_Noida.json)
-* [Kalindi Kunj Bridge to Apollo Hospital](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/Kalindi_Kunj_Bridge to Apollo_Hospital.json)
-* [Red Fort to RML Hospital](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/Red_Fort to RML_Hospital.json)
-* [RML Hospital to Moolchand](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/RML_Hospital to Moolchand.json)
-* [RML Hospital to Red Fort](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/RML_Hospital to Red_Fort.json)
-* [Noida to RML Hospital](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/Sector 125_Noida to RML_Hospital.json)
+* [AIIMS to DND Toll Plaza](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/AIIMS_to_DND_Toll.json)
+* [AIIMS to Film City, Noida](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/AIIMS_to_FilmCity_sec_16A_Noida.json)
+* [AIIMS to Fortis Hospital](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/AIIMS_to_Fortis_Hospital.json)
+* [AIIMS to Ghitorni Metro](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/AIIMS_to_Ghitorni_Metro.json)
+* [AIIMS to HCL Sector 125](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/AIIMS_to_HCL_Sector-125.json)
+* [AIIMS to New Delhi Railway](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/AIIMS_to_New_Delhi_Railway.json)
+* [Film City, Noida to HCL](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/FilmCity_Noida_to_HCL_sec_125_Noida.json)
+* [Kalindi Kunj Bridge to Apollo Hospital](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/Kalindi_Kunj_Bridge_to_Apollo_Hospital.json)
+* [Red Fort to RML Hospital](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/Red_Fort_to_RML_Hospital.json)
+* [RML Hospital to Moolchand](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/RML_Hospital_to_Moolchand.json)
+* [RML Hospital to Red Fort](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/RML_Hospital_to_Red_Fort.json)
+* [Noida to RML Hospital](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/Sector_125_Noida_to_RML_Hospital.json)
 
 <div class="page-header">
     <h3 id="new-york-city">New York City, U.S.A.</h3>
@@ -61,9 +71,15 @@ driving behaviors.
 * [Riding the brakes][]
 * [Speeding at highway speeds][speeding]
 * [Agressive driving][], hard acceleration and braking
+
+<div class="page-header">
+    <h3 id="uncompressed-traces">Uncompressed Vehicle Trace Files</h3>
+</div>
+
 * [Highway Commute and Local Stop](http://s3.amazonaws.com/openxcplatform.com/traces/localwithgps-uncompressed.json)
 * [Idling while parked](http://s3.amazonaws.com/openxcplatform.com/traces/parked-uncompressed.json)
 * [Speeding at highway speeds](http://s3.amazonaws.com/openxcplatform.com/traces/highway-speeding-uncompressed.json)
+
 
 [short drive]: https://s3.amazonaws.com/openxcplatform.com/driving.json
 [idling while parked]: https://s3.amazonaws.com/openxcplatform.com/parked.json
