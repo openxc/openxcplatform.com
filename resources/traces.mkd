@@ -21,6 +21,19 @@ it should auto-detect an uncompress when you download:
 </div>
 
 <div class="page-header">
+    <h3 id="new-york-city">New York City, U.S.A.</h3>
+</div>
+
+* [Downtown, Crosstown](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/downtown-crosstown.json)
+* [East Downtown](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/downtown-east.json)
+* [West Downtown](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/downtown-west2.json)
+* [West Downtown 2](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/downtown-west.json)
+* [Uptown Crosstown](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/uptown-crossdown.json)
+* [Uptown Crosstown 2](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/uptown-crosstown.json)
+* [West Uptown ](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/uptown-west2.json)
+* [West Uptown](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/uptown-west.json)
+
+<div class="page-header">
     <h3 id="delhi">Delhi, India (Uncompressed)</h3>
 </div>
 
@@ -44,19 +57,6 @@ it should auto-detect an uncompress when you download:
 * [RML Hospital to Moolchand](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/RML_Hospital_to_Moolchand.json)
 * [RML Hospital to Red Fort](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/RML_Hospital_to_Red_Fort.json)
 * [Noida to RML Hospital](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/Sector_125_Noida_to_RML_Hospital.json)
-
-<div class="page-header">
-    <h3 id="new-york-city">New York City, U.S.A.</h3>
-</div>
-
-* [Downtown, Crosstown](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/downtown-crosstown.json)
-* [East Downtown](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/downtown-east.json)
-* [West Downtown](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/downtown-west2.json)
-* [West Downtown 2](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/downtown-west.json)
-* [Uptown Crosstown](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/uptown-crossdown.json)
-* [Uptown Crosstown 2](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/uptown-crosstown.json)
-* [West Uptown ](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/uptown-west2.json)
-* [West Uptown](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/uptown-west.json)
 
 <div class="page-header">
     <h3 id="scenarios-and-behaviors">Additional Scenarios and Driving Behaviors</h3>
