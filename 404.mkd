@@ -5,7 +5,7 @@ permalink: /404.html
 ---
 
 <div class="page-header">
-    <h1>Press</h1>
+    <h1>{{ page.title }}</h1>
 </div>
 
 We couldn't find the page you were looking for - try starting at the [OpenXC home page](/).
