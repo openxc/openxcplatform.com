@@ -43,8 +43,7 @@ connection, the Android host device must:
 * Run **Android 3.0** or greater (i.e. API level 12) if you plan to
   use the standard USB vehicle interface.
 * Support **USB host mode** or **USB OTG** - Some tablets offer a full-size USB
-  port and others are compatible with [USB OTG
-  adapters](http://www.monoprice.com/Product?c_id=108&cp_id=10833&cs_id=1083314&p_id=9724&seq=1&format=2)
+  port and others are compatible with USB OTG adapters.
   that attach to the micro-USB port normally used for charging.
 
 <div class="page-header">
