@@ -1,6 +1,10 @@
 ---
 layout: hardware
 title: Vehicle Interface - OpenXC
+redirect_from:
+    - /developers/vehicle-interface/assembly.html
+    - /developers/vehicle-interface/hardware.html
+    - /vehicle-interface/
 ---
 
 <div class="page-header">

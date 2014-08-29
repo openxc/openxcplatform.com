@@ -1,6 +1,7 @@
 ---
 layout: developer
 title: App Tutorial - OpenXC
+redirect_from: /getting-started/tutorial.html
 ---
 
 <div class="page-header">

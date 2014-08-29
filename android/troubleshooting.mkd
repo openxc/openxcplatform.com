@@ -1,6 +1,7 @@
 ---
 layout: developer
 title: Troubleshooting Android - OpenXC
+redirect_from: /getting-started/troubleshooting.html
 ---
 
 <div class="page-header">

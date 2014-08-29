@@ -1,6 +1,9 @@
 ---
 layout: project
 title: Bluetooth HUD - OpenXC
+redirect_from:
+    - /hardware-addons/bluetooth-hud.html
+    - /hardware/bluetooth-hud.html
 ---
 
 <div class="page-header">

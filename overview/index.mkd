@@ -1,6 +1,9 @@
 ---
 layout: about
 title: Overview - OpenXC
+redirect_from:
+    - /getting-started/overview.html
+    - /about.html
 ---
 
 <div class="page-header">

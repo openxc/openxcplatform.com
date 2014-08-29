@@ -1,6 +1,9 @@
 ---
 layout: about
 title: Data Set - OpenXC
+redirect_from:
+    - /developers/vehicle-interface/translation-specs.html
+    - /vehicle-interface/output-format.html
 ---
 
 <div class="page-header">

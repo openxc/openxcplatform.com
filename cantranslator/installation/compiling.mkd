@@ -1,13 +1,5 @@
 ---
 layout: default
 title: Vehicle Interface Documentation
+redirect_to: http://vi-firmware.openxcplatform.com
 ---
-
-<div class="page-header">
-    <h1>{{ page.title }}</h1>
-</div>
-
-The vehicle interface documentation has [moved][docs] to
-[http://vi-firmware.openxcplatform.com][docs].
-
-[docs]: http://vi-firmware.openxcplatform.com

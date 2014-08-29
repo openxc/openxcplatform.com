@@ -1,6 +1,7 @@
 ---
 layout: about
 title: FAQ - OpenXC
+redirect_from: /overview/faq.html
 ---
 
 <div class="page-header">

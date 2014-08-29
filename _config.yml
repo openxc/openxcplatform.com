@@ -3,3 +3,4 @@ pygments: true
 production: true
 gems:
     - jekyll-sitemap
+    - jekyll-redirect-from

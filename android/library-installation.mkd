@@ -1,6 +1,9 @@
 ---
 layout: developer
 title: Library Setup - OpenXC
+redirect_from:
+    - /getting-started/library-installation.html
+    - /developers/android/library-installation.html
 ---
 <div class="page-header">
     <h1>Android Library Installation</h1>

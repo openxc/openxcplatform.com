@@ -8,22 +8,13 @@ site.
 
 ## Local development
 
-Follow GitHub's docs for [Installing
-Jekyll](https://help.github.com/articles/using-jekyll-with-pages#installing-jekyll). You need Ruby and Bundler.
-
-Once you have that installed, run:
+Instal the Ruby dependencies:
 
     $ bundle install
 
-from the `openxcplatform.com` directory.
-
-Then, assuming you have Python's pip installed:
-
-    $ pip install pygments
-
 Then run the local development server:
 
-    openxcplatform.com/ $ bundle exec jekyll serve -w
+    $ make serve
 
 and point your browser to http://localhost:4000.
 

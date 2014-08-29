@@ -1,12 +1,5 @@
 ---
 layout: default
 title: Bluetooth Support - OpenXC
+redirect_to: http://chipkit-vi.openxcplatform.com/bluetooth/hardware.html
 ---
-
-<div class="page-header">
-    <h1>Bluetooth Support</h1>
-</div>
-
-The Bluetooth support instructions for the chipKIT-based VI have been moved to a
-[separate
-website](http://chipkit-vi.openxcplatform.com/bluetooth/hardware.html).

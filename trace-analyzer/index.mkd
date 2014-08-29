@@ -1,10 +1,5 @@
 ---
 layout: default
 title: Trace Analyzer - OpenXC
+redirect_to: http://trace-analyzer.openxcplatform.com
 ---
-
-<div class="page-header">
-    <h1>Trace Analyzer</h1>
-</div>
-
-The trace analyzer has [moved](http://trace-analyzer.openxcplatform.com/).

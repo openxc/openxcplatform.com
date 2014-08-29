@@ -1,6 +1,9 @@
 ---
 layout: developer
 title: Getting Started - OpenXC
+redirect_from:
+    - /getting-started/first_steps.html
+    - /vehicle-interface/testing.html
 ---
 
 <div class="page-header">

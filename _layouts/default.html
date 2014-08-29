@@ -17,6 +17,10 @@
     <link rel="stylesheet" type="text/css" media="screen"
         href="/static/css/pygments/default.css"/>
 
+    {% if page.redirect_to %}
+        <meta http-equiv="refresh" content="0;URL={{ page.redirect_to }}">
+    {% endif %}
+
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>

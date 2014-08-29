@@ -1,12 +1,5 @@
 ---
 layout: default
 title: Vehicle Interface Assembly - OpenXC
+redirect_to: http://chipkit-vi.openxcplatform.com
 ---
-
-<div class="page-header">
-    <h1>Vehicle Interface Assembly</h1>
-</div>
-
-The assembly instructions for the chipKIT-based VI have been moved to a
-[separate website](http://chipkit-vi.openxcplatform.com/).
-

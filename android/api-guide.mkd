@@ -1,6 +1,7 @@
 ---
 layout: developer
 title: Android Library API Guide - OpenXC
+redirect_from: /developers/android/library-usage.html
 ---
 
 <div class="page-header">
@@ -82,7 +83,7 @@ try {
     Log.w(TAG, "The measurement type was not recognized");
 }
 {% endhighlight %}
-If you want to access a different measurement, cast the measurement to any of the 
+If you want to access a different measurement, cast the measurement to any of the
 available measurement objects in the API.
 
 <div class="page-header">

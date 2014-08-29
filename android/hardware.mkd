@@ -1,6 +1,9 @@
 ---
 layout: hardware
 title: Android Host Device - OpenXC
+redirect_from:
+    - /android/
+    - /developers/android/host.html
 ---
 
 <div class="page-header">

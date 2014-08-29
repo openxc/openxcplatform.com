@@ -1,6 +1,9 @@
 ---
 layout: project
 title: Retro Gauge - OpenXC
+redirect_from:
+    - /hardware-addons/retro-gauge.html
+    - /hardware/retro-gauge.html
 ---
 
 <div class="page-header">
