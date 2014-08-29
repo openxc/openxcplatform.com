@@ -38,7 +38,7 @@ to see your latest updates.
 
 The site is hosted on GitHub pages, so deploying is as simple as commiting your
 changes and pushing to GitHub. It gets regenerated within a minute or two, and
-it's live. This of course means don't push anything in the master branch that
+it's live. This of course means don't push anything in the gh-pages branch that
 isn't 100% done!
 
 ## Organization
