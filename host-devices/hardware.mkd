@@ -1,17 +1,19 @@
 ---
 layout: hardware
 title: Application Host Devices - OpenXC
+redirect_from:
+    - /host-devices/
 ---
 
 <div class="page-header">
     <h1>Application Host Devices</h1>
 </div>
 
-Once you have a [vehicle interface]() sending out OpenXC-formatted data, you
-need a "host device" where you will write applications. The only requirement of
-a host device is that it can receive and parse OpenXC vehicle data via USB,
-Bluetooth or a network interface. There are a number of different development
-choices, and the list continues to grow.
+Once you have a vehicle interface sending out OpenXC-formatted data, you need a
+"host device" where you will write applications. The only requirement of a host
+device is that it can receive and parse OpenXC vehicle data via USB, Bluetooth
+or a network interface. There are a number of different development choices, and
+the list continues to grow.
 
 ## Android
 

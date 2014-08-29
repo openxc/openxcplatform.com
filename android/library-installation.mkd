@@ -68,7 +68,7 @@ Get the [openxc-android][] source code in one of two ways:
   might not be as stable.
 
 <a href="https://github.com/openxc/openxc-android">
-<img class="img-responsive" src="/images/screenshots/github.png" />
+<img class="img-responsive" alt="GitHub repo view" src="/images/screenshots/github.png" />
 </a>
 
 After obtaining the `openxc-android` library, open Eclipse and go to `File ->

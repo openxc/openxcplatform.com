@@ -11,10 +11,9 @@ redirect_from:
 </div>
 
 OpenXC applications on Android are merely Android applications that use the
-OpenXC Android library to receive and parse data from a <a href="">vehicle
-interface</a>. Android is one of a few [options for writing
-applications](/host-devices/index.html) using OpenXC.
-
+OpenXC Android library to receive and parse data from a vehicle interface.
+Android is one of a few [options for writing
+applications](/host-devices/hardware.html) using OpenXC.
 
 <div class="page-header">
     <h2>Connecting your Device to the Vehicle Interface</h2>
@@ -45,7 +44,7 @@ connection, the Android host device must:
   use the standard USB vehicle interface.
 * Support **USB host mode** or **USB OTG** - Some tablets offer a full-size USB
   port and others are compatible with [USB OTG
-  adapters](http://www.monoprice.com/products/product.asp?c_id=108&cp_id=10833&cs_id=1083314&p_id=9724&format=2)
+  adapters](http://www.monoprice.com/Product?c_id=108&cp_id=10833&cs_id=1083314&p_id=9724&seq=1&format=2)
   that attach to the micro-USB port normally used for charging.
 
 <div class="page-header">

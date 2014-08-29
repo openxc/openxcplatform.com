@@ -47,8 +47,8 @@ and prompt to pair. If it asks for a PIN, use <code>1234</code>.
 (<a class="extra-screenshots-controls" href="#extra-inactive-enabler-screenshots">show me</a>)
 
 <div class="extra-screenshots" id="extra-inactive-enabler-screenshots">
-<img title="OpenXC Enabler App" src="/images/test-screenshots/enabler-disconnected.png"/>
-<img title="OpenXC Enabler App" src="/images/test-screenshots/enabler-pairing.png"/>
+<img title="OpenXC Enabler App" alt="Enabler disconnected" src="/images/test-screenshots/enabler-disconnected.png"/>
+<img title="OpenXC Enabler App" alt="Enabler pairing" src="/images/test-screenshots/enabler-pairing.png"/>
 </div>
 
 </li
@@ -61,14 +61,14 @@ should be increasing.
 (<a class="extra-screenshots-controls" href="#extra-active-enabler-screenshots">show me</a>)
 
 <div class="extra-screenshots" id="extra-active-enabler-screenshots">
-<img title="OpenXC Enabler App" src="/images/test-screenshots/enabler-connected.png"/>
+<img title="OpenXC Enabler App" alt="Enabler connected" src="/images/test-screenshots/enabler-connected.png"/>
 </div>
 </li>
 
 <li>Click the "View Vehicle Data" button in the Enabler to see live data from
 the car.
 <br/>
-<img title="OpenXC Enabler App" src="/images/test-screenshots/dashboard.png"/>
+<img title="OpenXC Enabler App" alt="Enabler dashboard" src="/images/test-screenshots/dashboard.png"/>
 </li>
 </ol>
 

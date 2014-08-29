@@ -48,6 +48,6 @@ good to make sure we have the same understanding of the definitions.
 
 Once you've read that (or if you're feeling confident...) jump into the [custom
 CAN signal example in the VI firmware
-docs](http://vi-firmware.openxcplatform.com/en/latest/config/getting-started.html)
+docs](http://vi-firmware.openxcplatform.com/en/latest/getting-started/getting-started.html)
 for a brief introduction to compiling the firmware to translate a new piece of
 data from the car.

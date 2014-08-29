@@ -86,7 +86,7 @@ that the gauge face could easily be swapped out to display different data types.
 
 There are 3 main manufactures for small stepper motors that are most commonly
 used in automotive gauges -
-[Switec](http://jukenswisstech.com/index.php/products/x10/),
+[Switec](http://www.jukenswisstech.com/?page_id=97),
 [VID](http://www.vid.wellgain.com/product.aspx), and
 [MCR](http://mcrmotorusa.com/Stepper%20Motors.html).
 

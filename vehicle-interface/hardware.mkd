@@ -107,11 +107,11 @@ Documentation](http://vi-firmware.openxcplatform.com/en/latest/platforms/crossch
 <div class="row">
     <div class="col-md-4">
         <img class="img-responsive" title="VI with Enclosure"
-            src="/images/cantranslator-boxed-vertical.jpg"/>
+            alt="VI with Enclosure" src="/images/cantranslator-boxed-vertical.jpg"/>
     </div>
     <div class="col-md-4">
         <img class="img-responsive" title="VI with Cable"
-            src="/images/cantranslator-with-plug.jpg"/>
+            alt="VI with Cable" src="/images/cantranslator-with-plug.jpg"/>
     </div>
 </div>
 

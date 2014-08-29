@@ -231,7 +231,7 @@ and communicates with it using the [Android Interface Definition
 Language][aidl]. The benefit of using the [VehicleManager][] in-process is that
 developers don't need to care about any of this - it's all abstracted away.
 
-<h3>
+<h3 id="pipeline">
 <a href="#pipeline">Data Pipeline</a>
 </h3>
 
@@ -344,12 +344,12 @@ application's `AndroidManifest.xml` - just the [VehicleManager][] service.
 [tutorial]: /android/tutorial.html
 [aidl]: http://developer.android.com/guide/components/aidl.html
 [trace file]: /android/testing.html
-[BluetoothVehicleInterface]: http://android.openxcplatform.com/reference/com/openxc/sources/bluetooth/BluetoothVehicleInterface.html
+[BluetoothVehicleInterface]: http://android.openxcplatform.com/reference/com/openxc/interfaces/bluetooth/BluetoothVehicleInterface.html
 [TraceVehicleDataSource]: http://android.openxcplatform.com/reference/com/openxc/sources/trace/TraceVehicleDataSource.html
 [MeasurementListenerSink]: http://android.openxcplatform.com/reference/com/openxc/sinks/MeasurementListenerSink.html
 [FileRecorderSink]: http://android.openxcplatform.com/reference/com/openxc/sinks/FileRecorderSink.html
 [UploaderSink]: http://android.openxcplatform.com/reference/com/openxc/sinks/UploaderSink.html
 [ApplicationSource]: http://android.openxcplatform.com/reference/com/openxc/sources/ApplicationSource.html
-[UsbVehicleInterface]: http://android.openxcplatform.com/reference/com/openxc/sources/usb/UsbVehicleInterface.html
+[UsbVehicleInterface]: http://android.openxcplatform.com/reference/com/openxc/interfaces/usb/UsbVehicleInterface.html
 [RemoteCallbackSink]: http://android.openxcplatform.com/reference/com/openxc/sinks/RemoteCallbackSink.html
 [MockedLocationSink]: http://android.openxcplatform.com/reference/com/openxc/sinks/MockedLocationSink.html

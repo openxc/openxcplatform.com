@@ -10,8 +10,8 @@ title: Vehicle Trace Files - OpenXC
 There are a number of trace files available that exhibit different scenarios and
 driving behaviors.
 
-Many of these files are delivered as gzip compressed files, so if you download 
-one and it seems to be corrupted binary, try again using an updated browser - 
+Many of these files are delivered as gzip compressed files, so if you download
+one and it seems to be corrupted binary, try again using an updated browser -
 it should auto-detect an uncompress when you download:
 
 <div class="alert alert-danger">
@@ -43,7 +43,7 @@ it should auto-detect an uncompress when you download:
 * [Fortis Hospital to AIIMS - South](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/Fortis_Hospital_to_AIIMS.json)
 * [Ghitorni Metro to AIIMS - South](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/Ghitorni_Metro_to_AIIMS.json)
 * [New Delhi Railway to AIIMS - North](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/New_Delhi_Railway_to_AIIMS.json)
-* [Film City, Noida to AIIMS - East](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/Sector 16A_Noida_to_AIIMS.json)
+* [Film City, Noida to AIIMS - East](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/Sector_16A_Noida_to_AIIMS.json)
 * [AIIMS to Border Roads](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/AIIMS_to_Border_Roads_Organisation.json)
 * [AIIMS to DND Toll Plaza](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/AIIMS_to_DND_Toll.json)
 * [AIIMS to Film City, Noida](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/AIIMS_to_FilmCity_sec_16A_Noida.json)

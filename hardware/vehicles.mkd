@@ -31,7 +31,7 @@ Spreadsheet](https://docs.google.com/spreadsheet/ccc?key=0Ajz-75u_7nEydFJxUG4yOV
 The spreadsheet also identifies which firmware file you should use for your car - e.g.
 type 1, type 2, etc. Finally, it identifies which of the CAN buses each data
 element is available on, so you can make sure to buy or build vehicle interface
-that [connects to the right buses](/vehicle-interface#obd-pins) for the data you
+that [connects to the right buses](/vehicle-interface/hardware.html#obd-pins) for the data you
 want.
 
 ## Other Brands

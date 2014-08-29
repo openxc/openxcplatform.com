@@ -50,7 +50,7 @@ The brakedist repository contains all of the files associated with the project. 
 
 
 <div class="page-header">
-    <h2 id="LiDAR"><a href="#lidar">
+    <h2 id="lidar"><a href="#lidar">
         LiDAR
     </a></h2>
 </div>
@@ -90,7 +90,7 @@ The command set and data parsing is implemented in the sensor module Arduino cod
 
 
 <div class="page-header">
-    <h2 id="Traction Detection"><a href="#Traction Detection"> Traction Detection</a></h2>
+    <h2 id="traction-detection"><a href="#traction-detection"> Traction Detection</a></h2>
 </div>
 
 This project uses a custom sensor module to detect traction. The sensor module resides in the wheel well and collects ambient temperature, [humidity][] and [tire temperature][]. The sensor board has provisions for dust density measurement, but at the time of this writing that feature is not available. The module also includes a [level shifter][] to transcode messages to and from the laser sensor.
@@ -158,7 +158,7 @@ The Android software makes use of the following libraries:
 
 
 <div class="page-header">
-    <h2 id="User Interface"><a href="#User Interface"> User Interface</a></h2>
+    <h2 id="user-interface"><a href="#user-interface"> User Interface</a></h2>
 </div>
 
 ![Gauge Mount](/projects/images/brakedist/gauge_mount.jpg)
