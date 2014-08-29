@@ -4,3 +4,11 @@ production: true
 gems:
     - jekyll-sitemap
     - jekyll-redirect-from
+exclude:
+  - vendor
+  - README.md
+  - Makefile
+  - Gemfile
+  - Gemfile.lock
+  - CHANGELOG.md
+  - .travis.yml
