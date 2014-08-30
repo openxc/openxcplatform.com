@@ -30,6 +30,10 @@ OpenXC maintains separate repositories for different code bases:
 * The repository for this website: [openxcplatform.com](http://github.com/openxc/openxcplatform.com)
 * Code for many other OpenXC related projects can be found in the general GitHub site: [openxc](http://github.com/openxc)
 
+Check out the [list of possible ideas for
+contributions](https://github.com/openxc/openxcplatform.com/wiki/First-Contribution-Ideas)
+if you're not sure how you can help.
+
 ### Community
 
 OpenXC contributors are encouraged to make use of the [OpenXC community tools](../overview/discuss.html).
