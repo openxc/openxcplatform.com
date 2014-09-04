@@ -7,6 +7,17 @@ title: Events - OpenXC
     <h1>Events</h1>
 </div>
 
+## Innovate Mobility App Challenges
+Ford Motor Company invites software developers worldwide to participate in the [Innovate Mobility Series](http://fordsvl.com/innovatemobility). As the global population becomes more interconnected, we must adjust our approach to mobility.  This series which started on July 15, 2014, consists of various App Challenges focused on exploring mobility issues facing communities around the world.  Whether you reside in a rural area or are experiencing the frustration of traffic congestion in a large city, the goal is to make mobility accessible and affordable.  Check out the challenges, and see how you can contribute. 
+
+  * [Parking Lot 2.0](http://parking.challengepost.com/): Take parking into the 21st century. Submit software that reimagines outdoor parking lots in Los Angeles!
+  * [City Delivery Challenge](http://city.challengepost.com/): Big impact for large cities. Use software to redefine & improve how goods are delivered in Lisbon.
+  * [Monsoon App Downpour](http://monsoon.challengepost.com/): Out-app mother nature. Create software to improve mobility during the monsoon season in Mumbai. 
+  * [SUMURR mHealth](http://mhealth.challengepost.com): Improve mobility to extend the reach of healthcare. Create solutions to help provide uncompromised healthcare in rural areas in Tamil Nadu.
+  * [SUMURR Golden Hour](http://goldenhour.challengepost.com): Help make every minute in the Golden Hour count. Create software to enable timely and better quality care to trauma victims in Delhi.
+  * [Urban Commuter Challenge](http://commuter.challengepost.com): Help commuters in the world’s largest city. Submit commuter-focused software for residents of Shanghai. 
+  * [Mobility Integration Challenge](http://mobilityintegration.challengepost.com): Simplify multi-modal trips in Chongqing, one of China’s largest cities, to help people move around their city more easily as they navigate the “Mountain City’s” complex geography.
+
 ## London Traffic Tamer App Challenge
 Ford is currently sponsoring the [Traffic Tamer App Challenge](http://traffic.challengepost.com)
 aimed at solving the issue of traffic congestion in the city of London. Part of this
