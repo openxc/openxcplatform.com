@@ -7,7 +7,7 @@ title: Supported Vehicles - OpenXC
     <h1>Supported Vehicles</h1>
 </div>
 
-## All Vehicles Sold in the U.S. (OBD-II)
+## All Vehicles Sold in the U.S. Since 2008 (OBD-II on CAN)
 
 To read standard OBD-II diagnostics data, use the open source OBD-II OpenXC
 firmware. You can download the latest compiled  version of that firmware from
