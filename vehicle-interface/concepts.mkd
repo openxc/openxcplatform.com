@@ -64,11 +64,10 @@ to connect to the same network used by all of the vehicle's subsystems. At the
 very least, all gasoline engine cars in this country (and most hybrids and
 electric vehicles in practice) support parts of the [On-board
 Diagnostics](http://en.wikipedia.org/wiki/On-board_diagnostics) standard data
-set. You can read this data set with OpenXC (and see [why you might still want
-to use OpenXC]() over one of the other OBD-II dongles), but with OpenXC the same
-port may also give you access to much richer data from your car. With either
-support files from your automaker or some knowledge of how to decipher the
-messages on the network, you can significantly expand the data available to your
+set. You can read this data set with OpenXC, but with OpenXC the same port may
+also give you access to much richer data from your car. With either support
+files from your automaker or some knowledge of how to decipher the messages on
+the network, you can significantly expand the data available to your
 applications.
 
 The <a href="/vehicle-interface/index.html">**vehicle interface (VI)**</a> is a
@@ -80,11 +79,11 @@ or smartphone.
 
 <div class="row">
     <div class="col-md-4">
-        <img class="img-responsive" src="/images/android-in-car.jpg"/>
+        <img class="img-responsive" alt="Android Device in Car" src="/images/android-in-car.jpg"/>
     </div>
     <div class="col-md-4 stacked">
-        <img class="img-responsive" src="/images/screenshots/mpg-app-1.png"/>
-        <img class="img-responsive" src="/images/screenshots/mpg-app-2.png"/>
+        <img class="img-responsive" alt="Example app showing MPG" src="/images/screenshots/mpg-app-1.png"/>
+        <img class="img-responsive" alt="Example app showing MPG" src="/images/screenshots/mpg-app-2.png"/>
     </div>
 </div>
 
@@ -98,7 +97,7 @@ connected. In this example, the status of the parking brake is broadcast on the
 vehicle's CAN bus. The VI receives the signal, translates it into a generic
 format and sends it out over USB to an Android App.
 
-<img class="img-responsive" src="/images/openxc-architecture.jpeg" title="OpenXC Architecture Diagram"/>
+<img class="img-responsive" alt="Diagram of OpenXC architecture" src="/images/openxc-architecture.jpeg" title="OpenXC Architecture Diagram"/>
 
 ![OBD-II Port with Cable in a Mustang](/images/obd-ii-cable.jpg)
 
@@ -136,9 +135,8 @@ all supported PIDs.
 <h2>Next Steps</h2>
 </div>
 
-Now that we agree on terminology, continue to the [custom data example in the VI
-firmware
-docs](http://vi-firmware.openxcplatform.com/en/latest/config/getting-started.html).
+Now that we agree on terminology, continue to the [VI firmware
+docs](http://vi-firmware.openxcplatform.com).
 
 [can]: http://en.wikipedia.org/wiki/CAN_bus
 [obd2]: http://en.wikipedia.org/wiki/On-board_diagnostics
