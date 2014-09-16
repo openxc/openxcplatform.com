@@ -1,7 +1,6 @@
 ---
 layout: developer
 title: Vehicle Interface Concepts - OpenXC
-redirect_from: /vehicle-interface/concepts.html
 ---
 
 <div class="page-header">
