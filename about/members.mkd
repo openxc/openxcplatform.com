@@ -15,8 +15,6 @@ Ford is one of the founding members of OpenXC.
 
 [Ford Website](http://www.ford.com/)
 
-[Press Release](http://qa.at.ford.com/news/cn/Pages/Ford%20and%20Bug%20Labs%20Develop%20Open%20Source%20RD%20Platform%20for%20Socially%20Networked%20In%20Car%20Connectivity%20Innovation.aspx)
-
 **CrossChasm**
 
 ![CrossChasm Logo](/images/logo-crosschasm.png)
