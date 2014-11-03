@@ -21,7 +21,7 @@ have the OpenXC library
 
 <div class="alert alert-danger"> We'll mention this again at the end of the
 tutorial, but you will need to install the
-<a href="/android/library-installation.html#enabler">Enabler</a> app
+<a href="/android/getting-started.html#enabler">Enabler</a> app
 before your application will work.</div>
 
 <div class="page-header">
@@ -313,7 +313,7 @@ how to use the API. If you are having trouble, check out the
 [vehicle interfaces]: /vehicle-interface/hardware.html
 [Android devices]: /android/hardware.html
 [library project]: /android/library-installation.html
-[enabler]:/android/library-installation.html#enabler
+[enabler]:/android/getting-started.html#enabler
 [driving trace]: https://s3.amazonaws.com/openxcplatform.com/driving.json
 [library documentation]: http://android.openxcplatform.com/reference/com/openxc/measurements/package-summary.html
 [Android API Guide]: /android/api-guide.html

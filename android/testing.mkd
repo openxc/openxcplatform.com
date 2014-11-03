@@ -151,7 +151,7 @@ user deal with outside of their vehicle, the better the experience will likely
 be.
 
 [gg]: http://groups.google.com/group/openxc
-[Enabler]: /android/library-installation.html#enabler
+[Enabler]: /android/getting-started.html#enabler
 [vehicle interface]: /vehicle-interface/hardware.html
 [Measurement]: http://android.openxcplatform.com/reference/com/openxc/measurements/Measurement.html
 [VehicleManager]: http://android.openxcplatform.com/reference/com/openxc/VehicleManager.html
