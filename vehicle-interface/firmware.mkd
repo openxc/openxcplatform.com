@@ -10,22 +10,24 @@ title: VI Firmware - OpenXC
 Before you can use a vehicle interface (VI), it has to be programmed with a
 firmware that understands data sent by your car. You have a few options:
 
-**On-board Diagnostics (OBD-II) Data**
+**On-board Diagnostics (OBD-II) Data from CAN**
 
-To read *standard OBD-II diagnostics data*, use the open source OBD-II OpenXC
-firmware. You can download the latest compiled  version of that firmware from
-the [vi-firmware releases page](https://github.com/openxc/vi-firmware/releases).
-The OBD-II build will output a [subset of OBD-II
+To read *standard OBD-II diagnostics data from a CAN bus*, use the open source
+OBD-II OpenXC firmware. You can download the latest compiled  version of that
+firmware from the [vi-firmware releases
+page](https://github.com/openxc/vi-firmware/releases). The OBD-II build will
+output a [subset of OBD-II
 data](https://github.com/openxc/vi-firmware/blob/next/src/obd2.cpp#L41) that
 your car supports over USB and Bluetooth just like normal OpenXC data. Note that
 it's not much data - most likely only RPM, vehicle speed and intake manifold
-pressure. You've reached the limits of the federal standard - call your
-congressman if you want more!
+pressure. Your car must also support OBD-II via CAN, which is only required
+since 2008. Otherwise, you've reached the limits of the federal standard - call
+your congressman if you want more!
 
 Grab the `openxc-obd2-firmware-*.zip` file for the latest version, which
 contains the OBD-II firmware for each of the supported vehicle interfaces.
 
-Next, look up the instructions for uploading the firmware to your vehicle
+Next, look up the instructions for flashing the firmware to your vehicle
 interface on the [supported VI hardware page](/vehicle-interface/hardware.html)
 - it's different for each.
 

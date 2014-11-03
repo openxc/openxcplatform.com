@@ -112,7 +112,7 @@ Look for the ServiceConnection in the `StarterActivity`, alon
 
 {% highlight java %}
     private ServiceConnection mConnection = new ServiceConnection() {
-        // Called when the connection with the VehicleManager service is established, i.e. bound.
+        // Called when the connection with the VehicleManager service is established
         public void onServiceConnected(ComponentName className, IBinder service) {
             Log.i("openxc", "Bound to VehicleManager");
             // When the VehicleManager starts up, we store a reference to it
@@ -125,13 +125,7 @@ Look for the ServiceConnection in the `StarterActivity`, alon
             // have an EngineSpeed.Listener (see above, mSpeedListener) and here
             // we request that the VehicleManager call its receive() method
             // whenever the EngineSpeed changes
-            try {
-                mVehicleManager.addListener(EngineSpeed.class, mSpeedListener);
-            } catch (VehicleServiceException e) {
-                e.printStackTrace();
-            } catch (UnrecognizedMeasurementTypeException e) {
-                e.printStackTrace();
-            }
+            mVehicleManager.addListener(EngineSpeed.class, mSpeedListener);
         }
 
         // Called when the connection with the service disconnects unexpectedly
@@ -291,23 +285,13 @@ device. You can do this in a few ways:
     `$ adb push driving.json /sdcard/openxc-driving.json`
 * Download the file directly onto the device using the built-in browser
 
-Install a file manager in Android like the [OI File
-Manager](https://play.google.com/store/apps/details?id=org.openintents.filemanager)
-so the Enabler is able to browse for files on the SD card.
-
-To install a file manager on an Android Emulator, browse to the [OI File Manager
-site](http://openintents.org/en/filemanager) on the built-in Android browser and
-download the APK file. When the download is complete, click the file in the
-notification bar to install the app. Alternatively, if you have `adb` working at
-the command line just run: <pre><code>$ adb install FileManager-2.0.2.apk</code></pre>
-
 Finally, the last steps:
 
 1. Run the `OpenXC Enabler` app on the device
-1. In the Enabler, Go to `Settings -> Data Sources -> Trace File Playback`,
-   check the `Playback trace file` option
-1. Below that, select `Trace file`, select the File Manager as the application
-   to open, brows for the trace file you copied earlier and click `Pick File`
+1. In the Enabler, Go to `Settings -> Data Sources` and change the vehicle
+    interface to a Pre-recorded Trace File.
+1. At the bottom of the screen under `Trace File Playback`, select a trace file
+    for playback. In the file manager, browse to the trace file you downloaded.
 1. Return to the front view of the Enabler - the message count should be
    increasing, indicating the trace is playing.
 

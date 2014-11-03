@@ -8,11 +8,11 @@ redirect_from: /developers/android/library-usage.html
     <h1>Android Library API Guide</h1>
 </div>
 
-Vehicle measurements are accessed through an [Android service][services]. Your
-application connects to an in-process [VehicleManager](#vehicle-manager) which
-handles reading fresh data from the vehicle.
+Vehicle data is accessed through an [Android service][services]. Your
+application binds with the [VehicleManager](#vehicle-manager) which
+handles reading fresh data from the vehicle and sending commands.
 
-This document describes the interface for the OpenXC library **version 5.0**.
+This document describes the interface for the OpenXC library **version 6.0**.
 
 <div class="page-header">
     <h2 id="vehicle-manager"><a name="vehicle-manager">VehicleManager Service</a></h2>
@@ -56,15 +56,135 @@ private ServiceConnection mConnection = new ServiceConnection() {
 {% endhighlight %}
 
 <div class="page-header">
-    <h2>Synchronous Measurements</h2>
+    <h2>Vehicle Messages</h2>
 </div>
 
 Once the service is bound and you have a connection to it in your activity, you
-can receive measurements on demand (i.e. synchronously). As an example,
-take a look at how you can retrieve vehicle speed data from the car.
+can start sending and receiving messages with the vehicle interface.
 
-First, import the VehicleSpeed class, which is part of the measurements package.
-You'll also need to import the necessary exception classes.
+The VehicleMessage is the parent of all message sent to and from the vehicle
+interface. You can register to receive asynchronous updates for anything from
+all receive messages to only those matching a certain key. All of the examples
+here show how to receive updates for more specific subtypes, but you do have the
+option of interfacing directly with VehicleMessages.
+
+<div class="page-header">
+    <h2>CAN Messages</h2>
+</div>
+
+If the attached VI is sending [low-level CAN
+messages](http://vi-firmware.openxcplatform.com/en/master/advanced/lowlevel.html),
+you can receive them in your Android application.
+
+{% highlight java %}
+private VehicleMessage.Listener mListener = new VehicleMessage.Listener() {
+    @Override
+    public void receive(final VehicleMessage message) {
+    }
+};
+
+// Elsewhere in your activity, register this listener to receive all CAN
+// messages from the VI
+mVehicleManager.addListener(CanMessage.class, mListener);
+{% endhighlight %}
+
+You can also configure this listener to only receive CAN messages matching a
+certain message ID:
+
+{% highlight java %}
+// Register the listener to receive CAN messages from bus 1 with the ID of 42.
+mVehicleManager.addListener(new CanMessage(1, 42, null), mListener);
+{% endhighlight %}
+
+<div class="page-header">
+    <h2>Diagnostic Requests</h2>
+</div>
+
+You can send a diagnostic request and wait for a response:
+
+{% highlight java %}
+// Send a mode 3 request to message ID 2 on bus 1 wait for a response.
+VehicleMessage response = mVehicleManager.request(new DiagnosticRequest(1, 2, 3));
+if(response != null) {
+    DiagnosticResponse diagnosticResponse = response.asDiagnosticResponse();
+}
+{% endhighlight %}
+
+You can also register a receiver for the response so this function is
+non-blocking:
+
+{% highlight java %}
+private VehicleMessage.Listener mListener = new VehicleMessage.Listener() {
+    @Override
+    public void receive(final VehicleMessage message) {
+        // TODO
+    }
+};
+
+// Elsewhere in your activity, make the request and register the listener to
+// receive the response:
+mVehicleManager.request(new DiagnosticRequest(1, 2, 3), mListener);
+{% endhighlight %}
+
+You can also send the request without caring about responses:
+
+{% highlight java %}
+mVehicleManager.send(new DiagnosticRequest(1, 2, 3));
+{% endhighlight %}
+
+<div class="page-header">
+    <h2>Commands</h2>
+</div>
+
+The commands defined in the [OpenXC message
+format](https://github.com/openxc/openxc-message-format#commands) that are
+supported by your VI firmware can be sent using a `Command` message type.
+
+To send a command and wait to receive a response:
+
+{% highlight java %}
+VehicleMessage response = mVehicleManager.request(new Command(CommandType.VERSION);
+{% endhighlight %}
+
+There is also a non-blocking version of the `request` method that takes a
+callback argument.
+
+To send a command but return immediately, without waiting for a response:
+
+{% highlight java %}
+mVehicleManager.send(new Command(CommandType.VERSION);
+{% endhighlight %}
+
+For commands that don't require any data in the request you can use
+this shortcut:
+
+{% highlight java %}
+mVehicleManager.requestCommandMessage(CommandType.VERSION);
+{% endhighlight %}
+
+The VehicleManager has a couple of the supported VI commands built into the API -
+the firmware version and device ID.
+
+{% highlight java %}
+String version = mVehicleManager.getVehicleInterfaceVersion();
+String deviceId = mVehicleManager.getVehicleInterfaceDeviceId();
+{% endhighlight %}
+
+<div class="page-header">
+    <h2>Synchronous Measurements</h2>
+</div>
+
+A pre-defined set of [simple vehicle
+messages](https://github.com/openxc/openxc-message-format/blob/master/JSON.mkd#simple-vehicle-message),
+the [official OpenXC
+signals](https://github.com/openxc/openxc-message-format/tree/master#official-signals)
+is also exposed in the Android library as higher level `Measurement` objects.
+These work similarly to VehicleMessages but include more metadata and checks to
+make sure the data is valid.
+
+To query for a measurement synchronously, e.g. the speed of the vehicle, import
+the com.openxc.measurements.VehicleSpeed. You'll also need to import the
+necessary exceptions:
 
 {% highlight java %}
 import com.openxc.measurements.VehicleSpeed;
@@ -107,12 +227,7 @@ vehicle.addListener(VehicleSpeed.class, listener);
     <h2>Measurements</h2>
 </div>
 
-You've probably noticed that vehicle data is returned encapsulated in an object.
-In the examples above, you used the [VehicleSpeed][] measurement. All of the
-data types supported by OpenXC are provided as children of the [Measurement][]
-class.
-
-The parent class provides a standard interface for all measurements, starting
+The parent Measurement class provides a standard interface for all measurements, starting
 with a way to retrieve its value:
 
 {% highlight java %}
@@ -156,7 +271,7 @@ int percentage = measurement.getValue().doubleValue() / range;
 </div>
 
 The Android framework includes built-in support for location information - most
-devices support determining position based on CellID, GPS and Wi-fi. OpenXC's
+devices support determining position based on CellID, GPS and Wi-Fi. OpenXC's
 latitude, longitude and vehicle speed are exposed through this interface using a
 mocked location provider. This functionality is provided by Android primarily
 for testing, but it's also a useful way to inject location data from sources
@@ -204,6 +319,9 @@ applications (#3).
 The client applications (in a separate process) receive the data in an instance
 of the [VehicleManager](#services) service (#4) which notifies any activities
 that have previously registered their interest in vehicle data (#5).
+
+There are a few sequence diagrams available in the
+[openxc-android docs directory](https://github.com/openxc/openxc-android/tree/master/docs/sequences).
 
 <h3 id="services">
   <a href="#services">Remote and Local Services</a>
@@ -260,21 +378,16 @@ app's custom source is propagated back to the
  and then all other apps.
 </div>
 
-The built-in sources for application developers are:
+Besides the VehicleInterface subclasses, there is one built-in source for
+developers:
 
-* [BluetoothVehicleInterface][] - connects to a Bluetooth-enabled CAN
-  translator and injects the data into the OpenXC system so it is
-  indistinguishable from a USB source.
 * [TraceVehicleDataSource][] - injects vehicle measurements from a pre-recorded
   [trace file][].
 
 *Sink*
 
 A data sink receives every new measurement put into the pipeline by the sources.
-It receives the data in nearly raw form, as a `RawMeasurement` instead of a
-fully processed `Measurement` object. This can be useful if you need to be able
-to serialize the data without knowing exactly what type of values it contains
-(e.g. a string, float, or bool).
+It receives the data in its base form, a `VehicleMessage`.
 
 Data sinks handle the core of the library's asynchronous notification system,
 too. The [VehicleManager][] always adds an instance of the
@@ -287,22 +400,19 @@ The built-in sinks for application developers are:
   the internal storage that can later be used as a [trace file][].
 * [UploaderSink][] - send all incoming vehicle measurements to a URL via HTTP.
 
-
 *Remote Service*
 
 The remote process [VehicleService][] also uses a pipeline, but it's not
-accessible to application developers. It uses only two sources:
+accessible to application developers. The sources for this pipeline are the
+active vehicle interface (e.g. Bluetooth, USB or Network) and:
 
 * [ApplicationSource][] - this source has a special callback that the
   [VehicleManager][] instances in all OpenXC apps use to send any new measurements
   they create back to the [VehicleService][]. The purpose is that e.g. a trace
   data source or Bluetooth source instantiated in an application can share its
   data with all other apps in the system.
-* [UsbVehicleInterface][] - since only one application can connect to a USB
-  device at a time, the single instance of the [VehicleService][] takes care of
-  it.
 
-and it only uses two sinks:
+The VehicleService only uses two sinks:
 
 * [RemoteCallbackSink][] - funnels vehicle data asynchronously with AIDL to
   applications.
@@ -318,7 +428,7 @@ The OpenXC Enabler app is primarily for convenience, but it also increases the
 reliability of the system by handling background tasks on behalf of client
 applications.
 
-The enabler provides a common location to control which data sources and sinks
+The Enabler provides a common location to control which data sources and sinks
 are active, e.g. if the a trace file should be played back or recorded. It's
 preferable to be able to change the data source on the fly, and not have to
 programmatically load a trace file in any application under test.

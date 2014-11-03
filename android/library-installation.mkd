@@ -21,9 +21,7 @@ of the complete installation and OpenXC app tutorial on YouTube.
 </div>
 
 You can choose to develop with OpenXC via [Eclipse](#eclipse) or the [command
-line](#cli) with Maven. You also need to install the [Enabler](#enabler)
-application to your device - it takes care of a lot of boilerplate, so your
-app's code can be simpler.
+line](#cli) with Maven.
 
 <div class="page-header">
     <h3 id="eclipse"><a href="#eclipse">Using Eclipse</a></h3>
@@ -57,8 +55,7 @@ Get the [openxc-android][] source code in one of two ways:
 
 * *Recommended method:* The latest stable version of the OpenXC Android source
   code can always be found at the [Releases
-  page](https://github.com/openxc/openxc-android/releases). Make sure to
-  download both the source code as well as the OpenXC Enabler .apk. Extract the
+  page](https://github.com/openxc/openxc-android/releases). Extract the
   files to the location where you'd like the library to sit on your local
   workstation.
 * Alternatively, clone the [openxc-android][] repository using Git. If you don't
@@ -102,8 +99,8 @@ just need to add this to your `dependencies` section:
         <dependency>
             <groupId>com.openxcplatform</groupId>
             <artifactId>openxc</artifactId>
-            <version>5.0.0</version>
-            <type>apklib</type>
+            <version>6.0.0</version>
+            <type>aar</type>
         </dependency>
         ...
     </dependencies>
@@ -113,16 +110,16 @@ just need to add this to your `dependencies` section:
 
 You also need to add the
 [android-maven-plugin](http://code.google.com/p/maven-android-plugin/) so that
-the `apklib` type is supported:
+the `aar` type is supported:
 
 {% highlight xml %}
 <build>
     <pluginManagement>
         <plugins>
             <plugin>
-                <groupId>com.jayway.maven.plugins.android.generation2</groupId>
+                <groupId>com.simpligility.maven.plugins</groupId>
                 <artifactId>android-maven-plugin</artifactId>
-                <version>3.7.0</version>
+                <version>4.0.0-rc.3</version>
                 <extensions>true</extensions>
             </plugin>
         </plugins>
@@ -130,54 +127,6 @@ the `apklib` type is supported:
     </pluginManagement>
     ...
 </build>
-{% endhighlight %}
-
-<div class="page-header">
-    <h2 id="enabler">Enabler</h2>
-</div>
-
-The best way to make the vehicle interface available to your app is to install
-the OpenXC Enabler app - the [source][enabler-source] for this app is in the
-[openxc-android][] repository.
-
-This app starts the vehicle service at boot and makes sure it stays alive - this
-way, your app doesn't have to worry about USB permissions or reacting to device
-detachment/reattachment.
-
-If you don't want to use the Enabler app, it's certainly possible to start the
-service from your application directly. Look at the [source for the
-enabler][enabler-source] to see exactly how to accomplish that.
-
-<div class="alert alert-danger">
-<strong>Note:</strong> Even if you only plan to use previously recorded trace
-files and don't need to connect to a physical vehicle interface, the Enabler app
-still must be installed.
-</div>
-
-There are three ways to install the Enabler:
-
-**APK**
-
-The latest version of the Enabler is available as an [APK][] on the Android
-Library Releases page, ready to install in Android. Download that file directly
-on your Android device and open it to install, or use the command line:
-
-{% highlight sh %}
-$ adb install openxc-enabler.apk
-{% endhighlight %}
-
-**Eclipse**
-
-If you have the `OpenXcEnablerActivity` project imported in Eclipse, right click
-on the project and select `Run As -> Android Application` with an Android device
-attached to install the app.
-
-**Maven**
-
-If you're using Maven at the command line:
-
-{% highlight sh %}
-$ mvn clean install -pl openxc -am && mvn clean package android:deploy android:run -pl enabler
 {% endhighlight %}
 
 <div class="page-header">
@@ -190,4 +139,3 @@ app](/android/tutorial.html). If you are having trouble, check out the
 
 [APK]: https://github.com/openxc/openxc-android/releases
 [openxc-android]: https://github.com/openxc/openxc-android
-[enabler-source]: https://github.com/openxc/openxc-android/tree/master/enabler

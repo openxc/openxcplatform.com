@@ -9,9 +9,10 @@ title: Supported Vehicles - OpenXC
 
 ## All Vehicles Sold in the U.S. Since 2008 (OBD-II on CAN)
 
-To read standard OBD-II diagnostics data, use the open source OBD-II OpenXC
-firmware. You can download the latest compiled  version of that firmware from
-the [vi-firmware releases page](https://github.com/openxc/vi-firmware/releases).
+To read standard OBD-II diagnostics data from a car with OBD-II on CAN, use the
+open source OBD-II OpenXC firmware. You can download the latest compiled
+version of that firmware from the [vi-firmware releases
+page](https://github.com/openxc/vi-firmware/releases).
 
 Grab the `openxc-obd2-firmware-*.zip` file for the latest version, which
 contains the OBD-II firmware for each of the supported vehicle interfaces.

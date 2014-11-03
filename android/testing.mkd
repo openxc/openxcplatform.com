@@ -7,6 +7,11 @@ title: Testing - OpenXC
     <h1>Testing</h1>
 </div>
 
+<div class="alert alert-danger">
+Please <strong>do not</strong> try to test your application while in
+motion! Testing OpenXC apps while driving is absolutely a two person job.
+</div>
+
 <div class="page-header">
     <h2>Vehicle Simulator</h2>
 </div>

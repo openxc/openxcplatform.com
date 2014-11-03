@@ -9,33 +9,51 @@ title: Getting Started with Android - OpenXC
 
 So you just bought an OpenXC vehicle interface? Let's get it programmed and
 test it in a car with your Android device or laptop.
-
-If you want to start working on an Android application before buying any
-hardware, you can skip ahead to the [Android library
-setup](/android/library-installation.html).
-
 If you have issues at any point in this process, check for similar issues in the
 [Google Group](http://groups.google.com/group/openxc) and otherwise create a new
 post to ask for some assistance.
 
+## Install the OpenXC Enabler
+
+Install the OpenXC Enabler application from the [latest release
+page](https://github.com/openxc/openxc-android/releases) - the green button
+links to the APK file that can be installed on your Android device. Make sure
+you have "Allow apps from unofficial sources" checked in your Applications
+settings.
+
+The Enabler takes care of a lot of boilerplate code, so your app's code can be
+simpler. It also includes a basic GUI for most functionality of the Android
+library.
+
 <div class="alert alert-danger">
-Most importantly, <strong>do not</strong> try to test your application while in
-motion! Testing OpenXC apps while moving is absolutely a two person job.
+<strong>Note:</strong> Even if you only plan to use previously recorded trace
+files and don't need to connect to a physical vehicle interface, the Enabler app
+still must be installed.
 </div>
+
+The Enabler also has views that allow you to:
+
+* Display all received simple vehicle messages from the VI.
+* Display all received low-level CAN messages from the VI, if that
+    functionality is enabled in the firmware.
+* Send an arbitrary CAN message to the vehicle through the VI (requires firmware
+    that supports this feature).
+* Send a diagnostic request to the vehicle through the VI.
+
+It's a fairly basic UI, so consider these proof of concept features. Everything
+they do is available via the library's API.
 
 ## Program the Vehicle Interface
 
 Visit the [VI firmware page](/vehicle-interface/firmware.html) to find the
 right firmware for your VI and to learn how to re-program it.
 
+If you plan only to use pre-recorded vehicle data trace files instead of a
+physical vehicle interface, you can skip this step.
+
 ## Android Smoke Test
 
 <ol>
-<li>Install the OpenXC Enabler application from the
-<a href="https://github.com/openxc/openxc-android/releases">latest release page</a> - the
-green button links to the APK file that can be installed on your Android device.
-</li>
-
 <li>Plug the vehicle interface into the OBD-II port in your car - it will be
 somewhere below the steering wheel, possibly behind a door. It should light up
 blue if it's plugged in all the way and the car is running.</li>
@@ -51,7 +69,7 @@ and prompt to pair. If it asks for a PIN, use <code>1234</code>.
 <img title="OpenXC Enabler App" alt="Enabler pairing" src="/images/test-screenshots/enabler-pairing.png"/>
 </div>
 
-</li
+</li>
 
 <li>If your VI is plugged into a running vehicle, after a few seconds it will
 open a connection and start receiving vehicle data. You should see a Bluetooth
@@ -65,8 +83,7 @@ should be increasing.
 </div>
 </li>
 
-<li>Click the "View Vehicle Data" button in the Enabler to see live data from
-the car.
+<li>Swipe to the left to see the list of messages being received from the VI.
 <br/>
 <img title="OpenXC Enabler App" alt="Enabler dashboard" src="/images/test-screenshots/dashboard.png"/>
 </li>
@@ -78,4 +95,6 @@ the car.
 
 You can now [install the OpenXC Android
 library](/android/library-installation.html) and get started creating
-your first app.
+your first app. Make sure you installed the Enabler!
+
+[enabler-source]: https://github.com/openxc/openxc-android/tree/master/enabler
