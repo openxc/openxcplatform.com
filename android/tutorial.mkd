@@ -291,7 +291,11 @@ Finally, the last steps:
 1. In the Enabler, Go to `Settings -> Data Sources` and change the vehicle
     interface to a Pre-recorded Trace File.
 1. At the bottom of the screen under `Trace File Playback`, select a trace file
-    for playback. In the file manager, browse to the trace file you downloaded.
+    for playback. You need a file manager app on your device to browse for a
+    file. Later Android devices come with a manager pre-installed. Older devices
+    may need to download another app, such as the [OI File
+    Manager](https://play.google.com/store/apps/details?id=org.openintents.filemanager).
+    In the file manager, browse to the trace file you downloaded.
 1. Return to the front view of the Enabler - the message count should be
    increasing, indicating the trace is playing.
 
