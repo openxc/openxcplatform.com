@@ -273,7 +273,7 @@ int percentage = measurement.getValue().doubleValue() / range;
 The Android framework includes built-in support for location information - most
 devices support determining position based on CellID, GPS and Wi-Fi. OpenXC's
 latitude, longitude and vehicle speed are exposed through this interface using a
-mocked location provider. This functionality is provided by Android primarily
+vehicle location provider. This functionality is provided by Android primarily
 for testing, but it's also a useful way to inject location data from sources
 other than the built-in sensors. It works well with Bluetooth GPS receivers,
 too.
@@ -391,7 +391,7 @@ It receives the data in its base form, a `VehicleMessage`.
 
 Data sinks handle the core of the library's asynchronous notification system,
 too. The [VehicleManager][] always adds an instance of the
-[MeasurementListenerSink][], which keeps tabs on which applications want to be
+[MessageListenerSink][], which keeps tabs on which applications want to be
 notified of changes in measurements.
 
 The built-in sinks for application developers are:
@@ -416,7 +416,7 @@ The VehicleService only uses two sinks:
 
 * [RemoteCallbackSink][] - funnels vehicle data asynchronously with AIDL to
   applications.
-* [MockedLocationSink][] - pushes location and speed information from the
+* [VehicleLocationProvider][] - pushes location and speed information from the
   vehicle into the normal Android location framework.
 
 Application developers don't need to worry about these, but it's good to know
@@ -456,10 +456,10 @@ application's `AndroidManifest.xml` - just the [VehicleManager][] service.
 [trace file]: /android/testing.html
 [BluetoothVehicleInterface]: http://android.openxcplatform.com/reference/com/openxc/interfaces/bluetooth/BluetoothVehicleInterface.html
 [TraceVehicleDataSource]: http://android.openxcplatform.com/reference/com/openxc/sources/trace/TraceVehicleDataSource.html
-[MeasurementListenerSink]: http://android.openxcplatform.com/reference/com/openxc/sinks/MeasurementListenerSink.html
+[MessageListenerSink]: http://android.openxcplatform.com/reference/com/openxc/sinks/MessageListenerSink.html
 [FileRecorderSink]: http://android.openxcplatform.com/reference/com/openxc/sinks/FileRecorderSink.html
 [UploaderSink]: http://android.openxcplatform.com/reference/com/openxc/sinks/UploaderSink.html
 [ApplicationSource]: http://android.openxcplatform.com/reference/com/openxc/sources/ApplicationSource.html
 [UsbVehicleInterface]: http://android.openxcplatform.com/reference/com/openxc/interfaces/usb/UsbVehicleInterface.html
 [RemoteCallbackSink]: http://android.openxcplatform.com/reference/com/openxc/sinks/RemoteCallbackSink.html
-[MockedLocationSink]: http://android.openxcplatform.com/reference/com/openxc/sinks/MockedLocationSink.html
+[VehicleLocationProvider]: http://android.openxcplatform.com/reference/com/openxc/VehicleLocationProvider.html
