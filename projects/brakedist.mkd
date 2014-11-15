@@ -116,8 +116,8 @@ MAX232 14 &rarr; RS232 TX
 
 The firmware for the board is available in the brakedist repo. The firmware outputs/receives debug messages via Serial0, RS232 via Serial1 and JSON sensor readings via Serial2. The communication with the Android device is all done through Serial2, therefore when the sensor board is deployed on a vehicle, it is only necessary to connect the FTDI device via USB. The Arduino built in USB device need only be connected to flash the device or debug the sensor board.
 
-The firmware requires the following libraries:
-[i2Cmaster](http://homepage.hispeed.ch/peterfleury/avr-software.html)
+The firmware requires the following libraries: i2Cmaster
+(http://homepage.hispeed.ch/peterfleury/avr-software.html)
 [DHTlib](https://github.com/adafruit/DHT-sensor-library)
 [aJson](https://github.com/interactive-matter/aJson)
 
