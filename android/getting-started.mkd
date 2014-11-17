@@ -17,11 +17,14 @@ post to ask for some assistance.
 <a href="#enabler">Install the OpenXC Enabler</a>
 </h2>
 
-Install the OpenXC Enabler application from the [latest release
-page](https://github.com/openxc/openxc-android/releases) - the green button
-links to the APK file that can be installed on your Android device. Make sure
-you have "Allow apps from unofficial sources" checked in your Applications
-settings.
+Install the OpenXC Enabler application from [Google
+Play](https://play.google.com/store/apps/details?id=com.openxcplatform.enabler)
+
+If you don't have an active Google account on your device, download the the
+[latest APK from the GitHub releases
+page](https://github.com/openxc/openxc-android/releases). The green button links
+to the APK file that can be installed on your Android device. Make sure you have
+"Allow apps from unofficial sources" checked in your Applications settings.
 
 The Enabler takes care of a lot of boilerplate code, so your app's code can be
 simpler. It also includes a basic GUI for most functionality of the Android

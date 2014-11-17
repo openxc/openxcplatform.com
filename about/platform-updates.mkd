@@ -17,7 +17,7 @@ between major platform updates which are tracked in their respective changelogs.
 
 * Vehicle Interface Firmware - [v7.0](https://github.com/openxc/vi-firmware/releases/tag/v7.0.0)
 * Python Library - [v0.12.0](https://github.com/openxc/openxc-python/releases/tag/v0.12.0)
-* Android Library and Enabler - [v6.0](https://github.com/openxc/openxc-android/releases/tag/v6.0.0)
+* Android Library and Enabler - [v6.0.2](https://github.com/openxc/openxc-android/releases/tag/v6.0.2)
 * OpenXC Message Format Specification - [v0.4.0](https://github.com/openxc/openxc-message-format/releases/tag/v0.4.0)
 
 This platform update brings a major refactoring of the message format, so a
@@ -45,12 +45,10 @@ library, as it is now handled internally). For example, [this commit in the
 openxc-starter](https://github.com/openxc/openxc-starter/commit/72aae8a529c506384185b41fd90fd753c350b5cc)
 project updates it to be compatible with the v6.0 Android library.
 
-The OpenXC Enabler Android app (download an [APK from the v6.0 release
-page](https://github.com/openxc/openxc-android/releases/tag/v6.0.0) also has an
-enhanced user interface to expose many of the new features of the vehicle
-interface and library. You can see a preview of the new screens in this [thread
-in the Google
-Group](https://groups.google.com/forum/#!topic/openxc/WSl92Bpt-K8).
+The OpenXC Enabler Android app is now available through the Google Play store,
+and also has an enhanced user interface to expose many of the new features of
+the vehicle interface and library. You can see a preview of the new screens in
+this [thread in the Google Group](https://groups.google.com/forum/#!topic/openxc/WSl92Bpt-K8).
 
 ### Known Issues
 
