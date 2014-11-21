@@ -17,7 +17,7 @@ between major platform updates which are tracked in their respective changelogs.
 
 * Vehicle Interface Firmware - [v7.0](https://github.com/openxc/vi-firmware/releases/tag/v7.0.0)
 * Python Library - [v0.12.0](https://github.com/openxc/openxc-python/releases/tag/v0.12.0)
-* Android Library and Enabler - [v6.0.2](https://github.com/openxc/openxc-android/releases/tag/v6.0.2)
+* Android Library and Enabler - [v6.0.3](https://github.com/openxc/openxc-android/releases/tag/v6.0.3)
 * OpenXC Message Format Specification - [v0.4.0](https://github.com/openxc/openxc-message-format/releases/tag/v0.4.0)
 
 This platform update brings a major refactoring of the message format, so a
