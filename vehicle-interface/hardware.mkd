@@ -16,7 +16,7 @@ to the car's CAN bus, translates proprietary CAN messages to the standard
 [OpenXC message format][output-format] and sends the output over USB, Bluetooth
 or Ethernet/WiFi to a [host device][].
 
-<h3 id="obd-pins"><a href="#obd-pins">CAN Buses on OBD Pins</a></h3>
+<h3 class="anchored" id="obd-pins"><a href="#obd-pins">CAN Buses on OBD Pins</a></h3>
 
 The OBD-II port has one standard pin pair for a single CAN bus, but many
 automakers expose other buses on additional, non-standard pin pairs. For this
@@ -66,7 +66,7 @@ was built on a chipKIT development board and is still fully supported. The
 design is open-source and posted below, along with instructions on how to assemble
 all the required parts.
 
-<h2 id="ford-reference-design"><a href="#ford-reference-design">Ford Reference VI</a></h2>
+<h2 class="anchored" id="ford-reference-design"><a href="#ford-reference-design">Ford Reference VI</a></h2>
 
 The VI is a open source reference design for a "dongle" style vehicle interface
 that connects directly to the diagnostic port with no cable. Ford created this
@@ -87,7 +87,7 @@ with a small modification can connect to CAN2-2).
   Instructions](http://vi.openxcplatform.com/firmware/programming/usb.html)
 * [Reference VI Documentation and Schematics](http://vi.openxcplatform.com/)
 
-<h2 id="cross-chasm"><a href="#cross-chasm">CrossChasm C5</a></h2>
+<h2 class="anchored" id="cross-chasm"><a href="#cross-chasm">CrossChasm C5</a></h2>
 
 [CrossChasm](http://crosschasm.com/) has graciously made the C5 [available for
 purchase](http://crosschasm.com/SolutionCenter/OpenXC.aspx) from their website,
@@ -102,7 +102,7 @@ connects to the [CAN1 bus pins](#obd-pins) only.
 * [CrossChasm C5
 Documentation](http://vi-firmware.openxcplatform.com/en/latest/platforms/crosschasm-c5.html)
 
-<h2 id="diy-chipkit"><a href="#diy-chipkit">DIY chipKIT-based VI</a></h2>
+<h2 class="anchored" id="diy-chipkit"><a href="#diy-chipkit">DIY chipKIT-based VI</a></h2>
 
 <div class="row">
     <div class="col-md-4">

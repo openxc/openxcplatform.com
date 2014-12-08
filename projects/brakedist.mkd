@@ -25,7 +25,7 @@ Tracking project was designed and implemented by 2013 summer intern
 ![Sensor Closeup](/projects/images/brakedist/lidar_close_up.jpg)
 
 <div class="page-header">
-    <h2 id="motivation"><a href="#motivation">Motivation</a></h2>
+    <h2 class="anchored" id="motivation"><a href="#motivation">Motivation</a></h2>
 </div>
 
 Why warn drivers about following too closely? Many drivers do not have
@@ -43,14 +43,14 @@ future projects.
 ![Following Distance](/projects/images/brakedist/following_distance.jpg)
 
 <div class="page-header">
-    <h2 id="repositories"><a href="#repositories">Repositories</a></h2>
+    <h2 class="anchored" id="repositories"><a href="#repositories">Repositories</a></h2>
 </div>
 
 The brakedist repository contains all of the files associated with the project. This includes CAD files, hole pattern templates, firmware, Android code, and various other files. Additionally there are several software libraries and datasheets that this project depends on. These are not included in the repository but are linked to in the relevant sections of this page.  **We will put the brakedist repository up soon.**
 
 
 <div class="page-header">
-    <h2 id="lidar"><a href="#lidar">
+    <h2 class="anchored" id="lidar"><a href="#lidar">
         LiDAR
     </a></h2>
 </div>
@@ -90,7 +90,7 @@ The command set and data parsing is implemented in the sensor module Arduino cod
 
 
 <div class="page-header">
-    <h2 id="traction-detection"><a href="#traction-detection"> Traction Detection</a></h2>
+    <h2 class="anchored" id="traction-detection"><a href="#traction-detection"> Traction Detection</a></h2>
 </div>
 
 This project uses a custom sensor module to detect traction. The sensor module resides in the wheel well and collects ambient temperature, [humidity][] and [tire temperature][]. The sensor board has provisions for dust density measurement, but at the time of this writing that feature is not available. The module also includes a [level shifter][] to transcode messages to and from the laser sensor.

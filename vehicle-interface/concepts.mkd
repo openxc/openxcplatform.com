@@ -101,7 +101,7 @@ format and sends it out over USB to an Android App.
 
 ![OBD-II Port with Cable in a Mustang](/images/obd-ii-cable.jpg)
 
-<h2 id="obd">
+<h2 class="anchored" id="obd">
 <a href="#obd">Diagnostic-style Messages</a>
 </h2>
 

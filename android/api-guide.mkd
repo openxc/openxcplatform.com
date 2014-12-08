@@ -323,7 +323,7 @@ that have previously registered their interest in vehicle data (#5).
 There are a few sequence diagrams available in the
 [openxc-android docs directory](https://github.com/openxc/openxc-android/tree/master/docs/sequences).
 
-<h3 id="services">
+<h3 class="anchored" id="services">
   <a href="#services">Remote and Local Services</a>
 </h3>
 
@@ -349,7 +349,7 @@ and communicates with it using the [Android Interface Definition
 Language][aidl]. The benefit of using the [VehicleManager][] in-process is that
 developers don't need to care about any of this - it's all abstracted away.
 
-<h3 id="pipeline">
+<h3 class="anchored" id="pipeline">
 <a href="#pipeline">Data Pipeline</a>
 </h3>
 

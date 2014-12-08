@@ -21,7 +21,7 @@ connector. The Shift Knob was originally designed and developed by
 ![OpenXC Shift Knob](/projects/images/shift-knob/assembled_shift_knob_1.jpg)
 
 <div class="page-header">
-    <h2 id="repositories"><a href="#repositories">Repositories</a></h2>
+    <h2 class="anchored" id="repositories"><a href="#repositories">Repositories</a></h2>
 </div>
 
 This project is contained in four different GitHub repositories:
@@ -52,7 +52,7 @@ position and sends this signals to the Shift Knob embedded system over USB using
 the [FTDriver][] library.
 
 <div class="page-header">
-    <h2 id="motivation"><a href="#motivation">Motivation</a></h2>
+    <h2 class="anchored" id="motivation"><a href="#motivation">Motivation</a></h2>
 </div>
 
 The manual transmission shift knob is a relatively plain component in most of
@@ -74,7 +74,7 @@ to shift?" The device could behave much like a cell phone in vibrate mode.
 ![Shift Knob Internals](/projects/images/shift-knob/shift_knob_internals.jpg)
 
 <div class="page-header">
-    <h2 id="haptic_feedback"><a href="#haptic_feedback">
+    <h2 class="anchored" id="haptic_feedback"><a href="#haptic_feedback">
         Haptic Feedback
     </a></h2>
 </div>
@@ -101,7 +101,7 @@ different haptic feedback motors listed above. The first housing shown
 ![Haptic Feedback Motors](/projects/images/shift-knob/motors.jpg)
 
 <div class="page-header">
-    <h2 id="3Ddesign"><a href="#3Ddesign">3D Shift Knob Design</a></h2>
+    <h2 class="anchored" id="3Ddesign"><a href="#3Ddesign">3D Shift Knob Design</a></h2>
 </div>
 
 **GitHub Directory:** [shiftknob-3Ddesign][]
@@ -117,7 +117,7 @@ For more details, files, and drawings please see the [README][shiftknob-3Ddesign
 ![Breakdown of Shift Knob](/projects/images/shift-knob/breakdown_of_shift_knob.jpg)
 
 <div class="page-header">
-    <h2 id="PCB"><a href="#PCB">PCB Design</a></h2>
+    <h2 class="anchored" id="PCB"><a href="#PCB">PCB Design</a></h2>
 </div>
 
 **GitHub Directory:** [shiftknob-hardware][]
@@ -134,7 +134,7 @@ vehicle power rather than the 5V USB power.
 ![Shift Knob PCBs](/projects/images/shift-knob/shiftknob_pcbs.jpg)
 
 <div class="page-header">
-    <h2 id="control"><a href="#control">Control</a></h2>
+    <h2 class="anchored" id="control"><a href="#control">Control</a></h2>
 </div>
 
 **GitHub Directories:**
