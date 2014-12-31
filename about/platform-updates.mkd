@@ -15,10 +15,10 @@ between major platform updates which are tracked in their respective changelogs.
 
 ## November 2014
 
-* Vehicle Interface Firmware - [v7.0](https://github.com/openxc/vi-firmware/releases/tag/v7.0.0)
-* Python Library - [v0.12.0](https://github.com/openxc/openxc-python/releases/tag/v0.12.0)
-* Android Library and Enabler - [v6.0.3](https://github.com/openxc/openxc-android/releases/tag/v6.0.3)
-* OpenXC Message Format Specification - [v0.4.0](https://github.com/openxc/openxc-message-format/releases/tag/v0.4.0)
+* Vehicle Interface Firmware - [v7.0](https://github.com/openxc/vi-firmware/releases/latest)
+* Python Library - [v0.12.0](https://github.com/openxc/openxc-python/releases/latest)
+* Android Library and Enabler - [v6.0.4](https://github.com/openxc/openxc-android/releases/latest)
+* OpenXC Message Format Specification - [v0.4.0](https://github.com/openxc/openxc-message-format/releases/latest)
 
 This platform update brings a major refactoring of the message format, so a
 simultaneous update of the firmware and client libraries is required. The
