@@ -67,7 +67,7 @@ to implement vehicle tracking on a car not already equipped with it.  Alternativ
 project could be implemented with built-in ACC sensor data once it becomes available through
 OpenXC.
 
-The specific LiDAR sensor that was chosen for the project was a [SICK DMT10-2-1111][]. This sensor
+The specific LiDAR sensor that was chosen for the project was a SICK DMT10-2-1111. This sensor
 has a 0-100m range on natural targets and communicates through an RS232 interface.
 The sensor uses a Class 1 non-visible laser and is therefore safe for use in traffic.
 The sensor is also IP67 rated and includes a visible laser for aiming.
@@ -167,7 +167,6 @@ The user interface for this project is based on the [Retro Gauge][] OpenXC proje
 
 [Arduino]: http://www.arduino.cc
 [boost converter]: http://www.amazon.com/gp/product/B00AMZEUYU/ref=s9_simh_gw_p422_d15_i5?pf_rd_m=ATVPDKIKX0DER&pf_rd_s=center-3&pf_rd_r=1YH0FWTZ4HT7W35B8YGK&pf_rd_t=101&pf_rd_p=470938811&pf_rd_i=507846
-[SICK DMT10-2-1111]: https://www.mysick.com/eCat.aspx?go=FinderSearch&Cat=GUS&At=Fa&Cult=English&FamilyID=400&Category=Produktfinder&Selections=47373
 [connector]: https://www.sparkfun.com/products/9923
 [Retro Gauge]: /projects/retro-gauge.html
 [Pelican Box]: http://www.amazon.com/gp/product/B001OPM5QC/ref=ox_sc_act_title_4?ie=UTF8&psc=1&smid=A34FFV8YYDM571
