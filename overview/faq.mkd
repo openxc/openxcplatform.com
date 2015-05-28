@@ -74,7 +74,7 @@ there's no reason you couldn't use a laptop with another programming environment
 <dt>How does the data from OpenXC compare to the standard OBD-II messages?</dt>
 
 <dd>
-<p>OpenXC provides stricly more data than OBD-II, since the standard diagnostic
+<p>OpenXC provides strictly more data than OBD-II, since the standard diagnostic
 messages are supported by the <a href="/vehicle-interface/firmware.html">open
 source firmware</a>.</p>
 
