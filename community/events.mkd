@@ -10,6 +10,14 @@ title: Events - OpenXC
 ## Innovate Mobility App Challenges
 Ford Motor Company invites software developers worldwide to participate in the [Innovate Mobility Series](http://fordsvl.com/innovatemobility). As the global population becomes more interconnected, we must adjust our approach to mobility.  This series which started on July 15, 2014, consists of various App Challenges focused on exploring mobility issues facing communities around the world.  Whether you reside in a rural area or are experiencing the frustration of traffic congestion in a large city, the goal is to make mobility accessible and affordable.  Check out the challenges, and see how you can contribute. 
 
+### New Challenges for 2015
+
+ * [São Paulo Mobility Global Challenge](http://saopaulo-global.challengepost.com/): Submit apps that combine the use of cars and public transportation to help ease traffic in São Paulo city!
+
+ * [Australia Challenge](https://www.innocentive.com/ar/challenge/9933613): Make driving more enjoyable.  Create accessories and apps that enhance the driving experience for vehicles traveling in Australia Outback.
+
+### Challenges from 2014
+
   * [Parking Lot 2.0](http://parking.challengepost.com/): Take parking into the 21st century. Submit software that reimagines outdoor parking lots in Los Angeles!
   
   * [City Delivery Challenge](http://city.challengepost.com/): Big impact for large cities. Use software to redefine & improve how goods are delivered in Lisbon.
