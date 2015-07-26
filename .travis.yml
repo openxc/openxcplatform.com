@@ -1,5 +1,6 @@
 language: ruby
 cache: bundler
+sudo: false
 env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
