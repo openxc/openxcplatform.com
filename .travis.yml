@@ -6,7 +6,7 @@ sudo: false
 env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
-script: rake test
+script: bundle exec rake test
 branches:
   only:
   - next
