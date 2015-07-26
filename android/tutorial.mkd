@@ -32,10 +32,7 @@ before your application will work.</div>
    application](https://github.com/openxc/openxc-starter) from GitHub (click the
    "ZIP" button on the right hand column or use Git), and extract it to your
    code workspace.
-1. Just as with the OpenXC Android library, import the project into Eclipse - go
-   to `File -> Import -> Android -> Existing Android Code Into Workspace`.
-   Browse to the `openxc-starter` folder and select the project it detects
-   called `StarterActivity`.
+1. Open the project with Android Studio.
 1. This project is ready to go, so if you want to quickly see something running
    jump ahead to the [testing section](#testing). To know more about how this
    application works, continue reading.
@@ -50,17 +47,8 @@ we've specified that the Starter app will use the OpenXC library as a
 dependency.
 
 This is already done in the Starter project, but to do this in your own app go
-to the Package Explorer in the left hand side of the Eclipse window, right click
-on the project's top-level folder (e.g. `MyFirstApp`) and select `Properties`.
-
-Select the `Android` option in the list on the left in the `Properties` window.
-There should now be a `Library` section on the right side. Click the `Add`
-button, and add the `openxc` project. It should now show up in the Library list
-with a green check mark.
-
-Next, open the `libs` folder in your project and delete the file
-`android-support-v4.jar` if one exists - there's already a version of this in
-the OpenXC library and they will conflict.
+to the Package Explorer in the left hand side of Android Studio, right click on
+the project's top-level folder (e.g. `MyFirstApp`) and select `Properties`.
 
 <div class="page-header">
 <h2>Android Manifest</h2>
@@ -272,8 +260,7 @@ vehicle interface on your desk.
 
 Install the [Enabler][enabler] app if you haven't already. That application
 helps control the source of vehicle data, e.g. a vehicle interface or a trace
-file. If you have the OpenXcEnablerActivity project imported into Eclipse, this
-is as simple as `Run As -> Android Application` for that project.
+file.
 
 Download the [driving trace][] and copy it to the SD card of your Android
 device. You can do this in a few ways:

@@ -11,123 +11,41 @@ redirect_from:
 
 The OpenXC functionality is exposed via a Java library that includes some
 Android services your application can use. The library is available on GitHub in
-the [openxc-android][] repository and also in the central Maven repository.
-
-There is a [screencast walkthrough](http://www.youtube.com/watch?v=4uelN6Km_CI)
-of the complete installation and OpenXC app tutorial on YouTube.
+the [openxc-android][] repository and the latest stable version is also in the
+JCenter repository (which can be used in any Android Studio project just
+by adding a line to your `build.gradle`).
 
 <div class="page-header">
     <h2>Installation</h2>
 </div>
 
-You can choose to develop with OpenXC via [Eclipse](#eclipse) or the [command
-line](#cli) with Maven.
+<div class="page-header">
+    <h3 id="app-developer"><a href="#app-developer">For App Developers</a></h3>
+</div>
+
+Follow Google's excellent instructions to
+[download and install Android Studio](http://developer.android.com/sdk/index.html).
+
+Add the `openxc` library to your project's dependencies in the `build.gradle`
+file:
+
+    compile 'com.openxcplatform:library:6.1.0+'
+
+That's it! You can now proceed to the next steps to start using the library in
+your project.
 
 <div class="page-header">
-    <h3 id="eclipse"><a href="#eclipse">Using Eclipse</a></h3>
+    <h3 id="contributor"><a href="#contributor">For Contributors</a></h3>
 </div>
 
-Follow Google's [excellent
-directions](http://developer.android.com/sdk/index.html) to install the Android
-Developer Tools (ADT), which includes the Android SDK, Eclipse and the Android
-plugin for Eclipse. Make sure you also install the latest [Android platform
-version](http://developer.android.com/sdk/installing/adding-packages.html) and
-any additional platform versions that you wish to target. You may also need the
-latest [Java
-JDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html).
+Clone the [openxc-android][] repository using Git. If you don't already have Git
+installed, GitHub has a [good
+reference](https://help.github.com/articles/set-up-git) for all platforms.
 
-If you find yourself stuck and you need extra help installing the Android tools
-in Windows, check out this [detailed screenshot
-walkthrough](/android/adt-install-windows.html).
-
-<div class="alert alert-danger">
-If you are running 64-bit Ubuntu you will need to install the ia32-libs package.
-Other 64-bit Linux distributions will need to use their package managers to
-install the correct 32-bit libraries.
-</div>
-
-<div class="alert alert-danger">
-If you use an Internet proxy, you will need to configure the proxy settings in
-the Android SDK manager (in the <code>Tools -> Options</code> menu).
-</div>
-
-Get the [openxc-android][] source code in one of two ways:
-
-* *Recommended method:* The latest stable version of the OpenXC Android source
-  code can always be found at the [Releases
-  page](https://github.com/openxc/openxc-android/releases). Extract the
-  files to the location where you'd like the library to sit on your local
-  workstation.
-* Alternatively, clone the [openxc-android][] repository using Git. If you don't
-  already have Git installed, GitHub has a [good
-  reference](https://help.github.com/articles/set-up-git) for all platforms.
-  This method gets you the most up-to-date changes in the OpenXC library, but
-  might not be as stable.
-
-<a href="https://github.com/openxc/openxc-android">
-<img class="img-responsive" alt="GitHub repo view" src="/images/screenshots/github.png" />
-</a>
-
-After obtaining the `openxc-android` library, open Eclipse and go to `File ->
-Import -> Android -> Existing Android Code Into Workspace`. Browse to and select
-the `openxc-android` folder you downloaded - Eclipse should should detect 4
-Android projects within the folder. Unless you will be working on the internals
-of the OpenXC library itself, you can uncheck the `openxc-it` testing project.
-Click `Finish` to add the projects.
-
-Wait a few seconds for Eclipse to build the projects - there should be no errors
-reported. You're ready to start working with OpenXC! If you still have errors,
-check the [troubleshooting](/android/troubleshooting.html) section or [ask for
-some help from the community](/overview/discuss.html).
-
-<div class="page-header">
-    <h3 id="cli"><a href="#cli">Maven</a></h3>
-</div>
-
-If you prefer to compile and deploy from the command line, you can use
-[Maven](http://maven.apache.org/download.cgi). Using Maven is out of the scope
-of this documentation, so this is only recommended if you already know how to
-use Maven. The OpenXC repository has the required `pom.xml` files to use it has
-a library.
-
-The OpenXC library artifact is available in the central Maven repository, so you
-just need to add this to your `dependencies` section:
-
-{% highlight xml %}
-<dependencyManagement>
-    <dependencies>
-        <dependency>
-            <groupId>com.openxcplatform</groupId>
-            <artifactId>openxc</artifactId>
-            <version>6.0.0</version>
-            <type>aar</type>
-        </dependency>
-        ...
-    </dependencies>
-    ...
-</dependencyManagement>
-{% endhighlight %}
-
-You also need to add the
-[android-maven-plugin](http://code.google.com/p/maven-android-plugin/) so that
-the `aar` type is supported:
-
-{% highlight xml %}
-<build>
-    <pluginManagement>
-        <plugins>
-            <plugin>
-                <groupId>com.simpligility.maven.plugins</groupId>
-                <artifactId>android-maven-plugin</artifactId>
-                <version>4.0.0-rc.3</version>
-                <extensions>true</extensions>
-            </plugin>
-        </plugins>
-        ...
-    </pluginManagement>
-    ...
-</build>
-{% endhighlight %}
+After cloning the `openxc-android` library, open the project in Android Studio.
+You should be able to point it at the `openxc-android` directory to open an
+existing project. The project includes 2 modules: the library and the Enabler
+app.
 
 <div class="page-header">
 <h2>Next Steps</h2>

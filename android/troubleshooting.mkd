@@ -31,32 +31,6 @@ At a high level, an Android app contains:
 Java code to get this Hello World working. There is some Java in this app, in
 `src` - we'll get to modifying that in Part 2.
 
-**Android Developer Tools are Self-Contained**
-
-The SDK is entirely self-contained - it has Eclipse, Java and the Android bits.
-Don't overthink it and go digging around Oracle's site to install Java
-separately - that will likely bring you a world of hurt. If your system is stuck
-in a strange configuration, we recommend that you uninstall everything (Android,
-Eclipse, Java, etc), re-extract the Android ADT zip file and start Eclipse from
-that directory. Note that there is no Windows installer - you just un-zip the
-ADT and run it directly.
-
-**Required Compliance Level**
-
-If you get errors in the projects about a required compliance level, you can fix
-this by right-clicking on the errored project, then going to `Android Tools ->
-Fix Project Properties`.
-
-**ADT / Eclipse XML Editing**
-
-When you open an Android XML file in Eclipse (e.g. a layout file or
-AndroidManifest.xml) it defaults to a fancy GUI view. The GUI may be useful down
-the road when you have a more complicated app or you just want to explore, but
-for a tutorial it makes things way more complicated than they should be. At the
-bottom of the GUI pane, there are tabs to switch between the GUI "Resources"
-view and the plain text XML view. The files in the Hello World app are less than
-20 lines on average, compared to a GUI with dozens of buttons and fields.
-
 **Android Emulator**
 
 If you don't have a physical Android device and are using the software emulator,
@@ -77,30 +51,3 @@ and clicking `Build Number` 7 times (no, I'm not kidding!).
 If you are using Windows and even after enabling USB debugging your device is
 not recognized, it may require Windows drivers from the specific manufacturer.
 Google is your best friend here, as unfortunately the variations are endless.
-
-**Syntax Errors**
-
-If you aren't familiar with programming at all, we recommend copy and pasting
-the code blocks from the [app
-tutorial](/android/tutorial.html) while working
-through it to avoid syntax errors. Do take the time to understand what you're
-pasting, though!
-
-**Java Imports**
-
-Any external code references in a Java file need to be imported, much like
-`#include` in C. Eclipse can automatically detect what needs to be imported.
-Either left click on each error and select the "Import ..." quick-fix option, or
-press `Control-Shift-O` to automatically import everything it can.
-
-**Unresolved Imports in Eclipse**
-
-If the `VehicleManager` import won't resolve, double-check that `openxc` is added
-as a dependency for your project at in `Project -> Properties -> Android ->
-Library`.
-
-**Other Build Errors**
-
-If everything seems correct but there are still build errors, make sure all of
-the open files are saved (a `*` next to the name of the file in the tab means
-that it has unsaved changed) and do a `Project -> Clean`.
