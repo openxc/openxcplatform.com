@@ -72,7 +72,7 @@ The VI is a open source reference design for a "dongle" style vehicle interface
 that connects directly to the diagnostic port with no cable. Ford created this
 design and manufactured a small quantity to seed the developer community. If you
 have an idea for an OpenXC application and this hardware would help,
-you can [buy the hardware](shop.openxcplatform.com)
+you can [buy the hardware](http://shop.openxcplatform.com)
 
 ![Ford Reference VI](/images/ford-reference-vi.jpg)
 
