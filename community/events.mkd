@@ -8,39 +8,39 @@ title: Events - OpenXC
 </div>
 
 ## Innovate Mobility App Challenges
-Ford Motor Company invites software developers worldwide to participate in the [Innovate Mobility Series](http://fordsvl.com/innovatemobility). As the global population becomes more interconnected, we must adjust our approach to mobility.  This series which started on July 15, 2014, consists of various App Challenges focused on exploring mobility issues facing communities around the world.  Whether you reside in a rural area or are experiencing the frustration of traffic congestion in a large city, the goal is to make mobility accessible and affordable.  Check out the challenges, and see how you can contribute. 
+Ford Motor Company invites software developers worldwide to participate in the [Innovate Mobility Series](http://research.ford.com/innovatemobility.html). As the global population becomes more interconnected, we must adjust our approach to mobility.  This series which started on July 15, 2014, consists of various App Challenges focused on exploring mobility issues facing communities around the world.  Whether you reside in a rural area or are experiencing the frustration of traffic congestion in a large city, the goal is to make mobility accessible and affordable.  Check out the challenges, and see how you can contribute. 
 
 ### New Challenges for 2015
 
- * [São Paulo Mobility Global Challenge](http://saopaulo-global.challengepost.com/): Submit apps that combine the use of cars and public transportation to help ease traffic in São Paulo city!
+ * [São Paulo Mobility Global Challenge](http://saopaulo-global.devpost.com/): Submit apps that combine the use of cars and public transportation to help ease traffic in São Paulo city!
 
  * [Australia Challenge](https://www.innocentive.com/ar/challenge/9933613): Make driving more enjoyable.  Create accessories and apps that enhance the driving experience for vehicles traveling in Australia Outback.
 
 ### Challenges from 2014
 
-  * [Parking Lot 2.0](http://parking.challengepost.com/): Take parking into the 21st century. Submit software that reimagines outdoor parking lots in Los Angeles!
+  * [Parking Lot 2.0](http://parking.devpost.com/): Take parking into the 21st century. Submit software that reimagines outdoor parking lots in Los Angeles!
   
-  * [City Delivery Challenge](http://city.challengepost.com/): Big impact for large cities. Use software to redefine & improve how goods are delivered in Lisbon.
+  * [City Delivery Challenge](http://city.devpost.com/): Big impact for large cities. Use software to redefine & improve how goods are delivered in Lisbon.
   
-  * [Monsoon App Downpour](http://monsoon.challengepost.com/): Out-app mother nature. Create software to improve mobility during the monsoon season in Mumbai. 
+  * [Monsoon App Downpour](http://monsoon.devpost.com/): Out-app mother nature. Create software to improve mobility during the monsoon season in Mumbai. 
   
-  * [SUMURR mHealth](http://mhealth.challengepost.com): Improve mobility to extend the reach of healthcare. Create solutions to help provide uncompromised healthcare in rural areas in Tamil Nadu.
+  * [SUMURR mHealth](http://mhealth.devpost.com): Improve mobility to extend the reach of healthcare. Create solutions to help provide uncompromised healthcare in rural areas in Tamil Nadu.
   
-  * [SUMURR Golden Hour](http://goldenhour.challengepost.com): Help make every minute in the Golden Hour count. Create software to enable timely and better quality care to trauma victims in Delhi.
+  * [SUMURR Golden Hour](http://goldenhour.devpost.com): Help make every minute in the Golden Hour count. Create software to enable timely and better quality care to trauma victims in Delhi.
   
-  * [Urban Commuter Challenge](http://commuter.challengepost.com): Help commuters in the world’s largest city. Submit commuter-focused software for residents of Shanghai. 
+  * [Urban Commuter Challenge](http://commuter.devpost.com): Help commuters in the world’s largest city. Submit commuter-focused software for residents of Shanghai. 
   
-  * [Mobility Integration Challenge](http://mobilityintegration.challengepost.com): Simplify multi-modal trips in Chongqing, one of China’s largest cities, to help people move around their city more easily as they navigate the “Mountain City’s” complex geography.
+  * [Mobility Integration Challenge](http://mobilityintegration.devpost.com): Simplify multi-modal trips in Chongqing, one of China’s largest cities, to help people move around their city more easily as they navigate the “Mountain City’s” complex geography.
 
 ## London Traffic Tamer App Challenge
-Ford is currently sponsoring the [Traffic Tamer App Challenge](http://traffic.challengepost.com)
+Ford is currently sponsoring the [Traffic Tamer App Challenge](http://traffic.devpost.com)
 aimed at solving the issue of traffic congestion in the city of London. Part of this
 challenge encourages developers to use OpenXC in their solution to address the problem.
 Submissions are open from October 23rd, 2013 to ~~January 15th, 2014~~ March 4th, 2014 at 5:00pm EST.
 
 ## Personalized Fuel Efficiency Challenge
 
-On March 27th, Ford launched a [challenge](http://ford.challengepost.com) to the
+On March 27th, Ford launched a [challenge](http://ford.devpost.com) to the
 developer community to create innovative apps on top of the OpenXC platform to
 help drivers better understand and improve their personal fuel efficiency.
 
