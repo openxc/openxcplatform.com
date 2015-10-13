@@ -29,7 +29,7 @@ Follow Google's excellent instructions to
 Add the `openxc` library to your project's dependencies in the `build.gradle`
 file:
 
-    compile 'com.openxcplatform:library:6.1.0+'
+    compile 'com.openxcplatform:library:6.1.6+'
 
 That's it! You can now proceed to the next steps to start using the library in
 your project.
