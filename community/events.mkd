@@ -14,6 +14,8 @@ Ford Motor Company invites software developers worldwide to participate in the [
 
  * [Hsuehshan Tunnel Transformer](http://hsuehshantunnel.devpost.com/): Submit solutions to relieve the extreme traffic congestion on the Taipei-Yilan Freeway and in the Hsuehshan tunnel during peak travel times.
 
+ * [Mexico City Mobility Challenge](http://mexicocity-mobility.devpost.com/): Submitted solutions must focus on reducing the number of vehicles with only one occupant and should also encourage enjoyable, safe, and efficient transportation that relieves traffic congestion in Mexico City.
+
  * [São Paulo Mobility Global Challenge](http://saopaulo-global.devpost.com/): Submit apps that combine the use of cars and public transportation to help ease traffic in São Paulo city!
 
  * [Australia Challenge](https://www.innocentive.com/ar/challenge/9933613): Make driving more enjoyable.  Create accessories and apps that enhance the driving experience for vehicles traveling in Australia Outback.
