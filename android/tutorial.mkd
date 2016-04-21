@@ -96,7 +96,7 @@ The next changes are all in Java code - for the Starter app, it's in
 `StarterActivity.java` in the `src` folder. In order to use the `VehicleManager`
 in Java code, we have to bind with it when the application starts.
 
-Look for the ServiceConnection in the `StarterActivity`, alon
+Look for the ServiceConnection in the `StarterActivity`:
 
 {% highlight java %}
     private ServiceConnection mConnection = new ServiceConnection() {
