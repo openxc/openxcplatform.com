@@ -94,9 +94,26 @@ This should go between the `<application>` tags, like this:
 
 The next changes are all in Java code - for the Starter app, it's in
 `StarterActivity.java` in the `src` folder. In order to use the `VehicleManager`
-in Java code, we have to bind with it when the application starts.
+in Java code, we have to initiate the our `mVehicleManager` variable and then 
+bind with it when the application starts.
 
-Look for the ServiceConnection in the `StarterActivity`:
+Initiate our Starter App variables as shown here:
+
+{% highlight java %}
+    ...
+    public class StarterActivity extends Activity {
+        private static final String TAG = "StarterActivity";
+
+        private VehicleManager mVehicleManager;
+        private TextView mEngineSpeedView;
+
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+        ...
+{% endhighlight %}
+
+Then add the ServiceConnection in the `StarterActivity` to bind with the 
+VehicleManager:
 
 {% highlight java %}
     private ServiceConnection mConnection = new ServiceConnection() {
