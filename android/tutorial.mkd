@@ -107,7 +107,6 @@ bind with it when the application starts.
 Initiate our Starter App variables as shown here:
 
 {% highlight java %}
-    ...
     public class StarterActivity extends Activity {
         private static final String TAG = "StarterActivity";
 
@@ -116,7 +115,6 @@ Initiate our Starter App variables as shown here:
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
-        ...
 {% endhighlight %}
 
 Then add the ServiceConnection in the `StarterActivity` to bind with the 
