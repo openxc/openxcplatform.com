@@ -15,9 +15,7 @@ documentation and tutorials - we won't repeat them here. The best place to start
 is [Google's SDK guide][sdk].
 
 Once you're comfortable with creating an Android app, continue on with this
-tutorial to enrich it with data from your vehicle. At this point, you should
-have the OpenXC library
-[setup into your development environment][library project].
+tutorial to enrich it with data from your vehicle. 
 
 <div class="alert alert-danger"> We'll mention this again at the end of the
 tutorial, but you will need to install the
@@ -35,7 +33,8 @@ before your application will work.</div>
 1. Open the project with Android Studio.
 1. This project is ready to go, so if you want to quickly see something running
    jump ahead to the [testing section](#testing). To know more about how this
-   application works, continue reading.
+   application works or to add the necessary code to a different app, continue 
+   reading.
 
 <div class="page-header">
 <h2>Using the Library</h2>
@@ -47,8 +46,16 @@ we've specified that the Starter app will use the OpenXC library as a
 dependency.
 
 This is already done in the Starter project, but to do this in your own app go
-to the Package Explorer in the left hand side of Android Studio, right click on
-the project's top-level folder (e.g. `MyFirstApp`) and select `Properties`.
+to the `app/build.gradle` file and add the `openxc` library to the build 
+dependencies. This is mentioned in the [Android Library Setup][library project]
+page:
+
+    dependencies {
+        compile 'com.openxcplatform:library:6.1.6+'
+    }
+
+You can now proceed to the next steps to start using the library in your 
+project.
 
 <div class="page-header">
 <h2>Android Manifest</h2>
@@ -94,9 +101,26 @@ This should go between the `<application>` tags, like this:
 
 The next changes are all in Java code - for the Starter app, it's in
 `StarterActivity.java` in the `src` folder. In order to use the `VehicleManager`
-in Java code, we have to bind with it when the application starts.
+in Java code, we have to initiate the our `mVehicleManager` variable and then 
+bind with it when the application starts.
 
-Look for the ServiceConnection in the `StarterActivity`, alon
+Initiate our Starter App variables as shown here:
+
+{% highlight java %}
+    ...
+    public class StarterActivity extends Activity {
+        private static final String TAG = "StarterActivity";
+
+        private VehicleManager mVehicleManager;
+        private TextView mEngineSpeedView;
+
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+        ...
+{% endhighlight %}
+
+Then add the ServiceConnection in the `StarterActivity` to bind with the 
+VehicleManager:
 
 {% highlight java %}
     private ServiceConnection mConnection = new ServiceConnection() {
