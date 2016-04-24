@@ -1,5 +1,4 @@
-markdown: rdiscount
-highlighter: pygments
+markdown: kramdown
 production: true
 gems:
     - jekyll-sitemap

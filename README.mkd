@@ -8,13 +8,13 @@ site.
 
 ## Local development
 
-Instal the Ruby dependencies:
+Install the Ruby dependencies:
 
     $ bundle install
 
 Then run the local development server:
 
-    $ make serve
+    $ jekyll serve
 
 and point your browser to http://localhost:4000.
 
