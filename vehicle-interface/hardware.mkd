@@ -60,7 +60,7 @@ There are two ways you can obtain a vehicle interface.
 
 * Purchase a Pre-Made VI: The <a href="#ford-reference-design">Ford Reference VI</a>
 and <a href="#crosschasm">CrossChasm C5 Vehicle Interfaces</a> are all available for purchase
-at the [OpenXC Shop]( href=https://shop.openxcplatform.com/).
+at the [OpenXC Shop](http://shop.openxcplatform.com/).
 
 * <a href="#diy-chipkit">Build one yourself!</a> The original OpenXC design
 was built on a chipKIT development board and is still fully supported. The
