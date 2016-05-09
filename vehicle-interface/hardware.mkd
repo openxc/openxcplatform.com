@@ -103,7 +103,7 @@ for more complete details.
 * [CrossChasm C5 Documentation](http://vi-firmware.openxcplatform.com/en/latest/platforms/crosschasm-c5.html)
 
 All of the CrossChasm devices are available (or will be shortly) at the 
-[OpenXC Shop](http://shop.openxcplatform.com)
+[OpenXC Shop](http://shop.openxcplatform.com).
 
 <h3 class="anchored" id="crosschasm-c5-bt"><a href="#crosschasm-c5-bt">CrossChasm C5 BT</a></h3>
 
@@ -134,7 +134,7 @@ other), a cable that connects the DB9 pins 4 & 6 to the desired OBD-II pins
 The C5 BLE device is the exact same size as the C5 BT. It swaps the BT for a BLE interface,
 which makes it the VI of choice for iOS applications. The OpenXC iOS framework is coming soon.
 The other differences for the C5 BLE is that there is no SD card reader and the OBD-II 
-connections are updated to **connect to both CAN1 and CAN2-1**
+connections are updated to **connect to both CAN1 and CAN2-1**.
 
 ![CrossChasm C5](/images/c5-bt.jpg)
 
@@ -162,8 +162,13 @@ choose from any of [CAN1, CAN2-1 or CAN2-2](#obd-pins).
 
 * [chipKIT Binary Firmware Programming
   Instructions](http://chipkit-vi.openxcplatform.com/firmware/programming.html)
-* [chipKIT-based OpenXC Vehicle Interface
-Documentation](http://chipkit-vi.openxcplatform.com/)
+* [chipKIT-based OpenXC Vehicle Interface Documentation](http://chipkit-vi.openxcplatform.com/)
+
+<h2 class="anchored" id="comparison-table"><a href="#comparison-table">Comparison Table</a></h2>
+
+The table below compares the different features of the available VIs. 
+
+![VI Comparison Table](/images/vi-comp-table.png)
 
 <h2 class="anchored" id="other-implementations"><a href="#other-implementations">Other Implementations</a></h2>
 
