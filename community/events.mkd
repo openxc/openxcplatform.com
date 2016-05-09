@@ -10,7 +10,11 @@ title: Events - OpenXC
 ## Innovate Mobility App Challenges
 Ford Motor Company invites software developers worldwide to participate in the [Innovate Mobility Series](http://research.ford.com/innovatemobility.html). As the global population becomes more interconnected, we must adjust our approach to mobility.  This series which started on July 15, 2014, consists of various App Challenges focused on exploring mobility issues facing communities around the world.  Whether you reside in a rural area or are experiencing the frustration of traffic congestion in a large city, the goal is to make mobility accessible and affordable.  Check out the challenges, and see how you can contribute. 
 
-### New Challenges for 2015
+### New Challenges for 2016
+
+* [Mexico Smart Journey](http://fordsmartjourney.devpost.com/): To help get Mexico City moving, Ford is asking app developers to leverage data from public transportation organizations, private transportation companies, and crowd-sourced projects to help Mexico City residents and visitors get to their destinations — using a wide range of transportation options — in the best and most efficient way possible.
+
+### Challenges from 2015
 
  * [Hsuehshan Tunnel Transformer](http://hsuehshantunnel.devpost.com/): Submit solutions to relieve the extreme traffic congestion on the Taipei-Yilan Freeway and in the Hsuehshan tunnel during peak travel times.
 
