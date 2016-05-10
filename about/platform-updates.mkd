@@ -7,18 +7,40 @@ title: Platform Updates - OpenXC
     <h1>Platform Updates</h1>
 </div>
 
-Starting November 2014, this page tracks the high level capabilities of the
-OpenXC platform. Sub-components like the [Android
+This page tracks the high level capabilities of the OpenXC platform. Sub-components like the [Android
 library](https://github.com/openxc/openxc-android) or [vehicle interface
 firmware](https://github.com/openxc/vi-firmware) may have incremental updates
 between major platform updates which are tracked in their respective changelogs.
 
+The versions listed in each release section should be considered the compatible versions. It is
+recommended to update to all new versions as a group.
+
+## May 2016
+
+* Vehicle Interface Firmware - [v7.2.0](https://github.com/openxc/vi-firmware/releases/tag/v7.2.0)
+* Python Library - [v0.13.0](https://github.com/openxc/openxc-python/releases/tag/v0.13.0)
+* Android Library and Enabler - [v6.1.6](https://github.com/openxc/openxc-android/releases/tag/v6.1.6)
+* OpenXC Message Format Specification - [v0.6.0](https://github.com/openxc/openxc-message-format/releases/tag/v0.6.0)
+
+This update supports new VIs from 
+[CrossChasm](http://vi-firmware.openxcplatform.com/en/master/platforms/crosschasm-c5.html) 
+that are available for use. The first is the CrossChasm C5 Cellular device which
+provides GSM connectivity. The second is a CrossChasm C5 Bluetooth Low Energy (BLE) device to allow access 
+from an iOS device. Note the iOS framework is currently under development and should be released by the end of
+the year. All C5 devices now support timstamping the message on the VI. The BT & Cellular devices support 
+local storage to an SD card.
+
+The openxc-message-format and python updates include new commands to support these devices.
+
+The openxc-android library remains functionally the same, but has been updated to use Android Studio
+instead of Eclipse. 
+
 ## November 2014
 
-* Vehicle Interface Firmware - [v7.0](https://github.com/openxc/vi-firmware/releases/latest)
-* Python Library - [v0.12.0](https://github.com/openxc/openxc-python/releases/latest)
-* Android Library and Enabler - [v6.0.4](https://github.com/openxc/openxc-android/releases/latest)
-* OpenXC Message Format Specification - [v0.4.0](https://github.com/openxc/openxc-message-format/releases/latest)
+* Vehicle Interface Firmware - [v7.0.1](https://github.com/openxc/vi-firmware/releases/tag/v7.0.1)
+* Python Library - [v0.12.0](https://github.com/openxc/openxc-python/releases/tag/v0.12.0)
+* Android Library and Enabler - [v6.0.6](https://github.com/openxc/openxc-android/releases/tag/v6.0.6)
+* OpenXC Message Format Specification - [v0.4.0](https://github.com/openxc/openxc-message-format/releases/tag/v0.4.0)
 
 This platform update brings a major refactoring of the message format, so a
 simultaneous update of the firmware and client libraries is required. The
@@ -50,11 +72,18 @@ and also has an enhanced user interface to expose many of the new features of
 the vehicle interface and library. You can see a preview of the new screens in
 this [thread in the Google Group](https://groups.google.com/forum/#!topic/openxc/WSl92Bpt-K8).
 
-### Known Issues
+## Known Issues
+
+This section describes known issues related to the new updates for the platform. 
+See the issues on github.com for each project for other know issues.
 
 * The VI firmware does not yet support receive commands serialized using the
   protocol buffer format. It only supports outputting data using this format
   (see [#313](https://github.com/openxc/vi-firmware/issues/313)).
-* The run-time configuration options for the VI are not persistent - if the V
+* The run-time configuration options for the VI are not persistent - if the VI
   is power cycled, it will reset to the compile-time defaults in your firmware
   build (see [#316](https://github.com/openxc/vi-firmware/issues/316)).
+* The modem_configuration command from Python is not working currently. See 
+  [#80](https://github.com/openxc/openxc-python/issues/80) and 
+  [#350](https://github.com/openxc/vi-firmware/issues/350).
+  
