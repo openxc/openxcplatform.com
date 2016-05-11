@@ -99,10 +99,10 @@ the table below or
 [vi-firmware](http://vi-firmware.openxcplatform.com/en/master/platforms/crosschasm-c5.html)
 for more complete details.
 
-* [C5 Binary Firmware Programming Instructions](http://www.crosschasm.com/Downloads/QuickStart%20guide%20to%20using%20C5%20Hardware%20and%20OpenXC.pdf)
+* [C5 Binary Firmware Programming Instructions](http://vi-firmware.openxcplatform.com/en/master/_static/QuickStart%20guide%20to%20using%20C5%20Hardware%20and%20OpenXC.pdf)
 * [CrossChasm C5 Documentation](http://vi-firmware.openxcplatform.com/en/latest/platforms/crosschasm-c5.html)
 
-All of the CrossChasm devices are available (or will be shortly) at the 
+All of the CrossChasm devices are available at the 
 [OpenXC Shop](http://shop.openxcplatform.com).
 
 <h3 class="anchored" id="crosschasm-c5-bt"><a href="#crosschasm-c5-bt">CrossChasm C5 BT</a></h3>
@@ -135,6 +135,11 @@ The C5 BLE device is the exact same size as the C5 BT. It swaps the BT for a BLE
 which makes it the VI of choice for iOS applications. The OpenXC iOS framework is coming soon.
 The other differences for the C5 BLE is that there is no SD card reader and the OBD-II 
 connections are updated to **connect to both CAN1 and CAN2-1**.
+
+The easiest way to differentiate a C5 BT from a C5 BLE device is that the BLE device has all
+OBD-II pins populated while the BT has only a subset of pins. A second difference is the lack
+of a receiving slot in the SD card reader hole in the plastic housing on the BLE device. Or, you
+could always label them!
 
 ![CrossChasm C5](/images/c5-bt.jpg)
 
