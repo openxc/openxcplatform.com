@@ -11,12 +11,12 @@ redirect_from:
     <h1>Supported Vehicle Interfaces</h1>
 </div>
 
-The Vehicle Interface (VI or CAN translator) is piece of hardware that connects
+The Vehicle Interface (VI) is piece of hardware that connects
 to the car's CAN bus, translates proprietary CAN messages to the standard
-[OpenXC message format][output-format] and sends the output over USB, Bluetooth
-or Ethernet/WiFi to a [host device][].
+[OpenXC message format][output-format] and sends the output over USB, Bluetooth,
+or 3G/Ethernet/WiFi to a [host device][].
 
-<h3 class="anchored" id="obd-pins"><a href="#obd-pins">CAN Buses on OBD Pins</a></h3>
+<h2 class="anchored" id="obd-pins"><a href="#obd-pins">CAN Buses on OBD Pins</a></h2>
 
 The OBD-II port has one standard pin pair for a single CAN bus, but many
 automakers expose other buses on additional, non-standard pin pairs. For this
@@ -48,23 +48,28 @@ documentation, we'll use this nomenclature:
 </div>
 
 Most vehicle data is available from CAN1, and all vehicle interfaces connect
-that bus. Some data is available only on CAN2-1 or CAN2-2, and
+to that bus. Some data is available only on CAN2-1 or CAN2-2, and
 these buses are not connected to all available VIs (see below). To find out
 if the information you need is on a bus connected by a particular VI, check the
 [binary firmware](/vehicle-interface/firmware.html) documentation for your
 vehicle manufacturer.
 
-<h2>Obtaining a Vehicle Interface</h2>
+<h2 class="anchored" id="obtaining-a-vehicle-interface"><a href="#obtaining-a-vehicle-interface">Obtaining a Vehicle Interface</a></h2>
 
 There are two ways you can obtain a vehicle interface.
 
 * Purchase a Pre-Made VI: The <a href="#ford-reference-design">Ford Reference VI</a>
-and <a href="#cross-chasm">CrossChasm C5 Vehicle Interface</a> are both available for purchase.
+and <a href="#crosschasm">CrossChasm C5 Vehicle Interfaces</a> are all available for purchase
+at the [OpenXC Shop](http://shop.openxcplatform.com/).
 
 * <a href="#diy-chipkit">Build one yourself!</a> The original OpenXC design
 was built on a chipKIT development board and is still fully supported. The
 design is open-source and posted below, along with instructions on how to assemble
 all the required parts.
+
+This image shows all of the available devices that are described below.
+
+![All Devices](/images/all-devices.jpg)
 
 <h2 class="anchored" id="ford-reference-design"><a href="#ford-reference-design">Ford Reference VI</a></h2>
 
@@ -74,9 +79,9 @@ design and manufactured a small quantity to seed the developer community. If you
 have an idea for an OpenXC application and this hardware would help,
 you can [buy the hardware](http://shop.openxcplatform.com)
 
-![Ford Reference VI](/images/ford-reference-vi.jpg)
+![Ford Reference VI](/images/ref-vi-new.jpg)
 
-The reference VI is not as compact as the [C5](#cross-chasm), but it is open
+The reference VI is not as compact as the [C5 BT](#crosschasm), but it is open
 source hardware, so you are free to use or modify this design in your own
 hardware, and it connects to both the CAN1 and CAN2-1 [bus pins](#obd-pins) (and
 with a small modification can connect to CAN2-2).
@@ -85,29 +90,58 @@ with a small modification can connect to CAN2-2).
   Instructions](http://vi.openxcplatform.com/firmware/programming/usb.html)
 * [Reference VI Documentation and Schematics](http://vi.openxcplatform.com/)
 
-<h2 class="anchored" id="cross-chasm"><a href="#cross-chasm">CrossChasm C5</a></h2>
+<h2 class="anchored" id="crosschasm"><a href="#crosschasm">CrossChasm C5 Devices</a></h2>
 
-[CrossChasm](http://crosschasm.com/) has graciously made the C5 [available for
-purchase](http://crosschasm.com/SolutionCenter/OpenXC.aspx) from their website,
-and contributed code to the VI firmware to support their platform. The device 
-on the left is Bluetooth only. The devices on the right is 3G Modem only. Both
-devices have the exact same programming interfaces. See the 
-[vi-firmware](http://vi-firmware.openxcplatform.com/) documentation for more 
-details on configuration options.
+There are three types of Vehicle Interfaces made by CrossChasm that are available. They
+are all similar and based off the same PIC32 platform. The first is a Bluetooth
+Classic, the second is a 3G Cellular device, and latest is a Bluetooth LE device. See
+the table below or 
+[vi-firmware](http://vi-firmware.openxcplatform.com/en/master/platforms/crosschasm-c5.html)
+for more complete details.
 
-{% comment %}
-![CrossChasm C5](/images/crosschasm-c5.png)
-![CrossChasm C5 Cell](/images/crosschasm-c5-cell.png)
-{% endcomment %}
-![CrossChasm C5 Devices](/images/crosschasm-devices.png)
+* [C5 Binary Firmware Programming Instructions](http://vi-firmware.openxcplatform.com/en/master/_static/QuickStart%20guide%20to%20using%20C5%20Hardware%20and%20OpenXC.pdf)
+* [CrossChasm C5 Documentation](http://vi-firmware.openxcplatform.com/en/latest/platforms/crosschasm-c5.html)
 
-The C5 is a very compact interface, so it's great for fleet deployments. It
-connects to the [CAN1 bus pins](#obd-pins) only with the default cable. A crossover
+All of the CrossChasm devices are available at the 
+[OpenXC Shop](http://shop.openxcplatform.com).
+
+<h3 class="anchored" id="crosschasm-c5-bt"><a href="#crosschasm-c5-bt">CrossChasm C5 BT</a></h3>
+
+The C5 BT is a very compact interface, so it's great for fleet deployments. It
+connects to the [CAN1 bus pins](#obd-pins) only. A crossover
 cable is needed to access a secondary CAN bus.
 
-* [C5 Binary Firmware Programming Instructions](http://www.crosschasm.com/Downloads/QuickStart%20guide%20to%20using%20C5%20Hardware%20and%20OpenXC.pdf)
-* [CrossChasm C5
-Documentation](http://vi-firmware.openxcplatform.com/en/latest/platforms/crosschasm-c5.html)
+![CrossChasm C5](/images/c5-bt.jpg)
+
+<h3 class="anchored" id="crosschasm-c5-cellular"><a href="#crosschasm-c5-cellular">CrossChasm C5 Cellular</a></h3>
+
+The C5 Cellular device allows a direct GSM connection with a user supplied SIM card. The 
+device also has it's own built in GPS receiver (Telit HE910). The C5 Cellular does not 
+plug directly into the OBD-II port, but instead has an OBD-II to DB9 cable to allow 
+placement of the device  or good reception as well as the ability to put the larger 
+device out of the way.
+
+![CrossChasm C5 Cell](/images/c5-cellular.jpg)
+
+Like the C5 BT, the supplied cable connects to CAN1. In order to connect to CAN2-1 (or
+other), a cable that connects the DB9 pins 4 & 6 to the desired OBD-II pins 
+(instead of 12 & 13). The image below shows the default cable pinout.
+
+![CrossChasm OBD-II to DB9 Pinout ](/images/crosschasm-obd2-db9-pinout.png)
+
+<h3 class="anchored" id="crosschasm-c5-ble"><a href="#crosschasm-c5-ble">CrossChasm C5 BLE</a></h3>
+
+The C5 BLE device is the exact same size as the C5 BT. It swaps the BT for a BLE interface,
+which makes it the VI of choice for iOS applications. The OpenXC iOS framework is coming soon.
+The other differences for the C5 BLE is that there is no SD card reader and the OBD-II 
+connections are updated to **connect to both CAN1 and CAN2-1**.
+
+The easiest way to differentiate a C5 BT from a C5 BLE device is that the BLE device has all
+OBD-II pins populated while the BT has only a subset of pins. A second difference is the lack
+of a receiving slot in the SD card reader hole in the plastic housing on the BLE device. Or, you
+could always label them!
+
+![CrossChasm C5](/images/c5-bt.jpg)
 
 <h2 class="anchored" id="diy-chipkit"><a href="#diy-chipkit">DIY chipKIT-based VI</a></h2>
 
@@ -133,10 +167,15 @@ choose from any of [CAN1, CAN2-1 or CAN2-2](#obd-pins).
 
 * [chipKIT Binary Firmware Programming
   Instructions](http://chipkit-vi.openxcplatform.com/firmware/programming.html)
-* [chipKIT-based OpenXC Vehicle Interface
-Documentation](http://chipkit-vi.openxcplatform.com/)
+* [chipKIT-based OpenXC Vehicle Interface Documentation](http://chipkit-vi.openxcplatform.com/)
 
-<h2>Other Implementations</h2>
+<h2 class="anchored" id="comparison-table"><a href="#comparison-table">Comparison Table</a></h2>
+
+The table below compares the different features of the available VIs. 
+
+![VI Comparison Table](/images/vi-comp-table.png)
+
+<h2 class="anchored" id="other-implementations"><a href="#other-implementations">Other Implementations</a></h2>
 
 There are many possible implementations of a VI. The minimal functional
 requirements are that the VI:
@@ -163,7 +202,7 @@ manufacturer of your vehicle. Each OEM can decide whether or not to participate
 in OpenXC and if so, decide which types of data they wish to expose.
 
 <div class="page-header">
-<h2>Next Steps</h2>
+<h2 class="anchored" id="next-steps"><a href="#next-steps">Next Steps</a></h2>
 </div>
 
 Once you've purchased or constructed a vehicle interface, you can [get started
