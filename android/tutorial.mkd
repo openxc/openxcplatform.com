@@ -189,7 +189,7 @@ EngineSpeed.Listener mSpeedListener = new EngineSpeed.Listener() {
                 // Finally, we've got a new value and we're running on the
                 // UI thread - we set the text of the EngineSpeed view to
                 // the latest value
-                mEngineSpeedView.setText("Vehicle speed (km/h): "
+                mEngineSpeedView.setText("Engine speed (RPM): "
                         + speed.getValue().doubleValue());
             }
         });
@@ -222,7 +222,7 @@ replaced with these two:
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_below="@+id/textView1"
-    android:id="@+id/vehicle_speed" />
+    android:id="@+id/engine_speed" />
 {% endhighlight %}
 
 These widgets have IDs and are using the `RelativeLayout` to make sure they
@@ -238,7 +238,7 @@ protected void onCreate(Bundle savedInstanceState) {
     setContentView(R.layout.activity_starter);
     // grab a reference to the engine speed text object in the UI, so we can
     // manipulate its value later from Java code
-    mEngineSpeedView = (TextView) findViewById(R.id.vehicle_speed);
+    mEngineSpeedView = (TextView) findViewById(R.id.engine_speed);
 }
 {% endhighlight %}
 
@@ -260,7 +260,7 @@ EngineSpeed.Listener mSpeedListener = new EngineSpeed.Listener() {
                 // Finally, we've got a new value and we're running on the
                 // UI thread - we set the text of the EngineSpeed view to
                 // the latest value
-                mEngineSpeedView.setText("Vehicle speed (km/h): "
+                mEngineSpeedView.setText("Engine speed (RPM): "
                         + speed.getValue().doubleValue());
             }
         });
