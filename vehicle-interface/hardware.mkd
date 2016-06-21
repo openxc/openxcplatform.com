@@ -111,7 +111,7 @@ The C5 BT is a very compact interface, so it's great for fleet deployments. It
 connects to the [CAN1 bus pins](#obd-pins) only. A crossover
 cable is needed to access a secondary CAN bus.
 
-![CrossChasm C5](/images/c5-bt.jpg)
+![CrossChasm C5 BT](/images/c5-bt.jpg)
 
 <h3 class="anchored" id="crosschasm-c5-cellular"><a href="#crosschasm-c5-cellular">CrossChasm C5 Cellular</a></h3>
 
@@ -121,7 +121,9 @@ plug directly into the OBD-II port, but instead has an OBD-II to DB9 cable to al
 placement of the device  or good reception as well as the ability to put the larger 
 device out of the way.
 
-![CrossChasm C5 Cell](/images/c5-cellular.jpg)
+![CrossChasm C5 Cell](/images/c5cell-top.jpg)
+![CrossChasm C5 Cell](/images/c5cell-side.jpg)
+<!--![CrossChasm C5 Cell](/images/c5cell-antenna.jpg)-->
 
 Like the C5 BT, the supplied cable connects to CAN1. In order to connect to CAN2-1 (or
 other), a cable that connects the DB9 pins 4 & 6 to the desired OBD-II pins 
@@ -141,7 +143,7 @@ OBD-II pins populated while the BT has only a subset of pins. A second differenc
 of a receiving slot in the SD card reader hole in the plastic housing on the BLE device. Or, you
 could always label them!
 
-![CrossChasm C5](/images/c5-bt.jpg)
+![CrossChasm C5 BLE](/images/c5-ble-pins.jpg)
 
 <h2 class="anchored" id="diy-chipkit"><a href="#diy-chipkit">DIY chipKIT-based VI</a></h2>
 
