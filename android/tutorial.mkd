@@ -12,7 +12,7 @@ This tutorial assumes you have a working knowledge of how to create an Android
 application. Setting up the development environment and understanding Android
 fundamentals is outside the scope of OpenXC, and already Google provides great
 documentation and tutorials - we won't repeat them here. The best place to start
-is [Google's SDK guide][sdk].
+is [Android Studio's User Guide](https://developer.android.com/studio/intro/index.html).
 
 Once you're comfortable with creating an Android app, continue on with this
 tutorial to enrich it with data from your vehicle. 
@@ -45,7 +45,7 @@ should have already created in Google's tutorial. The first difference is that
 we've specified that the Starter app will use the OpenXC library as a
 dependency.
 
-This is already done in the Starter project, but to do this in your own app go
+This is already done in the Starter project and no changes have to be made. But to make your own app from scratch, go
 to the `app/build.gradle` file and add the `openxc` library to the build 
 dependencies. This is mentioned in the [Android Library Setup][library project]
 page:
@@ -66,7 +66,7 @@ the Android OS what views are available, which servies and used and what sensors
 your app needs.
 
 Every OpenXC application, the Starter app included, needs to use the
-`VehicleManager` service. The next difference between the "Hello World" app and
+[`VehicleManager` service](http://android.openxcplatform.com/reference/com/openxc/VehicleManager.html). The next difference between the "Hello World" app and
 the Starter app is the addition of this line to the manifest:
 
 {% highlight xml %}
@@ -285,7 +285,11 @@ helps control the source of vehicle data, e.g. a vehicle interface or a trace
 file.
 
 Download the [driving trace][] and copy it to the SD card of your Android
-device. You can do this in a few ways:
+device. In the case of emulation, follow these steps:
+a) Open Android Device Monitor
+b) Drag and drop the trace file into the sd card folder
+
+With an Android device, you can do this in a few ways:
 
 * Mount the Android device as USB disk.
 * Use the File Manager from the Android Device Monitor (included with the
@@ -322,7 +326,6 @@ also check out the [Android API Guide][Android API Guide] for more information o
 how to use the API. If you are having trouble, check out the
 [troubleshooting](/android/troubleshooting.html) steps.
 
-[sdk]: http://developer.android.com/sdk/index.html
 [vehicle interfaces]: /vehicle-interface/hardware.html
 [Android devices]: /android/hardware.html
 [library project]: /android/library-installation.html
