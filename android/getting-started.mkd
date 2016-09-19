@@ -1,10 +1,10 @@
 ---
 layout: developer
-title: Getting Started with Android - OpenXC
+title: Using VI with Android - OpenXC
 ---
 
 <div class="page-header">
-    <h1>Getting Started with Android</h1>
+    <h1>Using VI  with Android</h1>
 </div>
 
 So you just bought an OpenXC vehicle interface? Let's get it programmed and
@@ -18,7 +18,7 @@ post to ask for some assistance.
 </h2>
 
 Install the OpenXC Enabler application from [Google
-Play](https://play.google.com/store/apps/details?id=com.openxcplatform.enabler)
+Play](https://play.google.com/store/apps/details?id=com.openxcplatform.enabler) on your Android phone/emulator.
 
 If you don't have an active Google account on your device, download the the
 [latest APK from the GitHub releases
@@ -50,7 +50,7 @@ they do is available via the library's API.
 
 ## Program the Vehicle Interface
 
-Visit the [VI firmware page](/vehicle-interface/firmware.html) to find the
+If you haven't done so already, visit the [VI firmware page](/vehicle-interface/firmware.html) to find the
 right firmware for your VI and to learn how to re-program it.
 
 If you plan only to use pre-recorded vehicle data trace files instead of a
