@@ -8,11 +8,11 @@ redirect_from: /developers/android/library-usage.html
     <h1>Android Library API Guide</h1>
 </div>
 
+This document describes the interface for the OpenXC library **version 6.0**.
+
 Vehicle data is accessed through an [Android service][services]. Your
 application binds with the [VehicleManager](#vehicle-manager) which
 handles reading fresh data from the vehicle and sending commands.
-
-This document describes the interface for the OpenXC library **version 6.0**.
 
 <div class="page-header">
     <h2 id="vehicle-manager"><a name="vehicle-manager">VehicleManager Service</a></h2>

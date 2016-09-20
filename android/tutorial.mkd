@@ -285,9 +285,10 @@ helps control the source of vehicle data, e.g. a vehicle interface or a trace
 file.
 
 Download the [driving trace][] and copy it to the SD card of your Android
-device. In the case of emulation, follow these steps:
-a) Open Android Device Monitor
-b) Drag and drop the trace file into the sd card folder
+device. In the case of using an emulator, follow these steps:
+
+1. Open Android Device Monitor
+1. Drag and drop the trace file into the sd card folder
 
 With an Android device, you can do this in a few ways:
 
