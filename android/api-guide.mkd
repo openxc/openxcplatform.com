@@ -21,6 +21,8 @@ handles reading fresh data from the vehicle and sending commands.
 You must first [bind][binding] with the [VehicleManager][] before you can receive
 any vehicle data.
 
+
+
 Request to bind with the service in the normal fashion:
 
 {% highlight java %}

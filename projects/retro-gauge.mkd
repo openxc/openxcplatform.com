@@ -10,7 +10,7 @@ redirect_from:
     <h1>Retro Gauge</h1>
 </div>
 
-**Documentation and Assembly Lab:** [retro-gauge-lab.openxcplatform.com](http://retro-gauge-lab.openxcplatform.com/)
+**Documentation and Assembly Lab:** [retro-gauge-lab.openxcplatform.com]( http://retro-gauge-lab.openxcplatform.com/index.html)
 
 ![Retro Gauge](/projects/images/retro-gauge/overview.jpg)
 
