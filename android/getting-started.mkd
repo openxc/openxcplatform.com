@@ -10,7 +10,7 @@ title: Using VI with Android - OpenXC
 So you just bought an OpenXC vehicle interface? Let's get it programmed and
 test it in a car with your Android device or laptop.
 If you have issues at any point in this process, check for similar issues in the
-[Google Group](http://groups.google.com/group/openxc) and otherwise create a new
+[Google Group](http://groups.google.com/group/openxc) or create a new
 post to ask for some assistance.
 
 <h2 class="anchored" id="enabler">
@@ -56,7 +56,7 @@ right firmware for your VI and to learn how to re-program it.
 If you plan only to use pre-recorded vehicle data trace files instead of a
 physical vehicle interface, you can skip this step.
 
-## Android Smoke Test
+## Obtaining real vehicle data from VI
 
 <ol>
 <li>Plug the vehicle interface into the OBD-II port in your car - it will be
