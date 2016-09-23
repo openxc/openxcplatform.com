@@ -10,34 +10,4 @@ redirect_from:
     <h1>Getting Started</h1>
 </div>
 
-OpenXC™ is an open source, data-focused API for your car. By installing a small hardware module, the vehicle data becomes accessible to Android or other desktop applications using the OpenXC library. For more information, check out [this page](http://openxcplatform.com/).
-
-So, what are you looking to do?
-
-Are you looking to develop an **Android app**, or did you just buy a vehicle
-interface and want to test it?
-
-<a class="btn btn-success btn-lg"  href="/android/getting-started.html">
-Get Started with the Android Library
-</a>
-
-Are you looking to develop a **Python app**, or you want to analyze data from
-your car on a laptop?
-
-<a class="btn btn-primary btn-lg"  href="/python/getting-started.html">
-Get Started with the Python Library
-</a>
-
-Are you a vehicle network expert, or do you want to **contribute to the embedded
-vehicle interface firmware**?
-
-<a class="btn btn-info btn-lg"  href="/firmware/advanced-intro.html">
-Get Started with the Vehicle Interface Firmware
-</a>
-
-Do you want to create an app or tool in another programming language or
-development environment?
-
-<a class="btn btn-success btn-lg"  href="https://github.com/openxc/openxc-message-format">
-Read the VI Output Format Specs
-</a>
+OpenXC™ is an open source, data-focused API for your car. By installing a small hardware module, the vehicle data becomes accessible to Android or other desktop applications using the OpenXC library. For more information, check out [this page](/overview/index.html).
