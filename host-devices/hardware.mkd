@@ -37,7 +37,7 @@ developers.
 
 ## Python
 
-The <a href="http://python.openxcplatform.com">OpenXC Python library</a>
+The <a target="_blank" href="http://python.openxcplatform.com">OpenXC Python library</a>
 provides access to vehicle data from a VI in a more familiar desktop programming
 environment. The library also includes a number of command line tools that are
 very handy for testing custom firmware.
@@ -50,5 +50,5 @@ when developing.
 
 There are a few reasons why iOS is not supported right now for - check out this
 [detailed discussion in the Google
-Group](https://groups.google.com/forum/#!topic/openxc/mUEiJDZ0oXg) to see if you
+Group](https://groups.google.com/forum/#!topic/openxc/mUEiJDZ0oXg){:target="_blank"} to see if you
 can help.

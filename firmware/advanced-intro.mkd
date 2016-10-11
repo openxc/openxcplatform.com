@@ -47,6 +47,6 @@ auto industry tends to be fairly jargon-laden, so even if you're an expert it's
 good to make sure we have the same understanding of the definitions.
 
 Once you've read that (or if you're feeling confident...) jump into the [Advanced VI Firmware
-Docs](http://vi-firmware.openxcplatform.com/)
+Docs](http://vi-firmware.openxcplatform.com/){:target="_blank"}
 for a brief introduction to compiling the firmware to translate a new piece of
 data from the car.

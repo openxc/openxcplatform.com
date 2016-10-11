@@ -314,8 +314,8 @@ Finally, the last steps:
    increasing, indicating the trace is playing.
 
 Run the Starter app app and you should see the engine speed changing in the
-UI! If you'd like to see a more in-depth example, take look at the [Vehicle
-Dashboard][].
+UI! <!-- If you'd like to see a more in-depth example, take look at the [Vehicle
+Dashboard][]. -->
 
 <div class="page-header">
 <h2>Next Steps</h2>

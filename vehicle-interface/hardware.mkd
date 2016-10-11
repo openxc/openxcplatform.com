@@ -183,10 +183,10 @@ There are many possible implementations of a VI. The minimal functional
 requirements are that the VI:
 
 * Physically connects to the [OBD-II diagnostic
-  connector](http://en.wikipedia.org/wiki/On-board_diagnostics#OBD-II_diagnostic_connector)
+  connector](http://en.wikipedia.org/wiki/On-board_diagnostics#OBD-II_diagnostic_connector){:target="_blank"}
   directly or with a cable.
 * Connects a CAN controller to at least the US federally mandated CAN bus pins.
-* Runs the open source [VI firmware](https://github.com/openxc/vi-firmware).
+* Runs the open source [VI firmware](https://github.com/openxc/vi-firmware){:target="_blank"}.
 * can be reprogrammed the end user without additional hardware (most likely via
   a USB or serial bootloader).
 
