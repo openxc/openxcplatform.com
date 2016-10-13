@@ -18,7 +18,7 @@ handles reading fresh data from the vehicle and sending commands.
     <h2 id="vehicle-manager"><a name="vehicle-manager">VehicleManager Service</a></h2>
 </div>
 
-You must first [bind][binding]{:target="_blank"} with the [VehicleManager][] before you can receive
+You must first [bind][binding]{:target="_blank"} with the [VehicleManager][]{:target="_blank"} before you can receive
 any vehicle data.
 
 
