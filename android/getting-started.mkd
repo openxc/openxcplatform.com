@@ -22,7 +22,7 @@ Play](https://play.google.com/store/apps/details?id=com.openxcplatform.enabler){
 
 If you don't have an active Google account on your device, download the the
 [latest APK from the GitHub releases
-page](https://github.com/openxc/openxc-android/releases){:target="_blank"}{:target="_blank"}. The green button links
+page](https://github.com/openxc/openxc-android/releases){:target="_blank"}. The green button links
 to the APK file that can be installed on your Android device. Make sure you have
 "Allow apps from unofficial sources" checked in your Applications settings.
 
