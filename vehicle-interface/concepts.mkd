@@ -34,7 +34,7 @@ connected. In this example, the status of the parking brake is broadcast on the
 vehicle's CAN bus. The VI receives the signal, translates it into a generic
 format and sends it out over USB to an Android App.
 
-<img class="img-responsive" alt="Diagram of OpenXC architecture" src="/images/openxc-architecture.jpeg" title="OpenXC Architecture Diagram"/>
+<img class="img-responsive" alt="Diagram of OpenXC architecture" src="/images/architecture.png" title="OpenXC Architecture Diagram"/>
 
 ![OBD-II Port with Cable in a Mustang](/images/obd-ii-cable.jpg)
 
