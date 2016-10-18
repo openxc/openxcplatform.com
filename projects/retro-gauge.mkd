@@ -10,7 +10,7 @@ redirect_from:
     <h1>Retro Gauge</h1>
 </div>
 
-**Documentation and Assembly Lab:** [retro-gauge-lab.openxcplatform.com](http://retro-gauge-lab.openxcplatform.com/)
+**Documentation and Assembly Lab:** [retro-gauge-lab.openxcplatform.com](http://retro-gauge-lab.openxcplatform.com/index.html){:target="_blank"}
 
 ![Retro Gauge](/projects/images/retro-gauge/overview.jpg)
 
@@ -28,20 +28,20 @@ that the community could contribute and benefit from the design.
 This project is contained in four different GitHub repositories:
 
 **Mechanical Enclosure Design** - The
-[retro-gauge-enclosure](http://github.com/openxc-retro-gauge/retro-gauge-enclosure)
+[retro-gauge-enclosure](http://github.com/openxc-retro-gauge/retro-gauge-enclosure){:target="_blank"}
 repository contains .STL and STEP files for the 3D printable gauge housing.
 
 **Hardware** - The
-[retro-gauge-hardware](http://github.com/openxc-retro-gauge/retro-gauge-hardware)
+[retro-gauge-hardware](http://github.com/openxc-retro-gauge/retro-gauge-hardware){:target="_blank"}
 repository contains Eagle schematics and PCB layouts for the gauge's embedded
 hardware.
 
 **Firmware** - The
-[retro-gauge-firmware](http://github.com/openxc-retro-gauge/retro-gauge-firmware)
+[retro-gauge-firmware](http://github.com/openxc-retro-gauge/retro-gauge-firmware){:target="_blank"}
 repository contains Arduino source code to run on the Retro Gauge.
 
 **Android** - The
-[retro-gauge-android](http://github.com/openxc-retro-gauge/retro-gauge-android)
+[retro-gauge-android](http://github.com/openxc-retro-gauge/retro-gauge-android){:target="_blank"}
 repository contains an Android application to control the gauge with vehicle
 data from the [OpenXC platform][openxc].
 
@@ -69,7 +69,7 @@ Pro Mini</a> was designed to easily fit into the board and a 6-pin header was
 added to allow the board to easily be flashed. A 2-digit 7 segment display was
 added to output the value of the desired signal as well as 2 RGB LEDs for
 aesthetics and visual signaling. The RGB value is digitally controlled using a
-Hue spectrum input (<a href="http://en.wikipedia.org/wiki/Hue">Hue Wiki</a>).
+Hue spectrum input (<a target="_blank" href="http://en.wikipedia.org/wiki/Hue">Hue Wiki</a>).
 
 ![Retro Gauge PCB](/projects/images/retro-gauge/pcb.jpg)
 
@@ -86,9 +86,9 @@ that the gauge face could easily be swapped out to display different data types.
 
 There are 3 main manufactures for small stepper motors that are most commonly
 used in automotive gauges -
-[Switec](http://www.jukenswisstech.com/?page_id=97),
-[VID](http://www.vid.wellgain.com/product.aspx), and
-[MCR](http://mcrmotorusa.com/Stepper%20Motors.html).
+[Switec](http://www.jukenswisstech.com/?page_id=97){:target="_blank"},
+[VID](http://www.vid.wellgain.com/product.aspx){:target="_blank"}, and
+[MCR](http://mcrmotorusa.com/Stepper%20Motors.html){:target="_blank"}.
 
 For this project, the VID 29-07 was used since it was most readily available on
 eBay at the time of this project. Guy Carpenter's

@@ -9,7 +9,7 @@ redirect_from: /hardware/
 </div>
 
 This page serves as a home for example projects built on the OpenXC platform. If
-you have a project of your own, fork the [openxc.github.com][] project on GitHub
+you have a project of your own, fork the [openxc.github.com][]{:target="_blank"} project on GitHub
 (that's this site!), add a new page for your project with links to the code and
 hardware schematics (if you have them) and send a pull request. We will include
 as many well documented, functional projects as we can.
@@ -34,20 +34,20 @@ events](/community/events.html), too.
 * MSU Biometrics - Sample mobility applications using fingerprint scanner on your Android device. 
   There are two sample applications: family car sharing and a dynamic shuttle.
 
-    * [My Car](https://github.com/Keyurpatel93/MyCar) - This prototype application is developed 
+    * [My Car](https://github.com/Keyurpatel93/MyCar){:target="_blank"} - This prototype application is developed 
       to emulate car setting personalization based on user authentication on a smartphone.
-    * [Car State](https://github.com/Keyurpatel93/CarState) - A complementary application for the 
+    * [Car State](https://github.com/Keyurpatel93/CarState){:target="_blank"} - A complementary application for the 
       MyCar application to show current car settings, and settings after a user has been authenticated.
 
-    * [Dynamic Shuttle Ride](https://github.com/Keyurpatel93/DynamicShuttleRide) - The Dynamic Shuttle Ride 
+    * [Dynamic Shuttle Ride](https://github.com/Keyurpatel93/DynamicShuttleRide){:target="_blank"} - The Dynamic Shuttle Ride 
       app is an android application that was developed to emulate an on demand shuttle service app to prototype 
       new features and functionality.
-    * [Dynamic Shuttle](https://github.com/Keyurpatel93/DynamicShuttle) - The DynamicShuttle application 
+    * [Dynamic Shuttle](https://github.com/Keyurpatel93/DynamicShuttle){:target="_blank"} - The DynamicShuttle application 
       emulates a QR scanner that would be used on a shuttle to scan the boarding pass of the passengers.  
   
   The links above to the GitHub repositories provide further details.
   
-* [WIMXWAYNE](http://groups.geni.net/geni/wiki/WIMXWAYNE) - WiMAX Prototyping in
+* [WIMXWAYNE](http://groups.geni.net/geni/wiki/WIMXWAYNE){:target="_blank"} - WiMAX Prototyping in
   Metro Detroit: Integrating GENI Engineering with Wireless Network Applications
   and Science.
 

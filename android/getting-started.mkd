@@ -1,16 +1,16 @@
 ---
 layout: developer
-title: Getting Started with Android - OpenXC
+title: Using VI with Android - OpenXC
 ---
 
 <div class="page-header">
-    <h1>Getting Started with Android</h1>
+    <h1>Using VI  with Android</h1>
 </div>
 
 So you just bought an OpenXC vehicle interface? Let's get it programmed and
 test it in a car with your Android device or laptop.
 If you have issues at any point in this process, check for similar issues in the
-[Google Group](http://groups.google.com/group/openxc) and otherwise create a new
+[Google Group](http://groups.google.com/group/openxc) or create a new
 post to ask for some assistance.
 
 <h2 class="anchored" id="enabler">
@@ -18,11 +18,11 @@ post to ask for some assistance.
 </h2>
 
 Install the OpenXC Enabler application from [Google
-Play](https://play.google.com/store/apps/details?id=com.openxcplatform.enabler)
+Play](https://play.google.com/store/apps/details?id=com.openxcplatform.enabler){:target="_blank"} on your Android phone/emulator.
 
 If you don't have an active Google account on your device, download the the
 [latest APK from the GitHub releases
-page](https://github.com/openxc/openxc-android/releases). The green button links
+page](https://github.com/openxc/openxc-android/releases){:target="_blank"}. The green button links
 to the APK file that can be installed on your Android device. Make sure you have
 "Allow apps from unofficial sources" checked in your Applications settings.
 
@@ -50,13 +50,13 @@ they do is available via the library's API.
 
 ## Program the Vehicle Interface
 
-Visit the [VI firmware page](/vehicle-interface/firmware.html) to find the
+If you haven't done so already, visit the [VI firmware page](/vehicle-interface/firmware.html) to find the
 right firmware for your VI and to learn how to re-program it.
 
 If you plan only to use pre-recorded vehicle data trace files instead of a
 physical vehicle interface, you can skip this step.
 
-## Android Smoke Test
+## Obtaining real vehicle data from VI
 
 <ol>
 <li>Plug the vehicle interface into the OBD-II port in your car - it will be
@@ -99,7 +99,7 @@ should be increasing.
 </div>
 
 You can now [install the OpenXC Android
-library](/android/library-installation.html) and get started creating
+library](/android/library-installation.html){:target="_blank"} and get started creating
 your first app. Make sure you installed the Enabler!
 
 [enabler-source]: https://github.com/openxc/openxc-android/tree/master/enabler

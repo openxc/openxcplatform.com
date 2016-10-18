@@ -53,8 +53,8 @@ app.
 <h2>Next Steps</h2>
 </div>
 
-Once you have the library set up, you can start writing your [first OpenXC
-app](/android/tutorial.html). If you are having trouble, check out the
+Once you have the library set up, you can start writing your first OpenXC
+app using the [App Tutorial](/android/tutorial.html). If you are having trouble, check out the
 [troubleshooting](/android/troubleshooting.html) steps.
 
 [APK]: https://github.com/openxc/openxc-android/releases

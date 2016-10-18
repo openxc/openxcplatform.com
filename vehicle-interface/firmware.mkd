@@ -15,21 +15,24 @@ firmware that understands data sent by your car. You have a few options:
 To read *standard OBD-II diagnostics data from a CAN bus*, use the open source
 OBD-II OpenXC firmware. You can download the latest compiled  version of that
 firmware from the [vi-firmware releases
-page](https://github.com/openxc/vi-firmware/releases). The OBD-II build will
+page](https://github.com/openxc/vi-firmware/releases){:target="_blank"}. The OBD-II build will
 output a [subset of OBD-II
-data](https://github.com/openxc/vi-firmware/blob/next/src/obd2.cpp#L41) that
+data](https://github.com/openxc/vi-firmware/blob/next/src/obd2.cpp#L41){:target="_blank"} that
 your car supports over USB and Bluetooth just like normal OpenXC data. Note that
 it's not much data - most likely only RPM, vehicle speed and intake manifold
 pressure. Your car must also support OBD-II via CAN, which is only required
 since 2008. Otherwise, you've reached the limits of the federal standard - call
 your congressman if you want more!
 
-Grab the `openxc-obd2-firmware-*.zip` file for the latest version, which
-contains the OBD-II firmware for each of the supported vehicle interfaces.
+**Emulated Data**
 
-Next, look up the instructions for flashing the firmware to your vehicle
-interface on the [supported VI hardware page](/vehicle-interface/hardware.html)
-- it's different for each.
+If you don't have access to a car and you want to verify the connection to the
+VI from your host device (or it's winter in Michigan and you'd just rather stay
+inside), you can use a simple emulator firmware. The emulator firmware will be a part of the firmware zip file that you will find on the [vi-firmware release
+page](https://github.com/openxc/vi-firmware/releases){:target="_blank"}. It generates
+fake vehicle data and continuously sends it over USB and Bluetooth as if it were
+live data. It's completely random data, so don't try and build an app against
+it.
 
 **Expanded Proprietary Data**
 
@@ -38,31 +41,16 @@ pre-compiled binaries by your car's manufacturer. Check the [list of supported
 vehicles](/hardware/vehicles.html) for your car's make and model and for links
 to download the firmware.
 
-Once you have a binary firmware, look up the instructions for uploading the
-firmware to your vehicle interface on the [supported VI hardware
+**Flash the Firmware**
+
+If you have a Ford Reference VI, then follow these [instructions](http://vi.openxcplatform.com/firmware/programming/usb.html) to upload the firmware. For other versions of VIs, look up the instructions for uploading the
+firmware to your VI on the [supported VI hardware
 page](/vehicle-interface/hardware.html)
 - it's different for each.
 
-**Emulated Data**
-
-If you don't have access to a car and you want to verify the connection to the
-VI from your host device (or it's winter in Michigan and you'd just rather stay
-inside), there is a simple emulator firmware on the [vi-firmware releases
-page](https://github.com/openxc/vi-firmware/releases)
-(grab `openxc-canemulator-firmware-*.zip` from the latest version). It generates
-fake vehicle data and continuously sends it over USB and Bluetooth as if it were
-live data. It's completely random data, so don't try and build an app against
-it.
-
-Once you download the emulator firmware, look up the instructions for your
-vehicle interface on the [supported VI hardware
-page](/vehicle-interface/hardware.html) - it's different for each.
-
 
 <div class="page-header">
-    <h2>Advanced: Custom CAN Signal Definition</h2>
+    <h2>Next steps</h2>
 </div>
 
-Developers that know the details of the CAN bus they will be using can choose to
-implement their own signal definitions for the VI. The process is
-described in the [advanced firmware docs](/firmware/advanced-intro.html).
+If you would like to make changes to the firmware, proceed to [Advanced Firmware Development](/firmware/advanced-intro.html).

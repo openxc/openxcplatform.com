@@ -7,8 +7,36 @@ title: Vehicle Interface Concepts - OpenXC
 <h1>VI Concepts</h1>
 </div>
 
-Before getting too deep into advanced VI firmware programming, make sure you
-understand the terms we use throughout the documentation.
+The <a href="/vehicle-interface/index.html">**vehicle interface (VI)**</a> is a
+device that plugs into the OBD-II port (and thus to the CAN bus), reads and
+translates OBD-II requests and CAN messages into a [standard cross-vehicle
+format](https://github.com/openxc/openxc-message-format). The translated
+messages can be sent over USB or Bluetooth, so they can be read by any computer
+or smartphone.
+
+<div class="row">
+    <div class="col-md-4">
+        <img class="img-responsive" alt="Android Device in Car" src="/images/android-in-car.jpg"/>
+    </div>
+    <div class="col-md-4 stacked">
+        <img class="img-responsive" alt="Example app showing MPG" src="/images/screenshots/mpg-app-1.png"/>
+        <img class="img-responsive" alt="Example app showing MPG" src="/images/screenshots/mpg-app-2.png"/>
+    </div>
+</div>
+
+The <a href="/host-devices/index.html">**host device**</a> connects to the
+vehicle interface and reads the translated vehicle data (e.g. an Android tablet
+or Python environment on a laptop). OpenXC developers can write applications on
+this device using the data.
+
+This architecture diagram illustrates how the VI, Android device and the car are
+connected. In this example, the status of the parking brake is broadcast on the
+vehicle's CAN bus. The VI receives the signal, translates it into a generic
+format and sends it out over USB to an Android App.
+
+<img class="img-responsive" alt="Diagram of OpenXC architecture" src="/images/architecture.png" title="OpenXC Architecture Diagram"/>
+
+![OBD-II Port with Cable in a Mustang](/images/obd-ii-cable.jpg)
 
 <h2>CAN Bus</h2>
 
@@ -70,40 +98,7 @@ files from your automaker or some knowledge of how to decipher the messages on
 the network, you can significantly expand the data available to your
 applications.
 
-The <a href="/vehicle-interface/index.html">**vehicle interface (VI)**</a> is a
-device that plugs into the OBD-II port (and thus to the CAN bus), reads and
-translates OBD-II requests and CAN messages into a [standard cross-vehicle
-format](https://github.com/openxc/openxc-message-format). The translated
-messages can be sent over USB or Bluetooth, so they can be read by any computer
-or smartphone.
-
-<div class="row">
-    <div class="col-md-4">
-        <img class="img-responsive" alt="Android Device in Car" src="/images/android-in-car.jpg"/>
-    </div>
-    <div class="col-md-4 stacked">
-        <img class="img-responsive" alt="Example app showing MPG" src="/images/screenshots/mpg-app-1.png"/>
-        <img class="img-responsive" alt="Example app showing MPG" src="/images/screenshots/mpg-app-2.png"/>
-    </div>
-</div>
-
-The <a href="/host-devices/index.html">**host device**</a> connects to the
-vehicle interface and reads the translated vehicle data (e.g. an Android tablet
-or Python environment on a laptop). OpenXC developers can write applications on
-this device using the data.
-
-This architecture diagram illustrates how the VI, Android device and the car are
-connected. In this example, the status of the parking brake is broadcast on the
-vehicle's CAN bus. The VI receives the signal, translates it into a generic
-format and sends it out over USB to an Android App.
-
-<img class="img-responsive" alt="Diagram of OpenXC architecture" src="/images/openxc-architecture.jpeg" title="OpenXC Architecture Diagram"/>
-
-![OBD-II Port with Cable in a Mustang](/images/obd-ii-cable.jpg)
-
-<h2 class="anchored" id="obd">
-<a href="#obd">Diagnostic-style Messages</a>
-</h2>
+<h2>Diagnostic-style Messages</h2>
 
 Diagnostic messages work slightly differently than the CAN messages used by all
 other in-vehicle systems. When you turn on your car, the CAN bus is very busy
@@ -135,8 +130,7 @@ all supported PIDs.
 <h2>Next Steps</h2>
 </div>
 
-Now that we agree on terminology, continue to the [VI firmware
-docs](http://vi-firmware.openxcplatform.com).
+Now that we agree on terminology, continue to [set up the VI](firmware.html).
 
 [can]: http://en.wikipedia.org/wiki/CAN_bus
 [obd2]: http://en.wikipedia.org/wiki/On-board_diagnostics

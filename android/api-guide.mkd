@@ -8,18 +8,20 @@ redirect_from: /developers/android/library-usage.html
     <h1>Android Library API Guide</h1>
 </div>
 
+This document describes the interface for the OpenXC library **version 6.0**.
+
 Vehicle data is accessed through an [Android service][services]. Your
 application binds with the [VehicleManager](#vehicle-manager) which
 handles reading fresh data from the vehicle and sending commands.
-
-This document describes the interface for the OpenXC library **version 6.0**.
 
 <div class="page-header">
     <h2 id="vehicle-manager"><a name="vehicle-manager">VehicleManager Service</a></h2>
 </div>
 
-You must first [bind][binding] with the [VehicleManager][] before you can receive
+You must first [bind][binding]{:target="_blank"} with the [VehicleManager][]{:target="_blank"} before you can receive
 any vehicle data.
+
+
 
 Request to bind with the service in the normal fashion:
 
@@ -137,7 +139,7 @@ mVehicleManager.send(new DiagnosticRequest(1, 2, 3));
 </div>
 
 The commands defined in the [OpenXC message
-format](https://github.com/openxc/openxc-message-format#commands) that are
+format](https://github.com/openxc/openxc-message-format#commands){:target="_blank"} that are
 supported by your VI firmware can be sent using a `Command` message type.
 
 To send a command and wait to receive a response:
@@ -175,9 +177,9 @@ String deviceId = mVehicleManager.getVehicleInterfaceDeviceId();
 </div>
 
 A pre-defined set of [simple vehicle
-messages](https://github.com/openxc/openxc-message-format/blob/master/JSON.mkd#simple-vehicle-message),
+messages](https://github.com/openxc/openxc-message-format/blob/master/JSON.mkd#simple-vehicle-message){:target="_blank"},
 the [official OpenXC
-signals](https://github.com/openxc/openxc-message-format/tree/master#official-signals)
+signals](https://github.com/openxc/openxc-message-format/tree/master#official-signals){:target="_blank"}
 is also exposed in the Android library as higher level `Measurement` objects.
 These work similarly to VehicleMessages but include more metadata and checks to
 make sure the data is valid.
@@ -321,7 +323,7 @@ of the [VehicleManager](#services) service (#4) which notifies any activities
 that have previously registered their interest in vehicle data (#5).
 
 There are a few sequence diagrams available in the
-[openxc-android docs directory](https://github.com/openxc/openxc-android/tree/master/docs/sequences).
+[openxc-android docs directory](https://github.com/openxc/openxc-android/tree/master/docs/sequences){:target="_blank"}.
 
 <h3 class="anchored" id="services">
   <a href="#services">Remote and Local Services</a>

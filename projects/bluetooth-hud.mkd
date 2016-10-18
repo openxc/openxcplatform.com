@@ -10,7 +10,7 @@ redirect_from:
     <h1>Bluetooth Heads-up Display</h1>
 </div>
 
-**GitHub Repository:** [github.com/openxc/simple-hud](https://github.com/openxc/simple-hud)
+**GitHub Repository:** [github.com/openxc/simple-hud](https://github.com/openxc/simple-hud){:target="_blank"}
 
 The Bluetooth HUD is a wireless, solar-powered display module to be used inside
 the vehicle cockpit. The system uses LEDs reflecting off of the windshield to
@@ -76,7 +76,7 @@ from Adafruit.com. The Li-Ion charger (U1, an MCP73831) isn't designed to take
 power from a variable impediance source like a solar cell, but with a large
 input cap (C9) the circuit is reasonably good at harvesting solar power. See
 ladyada's writeup on MPPT for her solarlipo charger project
-([http://ladyada.net/products/usbdcsolarlipo/design.html](http://ladyada.net/products/usbdcsolarlipo/design.html)).
+([http://ladyada.net/products/usbdcsolarlipo/design.html](http://ladyada.net/products/usbdcsolarlipo/design.html){:target="_blank"}).
 
 With the small solar panel installed on the Bluetooth HUD, we measured between
 100-200mA under direct sunlight. A larger solar panel would be able to get
