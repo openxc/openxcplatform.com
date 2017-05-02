@@ -1,4 +1,4 @@
-require 'html/proofer'
+require 'html-proofer'
 require 'rake/testtask'
 require 'open-uri'
 
