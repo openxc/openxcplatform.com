@@ -33,7 +33,7 @@ task :test do
       end
     end
 
-    HTML::Proofer.new("./_site",
+    HTMLProofer.check_directory("./_site",
         :href_ignore => ["#"],
         :alt_ignore => [
         ],

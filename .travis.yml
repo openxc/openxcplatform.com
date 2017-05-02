@@ -1,12 +1,12 @@
 language: ruby
 rvm:
-  - 2.1.0
+  - 2.3.0
 cache: bundler
 sudo: false
 env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
-script: bundle exec rake test
+script: bundle exec rake test --trace
 branches:
   only:
   - next
