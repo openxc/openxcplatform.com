@@ -56,6 +56,12 @@ vehicle manufacturer.
 
 <h2 class="anchored" id="obtaining-a-vehicle-interface"><a href="#obtaining-a-vehicle-interface">Obtaining a Vehicle Interface</a></h2>
 
+<div class="alert alert-danger">
+<strong>Note:</strong> Unless you have a specific need for Cellular (C5 Cellular), iOS (C5 BLE), or SD Card logging (C5 BT, C5 Cellular)
+it is recommended that you use the <a href="#ford-reference-design"><strong>Ford Reference VI</strong></a>. It is most reliable platform. 
+The C5 devices are available to provide the specific new functionality. 
+</div>
+
 There are two ways you can obtain a vehicle interface.
 
 * Purchase a Pre-Made VI: The <a href="#ford-reference-design">Ford Reference VI</a>
