@@ -30,7 +30,7 @@ $ openxc-dump
 ...
 
 # Send an OBD-II diagnostic request
-$ openxc-diag --message-id 0x7df --mode 0x3
+$ openxc-diag --message 0x7df --mode 0x3
 ...
 {% endhighlight %}
 
