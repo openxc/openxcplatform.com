@@ -62,7 +62,7 @@ project.
 </div>
 
 The `AndroidManifest.xml` is the core of every Android application - it tells
-the Android OS what views are available, which servies and used and what sensors
+the Android OS what views are available, which services are used and what sensors
 your app needs.
 
 Every OpenXC application, the Starter app included, needs to use the

@@ -39,7 +39,7 @@ documentation, we'll use this nomenclature:
     <td>Ford secondary, Chrysler CCD</td>
 </tr>
 <tr>
-    <td>1 (+) and 8 (-)</td>
+    <td>1 (+) and 9 (-)</td>
     <td>CAN2-2</td>
     <td>Ford: infotainment, GM: J2411</td>
 </tr>
