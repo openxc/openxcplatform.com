@@ -7,7 +7,7 @@ title: Vehicle Interface Concepts - OpenXC
 <h1>VI Concepts</h1>
 </div>
 
-The <a href="/vehicle-interface/index.html">**vehicle interface (VI)**</a> is a
+The <a href="/vehicle-interface/index.html">vehicle interface (VI)</a> is a
 device that plugs into the OBD-II port (and thus to the CAN bus), reads and
 translates OBD-II requests and CAN messages into a [standard cross-vehicle
 format](https://github.com/openxc/openxc-message-format). The translated
@@ -24,7 +24,7 @@ or smartphone.
     </div>
 </div>
 
-The <a href="/host-devices/index.html">**host device**</a> connects to the
+The <a href="/host-devices/index.html">host device</a> connects to the
 vehicle interface and reads the translated vehicle data (e.g. an Android tablet
 or Python environment on a laptop). OpenXC developers can write applications on
 this device using the data.
