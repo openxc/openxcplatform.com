@@ -142,4 +142,3 @@ unofficial mirror.
         vehicle, but if it's supported, try the steering wheel buttons.)
         <p><strong>Frequency:</strong> Sent only if value changes</p>
     </dd>
-</dl>
