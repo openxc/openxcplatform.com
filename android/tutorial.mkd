@@ -15,7 +15,7 @@ documentation and tutorials - we won't repeat them here. The best place to start
 is [Android Studio's User Guide](https://developer.android.com/studio/intro/index.html).
 
 Once you're comfortable with creating an Android app, continue on with this
-tutorial to enrich it with data from your vehicle. 
+tutorial to enrich it with data from your vehicle.
 
 <div class="alert alert-danger"> We'll mention this again at the end of the
 tutorial, but you will need to install the
@@ -33,7 +33,7 @@ before your application will work.</div>
 1. Open the project with Android Studio.
 1. This project is ready to go, so if you want to quickly see something running
    jump ahead to the [testing section](#testing). To know more about how this
-   application works or to add the necessary code to a different app, continue 
+   application works or to add the necessary code to a different app, continue
    reading.
 
 <div class="page-header">
@@ -46,7 +46,7 @@ we've specified that the Starter app will use the OpenXC library as a
 dependency.
 
 This is already done in the Starter project and no changes have to be made. But to make your own app from scratch, go
-to the `app/build.gradle` file and add the `openxc` library to the build 
+to the `app/build.gradle` file and add the `openxc` library to the build
 dependencies. This is mentioned in the [Android Library Setup][library project]
 page:
 
@@ -54,7 +54,7 @@ page:
         compile 'com.openxcplatform:library:6.1.6+'
     }
 
-You can now proceed to the next steps to start using the library in your 
+You can now proceed to the next steps to start using the library in your
 project.
 
 <div class="page-header">
@@ -101,7 +101,7 @@ This should go between the `<application>` tags, like this:
 
 The next changes are all in Java code - for the Starter app, it's in
 `StarterActivity.java` in the `src` folder. In order to use the `VehicleManager`
-in Java code, we have to initiate the our `mVehicleManager` variable and then 
+in Java code, we have to initiate the our `mVehicleManager` variable and then
 bind with it when the application starts.
 
 Initiate our Starter App variables as shown here:
@@ -117,14 +117,14 @@ Initiate our Starter App variables as shown here:
         protected void onCreate(Bundle savedInstanceState) {
 {% endhighlight %}
 
-Then add the ServiceConnection in the `StarterActivity` to bind with the 
+Then add the ServiceConnection in the `StarterActivity` to bind with the
 VehicleManager:
 
 {% highlight java %}
     private ServiceConnection mConnection = new ServiceConnection() {
         // Called when the connection with the VehicleManager service is established
         public void onServiceConnected(ComponentName className, IBinder service) {
-            Log.i("openxc", "Bound to VehicleManager");
+            Log.i(TAG, "Bound to VehicleManager");
             // When the VehicleManager starts up, we store a reference to it
             // here in "mVehicleManager" so we can call functions on it
             // elsewhere in our code.
@@ -140,7 +140,7 @@ VehicleManager:
 
         // Called when the connection with the service disconnects unexpectedly
         public void onServiceDisconnected(ComponentName className) {
-            Log.w("openxc", "VehicleManager Service  disconnected unexpectedly");
+            Log.w(TAG, "VehicleManager Service  disconnected unexpectedly");
             mVehicleManager = null;
         }
     };
