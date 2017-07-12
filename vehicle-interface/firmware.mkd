@@ -45,8 +45,7 @@ to download the firmware.
 
 If you have a Ford Reference VI, then follow these [instructions](http://vi.openxcplatform.com/firmware/programming/usb.html) to upload the firmware. For other versions of VIs, look up the instructions for uploading the
 firmware to your VI on the [supported VI hardware
-page](/vehicle-interface/hardware.html)
-- it's different for each.
+page](/vehicle-interface/hardware.html) - it's different for each.
 
 
 <div class="page-header">
