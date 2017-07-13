@@ -35,7 +35,7 @@ it.
 
 To read expanded data from a particular car, look for firmware distributed as
 pre-compiled binaries by your car's manufacturer. Check the [list of supported
-vehicles](http://openxcplatform.com/hardware/vehicles.html) for your car's make and model and for links
+vehicles](/hardware/vehicles.html) for your car's make and model and for links
 to download the firmware.
 
 **Flash the Firmware**
