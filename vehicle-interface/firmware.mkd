@@ -7,15 +7,36 @@ title: VI Firmware - OpenXC
     <h1>Vehicle Interface Firmware</h1>
 </div>
 
-Before you can use a vehicle interface (VI), it has to be programmed with a
-firmware that understands data sent by your car. You have a few options:
+Before you can use a vehicle interface (VI), it <strong>must be programmed</strong>
+with a firmware that understands the data sent by your car. All of the below are
+available from the [vi-firmware releases page](https://github.com/openxc/vi-firmware/releases)
+or can be built on your own by following the
+[build configurations](http://vi-firmware.openxcplatform.com/en/master/compile/example-builds.html#default-build).
+
+The following are the standard build configurations:
+
+**Default**
+
+Named "vi-<i>default</i>-firmware-PLATFORM-version.hex" in releases.
+
+These are built with the default compile options. It likely will not get
+data from your vehicle, but are used for some testing. It is a good check
+of your build environment.
 
 **On-board Diagnostics (OBD-II) Data from CAN**
 
-To read *standard OBD-II diagnostics data from a CAN bus*, use the open source
-OBD-II OpenXC firmware. You can download the latest compiled  version of that
-firmware from the [vi-firmware releases
-page](https://github.com/openxc/vi-firmware/releases){:target="_blank"} or view the [build configurations](http://vi-firmware.openxcplatform.com/en/master/compile/example-builds.html?highlight=translated%20obd2#default-build){:target="_blank"} if compiling directly from the [source code](https://github.com/openxc/vi-firmware){:target="_blank"}. The OBD-II build will output a [subset of OBD-II data](https://github.com/openxc/vi-firmware/blob/next/src/obd2.cpp#L41){:target="_blank"} that
+Named "vi-<i>obd2</i>-firmware-PLATFORM-version.hex" in releases.
+
+This firmware is ready to received OBD2 requests over USB or Bluetooth (see the
+message format: https://github.com/openxc/openxc-message-format) but does *not*
+have any pre-defined recurring requests. You probably want this build if you are
+sending your own, custom diagnostic requests.
+
+**Translated OBD-II data from CAN**
+
+Named "vi-<i>translated-obd2</i>-firmware-PLATFORM-version.hex" in releases.
+
+The OBD-II build will output a [subset of OBD-II data](https://github.com/openxc/vi-firmware/blob/master/src/obd2.cpp#L39) that
 your car supports over USB and Bluetooth just like normal OpenXC data. Note that
 it's not much data - most likely only RPM, vehicle speed and intake manifold
 pressure. Your car must also support OBD-II via CAN, which is only required
@@ -24,23 +45,31 @@ your congressman if you want more!
 
 **Emulated Data**
 
+Named "vi-<i>emulator</i>-firmware-PLATFORM-version.hex" in releases.
+
 If you don't have access to a car and you want to verify the connection to the
 VI from your host device (or it's winter in Michigan and you'd just rather stay
-inside), you can use a simple emulator firmware. The emulator firmware will be a part of the firmware zip file that you will find on the [vi-firmware release page](https://github.com/openxc/vi-firmware/releases){:target="_blank"}. To compile your own emulated VI firmware from the [source code](https://github.com/openxc/vi-firmware){:target="_blank"} you can use the [emulator build configuration](http://vi-firmware.openxcplatform.com/en/master/compile/example-builds.html?highlight=translated%20obd2#emulated-data-build){:target="_blank"} while compiling. It generates
+inside), you can use a simple emulator firmware. It generates
 fake vehicle data and continuously sends it over USB and Bluetooth as if it were
 live data. It's completely random data, so don't try and build an app against
-it.
+it. Also, the VI will NOT go to sleep with this firmware so don't leave it
+plugged into your vehicle, unless you want to drain the battery.
 
 **Expanded Proprietary Data**
 
+Available via download from [https://developer.ford.com](https://developer.ford.com),
+these provide vehicle specific CAN data.
+
 To read expanded data from a particular car, look for firmware distributed as
 pre-compiled binaries by your car's manufacturer. Check the [list of supported
-vehicles](http://openxcplatform.com/hardware/vehicles.html) for your car's make and model and for links
+vehicles](/hardware/vehicles.html) for your car's make and model and for links
 to download the firmware.
 
 **Flash the Firmware**
 
-If you have a Ford Reference VI, then follow these [instructions](http://vi.openxcplatform.com/firmware/programming/usb.html){:target="_blank"} to upload the firmware. For other versions of VIs, look up the instructions for uploading the
+If you have a Ford Reference VI, then follow these
+[instructions](http://vi.openxcplatform.com/firmware/programming/usb.html)
+to upload the firmware. For other versions of VIs, look up the instructions for uploading the
 firmware to your VI on the [supported VI hardware
 page](/vehicle-interface/hardware.html) - it's different for each.
 
