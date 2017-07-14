@@ -28,9 +28,9 @@ of your build environment.
 Named "vi-<i>obd2</i>-firmware-PLATFORM-version.hex" in releases.
 
 This firmware is ready to received OBD2 requests over USB or Bluetooth (see the
-message format: https://github.com/openxc/openxc-message-format) but does *not*
-have any pre-defined recurring requests. You probably want this build if you are
-sending your own, custom diagnostic requests.
+[message format](https://github.com/openxc/openxc-message-format/blob/master/JSON.mkd#diagnostic-message)) 
+but does *not* have any pre-defined recurring requests. You probably want 
+this build if you are sending your own, custom diagnostic requests.
 
 **Translated OBD-II data from CAN**
 
