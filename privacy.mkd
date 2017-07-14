@@ -24,7 +24,7 @@ terms of this privacy statement.
 ### 2. Information About Our Organization and Website:
 
 This Privacy Statement applies to openxcplatform.com. openxcplatform.com is
-owned by Ford Motor Company, Suite 225, 400 Hamilton Ave., Palo Alto, CA 94301.
+owned by Ford Motor Company, 3200 Hillview Avenue, Palo Alto CA 94304.
 
 The business purpose of this website is to provide developers reference
 materials and documentation, and the ability to download source code and the
@@ -209,8 +209,8 @@ openxc@ford.com
 **Mailing Address:**
 
 Ford Motor Company
-400 Hamilton Ave, Suite 225
-Palo Alto, CA 94301
+3200 Hillview Avenue
+Palo Alto CA 94304
 
 so that we may be able to process your changes. openxcplatform.com will use
 reasonable efforts to correct any factual inaccuracies in your information.
@@ -278,8 +278,8 @@ openxc@ford.com
 **Mailing Address**
 <address>
 Ford Motor Company
-400 Hamilton Ave, Suite 225
-Palo Alto, CA 94301
+3200 Hillview Avenue
+Palo Alto CA 94304
 </address>
 
 openxcplatform.com is committed to working with consumers to obtain a fair and
