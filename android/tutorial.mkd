@@ -203,6 +203,52 @@ to the `VehicleManager` for future updates. Every time a new value for
 `EngineSpeed` is received by the `VehicleManager`, the `receive(Measurement)`
 method of the new `Listener` will be called with the data.
 
+<h3>Custom Message Listener</h3>
+
+In order to listen to a custom message from the vehicle, follow these steps:
+
+1. Generate a firmware that can send custom message.
+2. Create a custom message listener and add it to the VehicleManager
+
+{% highlight java %}
+
+    private ServiceConnection mConnection = new ServiceConnection() {
+        // Called when the connection with the VehicleManager service is
+        // established, i.e. bound.
+        public void onServiceConnected(ComponentName className,
+                IBinder service) {
+            Log.i(TAG, "Bound to VehicleManager");
+            // When the VehicleManager starts up, we store a reference to it
+            // here in "mVehicleManager" so we can call functions on it
+            // elsewhere in our code.
+            mVehicleManager = ((VehicleManager.VehicleBinder) service)
+                    .getService();
+
+            //custom listener
+            mVehicleManager.addListener(SimpleVehicleMessage.class, customListener);
+        }
+{% endhighlight %}
+
+{% highlight java %}
+
+    private VehicleMessage.Listener customListener = new VehicleMessage.Listener() {
+        @Override
+        public void receive(final VehicleMessage message) {
+                StarterActivity.this.runOnUiThread(new Runnable() {
+                    public void run() {                     
+                            SimpleVehicleMessage convertedMsg = new SimpleVehicleMessage(message.getTimestamp(),
+                                    ((SimpleVehicleMessage) message).getName(),
+                                    ((SimpleVehicleMessage) message).getValue());
+                            if (convertedMsg.getName().equalsIgnoreCase("custom_message")) {
+                                customMessageView.setText(convertedMsg.getName() +": "+ convertedMsg.getValue());
+                            }
+                    }
+                });
+        }
+    };
+
+{% endhighlight %}
+
 <div class="page-header">
 <h2>Measurement Data</h2>
 </div>
