@@ -203,6 +203,59 @@ to the `VehicleManager` for future updates. Every time a new value for
 `EngineSpeed` is received by the `VehicleManager`, the `receive(Measurement)`
 method of the new `Listener` will be called with the data.
 
+<h3>Custom Message Listener</h3>
+
+In order to listen to a custom message from the vehicle, follow these steps:
+
+1. Generate a firmware that can send custom message.
+2. Create a custom message listener and add it to the VehicleManager
+
+{% highlight java %}
+
+    private ServiceConnection mConnection = new ServiceConnection() {
+        // Called when the connection with the VehicleManager service is
+        // established, i.e. bound.
+        public void onServiceConnected(ComponentName className,
+                IBinder service) {
+            Log.i(TAG, "Bound to VehicleManager");
+            // When the VehicleManager starts up, we store a reference to it
+            // here in "mVehicleManager" so we can call functions on it
+            // elsewhere in our code.
+            mVehicleManager = ((VehicleManager.VehicleBinder) service)
+                    .getService();
+
+            // We want to receive updates whenever our Message changes.
+            // We have customVehicleMessageListener and here we request that the VehicleManager
+            // call its receive() method whenever the custom simpleVehicleMsg changes
+            mVehicleManager.addListener(SimpleVehicleMessage.class, customVehicleMessageListener);
+ 
+        }
+{% endhighlight %}
+
+{% highlight java %}
+
+    private VehicleMessage.Listener customVehicleMessageListener = new VehicleMessage.Listener() {
+        // When we receive a new SimpleVehicleMessage value from the car, we want to update the
+        // UI to display the new value. First we create a new SimpleVehicleMessage from the
+        // received VehicleMessage and if the name of message is as specified (custom), we set
+        // the text of the customMessageView view to the latest value
+        @Override
+        public void receive(final VehicleMessage message) {
+                StarterActivity.this.runOnUiThread(new Runnable() {
+                    public void run() {
+                        SimpleVehicleMessage simpleVehicleMsg = new SimpleVehicleMessage(message.getTimestamp(),
+                                ((SimpleVehicleMessage) message).getName(),
+                                ((SimpleVehicleMessage) message).getValue());
+                        if (simpleVehicleMsg.getName().equalsIgnoreCase("custom_message")) {
+                            customMessageView.setText(simpleVehicleMsg.getName() +": "+ simpleVehicleMsg.getValue());
+                        }
+                    }
+                });
+        }
+    };
+
+{% endhighlight %}
+
 <div class="page-header">
 <h2>Measurement Data</h2>
 </div>
