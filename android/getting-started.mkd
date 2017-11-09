@@ -4,7 +4,7 @@ title: Using VI with Android - OpenXC
 ---
 
 <div class="page-header">
-    <h1>Using VI  with Android</h1>
+    <h1>Using VI with Android</h1>
 </div>
 
 So you just bought an OpenXC vehicle interface? Let's get it programmed and
