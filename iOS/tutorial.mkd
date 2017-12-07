@@ -14,23 +14,20 @@ fundamentals is outside the scope of OpenXC, and already Apple provides great
 documentation and tutorials - we won't repeat them here. The best place to start
 is [Apple's Developer Guide](https://developer.apple.com/develop/).
 
-Once you're comfortable with creating an Android app, continue on with this
+Once you're comfortable with creating an iOS app, continue on with this
 tutorial to enrich it with data from your vehicle. 
 
 <div class="alert alert-danger"> We'll mention this again at the end of the
 tutorial, but you will need to install the
-<a href="/android/getting-started.html#enabler">Enabler</a> app
+<a href="/iOS/getting-started.html#enabler">Enabler</a> app
 before your application will work.</div>
 
 <div class="page-header">
 <h2>Starter Application</h2>
 </div>
 
-1. Download the [complete starter
-   application](https://github.com/openxc/openxc-starter) from GitHub (click the
-   "ZIP" button on the right hand column or use Git), and extract it to your
-   code workspace.
-1. Open the project with Android Studio.
+1. Open the project with XCode
+2. Run <code>git submodule update --init --recursive</code>
 1. This project is ready to go, so if you want to quickly see something running
    jump ahead to the [testing section](#testing). To know more about how this
    application works or to add the necessary code to a different app, continue 
@@ -40,19 +37,9 @@ before your application will work.</div>
 <h2>Using the Library</h2>
 </div>
 
-The Starter project is based off of the same "Hello World" application that you
-should have already created in Google's tutorial. The first difference is that
-we've specified that the Starter app will use the OpenXC library as a
-dependency.
-
-This is already done in the Starter project and no changes have to be made. But to make your own app from scratch, go
-to the `app/build.gradle` file and add the `openxc` library to the build 
-dependencies. This is mentioned in the [Android Library Setup][library project]
-page:
-
-    dependencies {
-        compile 'com.openxcplatform:library:6.1.6+'
-    }
+The OpenXC demo app is the enabler app that can be your starting point. Frameworks must be added in the demo app. 
+This is already done. 
+But to make your own app from scratch, go to XCode and add openxc framework, protobuf framework in your app. 
 
 You can now proceed to the next steps to start using the library in your 
 project.
