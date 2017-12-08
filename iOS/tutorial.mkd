@@ -41,113 +41,49 @@ The OpenXC demo app is the enabler app that can be your starting point. Framewor
 This is already done. 
 But to make your own app from scratch, go to XCode and add openxc framework, protobuf framework in your app. 
 
+<img title="OpenXC Enabler App" alt="xcode-linkedFramework" src="/images/test-screenshots/xcode-linkedFramework.png"/>
+
+
 You can now proceed to the next steps to start using the library in your 
 project.
 
 <div class="page-header">
-<h2>Android Manifest</h2>
+<h2>Status View Controller</h2>
 </div>
 
-The `AndroidManifest.xml` is the core of every Android application - it tells
-the Android OS what views are available, which servies and used and what sensors
-your app needs.
+The `StatusViewController` is the root controller of OpenXC enabler application.
 
-Every OpenXC application, the Starter app included, needs to use the
-[`VehicleManager` service](http://android.openxcplatform.com/reference/com/openxc/VehicleManager.html). The next difference between the "Hello World" app and
-the Starter app is the addition of this line to the manifest:
 
-{% highlight xml %}
-<service android:name="com.openxc.VehicleManager"/>
+{% highlight swift %}
+var vm: VehicleManager!
 {% endhighlight %}
 
-This should go between the `<application>` tags, like this:
+Instantiate VehicleManager inside viewDidLoad
+
+{% highlight swift %}
+vm = VehicleManager.sharedInstance
+		
+{% endhighlight %}
+
+Setup callbacks
+
+{% highlight swift %}
+// setup the status callback, and the command response callback
+
+vm.setManagerCallbackTarget(self, action: StatusViewController.manager_status_updates)
+vm.setCommandDefaultTarget(self, action: StatusViewController.handle_cmd_response)		
+{% endhighlight %}
+
+Use this to switch on debug output
 
 {% highlight xml %}
-<application
-    android:allowBackup="true"
-    android:icon="@drawable/ic_launcher"
-    android:label="@string/app_name"
-    android:theme="@style/AppTheme" >
-    <activity
-        android:name="com.openxc.openxcstarter.StarterActivity"
-        android:label="@string/app_name" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-    </activity>
-
-    <service android:name="com.openxc.VehicleManager"/>
-</application>
+vm.setManagerDebug(true)	
 {% endhighlight %}
 
 <div class="page-header">
-<h2>VehicleManager Service</h2>
+<h2>VehicleManager</h2>
 </div>
 
-The next changes are all in Java code - for the Starter app, it's in
-`StarterActivity.java` in the `src` folder. In order to use the `VehicleManager`
-in Java code, we have to initiate the our `mVehicleManager` variable and then 
-bind with it when the application starts.
-
-Initiate our Starter App variables as shown here:
-
-{% highlight java %}
-    public class StarterActivity extends Activity {
-        private static final String TAG = "StarterActivity";
-
-        private VehicleManager mVehicleManager;
-        private TextView mEngineSpeedView;
-
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-{% endhighlight %}
-
-Then add the ServiceConnection in the `StarterActivity` to bind with the 
-VehicleManager:
-
-{% highlight java %}
-    private ServiceConnection mConnection = new ServiceConnection() {
-        // Called when the connection with the VehicleManager service is established
-        public void onServiceConnected(ComponentName className, IBinder service) {
-            Log.i("openxc", "Bound to VehicleManager");
-            // When the VehicleManager starts up, we store a reference to it
-            // here in "mVehicleManager" so we can call functions on it
-            // elsewhere in our code.
-            mVehicleManager = ((VehicleManager.VehicleBinder) service)
-                    .getService();
-
-            // We want to receive updates whenever the EngineSpeed changes. We
-            // have an EngineSpeed.Listener (see above, mSpeedListener) and here
-            // we request that the VehicleManager call its receive() method
-            // whenever the EngineSpeed changes
-            mVehicleManager.addListener(EngineSpeed.class, mSpeedListener);
-        }
-
-        // Called when the connection with the service disconnects unexpectedly
-        public void onServiceDisconnected(ComponentName className) {
-            Log.w("openxc", "VehicleManager Service  disconnected unexpectedly");
-            mVehicleManager = null;
-        }
-    };
-{% endhighlight %}
-
-In the `onResume()` method of the activity, we request to bind with the service
-using the new ServiceConnection instance:
-
-{% highlight java %}
-@Override
-public void onResume() {
-    super.onResume();
-    // When the activity starts up or returns from the background,
-    // re-connect to the VehicleManager so we can receive updates.
-    if(mVehicleManager == null) {
-        Intent intent = new Intent(this, VehicleManager.class);
-        bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
-    }
-}
-{% endhighlight %}
 
 Now, when your app starts it will also start the OpenXC VehicleManager and if
 the [Enabler][enabler] is running, it will be ready to receive data from the
@@ -159,39 +95,44 @@ vehicle.
 
 The activity now has a connection to the vehicle service, and we want it to be
 notified whenever the speed of the vehicle changes. Look for the
-`EnginerSpeed.Listener` object in the `StarterActivity`:
+`handle_cmd_response` object in the `StatusViewController`:
 
-{% highlight java %}
-EngineSpeed.Listener mSpeedListener = new EngineSpeed.Listener() {
-    public void receive(Measurement measurement) {
-        // When we receive a new EngineSpeed value from the car, we want to
-        // update the UI to display the new value. First we cast the generic
-        // Measurement back to the type we know it to be, an EngineSpeed.
-        final EngineSpeed speed = (EngineSpeed) measurement;
-        // In order to modify the UI, we have to make sure the code is
-        // running on the "UI thread" - Google around for this, it's an
-        // important concept in Android.
-        StarterActivity.this.runOnUiThread(new Runnable() {
-            public void run() {
-                // Finally, we've got a new value and we're running on the
-                // UI thread - we set the text of the EngineSpeed view to
-                // the latest value
-                mEngineSpeedView.setText("Engine speed (RPM): "
-                        + speed.getValue().doubleValue());
-            }
-        });
-    }
-};
+{% highlight swift %}
+func handle_cmd_response(_ rsp:NSDictionary) {
+         
+// extract the command response message
+let cr = rsp.object(forKey: "vehiclemessage") as! VehicleCommandResponse
+         
+/** update the UI depending on the command type
+*** version,device_id works for JSON mode, not in protobuf - TODO 
+*/
+var cvc:CommandsViewController?
+let vcCount = self.tabBarController?.viewControllers?.count
+cvc = self.tabBarController?.viewControllers?[vcCount!-1] as! CommandsViewController?
+
+if cr.command_response.isEqual(to: "version") {
+	DispatchQueue.main.async {
+		self.verLab.text = cr.message as String
+		}
+		cvc?.versionResp = String(cr.message)
+	}
+	if cr.command_response.isEqual(to: "device_id") {
+		DispatchQueue.main.async {
+			self.devidLab.text = cr.message as String
+		}
+		cvc?.deviceIdResp = String(cr.message)
+	}
+}
+
 {% endhighlight %}
 
-This `mSpeedListener` is referred to from
-`ServiceConnection.onServiceConnected()` method we previously, where it's handed
-to the `VehicleManager` for future updates. Every time a new value for
-`EngineSpeed` is received by the `VehicleManager`, the `receive(Measurement)`
-method of the new `Listener` will be called with the data.
+Every time command response is received by the `VehicleManager`, the `handle_cmd_response(_ rsp:NSDictionary))`
+method will be called with the data.
+
+
 
 <div class="page-header">
-<h2>Measurement Data</h2>
+<h2> // TODO: Measurement Data</h2>
 </div>
 
 Lastly, the Starter app adds one more element to the user interface so there's a
@@ -260,7 +201,7 @@ list of `Measurement` Java classes that you can use in the
 [library documentation][].
 
 <div class="page-header">
-<h2 id="testing">Testing</h2>
+<h2 id="testing"> // TODO: Testing</h2>
 </div>
 
 Your Android device likely doesn't have any vehicle data flowing through it yet.
@@ -305,7 +246,7 @@ UI! <!-- If you'd like to see a more in-depth example, take look at the [Vehicle
 Dashboard][]. -->
 
 <div class="page-header">
-<h2>Next Steps</h2>
+<h2>// TODO: Next Steps</h2>
 </div>
 
 You've now completed the OpenXC Android tutorial, but there's more to learn
