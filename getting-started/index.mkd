@@ -27,6 +27,7 @@ Get Started with the Android Library
 Get Started with the iOS Library
 </a>
 
+
 <h3>Using a VI with Python</h3>
 <a class="btn btn-primary btn-lg"  href="/python/getting-started.html">
 Get Started with the Python Library
