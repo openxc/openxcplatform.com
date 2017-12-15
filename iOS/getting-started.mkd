@@ -64,7 +64,7 @@ button and wait a moment. Within a minute, it should detect your BLE VI.
 (<a class="extra-screenshots-controls" href="#extra-inactive-enabler-screenshots">show me</a>)
 
 <div class="extra-screenshots" id="extra-inactive-enabler-screenshots">
-<img title="OpenXC Enabler App" alt="Enabler disconnected" src="/images/test-screenshots/iOS_Enabler_notConnected.png"/>
+<img title="OpenXC Enabler App" alt="Enabler disconnected" src="/images/test-screenshots/iOS_BLE_notConnected.jpg"/>
 <img title="OpenXC Enabler App" alt="Enabler pairing" src="/images/test-screenshots/iOS_BLE_Connected.png"/>
 </div>
 

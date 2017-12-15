@@ -19,11 +19,11 @@ tutorial to enrich it with data from your vehicle.
 
 <div class="alert alert-danger"> We'll mention this again at the end of the
 tutorial, but you will need to install the
-<a href="/iOS/getting-started.html#enabler">Enabler</a> app
+<a href="/iOS/getting-started.html#demoapp">Demo app</a> app
 before your application will work.</div>
 
 <div class="page-header">
-<h2>Starter Application</h2>
+<h2>Demo Application</h2>
 </div>
 
 1. Open the project with XCode
@@ -37,7 +37,7 @@ before your application will work.</div>
 <h2>Using the Library</h2>
 </div>
 
-The OpenXC demo app is the enabler app that can be your starting point. Frameworks must be added in the demo app. 
+The OpenXC demo app can be your starting point. Frameworks must be added in the demo app. 
 This is already done. 
 But to make your own app from scratch, go to XCode and add openxc framework, protobuf framework in your app. 
 
@@ -86,15 +86,15 @@ vm.setManagerDebug(true)
 
 
 Now, when your app starts it will also start the OpenXC VehicleManager and if
-the [Enabler][enabler] is running, it will be ready to receive data from the
+the [Demo App][demoapp] is running, it will be ready to receive data from the
 vehicle.
 
 <div class="page-header">
 <h2>Asynchronous Updates</h2>
 </div>
 
-The activity now has a connection to the vehicle service, and we want it to be
-notified whenever the speed of the vehicle changes. Look for the
+The application now has a connection to the vehicle service, and we want it to be
+notified for all signals and responses. Look for the
 `handle_cmd_response` object in the `StatusViewController`:
 
 {% highlight swift %}
@@ -200,65 +200,21 @@ That's all you need to do to get measurements from OpenXC. You can see the full
 list of `Measurement` Java classes that you can use in the
 [library documentation][].
 
-<div class="page-header">
-<h2 id="testing"> // TODO: Testing</h2>
-</div>
-
-Your Android device likely doesn't have any vehicle data flowing through it yet.
-The next step is to use a pre-recorded vehicle trace file to simulate a real
-vehicle interface on your desk.
-
-Install the [Enabler][enabler] app if you haven't already. That application
-helps control the source of vehicle data, e.g. a vehicle interface or a trace
-file.
-
-Download the [driving trace][] and copy it to the SD card of your Android
-device. In the case of using an emulator, follow these steps:
-
-1. Open Android Device Monitor
-1. Drag and drop the trace file into the sd card folder
-
-With an Android device, you can do this in a few ways:
-
-* Mount the Android device as USB disk.
-* Use the File Manager from the Android Device Monitor (included with the
-  Android SDK).
-* Copy the file with `abd` on the command line:
-    `$ adb push driving.json /sdcard/openxc-driving.json`
-* Download the file directly onto the device using the built-in browser
-
-Finally, the last steps:
-
-1. Run the `OpenXC Enabler` app on the device
-1. In the Enabler, Go to `Settings -> Data Sources` and change the vehicle
-    interface to a Pre-recorded Trace File.
-1. At the bottom of the screen under `Trace File Playback`, select a trace file
-    for playback. You need a file manager app on your device to browse for a
-    file. Later Android devices come with a manager pre-installed. Older devices
-    may need to download another app, such as the [OI File
-    Manager](https://play.google.com/store/apps/details?id=org.openintents.filemanager).
-    In the file manager, browse to the trace file you downloaded.
-1. Return to the front view of the Enabler - the message count should be
-   increasing, indicating the trace is playing.
-
-Run the Starter app app and you should see the engine speed changing in the
-UI! <!-- If you'd like to see a more in-depth example, take look at the [Vehicle
-Dashboard][]. -->
 
 <div class="page-header">
-<h2>// TODO: Next Steps</h2>
+<h2>Next Steps</h2>
 </div>
 
-You've now completed the OpenXC Android tutorial, but there's more to learn
-about supported [Android devices][Android devices] and [vehicle interfaces][]. You can
-also check out the [Android API Guide][Android API Guide] for more information on
+You've now completed the OpenXC iOS tutorial, but there's more to learn
+about supported [iOS devices][iOS devices] and [vehicle interfaces][]. You can
+also check out the [iOS API Guide][iOS API Guide] for more information on
 how to use the API. If you are having trouble, check out the
-[troubleshooting](/android/troubleshooting.html) steps.
+[troubleshooting](/iOS/troubleshooting.html) steps.
 
 [vehicle interfaces]: /vehicle-interface/hardware.html
-[Android devices]: /android/hardware.html
+[iOS devices]: /iOS/hardware.html
 [library project]: /android/library-installation.html
-[enabler]:/android/getting-started.html#enabler
+[demoapp]:https://github.com/openxc/openxc-ios-app-demo
 [driving trace]: https://s3.amazonaws.com/openxcplatform.com/driving.json
 [library documentation]: http://android.openxcplatform.com/reference/com/openxc/measurements/package-summary.html
-[Android API Guide]: /android/api-guide.html
+[iOS API Guide]: /iOS/api-guide.html

@@ -1,11 +1,11 @@
 ---
 layout: developer
-title: Troubleshooting Android - OpenXC
+title: Troubleshooting iOS - OpenXC
 redirect_from: /getting-started/troubleshooting.html
 ---
 
 <div class="page-header">
-    <h1>Android Setup and Tutorial Troubleshooting</h1>
+    <h1>TODO: iOS Setup and Tutorial Troubleshooting</h1>
 </div>
 
 If you're having any trouble with the initial Android development environment

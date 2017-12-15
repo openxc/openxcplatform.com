@@ -1,21 +1,19 @@
 ---
 layout: developer
-title: Android Library API Guide - OpenXC
-redirect_from: /developers/android/library-usage.html
+title: iOS Library API Guide - OpenXC
+redirect_from: /developers/iOS/library-usage.html
 ---
 
 <div class="page-header">
-    <h1>Android Library API Guide</h1>
+    <h1>TODO: iOS Library API Guide</h1>
 </div>
 
 This document describes the interface for the OpenXC library **version 6.0**.
 
-Vehicle data is accessed through an [Android service][services]. Your
-application binds with the [VehicleManager](#vehicle-manager) which
-handles reading fresh data from the vehicle and sending commands.
+Vehicle data is accessed after adding [ios-framework-source][] to the [demo app][]. 
 
 <div class="page-header">
-    <h2 id="vehicle-manager"><a name="vehicle-manager">VehicleManager Service</a></h2>
+    <h2 id="vehicle-manager"><a name="vehicle-manager">VehicleManager</a></h2>
 </div>
 
 You must first [bind][binding]{:target="_blank"} with the [VehicleManager][]{:target="_blank"} before you can receive
@@ -465,3 +463,6 @@ application's `AndroidManifest.xml` - just the [VehicleManager][] service.
 [UsbVehicleInterface]: http://android.openxcplatform.com/reference/com/openxc/interfaces/usb/UsbVehicleInterface.html
 [RemoteCallbackSink]: http://android.openxcplatform.com/reference/com/openxc/sinks/RemoteCallbackSink.html
 [VehicleLocationProvider]: http://android.openxcplatform.com/reference/com/openxc/VehicleLocationProvider.html
+
+[ios-framework-source]: https://github.com/openxc/openxc-ios-framework
+[demo app]:https://github.com/openxc/openxc-ios-app-demo
