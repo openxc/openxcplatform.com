@@ -14,23 +14,23 @@ If you have issues at any point in this process, check for similar issues in the
 post to ask for some assistance.
 
 <h2 class="anchored" id="enabler">
-<a href="#enabler">Install the OpenXC Enabler</a>
+<a href="#enabler">Install the OpenXC Demo App</a>
 </h2>
 
-Install the OpenXC Enabler application from [Enabler App](https://github.com/openxc/openxc-ios-app-demo) on your iOS phone/simulator. 
+Install the OpenXC Demo application from [Demo App](https://github.com/openxc/openxc-ios-app-demo) on your iOS phone/simulator. 
 Follow the steps mentioned in this [document](https://github.com/openxc/openxc-ios-app-demo/blob/master/StepsToBuildOpenXCiOSFrameworkAndDemoApp.docx)
 
-The Enabler takes care of a lot of boilerplate code, so your app's code can be
+The Demo app takes care of a lot of boilerplate code, so your app's code can be
 simpler. It also includes a basic GUI for most functionality of the iOS
 library.
 
 <div class="alert alert-danger">
 <strong>Note:</strong> Even if you only plan to use previously recorded trace
-files and don't need to connect to a physical vehicle interface, the Enabler app
+files and don't need to connect to a physical vehicle interface, the Demo app
 still must be installed.
 </div>
 
-The Enabler also has views that allow you to:
+The Demo app also has views that allow you to:
 
 * Display all received simple vehicle messages from the VI.
 * Display all received low-level CAN messages from the VI, if that
@@ -58,8 +58,8 @@ physical vehicle interface, you can skip this step.
 somewhere below the steering wheel, possibly behind a door. It should light up
 blue if it's plugged in all the way and the car is running.</li>
 
-<li>Run the OpenXC Enabler app, hit the <code>Search for BTLE VI</code>
-button and wait a moment. Within a minute, it should detect your BTLE VI. 
+<li>Run the OpenXC Demo app, hit the <code>Search for BLE VI</code>
+button and wait a moment. Within a minute, it should detect your BLE VI. 
 <br/>
 (<a class="extra-screenshots-controls" href="#extra-inactive-enabler-screenshots">show me</a>)
 
