@@ -13,30 +13,15 @@ motion! Testing OpenXC apps while driving is absolutely a two person job.
 </div>
 
 <div class="page-header">
-    <h2>Vehicle Simulator</h2>
-</div>
-
-The [OpenXC Vehicle
-Simulator](https://github.com/openxc/openxc-vehicle-simulator){:target="_blank"} is a web
-application intended for developers to run on local machines to generate a
-simulated OpenXC vehicle data trace in real time, to be used for testing Android
-applications.
-
-Besides unit tests, the simulator is the recommended first step for testing your
-application.
-
-![Simulator Screenshot](/images/simulator-screenshot.png)
-
-<div class="page-header">
     <h2>Pre-recorded Vehicle Data</h2>
 </div>
 
-The library ships with a method for playing back previously recorded vehicle
-measurement trace files for testing. The [Measurement][] objects received
-by your application are identical to those received from a live vehicle. The
-vehicle simulator is generally a more flexible and easy to use option, but if
-you have a specific driving scenario you wish to repeat multiple times, a trace
-file is bets.
+Your iOS device likely doesn't have any vehicle data flowing through it yet.
+The next step is to use a pre-recorded vehicle trace file to simulate a real
+vehicle interface on your desk. The library ships with a method for playing 
+back previously recorded vehicle measurement trace files for testing. 
+The [Measurement][] objects received by your application are identical to 
+those received from a live vehicle.
 
 The trace file format is simply a plain text file of OpenXC JSON messages with
 an additional timestamp field, separated by newlines:
@@ -46,112 +31,34 @@ an additional timestamp field, separated by newlines:
     {"timestamp": 1351176963.438211, "name": "brake_pedal_status", "value": false}
     {"timestamp": 1351176963.438318, "name": "transmission_gear_position", "value": "second"}
 
-In fact, this is the same method used by some of the instrumentation tests. Once
-you've created a file either by recording the output of the vehicle interface
-module or building one by hand, copy it to your Android device's internal
-storage or SD card. You can do this in one of three ways:
+Install the [Demo App][demoapp] app if you haven't already. That application
+helps control the source of vehicle data, e.g. a vehicle interface or a trace
+file.
 
-* Mount the Android device as USB disk.
-* Use the File Manager from the Android Device Monitor (included with the
-  Android SDK).
-* Copy the file with `abd` on the command line:
-    `$ adb push driving.json /sdcard/openxc-driving.json`
+Download the [driving trace][] and copy it to your iOS
+device using iTunes. 
 
-Install the [Enabler][enabler] app if you haven't already. That application
-helps control the source of vehicle data, e.g. a USB vehicle interface or a
-trace file.
+Steps:
 
-Install a file manager in Android like the [OI File
-Manager](http://caique.arvixe.com/~oi/filemanager){:target="_blank"} so the Enabler is able to browse
-for files on the SD card.
+* Connect the iOS device to your laptop/desktop.
+* Open iTunes
+* Drag and drop the trace file and Sync
 
-Finally, run the `OpenXC Enabler` app on the device and go to `Settings -> Data
-Sources -> Trace File Playback`, check the `Playback trace file` option and
-browse for the trace file you copied over.
 
-There are a [number of trace files available](/resources/traces.html).
+Finally, the last steps:
 
-<div class="page-header">
-    <h2>Button Events</h2>
-</div>
+1. Run the `OpenXC Demo app` on the device
+1. In the Demo app, Go to `Settings -> Data Sources` and change the vehicle
+    interface to a Pre-recorded Trace File.
+1. At the bottom of the screen under `Trace File Playback`, select a trace file
+    for playback. 
+1. Return to the front view of the Demo app - the message count should be
+   increasing, indicating the trace is playing.
 
-Unfortunately the Android emulator does not allow us to send arbitrary events
-from button presses without editing the source. In order to test your button
-event handlers, the recommended method is to write them in such a way that they
-can accept either VehicleButtonEvents or regular Android key events as input.
-You may want a flag to disable the Android key events when running in
-production.
-
-For example, the OpenXC specification includes a signal for a D-pad style
-controller. The 2012 Ford Focus has such a controller on the steering wheel.
-The Android emulator will send `KEYCODE_DPAD_*`
-[KeyEvents](http://developer.android.com/reference/android/view/KeyEvent.html)
-when you press the arrows on your computer's num pad. These are a good parallel
-and it should be simple to have your event handlers watch for *either* the
-vehicle D-pad event or the Android event.
-
-Here's an example - if you want your application to send a text message when the
-user presses the down button on the steering wheel, write a function that
-performs the action:
-
-{% highlight java %}
-public void sendTextMessage() {
-    // send a text message
-    ...
-}
-{% endhighlight %}
-
-To hook this up to Android `KeyEvent`, define an `onKey` method in your
-activity:
-
-{% highlight java %}
-@Override
-public boolean onKeyDown(int i, KeyEvent event) {
-    if (i == KeyEvent.KEYCODE_DPAD_DOWN) {
-        sendTextMessage();
-        return true;
-    }
-    super.onKeyDown(i, event);
-    return true;
-}
-{% endhighlight %}
-
-This connects your functionality to the virtual button in the Android emulator.
-To have this actually work in the car, you need to register a handler for the
-VehicleButtonEvent.
-
-{% highlight java %}
-VehicleButtonEvent.Listener listener = new VehicleButtonEvent.Listener() {
-    public void receive(VehicleMeasurement measurement) {
-        final VehicleButtonEvent event (VehicleButtonEvent) measurement;
-        if(event.getAction() ==
-                    VehicleButtonEvent.ButtonAction.PRESSED,
-                && event.getValue() ==
-                    VehicleButtonEvent.ButtonId.DOWN) {
-            sendTextMessage();
-        }
-    }
-}
-{% endhighlight %}
-
-<div class="page-header">
-    <h2>UI Design</h2>
-</div>
-
-User interface design for automotive environments is increasingly attracting
-attention, particularly due to concerns with [driver
-distraction](http://www.distraction.gov/). While building your OpenXC
-application, keep in mind the U.S. government's recently released [guidelines
-(PDF)](http://www.nhtsa.gov/staticfiles/rulemaking/pdf/Distraction_NPFG-02162012.pdf)
-for application design.
-
-Driver distraction aside, the most useful and interesting applications tend to
-be those without much driver interaction. The more you can automate or let the
-user deal with outside of their vehicle, the better the experience will likely
-be.
 
 [gg]: http://groups.google.com/group/openxc
-[Enabler]: /android/getting-started.html#enabler
+[demoapp]: /iOS/getting-started.html#enabler
 [vehicle interface]: /vehicle-interface/hardware.html
 [Measurement]: http://android.openxcplatform.com/reference/com/openxc/measurements/Measurement.html
 [VehicleManager]: http://android.openxcplatform.com/reference/com/openxc/VehicleManager.html
+[driving trace]: https://s3.amazonaws.com/openxcplatform.com/driving.json
