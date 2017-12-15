@@ -48,7 +48,10 @@ when developing.
 
 ## iOS
 
-There are a few reasons why iOS is not supported right now for - check out this
-[detailed discussion in the Google
-Group](https://groups.google.com/forum/#!topic/openxc/mUEiJDZ0oXg){:target="_blank"} to see if you
-can help.
+For instructions on getting started with iOS development see 
+the <a href="/iOS/index.html">iOS host
+device</a> page.
+iOS is another popular application development environment.
+Since the OpenXC library is only a small part of any OpenXC application, more
+general questions can be directed to the existing community of iOS
+developers.
