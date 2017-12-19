@@ -11,3 +11,4 @@ branches:
   only:
   - next
   - gh-pages
+  - add-iOS
