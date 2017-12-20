@@ -132,69 +132,16 @@ method will be called with the data.
 
 
 <div class="page-header">
-<h2> // TODO: Measurement Data</h2>
+<h2>Measurement Data</h2>
 </div>
 
-Lastly, the Starter app adds one more element to the user interface so there's a
-place to display the current speed. In the main layout file for the activity,
-`res/layout/activity_starter.xml`, the existing "hello world" `TextView` is
-replaced with these two:
+Lastly, the Demo app adds one more element to the user interface so there's a
+place to display the measurement messages. 
 
-{% highlight xml %}
-<TextView
-    android:id="@+id/textView1"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="@string/hello_world" />
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_below="@+id/textView1"
-    android:id="@+id/engine_speed" />
-{% endhighlight %}
+Once the callback is set to receive measurement change, response will be in VehicleMeasurementResponse
+format. Measurement can be simple or evented. Please see 
+[openxc-message-format][] for more details 
 
-These widgets have IDs and are using the `RelativeLayout` to make sure they
-don't print on top of each other.
-
-In the app's `onCreate` method, we grab a reference to that text object in Java
-as `mEngineSpeedView`:
-
-{% highlight java %}
-@Override
-protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_starter);
-    // grab a reference to the engine speed text object in the UI, so we can
-    // manipulate its value later from Java code
-    mEngineSpeedView = (TextView) findViewById(R.id.engine_speed);
-}
-{% endhighlight %}
-
-Finally, look back at the EngineSpeed.Listener we created before - it's
-updated the UI every time a new measurement arrives:
-
-{% highlight java %}
-EngineSpeed.Listener mSpeedListener = new EngineSpeed.Listener() {
-    public void receive(Measurement measurement) {
-        // When we receive a new EngineSpeed value from the car, we want to
-        // update the UI to display the new value. First we cast the generic
-        // Measurement back to the type we know it to be, an EngineSpeed.
-        final EngineSpeed speed = (EngineSpeed) measurement;
-        // In order to modify the UI, we have to make sure the code is
-        // running on the "UI thread" - Google around for this, it's an
-        // important concept in Android.
-        StarterActivity.this.runOnUiThread(new Runnable() {
-            public void run() {
-                // Finally, we've got a new value and we're running on the
-                // UI thread - we set the text of the EngineSpeed view to
-                // the latest value
-                mEngineSpeedView.setText("Engine speed (RPM): "
-                        + speed.getValue().doubleValue());
-            }
-        });
-    }
-};
-{% endhighlight %}
 
 That's all you need to do to get measurements from OpenXC. You can see the full
 list of `Measurement` Java classes that you can use in the
@@ -218,3 +165,4 @@ how to use the API. If you are having trouble, check out the
 [driving trace]: https://s3.amazonaws.com/openxcplatform.com/driving.json
 [library documentation]: http://android.openxcplatform.com/reference/com/openxc/measurements/package-summary.html
 [iOS API Guide]: /iOS/api-guide.html
+[openxc-message-format]: https://github.com/openxc/openxc-message-format/blob/master/JSON.mkd#simple-vehicle-message
