@@ -177,6 +177,7 @@ The callback method will receive the Commands response in the form on dictionary
 
 {% endhighlight %}
 
+
 <div class="page-header">
     <h2>Measurements</h2>
 </div>
