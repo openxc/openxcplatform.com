@@ -177,102 +177,39 @@ The callback method will receive the Commands response in the form on dictionary
 
 {% endhighlight %}
 
-
 <div class="page-header">
-    <h2> TODO Synchronous Measurements</h2>
+    <h2>Measurements</h2>
 </div>
 
-A pre-defined set of [simple vehicle
-messages](https://github.com/openxc/openxc-message-format/blob/master/JSON.mkd#simple-vehicle-message){:target="_blank"},
-the [official OpenXC
-signals](https://github.com/openxc/openxc-message-format/tree/master#official-signals){:target="_blank"}
-is also exposed in the Android library as higher level `Measurement` objects.
-These work similarly to VehicleMessages but include more metadata and checks to
-make sure the data is valid.
+If you need to be kept up-to-date on any vehicle measurement, you can set callbacks
+to be notified of updates.
 
-To query for a measurement synchronously, e.g. the speed of the vehicle, import
-the com.openxc.measurements.VehicleSpeed. You'll also need to import the
-necessary exceptions:
+First, grab the VehicleManager instance and then set the callback:
 
-{% highlight java %}
-import com.openxc.measurements.VehicleSpeed;
-import com.openxc.measurements.UnrecognizedMeasurementTypeException;
-import com.openxc.remote.VehicleServiceException;
+{% highlight swift %}
+vm = VehicleManager.sharedInstance
+
+// set callback
+vm.setMeasurementDefaultTarget(self, action: DashboardViewController.default_measurement_change)
 {% endhighlight %}
 
-You can then create a VehicleSpeed object and get the speed from the vehicle object.
+The callback method will receive the measurement  in the form on dictionary (key-value pairs):
 
-{% highlight java %}
-try {
-    VehicleSpeed measurement = (VehicleSpeed) vehicle.get(VehicleSpeed.class);
-} catch(NoValueException e) {
-    Log.w(TAG, "The vehicle may not have made the measurement yet");
-} catch(UnrecognizedMeasurementTypeException e) {
-    Log.w(TAG, "The measurement type was not recognized");
-}
-{% endhighlight %}
-If you want to access a different measurement, cast the measurement to any of the
-available measurement objects in the API.
+{% highlight swift %}
+  func default_measurement_response(_ rsp:NSDictionary) {
+    // extract the measurement message
+    let vr = rsp.object(forKey: "vehiclemessage") as! VehicleMeasurementResponse
 
-<div class="page-header">
-    <h2> TODO Asynchronous Measurements</h2>
-</div>
-
-If you need to be kept up-to-date on any vehicle measurement, you can also
-register with the service to be notified of updates.
-
-{% highlight java %}
-VehicleSpeed.Listener listener = new VehicleSpeed.Listener() {
-    public void receive(Measurement measurement) {
-        final VehicleSpeed speed = (VehicleSpeed) measurement;
-        // do stuff with the measurement
-    }
-};
-vehicle.addListener(VehicleSpeed.class, listener);
+	// extract name and value
+	let name = vr.name as NSString
+	let value = vr.value as AnyObject
+	
+	// check if the measurement response is evented
+	if vr.isEvented {
+	}
+	
 {% endhighlight %}
 
-<div class="page-header">
-    <h2>TODO Measurements</h2>
-</div>
-
-The parent Measurement class provides a standard interface for all measurements, starting
-with a way to retrieve its value:
-
-{% highlight java %}
-VehicleSpeed measurement = vehicle.get(VehicleSpeed.class);
-KilometersPerHour value = measurement.getValue();
-{% endhighlight %}
-
-Occasionally a measurement will not have been received from the vehicle
-interface yet - it could be a malfunction, or you're just checking too early for
-an infrequently updated measurement:
-
-{% highlight java %}
-try {
-    VehicleSpeed measurement = vehicle.get(VehicleSpeed.class);
-    // do stuff with it
-} catch(NoValueException e) {
-    Log.w(TAG, "The vehicle may not have made the measurement yet");
-}
-{% endhighlight %}
-
-You can check the age of a measurement to determine how long ago the state was
-actually reflected in the physical vehicle:
-
-{% highlight java %}
-if(measurement.getAge() < 10) {
-    // only if age is less than 10 seconds
-}
-{% endhighlight %}
-
-The range of every measurement is defined in the class, and can be queried
-programmatically if you need to figure out the current value's relative
-position:
-
-{% highlight java %}
-range = measurement.getRange();
-int percentage = measurement.getValue().doubleValue() / range;
-{% endhighlight %}
 
 
 [user location]: http://developer.android.com/guide/topics/location/strategies.html
