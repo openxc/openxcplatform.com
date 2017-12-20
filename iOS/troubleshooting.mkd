@@ -5,49 +5,33 @@ redirect_from: /getting-started/troubleshooting.html
 ---
 
 <div class="page-header">
-    <h1>TODO: iOS Setup and Tutorial Troubleshooting</h1>
+    <h1>iOS Setup and Tutorial Troubleshooting</h1>
 </div>
 
-If you're having any trouble with the initial Android development environment
-setup, your first Android app, or the OpenXC Android tutorial, some of these
+If you're having any trouble with the initial iOS development environment
+setup, your first iOS app, or the OpenXC iOS tutorial, some of these
 troubleshooting tips may help.
 
 If you have more tips to add, please fork [the
 website](https://github.com/openxc/openxcplatform.com) on GitHub and send a
 pull request!
 
-**Android App Components**
+**iOS App Components**
 
-At a high level, an Android app contains:
+At a high level, an iOS app contains:
 
-* Activities - each "screen" in an Android app is considered an "Activity"
-* Layout - each activity has a layout, defined in XML files, which sets up what
-    UI elements are in that activity and how they're positioned
-* String resources - you can hard-code a string in the layout, but it's good
-    practice to use an `@string` variable instead (for string re-use and
-    internationalization, primarily). These are stored in
-    `res/values/strings.xml`.
-* Java sources files - point out that we didn't actually have to modify any
-Java code to get this Hello World working. There is some Java in this app, in
-`src` - we'll get to modifying that in Part 2.
+* AppDelegate - root object of your app
+* Controller - manages a portion of your app's user interface as well as the
+	interactions between that interface and the underlying data
+* Storyboard- visual representation of the user interface of an iOS application
 
-**Android Emulator**
 
-If you don't have a physical Android device and are using the software emulator,
-when you create the Android Virtual Device (AVD), set the RAM size to 512MB and
-not 1024MB, otherwise you will most likely get memory allocation failures in
-Windows.
+**iOS Simulator**
 
-**Android Devices**
+If you don't have a physical iOS device, you can use the software simulator for iOS 9.3+
 
-Make sure you enable USB debugging on your Android device - the option is at
-`Settings -> Developer Tools -> USB debugging` or `Settings -> Applications ->
-Developer Options -> USB debugging`.
+**iOS Devices**
 
-If there is no `Developer Tools` option and you have a very recent Android
-device, it's hidden by default - enable it by going to `Settings -> About Phone`
-and clicking `Build Number` 7 times (no, I'm not kidding!).
+Make sure you trust the application's profile on your iOS device - the option is at
+`Settings -> General -> Device Management -> Trust 
 
-If you are using Windows and even after enabling USB debugging your device is
-not recognized, it may require Windows drivers from the specific manufacturer.
-Google is your best friend here, as unfortunately the variations are endless.
