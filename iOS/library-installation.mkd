@@ -17,29 +17,17 @@ the [openxc-ios-framework][] repository
     <h2>Installation</h2>
 </div>
 
-<div class="page-header">
-    <h3 id="app-developer"><a href="#app-developer">For App Developers</a></h3>
-</div>
-
-Follow Apple's excellent instructions to
+1. Follow Apple's excellent instructions to
 [download and install XCode](https://developer.apple.com/xcode/).
-
-Initialize the submodules by running command <code>git submodule update --init --recursive</code>
+2. Clone the [openxc-ios-framework][] repository using Git. If you don't already have Git
+installed, GitHub has a [good
+reference](https://help.github.com/articles/set-up-git) for all platforms.
+3. Initialize the submodules by running command <code>git submodule update --init --recursive</code>. The project includes 2 modules: the openxc ios framework and the protobuf framework.
+4. Open the project in XCode. You should be able to point it at the `openxc-ios-framework` directory to open an
+existing project. 
 
 That's it! You can now proceed to the next steps to start using the framework in
 your project.
-
-<div class="page-header">
-    <h3 id="contributor"><a href="#contributor">For Contributors</a></h3>
-</div>
-
-Clone the [openxc-ios-framework][] repository using Git. If you don't already have Git
-installed, GitHub has a [good
-reference](https://help.github.com/articles/set-up-git) for all platforms.
-
-After cloning the `openxc-ios-framework` framework, open the project in XCode.
-You should be able to point it at the `openxc-ios-framework` directory to open an
-existing project. The project includes 2 modules: the openxc ios framework and the protobuf framework.
 
 <div class="page-header">
 <h2>Next Steps</h2>

@@ -1,10 +1,10 @@
 ---
 layout: developer
-title: Using VI with iOS - OpenXC
+title: Using a VI with iOS - OpenXC
 ---
 
 <div class="page-header">
-    <h1>Using VI  with iOS</h1>
+    <h1>Using a VI  with iOS</h1>
 </div>
 
 So you just bought an OpenXC BLE vehicle interface? Let's get it programmed and
@@ -93,7 +93,7 @@ should be increasing.
 </div>
 
 You can now [install the OpenXC iOS
-library](/iOS/library-installation.html){:target="_blank"} and get started creating
-your first app. Make sure you installed the Enabler!
+library](/iOS/library-installation.html) and get started creating
+your first app.
 
 [enabler-source]: https://github.com/openxc/openxc-ios-app-demo
