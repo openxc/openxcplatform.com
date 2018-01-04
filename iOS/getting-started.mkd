@@ -13,8 +13,8 @@ If you have issues at any point in this process, check for similar issues in the
 [Google Group](http://groups.google.com/group/openxc) or create a new
 post to ask for some assistance.
 
-<h2 class="anchored" id="enabler">
-<a href="#enabler">Install the OpenXC Demo App</a>
+<h2 class="anchored" id="demoapp">
+<a href="#demoapp">Install the OpenXC Demo App</a>
 </h2>
 
 Install the OpenXC Demo application from [Demo App](https://github.com/openxc/openxc-ios-app-demo) on your iOS phone/simulator. 
@@ -96,4 +96,4 @@ You can now [install the OpenXC iOS
 library](/iOS/library-installation.html) and get started creating
 your first app.
 
-[enabler-source]: https://github.com/openxc/openxc-ios-app-demo
+[demoapp-source]: https://github.com/openxc/openxc-ios-app-demo

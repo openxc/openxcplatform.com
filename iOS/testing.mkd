@@ -57,7 +57,7 @@ Finally, the last steps:
 
 
 [gg]: http://groups.google.com/group/openxc
-[demoapp]: /iOS/getting-started.html#enabler
+[demoapp]: /iOS/getting-started.html#demoapp
 [vehicle interface]: /vehicle-interface/hardware.html
 [Measurement]: http://android.openxcplatform.com/reference/com/openxc/measurements/Measurement.html
 [VehicleManager]: http://android.openxcplatform.com/reference/com/openxc/VehicleManager.html
