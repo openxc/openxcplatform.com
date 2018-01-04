@@ -19,7 +19,7 @@ first stop.
 <p>If you wish to use Ford's expanded data set,
 you will need to sign a developer agreement to get access to the <a
 href="/hardware/vehicles.html">binary vehicle interface firmware</a>.
-</p></dd>
+</p>
 
 <dt>Why not just use one of the many commercial OBD-II scanners instead of
 OpenXC?</dt>
@@ -130,6 +130,3 @@ applications, it could be more vulnerable to reverse engineering. The strict
 physical separation of translation from user code provides stronger assurance
 that the message definitions will remain private, and the CAN bus will be
 protected from malicious writes from bad applications.</dd>
-
-
-</dl>

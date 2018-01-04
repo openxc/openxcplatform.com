@@ -23,7 +23,7 @@ automakers expose other buses on additional, non-standard pin pairs. For this
 documentation, we'll use this nomenclature:
 
 <div class="well">
-<table>
+<table cellpadding="5">
 <thead>
 <tr><th>OBD-II Pin Pair</th><th>OpenXC Bus Name</th><th>Other common name</th></tr>
 </thead>
@@ -39,9 +39,12 @@ documentation, we'll use this nomenclature:
     <td>Ford secondary, Chrysler CCD</td>
 </tr>
 <tr>
-    <td>1 (+) and 8 (-)</td>
+    <td>1 (+) and 8/9 (-)*</td>
     <td>CAN2-2</td>
     <td>Ford: infotainment, GM: J2411</td>
+</tr>
+<tr>
+    <td colspan="3">* If available, Pin 8 on Ford B, C platforms and Pin 9 on Ford D platforms. This is typically not available. </td>
 </tr>
 </tbody>
 </table>
@@ -55,6 +58,12 @@ if the information you need is on a bus connected by a particular VI, check the
 vehicle manufacturer.
 
 <h2 class="anchored" id="obtaining-a-vehicle-interface"><a href="#obtaining-a-vehicle-interface">Obtaining a Vehicle Interface</a></h2>
+
+<div class="alert alert-danger">
+<strong>Note:</strong> Unless you have a specific need for Cellular (C5 Cellular), iOS (C5 BLE), or SD Card logging (C5 BT, C5 Cellular)
+it is recommended that you use the <a href="#ford-reference-design"><strong>Ford Reference VI</strong></a>. It is most reliable platform. 
+The C5 devices are available to provide the specific new functionality. 
+</div>
 
 There are two ways you can obtain a vehicle interface.
 

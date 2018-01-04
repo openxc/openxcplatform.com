@@ -27,21 +27,21 @@ can use a laptop to test.
 
 1. [Install the OpenXC Python
    library](http://python.openxcplatform.com/#installation) - don't forget the
-   [USB backend](http://python.openxcplatform.com/en/latest/#usb) if you want to
+   [USB backend](http://python.openxcplatform.com/en/latest/installation.html#usb-backend) if you want to
    connect to the VI via USB and not Bluetooth.
-1. Attach the programmed VI to your computer with a USB cable, or pair with it
+2. Attach the programmed VI to your computer with a USB cable, or pair with it
    via Bluetooth and open a serial terminal (the Bluetooth pairing process
    depends on your platform, so we leave that as an exercise for the user). On
    Windows, install the driver from the [vi-firmware
    repository](https://github.com/openxc/vi-windows-driver).
-1. Run `openxc-control version` from the command line - it should print out the
+3. Run `openxc-control version` from the command line - it should print out the
    current version of the attached vehicle interface. If you instead get an
    error about not being able to find the USB device, make sure the VI has
    power (look for an LED).
    1. Did you get an error that there is `no backend available`? Go back to the
       Python library docs and make sure you [installed a USB
-      backend](http://python.openxcplatform.com/#usb).
-1. If the version check was successful, plug your VI into a running car and run
+      backend](http://python.openxcplatform.com/en/latest/installation.html#usb-backend).
+4. If the version check was successful, plug your VI into a running car and run
    `openxc-dump` to test that data can be streamed from the vehicle interface.
    It should return a stream of live vehicle data, and `openxc-dashboard` will
    show the vehicle parameters in a useful windowed display.
