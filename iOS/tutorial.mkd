@@ -25,7 +25,7 @@ tutorial to enrich it with data from your vehicle.
 2. Run <code>git submodule update --init --recursive</code>
 3. Open the project with XCode
 4. This project is ready to go, so if you want to quickly see something running
-   jump ahead to the [testing section](/ios/testing.html). To know more about how this
+   jump ahead to the [testing section](/iOS/testing.html). To know more about how this
    application works or to add the necessary code to a different app, continue 
    reading.
 
