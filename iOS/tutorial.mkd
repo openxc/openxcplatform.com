@@ -139,9 +139,7 @@ format. Measurement can be simple or evented. Please see
 [openxc-message-format][] for more details 
 
 
-That's all you need to do to get measurements from OpenXC. You can see the full
-list of `Measurement` Java classes that you can use in the
-[library documentation][].
+That's all you need to do to get measurements from OpenXC.
 
 
 <div class="page-header">

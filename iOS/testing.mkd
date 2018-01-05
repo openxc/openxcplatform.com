@@ -20,7 +20,7 @@ Your iOS device likely doesn't have any vehicle data flowing through it yet.
 The next step is to use a pre-recorded vehicle trace file to simulate a real
 vehicle interface on your desk. The library ships with a method for playing 
 back previously recorded vehicle measurement trace files for testing. 
-The [Measurement][] objects received by your application are identical to 
+The Measurement objects received by your application are identical to 
 those received from a live vehicle.
 
 The trace file format is simply a plain text file of OpenXC JSON messages with
@@ -59,6 +59,5 @@ Finally, the last steps:
 [gg]: http://groups.google.com/group/openxc
 [demoapp]: /iOS/getting-started.html#demoapp
 [vehicle interface]: /vehicle-interface/hardware.html
-[Measurement]: http://android.openxcplatform.com/reference/com/openxc/measurements/Measurement.html
 [VehicleManager]: http://android.openxcplatform.com/reference/com/openxc/VehicleManager.html
 [driving trace]: https://s3.amazonaws.com/openxcplatform.com/driving.json
