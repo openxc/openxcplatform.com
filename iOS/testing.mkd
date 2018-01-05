@@ -1,0 +1,63 @@
+---
+layout: developer
+title: Testing - OpenXC
+---
+
+<div class="page-header">
+    <h1>Testing</h1>
+</div>
+
+<div class="alert alert-danger">
+Please <strong>do not</strong> try to test your application while in
+motion! Testing OpenXC apps while driving is absolutely a two person job.
+</div>
+
+<div class="page-header">
+    <h2>Pre-recorded Vehicle Data</h2>
+</div>
+
+Your iOS device likely doesn't have any vehicle data flowing through it yet.
+The next step is to use a pre-recorded vehicle trace file to simulate a real
+vehicle interface on your desk. The library ships with a method for playing 
+back previously recorded vehicle measurement trace files for testing. 
+The Measurement objects received by your application are identical to 
+those received from a live vehicle.
+
+The trace file format is simply a plain text file of OpenXC JSON messages with
+an additional timestamp field, separated by newlines:
+
+    {"timestamp": 1351176963.426318, "name": "door_status", "value": "passenger", "event": true}
+    {"timestamp": 1351176963.438087, "name": "fine_odometer_since_restart", "value": 0.0}
+    {"timestamp": 1351176963.438211, "name": "brake_pedal_status", "value": false}
+    {"timestamp": 1351176963.438318, "name": "transmission_gear_position", "value": "second"}
+
+Install the [Demo App][demoapp] app if you haven't already. That application
+helps control the source of vehicle data, e.g. a vehicle interface or a trace
+file.
+
+Download the [driving trace][] and copy it to your iOS
+device using iTunes. 
+
+Steps:
+
+* Connect the iOS device to your laptop/desktop.
+* Open iTunes
+* Drag and drop the trace file and Sync
+
+
+Finally, the last steps:
+
+1. Run the `OpenXC Demo app` on the device
+1. In the Demo app, Go to `Settings -> Data Sources` and change the vehicle
+    interface to a Pre-recorded Trace File.
+1. At the bottom of the screen under `Trace File Playback`, select a trace file
+    for playback. 
+1. Return to the front view of the Demo app - the message count should be
+   increasing, indicating the trace is playing.
+
+
+[gg]: http://groups.google.com/group/openxc
+[demoapp]: /iOS/getting-started.html#demoapp
+[vehicle interface]: /vehicle-interface/hardware.html
+[VehicleManager]: http://android.openxcplatform.com/reference/com/openxc/VehicleManager.html
+[driving trace]: https://s3.amazonaws.com/openxcplatform.com/driving.json

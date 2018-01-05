@@ -1,0 +1,99 @@
+---
+layout: developer
+title: Using a VI with iOS - OpenXC
+---
+
+<div class="page-header">
+    <h1>Using a VI  with iOS</h1>
+</div>
+
+So you just bought an OpenXC BLE vehicle interface? Let's get it programmed and
+test it in a car with your iOS device or Mac.
+If you have issues at any point in this process, check for similar issues in the
+[Google Group](http://groups.google.com/group/openxc) or create a new
+post to ask for some assistance.
+
+<h2 class="anchored" id="demoapp">
+<a href="#demoapp">Install the OpenXC Demo App</a>
+</h2>
+
+Install the OpenXC Demo application from [Demo App](https://github.com/openxc/openxc-ios-app-demo) on your iOS phone/simulator. 
+Follow the steps mentioned in this [document](https://github.com/openxc/openxc-ios-app-demo/blob/master/StepsToBuildOpenXCiOSFrameworkAndDemoApp.docx)
+
+The Demo app takes care of a lot of boilerplate code, so your app's code can be
+simpler. It also includes a basic GUI for most functionality of the iOS
+library.
+
+<div class="alert alert-danger">
+<strong>Note:</strong> Even if you only plan to use previously recorded trace
+files and don't need to connect to a physical vehicle interface, the Demo app
+still must be installed.
+</div>
+
+The Demo app also has views that allow you to:
+
+* Display all received simple vehicle messages from the VI.
+* Display all received low-level CAN messages from the VI, if that
+    functionality is enabled in the firmware.
+* Send an arbitrary CAN message to the vehicle through the VI (requires firmware
+    that supports this feature).
+* Send a diagnostic request to the vehicle through the VI.
+* Send commands
+
+It's a fairly basic UI, so consider these proof of concept features. Everything
+they do is available via the library's API.
+
+## Program the Vehicle Interface
+
+If you haven't done so already, visit the [VI firmware page](/vehicle-interface/firmware.html) to find the
+right firmware for your VI and to learn how to re-program it.
+
+If you plan only to use pre-recorded vehicle data trace files instead of a
+physical vehicle interface, you can skip this step.
+
+## Obtaining real vehicle data from VI
+
+<ol>
+<li>Plug the vehicle interface into the OBD-II port in your car - it will be
+somewhere below the steering wheel, possibly behind a door. It should light up
+blue if it's plugged in all the way and the car is running.</li>
+
+<li>Run the OpenXC Demo app, hit the <code>Search for BLE VI</code>
+button and wait a moment. Within a minute, it should detect your BLE VI. 
+<br/>
+(<a class="extra-screenshots-controls" href="#extra-inactive-enabler-screenshots">show me</a>)
+
+<div class="extra-screenshots" id="extra-inactive-enabler-screenshots">
+<img title="OpenXC Enabler App" alt="Enabler disconnected" src="/images/test-screenshots/iOS_BLE_notConnected.jpg"/>
+<img title="OpenXC Enabler App" alt="Enabler pairing" src="/images/test-screenshots/iOS_BLE_Connected.png"/>
+</div>
+
+</li>
+
+<li>If your VI is plugged into a running vehicle, after a few seconds it will
+open a connection and start receiving vehicle data. You should see a Green checkmark
+icon appear next to "Active Connections" and the "Messages Received" number
+should be increasing.
+<br/>
+(<a class="extra-screenshots-controls" href="#extra-active-enabler-screenshots">show me</a>)
+
+<div class="extra-screenshots" id="extra-active-enabler-screenshots">
+<img title="OpenXC Enabler App" alt="Enabler connected" src="/images/test-screenshots/iOS_BLE_Connected.png"/>
+</div>
+</li>
+
+<li>Click on Dashboard to see the list of messages being received from the VI.
+<br/>
+<img title="OpenXC Enabler App" alt="Enabler dashboard" src="/images/test-screenshots/iOS_Dashboard.png"/>
+</li>
+</ol>
+
+<div class="page-header">
+<h2>Next Steps</h2>
+</div>
+
+You can now [install the OpenXC iOS
+library](/iOS/library-installation.html) and get started creating
+your first app.
+
+[demoapp-source]: https://github.com/openxc/openxc-ios-app-demo

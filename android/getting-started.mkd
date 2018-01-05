@@ -1,10 +1,10 @@
 ---
 layout: developer
-title: Using VI with Android - OpenXC
+title: Using a VI with Android - OpenXC
 ---
 
 <div class="page-header">
-    <h1>Using VI  with Android</h1>
+    <h1>Using a VI with Android</h1>
 </div>
 
 So you just bought an OpenXC vehicle interface? Let's get it programmed and
@@ -99,7 +99,7 @@ should be increasing.
 </div>
 
 You can now [install the OpenXC Android
-library](/android/library-installation.html){:target="_blank"} and get started creating
+library](/android/library-installation.html) and get started creating
 your first app. Make sure you installed the Enabler!
 
 [enabler-source]: https://github.com/openxc/openxc-android/tree/master/enabler

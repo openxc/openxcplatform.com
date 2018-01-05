@@ -1,0 +1,45 @@
+---
+layout: hardware
+title: iOS Host Device - OpenXC
+redirect_from:
+    - /iOS/
+    - /developers/iOS/host.html
+---
+
+<div class="page-header">
+    <h1>iOS Host Device</h1>
+</div>
+
+OpenXC applications on iOS are merely iOS applications that use the
+OpenXC iOS library to receive and parse data from a vehicle interface.
+iOS is one of a few [options for writing
+applications](/host-devices/hardware.html) using OpenXC.
+
+<div class="page-header">
+    <h2>Connecting your Device to the Vehicle Interface</h2>
+</div>
+
+
+<div class="page-header">
+    <h3>Bluetooth Low Energy</h3>
+</div>
+
+A [Bluetooth Low Energy (BLE) vehicle interface](/vehicle-interface/hardware.html#crosschasm-c5-ble) 
+is the most widely supported by iOS devices, so it is the recommended interface.
+
+The OpenXC Framework handles the actual communication to the
+Vehicle Interface. You don't need to add any extra code to your application
+to communicate via BLE.
+
+When using a BLE-equipped vehicle interface, the iOS host
+device must run **iOS 9.3** or greater.
+
+<div class="page-header">
+    <h3>USB Cable</h3>
+</div>
+Alternatively, if you wish to hard-wire to the vehicle interface with a USB
+connection, the iOS host device must:
+
+* Run **iOS 9.3** or greater if you plan to
+  use the standard USB vehicle interface.
+

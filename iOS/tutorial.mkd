@@ -1,0 +1,162 @@
+---
+layout: developer
+title: App Tutorial - OpenXC
+redirect_from: /getting-started/tutorial.html
+---
+
+<div class="page-header">
+    <h1>App Tutorial</h1>
+</div>
+
+This tutorial assumes you have a working knowledge of how to create an iOS
+application. Setting up the development environment and understanding iOS
+fundamentals is outside the scope of OpenXC, and already Apple provides great
+documentation and tutorials - we won't repeat them here. The best place to start
+is [Apple's Developer Guide](https://developer.apple.com/develop/).
+
+Once you're comfortable with creating an iOS app, continue on with this
+tutorial to enrich it with data from your vehicle. 
+
+<div class="page-header">
+<h2>Demo Application</h2>
+</div>
+
+1. Git clone the OpenXC iOS [Demo App][demoapp]. 
+2. Run <code>git submodule update --init --recursive</code>
+3. Open the project with XCode
+4. This project is ready to go, so if you want to quickly see something running
+   jump ahead to the [testing section](/iOS/testing.html). To know more about how this
+   application works or to add the necessary code to a different app, continue 
+   reading.
+
+<div class="page-header">
+<h2>Using the Library</h2>
+</div>
+
+The OpenXC demo app can be your starting point. Frameworks must be added in the demo app. 
+This is already done. 
+But to make your own app from scratch, go to XCode and add openxc framework, protobuf framework in your app. 
+
+<img title="OpenXC Enabler App" alt="xcode-linkedFramework" src="/images/test-screenshots/xcode-linkedFramework.png"/>
+
+
+You can now proceed to the next steps to start using the library in your 
+project.
+
+<div class="page-header">
+<h2>Status View Controller</h2>
+</div>
+
+The `StatusViewController` is the root controller of OpenXC enabler application.
+
+
+{% highlight swift %}
+var vm: VehicleManager!
+{% endhighlight %}
+
+Instantiate VehicleManager inside viewDidLoad
+
+{% highlight swift %}
+vm = VehicleManager.sharedInstance
+		
+{% endhighlight %}
+
+Setup callbacks
+
+{% highlight swift %}
+// setup the status callback, and the command response callback
+
+vm.setManagerCallbackTarget(self, action: StatusViewController.manager_status_updates)
+vm.setCommandDefaultTarget(self, action: StatusViewController.handle_cmd_response)		
+{% endhighlight %}
+
+Use this to switch on debug output
+
+{% highlight xml %}
+vm.setManagerDebug(true)	
+{% endhighlight %}
+
+<div class="page-header">
+<h2>VehicleManager</h2>
+</div>
+
+
+Now, when your app starts it will also start the OpenXC VehicleManager and if
+the [Demo App][demoapp] is running, it will be ready to receive data from the
+vehicle.
+
+<div class="page-header">
+<h2>Asynchronous Updates</h2>
+</div>
+
+The application now has a connection to the vehicle service, and we want it to be
+notified for all signals and responses. Look for the
+`handle_cmd_response` object in the `StatusViewController`:
+
+{% highlight swift %}
+func handle_cmd_response(_ rsp:NSDictionary) {
+         
+// extract the command response message
+let cr = rsp.object(forKey: "vehiclemessage") as! VehicleCommandResponse
+         
+/** update the UI depending on the command type
+*** version,device_id works for JSON mode, not in protobuf - TODO 
+*/
+var cvc:CommandsViewController?
+let vcCount = self.tabBarController?.viewControllers?.count
+cvc = self.tabBarController?.viewControllers?[vcCount!-1] as! CommandsViewController?
+
+if cr.command_response.isEqual(to: "version") {
+	DispatchQueue.main.async {
+		self.verLab.text = cr.message as String
+		}
+		cvc?.versionResp = String(cr.message)
+	}
+	if cr.command_response.isEqual(to: "device_id") {
+		DispatchQueue.main.async {
+			self.devidLab.text = cr.message as String
+		}
+		cvc?.deviceIdResp = String(cr.message)
+	}
+}
+
+{% endhighlight %}
+
+Every time command response is received by the `VehicleManager`, the `handle_cmd_response(_ rsp:NSDictionary))`
+method will be called with the data.
+
+
+
+<div class="page-header">
+<h2>Measurement Data</h2>
+</div>
+
+Lastly, the Demo app adds one more element to the user interface so there's a
+place to display the measurement messages. 
+
+Once the callback is set to receive measurement change, response will be in VehicleMeasurementResponse
+format. Measurement can be simple or evented. Please see 
+[openxc-message-format][] for more details 
+
+
+That's all you need to do to get measurements from OpenXC.
+
+
+<div class="page-header">
+<h2>Next Steps</h2>
+</div>
+
+You've now completed the OpenXC iOS tutorial, but there's more to learn
+about supported [iOS devices][iOS devices] and [vehicle interfaces][]. You can
+also check out the [iOS API Guide][iOS API Guide] for more information on
+how to use the API. If you are having trouble, check out the
+[troubleshooting](/iOS/troubleshooting.html) steps.
+
+[vehicle interfaces]: /vehicle-interface/hardware.html
+[iOS devices]: /iOS/hardware.html
+[library project]: /android/library-installation.html
+[demoapp]:https://github.com/openxc/openxc-ios-app-demo
+[driving trace]: https://s3.amazonaws.com/openxcplatform.com/driving.json
+[library documentation]: http://android.openxcplatform.com/reference/com/openxc/measurements/package-summary.html
+[iOS API Guide]: /iOS/api-guide.html
+[openxc-message-format]: https://github.com/openxc/openxc-message-format/blob/master/JSON.mkd#simple-vehicle-message

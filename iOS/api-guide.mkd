@@ -1,0 +1,238 @@
+---
+layout: developer
+title: iOS Library API Guide - OpenXC
+redirect_from: /developers/iOS/library-usage.html
+---
+
+<div class="page-header">
+    <h1>iOS Library API Guide</h1>
+</div>
+
+This document describes the interface for the OpenXC library **version 6.0**.
+
+Vehicle data is accessed after adding [ios-framework-source][] to the [demo app][]. 
+
+<div class="page-header">
+    <h2 id="vehicle-manager"><a name="vehicle-manager">VehicleManager</a></h2>
+</div>
+
+You must first create an object of VehicleManager and set targets before you can receive
+any vehicle data. 
+
+
+{% highlight swift %}
+var vm: VehicleManager!
+{% endhighlight %}
+
+VehicleManager is a singleton class, so instantiate using shared instance in viewDidLoad():
+
+{% highlight swift %}
+vm = VehicleManager.sharedInstance
+{% endhighlight %}
+
+This will require you to import OpenXC framework in your class:
+
+{% highlight swift %}
+import openXCiOSFramework
+{% endhighlight %}
+
+While setting up the callbacks, set the action as a method in viewDidLoad():
+
+{% highlight swift %}
+// setup the status callback, and the command response callback
+vm.setManagerCallbackTarget(self, action: StatusViewController.manager_status_updates)
+vm.setCommandDefaultTarget(self, action: StatusViewController.handle_cmd_response)
+    
+// turn on debug output
+vm.setManagerDebug(true)
+
+{% endhighlight %}
+
+
+<div class="page-header">
+    <h2>Vehicle Messages</h2>
+</div>
+
+Once the callbacks are set and you have a connection to it in your controller, you
+can start sending and receiving messages with the vehicle interface.
+
+The VehicleMessage is the parent of all message sent to and from the vehicle
+interface. You can register to receive asynchronous updates for anything from
+all receive messages to only those matching a certain key. All of the examples
+here show how to receive updates for more specific subtypes, but you do have the
+option of interfacing directly with VehicleMessages.
+
+<div class="page-header">
+    <h2>CAN Messages</h2>
+</div>
+
+If the attached VI is sending [low-level CAN
+messages](http://vi-firmware.openxcplatform.com/en/master/advanced/lowlevel.html),
+you can receive them in your iOS application.
+
+First, grab the VehicleManager instance and then set the callback:
+
+{% highlight swift %}
+vm = VehicleManager.sharedInstance
+
+vm.setCanDefaultTarget(self, action: CanViewController.default_can_change)
+{% endhighlight %}
+
+The callback method will receive the CAN message in the form on dictionary (key-value pairs):
+
+{% highlight swift %}
+  func default_can_change(_ rsp:NSDictionary) {
+    // extract the CAN message
+    let vr = rsp.object(forKey: "vehiclemessage") as! VehicleCanResponse
+
+{% endhighlight %}
+
+To clear the default can target:
+
+{% highlight swift %}
+vm.clearCanDefaultTarget()
+{% endhighlight %}
+
+<div class="page-header">
+    <h2>Diagnostic Requests</h2>
+</div>
+
+First, grab the VehicleManager instance and then set the callback:
+
+{% highlight swift %}
+vm = VehicleManager.sharedInstance
+
+vm.setDiagnosticDefaultTarget(self, action: DiagViewController.default_diag_response)
+{% endhighlight %}
+
+The callback method will receive the Diagnostic response in the form on dictionary (key-value pairs):
+
+{% highlight swift %}
+  func default_diag_response(_ rsp:NSDictionary) {
+    // extract the diag response message
+    let vr = rsp.object(forKey: "vehiclemessage") as! VehicleDiagnosticResponse
+
+{% endhighlight %}
+
+
+You can also send the request:
+
+{% highlight swift %}
+let cmd = VehicleDiagnosticResponse()
+// Set the parameters for Diagnostic request: bus, message id, mode, payload
+
+vm.sendDiagReq(cmd);
+{% endhighlight %}
+
+To clear the default target:
+
+{% highlight swift %}
+vm.clearDiagnosticDefaultTarget()
+{% endhighlight %}
+
+<div class="page-header">
+    <h2>Commands</h2>
+</div>
+
+The commands defined in the [OpenXC message
+format](https://github.com/openxc/openxc-message-format#commands){:target="_blank"} that are
+supported by your VI firmware can be sent using a `Command` message type.
+
+To send a command and wait to receive a response:
+
+{% highlight swift %}
+// set callback
+vm.setCommandDefaultTarget(self, action: StatusViewController.handle_cmd_response)
+
+let cm = VehicleCommandRequest()
+cm.command = .version
+vm.send(cm);
+{% endhighlight %}
+
+
+For commands that don't require any data in the request you can use:
+
+{% highlight java %}
+let cm = VehicleCommandRequest()
+cm.command = .version
+vm.send(cm);
+{% endhighlight %}
+
+For commands that require any data in the request you can use:
+
+{% highlight java %}
+let cm = VehicleCommandRequest()
+cm.command = .passthrough
+cm.bus = 1
+cm.enabled = true
+vm.send(cm);
+{% endhighlight %}
+
+The callback method will receive the Commands response in the form on dictionary (key-value pairs):
+
+{% highlight swift %}
+  func handle_cmd_response(_ rsp:NSDictionary) {
+    // extract the command response message
+    let cr = rsp.object(forKey: "vehiclemessage") as! VehicleCommandResponse
+
+{% endhighlight %}
+
+
+<div class="page-header">
+    <h2>Measurements</h2>
+</div>
+
+If you need to be kept up-to-date on any vehicle measurement, you can set callbacks
+to be notified of updates.
+
+First, grab the VehicleManager instance and then set the callback:
+
+{% highlight swift %}
+vm = VehicleManager.sharedInstance
+
+// set callback
+vm.setMeasurementDefaultTarget(self, action: DashboardViewController.default_measurement_change)
+{% endhighlight %}
+
+The callback method will receive the measurement  in the form on dictionary (key-value pairs):
+
+{% highlight swift %}
+  func default_measurement_response(_ rsp:NSDictionary) {
+    // extract the measurement message
+    let vr = rsp.object(forKey: "vehiclemessage") as! VehicleMeasurementResponse
+
+	// extract name and value
+	let name = vr.name as NSString
+	let value = vr.value as AnyObject
+	
+	// check if the measurement response is evented
+	if vr.isEvented {
+	}
+	
+{% endhighlight %}
+
+
+
+[user location]: http://developer.android.com/guide/topics/location/strategies.html
+[binding]: http://developer.android.com/guide/components/bound-services.html#Binding
+[services]: http://developer.android.com/guide/components/services.html
+[VehicleManager]: http://android.openxcplatform.com/reference/com/openxc/VehicleManager.html
+[VehicleService]: http://android.openxcplatform.com/reference/com/openxc/remote/VehicleService.html
+[VehicleSpeed]: http://android.openxcplatform.com/reference/com/openxc/measurements/VehicleSpeed.html
+[Measurement]: http://android.openxcplatform.com/reference/com/openxc/measurements/Measurement.html
+[Enabler]: /android/getting-started.html#enabler
+[tutorial]: /android/tutorial.html
+[aidl]: http://developer.android.com/guide/components/aidl.html
+[trace file]: /android/testing.html
+[BluetoothVehicleInterface]: http://android.openxcplatform.com/reference/com/openxc/interfaces/bluetooth/BluetoothVehicleInterface.html
+[TraceVehicleDataSource]: http://android.openxcplatform.com/reference/com/openxc/sources/trace/TraceVehicleDataSource.html
+[MessageListenerSink]: http://android.openxcplatform.com/reference/com/openxc/sinks/MessageListenerSink.html
+[FileRecorderSink]: http://android.openxcplatform.com/reference/com/openxc/sinks/FileRecorderSink.html
+[UploaderSink]: http://android.openxcplatform.com/reference/com/openxc/sinks/UploaderSink.html
+[ApplicationSource]: http://android.openxcplatform.com/reference/com/openxc/sources/ApplicationSource.html
+[UsbVehicleInterface]: http://android.openxcplatform.com/reference/com/openxc/interfaces/usb/UsbVehicleInterface.html
+[RemoteCallbackSink]: http://android.openxcplatform.com/reference/com/openxc/sinks/RemoteCallbackSink.html
+[VehicleLocationProvider]: http://android.openxcplatform.com/reference/com/openxc/VehicleLocationProvider.html
+
+[ios-framework-source]: https://github.com/openxc/openxc-ios-framework
+[demo app]:https://github.com/openxc/openxc-ios-app-demo
