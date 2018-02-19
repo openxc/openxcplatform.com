@@ -46,3 +46,8 @@ formats. If you need the source image, it's available either for
 <img class="img-responsive" alt="White Background Logo" src="/images/logos/openxc-logo-whitebg-thumb.png"/>
 </a>
 
+* Square logo with just "XC"
+
+<a href="/images/logos/xc-square.jpg">
+<img class="img-responsive" alt="Square Logo" src="/images/logos/xc-square.jpg"/>
+</a>
