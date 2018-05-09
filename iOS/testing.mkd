@@ -60,4 +60,4 @@ Finally, the last steps:
 [demoapp]: /iOS/getting-started.html#demoapp
 [vehicle interface]: /vehicle-interface/hardware.html
 [VehicleManager]: http://android.openxcplatform.com/reference/com/openxc/VehicleManager.html
-[driving trace]: https://s3.amazonaws.com/openxcplatform.com/driving.json
+[driving trace]: https://oxcp.com.s3.amazonaws.com/driving.json

@@ -24,45 +24,58 @@ it should auto-detect an uncompress when you download:
     <h3 id="new-york-city">New York City, U.S.A.</h3>
 </div>
 
-* [Downtown, Crosstown](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/downtown-crosstown.json)
-* [East Downtown](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/downtown-east.json)
-* [West Downtown](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/downtown-west.json)
-* [West Downtown 2](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/downtown-west2.json)
-* [Uptown Crosstown](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/uptown-crossdown.json)
-* [Uptown Crosstown 2](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/uptown-crosstown.json)
-* [West Uptown](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/uptown-west.json)
-* [West Uptown 2](http://openxcplatform.com.s3.amazonaws.com/traces/nyc/uptown-west2.json)
+* [Downtown, Crosstown](http://oxcp.com.s3.amazonaws.com/traces/nyc/downtown-crosstown.json)
+* [East Downtown](http://oxcp.com.s3.amazonaws.com/traces/nyc/downtown-east.json)
+* [West Downtown](http://oxcp.com.s3.amazonaws.com/traces/nyc/downtown-west.json)
+* [West Downtown 2](http://oxcp.com.s3.amazonaws.com/traces/nyc/downtown-west2.json)
+* [Uptown Crosstown](http://oxcp.com.s3.amazonaws.com/traces/nyc/uptown-crossdown.json)
+* [Uptown Crosstown 2](http://oxcp.com.s3.amazonaws.com/traces/nyc/uptown-crosstown.json)
+* [West Uptown](http://oxcp.com.s3.amazonaws.com/traces/nyc/uptown-west.json)
+* [West Uptown 2](http://oxcp.com.s3.amazonaws.com/traces/nyc/uptown-west2.json)
 
 <div class="page-header">
     <h3 id="delhi">Delhi, India (Uncompressed)</h3>
 </div>
 
-* [Border Roads to AIIMS - West](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/Border_Roads_Organisation_to_AIIMS.json)
-* [DND Toll Plaza to AIIMS - East](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/DND_Toll_Plaza_to_AIIMS.json)
-* [Apollo Hospital to AIIMS - Southeast](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/Apollo_Hospita_to_AIIMS.json)
-* [Fortis Hospital to AIIMS - South](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/Fortis_Hospital_to_AIIMS.json)
-* [Ghitorni Metro to AIIMS - South](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/Ghitorni_Metro_to_AIIMS.json)
-* [New Delhi Railway to AIIMS - North](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/New_Delhi_Railway_to_AIIMS.json)
-* [Film City, Noida to AIIMS - East](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/Sector_16A_Noida_to_AIIMS.json)
-* [AIIMS to Border Roads](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/AIIMS_to_Border_Roads_Organisation.json)
-* [AIIMS to DND Toll Plaza](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/AIIMS_to_DND_Toll.json)
-* [AIIMS to Film City, Noida](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/AIIMS_to_FilmCity_sec_16A_Noida.json)
-* [AIIMS to Fortis Hospital](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/AIIMS_to_Fortis_Hospital.json)
-* [AIIMS to Ghitorni Metro](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/AIIMS_to_Ghitorni_Metro.json)
-* [AIIMS to HCL Sector 125](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/AIIMS_to_HCL_Sector-125.json)
-* [AIIMS to New Delhi Railway](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/AIIMS_to_New_Delhi_Railway.json)
-* [Film City, Noida to HCL](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/FilmCity_Noida_to_HCL_sec_125_Noida.json)
-* [Kalindi Kunj Bridge to Apollo Hospital](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/Kalindi_Kunj_Bridge_to_Apollo_Hospital.json)
-* [Red Fort to RML Hospital](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/Red_Fort_to_RML_Hospital.json)
-* [RML Hospital to Moolchand](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/RML_Hospital_to_Moolchand.json)
-* [RML Hospital to Red Fort](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/RML_Hospital_to_Red_Fort.json)
-* [Noida to RML Hospital](http://openxcplatform.com.s3.amazonaws.com/traces/delhi/Sector_125_Noida_to_RML_Hospital.json)
+* [Border Roads to AIIMS - West](http://oxcp.com.s3.amazonaws.com/traces/delhi/Border_Roads_Organisation_to_AIIMS.json)
+* [DND Toll Plaza to AIIMS - East](http://oxcp.com.s3.amazonaws.com/traces/delhi/DND_Toll_Plaza_to_AIIMS.json)
+* [Apollo Hospital to AIIMS - Southeast](http://oxcp.com.s3.amazonaws.com/traces/delhi/Apollo_Hospita_to_AIIMS.json)
+* [Fortis Hospital to AIIMS - South](http://oxcp.com.s3.amazonaws.com/traces/delhi/Fortis_Hospital_to_AIIMS.json)
+* [Ghitorni Metro to AIIMS - South](http://oxcp.com.s3.amazonaws.com/traces/delhi/Ghitorni_Metro_to_AIIMS.json)
+* [New Delhi Railway to AIIMS - North](http://oxcp.com.s3.amazonaws.com/traces/delhi/New_Delhi_Railway_to_AIIMS.json)
+* [Film City, Noida to AIIMS - East](http://oxcp.com.s3.amazonaws.com/traces/delhi/Sector_16A_Noida_to_AIIMS.json)
+* [AIIMS to Border Roads](http://oxcp.com.s3.amazonaws.com/traces/delhi/AIIMS_to_Border_Roads_Organisation.json)
+* [AIIMS to DND Toll Plaza](http://oxcp.com.s3.amazonaws.com/traces/delhi/AIIMS_to_DND_Toll.json)
+* [AIIMS to Film City, Noida](http://oxcp.com.s3.amazonaws.com/traces/delhi/AIIMS_to_FilmCity_sec_16A_Noida.json)
+* [AIIMS to Fortis Hospital](http://oxcp.com.s3.amazonaws.com/traces/delhi/AIIMS_to_Fortis_Hospital.json)
+* [AIIMS to Ghitorni Metro](http://oxcp.com.s3.amazonaws.com/traces/delhi/AIIMS_to_Ghitorni_Metro.json)
+* [AIIMS to HCL Sector 125](http://oxcp.com.s3.amazonaws.com/traces/delhi/AIIMS_to_HCL_Sector-125.json)
+* [AIIMS to New Delhi Railway](http://oxcp.com.s3.amazonaws.com/traces/delhi/AIIMS_to_New_Delhi_Railway.json)
+* [Film City, Noida to HCL](http://oxcp.com.s3.amazonaws.com/traces/delhi/FilmCity_Noida_to_HCL_sec_125_Noida.json)
+* [Kalindi Kunj Bridge to Apollo Hospital](http://oxcp.com.s3.amazonaws.com/traces/delhi/Kalindi_Kunj_Bridge_to_Apollo_Hospital.json)
+* [Red Fort to RML Hospital](http://oxcp.com.s3.amazonaws.com/traces/delhi/Red_Fort_to_RML_Hospital.json)
+* [RML Hospital to Moolchand](http://oxcp.com.s3.amazonaws.com/traces/delhi/RML_Hospital_to_Moolchand.json)
+* [RML Hospital to Red Fort](http://oxcp.com.s3.amazonaws.com/traces/delhi/RML_Hospital_to_Red_Fort.json)
+* [Noida to RML Hospital](http://oxcp.com.s3.amazonaws.com/traces/delhi/Sector_125_Noida_to_RML_Hospital.json)
+
+<div class="page-header">
+    <h3 id="taiwan">Taiwan (Uncompressed)</h3>
+</div>
+
+* [Freeway No. 5 (CAN)](http://oxcp.com.s3.amazonaws.com/traces/Taiwan/CAN-data/FreewayNo5-can.json)
+* [Freeway No. 5 (OBDII)](http://oxcp.com.s3.amazonaws.com/traces/Taiwan/OBDII-data/FreewayNo5-obd.json)
+* [Highway No. 2 (CAN)](http://oxcp.com.s3.amazonaws.com/traces/Taiwan/CAN-data/HighwayNo2-can.json)
+* [Highway No. 2 (OBDII)](http://oxcp.com.s3.amazonaws.com/traces/Taiwan/OBDII-data/HighwayNo2-obd.json)
+* [Highway No. 9 (CAN)](http://oxcp.com.s3.amazonaws.com/traces/Taiwan/CAN-data/HighwayNo9-can.json)
+* [Highway No. 9 (OBDII)](http://oxcp.com.s3.amazonaws.com/traces/Taiwan/OBDII-data/HighwayNo9-obd.json)
+* [Yilan Area (CAN)](http://oxcp.com.s3.amazonaws.com/traces/Taiwan/CAN-data/YilanArea-can.json)
+* [Yilan Area (OBDII)](http://oxcp.com.s3.amazonaws.com/traces/Taiwan/OBDII-data/YilanArea-obd.json)
 
 <div class="page-header">
     <h3 id="scenarios-and-behaviors">Additional Scenarios and Driving Behaviors</h3>
 </div>
 
-* [Highway Commute and Local Stop](http://openxcplatform.com.s3.amazonaws.com/traces/localwithgps.json)
+* [Highway Commute and Local Stop](http://oxcp.com.s3.amazonaws.com/traces/localwithgps.json)
 * [Idling while parked][idling while parked], toggling headlights, parking brake, etc.
 * [Short drive][short drive] around the block at low speed (~25MPH average)
 * [Idling for longer period of time][idling2]
@@ -76,16 +89,16 @@ it should auto-detect an uncompress when you download:
     <h3 id="uncompressed-traces">Uncompressed Vehicle Trace Files</h3>
 </div>
 
-* [Highway Commute and Local Stop](http://s3.amazonaws.com/openxcplatform.com/traces/localwithgps-uncompressed.json)
-* [Idling while parked](http://s3.amazonaws.com/openxcplatform.com/traces/parked-uncompressed.json)
-* [Speeding at highway speeds](http://s3.amazonaws.com/openxcplatform.com/traces/highway-speeding-uncompressed.json)
+* [Highway Commute and Local Stop](http://oxcp.com.s3.amazonaws.com/traces/localwithgps-uncompressed.json)
+* [Idling while parked](http://oxcp.com.s3.amazonaws.com/traces/parked-uncompressed.json)
+* [Speeding at highway speeds](http://oxcp.com.s3.amazonaws.com/traces/highway-speeding-uncompressed.json)
 
 
-[short drive]: https://s3.amazonaws.com/openxcplatform.com/driving.json
-[idling while parked]: https://s3.amazonaws.com/openxcplatform.com/parked.json
-[idling2]: https://s3.amazonaws.com/openxcplatform.com/traces/idling.json
-[Highway commute]: https://s3.amazonaws.com/openxcplatform.com/traces/commute.json
-[Tailgating]: https://s3.amazonaws.com/openxcplatform.com/traces/tailgating.json
-[Riding the brakes]: https://s3.amazonaws.com/openxcplatform.com/traces/riding-brakes.json
-[speeding]: https://s3.amazonaws.com/openxcplatform.com/traces/highway-speeding.json
-[Agressive driving]:https://s3.amazonaws.com/openxcplatform.com/traces/aggressive-driving.json
+[short drive]: https://oxcp.com.s3.amazonaws.com/driving.json
+[idling while parked]: https://oxcp.com.s3.amazonaws.com/parked.json
+[idling2]: https://oxcp.com.s3.amazonaws.com/traces/idling.json
+[Highway commute]: https://oxcp.com.s3.amazonaws.com/traces/commute.json
+[Tailgating]: https://oxcp.com.s3.amazonaws.com/traces/tailgating.json
+[Riding the brakes]: https://oxcp.com.s3.amazonaws.com/traces/riding-brakes.json
+[speeding]: https://oxcp.com.s3.amazonaws.com/traces/highway-speeding.json
+[Agressive driving]:https://oxcp.com.s3.amazonaws.com/traces/aggressive-driving.json
