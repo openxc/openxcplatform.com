@@ -156,7 +156,6 @@ how to use the API. If you are having trouble, check out the
 [iOS devices]: /iOS/hardware.html
 [library project]: /android/library-installation.html
 [demoapp]:https://github.com/openxc/openxc-ios-app-demo
-[driving trace]: https://s3.amazonaws.com/openxcplatform.com/driving.json
 [library documentation]: http://android.openxcplatform.com/reference/com/openxc/measurements/package-summary.html
 [iOS API Guide]: /iOS/api-guide.html
 [openxc-message-format]: https://github.com/openxc/openxc-message-format/blob/master/JSON.mkd#simple-vehicle-message
