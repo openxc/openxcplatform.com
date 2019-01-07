@@ -31,10 +31,12 @@ events](/community/events.html), too.
 
 ## Research Projects
 
+* [EV Coach](https://github.com/openxc/EV_Coach_public){:target="_blank"} - Michigan Tech and Ford partenered to create a user-friendly mobile application and tool to help drivers become more efficient when driving Ford’s Electric Vehicles. This project makes use of Google Firebase and Google Wearables.
+  
 * MSU Biometrics - Sample mobility applications using fingerprint scanner on your Android device. 
   There are two sample applications: family car sharing and a dynamic shuttle.
-
-    * [My Car](https://github.com/Keyurpatel93/MyCar){:target="_blank"} - This prototype application is developed 
+    
+	* [My Car](https://github.com/Keyurpatel93/MyCar){:target="_blank"} - This prototype application is developed 
       to emulate car setting personalization based on user authentication on a smartphone.
     * [Car State](https://github.com/Keyurpatel93/CarState){:target="_blank"} - A complementary application for the 
       MyCar application to show current car settings, and settings after a user has been authenticated.

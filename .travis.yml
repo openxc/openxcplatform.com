@@ -1,6 +1,8 @@
 language: ruby
 rvm:
-  - 2.1.0
+  - 2.4.0
+before_install:
+  - gem install bundler
 cache: bundler
 sudo: false
 env:
@@ -12,3 +14,4 @@ branches:
   - next
   - gh-pages
   - add-iOS
+  - travis-fix
