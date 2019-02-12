@@ -51,7 +51,7 @@ dependencies. This is mentioned in the [Android Library Setup][library project]
 page:
 
     dependencies {
-        compile 'com.openxcplatform:library:6.1.6+'
+        compile 'com.openxcplatform:library:7.0.6'
     }
 
 You can now proceed to the next steps to start using the library in your
