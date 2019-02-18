@@ -1,0 +1,116 @@
+---
+layout: community
+title: Videos - OpenXC
+---
+<div class="page-header">
+    <h1>Videos</h1>
+
+<div1 class="embed-container">
+<p>Haptic feedback shift knob</p>
+  <iframe
+      src="https://www.youtube.com/embed/_fwCEwYYhI4"
+      width="400"
+      height="250"
+      frameborder="0"
+      allowfullscreen="">
+  </iframe>
+</div1>
+
+<div2 class="embed-container">
+<p>blueShift</p>
+  <iframe
+      src="https://www.youtube.com/embed/lUmPiPhLRXw"
+      width="400"
+      height="250"
+      frameborder="0"
+      allowfullscreen="">
+  </iframe>
+</div2>
+
+<div3 class="embed-container">
+<p>Gracenote music hack</p>
+  <iframe
+      src="https://www.youtube.com/embed/TS0MQ5Hj91w"
+      width="400"
+      height="250"
+      frameborder="0"
+      allowfullscreen="">
+  </iframe>
+</div3>
+
+<div4 class="embed-container">
+<p>Boing Boing hackathon</p>
+  <iframe
+      src="https://www.youtube.com/embed/8c1p2CFujZU"
+      width="400"
+      height="250"
+      frameborder="0"
+      allowfullscreen="">
+  </iframe>
+</div4>
+
+<div5 class="embed-container">
+<p>SmartBrake</p>
+  <iframe
+      src="https://www.youtube.com/embed/_B67DJegg4Y"
+      width="400"
+      height="250"
+      frameborder="0"
+      allowfullscreen="">
+  </iframe>
+</div5>
+
+<div6 class="embed-container">
+<p>CalHacks</p>
+  <iframe
+      src="https://www.youtube.com/embed/BJGwqnfFIS4"
+      width="400"
+      height="250"
+      frameborder="0"
+      allowfullscreen="">
+  </iframe>
+</div6>
+
+<div7 class="embed-container">
+<p>Retro gauge assembly</p>
+  <iframe
+      src="https://www.youtube.com/embed/QQStlSP8ppA"
+      width="400"
+      height="250"
+      frameborder="0"
+      allowfullscreen="">
+  </iframe>
+</div7>
+
+<div8 class="embed-container">
+<p>InfoCycle</p>
+  <iframe
+      src="https://www.youtube.com/embed/uGf0Abf-os4"
+      width="400"
+      height="250"
+      frameborder="0"
+      allowfullscreen="">
+  </iframe>
+</div8>
+
+<div9 class="embed-container">
+<p>InfoCycle update</p>
+  <iframe
+      src="https://www.youtube.com/embed/8ykUBaxc8Qw"
+      width="400"
+      height="250"
+      frameborder="0"
+      allowfullscreen="">
+  </iframe>
+</div9>
+
+<div9 class="embed-container">
+<p>MyCarma Fuel Label</p>
+  <iframe
+      src="https://www.youtube.com/embed/piANEHaaJEw"
+      width="400"
+      height="250"
+      frameborder="0"
+      allowfullscreen="">
+  </iframe>
+</div9>
