@@ -6,7 +6,7 @@ title: Videos - OpenXC
     <h1>Videos</h1>
 
 <div1 class="embed-container">
-<p>Haptic feedback shift knob</p>
+<h5>Haptic feedback shift knob</h5>
   <iframe
       src="https://www.youtube.com/embed/_fwCEwYYhI4"
       width="400"
@@ -14,10 +14,12 @@ title: Videos - OpenXC
       frameborder="0"
       allowfullscreen="">
   </iframe>
+  <br/>
+  <a href="http://openxcplatform.com/projects/shift-knob.html">For more details see here.</a>
 </div1>
 
 <div2 class="embed-container">
-<p>blueShift</p>
+<h5>BlueShift</h5>
   <iframe
       src="https://www.youtube.com/embed/lUmPiPhLRXw"
       width="400"
@@ -25,10 +27,12 @@ title: Videos - OpenXC
       frameborder="0"
       allowfullscreen="">
   </iframe>
+  <br/>
+  <a href="http://petemills.blogspot.com/2014/07/blueshift-openxc-led-tachometer.html">For more details see here.</a>
 </div2>
 
 <div3 class="embed-container">
-<p>Gracenote music hack</p>
+<h5>Gracenote</h5>
   <iframe
       src="https://www.youtube.com/embed/TS0MQ5Hj91w"
       width="400"
@@ -36,10 +40,12 @@ title: Videos - OpenXC
       frameborder="0"
       allowfullscreen="">
   </iframe>
+  <br/>
+  <a href="https://gigaom.com/2013/02/19/how-gracenote-is-building-a-car-stereo-that-senses-your-driving-mood/">For more details see here.</a>
 </div3>
 
 <div4 class="embed-container">
-<p>Boing Boing hackathon</p>
+<h5>Boing Boing</h5>
   <iframe
       src="https://www.youtube.com/embed/8c1p2CFujZU"
       width="400"
@@ -47,10 +53,12 @@ title: Videos - OpenXC
       frameborder="0"
       allowfullscreen="">
   </iframe>
+  <br/>
+  <a href="https://boingboing.net/2013/08/13/boing-boing-ingenuity-a-look.html">For more details see here.</a>
 </div4>
 
 <div5 class="embed-container">
-<p>SmartBrake</p>
+<h5>SmartBrake</h5>
   <iframe
       src="https://www.youtube.com/embed/_B67DJegg4Y"
       width="400"
@@ -58,10 +66,12 @@ title: Videos - OpenXC
       frameborder="0"
       allowfullscreen="">
   </iframe>
+  <br/>
+  <a href="https://hackaday.com/2013/09/15/smart-brake-lights-and-more-with-openxc/ ">For more details see here.</a>
 </div5>
 
 <div6 class="embed-container">
-<p>CalHacks</p>
+<h5>Exo Wheel</h5>
   <iframe
       src="https://www.youtube.com/embed/BJGwqnfFIS4"
       width="400"
@@ -69,10 +79,12 @@ title: Videos - OpenXC
       frameborder="0"
       allowfullscreen="">
   </iframe>
+  <br/>
+  <a href="https://devpost.com/software/exo-wheel">For more details see here.</a>
 </div6>
 
 <div7 class="embed-container">
-<p>Retro gauge assembly</p>
+<h5>Retro gauge</h5>
   <iframe
       src="https://www.youtube.com/embed/QQStlSP8ppA"
       width="400"
@@ -80,10 +92,12 @@ title: Videos - OpenXC
       frameborder="0"
       allowfullscreen="">
   </iframe>
+  <br/>
+  <a href="http://openxcplatform.com/projects/retro-gauge.html">For more details see here.</a>
 </div7>
 
 <div8 class="embed-container">
-<p>InfoCycle</p>
+<h5>InfoCycle</h5>
   <iframe
       src="https://www.youtube.com/embed/uGf0Abf-os4"
       width="400"
@@ -91,10 +105,12 @@ title: Videos - OpenXC
       frameborder="0"
       allowfullscreen="">
   </iframe>
+  <br/>
+  <a href="https://www.ford.ca/innovation/pedal-power/">For more details see here.</a>
 </div8>
 
 <div9 class="embed-container">
-<p>InfoCycle update</p>
+<h5>InfoCycle update</h5>
   <iframe
       src="https://www.youtube.com/embed/8ykUBaxc8Qw"
       width="400"
@@ -102,10 +118,12 @@ title: Videos - OpenXC
       frameborder="0"
       allowfullscreen="">
   </iframe>
+  <br/>
+  <a href="https://www.ford.ca/innovation/pedal-power/">For more details see here.</a>
 </div9>
 
-<div9 class="embed-container">
-<p>MyCarma Fuel Label</p>
+<div10 class="embed-container">
+<h5>MyCarma Fuel Label</h5>
   <iframe
       src="https://www.youtube.com/embed/piANEHaaJEw"
       width="400"
@@ -113,4 +131,19 @@ title: Videos - OpenXC
       frameborder="0"
       allowfullscreen="">
   </iframe>
-</div9>
+  <br/>
+  <a href="https://ford.devpost.com/submissions/16647-mycarma-openxc-personal-fuel-economy-label">For more details see here.</a>
+</div10>
+
+<div11 class="embed-container">
+<h5>OpenXC Van-Go</h5>
+  <iframe
+      src="https://www.youtube.com/embed/VZedQH9FHiw"
+      width="400"
+      height="250"
+      frameborder="0"
+      allowfullscreen="">
+  </iframe>
+  <br/>
+  <a href="https://hackaday.com/2013/09/18/team-van-gogh-uses-openxc-to-create-art-from-your-drive/">For more details see here.</a>
+</div11>
