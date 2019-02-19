@@ -19,7 +19,7 @@ title: Videos - OpenXC
 </div1>
 
 <div2 class="embed-container">
-<h4>BlueShift</h4>
+<h4><strong>BlueShift</strong></h4>
   <iframe
       src="https://www.youtube.com/embed/lUmPiPhLRXw"
       width="400"
@@ -32,7 +32,7 @@ title: Videos - OpenXC
 </div2>
 
 <div3 class="embed-container">
-<h4>Gracenote</h4>
+<h4><strong>Gracenote</strong></h4>
   <iframe
       src="https://www.youtube.com/embed/TS0MQ5Hj91w"
       width="400"
@@ -45,7 +45,7 @@ title: Videos - OpenXC
 </div3>
 
 <div4 class="embed-container">
-<h4>Boing Boing</h4>
+<h4><strong>Boing Boing</strong></h4>
   <iframe
       src="https://www.youtube.com/embed/8c1p2CFujZU"
       width="400"
@@ -58,7 +58,7 @@ title: Videos - OpenXC
 </div4>
 
 <div5 class="embed-container">
-<h4>SmartBrake</h4>
+<h4><strong>SmartBrake</strong></h4>
   <iframe
       src="https://www.youtube.com/embed/_B67DJegg4Y"
       width="400"
@@ -71,7 +71,7 @@ title: Videos - OpenXC
 </div5>
 
 <div6 class="embed-container">
-<h4>Exo Wheel</h4>
+<h4><strong>Exo Wheel</strong></h4>
   <iframe
       src="https://www.youtube.com/embed/BJGwqnfFIS4"
       width="400"
@@ -84,7 +84,7 @@ title: Videos - OpenXC
 </div6>
 
 <div7 class="embed-container">
-<h4>Retro gauge</h4>
+<h4><strong>Retro gauge</strong></h4>
   <iframe
       src="https://www.youtube.com/embed/QQStlSP8ppA"
       width="400"
@@ -97,7 +97,7 @@ title: Videos - OpenXC
 </div7>
 
 <div8 class="embed-container">
-<h4>InfoCycle</h4>
+<h4><strong>InfoCycle</strong></h4>
   <iframe
       src="https://www.youtube.com/embed/uGf0Abf-os4"
       width="400"
@@ -110,7 +110,7 @@ title: Videos - OpenXC
 </div8>
 
 <div9 class="embed-container">
-<h4>InfoCycle update</h4>
+<h4><strong>InfoCycle update</strong></h4>
   <iframe
       src="https://www.youtube.com/embed/8ykUBaxc8Qw"
       width="400"
@@ -123,7 +123,7 @@ title: Videos - OpenXC
 </div9>
 
 <div10 class="embed-container">
-<h4>MyCarma Fuel Label</h4>
+<h4><strong>MyCarma Fuel Label</strong></h4>
   <iframe
       src="https://www.youtube.com/embed/piANEHaaJEw"
       width="400"
@@ -136,7 +136,7 @@ title: Videos - OpenXC
 </div10>
 
 <div11 class="embed-container">
-<h4>OpenXC Van-Go</h4>
+<h4><strong>OpenXC Van-Go</strong></h4>
   <iframe
       src="https://www.youtube.com/embed/VZedQH9FHiw"
       width="400"
