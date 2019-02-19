@@ -6,7 +6,7 @@ title: Videos - OpenXC
     <h1>Videos</h1>
 
 <div1 class="embed-container">
-<h4>Haptic feedback shift knob</h4>
+<h4><strong>Haptic feedback shift knob</strong></h4>
   <iframe
       src="https://www.youtube.com/embed/_fwCEwYYhI4"
       width="400"
