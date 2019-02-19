@@ -17,6 +17,7 @@ title: Videos - OpenXC
   <br/>
   <a href="http://openxcplatform.com/projects/shift-knob.html">For more details see here.</a>
 </div1>
+<br/><br/>
 
 <div2 class="embed-container">
 <h4><strong>BlueShift</strong></h4>
@@ -30,6 +31,7 @@ title: Videos - OpenXC
   <br/>
   <a href="http://petemills.blogspot.com/2014/07/blueshift-openxc-led-tachometer.html">For more details see here.</a>
 </div2>
+<br/><br/>
 
 <div3 class="embed-container">
 <h4><strong>Gracenote</strong></h4>
@@ -43,6 +45,7 @@ title: Videos - OpenXC
   <br/>
   <a href="https://gigaom.com/2013/02/19/how-gracenote-is-building-a-car-stereo-that-senses-your-driving-mood/">For more details see here.</a>
 </div3>
+<br/><br/>
 
 <div4 class="embed-container">
 <h4><strong>Boing Boing</strong></h4>
@@ -56,6 +59,7 @@ title: Videos - OpenXC
   <br/>
   <a href="https://boingboing.net/2013/08/13/boing-boing-ingenuity-a-look.html">For more details see here.</a>
 </div4>
+<br/><br/>
 
 <div5 class="embed-container">
 <h4><strong>SmartBrake</strong></h4>
@@ -69,6 +73,7 @@ title: Videos - OpenXC
   <br/>
   <a href="https://hackaday.com/2013/09/15/smart-brake-lights-and-more-with-openxc/ ">For more details see here.</a>
 </div5>
+<br/><br/>
 
 <div6 class="embed-container">
 <h4><strong>Exo Wheel</strong></h4>
@@ -82,6 +87,7 @@ title: Videos - OpenXC
   <br/>
   <a href="https://devpost.com/software/exo-wheel">For more details see here.</a>
 </div6>
+<br/><br/>
 
 <div7 class="embed-container">
 <h4><strong>Retro gauge</strong></h4>
@@ -95,6 +101,7 @@ title: Videos - OpenXC
   <br/>
   <a href="http://openxcplatform.com/projects/retro-gauge.html">For more details see here.</a>
 </div7>
+<br/><br/>
 
 <div8 class="embed-container">
 <h4><strong>InfoCycle</strong></h4>
@@ -108,6 +115,7 @@ title: Videos - OpenXC
   <br/>
   <a href="https://www.ford.ca/innovation/pedal-power/">For more details see here.</a>
 </div8>
+<br/><br/>
 
 <div9 class="embed-container">
 <h4><strong>InfoCycle update</strong></h4>
@@ -121,6 +129,7 @@ title: Videos - OpenXC
   <br/>
   <a href="https://www.ford.ca/innovation/pedal-power/">For more details see here.</a>
 </div9>
+<br/><br/>
 
 <div10 class="embed-container">
 <h4><strong>MyCarma Fuel Label</strong></h4>
@@ -134,6 +143,7 @@ title: Videos - OpenXC
   <br/>
   <a href="https://ford.devpost.com/submissions/16647-mycarma-openxc-personal-fuel-economy-label">For more details see here.</a>
 </div10>
+<br/><br/>
 
 <div11 class="embed-container">
 <h4><strong>OpenXC Van-Go</strong></h4>
@@ -147,3 +157,4 @@ title: Videos - OpenXC
   <br/>
   <a href="https://hackaday.com/2013/09/18/team-van-gogh-uses-openxc-to-create-art-from-your-drive/">For more details see here.</a>
 </div11>
+<br/><br/>
