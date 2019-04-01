@@ -22,9 +22,11 @@ tutorial to enrich it with data from your vehicle.
 </div>
 
 1. Git clone the OpenXC iOS [Demo App][demoapp]. 
-2. Run <code>git submodule update --init --recursive</code>
-3. Open the project with XCode
-4. This project is ready to go, so if you want to quickly see something running
+2. After cloning, go to the openxc-ios-library Example folder <code>cd  openxc-ios-library/Example</code>.
+4. If necessary, install cocoapods using <code>sudo gem install cocoapods</code>.
+5. Run <code>pod install</code> from terminal. Note: may take a while.
+6. Open ".xcworkspace" file with XCode and run the app in device or simulator. 
+7. This project is ready to go, so if you want to quickly see something running
    jump ahead to the [testing section](/iOS/testing.html). To know more about how this
    application works or to add the necessary code to a different app, continue 
    reading.
@@ -37,7 +39,7 @@ The OpenXC demo app can be your starting point. Frameworks must be added in the 
 This is already done. 
 But to make your own app from scratch, go to XCode and add openxc framework, protobuf framework in your app. 
 
-<img title="OpenXC Enabler App" alt="xcode-linkedFramework" src="/images/test-screenshots/xcode-linkedFramework.png"/>
+<img title="OpenXC Enabler App" alt="" src=""/>
 
 
 You can now proceed to the next steps to start using the library in your 
@@ -155,7 +157,7 @@ how to use the API. If you are having trouble, check out the
 [vehicle interfaces]: /vehicle-interface/hardware.html
 [iOS devices]: /iOS/hardware.html
 [library project]: /android/library-installation.html
-[demoapp]:https://github.com/openxc/openxc-ios-app-demo
+[demoapp]:https://github.com/openxc/openxc-ios-library
 [library documentation]: http://android.openxcplatform.com/reference/com/openxc/measurements/package-summary.html
 [iOS API Guide]: /iOS/api-guide.html
 [openxc-message-format]: https://github.com/openxc/openxc-message-format/blob/master/JSON.mkd#simple-vehicle-message

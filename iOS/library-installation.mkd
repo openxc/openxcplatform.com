@@ -11,7 +11,7 @@ redirect_from:
 
 The OpenXC functionality is exposed via a Swift library that includes some
 iOS services your application can use. The library is available on GitHub in
-the [openxc-ios-framework][] repository
+the [openxc-ios-library][] repository
 
 <div class="page-header">
     <h2>Installation</h2>
@@ -19,11 +19,14 @@ the [openxc-ios-framework][] repository
 
 1. Follow Apple's excellent instructions to
 [download and install XCode](https://developer.apple.com/xcode/).
-2. Clone the [openxc-ios-framework][] repository using Git. If you don't already have Git
+2. Clone the [openxc-ios-library][] repository using Git ,In this you will get openxc-demo app and framework both. If you don't already have Git
 installed, GitHub has a [good
-reference](https://help.github.com/articles/set-up-git) for all platforms.
-3. Initialize the submodules by running command <code>git submodule update --init --recursive</code>. The project includes 2 modules: the openxc ios framework and the protobuf framework.
-4. Open the project in XCode. You should be able to point it at the `openxc-ios-framework` directory to open an
+reference](https://help.github.com/articles/set-up-git) for all platforms.If you want to use openxc-framework in your existing project then follow below steps.
+3. Install cocoapod if you don't already have installed <code>sudo gem install cocoapods</code>. 
+4. In your existing project/New project add a pod file to it if not with the command <code>pod init</code>.For cocoapod reference [cocoapod](https://cocoapods.org/)
+5. Open the pod file, add "pod openxcframework" to the pod file, and save.
+6. Run the command <code>pod install</code> in terminal.
+7. Open the projectName.xcworkspace in XCode. You should be able to point it at the `openxc-ios-framework` directory to open an
 existing project. 
 
 That's it! You can now proceed to the next steps to start using the framework in
@@ -37,4 +40,4 @@ Once you have the framework set up, you can start writing your first OpenXC
 app using the [App Tutorial](/iOS/tutorial.html). If you are having trouble, check out the
 [troubleshooting](/iOS/troubleshooting.html) steps.
 
-[openxc-ios-framework]: https://github.com/openxc/openxc-ios-framework
+[openxc-ios-library]: https://github.com/openxc/openxc-ios-library
