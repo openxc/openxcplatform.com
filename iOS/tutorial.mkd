@@ -39,7 +39,7 @@ The OpenXC demo app can be your starting point. Frameworks must be added in the 
 This is already done. 
 But to make your own app from scratch, go to XCode and add openxc framework, protobuf framework in your app. 
 
-<img title="OpenXC Enabler App" alt="" src=""/>
+<img title="OpenXC Enabler App" alt="xcode-linkedFramework" src="/images/test-screenshots/xcode-linkedFramework.png"/>
 
 
 You can now proceed to the next steps to start using the library in your 
