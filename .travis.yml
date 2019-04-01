@@ -5,6 +5,7 @@ before_install:
   - gem install bundler
 cache: bundler
 sudo: false
+dist: xenial
 env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
