@@ -19,9 +19,9 @@ the [openxc-ios-library][] repository
 
 1. Follow Apple's excellent instructions to
 [download and install XCode](https://developer.apple.com/xcode/).
-2. Clone the [openxc-ios-library][] repository using Git ,In this you will get openxc-demo app and framework both. If you don't already have Git
+2. Clone the [openxc-ios-library][] repository using Git to get both the framework and openxc-demo app. If you don't already have Git
 installed, GitHub has a [good
-reference](https://help.github.com/articles/set-up-git) for all platforms.If you want to use openxc-framework in your existing project then follow below steps.
+reference](https://help.github.com/articles/set-up-git) for all platforms. If you want to use openxc-framework in your existing project then follow below steps.
 3. Install cocoapod if you don't already have installed <code>sudo gem install cocoapods</code>. 
 4. In your existing project/New project add a pod file to it if not with the command <code>pod init</code>.For cocoapod reference [cocoapod](https://cocoapods.org/)
 5. Open the pod file, add "pod openxcframework" to the pod file, and save.

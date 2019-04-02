@@ -23,11 +23,11 @@ tutorial to enrich it with data from your vehicle.
 
 1. Git clone the OpenXC iOS [Demo App][demoapp]. 
 2. After cloning, go to the openxc-ios-library Example folder <code>cd  openxc-ios-library/Example</code>.
-4. If necessary, install cocoapods using <code>sudo gem install cocoapods</code>.
-5. Run <code>pod install</code> from terminal. Note: may take a while.
-6. Open ".xcworkspace" file with XCode and run the app in device or simulator. 
-7. This project is ready to go, so if you want to quickly see something running
-   jump ahead to the [testing section](/iOS/testing.html). To know more about how this
+3. If necessary, install cocoapods using <code>sudo gem install cocoapods</code>.
+4. Run <code>pod install</code> from terminal. Note: may take a while.
+5. Open ".xcworkspace" file with XCode and run the app in device or simulator. 
+6. This project is ready to go, so if you want to quickly see something running proceed
+   to the [testing section](/iOS/testing.html). To know more about how this
    application works or to add the necessary code to a different app, continue 
    reading.
 
@@ -49,7 +49,7 @@ project.
 <h2>Status View Controller</h2>
 </div>
 
-The `StatusViewController` is the root controller of OpenXC enabler application.
+The `StatusViewController` is the root controller of OpenXC demo application.
 
 
 {% highlight swift %}
