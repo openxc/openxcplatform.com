@@ -23,7 +23,7 @@ the [openxc-ios-library][] repository
 installed, GitHub has a [good
 reference](https://help.github.com/articles/set-up-git) for all platforms. If you want to use openxc-framework in your existing project then follow below steps.
 3. Install cocoapod if you don't already have installed <code>sudo gem install cocoapods</code>. 
-4. In your existing project/New project add a pod file to it if not with the command <code>pod init</code>.For cocoapod reference [cocoapod](https://cocoapods.org/)
+4. In your existing project/New project add a pod file to it if not with the command <code>pod init</code>.For cocoapod reference [cocoapod](https://cocoapods.org/).
 5. Open the pod file, add "pod openxcframework" to the pod file, and save.
 6. Run the command <code>pod install</code> in terminal.
 7. Open the projectName.xcworkspace in XCode. You should be able to point it at the `openxc-ios-framework` directory to open an
