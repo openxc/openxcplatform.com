@@ -20,6 +20,10 @@ The OpenXC message format is officially documented and versioned in a [separate
 repository](https://github.com/openxc/openxc-message-format) - this page as an
 unofficial mirror.
 
+<div class="alert alert-danger">
+<strong>Note:</strong> When compiling for platforms using Bluetooth LE, all signals below will have frequencies of 0.5 Hz due to bandwidth limitations.
+</div>
+
 <dl>
     <dt>steering_wheel_angle</dt>
     <dd>
