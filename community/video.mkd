@@ -158,3 +158,17 @@ title: Videos - OpenXC
   <a href="https://hackaday.com/2013/09/18/team-van-gogh-uses-openxc-to-create-art-from-your-drive/">For more details see here.</a>
 </div11>
 <br/><br/>
+
+<div11 class="embed-container">
+<h4><strong>Connected Cars with Ford's OpenXC and Splunk</strong></h4>
+  <iframe
+      src="https://youtu.be/QPSaGb6Xm30"
+      width="400"
+      height="250"
+      frameborder="0"
+      allowfullscreen="">
+  </iframe>
+  <br/>
+  <a href="https://www.youtube.com/watch?v=QPSaGb6Xm30&feature=youtu.be">For more details see here.</a>
+</div11>
+<br/><br/>
