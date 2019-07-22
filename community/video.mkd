@@ -162,7 +162,7 @@ title: Videos - OpenXC
 <div11 class="embed-container">
 <h4><strong>Connected Cars with Ford's OpenXC and Splunk</strong></h4>
   <iframe
-      src="https://youtu.be/QPSaGb6Xm30"
+      src="https://www.youtube.com/embed/QPSaGb6Xm30"
       width="400"
       height="250"
       frameborder="0"
