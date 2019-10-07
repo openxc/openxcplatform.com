@@ -23,7 +23,7 @@ Get Started with the Android Library
 </a>
 
 <h3>Using OXC with Dweet and Freeboard</h3>
-<a class="btn btn-success btn-lg"  href="">
+<a class="btn btn-success btn-lg"  href="/android/dweet-freeboard.html">
 Get Started with Dweet and Freeboard
 </a>
 
