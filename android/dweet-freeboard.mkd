@@ -11,7 +11,7 @@ title: Using OXC with Dweet and Freeboard
 
 <p>Open settings in Open XC android app</p>
 
-<img src="images/Dweet-Instructions-Screenshots/dweet-instructions-image1.png">
+<img src="/images/Dweet-Instructions-Screenshots/dweet-instructions-image1.png">
 
 <p>Click “Recording”</p>
 
