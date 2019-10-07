@@ -1,0 +1,182 @@
+---
+layout: developer
+title: Using OXC with Dweet and Freeboard
+---
+
+<div class="page-header">
+    <h1>Using OXC with Dweet and Freeboard</h1>
+</div>
+
+<p>Freeboard with Open XC</p>
+
+<p>Open settings in Open XC android app</p>
+
+<img src="images/Dweet-Instructions-Screenshots/dweet-instructions-image1.png">
+
+<p>Click “Recording”</p>
+
+<img>
+
+<p>
+Enable checkbox to “Send Data to Dweet.io”
+Make a note of Thing-name
+</p>
+
+<img>
+
+<p>
+Open <a href="http://dweet.io/follow"> https://dweet.io/follow </a>
+Enter thing-name from previous step to read dweets from the device
+Above steps should display data on website to ensure the device is able to send dweets to dweets.io and proceed with freeboard dashboards
+</p>
+
+<img> 
+
+<img>
+
+<img>
+
+<p>Users can click on freeboard text to navigate to <a href="http://freeboard.io/"> http://freeboard.io/ </a> and sign up / login on the page</p>
+
+<img>
+
+<p>After finishing registration on freeboard.io, users can create custom dashboards:</p>
+
+<img>
+
+<p>
+Enter any preferred name for the custom dashboard
+<br>
+You will navigate to the new dashboard
+</p>
+
+<img>
+
+<p>
+Click on ADD (below DATASOURCES) to select the source for the data 
+<br>
+Select TYPE as Dweet.io
+<br>
+NAME “anything of your choice”
+<br>
+THING NAME : "enter thing name which is assigned in the first step"
+<br>
+KEY: "optional"
+</p>
+
+<img>
+
+<p>After setting up DATASOURCE, users can click on ADD PANE to create an empty area on webpage as shown:</p>
+
+<img>
+
+<p>After setting up DATASOURCE for the current dashboard, users can proceed with a different widget view by clicking “ADD PANE”.</p>
+
+<p>
+Click on + icon to configure details about displaying data
+<br>
+Select TYPE: Gauge
+<br>
+TITLE : Vehicle Speed
+<br>
+VALUE: datasources["v2"]["vehicle_speed"]
+<br> 
+UNITS: miles/hr
+<br>
+MINIMUM: 0
+<br>
+MAXIMUM: 0
+</p>
+
+<p>While configuring engine speed and accelerator pedal position, use DATASOURCE hyperlink available next the textbox which will auto populate text for selecting DATASOURCE and autocomplete all the available parameters.</P>
+
+<img>
+
+<p>Graph displayed below: </p>
+
+<img>
+
+<h1>Using Dweet with IOS</h1>
+
+<p>Open settings in Open XC IOS APP</p>
+
+<img>
+
+<p>Click “Recording” </p>
+
+<img>
+
+<p>
+Enable “Output to Dweet.io”
+<br>
+Make a note of Thing-name
+</p>
+
+<img>
+
+<p>Open <a href="https://dweet.io/follow">https://dweet.io/follow</a>
+<br>
+Enter thing-name from previous step to read dweets from the device
+</p>
+
+<p>Above steps should display data on website to ensure the device is able to send dweets to dweets.io and proceed with freeboard dashboards</p>
+
+<img>
+
+<img>
+
+<p>
+NAME “anything of your choice”
+<br>
+Enter any preferred name for custom dashboard
+<br>
+You will navigate to the new dashboard 
+</p>
+
+<img>
+
+<p>
+Click on ADD (below DATASOURCES) to select the source for the data 
+<br>
+Select TYPE as Dweet.io
+<br>
+NAME “anything of your choice”
+<br>
+THING NAME : "enter thing name which is assigned in the first step"
+<br>
+KEY: "optional"
+<br>
+SHOW FULL PAYLOAD: NO (default choice)
+<br>
+Click on SAVE
+</p>
+
+<img>
+
+<p>Click on + icon to configure details displaying data.</p>
+
+<img>
+
+<p>
+Select TYPE: Gauge
+<br>
+TITLE: Vehicle Speed
+<br>
+VALUE: datasources["v2"]["vehicle_speed"] 
+<br>
+UNITS: miles/hr
+<br>
+MINIMUM: 0
+<br>
+MAXIMUM: 0
+</p>
+
+<p>
+While configuring engine speed and accelerator pedal position, use DATASOURCE hyperlink available next the textbox which will auto populate text for selecting DATASOURCE and autocomplete all the available parameters.
+</p>
+
+<img>
+
+<p>Graph displayed below: </p>
+
+<img>
