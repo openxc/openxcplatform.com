@@ -1,0 +1,93 @@
+---
+layout: developer
+title: Using OXC with Dweet and Freeboard
+---
+
+<div class="page-header">
+    <h1>Using OXC with Dweet and Freeboard</h1>
+</div>
+
+<h1>Using Dweet with IOS</h1>
+
+<p>Open settings in Open XC IOS APP</p>
+
+![OpenXC IOS App](/images/dweet-ios-instructions-image1.png)
+
+<p>Click “Recording” </p>
+
+![OpenXC IOS App Recording](/images/dweet-ios-instructions-image2.png)
+
+<p>
+Enable “Output to Dweet.io”
+<br>
+Make a note of Thing-name
+</p>
+
+![OpenXC IOS App Thing_name](/images/dweet-ios-instructions-image3.png)
+
+<p>Open <a href="https://dweet.io/follow">https://dweet.io/follow</a>
+<br>
+Enter thing-name from previous step to read dweets from the device
+</p>
+
+<p>Above steps should display data on website to ensure the device is able to send dweets to dweets.io and proceed with freeboard dashboards</p>
+
+![dweet.io ios dashboard](/images/dweet-ios-instructions-image4.png)
+
+![dweet.io ios dashboard image2](/images/dweet-ios-instructions-image5.png)
+
+<p>
+NAME “anything of your choice”
+<br>
+Enter any preferred name for custom dashboard
+<br>
+You will navigate to the new dashboard 
+</p>
+
+![freeboard dashboard](/images/dweet-ios-instructions-image6.png)
+
+<p>
+Click on ADD (below DATASOURCES) to select the source for the data 
+<br>
+Select TYPE as Dweet.io
+<br>
+NAME “anything of your choice”
+<br>
+THING NAME : "enter thing name which is assigned in the first step"
+<br>
+KEY: "optional"
+<br>
+SHOW FULL PAYLOAD: NO (default choice)
+<br>
+Click on SAVE
+</p>
+
+![freeboard dashboard image2](/images/dweet-ios-instructions-image7.png)
+
+<p>Click on + icon to configure details displaying data.</p>
+
+![freeboard dashboard image3](/images/dweet-ios-instructions-image8.png)
+
+<p>
+Select TYPE: Gauge
+<br>
+TITLE: Vehicle Speed
+<br>
+VALUE: datasources["v2"]["vehicle_speed"] 
+<br>
+UNITS: miles/hr
+<br>
+MINIMUM: 0
+<br>
+MAXIMUM: 0
+</p>
+
+<p>
+While configuring engine speed and accelerator pedal position, use DATASOURCE hyperlink available next the textbox which will auto populate text for selecting DATASOURCE and autocomplete all the available parameters.
+</p>
+
+![freeboard dashboard image4](/images/dweet-ios-instructions-image9.png)
+
+<p>Graph displayed below: </p>
+
+![freeboard dashboard image5](/images/dweet-ios-instructions-image11.png)
