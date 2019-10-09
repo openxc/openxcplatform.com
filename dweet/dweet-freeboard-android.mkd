@@ -13,9 +13,17 @@ title: Using OXC with Dweet and Freeboard
 
 ![OpenXC Enabler Status image](/images/dweet-instructions-image1.png)
 
+<br>
+<br>
+<br>
+
 <p>Click “Recording”</p>
 
 ![OpenXC Enabler recording image](/images/dweet-instructions-image2.png)
+
+<br>
+<br>
+<br>
 
 <p>
 Enable checkbox to “Send Data to Dweet.io”
@@ -23,6 +31,10 @@ Make a note of Thing-name
 </p>
 
 ![OpenXC Enabler Thing-name image](/images/dweet-instructions-image3.png)
+
+<br>
+<br>
+<br>
 
 <p>
 Open <a href="http://dweet.io/follow"> https://dweet.io/follow </a>
@@ -36,13 +48,25 @@ Above steps should display data on website to ensure the device is able to send 
 
 ![dweets.io with freeboard dashboards image3](/images/dweet-instructions-image6.png)
 
+<br>
+<br>
+<br>
+
 <p>Users can click on freeboard text to navigate to <a href="http://freeboard.io/"> http://freeboard.io/ </a> and sign up / login on the page</p>
 
 ![freeboard image1](/images/dweet-instructions-image7.png)
 
+<br>
+<br>
+<br>
+
 <p>After finishing registration on freeboard.io, users can create custom dashboards:</p>
 
 ![freeboard image2](/images/dweet-instructions-image8.png)
+
+<br>
+<br>
+<br>
 
 <p>
 Enter any preferred name for the custom dashboard
@@ -51,6 +75,10 @@ You will navigate to the new dashboard
 </p>
 
 ![freeboard new dashboard image3](/images/dweet-instructions-image9.png)
+
+<br>
+<br>
+<br>
 
 <p>
 Click on ADD (below DATASOURCES) to select the source for the data 
@@ -66,11 +94,19 @@ KEY: "optional"
 
 ![freeboard image4](/images/dweet-instructions-image10.png)
 
+<br>
+<br>
+<br>
+
 <p>After setting up DATASOURCE, users can click on ADD PANE to create an empty area on webpage as shown:</p>
 
 ![freeboard image5](/images/dweet-instructions-image11.png)
 
 <p>After setting up DATASOURCE for the current dashboard, users can proceed with a different widget view by clicking “ADD PANE”.</p>
+
+<br>
+<br>
+<br>
 
 <p>
 Click on + icon to configure details about displaying data
@@ -91,6 +127,10 @@ MAXIMUM: 0
 <p>While configuring engine speed and accelerator pedal position, use DATASOURCE hyperlink available next the textbox which will auto populate text for selecting DATASOURCE and autocomplete all the available parameters.</P>
 
 ![freeboard image6](/images/dweet-instructions-image12.png)
+
+<br>
+<br>
+<br>
 
 <p>Graph displayed below: </p>
 

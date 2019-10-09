@@ -13,9 +13,17 @@ title: Using OXC with Dweet and Freeboard
 
 ![OpenXC IOS App](/images/dweet-ios-instructions-image1.png)
 
+<br>
+<br>
+<br>
+
 <p>Click “Recording” </p>
 
 ![OpenXC IOS App Recording](/images/dweet-ios-instructions-image2.png)
+
+<br>
+<br>
+<br>
 
 <p>
 Enable “Output to Dweet.io”
@@ -24,6 +32,10 @@ Make a note of Thing-name
 </p>
 
 ![OpenXC IOS App Thing_name](/images/dweet-ios-instructions-image3.png)
+
+<br>
+<br>
+<br>
 
 <p>Open <a href="https://dweet.io/follow">https://dweet.io/follow</a>
 <br>
@@ -36,6 +48,10 @@ Enter thing-name from previous step to read dweets from the device
 
 ![dweet.io ios dashboard image2](/images/dweet-ios-instructions-image5.png)
 
+<br>
+<br>
+<br>
+
 <p>
 NAME “anything of your choice”
 <br>
@@ -45,6 +61,10 @@ You will navigate to the new dashboard
 </p>
 
 ![freeboard dashboard](/images/dweet-ios-instructions-image6.png)
+
+<br>
+<br>
+<br>
 
 <p>
 Click on ADD (below DATASOURCES) to select the source for the data 
@@ -64,6 +84,10 @@ Click on SAVE
 
 ![freeboard dashboard image2](/images/dweet-ios-instructions-image7.png)
 
+<br>
+<br>
+<br>
+
 <p>Click on + icon to configure details displaying data.</p>
 
 ![freeboard dashboard image3](/images/dweet-ios-instructions-image8.png)
@@ -82,11 +106,19 @@ MINIMUM: 0
 MAXIMUM: 0
 </p>
 
+<br>
+<br>
+<br>
+
 <p>
 While configuring engine speed and accelerator pedal position, use DATASOURCE hyperlink available next the textbox which will auto populate text for selecting DATASOURCE and autocomplete all the available parameters.
 </p>
 
 ![freeboard dashboard image4](/images/dweet-ios-instructions-image9.png)
+
+<br>
+<br>
+<br>
 
 <p>Graph displayed below: </p>
 
