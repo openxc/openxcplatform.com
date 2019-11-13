@@ -298,5 +298,4 @@ The effective date of this privacy statement is September 10th, 2012.
 
 ## Your California Privacy Rights
 
-<script type="text/javascript" src="http://www.ford.com/go/privacy/include.js"></script>
-<noscript>View <a href="http://www.ford.com/help/privacy/california/">Your California Privacy Rights</a>.</noscript>
+[View Your California Privacy Rights](http://www.ford.com/help/privacy/california/)
