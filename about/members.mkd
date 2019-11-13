@@ -20,11 +20,9 @@ Ford is one of the founding members of OpenXC.
 ![CrossChasm Logo](/images/logo-crosschasm.png)
 
 CrossChasm contributed to the OpenXC vehicle interface firmware to support their
-C5 hardware OBD interface, and [offers the C5 for
-sale](http://crosschasm.com/SolutionCenter/OpenXC.aspx) through their website.
+C5 hardware OBD interface.
 
-* [CrossChasm Website](http://www.crosschasm.com/)
-* [CrossChasm OpenXC Page](http://crosschasm.com/SolutionCenter/OpenXC.aspx)
+[CrossChasm Website](http://www.crosschasm.com/)
 
 **Bug Labs**
 
