@@ -1,0 +1,23 @@
+---
+layout: developer
+title: Using OpenXC with Dweet and Freeboard
+---
+
+<div class="page-header">
+    <h1>Using OpenXC with Dweet and Freeboard Introduction</h1>
+</div>
+
+
+<p><a href="http://dweet.io/">Dweet</a> and <a href="http://freeboard.io/">freeboard</a> are products offered by longtime OpenXC partner <a href="http://buglabs.com/">Bug Labs</a>. Dweet allows any product, device, machine, gadget, or thing to publish data. It is simple to use. Freeboard is a simple way to build real-time and interactive dashboards and visualization tools from dweet and other data sources. Together, dweet and freeboard provide a quick and easy to visualize your OpenXC data. In addition, it is completely free to get started. </p>
+
+
+<p style="padding-bottom: 4%;">In order to make it quick to get started with OpenXC, dweet, and freeboard, updates have been made to OpenXC Android and iOS applications. Both now let you dweet data from any OpenXC data source (typically a Vehicle Interface). In addition, as a quick and easy way to start, both apps now let you augment vehicle data with phone sensor data. This lets you start using OpenXC and dweet without a vehicle! See the sections below and the new options in the OpenXC mobile app settings.</p>
+
+<a class="btn btn-success btn-lg dweet"  href="/dweet/dweet-freeboard-android.html" style="background-color: red;">
+Get Started with Dweet and Freeboard Android
+</a>
+
+<a class="btn btn-success btn-lg dweet"  href="/dweet/dweet-freeboard-ios.html" style="background-color: red;">
+Get Started with Dweet and Freeboard iOS
+</a>
+

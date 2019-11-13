@@ -30,7 +30,7 @@ Add the `openxc` library to your project's dependencies in the `app/build.gradle
 file:
 
     dependencies {
-        compile 'com.openxcplatform:library:6.1.6+'
+        compile 'com.openxcplatform:library:7.0.6'
     }
 
 That's it! You can now proceed to the next steps to start using the library in

@@ -17,8 +17,8 @@ post to ask for some assistance.
 <a href="#demoapp">Install the OpenXC Demo App</a>
 </h2>
 
-Install the OpenXC Demo application from [Demo App](https://github.com/openxc/openxc-ios-app-demo) on your iOS phone/simulator. 
-Follow the steps mentioned in this [document](https://github.com/openxc/openxc-ios-app-demo/blob/master/StepsToBuildOpenXCiOSFrameworkAndDemoApp.docx)
+Install the OpenXC Demo application from [Demo App](https://github.com/openxc/openxc-ios-library) on your iOS phone/simulator. 
+Follow the steps mentioned in this [document](https://github.com/openxc/openxc-ios-library/blob/master/StepsToBuildOpenXCiOSFrameworkAndDemoApp.docx)
 
 The Demo app takes care of a lot of boilerplate code, so your app's code can be
 simpler. It also includes a basic GUI for most functionality of the iOS
@@ -96,4 +96,4 @@ You can now [install the OpenXC iOS
 library](/iOS/library-installation.html) and get started creating
 your first app.
 
-[demoapp-source]: https://github.com/openxc/openxc-ios-app-demo
+[demoapp-source]: https://github.com/openxc/openxc-ios-library
