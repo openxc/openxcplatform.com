@@ -71,8 +71,8 @@ unofficial mirror.
 
     <dt>transmission_gear_position</dt>
     <dd>
-        States: first, second, third, fourth, fifth, sixth, seventh, eighth,
-            reverse, neutral
+        States: first, second, third, fourth, fifth, sixth, seventh, eighth, ninth, tenth,
+            reverse, neutral, park, drive, sport_drivesport, low
         <p><strong>Frequency:</strong> 1Hz and immediately on change</p>
     </dd>
 
