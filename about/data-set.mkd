@@ -73,6 +73,8 @@ unofficial mirror.
     <dd>
         States: first, second, third, fourth, fifth, sixth, seventh, eighth, ninth, tenth,
             reverse, neutral, park, drive, sport_drivesport, low
+	    (Depending on the version of the vi that one is using, different message subsets will be used,
+	    some will include park, drive and low, others will only return first through tenth).
         <p><strong>Frequency:</strong> 1Hz and immediately on change</p>
     </dd>
 
