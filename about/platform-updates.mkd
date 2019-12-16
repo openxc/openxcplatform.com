@@ -25,11 +25,11 @@ recommended to update to all new versions as a group.
 
 This update includes several new major features, fixes, and security updates requiring simultaneous updates to the firmware, client libraries, and the vagrant virtual machine.
 Some of the highlights include:
-* VI-firmware: removes the fine_odometer_since_restart from the emulator, adds sending evented messages from emulator, adds emulator firmware diagnostics support, updates the vagrant virtual machine to ubuntu 18, and adds CAN2 and UART debug access to the CrossChasm C5.
+* VI-firmware: removes the fine_odometer_since_restart from the emulator, adds sending evented messages from emulator, adds emulator firmware diagnostics support, and adds CAN2 and UART debug access to the CrossChasm C5.
 * Python: security fixes and adds “platform” command support.
 * Android: adds sending control commands on demand, Dweet.io integration, BLE VI support and gradle.
 * iOS: initial library release for iOS, adds cocoapods library, adds AppCenter crash analytics, and support for iOS 12.
-* OpenXC message format: adds increasing the diagnostic response payload size, adds a command to get the device platform, and adds protocol buffer 3 support.
+* OpenXC message format: adds increasing the diagnostic response payload size, and adds a command to get the device platform.
 
 
 
