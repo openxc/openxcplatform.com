@@ -15,6 +15,24 @@ between major platform updates which are tracked in their respective changelogs.
 The versions listed in each release section should be considered the compatible versions. It is
 recommended to update to all new versions as a group.
 
+## November 2019
+
+* Vehicle Interface Firmware - [v7.3.0](https://github.com/openxc/vi-firmware/releases/tag/v7.3.0)
+* Python Library - [v0.15.0](https://github.com/openxc/openxc-python/releases/tag/v0.15.0)
+* Android Library and Enabler - [v7.0.6](https://github.com/openxc/openxc-android/releases/tag/v7.0.6)
+* iOS Framework and Demo App - [v5.0.0](https://github.com/openxc/openxc-ios-library/releases/tag/5.0.0)
+* OpenXC Message Format Specification - [v0.7.0](https://github.com/openxc/openxc-message-format/releases/tag/v0.7.0)
+
+This update includes several new major features, fixes, and security updates requiring simultaneous updates to the firmware, client libraries, and the vagrant virtual machine.
+Some of the highlights include:
+* VI-firmware: removes the fine_odometer_since_restart from the emulator, adds sending evented messages from emulator, adds emulator firmware diagnostics support, updates the vagrant virtual machine to ubuntu 18, and adds CAN2 and UART debug access to the CrossChasm C5.
+* Python: security fixes and adds “platform” command support.
+* Android: adds sending control commands on demand, Dweet.io integration, BLE VI support and gradle.
+* iOS: initial library release for iOS, adds cocoapods library, adds AppCenter crash analytics, and support for iOS 12.
+* OpenXC message format: adds increasing the diagnostic response payload size, adds a command to get the device platform, and adds protocol buffer 3 support.
+
+
+
 ## May 2016
 
 * Vehicle Interface Firmware - [v7.2.0](https://github.com/openxc/vi-firmware/releases/tag/v7.2.0)
