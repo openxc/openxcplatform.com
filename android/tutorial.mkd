@@ -66,7 +66,7 @@ the Android OS what views are available, which services are used and what sensor
 your app needs.
 
 Every OpenXC application, the Starter app included, needs to use the
-[`VehicleManager` service](http://android.openxcplatform.com/reference/com/openxc/VehicleManager.html). The next difference between the "Hello World" app and
+[`VehicleManager` service](http://android.openxcplatform.com/com/openxc/VehicleManager.html). The next difference between the "Hello World" app and
 the Starter app is the addition of this line to the manifest:
 
 {% highlight xml %}
@@ -361,7 +361,7 @@ Finally, the last steps:
     for playback. You need a file manager app on your device to browse for a
     file. Later Android devices come with a manager pre-installed. Older devices
     may need to download another app, such as the [OI File
-    Manager](https://play.google.com/store/apps/details?id=org.openintents.filemanager).
+    Manager](https://play.google.com/store/apps/details?id=com.mi.android.globalFileexplorer).
     In the file manager, browse to the trace file you downloaded.
 1. Return to the front view of the Enabler - the message count should be
    increasing, indicating the trace is playing.
@@ -385,5 +385,5 @@ how to use the API. If you are having trouble, check out the
 [library project]: /android/library-installation.html
 [enabler]:/android/getting-started.html#enabler
 [driving trace]: https://oxcp.com.s3.amazonaws.com/driving.json
-[library documentation]: http://android.openxcplatform.com/reference/com/openxc/measurements/package-summary.html
+[library documentation]: http://android.openxcplatform.com/com/openxc/measurements/package-summary.html
 [Android API Guide]: /android/api-guide.html
