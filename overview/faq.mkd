@@ -37,7 +37,7 @@ engineering.
 sold in North America since 1996, but the standard message set primarily
 concerns the emissions powertrain. The rest of the diagnostic messages are
 non-standard and not available to the public (and certainly not an open source
-project). <a href="http://www.autoenginuity.com/products-software.html#EI01">
+project). <a href="https://www.autoenginuity.com/products/oe-level-coverage/ford-family-ei01/">
 AutoEnginuity</a>, an OBD-II scanner manufacturer explains it well:
 </p>
 

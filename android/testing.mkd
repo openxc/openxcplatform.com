@@ -62,7 +62,7 @@ helps control the source of vehicle data, e.g. a USB vehicle interface or a
 trace file.
 
 Install a file manager in Android like the [OI File
-Manager](http://caique.arvixe.com/~oi/filemanager){:target="_blank"} so the Enabler is able to browse
+Manager](https://play.google.com/store/apps/details?id=com.mi.android.globalFileexplorer){:target="_blank"} so the Enabler is able to browse
 for files on the SD card.
 
 Finally, run the `OpenXC Enabler` app on the device and go to `Settings -> Data
@@ -153,5 +153,5 @@ be.
 [gg]: http://groups.google.com/group/openxc
 [Enabler]: /android/getting-started.html#enabler
 [vehicle interface]: /vehicle-interface/hardware.html
-[Measurement]: http://android.openxcplatform.com/reference/com/openxc/measurements/Measurement.html
+[Measurement]: http://android.openxcplatform.com/com/openxc/measurements/Measurement.html
 [VehicleManager]: http://android.openxcplatform.com/reference/com/openxc/VehicleManager.html
