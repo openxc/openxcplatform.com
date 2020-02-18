@@ -457,11 +457,11 @@ application's `AndroidManifest.xml` - just the [VehicleManager][] service.
 [aidl]: http://developer.android.com/guide/components/aidl.html
 [trace file]: /android/testing.html
 [BluetoothVehicleInterface]: http://android.openxcplatform.com/reference/com/openxc/interfaces/bluetooth/BluetoothVehicleInterface.html
-[TraceVehicleDataSource]: http://android.openxcplatform.com/reference/com/openxc/sources/trace/TraceVehicleDataSource.html
+[TraceVehicleDataSource]: http://android.openxcplatform.com/com/openxc/sources/trace/TraceVehicleDataSource.html
 [MessageListenerSink]: http://android.openxcplatform.com/com/openxc/sinks/MessageListenerSink.html
 [FileRecorderSink]: http://android.openxcplatform.com/com/openxc/sinks/FileRecorderSink.html
-[UploaderSink]: http://android.openxcplatform.com/reference/com/openxc/sinks/UploaderSink.html
-[ApplicationSource]: http://android.openxcplatform.com/reference/com/openxc/sources/ApplicationSource.html
+[UploaderSink]: http://android.openxcplatform.com/com/openxc/sinks/UploaderSink.html
+[ApplicationSource]: http://android.openxcplatform.com/com/openxc/sources/ApplicationSource.html
 [UsbVehicleInterface]: http://android.openxcplatform.com/reference/com/openxc/interfaces/usb/UsbVehicleInterface.html
 [RemoteCallbackSink]: http://android.openxcplatform.com/com/openxc/sinks/RemoteCallbackSink.html
 [VehicleLocationProvider]: http://android.openxcplatform.com/com/openxc/VehicleLocationProvider.html
