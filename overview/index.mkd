@@ -115,7 +115,7 @@ counters.
 There are some existing projects trying to accomplish similar things to OpenXC
 by making the vehicle more programmable - here's a few, but by no means all:
 
-* [nOBDy](http://nobdy.wikia.com/wiki/Nobdy_Wiki)
+* [nOBDy](https://elinux.org/Nobdy)
 * [MirrorLink](http://www.mirrorlink.com)
 * [AppLink](http://developer.ford.com)
 * [openguage](http://code.google.com/p/opengauge/)
