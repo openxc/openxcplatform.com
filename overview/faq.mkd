@@ -86,7 +86,7 @@ exposed in the OBD-II message set.</p>
 <p>One good example is measuring the amount of fuel consumed, for the purposes
 of calculating fuel economy. The OBD-II set provides the mass airflow, from
 which you can <a
-href="http://www.mp3car.com/engine-management-obd-ii-engine-diagnostics-etc/75138-calculating-mpg-from-vss-and-maf-from-obd2.html">calculate</a>
+href="http://www.lightner.net/obd2guru/IMAP_AFcalc.html">calculate</a>
 how much fuel is consumed. When you can take advantage of proprietary sensor
 data, this can be much easier and potentially more accurate - e.g. with Ford's
 OpenXC binaries you can retrieve the amount of fuel consumed directly (at 25
