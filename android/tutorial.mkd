@@ -384,6 +384,6 @@ how to use the API. If you are having trouble, check out the
 [Android devices]: /android/hardware.html
 [library project]: /android/library-installation.html
 [enabler]:/android/getting-started.html#enabler
-[driving trace]: https://oxcp.com.s3.amazonaws.com/driving.json
+[driving trace]: https://oxcp-com.s3.amazonaws.com/driving.json
 [library documentation]: http://android.openxcplatform.com/com/openxc/measurements/package-summary.html
 [Android API Guide]: /android/api-guide.html
