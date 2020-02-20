@@ -33,5 +33,5 @@ at TechCrunch Disrupt 2011 in New York.
 
 [Bug Labs Website](http://buglabs.net/)
 
-[Press Release](http://www.buglabs.net/ford-buglabs)
+[Press Release](https://techcrunch.com/2011/09/12/ford-partners-with-bug-labs-to-develop-open-source-platform-for-in-car-innovatin/)
 
