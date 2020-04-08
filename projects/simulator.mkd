@@ -66,21 +66,21 @@ Another option is to run the install with sudo:
 ## Running the Simulator
 To run the app:
 
-      $ ./emulate.py
+      $ ./simulator.py
 
 To open the UI, open a browser and navigate to http://localhost:50000/
 
 To connect with an Android device, open the Enabler activity, open the settings,
 choose Data Sources, and enable "Use a network device".
 
-Set the host address to the address of the machine running emulate.py, and set
+Set the host address to the address of the machine running simulator.py, and set
 the port to 50001. You may need to disable and re-enable "Use a network device"
-after entering the correct information. The terminal running emulate.py should
+after entering the correct information. The terminal running simulator.py should
 indicate that it received a new connection.
 
 If the Enabler fails to connect, you may need to use a different IP address.
 The python address detection isn't perfect, and multiple IPs on a computer can
-confuse it.  When emulate.py is started, it displays a list of IPs on which it
+confuse it.  When simulator.py is started, it displays a list of IPs on which it
 listens for connections from the OpenXC Enabler.
 
 ## Under the Hood
@@ -97,7 +97,7 @@ intended to simulate the data that might be generated on the CAN bus.  The user
 interface uses [Flask](http://flask.pocoo.org/) and
 [jQuery](http://jqueryui.com/) to provide interaction with the Simulator.
 
-emulate.py
+simulator.py
 
 This is the Python script that sets everything in motion.  It starts the Flask
 server, creates the State Manager object, provides data to the UI, and handles
