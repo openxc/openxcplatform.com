@@ -13,6 +13,21 @@ motion! Testing OpenXC apps while driving is absolutely a two person job.
 </div>
 
 <div class="page-header">
+    <h2>Vehicle Simulator</h2>
+</div>
+
+The [OpenXC Vehicle
+Simulator](http://openxcplatform.com/projects/simulator.html){:target="_blank"} is a web
+application intended for developers to run on local machines to generate a
+simulated OpenXC vehicle data trace in real time, to be used for testing iOS
+applications.
+
+Besides unit tests, the simulator is the recommended first step for testing your
+application.
+
+![Simulator Screenshot](/images/simulator-screenshot.png)
+
+<div class="page-header">
     <h2>Pre-recorded Vehicle Data</h2>
 </div>
 
@@ -55,6 +70,21 @@ Finally, the last steps:
 1. Return to the front view of the Demo app - the message count should be
    increasing, indicating the trace is playing.
 
+<div class="page-header">
+    <h2>UI Design</h2>
+</div>
+
+User interface design for automotive environments is increasingly attracting
+attention, particularly due to concerns with [driver
+distraction](http://www.distraction.gov/). While building your OpenXC
+application, keep in mind the U.S. government's recently released [guidelines
+(PDF)](http://www.nhtsa.gov/staticfiles/rulemaking/pdf/Distraction_NPFG-02162012.pdf)
+for application design.
+
+Driver distraction aside, the most useful and interesting applications tend to
+be those without much driver interaction. The more you can automate or let the
+user deal with outside of their vehicle, the better the experience will likely
+be.
 
 [gg]: http://groups.google.com/group/openxc
 [demoapp]: /iOS/getting-started.html#demoapp
