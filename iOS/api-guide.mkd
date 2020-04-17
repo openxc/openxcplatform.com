@@ -10,7 +10,7 @@ redirect_from: /developers/iOS/library-usage.html
 
 This document describes the interface for the OpenXC library **version 6.0**.
 
-Vehicle data is accessed after adding [ios-framework-source][] to the [demo app][]. 
+Vehicle data is accessed after adding the framework to the demo app. Both of these can be found in [openxc-ios-library][]. 
 
 <div class="page-header">
     <h2 id="vehicle-manager"><a name="vehicle-manager">VehicleManager</a></h2>
@@ -234,5 +234,4 @@ The callback method will receive the measurement  in the form on dictionary (key
 [RemoteCallbackSink]: http://android.openxcplatform.com/reference/com/openxc/sinks/RemoteCallbackSink.html
 [VehicleLocationProvider]: http://android.openxcplatform.com/reference/com/openxc/VehicleLocationProvider.html
 
-[ios-framework-source]: https://github.com/openxc/openxc-ios-framework
-[demo app]:https://github.com/openxc/openxc-ios-app-demo
+[openxc-ios-library]: https://github.com/openxc/openxc-ios-library
