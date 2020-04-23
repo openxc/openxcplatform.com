@@ -26,7 +26,7 @@ recommended to update to all new versions as a group.
 
 This update includes vi-firmware major refactoring that frees up memory to allow for more functionality, such as Multi-frame CAN read. There are also some fixes and updates to a few tools available for OpenXC.  OpenXC now supports iOS 13 and Android 10.  Some of the specific updates include:
 
-<font size="5"> vi-firmware </font>
+## vi-firmware 
 
 * Fix: Out of memory error, drastically reduced memory cost per message.
 * Fix: Cleaned up multiple imports of the isotp and uds-c.
@@ -34,14 +34,14 @@ This update includes vi-firmware major refactoring that frees up memory to allow
 * Feature: Added checks to vm for old python and vm versions.
 * Feature: Added the ability for the user to set the pin on the Bluetooth module.
 
-<font size="5"> openxc-python </font>
+## openxc-python 
 
 * Enhancement: new browser-based flask update for openxc-dashboard.
 * Feature: Add dashboard on message change highlighting.
 * Feature: Add more verbosity to libusb errors.
 * Fix: Fix more python 3 migration byte bugs.
 
-<font size="5"> openxc-android </font>
+## openxc-android 
 
 * New Feature: Populating devices with name openxc-vi only to the Bluetooth device list.
 * Improvement: dweet endpoint switched from http to https.
@@ -52,7 +52,7 @@ This update includes vi-firmware major refactoring that frees up memory to allow
 * Improvement: More complexed diagnostic responses for Emulator.
 * Enhancement: Support Android 10.
 
-<font size="5"> openxc-ios-library </font>
+## openxc-ios-library 
 
 * Enhancement: iOS 13 support.
 * Enhancement: Updated to Protobuf 3.
@@ -136,7 +136,11 @@ and also has an enhanced user interface to expose many of the new features of
 the vehicle interface and library. You can see a preview of the new screens in
 this [thread in the Google Group](https://groups.google.com/forum/#!topic/openxc/WSl92Bpt-K8).
 
-## Known Issues
+<!--
+list of known issues is not up to date.  Keeping in commented out for future reference in case we
+need to include this section in the update pages again.
+
+ ## Known Issues
 
 This section describes known issues related to the new updates for the platform. 
 See the issues on github.com for each project for other know issues.
@@ -150,4 +154,4 @@ See the issues on github.com for each project for other know issues.
 * The modem_configuration command from Python is not working currently. See 
   [#80](https://github.com/openxc/openxc-python/issues/80) and 
   [#350](https://github.com/openxc/vi-firmware/issues/350).
-  
+   -->
