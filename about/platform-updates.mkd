@@ -26,7 +26,7 @@ recommended to update to all new versions as a group.
 
 This update includes vi-firmware major refactoring that frees up memory to allow for more functionality, such as Multi-frame CAN read. There are also some fixes and updates to a few tools available for OpenXC.  OpenXC now supports iOS 13 and Android 10.  Some of the specific updates include:
 
-<font size="3"> vi-firmware </font>
+<font size="5"> vi-firmware </font>
 
 * Fix: Out of memory error, drastically reduced memory cost per message.
 * Fix: Cleaned up multiple imports of the isotp and uds-c.
@@ -34,14 +34,14 @@ This update includes vi-firmware major refactoring that frees up memory to allow
 * Feature: Added checks to vm for old python and vm versions.
 * Feature: Added the ability for the user to set the pin on the Bluetooth module.
 
-<font size="3"> openxc-python </font>
+<font size="5"> openxc-python </font>
 
 * Enhancement: new browser-based flask update for openxc-dashboard.
 * Feature: Add dashboard on message change highlighting.
 * Feature: Add more verbosity to libusb errors.
 * Fix: Fix more python 3 migration byte bugs.
 
-<font size="3"> openxc-android </font>
+<font size="5"> openxc-android </font>
 
 * New Feature: Populating devices with name openxc-vi only to the Bluetooth device list.
 * Improvement: dweet endpoint switched from http to https.
@@ -52,7 +52,7 @@ This update includes vi-firmware major refactoring that frees up memory to allow
 * Improvement: More complexed diagnostic responses for Emulator.
 * Enhancement: Support Android 10.
 
-<font size="3"> openxc-ios-library </font>
+<font size="5"> openxc-ios-library </font>
 
 * Enhancement: iOS 13 support.
 * Enhancement: Updated to Protobuf 3.
