@@ -17,7 +17,7 @@ recommended to update to all new versions as a group.
 
 
 
-## April 2020
+## May 2020
 
 * Vehicle Interface Firmware - [v8.0.0](https://github.com/openxc/vi-firmware/releases/tag/8.0.0)
 * Python Library - [v2.0.0](https://github.com/openxc/openxc-python/releases/tag/2.0.0)
