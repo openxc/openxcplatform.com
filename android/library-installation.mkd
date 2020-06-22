@@ -33,10 +33,14 @@ file:
         compile 'com.openxcplatform:library:7.0.6'
     }
 
-If for some reason you are unable to use the remote library, you can use a local copy by making a few small changes to your code
-
 That's it! You can now proceed to the next steps to start using the library in
 your project.
+
+Note: If for some reason you are unable to use the remote library, you can use a local copy by making a few small changes to your code. 
+
+In the settings.gradle file, add the following line: `project(':library').projectDir = new File(settingsDir, '../openxc-android/library')`
+
+In the build.gradle file, replace this line: `compile 'com.openxcplatform:library:7.0.6'` with this line: `compile project(':library')`
 
 <div class="page-header">
     <h3 id="contributor"><a href="#contributor">For Contributors</a></h3>
