@@ -49,7 +49,7 @@ You should be able to point it at the `openxc-android` directory to open an
 existing project. The project includes 2 modules: the library and the Enabler
 app.
 
-Note: If for some reason you are unable to use the remote library, you can use a local copy by making a few small changes to your code. 
+Note: If for some reason you are unable to use the remote library, you can use a local copy by making a few small changes to the code in your application. 
 
 In the settings.gradle file, add the following lines: 
 
