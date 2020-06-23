@@ -58,7 +58,15 @@ include ':library'
 project(':library').projectDir = new File(settingsDir, '../openxc-android/library')
 ```
 
-In the build.gradle file, replace this line: `compile 'com.openxcplatform:library:7.0.6'` with this line: `compile project(':library')`
+In the build.gradle file, replace this line: 
+
+```
+compile 'com.openxcplatform:library:7.0.6'
+``` 
+
+with this line: 
+
+```compile project(':library')```
 
 <div class="page-header">
 <h2>Next Steps</h2>
