@@ -57,7 +57,7 @@ page:
 You can now proceed to the next steps to start using the library in your
 project.
 
-Note: if you need to run the OpenXC library on your local machine, please follow the instructions for Contributors on the [Android Library Installation page](http://openxcplatform.com/android/library-installation.html#contributor).
+Note: If you need to include the OpenXC library on your local machine, please follow the instructions for Contributors on the [Android Library Installation page](http://openxcplatform.com/android/library-installation.html#contributor).
 
 <div class="page-header">
 <h2>Android Manifest</h2>
