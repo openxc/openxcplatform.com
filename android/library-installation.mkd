@@ -61,13 +61,13 @@ project(':library').projectDir = new File(settingsDir, '../openxc-android/librar
 In the build.gradle file, replace this line: 
 
 ```
-compile 'com.openxcplatform:library:7.0.6'
+implementation 'com.openxcplatform:library:7.0.6'
 ``` 
 
 with this line: 
 
 ```
-compile project(':library')
+implementation project(':library')
 ```
 
 <div class="page-header">
