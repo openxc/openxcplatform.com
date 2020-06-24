@@ -1,9 +1,3 @@
----
-layout: developer
-title: App Tutorial - OpenXC
-redirect_from: /getting-started/tutorial.html
----
-
 <div class="page-header">
     <h1>App Tutorial</h1>
 </div>
@@ -56,6 +50,17 @@ page:
 
 You can now proceed to the next steps to start using the library in your
 project.
+
+Note: If for some reason you are unable to use the remote `openxc-android` library, you can use a local copy. This requires replacing three files in the starter app, and one file in the imported library. All of the required files are included in each of the respective repositories with a .local extension. Below is a list of the files and locations:
+
+```
+openxc\openxc-starter --> settings.gradle.local
+openxc\openxc-starter --> build.gradle.local
+openxc\openxc-starter --> app\build.gradle.local
+openxc\openxc-android --> library\build.gradle.local
+```
+
+Replace the standard versions of the files with the .local files. For example, in the OpenXC Starter app, replace the app\build.gralde file with the app\build.gradle.local file. Restart your IDE, run the Gradle build process, and your starter app should now be using a local copy of the `openxc-android` library.
 
 <div class="page-header">
 <h2>Android Manifest</h2>
