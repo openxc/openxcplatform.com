@@ -4,7 +4,7 @@
 
 The OpenXC functionality is exposed via a Java library that includes some
 Android services your application can use. The library is available on GitHub in
-the [openxc-android][] repository and the latest stable version is also in the`openxc-android` 
+the [openxc-android][] repository and the latest stable version is also in the 
 JCenter repository (which can be used in any Android Studio project just
 by adding a line to your `build.gradle`).
 
@@ -14,7 +14,7 @@ by adding a line to your `build.gradle`).
 
 <div class="page-header">
     <h3 id="app-developer"><a href="#app-developer">For App Developers</a></h3>
-openxc\openxc-android --> library\build.gradle.local</div>
+</div>
 
 Follow Google's excellent instructions to
 [download and install Android Studio](http://developer.android.com/sdk/index.html).
