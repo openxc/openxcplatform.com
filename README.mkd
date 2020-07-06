@@ -27,7 +27,7 @@ to see your latest updates.
 
 ## Github Development
 
-This section describes how to create your own fork of the openxcplatform.com in order to have it published by GitHub. This may be preferred over local development (see below).
+This section describes how to create your own fork of the openxcplatform.com in order to work on and published with your personal GitHub account. 
 
 1. Go to https://github.com/openxc/openxcplatform.com and click on "fork" in the upper right section to create a fork in your github space.
 
