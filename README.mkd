@@ -25,6 +25,26 @@ repository - this is *not* committed, since it's automatically generated. The
 regenerate whatever files have changed, so you just need to refresh the browser
 to see your latest updates.
 
+## Github Development
+
+This section describes how to create your own fork of the openxcplatform.com in order to work on and published with your personal GitHub account. 
+
+1. Go to https://github.com/openxc/openxcplatform.com and click on "fork" in the upper right section to create a fork in your github space.
+
+2. In the new fork in your own github space, click Settings and rename the repo to "{githubUsername}.github.io"
+
+3. Create new branch called master from gh-pages using the gui.
+
+![Github Branches image](/resources/branch.png)
+
+<br>
+
+4. Your site is published at https://{githubUsername}.github.io/ 
+
+5. All work should be done on the "master" branch for changes to show up.
+
+6. When you are ready to push code back to the OpenXC account use the gui to create a new pull request pulling your local master to gh-pages.
+
 ## Going Live
 
 The site is hosted on GitHub pages, so deploying is as simple as commiting your
