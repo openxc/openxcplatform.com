@@ -11,7 +11,7 @@ redirect_from:
 
 The OpenXC functionality is exposed via a Java library that includes some
 Android services your application can use. The library is available on GitHub in
-the [openxc-android][] repository and the latest stable version is also in the
+the [openxc-android][] repository and the latest stable version is also in the 
 JCenter repository (which can be used in any Android Studio project just
 by adding a line to your `build.gradle`).
 
@@ -36,6 +36,8 @@ file:
 That's it! You can now proceed to the next steps to start using the library in
 your project.
 
+Note: If you need to include the OpenXC library on your local machine, please follow the instructions in the "Using the Library" section of the [App Tutorial page](http://openxcplatform.com/android/tutorial.html).
+
 <div class="page-header">
     <h3 id="contributor"><a href="#contributor">For Contributors</a></h3>
 </div>
@@ -48,6 +50,7 @@ After cloning the `openxc-android` library, open the project in Android Studio.
 You should be able to point it at the `openxc-android` directory to open an
 existing project. The project includes 2 modules: the library and the Enabler
 app.
+
 
 <div class="page-header">
 <h2>Next Steps</h2>

@@ -11,3 +11,5 @@ exclude:
   - Gemfile.lock
   - CHANGELOG.md
   - .travis.yml
+
+theme: jekyll-theme-cayman
