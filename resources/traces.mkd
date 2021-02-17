@@ -94,11 +94,11 @@ it should auto-detect an uncompress when you download:
 * [Speeding at highway speeds](http://oxcp.com.s3.amazonaws.com/traces/highway-speeding-uncompressed.json)
 
 
-[short drive]: https://oxcp.com.s3.amazonaws.com/driving.json
-[idling while parked]: https://oxcp.com.s3.amazonaws.com/parked.json
-[idling2]: https://oxcp.com.s3.amazonaws.com/traces/idling.json
-[Highway commute]: https://oxcp.com.s3.amazonaws.com/traces/commute.json
-[Tailgating]: https://oxcp.com.s3.amazonaws.com/traces/tailgating.json
-[Riding the brakes]: https://oxcp.com.s3.amazonaws.com/traces/riding-brakes.json
-[speeding]: https://oxcp.com.s3.amazonaws.com/traces/highway-speeding.json
-[Agressive driving]:https://oxcp.com.s3.amazonaws.com/traces/aggressive-driving.json
+[short drive]: http://oxcp.com.s3.amazonaws.com/driving.json
+[idling while parked]: http://oxcp.com.s3.amazonaws.com/parked.json
+[idling2]: http://oxcp.com.s3.amazonaws.com/traces/idling.json
+[Highway commute]: http://oxcp.com.s3.amazonaws.com/traces/commute.json
+[Tailgating]: http://oxcp.com.s3.amazonaws.com/traces/tailgating.json
+[Riding the brakes]: http://oxcp.com.s3.amazonaws.com/traces/riding-brakes.json
+[speeding]: http://oxcp.com.s3.amazonaws.com/traces/highway-speeding.json
+[Agressive driving]:http://oxcp.com.s3.amazonaws.com/traces/aggressive-driving.json
